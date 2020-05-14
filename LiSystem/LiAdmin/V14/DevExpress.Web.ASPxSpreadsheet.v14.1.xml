@@ -1,0 +1,1485 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DevExpress.Web.ASPxSpreadsheet.v14.1</name>
+    </assembly>
+    <members>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetInsertPictureDialogSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetInsertPictureDialogSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetInsertPictureDialogSettings.Assign(DevExpress.Web.ASPxClasses.PropertiesBase)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="source">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetInsertPictureDialogSettings.ShowFileUploadSection">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerFoldersSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerFoldersSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerFoldersSettings.ShowLockedFolderIcons">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet">
+
+            <summary>
+                <para>A spreadsheet control.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.#ctor">
+            <summary>
+                <para>Initializes a new instance of the ASPxSpreadsheet class. 
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.ActiveTabIndex">
+            <summary>
+                <para>Gets or sets the index of a tab which is selected within the control's Ribbon.
+</para>
+            </summary>
+            <value>An integer value specifying the index of an active tab in the control's <see cref="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.RibbonTabs"/> collection.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.AssociatedRibbonID">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="E:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.Callback">
+            <summary>
+                <para>Fires when a round trip to the server has been initiated.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.ClientInstanceName">
+            <summary>
+                <para>Gets or sets the ASPxSpreadsheet's client programmatic identifier.
+</para>
+            </summary>
+            <value>A string value that specifies the ASPxSpreadsheet's client identifier.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.ClientSideEvents">
+            <summary>
+                <para>Gets an object that lists the client-side events specific to the ASPxSpreadsheet.
+</para>
+            </summary>
+            <value>A <a href="ms-xhelp:///?Id=T%3aDevExpress.Web.ASPxSpreadsheet.SpreadsheetClientSideEvents">SpreadsheetClientSideEvents</a> object which allows assigning handlers to the client-side events available to the ASPxSpreadsheet.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.Close">
+            <summary>
+                <para>Closes the workbook currently loaded into ASPxSpreadsheet and accessed via the <see cref="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.Document"/> property.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.CreateDefaultRibbonTabs(System.Boolean)">
+            <summary>
+                <para>Creates a collection of default Ribbon tabs, specifying what to do with tabs that already exist within the <see cref="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.RibbonTabs"/> collection.
+</para>
+            </summary>
+            <param name="clearExistingTabs">
+		<b>true</b> to delete existing tabs; <b>false</b> to add the default tabs to the collection.
+
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.Document">
+            <summary>
+                <para>Provides access to a workbook loaded in the control.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.Spreadsheet.IWorkbook"/> interface specifying a document loaded in the control.
+</value>
+
+
+        </member>
+        <member name="E:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.DocumentCallback">
+            <summary>
+                <para>Fires when a round trip to the server has been initiated by the loaded document.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="E:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.DocumentSelectorFileUploading">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="E:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.DocumentSelectorFolderCreating">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="E:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.DocumentSelectorItemDeleting">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="E:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.DocumentSelectorItemMoving">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="E:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.DocumentSelectorItemRenaming">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.EnableClientSideAPI">
+            <summary>
+                <para>Gets or sets a value that specifies whether the ASPxSpreadsheet can be manipulated on the client side in code.
+
+</para>
+            </summary>
+            <value><b>true</b>, if the control's client object model is fully available; <b>false</b> if no programmatic interface is available for the ASPxSpreadsheet on the client side.
+</value>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.GetTemporaryFolder">
+            <summary>
+                <para>Returns the path to the temporary folder.
+</para>
+            </summary>
+            <returns>A string representing the temporary folder path.
+</returns>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.GetWorkDirectory">
+            <summary>
+                <para>Returns the path to the working directory.
+</para>
+            </summary>
+            <returns>A string representing the working directory path.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.Images">
+            <summary>
+                <para>Provides access to the settings that define images displayed within the ASPxSpreadsheet.
+</para>
+            </summary>
+            <value>An SpreadsheetImages object that contains image settings.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.ImagesFileManager">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.IsInternalServiceCallback">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.Open(System.String)">
+            <summary>
+                <para>Opens a document by the specified path.
+</para>
+            </summary>
+            <param name="pathToXlsx">
+		A string representing the path to a document to open.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.RaiseDocumentSelectorFileUploading(DevExpress.Web.ASPxFileManager.FileManagerFileUploadEventArgs)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="args">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.RaiseDocumentSelectorFolderCreating(DevExpress.Web.ASPxFileManager.FileManagerFolderCreateEventArgs)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="args">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.RaiseDocumentSelectorItemDeleting(DevExpress.Web.ASPxFileManager.FileManagerItemDeleteEventArgs)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="args">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.RaiseDocumentSelectorItemMoving(DevExpress.Web.ASPxFileManager.FileManagerItemMoveEventArgs)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="args">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.RaiseDocumentSelectorItemRenaming(DevExpress.Web.ASPxFileManager.FileManagerItemRenameEventArgs)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="args">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.ReadOnly">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.RibbonMode">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.RibbonTabs">
+            <summary>
+                <para>Provides access to the collection of Ribbon tabs.
+</para>
+            </summary>
+            <value>A <a href="ms-xhelp:///?Id=T%3aDevExpress.Web.ASPxSpreadsheet.SpreadsheetRibbonTabCollection">SpreadsheetRibbonTabCollection</a> object that is the collection of the Ribbon's tabs. 
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.SettingsDialogForm">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.SettingsDocumentSelector">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.SettingsForms">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.SettingsLoadingPanel">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.Styles">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.StylesButton">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.StylesEditors">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.StylesFileManager">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.StylesPopupMenu">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.StylesRibbon">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.StylesTabControl">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.TemporaryFolder">
+            <summary>
+                <para>Gets or sets the temporary folder path.
+</para>
+            </summary>
+            <value>A string specifying the temporary folder path.
+</value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet.WorkDirectory">
+            <summary>
+                <para>Gets or sets the working directory path.
+</para>
+            </summary>
+            <value>A string specifying the working directory path.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetSelectorSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetSelectorSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetSelectorSettings.Assign(DevExpress.Web.ASPxClasses.PropertiesBase)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="source">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetSelectorSettings.RootFolderUrlPath">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheetLoadingPanelSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheetLoadingPanelSettings.#ctor(DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="spreadsheet">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFormsSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFormsSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFormsSettings.Assign(DevExpress.Web.ASPxClasses.PropertiesBase)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="source">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFormsSettings.InsertLinkFormPath">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFormsSettings.InsertPictureFormPath">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFormsSettings.OpenFileFormPath">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFormsSettings.RenameSheetFormPath">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFormsSettings.SaveFileFormPath">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerPermissionsSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerPermissionsSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetSaveFileDialogSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetSaveFileDialogSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetSaveFileDialogSettings.Assign(DevExpress.Web.ASPxClasses.PropertiesBase)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="source">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetSaveFileDialogSettings.DisplaySectionMode">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerToolbarSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerToolbarSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerToolbarSettings.ShowDownloadButton">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerUploadSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerUploadSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerUploadSettings.Enabled">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerUploadSettings.ValidationSettings">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetResourcesLocalizer">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetResourcesLocalizer.#ctor">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SaveFileDialogDisplaySectionMode">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.SaveFileDialogDisplaySectionMode.ShowAllSections">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.SaveFileDialogDisplaySectionMode.ShowDownloadSection">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.SaveFileDialogDisplaySectionMode.ShowServerSection">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetDocumentSelectorCommonSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetDocumentSelectorCommonSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetDocumentSelectorCommonSettings.AllowedFileExtensions">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetDocumentSelectorUploadSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetDocumentSelectorUploadSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetDocumentSelectorSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetDocumentSelectorSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerEditingSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerEditingSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerEditingSettings.AllowDownload">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetLocalizer">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetLocalizer.#ctor">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetLocalizer.CreateResXLocalizer">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetLocalizer.GetString(DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="id">
+		 [To be supplied] 
+            </param>
+            <returns> [To be supplied] </returns>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.ButtonCancel">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.ButtonChange">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.ButtonDownload">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.ButtonInsert">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.ButtonOK">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.ButtonOpen">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.ButtonSaveAs">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.ButtonSelect">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.ChangeLink">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.ExternalRibbonControl_NotFound">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.InsertImage">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.InsertImage_EnterUrl">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.InsertImage_FromLocal">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.InsertImage_FromWeb">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.InsertImage_ImagePreview">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.InsertImage_UploadInstructions">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.InsertLink">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.InsertLink_DisplayProperties">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.InsertLink_Email">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.InsertLink_EmailTo">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.InsertLink_Subject">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.InsertLink_Text">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.InsertLink_ToolTip">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.InsertLink_URL">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.OpenFile">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.OpenFile_ChooseInstruction">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.OpenFile_FileManager_Header">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.OpenFile_FromComputer">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.OpenFile_FromServer">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.OpenFile_UploadInstruction">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.RenameSheet">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.RenameSheet_SheetName">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.RequiredFieldError">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.SaveFile">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.SaveFile_DownloadCopy">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.SaveFile_DownloadInstruction">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.SaveFile_FileAlreadyExists">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.SaveFile_FileName">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.SaveFile_FileType">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.SaveFile_FolderManager_Header">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.SaveFile_FolderPath">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.Localization.ASPxSpreadsheetStringId.SaveFile_SaveFileToServer">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerCommonSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerCommonSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerCommonSettings.AllowedFileExtensions">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerCommonSettings.EnableMultiSelect">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerCommonSettings.ThumbnailFolder">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetDialogFormSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetDialogFormSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetDialogFormSettings.Assign(DevExpress.Web.ASPxClasses.PropertiesBase)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="source">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetDialogFormSettings.InsertLinkDialog">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetDialogFormSettings.InsertPictureDialog">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetDialogFormSettings.SaveFileDialog">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheetSettingsBase">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheetSettingsBase.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetRibbonMode">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.SpreadsheetRibbonMode.ExternalRibbon">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.SpreadsheetRibbonMode.None">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="F:DevExpress.Web.ASPxSpreadsheet.SpreadsheetRibbonMode.Ribbon">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerFileListSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerFileListSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerSettingsBase">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerSettingsBase.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerSettingsBase.Assign(DevExpress.Web.ASPxClasses.PropertiesBase)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="source">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerSettingsBase.CommonSettings">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerSettingsBase.EditingSettings">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerSettingsBase.FileListSettings">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerSettingsBase.FoldersSettings">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerSettingsBase.PermissionSettings">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerSettingsBase.ToolbarSettings">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetFileManagerSettingsBase.UploadSettings">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetInsertLinkDialogSettings">
+
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetInsertLinkDialogSettings.#ctor(DevExpress.Web.ASPxClasses.IPropertiesOwner)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="owner">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetInsertLinkDialogSettings.Assign(DevExpress.Web.ASPxClasses.PropertiesBase)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="source">
+		 [To be supplied] 
+            </param>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetInsertLinkDialogSettings.ShowEmailAddressSection">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetRibbonTabCollection">
+
+            <summary>
+                <para>A collection of Ribbon tabs related to the <see cref="T:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet"/>.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetRibbonTabCollection.#ctor(DevExpress.Web.ASPxClasses.Internal.IWebControlObject)">
+            <summary>
+                <para>Initializes a new instance of the SpreadsheetRibbonTabCollection class with the specified owner.
+</para>
+            </summary>
+            <param name="owner">
+		An object that implements the <b>IWebControlObject</b> interface.
+
+            </param>
+
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetRibbonTabCollection.Add(System.String)">
+            <summary>
+                <para>Adds a new tab with the specified text to the collection.
+</para>
+            </summary>
+            <param name="text">
+		A <see cref="T:System.String"/> value that specifies the created tab's display text. Initializes the tab's <see cref="P:DevExpress.Web.ASPxRibbon.RibbonTab.Text"/> property.
+
+            </param>
+            <returns>An <a href="ms-xhelp:///?Id=T%3aDevExpress.Web.ASPxRibbon.RibbonTab">RibbonTab</a> object that is the newly created tab.
+</returns>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetRibbonTabCollection.Spreadsheet">
+            <summary>
+                <para>Gets the <see cref="T:DevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet"/> object that owns the collection.
+</para>
+            </summary>
+            <value>An <a href="ms-xhelp:///?Id=T%3aDevExpress.Web.ASPxSpreadsheet.ASPxSpreadsheet">ASPxSpreadsheet</a> object that owns the collection.
+</value>
+
+
+        </member>
+        <member name="T:DevExpress.Web.ASPxSpreadsheet.SpreadsheetClientSideEvents">
+
+            <summary>
+                <para>Contains a list of the client-side events available for the ASPxSpreadsheet.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.Web.ASPxSpreadsheet.SpreadsheetClientSideEvents.#ctor">
+            <summary>
+                <para>Initializes a new instance of the SpreadsheetClientSideEvents class. For internal use only.
+</para>
+            </summary>
+
+
+        </member>
+        <member name="P:DevExpress.Web.ASPxSpreadsheet.SpreadsheetClientSideEvents.SelectionChanged">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+
+        </member>
+    </members>
+</doc>

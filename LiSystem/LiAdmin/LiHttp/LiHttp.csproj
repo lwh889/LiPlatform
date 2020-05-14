@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{30265638-3EA2-4AD7-81B9-0C99D769EA57}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LiHttp</RootNamespace>
+    <AssemblyName>LiHttp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enum\LiEntityKey.cs" />
+    <Compile Include="Enum\JudgeSymbol.cs" />
+    <Compile Include="Enum\LogicalOperator.cs" />
+    <Compile Include="GetEntity\AHttpEntity.cs" />
+    <Compile Include="GetEntity\HttpEntity.cs" />
+    <Compile Include="GetEntity\NewDataEntity.cs" />
+    <Compile Include="GetEntity\VoucherDataEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestParam\DeleteParamModel.cs" />
+    <Compile Include="RequestParam\GetNewDataParamModel.cs" />
+    <Compile Include="RequestParam\InsertParamModel.cs" />
+    <Compile Include="RequestParam\IParamModel.cs" />
+    <Compile Include="RequestParam\ProcedureParamModel.cs" />
+    <Compile Include="RequestParam\QueryComplexWhereModel.cs" />
+    <Compile Include="RequestParam\QueryParamModel.cs" />
+    <Compile Include="RequestParam\QueryWhereModel.cs" />
+    <Compile Include="RequestParam\QueryWhereValueModel.cs" />
+    <Compile Include="RequestParam\UpdateBatchParamModel.cs" />
+    <Compile Include="RequestParam\UpdateParamModel.cs" />
+    <Compile Include="RequestParam\InsertBatchParamModel.cs" />
+    <Compile Include="Server\ALiHttp.cs" />
+    <Compile Include="Server\ILiHttp.cs" />
+    <Compile Include="Server\LiHttpDelete.cs" />
+    <Compile Include="Server\LiHttpGetNewData.cs" />
+    <Compile Include="Server\LiHttpInsert.cs" />
+    <Compile Include="Server\LiHttpProcedure.cs" />
+    <Compile Include="Server\LiHttpQuery.cs" />
+    <Compile Include="Server\LiHttpSetting.cs" />
+    <Compile Include="Server\LiHttpSetting_DrmAdmin.cs" />
+    <Compile Include="Server\LiHttpUpdate.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LiCommon\LiCommon.csproj">
+      <Project>{e230d61a-c177-4ef2-b257-e7f0a3b62a0d}</Project>
+      <Name>LiCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiModel\LiModel.csproj">
+      <Project>{6df7e2ad-00ab-4bd7-8ea1-a81bc216261c}</Project>
+      <Name>LiModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,45 @@
+日志时间：2020-05-08 17:09:29,251 
+日志级别：FATAL 
+用 户 ID：{log4net:Identity=, log4net:UserName=WIN-VR75UK1COEO\Administrator, log4net:HostName=WIN-VR75UK1COEO}roperty{UserID} 
+用户姓名：{log4net:Identity=, log4net:UserName=WIN-VR75UK1COEO\Administrator, log4net:HostName=WIN-VR75UK1COEO}roperty{UserName} 
+日志信息：{log4net:Identity=, log4net:UserName=WIN-VR75UK1COEO\Administrator, log4net:HostName=WIN-VR75UK1COEO}roperty{Message} 
+异常信息： 
+
+日志时间：2020-05-08 17:09:29,286 
+日志级别：FATAL 
+用 户 ID：{log4net:Identity=, log4net:UserName=WIN-VR75UK1COEO\Administrator, log4net:HostName=WIN-VR75UK1COEO}roperty{UserID} 
+用户姓名：{log4net:Identity=, log4net:UserName=WIN-VR75UK1COEO\Administrator, log4net:HostName=WIN-VR75UK1COEO}roperty{UserName} 
+日志信息：{log4net:Identity=, log4net:UserName=WIN-VR75UK1COEO\Administrator, log4net:HostName=WIN-VR75UK1COEO}roperty{Message} 
+异常信息：System.Exception: 异常信息
+ 
+
+日志时间：2020-05-08 17:12:14,297 
+日志级别：FATAL 
+用 户 ID：{log4net:Identity=, log4net:UserName=WIN-VR75UK1COEO\Administrator, log4net:HostName=WIN-VR75UK1COEO}roperty{UserID} 
+用户姓名：{log4net:Identity=, log4net:UserName=WIN-VR75UK1COEO\Administrator, log4net:HostName=WIN-VR75UK1COEO}roperty{UserName} 
+日志信息：{log4net:Identity=, log4net:UserName=WIN-VR75UK1COEO\Administrator, log4net:HostName=WIN-VR75UK1COEO}roperty{Message} 
+异常信息： 
+
+日志时间：2020-05-08 17:12:14,561 
+日志级别：FATAL 
+用 户 ID：{log4net:Identity=, log4net:UserName=WIN-VR75UK1COEO\Administrator, log4net:HostName=WIN-VR75UK1COEO}roperty{UserID} 
+用户姓名：{log4net:Identity=, log4net:UserName=WIN-VR75UK1COEO\Administrator, log4net:HostName=WIN-VR75UK1COEO}roperty{UserName} 
+日志信息：{log4net:Identity=, log4net:UserName=WIN-VR75UK1COEO\Administrator, log4net:HostName=WIN-VR75UK1COEO}roperty{Message} 
+异常信息：System.Exception: 异常信息
+ 
+
+日志时间：2020-05-08 17:14:24,039 
+日志级别：FATAL 
+用 户 ID：123456 
+用户姓名：J 
+日志信息：test1 
+异常信息： 
+
+日志时间：2020-05-08 17:14:24,109 
+日志级别：FATAL 
+用 户 ID：123456 
+用户姓名：J 
+日志信息：test2 
+异常信息：System.Exception: 异常信息
+ 
+

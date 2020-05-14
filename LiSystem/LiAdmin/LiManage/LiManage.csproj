@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{68C00317-C397-4BDD-A54A-0990FCBAD971}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LiManage</RootNamespace>
+    <AssemblyName>LiManage</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v17.1.Core, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LiAuthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiAuthForm.Designer.cs">
+      <DependentUpon>LiAuthForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiGeneralEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiGeneralEventForm.Designer.cs">
+      <DependentUpon>LiGeneralEventForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiManageBasicInfoInOutDesin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiManageBasicInfoInOutDesin.Designer.cs">
+      <DependentUpon>LiManageBasicInfoInOutDesin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiManageDict.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiManageDict.Designer.cs">
+      <DependentUpon>LiManageDict.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiManageForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiManageForm1.Designer.cs">
+      <DependentUpon>LiManageForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiManageForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiManageForm2.Designer.cs">
+      <DependentUpon>LiManageForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiManageMenuEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiManageMenuEditForm.Designer.cs">
+      <DependentUpon>LiManageMenuEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiManageConvertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiManageConvertForm.Designer.cs">
+      <DependentUpon>LiManageConvertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiManageVoucherDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiManageVoucherDesign.Designer.cs">
+      <DependentUpon>LiManageVoucherDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiPlugInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiPlugInForm.Designer.cs">
+      <DependentUpon>LiPlugInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiRoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiRoleForm.Designer.cs">
+      <DependentUpon>LiRoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiSystemInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiSystemInfoForm.Designer.cs">
+      <DependentUpon>LiSystemInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiTableConfigureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiTableConfigureForm.Designer.cs">
+      <DependentUpon>LiTableConfigureForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiSystemInfoListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiSystemInfoListForm.Designer.cs">
+      <DependentUpon>LiSystemInfoListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiTableConfigureListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiTableConfigureListForm.Designer.cs">
+      <DependentUpon>LiTableConfigureListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiUserForm.Designer.cs">
+      <DependentUpon>LiUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiVoucherCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiVoucherCodeForm.Designer.cs">
+      <DependentUpon>LiVoucherCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RibbonForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RibbonForm1.Designer.cs">
+      <DependentUpon>RibbonForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RibbonForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RibbonForm2.Designer.cs">
+      <DependentUpon>RibbonForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeData.cs" />
+    <Compile Include="LiProcedureConfigureListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiProcedureConfigureListForm.Designer.cs">
+      <DependentUpon>LiProcedureConfigureListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiProcedureConfigureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiProcedureConfigureForm.Designer.cs">
+      <DependentUpon>LiProcedureConfigureForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LiAuthForm.resx">
+      <DependentUpon>LiAuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiGeneralEventForm.resx">
+      <DependentUpon>LiGeneralEventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiManageBasicInfoInOutDesin.resx">
+      <DependentUpon>LiManageBasicInfoInOutDesin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiManageDict.resx">
+      <DependentUpon>LiManageDict.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiManageForm1.resx">
+      <DependentUpon>LiManageForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiManageForm2.resx">
+      <DependentUpon>LiManageForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiManageMenuEditForm.resx">
+      <DependentUpon>LiManageMenuEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiManageConvertForm.resx">
+      <DependentUpon>LiManageConvertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiManageVoucherDesign.resx">
+      <DependentUpon>LiManageVoucherDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiPlugInForm.resx">
+      <DependentUpon>LiPlugInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiRoleForm.resx">
+      <DependentUpon>LiRoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiSystemInfoForm.resx">
+      <DependentUpon>LiSystemInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiTableConfigureForm.resx">
+      <DependentUpon>LiTableConfigureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiSystemInfoListForm.resx">
+      <DependentUpon>LiSystemInfoListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiTableConfigureListForm.resx">
+      <DependentUpon>LiTableConfigureListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiUserForm.resx">
+      <DependentUpon>LiUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiVoucherCodeForm.resx">
+      <DependentUpon>LiVoucherCodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RibbonForm1.resx">
+      <DependentUpon>RibbonForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RibbonForm2.resx">
+      <DependentUpon>RibbonForm2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiProcedureConfigureListForm.resx">
+      <DependentUpon>LiProcedureConfigureListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiProcedureConfigureForm.resx">
+      <DependentUpon>LiProcedureConfigureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LiCommon\LiCommon.csproj">
+      <Project>{e230d61a-c177-4ef2-b257-e7f0a3b62a0d}</Project>
+      <Name>LiCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiContexts\LiContexts.csproj">
+      <Project>{78be7dd4-4ec9-4f02-9b76-b764c4499ee5}</Project>
+      <Name>LiContexts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiControl\LiControl.csproj">
+      <Project>{d7d95400-bb18-4ccc-a06f-eb7eddd5914e}</Project>
+      <Name>LiControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiFlow\LiFlow.csproj">
+      <Project>{9c07849c-040a-4a00-83ae-21876db56e59}</Project>
+      <Name>LiFlow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiForm\LiForm.csproj">
+      <Project>{826f2f88-645d-4539-9af2-bcbba3621215}</Project>
+      <Name>LiForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiHttp\LiHttp.csproj">
+      <Project>{30265638-3ea2-4ad7-81b9-0c99d769ea57}</Project>
+      <Name>LiHttp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiModel\LiModel.csproj">
+      <Project>{6df7e2ad-00ab-4bd7-8ea1-a81bc216261c}</Project>
+      <Name>LiModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refreshpivottable_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refreshpivottable_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\removesheetrows_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\removesheetrows_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\status_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\removesheetrows_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addgroupfooter_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editingmergecells_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletesheetrows_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32x322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_16x162.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_32x322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_32x323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_32x323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saveall_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_32x324.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_32x322.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

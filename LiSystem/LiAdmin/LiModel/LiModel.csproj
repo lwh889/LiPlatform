@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6DF7E2AD-00AB-4BD7-8EA1-A81BC216261C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LiModel</RootNamespace>
+    <AssemblyName>LiModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Basic\ColumnModel.cs" />
+    <Compile Include="Basic\ImageListModel.cs" />
+    <Compile Include="Basic\MessageModel.cs" />
+    <Compile Include="Basic\ProcedureModel.cs" />
+    <Compile Include="Basic\ProcedureParamModel.cs" />
+    <Compile Include="Basic\RoleModel.cs" />
+    <Compile Include="Basic\SystemInfoModel.cs" />
+    <Compile Include="Basic\TableModel.cs" />
+    <Compile Include="Basic\UserRoleModel.cs" />
+    <Compile Include="Converter\ImageConverter.cs" />
+    <Compile Include="Converter\LiDateTimeConverter.cs" />
+    <Compile Include="Converter\PasswordConverter.cs" />
+    <Compile Include="Dev\GridlookUpEdit\GridlookUpEditShowModelType.cs" />
+    <Compile Include="LiEnum\GridlookUpEditShowMode.cs" />
+    <Compile Include="LiEnum\JudgmentSymbol.cs" />
+    <Compile Include="LiEnum\MessageType.cs" />
+    <Compile Include="LiEnum\VoucherType.cs" />
+    <Compile Include="LiEnum\PanelType.cs" />
+    <Compile Include="Form\GridlookUpEditModel.cs" />
+    <Compile Include="Form\BracketsBeforeModel.cs" />
+    <Compile Include="Form\ControlTypeModel.cs" />
+    <Compile Include="Form\DateTimeFormatModel.cs" />
+    <Compile Include="Form\EntityModel.cs" />
+    <Compile Include="Form\EventModel.cs" />
+    <Compile Include="Form\FieldModel.cs" />
+    <Compile Include="Form\FlowNoRangeModel.cs" />
+    <Compile Include="Form\GeneralEventModel.cs" />
+    <Compile Include="Form\JudgmentSymbolModel.cs" />
+    <Compile Include="Form\ListButtonModel.cs" />
+    <Compile Include="Form\BracketsAfterModel.cs" />
+    <Compile Include="Form\JoinModel.cs" />
+    <Compile Include="Form\QueryModel.cs" />
+    <Compile Include="Form\AGridlookUpEditModelBase.cs" />
+    <Compile Include="Form\QuerySchemeModel.cs" />
+    <Compile Include="Form\VoucherCodeModel.cs" />
+    <Compile Include="Interface\IGridlookUpEditModel.cs" />
+    <Compile Include="Form\ControlStatusModel.cs" />
+    <Compile Include="Form\DictGroupModel.cs" />
+    <Compile Include="Form\DictModel.cs" />
+    <Compile Include="Form\StatusModel.cs" />
+    <Compile Include="Form\VoucherStatusModel.cs" />
+    <Compile Include="Dev\GridlookUpEdit\GridlookUpEditShowModel.cs" />
+    <Compile Include="Form\ControlGroupModel.cs" />
+    <Compile Include="Form\ButtonGroupModel.cs" />
+    <Compile Include="Form\ButtonModel.cs" />
+    <Compile Include="Form\ControlModel.cs" />
+    <Compile Include="Form\FormModel.cs" />
+    <Compile Include="Form\PanelModel.cs" />
+    <Compile Include="Form\TreeDataModel.cs" />
+    <Compile Include="LiAttribute\BaseAttribute.cs" />
+    <Compile Include="LiAttribute\ControlTypeAttribute.cs" />
+    <Compile Include="LiAttribute\EditAttribute.cs" />
+    <Compile Include="LiAttribute\IdentifyAttribute.cs" />
+    <Compile Include="LiAttribute\IndexAttribute.cs" />
+    <Compile Include="LiAttribute\NoAttribute.cs" />
+    <Compile Include="LiAttribute\NotCopyAttribute.cs" />
+    <Compile Include="LiAttribute\PropertyGridListAttribute.cs" />
+    <Compile Include="LiAttribute\PropertyGridListConvert.cs" />
+    <Compile Include="LiAttribute\ShowAttribute.cs" />
+    <Compile Include="LiAttribute\SingleAttribute.cs" />
+    <Compile Include="LiConvert\ConvertDestTypeModel.cs" />
+    <Compile Include="LiConvert\ConvertRelation.cs" />
+    <Compile Include="LiConvert\ConvertSourceTypeModel.cs" />
+    <Compile Include="LiConvert\LiConvertBodyModel.cs" />
+    <Compile Include="LiConvert\LiConvertHeadModel.cs" />
+    <Compile Include="LiTable\ClassName.cs" />
+    <Compile Include="LiTable\ColumnType.cs" />
+    <Compile Include="LiTable\DatabaseGeneratedType.cs" />
+    <Compile Include="LiTable\EntityOrder.cs" />
+    <Compile Include="LiTable\EntityType.cs" />
+    <Compile Include="LiTable\RelationshipType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users\AuthDataModel.cs" />
+    <Compile Include="Users\AuthModel.cs" />
+    <Compile Include="Users\RoleModel.cs" />
+    <Compile Include="Users\UserModel.cs" />
+    <Compile Include="Users\UserRoleModel.cs" />
+    <Compile Include="Util\ModelUtil.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CustomAttribute\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LiCommon\LiCommon.csproj">
+      <Project>{e230d61a-c177-4ef2-b257-e7f0a3b62a0d}</Project>
+      <Name>LiCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
