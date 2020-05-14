@@ -1,0 +1,4 @@
+logging:
+  file: mylogs.log
+  path: C:/mylogs
+
