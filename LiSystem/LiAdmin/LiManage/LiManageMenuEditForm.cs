@@ -28,6 +28,7 @@ using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
+using LiModel.Basic;
 
 namespace LiManage
 {
@@ -72,6 +73,10 @@ namespace LiManage
         /// </summary>
         private TreeDataModel treeDataModel;
 
+        #region 引用数据源
+        private SystemInfoModel systemInfoModel = new SystemInfoModel();
+        #endregion
+
         private LiManageForm2 manageForm;
         /// <summary>
         /// 表单的状态
@@ -101,10 +106,22 @@ namespace LiManage
 
             this.treeDataModel = treeDataModel;
             this.manageForm = manageForm;
-            InitMenu();
 
+            Init();
+
+        }
+
+        public void Init()
+        {
             InitData();
+            InitControl();
+        }
 
+
+        public void InitControl()
+        {
+            InitMenu();
+            GridlookUpEditUtil.InitDefaultRefControl(GridlookUpEditShowMode.VALUE, systemInfoModel.getValueMember(), systemInfoModel.getDisplayMember(), systemInfoModel.getSearchColumns(), systemInfoModel.getDisplayColumns(), systemInfoModel.getDictModelDesc(), gridLookUpEdit_systemCode, this, systemInfoModel.getDataSource<List<SystemInfoModel>>());
         }
 
         /// <summary>
@@ -112,6 +129,7 @@ namespace LiManage
         /// </summary>
         private void InitData()
         {
+            systemInfoModel.setDataSource(LiContexts.LiContext.getHttpEntity(LiEntityKey.SystemInfo).getEntityList<SystemInfoModel>());
             //读取Form上的控件
             DevFormUtil.getControlInForm(formID + ".", layoutControlItemDict, controlDict, this);
             DevFormUtil.getGridColumnInForm(formID + ".", gridColumnDict, this);
