@@ -8,14 +8,25 @@ namespace LiForm.Event.EventForm
 {
     public class LiEventInsertRowData : LiAEvent
     {
-        public override void receiveEvent()
+        public override bool receiveEvent()
         {
-            this.liForm.insertNewRow(this.focusEntityKey, this.liForm.getFocusRowHandle(this.focusEntityKey));
+            bool bSuccess = false;
+
+            try
+            {
+                this.liForm.insertNewRow(this.focusEntityKey, this.liForm.getFocusRowHandle(this.focusEntityKey));
+                bSuccess = true;
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return bSuccess;
         }
 
-        public override void sendEvent()
+        public override bool sendEvent()
         {
-            eventMediator.relay(this); //请中介者转发
+            return eventMediator.relay(this); //请中介者转发
         }
     }
 }

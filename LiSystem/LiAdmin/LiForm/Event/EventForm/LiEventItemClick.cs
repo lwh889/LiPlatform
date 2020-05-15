@@ -13,14 +13,23 @@ namespace LiForm.Event.EventForm
         {
         }
 
-        public override void receiveEvent()
+        public override bool receiveEvent()
         {
-            Console.WriteLine("具体同事类1收到请求。");
+            bool bSuccess = false;
+
+            try
+            {
+                bSuccess = true;
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return bSuccess;
         }
-        public override void sendEvent()
+        public override bool sendEvent()
         {
-            Console.WriteLine("具体同事类1发出请求。");
-            eventMediator.relay(this); //请中介者转发
+            return eventMediator.relay(this); //请中介者转发
         }
     }
 }

@@ -8,13 +8,25 @@ namespace LiForm.Event.EventListForm
 {
     public class LiEventListExit : LiAEvent
     {
-        public override void receiveEvent()
+        public override bool receiveEvent()
         {
-            this.liListForm.Close();
+            bool bSuccess = false;
+
+            try
+            {
+                this.liListForm.Close();
+                bSuccess = true;
+            
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return bSuccess;
         }
-        public override void sendEvent()
+        public override bool sendEvent()
         {
-            eventMediator.relay(this); //请中介者转发
+            return eventMediator.relay(this); //请中介者转发
         }
     }
 }

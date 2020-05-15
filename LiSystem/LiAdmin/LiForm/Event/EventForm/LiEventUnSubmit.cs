@@ -16,7 +16,7 @@ namespace LiForm.Event.EventForm
 {
     public class LiEventUnSubmit : LiAEvent
     {
-        public override void receiveEvent()
+        public override bool receiveEvent()
         {
             string resultContent;
 
@@ -40,18 +40,29 @@ namespace LiForm.Event.EventForm
             /// </summary>
             LiVersionFlowModel liVersionFlowModel = null;
 
-            currentFlowNode = FlowUtil.getNextStepFlow(this.liForm.formCode, Convert.ToString(this.liForm.voucherId), out liVoucherFlowStepModel, out liVoucherFlowTemp, out liVersionFlowModel);
+            bool bSuccess = false;
 
-            if (FlowUtil.revokeFlow(this.liForm.formCode, RevokeType.UnSubmit, this.liForm.formCode, Convert.ToString(this.liForm.voucherId), liVoucherFlowStepModel, out resultContent))
+            try
             {
-                this.liForm.saveVoucher();
+                currentFlowNode = FlowUtil.getNextStepFlow(this.liForm.formCode, Convert.ToString(this.liForm.voucherId), out liVoucherFlowStepModel, out liVoucherFlowTemp, out liVersionFlowModel);
+
+                if (FlowUtil.revokeFlow(this.liForm.formCode, RevokeType.UnSubmit, this.liForm.formCode, Convert.ToString(this.liForm.voucherId), liVoucherFlowStepModel, out resultContent))
+                {
+                    bSuccess = this.liForm.saveVoucher();
+                }
+
+                MessageUtil.Show(resultContent, "温馨提示");
+
+            }
+            catch (Exception ex)
+            {
             }
 
-            MessageUtil.Show(resultContent, "温馨提示");
+            return bSuccess;
         }
-        public override void sendEvent()
+        public override bool sendEvent()
         {
-            eventMediator.relay(this); //请中介者转发
+            return eventMediator.relay(this); //请中介者转发
         }
     }
 }

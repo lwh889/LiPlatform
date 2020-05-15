@@ -8,14 +8,25 @@ namespace LiForm.Event.EventListForm
 {
     public class LiEventListRefresh : LiAEvent
     {
-        public override void receiveEvent()
+        public override bool receiveEvent()
         {
-            this.liListForm.Query();
-            this.liListForm.FillGridListCtrlQuery(this.liListForm.setFirstPage());
+            bool bSuccess = false;
+
+            try
+            {
+                this.liListForm.Query();
+                this.liListForm.FillGridListCtrlQuery(this.liListForm.setFirstPage());
+                bSuccess = true;
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return bSuccess;
         }
-        public override void sendEvent()
+        public override bool sendEvent()
         {
-            eventMediator.relay(this); //请中介者转发
+            return eventMediator.relay(this); //请中介者转发
         }
     }
 }

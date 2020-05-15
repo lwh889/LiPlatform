@@ -26,15 +26,16 @@ namespace LiForm.Event.Mediator
         /// 转化
         /// </summary>
         /// <param name="rLiEvent"></param>
-        public override void relay(LiAEvent rLiEvent)
+        public override bool relay(LiAEvent rLiEvent)
         {
             foreach (LiAEvent sLiEvent in liEventDict.Values)
             {
                 if (sLiEvent.id != rLiEvent.id)
                 {
-                    ((LiAEvent)sLiEvent).receiveEvent();
+                    return ((LiAEvent)sLiEvent).receiveEvent();
                 }
             }
+            return false;
         }
 
         /// <summary>

@@ -71,11 +71,11 @@ namespace LiForm.Event
         /// <summary>
         /// 接受事件
         /// </summary>
-        public abstract void receiveEvent();
+        public abstract bool receiveEvent();
 
         /// <summary>
         /// 发送事件
         /// </summary>
-        public abstract void sendEvent();
+        public abstract bool sendEvent();
     }
 }

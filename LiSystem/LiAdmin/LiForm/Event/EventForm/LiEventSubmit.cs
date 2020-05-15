@@ -14,20 +14,30 @@ namespace LiForm.Event.EventForm
 {
     public class LiEventSubmit : LiAEvent
     {
-        public override void receiveEvent()
+        public override bool receiveEvent()
         {
-            string resultContent = "";
+            bool bSuccess = false;
 
-            if (FlowUtil.startFlow(this.liForm.formCode, Convert.ToString(this.liForm.voucherId), Convert.ToString(this.liForm.voucherCode), this.liForm.formDataDict, out resultContent))
+            try
             {
-                this.liForm.saveVoucher();
+                string resultContent = "";
+
+                if (FlowUtil.startFlow(this.liForm.formCode, Convert.ToString(this.liForm.voucherId), Convert.ToString(this.liForm.voucherCode), this.liForm.formDataDict, out resultContent))
+                {
+                    bSuccess = this.liForm.saveVoucher();
+                }
+
+                MessageUtil.Show(resultContent, "温馨提示");
+            }
+            catch (Exception ex)
+            {
             }
 
-            MessageUtil.Show(resultContent, "温馨提示");
+            return bSuccess;
         }
-        public override void sendEvent()
+        public override bool sendEvent()
         {
-            eventMediator.relay(this); //请中介者转发
+            return eventMediator.relay(this); //请中介者转发
         }
     }
 }

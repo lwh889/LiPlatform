@@ -12,14 +12,23 @@ namespace LiForm.Event.EventForm
 {
     public class LiEventSave : LiAEvent
     {
-        public override void receiveEvent()
+        public override bool receiveEvent()
         {
-            this.liForm.saveVoucher();
+            bool bSuccess = false;
+
+            try
+            {
+                bSuccess = this.liForm.saveVoucher();
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return bSuccess;
         }
-        public override void sendEvent()
+        public override bool sendEvent()
         {
-            Console.WriteLine("保存发出请求。");
-            eventMediator.relay(this); //请中介者转发
+            return eventMediator.relay(this); //请中介者转发
         }
     }
 }

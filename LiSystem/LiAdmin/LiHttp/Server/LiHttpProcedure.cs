@@ -15,6 +15,17 @@ namespace LiHttp.Server
         {
         }
 
+        public ProcedureParamModel getProcedureParamModel(Dictionary<string, object> datas, string systemCode)
+        {
+            ProcedureParamModel procedureParamModel = new ProcedureParamModel();
+            procedureParamModel.systemCode = systemCode;
+            procedureParamModel.type = "Procedure";
+            procedureParamModel.entityKey = entityKey;
+            procedureParamModel.datas = datas;
+
+            return procedureParamModel;
+        }
+
         public ProcedureParamModel getProcedureParamModel(Dictionary<string, object> datas)
         {
             ProcedureParamModel procedureParamModel = new ProcedureParamModel();
@@ -26,6 +37,16 @@ namespace LiHttp.Server
             return procedureParamModel;
         }
 
+        public ProcedureParamModel getProcedureParamModel(object entitys, string systemCode)
+        {
+            ProcedureParamModel procedureParamModel = new ProcedureParamModel();
+            procedureParamModel.type = "insert";
+            procedureParamModel.systemCode = systemCode;
+            procedureParamModel.entityKey = entityKey;
+            procedureParamModel.datas = JsonUtil.GetDictionaryByModel(entitys);
+
+            return procedureParamModel;
+        }
         public ProcedureParamModel getProcedureParamModel(object entitys)
         {
             ProcedureParamModel procedureParamModel = new ProcedureParamModel();

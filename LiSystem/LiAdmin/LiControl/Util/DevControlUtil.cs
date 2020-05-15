@@ -361,7 +361,7 @@ namespace LiControl.Util
                 case "DevExpress.XtraEditors.TreeListLookUpEdit":
                     TreeListLookUpEdit treeListLookUpEdit = (TreeListLookUpEdit)control;
                     DataTable dt = treeListLookUpEdit.Properties.DataSource as DataTable;
-                    if (dt == null || value == null) return;
+                    if (dt == null || value == null || value == DBNull.Value) return;
                     treeListLookUpEdit.EditValue = Convert.ChangeType(value, dt.Columns[treeListLookUpEdit.Properties.ValueMember].DataType);
                     //treeListLookUpEdit.RefreshEditValue();
                     //treeListLookUpEdit.Refresh();

@@ -13,28 +13,40 @@ namespace LiForm.Event.EventListForm
 {
     public class LiEventListEdit : LiAEvent
     {
-        public override void receiveEvent()
+        public override bool receiveEvent()
         {
-            DataRow dr = this.liListForm.getListFocusedDataRow();
-            if (dr != null)
+            bool bSuccess = false;
+
+            try
             {
-                string entityKey = this.liListForm.getEntityKey();
-                string keyFieldName = this.liListForm.getVoucherKeyFieldName();
-                string primaryFieldName = this.liListForm.getPrimaryFieldName();
-                ListButtonModel listButton = this.Tag as ListButtonModel;
+                DataRow dr = this.liListForm.getListFocusedDataRow();
+                if (dr != null)
+                {
+                    string entityKey = this.liListForm.getEntityKey();
+                    string keyFieldName = this.liListForm.getVoucherKeyFieldName();
+                    string primaryFieldName = this.liListForm.getPrimaryFieldName();
+                    ListButtonModel listButton = this.Tag as ListButtonModel;
 
-                Dictionary<string, object> dict = LiContexts.LiContext.getHttpEntity(entityKey).getEntityDictionarySingle(dr[primaryFieldName], keyFieldName);
+                    Dictionary<string, object> dict = LiContexts.LiContext.getHttpEntity(entityKey).getEntityDictionarySingle(dr[primaryFieldName], keyFieldName);
 
-                LiForm.Dev.LiForm liForm = FormUtil.getVoucher(entityKey, dict) as LiForm.Dev.LiForm;
+                    LiForm.Dev.LiForm liForm = FormUtil.getVoucher(entityKey, dict) as LiForm.Dev.LiForm;
 
-                LiContexts.LiContext.AddPageMdi(PageFormModel.getInstance(Convert.ToInt32(dict[keyFieldName]), liForm, entityKey), this.liListForm.getParentForm());
+                    LiContexts.LiContext.AddPageMdi(PageFormModel.getInstance(Convert.ToInt32(dict[keyFieldName]), liForm, entityKey), this.liListForm.getParentForm());
 
-                liForm.setVoucherStatus(listButton.voucherStatus);
+                    liForm.setVoucherStatus(listButton.voucherStatus);
+
+                    bSuccess = true;
+                }
             }
+            catch (Exception ex)
+            {
+            }
+
+            return bSuccess;
         }
-        public override void sendEvent()
+        public override bool sendEvent()
         {
-            eventMediator.relay(this); //请中介者转发
+            return eventMediator.relay(this); //请中介者转发
         }
     }
 }

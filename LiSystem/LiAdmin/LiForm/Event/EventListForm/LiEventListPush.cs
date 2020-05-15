@@ -18,29 +18,41 @@ namespace LiForm.Event.EventListForm
 {
     public class LiEventListPush : LiAEvent
     {
-        public override void receiveEvent()
+        public override bool receiveEvent()
         {
+            bool bSuccess = false;
 
-            List<LiConvertHeadModel> list = LiContexts.LiContext.getHttpEntity(LiEntityKey.LiConvert, LiContext.SystemCode).getEntityList<LiConvertHeadModel>(this.liListForm.entityKey, "convertSource");
-            LiRefTypeForm form = new LiRefTypeForm(list);
-            if (form.ShowDialog() == DialogResult.Yes)
+            try
             {
-                LiConvertHeadModel liConvertHeadModel = form.liConvertHeadModel;
-                List<DataRow> drs = this.liListForm.getSelectedDataRows();
-                DataRow drHead = drs[0];
-                //获取新窗体
-                LiForm.Dev.LiForm liFormDest = FormUtil.getVoucher(liConvertHeadModel.convertDest) as LiForm.Dev.LiForm;
 
-                FormUtil.pushVoucher(liConvertHeadModel, drHead, drs, liFormDest);
+                List<LiConvertHeadModel> list = LiContexts.LiContext.getHttpEntity(LiEntityKey.LiConvert, LiContext.SystemCode).getEntityList<LiConvertHeadModel>(this.liListForm.entityKey, "convertSource");
+                LiRefTypeForm form = new LiRefTypeForm(list);
+                if (form.ShowDialog() == DialogResult.Yes)
+                {
+                    LiConvertHeadModel liConvertHeadModel = form.liConvertHeadModel;
+                    List<DataRow> drs = this.liListForm.getSelectedDataRows();
+                    DataRow drHead = drs[0];
+                    //获取新窗体
+                    LiForm.Dev.LiForm liFormDest = FormUtil.getVoucher(liConvertHeadModel.convertDest) as LiForm.Dev.LiForm;
 
-                LiContext.AddPageMdi(PageFormModel.getInstance(0, liFormDest, liConvertHeadModel.convertDest), this.liListForm.getParentForm());
-                liFormDest.setVoucherNewStatus();
+                    FormUtil.pushVoucher(liConvertHeadModel, drHead, drs, liFormDest);
+
+                    LiContext.AddPageMdi(PageFormModel.getInstance(0, liFormDest, liConvertHeadModel.convertDest), this.liListForm.getParentForm());
+                    liFormDest.setVoucherNewStatus();
+                    bSuccess = true;
+                }
             }
+            catch (Exception ex)
+            {
+            }
+
+            return bSuccess;
+
         }
 
-        public override void sendEvent()
+        public override bool sendEvent()
         {
-            eventMediator.relay(this); //请中介者转发
+            return eventMediator.relay(this); //请中介者转发
         }
     }
 }

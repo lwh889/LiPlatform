@@ -16,26 +16,38 @@ namespace LiForm.Event.EventForm
 {
     public class LiEventRef : LiAEvent
     {
-        public override void receiveEvent()
+        public override bool receiveEvent()
         {
-            List<LiConvertHeadModel> list = LiContexts.LiContext.getHttpEntity(LiEntityKey.LiConvert, LiContext.SystemCode).getEntityList<LiConvertHeadModel>(this.liForm.formCode, "convertDest");
-            LiRefTypeForm form = new LiRefTypeForm(list);
-            if (form.ShowDialog() == DialogResult.Yes)
+            bool bSuccess = false;
+
+            try
             {
-                LiConvertHeadModel liConvertHeadModel = form.liConvertHeadModel;
-                LiRefForm liRefForm = new LiRefForm(liConvertHeadModel);
-                if (liRefForm.ShowDialog() == DialogResult.Yes)
+                List<LiConvertHeadModel> list = LiContexts.LiContext.getHttpEntity(LiEntityKey.LiConvert, LiContext.SystemCode).getEntityList<LiConvertHeadModel>(this.liForm.formCode, "convertDest");
+                LiRefTypeForm form = new LiRefTypeForm(list);
+                if (form.ShowDialog() == DialogResult.Yes)
                 {
-                    List<DataRow> drs = liRefForm.SelectDataRows;
-                    DataRow drHead = drs[0];
-                    FormUtil.pushVoucher(liConvertHeadModel,drHead, drs, this.liForm);
-                    this.liForm.loadData();
+                    LiConvertHeadModel liConvertHeadModel = form.liConvertHeadModel;
+                    LiRefForm liRefForm = new LiRefForm(liConvertHeadModel);
+                    if (liRefForm.ShowDialog() == DialogResult.Yes)
+                    {
+                        List<DataRow> drs = liRefForm.SelectDataRows;
+                        DataRow drHead = drs[0];
+                        FormUtil.pushVoucher(liConvertHeadModel, drHead, drs, this.liForm);
+                        this.liForm.loadData();
+
+                        bSuccess = true;
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+            }
+
+            return bSuccess;
         }
-        public override void sendEvent()
+        public override bool sendEvent()
         {
-            eventMediator.relay(this); //请中介者转发
+            return eventMediator.relay(this); //请中介者转发
         }
     }
 }

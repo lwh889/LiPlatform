@@ -12,18 +12,24 @@ namespace LiForm.Event.EventForm
 {
     public class LiEventExit : LiAEvent
     {
-        public override void receiveEvent()
+        public override bool receiveEvent()
         {
-            //TreeListLookUpEdit treeListLookUpEdit = liForm.liControlDict["cMaterialGroup"] as TreeListLookUpEdit;
-            //treeListLookUpEdit.EditValue = Convert.ToInt64("8");
-            //treeListLookUpEdit.Refresh();
-            //this.liForm.revokeFlow(RevokeType.UnSubmit);
-            liForm.Close();
+            bool bSuccess = false;
+
+            try
+            {
+                liForm.Close();
+                bSuccess = true;
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return bSuccess;
         }
-        public override void sendEvent()
+        public override bool sendEvent()
         {
-            Console.WriteLine("退出发出请求。");
-            eventMediator.relay(this); //请中介者转发
+            return eventMediator.relay(this); //请中介者转发
         }
     }
 }

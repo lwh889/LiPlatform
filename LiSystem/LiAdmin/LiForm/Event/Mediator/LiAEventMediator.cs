@@ -29,6 +29,6 @@ namespace LiForm.Event.Mediator
         /// 转发事件
         /// </summary>
         /// <param name="liEvent"></param>
-        public abstract void relay(LiAEvent liEvent); //转发
+        public abstract bool relay(LiAEvent liEvent); //转发
     }
 }

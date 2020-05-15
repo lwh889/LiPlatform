@@ -18,8 +18,10 @@ namespace LiForm.Event.EventForm
 {
     public class LiEventAudit : LiAEvent
     {
-        public override void receiveEvent()
+        public override bool receiveEvent()
         {
+            bool bSuccess = false;
+
             LiVoucherFlowModel liVoucherFlowModel = FlowUtil.getCurrentFlow(this.liForm.formCode, Convert.ToString(this.liForm.voucherId));
             if (liVoucherFlowModel != null)
             {
@@ -31,7 +33,7 @@ namespace LiForm.Event.EventForm
                         case ApprovalType.Agree:
                             if(liFlowApprovalForm.bSuccess)
                             {
-                                this.liForm.saveVoucher();
+                                bSuccess = this.liForm.saveVoucher();
                             }
                             else{
                                 MessageUtil.Show(liFlowApprovalForm.resultContent,"温馨提示");
@@ -40,7 +42,7 @@ namespace LiForm.Event.EventForm
                         case ApprovalType.Disagree:
                             if (liFlowApprovalForm.bSuccess)
                             {
-                                this.liForm.saveVoucher();
+                                bSuccess = this.liForm.saveVoucher();
                             }
                             else
                             {
@@ -53,13 +55,14 @@ namespace LiForm.Event.EventForm
             }
             else
             {
-                this.liForm.saveVoucher();
+                bSuccess = this.liForm.saveVoucher();
             }
-            
+
+            return bSuccess;
         }
-        public override void sendEvent()
+        public override bool sendEvent()
         {
-            eventMediator.relay(this); //请中介者转发
+            return eventMediator.relay(this); //请中介者转发
         }
     }
 }

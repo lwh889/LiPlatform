@@ -332,13 +332,16 @@ namespace LiForm.Dev
         public void barButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             ButtonModel buttonModel = (ButtonModel)e.Item.Tag;
-            setVoucherStatus(buttonModel.voucherStatus);
 
             LiAEventMediator liEventMediator = liEventMediatorDict[e.Item.Name];
 
             LiAEvent liEventItemClick = liEventMediator.getLiEvent(e.Item.Name);
             liEventItemClick.focusEntityKey = buttonModel.entityKey;
-            liEventItemClick.sendEvent();
+
+            if (liEventItemClick.sendEvent())
+            {
+                setVoucherStatus(buttonModel.voucherStatus);
+            }
 
         }
 
@@ -736,30 +739,43 @@ namespace LiForm.Dev
         /// <summary>
         /// 保存单据
         /// </summary>
-        public void saveVoucher()
+        public bool saveVoucher()
         {
-            this.getData();
-
-            if (Convert.ToInt32(this.voucherId) > 0)
+            bool bSuccess = false;
+            try
             {
-                //LiContexts.LiContext.getHttpEntity().entityKey = this.formCode;
-                LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).updateEntity(this.formDataDict);
-                MessageUtil.Show(LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).tipStr, "温馨提示");
 
+                this.getData();
+
+                if (Convert.ToInt32(this.voucherId) > 0)
+                {
+                    //LiContexts.LiContext.getHttpEntity().entityKey = this.formCode;
+                    LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).updateEntity(this.formDataDict);
+                    bSuccess = LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).bSuccess;
+                    MessageUtil.Show(LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).tipStr, "温馨提示");
+
+                }
+                else
+                {
+                    if (voucherCodeModel != null)
+                        formDataDict[formModel.codeFieldName] = getVoucherNo();
+
+                    //LiContexts.LiContext.getHttpEntity().entityKey = this.formCode;
+                    LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).newEntity(this.formDataDict);
+                    bSuccess = LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).bSuccess;
+                    MessageUtil.Show(LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).tipStr, "温馨提示");
+
+                }
+
+                this.getEntitys(this.voucherCode);
+                this.loadData();
             }
-            else
+            catch(Exception ex)
             {
-                if (voucherCodeModel != null)
-                    formDataDict[formModel.codeFieldName] = getVoucherNo();
-
-                //LiContexts.LiContext.getHttpEntity().entityKey = this.formCode;
-                LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).newEntity(this.formDataDict);
-                MessageUtil.Show(LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).tipStr, "温馨提示");
-
+                bSuccess = false;
             }
 
-            this.getEntitys(this.voucherCode);
-            this.loadData();
+            return bSuccess;
         }
 
         /// <summary>
@@ -800,7 +816,7 @@ namespace LiForm.Dev
                 paramDict.Add("fieldTextValue", !string.IsNullOrWhiteSpace(voucherCodeModel.fieldTextName) ? formDataDict[voucherCodeModel.fieldTextName] : "");
                 paramDict.Add("fieldDateValue", fieldDateValue.ToString(voucherCodeModel.dateTimeFormat));
                 paramDict.Add("dateValue", fieldDateValue.ToString("yyyy-MM-dd HH:mm:ss"));
-                VoucherNo = Convert.ToString(LiContexts.LiContext.getHttpEntity("sp_getVoucherCode").execProcedureSingleValue_Object( "VoucherNo", paramDict));
+                VoucherNo = Convert.ToString(LiContexts.LiContext.getHttpEntity("sp_getVoucherCode", LiContext.SystemCode).execProcedureSingleValue_Object( "VoucherNo", paramDict));
             }
 
             return VoucherNo;
