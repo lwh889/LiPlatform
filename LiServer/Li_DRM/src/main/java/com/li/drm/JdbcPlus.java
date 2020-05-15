@@ -96,7 +96,16 @@ public abstract class JdbcPlus {
     public List procedureBy(SqlMaker sqlMaker){
         return jdbcTemplate.query(sqlMaker.getSql(), new MapRowMapper());
     }
-
+    /**
+     * 执行存储过程查询
+     * @param procedureModel
+     * @param paramValues
+     * @return
+     */
+    public Integer procedureNoResult(ProcedureModel procedureModel, Map<String,Object> paramValues){
+        SqlMaker sqlMaker = new SqlMakerMsSqlProcedure(procedureModel,paramValues );
+        return jdbcTemplate.update(sqlMaker.getSql());
+    }
     /**
      *
      * @param procedureModel

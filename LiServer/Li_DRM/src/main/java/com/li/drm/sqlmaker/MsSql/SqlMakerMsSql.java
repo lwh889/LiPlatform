@@ -36,7 +36,7 @@ public abstract class SqlMakerMsSql extends SqlMaker {
 
         String paramStr = String.format("@%s_%s",childTableInfo.getKeyName(), childTableInfo.getTableName());
 
-        builder.append(" UPDATE ").append(childTableInfo.getTableName()).append(StringUtils.SPACE);
+        builder.append(" UPDATE ").append(childTableInfo.getDataBaseName()).append(".dbo.").append(childTableInfo.getTableName()).append(StringUtils.SPACE);
         builder.append(" SET ");
 
         for (Map.Entry<String, Object> childEntry : childMap.entrySet()) {
@@ -96,7 +96,7 @@ public abstract class SqlMakerMsSql extends SqlMaker {
         if(keyValue == null){
             makerInsertSql(builder,tableInfo,childTableInfo, jsonModel.values);
         }else{
-            builder.append(String.format(" if exists (select 1 from %s where %s = %s) begin", childTableInfo.getTableName(),childTableInfo.getKeyName(), getColumnValueFormat(keyValue)));
+            builder.append(String.format(" if exists (select 1 from %s.dbo.%s where %s = %s) begin",childTableInfo.getDataBaseName(), childTableInfo.getTableName(),childTableInfo.getKeyName(), getColumnValueFormat(keyValue)));
             makerUpdateSql(builder,keyValue,tableInfo, childTableInfo, jsonModel.values);
             builder.append(" end ");
             builder.append(" else begin ");
@@ -119,7 +119,7 @@ public abstract class SqlMakerMsSql extends SqlMaker {
     @Override
     public void makerChildUpdate(StringBuilder builder, Object primarykeyValue ,TableInfo tableInfo,  TableInfo childTableInfo, List<JsonModel> childList, List<Object> childKeyValue){
         if(childKeyValue != null && childKeyValue.size()>0){
-            builder.append(String.format(" DELETE %s WHERE %s = %s and %s not in ( ",childTableInfo.getTableName(), childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName()), getColumnValueFormat(primarykeyValue), childTableInfo.getKeyName()));
+            builder.append(String.format(" DELETE %s.dbo.%s WHERE %s = %s and %s not in ( ",childTableInfo.getDataBaseName(), childTableInfo.getTableName(), childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName()), getColumnValueFormat(primarykeyValue), childTableInfo.getKeyName()));
             for(Object value : childKeyValue){
                 builder.append( getColumnValueFormat(value)).append(",");
             }
@@ -132,7 +132,7 @@ public abstract class SqlMakerMsSql extends SqlMaker {
             if(keyValue == null){
                 makerInsertSql(builder,tableInfo,childTableInfo, childMap.values);
             }else{
-                builder.append(String.format(" if exists (select 1 from %s where %s = %s) begin", childTableInfo.getTableName(),childTableInfo.getKeyName(), getColumnValueFormat(keyValue)));
+                builder.append(String.format(" if exists (select 1 from %s.dbo.%s where %s = %s) begin", childTableInfo.getDataBaseName(), childTableInfo.getTableName(),childTableInfo.getKeyName(), getColumnValueFormat(keyValue)));
                 makerUpdateSql(builder,keyValue,tableInfo, childTableInfo, childMap.values);
                 builder.append(" end ");
                 builder.append(" else begin ");
@@ -178,7 +178,7 @@ public abstract class SqlMakerMsSql extends SqlMaker {
 
         StringBuilder builderField = new StringBuilder();
         StringBuilder builderValue = new StringBuilder();
-        builder.append(" INSERT INTO ").append(childTableInfo.getTableName()).append(StringUtils.SPACE);
+        builder.append(" INSERT INTO ").append(childTableInfo.getDataBaseName()).append(".dbo.").append(childTableInfo.getTableName()).append(StringUtils.SPACE);
         builderField.append("(" );
         builderValue.append(" VALUES (");
 
@@ -221,7 +221,7 @@ public abstract class SqlMakerMsSql extends SqlMaker {
         for (JsonModel childMap : childList) {
             StringBuilder builderField = new StringBuilder();
             StringBuilder builderValue = new StringBuilder();
-            builder.append(" INSERT INTO ").append(childTableInfo.getTableName()).append(StringUtils.SPACE);
+            builder.append(" INSERT INTO ").append(childTableInfo.getDataBaseName()).append(".dbo.").append(childTableInfo.getTableName()).append(StringUtils.SPACE);
             builderField.append("(" );
             builderValue.append(" VALUES (");
 
@@ -253,7 +253,7 @@ public abstract class SqlMakerMsSql extends SqlMaker {
     @Override
     public String makerProcedureSql(ProcedureModel procedureModel, Map<String, Object> paramValues) {
         StringBuilder builder = new StringBuilder();
-        builder.append("exec sp_executesql N' EXEC ").append(procedureModel.getProcedureName());
+        builder.append("exec sp_executesql N' EXEC ").append(procedureModel.getDataBaseName()).append(".dbo.").append(procedureModel.getProcedureName());
         List<ParamModel> paramModels = procedureModel.getDatas();
         for(ParamModel paramModel : paramModels){
             builder.append(" @").append(paramModel.getParamName()).append(",");

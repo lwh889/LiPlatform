@@ -88,7 +88,6 @@ namespace LiModel.LiConvert
         /// </summary>
         public int id { set; get; }
 
-
         /// <summary>
         /// 转换编码
         /// </summary>

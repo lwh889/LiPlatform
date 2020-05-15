@@ -130,6 +130,16 @@ namespace LiHttp.GetEntity
                 throw (new LiHttpException(resultContent));
             }
         }
+        public void execProcedureNoResult(Dictionary<string, object> paramDict)
+        {
+            ProcedureParamModel paramModel = liHttpProcedure.getProcedureParamModel(paramDict);
+
+            bSuccess = liHttpProcedure.httpPost(LiHttpSetting_DrmAdmin.getHttpProcedure("procedureNoResult"), paramModel, out resultContent);
+            if (!bSuccess)
+            {
+                throw (new LiHttpException(resultContent));
+            }
+        }
         public DataTable execProcedure_DataTable( Dictionary<string, object> paramDict)
         {
             execProcedure(paramDict);

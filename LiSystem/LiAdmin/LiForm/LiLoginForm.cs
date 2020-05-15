@@ -137,7 +137,10 @@ namespace LiForm
             LiContexts.LiContext.SeverIP = txtSeverIP.Text;
             LiLog.LogUtil.Info("登录系统");
             LiContexts.LiContext.SystemInfo = systemInfoModel.getSingleByDataSource(Convert.ToString(gridLookUpEdit_systemInfo.EditValue)) as SystemInfoModel;
-            
+
+             ConfigUtil.SetKey("LoginInfoServerUrl", this.txtSeverIP.Text);
+             ConfigUtil.SetKey("LoginInfoUserCode", this.txtUserCode.Text);
+             ConfigUtil.SetKey("LoginInfoSystemInfo", Convert.ToString(this.gridLookUpEdit_systemInfo.EditValue));
 
             if (string.IsNullOrEmpty(userModel.skinName))
             {
@@ -154,6 +157,9 @@ namespace LiForm
         private void LiLoginForm_Load(object sender, EventArgs e)
         {
             this.dateLogin.EditValue = DateTime.Now;
+            this.txtSeverIP.Text = ConfigUtil.GetKey("LoginInfoServerUrl");
+            this.txtUserCode.Text = ConfigUtil.GetKey("LoginInfoUserCode");
+            this.gridLookUpEdit_systemInfo.EditValue = ConfigUtil.GetKey("LoginInfoSystemInfo");
         }
 
         private void TxtSeverIP_EditValueChanged(object sender, EventArgs e)

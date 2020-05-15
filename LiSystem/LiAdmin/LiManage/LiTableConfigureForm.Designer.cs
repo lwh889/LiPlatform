@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiTableConfigureForm));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnNew = new DevExpress.XtraBars.BarButtonItem();
@@ -97,7 +98,7 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
-            this.barManager3 = new DevExpress.XtraBars.BarManager();
+            this.barManager3 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar5 = new DevExpress.XtraBars.Bar();
             this.btnAddRowWhere = new DevExpress.XtraBars.BarButtonItem();
             this.btnInsertRowWhere = new DevExpress.XtraBars.BarButtonItem();
@@ -105,6 +106,11 @@
             this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
+            this.gridLookUpEdit_systemCode = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.chartPropertyGridControl1 = new DevExpress.XtraCharts.Designer.ChartPropertyGridControl();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -149,6 +155,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_databaseGeneratedType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit3View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_systemCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -162,11 +172,12 @@
             this.btnExit,
             this.btnStatus});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbon.MaxItemId = 6;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(934, 147);
+            this.ribbon.Size = new System.Drawing.Size(1334, 225);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnNew
@@ -239,13 +250,16 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 492);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 774);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(934, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1334, 48);
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.chartPropertyGridControl1);
+            this.layoutControl1.Controls.Add(this.gridLookUpEdit_systemCode);
             this.layoutControl1.Controls.Add(this.memoEdit_tableDesc);
             this.layoutControl1.Controls.Add(this.textEdit_keyName);
             this.layoutControl1.Controls.Add(this.gridLookUpEdit_className);
@@ -259,42 +273,46 @@
             this.layoutControl1.Controls.Add(this.gridLookUpEdit_entityOrder);
             this.layoutControl1.Controls.Add(this.textEdit_entityKey);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 147);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 225);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(934, 171);
+            this.layoutControl1.Size = new System.Drawing.Size(1334, 269);
             this.layoutControl1.TabIndex = 2;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // memoEdit_tableDesc
             // 
-            this.memoEdit_tableDesc.Location = new System.Drawing.Point(75, 108);
+            this.memoEdit_tableDesc.Location = new System.Drawing.Point(111, 124);
+            this.memoEdit_tableDesc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.memoEdit_tableDesc.MenuManager = this.ribbon;
             this.memoEdit_tableDesc.Name = "memoEdit_tableDesc";
-            this.memoEdit_tableDesc.Size = new System.Drawing.Size(833, 41);
+            this.memoEdit_tableDesc.Size = new System.Drawing.Size(801, 90);
             this.memoEdit_tableDesc.StyleController = this.layoutControl1;
             this.memoEdit_tableDesc.TabIndex = 15;
             this.memoEdit_tableDesc.Tag = "LiTableConfigureForm.tableDesc";
             // 
             // textEdit_keyName
             // 
-            this.textEdit_keyName.Location = new System.Drawing.Point(375, 84);
+            this.textEdit_keyName.Location = new System.Drawing.Point(411, 90);
+            this.textEdit_keyName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textEdit_keyName.MenuManager = this.ribbon;
             this.textEdit_keyName.Name = "textEdit_keyName";
-            this.textEdit_keyName.Size = new System.Drawing.Size(233, 20);
+            this.textEdit_keyName.Size = new System.Drawing.Size(201, 28);
             this.textEdit_keyName.StyleController = this.layoutControl1;
             this.textEdit_keyName.TabIndex = 14;
             this.textEdit_keyName.Tag = "LiTableConfigureForm.keyName";
             // 
             // gridLookUpEdit_className
             // 
-            this.gridLookUpEdit_className.Location = new System.Drawing.Point(75, 84);
+            this.gridLookUpEdit_className.Location = new System.Drawing.Point(111, 90);
+            this.gridLookUpEdit_className.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridLookUpEdit_className.MenuManager = this.ribbon;
             this.gridLookUpEdit_className.Name = "gridLookUpEdit_className";
             this.gridLookUpEdit_className.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookUpEdit_className.Properties.View = this.gridLookUpEdit4View;
-            this.gridLookUpEdit_className.Size = new System.Drawing.Size(233, 20);
+            this.gridLookUpEdit_className.Size = new System.Drawing.Size(201, 28);
             this.gridLookUpEdit_className.StyleController = this.layoutControl1;
             this.gridLookUpEdit_className.TabIndex = 13;
             this.gridLookUpEdit_className.Tag = "LiTableConfigureForm.className";
@@ -308,53 +326,58 @@
             // 
             // textEdit_tableAbbName
             // 
-            this.textEdit_tableAbbName.Location = new System.Drawing.Point(675, 60);
+            this.textEdit_tableAbbName.Location = new System.Drawing.Point(711, 66);
+            this.textEdit_tableAbbName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textEdit_tableAbbName.MenuManager = this.ribbon;
             this.textEdit_tableAbbName.Name = "textEdit_tableAbbName";
-            this.textEdit_tableAbbName.Size = new System.Drawing.Size(233, 20);
+            this.textEdit_tableAbbName.Size = new System.Drawing.Size(201, 28);
             this.textEdit_tableAbbName.StyleController = this.layoutControl1;
             this.textEdit_tableAbbName.TabIndex = 12;
             this.textEdit_tableAbbName.Tag = "LiTableConfigureForm.tableAbbName";
             // 
             // textEdit_tableAliasName
             // 
-            this.textEdit_tableAliasName.Location = new System.Drawing.Point(375, 60);
+            this.textEdit_tableAliasName.Location = new System.Drawing.Point(411, 66);
+            this.textEdit_tableAliasName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textEdit_tableAliasName.MenuManager = this.ribbon;
             this.textEdit_tableAliasName.Name = "textEdit_tableAliasName";
-            this.textEdit_tableAliasName.Size = new System.Drawing.Size(233, 20);
+            this.textEdit_tableAliasName.Size = new System.Drawing.Size(201, 28);
             this.textEdit_tableAliasName.StyleController = this.layoutControl1;
             this.textEdit_tableAliasName.TabIndex = 11;
             this.textEdit_tableAliasName.Tag = "LiTableConfigureForm.tableAliasName";
             // 
             // textEdit_tableName
             // 
-            this.textEdit_tableName.Location = new System.Drawing.Point(75, 60);
+            this.textEdit_tableName.Location = new System.Drawing.Point(111, 66);
+            this.textEdit_tableName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textEdit_tableName.MenuManager = this.ribbon;
             this.textEdit_tableName.Name = "textEdit_tableName";
-            this.textEdit_tableName.Size = new System.Drawing.Size(233, 20);
+            this.textEdit_tableName.Size = new System.Drawing.Size(201, 28);
             this.textEdit_tableName.StyleController = this.layoutControl1;
             this.textEdit_tableName.TabIndex = 10;
             this.textEdit_tableName.Tag = "LiTableConfigureForm.tableName";
             // 
             // textEdit_entityColumnName
             // 
-            this.textEdit_entityColumnName.Location = new System.Drawing.Point(675, 36);
+            this.textEdit_entityColumnName.Location = new System.Drawing.Point(711, 42);
+            this.textEdit_entityColumnName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textEdit_entityColumnName.MenuManager = this.ribbon;
             this.textEdit_entityColumnName.Name = "textEdit_entityColumnName";
-            this.textEdit_entityColumnName.Size = new System.Drawing.Size(233, 20);
+            this.textEdit_entityColumnName.Size = new System.Drawing.Size(201, 28);
             this.textEdit_entityColumnName.StyleController = this.layoutControl1;
             this.textEdit_entityColumnName.TabIndex = 9;
             this.textEdit_entityColumnName.Tag = "LiTableConfigureForm.entityColumnName";
             // 
             // gridLookUpEdit_entityType
             // 
-            this.gridLookUpEdit_entityType.Location = new System.Drawing.Point(375, 36);
+            this.gridLookUpEdit_entityType.Location = new System.Drawing.Point(411, 42);
+            this.gridLookUpEdit_entityType.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridLookUpEdit_entityType.MenuManager = this.ribbon;
             this.gridLookUpEdit_entityType.Name = "gridLookUpEdit_entityType";
             this.gridLookUpEdit_entityType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookUpEdit_entityType.Properties.View = this.gridLookUpEdit3View;
-            this.gridLookUpEdit_entityType.Size = new System.Drawing.Size(233, 20);
+            this.gridLookUpEdit_entityType.Size = new System.Drawing.Size(201, 28);
             this.gridLookUpEdit_entityType.StyleController = this.layoutControl1;
             this.gridLookUpEdit_entityType.TabIndex = 8;
             this.gridLookUpEdit_entityType.Tag = "LiTableConfigureForm.entityType";
@@ -368,13 +391,14 @@
             // 
             // gridLookUpEdit_dataBaseName
             // 
-            this.gridLookUpEdit_dataBaseName.Location = new System.Drawing.Point(75, 36);
+            this.gridLookUpEdit_dataBaseName.Location = new System.Drawing.Point(111, 42);
+            this.gridLookUpEdit_dataBaseName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridLookUpEdit_dataBaseName.MenuManager = this.ribbon;
             this.gridLookUpEdit_dataBaseName.Name = "gridLookUpEdit_dataBaseName";
             this.gridLookUpEdit_dataBaseName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookUpEdit_dataBaseName.Properties.View = this.gridLookUpEdit2View;
-            this.gridLookUpEdit_dataBaseName.Size = new System.Drawing.Size(233, 20);
+            this.gridLookUpEdit_dataBaseName.Size = new System.Drawing.Size(201, 28);
             this.gridLookUpEdit_dataBaseName.StyleController = this.layoutControl1;
             this.gridLookUpEdit_dataBaseName.TabIndex = 7;
             this.gridLookUpEdit_dataBaseName.Tag = "LiTableConfigureForm.dataBaseName";
@@ -388,23 +412,25 @@
             // 
             // textEdit_entityName
             // 
-            this.textEdit_entityName.Location = new System.Drawing.Point(375, 12);
+            this.textEdit_entityName.Location = new System.Drawing.Point(411, 18);
+            this.textEdit_entityName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textEdit_entityName.MenuManager = this.ribbon;
             this.textEdit_entityName.Name = "textEdit_entityName";
-            this.textEdit_entityName.Size = new System.Drawing.Size(233, 20);
+            this.textEdit_entityName.Size = new System.Drawing.Size(201, 28);
             this.textEdit_entityName.StyleController = this.layoutControl1;
             this.textEdit_entityName.TabIndex = 6;
             this.textEdit_entityName.Tag = "LiTableConfigureForm.entityName";
             // 
             // gridLookUpEdit_entityOrder
             // 
-            this.gridLookUpEdit_entityOrder.Location = new System.Drawing.Point(675, 12);
+            this.gridLookUpEdit_entityOrder.Location = new System.Drawing.Point(711, 18);
+            this.gridLookUpEdit_entityOrder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridLookUpEdit_entityOrder.MenuManager = this.ribbon;
             this.gridLookUpEdit_entityOrder.Name = "gridLookUpEdit_entityOrder";
             this.gridLookUpEdit_entityOrder.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookUpEdit_entityOrder.Properties.View = this.gridLookUpEdit1View;
-            this.gridLookUpEdit_entityOrder.Size = new System.Drawing.Size(233, 20);
+            this.gridLookUpEdit_entityOrder.Size = new System.Drawing.Size(201, 28);
             this.gridLookUpEdit_entityOrder.StyleController = this.layoutControl1;
             this.gridLookUpEdit_entityOrder.TabIndex = 5;
             this.gridLookUpEdit_entityOrder.Tag = "LiTableConfigureForm.entityOrder";
@@ -418,10 +444,11 @@
             // 
             // textEdit_entityKey
             // 
-            this.textEdit_entityKey.Location = new System.Drawing.Point(75, 12);
+            this.textEdit_entityKey.Location = new System.Drawing.Point(111, 18);
+            this.textEdit_entityKey.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textEdit_entityKey.MenuManager = this.ribbon;
             this.textEdit_entityKey.Name = "textEdit_entityKey";
-            this.textEdit_entityKey.Size = new System.Drawing.Size(233, 20);
+            this.textEdit_entityKey.Size = new System.Drawing.Size(201, 28);
             this.textEdit_entityKey.StyleController = this.layoutControl1;
             this.textEdit_entityKey.TabIndex = 4;
             this.textEdit_entityKey.Tag = "LiTableConfigureForm.entityKey";
@@ -443,10 +470,12 @@
             this.layoutControlItem9,
             this.layoutControlItem10,
             this.layoutControlItem11,
-            this.layoutControlItem12});
+            this.layoutControlItem12,
+            this.layoutControlItem13,
+            this.layoutControlItem14});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(934, 171);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1334, 269);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -459,14 +488,14 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(300, 24);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.Text = "唯一标识";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(60, 14);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(90, 22);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 141);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 202);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(914, 10);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1304, 14);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -476,10 +505,10 @@
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(300, 24);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(118, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(314, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(704, 24);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "依赖关系";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(60, 14);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem3
             // 
@@ -491,7 +520,7 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(300, 24);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.Text = "名称";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 14);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem4
             // 
@@ -503,7 +532,7 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(300, 24);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.Text = "所属数据库";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(60, 14);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem5
             // 
@@ -515,7 +544,7 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(300, 24);
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.Text = "类型";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(60, 14);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem6
             // 
@@ -524,10 +553,10 @@
             this.layoutControlItem6.MaxSize = new System.Drawing.Size(300, 24);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(118, 24);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(314, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(704, 24);
             this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem6.Text = "字段名";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(60, 14);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem7
             // 
@@ -539,7 +568,7 @@
             this.layoutControlItem7.Size = new System.Drawing.Size(300, 24);
             this.layoutControlItem7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem7.Text = "数据库表名";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(60, 14);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem8
             // 
@@ -551,7 +580,7 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(300, 24);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.Text = "表别名";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(60, 14);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem9
             // 
@@ -560,10 +589,10 @@
             this.layoutControlItem9.MaxSize = new System.Drawing.Size(300, 24);
             this.layoutControlItem9.MinSize = new System.Drawing.Size(118, 24);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(314, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(704, 24);
             this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem9.Text = "表中文名称";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(60, 14);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem10
             // 
@@ -572,10 +601,10 @@
             this.layoutControlItem10.MaxSize = new System.Drawing.Size(300, 24);
             this.layoutControlItem10.MinSize = new System.Drawing.Size(118, 24);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(300, 24);
+            this.layoutControlItem10.Size = new System.Drawing.Size(300, 34);
             this.layoutControlItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem10.Text = "类名";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(60, 14);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem11
             // 
@@ -584,22 +613,22 @@
             this.layoutControlItem11.MaxSize = new System.Drawing.Size(300, 24);
             this.layoutControlItem11.MinSize = new System.Drawing.Size(118, 24);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(614, 24);
+            this.layoutControlItem11.Size = new System.Drawing.Size(300, 34);
             this.layoutControlItem11.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem11.Text = "主键名称";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(60, 14);
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(90, 22);
             // 
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.memoEdit_tableDesc;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 106);
             this.layoutControlItem12.MaxSize = new System.Drawing.Size(900, 0);
             this.layoutControlItem12.MinSize = new System.Drawing.Size(78, 20);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(914, 45);
+            this.layoutControlItem12.Size = new System.Drawing.Size(1304, 96);
             this.layoutControlItem12.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem12.Text = "描述";
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(60, 14);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(90, 22);
             // 
             // panelControl1
             // 
@@ -609,22 +638,25 @@
             this.panelControl1.Controls.Add(this.barDockControl6);
             this.panelControl1.Controls.Add(this.barDockControl5);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 318);
+            this.panelControl1.Location = new System.Drawing.Point(0, 494);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(934, 174);
+            this.panelControl1.Size = new System.Drawing.Size(1334, 280);
             this.panelControl1.TabIndex = 3;
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 26);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gridControl1.Location = new System.Drawing.Point(3, 39);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemGridLookUpEdit_columnType,
             this.repositoryItemGridLookUpEdit_relationshipType,
             this.repositoryItemGridLookUpEdit_databaseGeneratedType});
-            this.gridControl1.Size = new System.Drawing.Size(930, 146);
+            this.gridControl1.Size = new System.Drawing.Size(1328, 238);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.Tag = "LiTableConfigureForm.datas";
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -872,9 +904,10 @@
             // 
             this.barDockControl7.CausesValidation = false;
             this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl7.Location = new System.Drawing.Point(2, 26);
+            this.barDockControl7.Location = new System.Drawing.Point(3, 39);
             this.barDockControl7.Manager = this.barManager3;
-            this.barDockControl7.Size = new System.Drawing.Size(0, 146);
+            this.barDockControl7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControl7.Size = new System.Drawing.Size(0, 238);
             // 
             // barManager3
             // 
@@ -940,35 +973,89 @@
             // 
             this.barDockControl5.CausesValidation = false;
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl5.Location = new System.Drawing.Point(2, 2);
+            this.barDockControl5.Location = new System.Drawing.Point(3, 3);
             this.barDockControl5.Manager = this.barManager3;
-            this.barDockControl5.Size = new System.Drawing.Size(930, 24);
+            this.barDockControl5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControl5.Size = new System.Drawing.Size(1328, 36);
             // 
             // barDockControl6
             // 
             this.barDockControl6.CausesValidation = false;
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl6.Location = new System.Drawing.Point(2, 172);
+            this.barDockControl6.Location = new System.Drawing.Point(3, 277);
             this.barDockControl6.Manager = this.barManager3;
-            this.barDockControl6.Size = new System.Drawing.Size(930, 0);
+            this.barDockControl6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControl6.Size = new System.Drawing.Size(1328, 0);
             // 
             // barDockControl8
             // 
             this.barDockControl8.CausesValidation = false;
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl8.Location = new System.Drawing.Point(932, 26);
+            this.barDockControl8.Location = new System.Drawing.Point(1331, 39);
             this.barDockControl8.Manager = this.barManager3;
-            this.barDockControl8.Size = new System.Drawing.Size(0, 146);
+            this.barDockControl8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControl8.Size = new System.Drawing.Size(0, 238);
+            // 
+            // gridLookUpEdit_systemCode
+            // 
+            this.gridLookUpEdit_systemCode.Location = new System.Drawing.Point(711, 90);
+            this.gridLookUpEdit_systemCode.MenuManager = this.ribbon;
+            this.gridLookUpEdit_systemCode.Name = "gridLookUpEdit_systemCode";
+            this.gridLookUpEdit_systemCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit_systemCode.Properties.View = this.gridView2;
+            this.gridLookUpEdit_systemCode.Size = new System.Drawing.Size(201, 28);
+            this.gridLookUpEdit_systemCode.StyleController = this.layoutControl1;
+            this.gridLookUpEdit_systemCode.TabIndex = 16;
+            this.gridLookUpEdit_systemCode.Tag = "LiTableConfigureForm.systemCode";
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.gridLookUpEdit_systemCode;
+            this.layoutControlItem13.Location = new System.Drawing.Point(600, 72);
+            this.layoutControlItem13.MaxSize = new System.Drawing.Size(300, 34);
+            this.layoutControlItem13.MinSize = new System.Drawing.Size(221, 34);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(704, 34);
+            this.layoutControlItem13.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem13.Text = "系统代码";
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(90, 22);
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // chartPropertyGridControl1
+            // 
+            this.chartPropertyGridControl1.Location = new System.Drawing.Point(18, 234);
+            this.chartPropertyGridControl1.Name = "chartPropertyGridControl1";
+            this.chartPropertyGridControl1.SelectedObject = null;
+            this.chartPropertyGridControl1.ServiceProvider = null;
+            this.chartPropertyGridControl1.Size = new System.Drawing.Size(1298, 17);
+            this.chartPropertyGridControl1.TabIndex = 17;
+            // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.chartPropertyGridControl1;
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 216);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(1304, 23);
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem14.TextVisible = false;
             // 
             // LiTableConfigureForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 523);
+            this.ClientSize = new System.Drawing.Size(1334, 822);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LiTableConfigureForm";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
@@ -1019,6 +1106,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_databaseGeneratedType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit3View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_systemCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1102,5 +1193,10 @@
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit2View;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_databaseGeneratedType;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit3View;
+        private DevExpress.XtraCharts.Designer.ChartPropertyGridControl chartPropertyGridControl1;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit_systemCode;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
     }
 }

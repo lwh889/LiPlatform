@@ -106,9 +106,9 @@ public class SqlMakerMsSqlDelete extends SqlMakerMsSql implements IDelete {
 
         for (Map.Entry<String, TableInfo> entry : tableInfoMap.entrySet()) {
             TableInfo childTableInfo = entry.getValue();
-            builder.append(" DELETE ").append(childTableInfo.getTableName()).append(" WHERE ").append( childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName())).append(" = ").append(getColumnValueFormat(keyValue));
+            builder.append(" DELETE ").append(tableInfo.getDataBaseName()).append(".dbo.").append(childTableInfo.getTableName()).append(" WHERE ").append( childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName())).append(" = ").append(getColumnValueFormat(keyValue));
         }
-        builder.append(" DELETE ").append(tableInfo.getTableName()).append(" WHERE ").append(tableInfo.getKeyName()).append(" = ").append(getColumnValueFormat(keyValue));
+        builder.append(" DELETE ").append(tableInfo.getDataBaseName()).append(".dbo.").append(tableInfo.getTableName()).append(" WHERE ").append(tableInfo.getKeyName()).append(" = ").append(getColumnValueFormat(keyValue));
 
         sql = builder.toString();
         logger.info(sql);

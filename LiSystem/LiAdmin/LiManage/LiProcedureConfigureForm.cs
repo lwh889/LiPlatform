@@ -138,6 +138,7 @@ namespace LiManage
         #endregion
 
         #region 引用数据源
+        private SystemInfoModel systemInfoModel = new SystemInfoModel();
         private ClassName className = new ClassName();
         private ColumnType columnType = new ColumnType();
         private DatabaseGeneratedType databaseGeneratedType = new DatabaseGeneratedType();
@@ -172,6 +173,8 @@ namespace LiManage
 
         public void InitData()
         {
+            systemInfoModel.setDataSource(LiContexts.LiContext.getHttpEntity(LiEntityKey.SystemInfo).getEntityList<SystemInfoModel>());
+
             //读取Form上的控件
             DevFormUtil.getControlInForm(formID + ".", layoutControlItemDict, controlDict, this);
             DevFormUtil.getGridColumnInForm(formID + ".", gridColumnDict, this);
@@ -200,6 +203,8 @@ namespace LiManage
 
         public void InitControl()
         {
+            GridlookUpEditUtil.InitDefaultRefControl(GridlookUpEditShowMode.VALUE, systemInfoModel.getValueMember(), systemInfoModel.getDisplayMember(), systemInfoModel.getSearchColumns(), systemInfoModel.getDisplayColumns(), systemInfoModel.getDictModelDesc(), gridLookUpEdit_systemCode, this, systemInfoModel.getDataSource<List<SystemInfoModel>>());
+
             GridlookUpEditRepositoryItemUtil.InitDefaultComboBoxControl(columnType.getValueMember(), columnType.getDisplayMember(), columnType.getSearchColumns(), columnType.getDisplayColumns(), repositoryItemGridLookUpEdit_paramType, this, columnType.getDataSource());
 
             GridlookUpEditShowModel gridlookUpEditShowModelComboBox_ComboBox = refControls["sysDatabases"];

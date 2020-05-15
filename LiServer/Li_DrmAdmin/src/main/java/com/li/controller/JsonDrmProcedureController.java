@@ -47,4 +47,26 @@ public class JsonDrmProcedureController {
         }
         return response;
     }
+
+    @PostMapping("/procedureNoResult")
+    R procedureNoResult(@RequestBody Map<String, Object> params) {
+        R response ;
+        try{
+            List<ProcedureModel> procedureModels = jdbcService.getProcedureInfo(String.valueOf( params.get("entityKey")),String.valueOf(params.get("systemCode")));
+            //List<ProcedureModel> procedureModels = jdbcService.queryBy(ProcedureModel.class, "entityKey", params.get("entityKey"));
+
+            //List<JsonModel> jsonModels = jdbcService.queryBy_Json(tableInfos);
+
+            Map<String, Object> datas = ( Map<String, Object> )params.get("datas");
+
+            Integer i = jdbcService.procedureNoResult_Json(procedureModels.get(0), datas);
+            response = new R();
+            response.put("data", i);
+            return response;
+        }catch (Exception ex){
+            logger.info("procedure",ex);
+            response = R.error520(ex.getMessage());
+        }
+        return response;
+    }
 }

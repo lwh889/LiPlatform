@@ -177,8 +177,8 @@ public class SqlMakerMsSqlUpdata extends SqlMakerMsSql implements IUpdata {
 
             StringBuilder builderDelete2 = new StringBuilder();
             if(StringUtils.isNotNull(limitSelectSql)){
-                builderDelete2.append(String.format(" DELETE %s WHERE %s in (  %s   ) "
-                        , childTableInfo.getTableName(), childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName()),limitSelectSql ));
+                builderDelete2.append(String.format(" DELETE %s.dbo.%s WHERE %s in (  %s   ) "
+                        ,childTableInfo.getDataBaseName(), childTableInfo.getTableName(), childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName()),limitSelectSql ));
                 deleteSqls.push(builderDelete2.toString());
             }
 
@@ -188,8 +188,8 @@ public class SqlMakerMsSqlUpdata extends SqlMakerMsSql implements IUpdata {
             if(jsonModels == null ){
                 StringBuilder builderDelete = new StringBuilder();
                 StringBuilder buildSelect = new StringBuilder();
-                builderDelete.append(String.format(" DELETE %s WHERE %s = %s  ", childTableInfo.getTableName(),childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName()), getColumnValueFormat(primaryKeyValue) )) ;
-                buildSelect.append(String.format(" SELECT %s FROM %s WHERE %s = %s  ", childTableInfo.getKeyName(), childTableInfo.getTableName(),childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName()), getColumnValueFormat(primaryKeyValue) )) ;
+                builderDelete.append(String.format(" DELETE %s.dbo.%s WHERE %s = %s  ",childTableInfo.getDataBaseName(), childTableInfo.getTableName(),childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName()), getColumnValueFormat(primaryKeyValue) )) ;
+                buildSelect.append(String.format(" SELECT %s FROM %s.dbo.%s WHERE %s = %s  ", childTableInfo.getKeyName(),childTableInfo.getDataBaseName(), childTableInfo.getTableName(),childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName()), getColumnValueFormat(primaryKeyValue) )) ;
                 deleteSqls.push(builderDelete.toString());
                 makeDeleteSql(null,buildSelect.toString(), childTableInfo, null, deleteSqls);
             }
@@ -200,8 +200,8 @@ public class SqlMakerMsSqlUpdata extends SqlMakerMsSql implements IUpdata {
                     StringBuilder buildSelect = new StringBuilder();
 
                     List<Object> objects = updateRelationKeyValueMap.get(tableInfo.getTableInfoMapKey(childTableInfo, tableInfo.getTableInfoMap()));
-                    builderDelete.append(String.format(" DELETE %s WHERE %s = %s and %s not in (", childTableInfo.getTableName(),childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName()), getColumnValueFormat(primaryKeyValue), childTableInfo.getKeyName())) ;
-                    buildSelect.append(String.format(" SELECT %s FROM %s WHERE %s = %s and %s not in (",childTableInfo.getKeyName(), childTableInfo.getTableName(),childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName()),getColumnValueFormat(primaryKeyValue), childTableInfo.getKeyName() ));
+                    builderDelete.append(String.format(" DELETE %s.dbo.%s WHERE %s = %s and %s not in (",childTableInfo.getDataBaseName(), childTableInfo.getTableName(),childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName()), getColumnValueFormat(primaryKeyValue), childTableInfo.getKeyName())) ;
+                    buildSelect.append(String.format(" SELECT %s FROM %s.dbo.%s WHERE %s = %s and %s not in (",childTableInfo.getKeyName(),childTableInfo.getDataBaseName(), childTableInfo.getTableName(),childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName()),getColumnValueFormat(primaryKeyValue), childTableInfo.getKeyName() ));
 
 //null
                     for(Object value : objects){

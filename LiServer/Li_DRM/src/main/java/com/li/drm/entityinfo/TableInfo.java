@@ -19,6 +19,10 @@ public class TableInfo {
      */
     private String className;
     /**
+     * 系统代码
+     */
+    private String systemCode;
+    /**
      * 表名
      */
     private String tableName;

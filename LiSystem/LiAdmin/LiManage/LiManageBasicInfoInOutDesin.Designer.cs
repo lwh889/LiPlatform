@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiManageBasicInfoInOutDesin));
             DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer dockingContainer1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer();
-            this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup();
-            this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+            this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup(this.components);
+            this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnGetTableInfo = new DevExpress.XtraBars.BarButtonItem();
             this.btnGetOutInfo = new DevExpress.XtraBars.BarButtonItem();
@@ -44,7 +45,7 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -82,8 +83,11 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager();
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
+            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.gridLookUpEdit_systemCode = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
@@ -117,6 +121,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_systemCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // documentGroup1
@@ -294,6 +301,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.gridLookUpEdit_systemCode);
             this.layoutControl1.Controls.Add(this.gridLookUpEdit_DataBaseName);
             this.layoutControl1.Controls.Add(this.textEdit_keyName);
             this.layoutControl1.Controls.Add(this.memoEdit_tableDesc);
@@ -345,7 +353,7 @@
             // 
             // memoEdit_tableDesc
             // 
-            this.memoEdit_tableDesc.Location = new System.Drawing.Point(111, 66);
+            this.memoEdit_tableDesc.Location = new System.Drawing.Point(111, 100);
             this.memoEdit_tableDesc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.memoEdit_tableDesc.MenuManager = this.ribbon;
             this.memoEdit_tableDesc.Name = "memoEdit_tableDesc";
@@ -410,10 +418,11 @@
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem6,
-            this.layoutControlItem7});
+            this.layoutControlItem7,
+            this.layoutControlItem8});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1498, 108);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1498, 142);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -431,7 +440,7 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 68);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 102);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(1468, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -475,7 +484,7 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.memoEdit_tableDesc;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 82);
             this.layoutControlItem5.MaxSize = new System.Drawing.Size(900, 0);
             this.layoutControlItem5.MinSize = new System.Drawing.Size(77, 20);
             this.layoutControlItem5.Name = "layoutControlItem5";
@@ -691,6 +700,38 @@
             this.tabbedView1.RootContainer.Nodes.AddRange(new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer[] {
             dockingContainer1});
             // 
+            // gridLookUpEdit_systemCode
+            // 
+            this.gridLookUpEdit_systemCode.Location = new System.Drawing.Point(111, 66);
+            this.gridLookUpEdit_systemCode.MenuManager = this.ribbon;
+            this.gridLookUpEdit_systemCode.Name = "gridLookUpEdit_systemCode";
+            this.gridLookUpEdit_systemCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit_systemCode.Properties.View = this.gridView2;
+            this.gridLookUpEdit_systemCode.Size = new System.Drawing.Size(201, 28);
+            this.gridLookUpEdit_systemCode.StyleController = this.layoutControl1;
+            this.gridLookUpEdit_systemCode.TabIndex = 8;
+            this.gridLookUpEdit_systemCode.Tag = "LiManageBasicInfoInOutDesin.systemCode";
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.gridLookUpEdit_systemCode;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem8.MaxSize = new System.Drawing.Size(300, 34);
+            this.layoutControlItem8.MinSize = new System.Drawing.Size(149, 34);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(1468, 34);
+            this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem8.Text = "系统代码";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(90, 22);
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
             // LiManageBasicInfoInOutDesin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -738,6 +779,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_systemCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -799,5 +843,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem btnModify;
         private DevExpress.XtraBars.BarButtonItem btnStatus;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit_systemCode;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
     }
 }

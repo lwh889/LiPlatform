@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiFlowForm));
             DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer dockingContainer1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer();
-            this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup(this.components);
-            this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
+            this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup();
+            this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnNew = new DevExpress.XtraBars.BarButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
             this.btnSave = new DevExpress.XtraBars.BarButtonItem();
             this.btnExit = new DevExpress.XtraBars.BarButtonItem();
             this.btnStatus = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRelease = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.graphControl1 = new LiFlow.UI.FlowDesignControl();
@@ -68,9 +68,8 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.btnRelease = new DevExpress.XtraBars.BarButtonItem();
+            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager();
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
@@ -130,11 +129,12 @@
             this.btnStatus,
             this.btnRelease});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbon.MaxItemId = 7;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(975, 147);
+            this.ribbon.Size = new System.Drawing.Size(1393, 225);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnNew
@@ -179,6 +179,15 @@
             this.btnStatus.Name = "btnStatus";
             this.btnStatus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStatus_ItemClick);
             // 
+            // btnRelease
+            // 
+            this.btnRelease.Caption = "发布";
+            this.btnRelease.Id = 6;
+            this.btnRelease.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRelease.ImageOptions.Image")));
+            this.btnRelease.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnRelease.ImageOptions.LargeImage")));
+            this.btnRelease.Name = "btnRelease";
+            this.btnRelease.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRelease_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -200,10 +209,11 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 528);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 830);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(975, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1393, 48);
             // 
             // dockManager1
             // 
@@ -239,7 +249,7 @@
             this.dockPanel1_Container.Controls.Add(this.graphControl1);
             this.dockPanel1_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(554, 234);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(970, 444);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // graphControl1
@@ -248,7 +258,7 @@
             this.graphControl1.Location = new System.Drawing.Point(0, 0);
             this.graphControl1.Name = "graphControl1";
             this.graphControl1.ShowGrid = true;
-            this.graphControl1.Size = new System.Drawing.Size(554, 234);
+            this.graphControl1.Size = new System.Drawing.Size(970, 444);
             this.graphControl1.TabIndex = 0;
             this.graphControl1.OnShowProps += new LiFlow.UI.FlowDesignControl.ShowProps(this.graphControl1_OnShowProps);
             this.graphControl1.OnLiDoubleClick += new LiFlow.UI.FlowDesignControl.LiDoubleClick(this.graphControl1_OnLiDoubleClick);
@@ -263,26 +273,29 @@
             this.dockPanel2.Controls.Add(this.dockPanel2_Container);
             this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel2.ID = new System.Guid("9034ef4d-e989-4bd6-9917-d9e059b5e221");
-            this.dockPanel2.Location = new System.Drawing.Point(712, 147);
+            this.dockPanel2.Location = new System.Drawing.Point(1130, 225);
+            this.dockPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel2.Name = "dockPanel2";
             this.dockPanel2.OriginalSize = new System.Drawing.Size(263, 200);
-            this.dockPanel2.Size = new System.Drawing.Size(263, 381);
+            this.dockPanel2.Size = new System.Drawing.Size(263, 605);
             this.dockPanel2.Text = "节点信息";
             // 
             // dockPanel2_Container
             // 
             this.dockPanel2_Container.Controls.Add(this.propertyGridControl1);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(5, 23);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(9, 35);
+            this.dockPanel2_Container.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(254, 354);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(248, 564);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // propertyGridControl1
             // 
             this.propertyGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertyGridControl1.Location = new System.Drawing.Point(0, 0);
+            this.propertyGridControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.propertyGridControl1.Name = "propertyGridControl1";
-            this.propertyGridControl1.Size = new System.Drawing.Size(254, 354);
+            this.propertyGridControl1.Size = new System.Drawing.Size(248, 564);
             this.propertyGridControl1.TabIndex = 0;
             // 
             // dockPanel3
@@ -290,26 +303,29 @@
             this.dockPanel3.Controls.Add(this.dockPanel3_Container);
             this.dockPanel3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanel3.ID = new System.Guid("9b0005e3-01ca-469c-ba8c-4969298dda11");
-            this.dockPanel3.Location = new System.Drawing.Point(0, 147);
+            this.dockPanel3.Location = new System.Drawing.Point(0, 225);
+            this.dockPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel3.Name = "dockPanel3";
             this.dockPanel3.OriginalSize = new System.Drawing.Size(152, 200);
-            this.dockPanel3.Size = new System.Drawing.Size(152, 381);
+            this.dockPanel3.Size = new System.Drawing.Size(152, 605);
             this.dockPanel3.Text = "流程图形";
             // 
             // dockPanel3_Container
             // 
             this.dockPanel3_Container.Controls.Add(this.flowControlList1);
-            this.dockPanel3_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel3_Container.Location = new System.Drawing.Point(6, 35);
+            this.dockPanel3_Container.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel3_Container.Name = "dockPanel3_Container";
-            this.dockPanel3_Container.Size = new System.Drawing.Size(143, 354);
+            this.dockPanel3_Container.Size = new System.Drawing.Size(137, 564);
             this.dockPanel3_Container.TabIndex = 0;
             // 
             // flowControlList1
             // 
             this.flowControlList1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowControlList1.Location = new System.Drawing.Point(0, 0);
+            this.flowControlList1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowControlList1.Name = "flowControlList1";
-            this.flowControlList1.Size = new System.Drawing.Size(143, 354);
+            this.flowControlList1.Size = new System.Drawing.Size(137, 564);
             this.flowControlList1.TabIndex = 0;
             this.flowControlList1.DoubleClick += new System.EventHandler(this.flowControlList1_DoubleClick);
             // 
@@ -318,18 +334,20 @@
             this.dockPanel4.Controls.Add(this.dockPanel4_Container);
             this.dockPanel4.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
             this.dockPanel4.ID = new System.Guid("92231f57-8768-4a88-93ff-01a41d4416bc");
-            this.dockPanel4.Location = new System.Drawing.Point(152, 147);
+            this.dockPanel4.Location = new System.Drawing.Point(152, 225);
+            this.dockPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel4.Name = "dockPanel4";
             this.dockPanel4.OriginalSize = new System.Drawing.Size(200, 118);
-            this.dockPanel4.Size = new System.Drawing.Size(560, 118);
+            this.dockPanel4.Size = new System.Drawing.Size(978, 118);
             this.dockPanel4.Text = "流程信息";
             // 
             // dockPanel4_Container
             // 
             this.dockPanel4_Container.Controls.Add(this.layoutControl1);
-            this.dockPanel4_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel4_Container.Location = new System.Drawing.Point(6, 35);
+            this.dockPanel4_Container.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel4_Container.Name = "dockPanel4_Container";
-            this.dockPanel4_Container.Size = new System.Drawing.Size(552, 90);
+            this.dockPanel4_Container.Size = new System.Drawing.Size(966, 74);
             this.dockPanel4_Container.TabIndex = 0;
             // 
             // layoutControl1
@@ -341,58 +359,64 @@
             this.layoutControl1.Controls.Add(this.gridLookUpEdit_EntityKey);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(552, 90);
+            this.layoutControl1.Size = new System.Drawing.Size(966, 74);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // checkEdit1
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(12, 60);
+            this.checkEdit1.Location = new System.Drawing.Point(18, 86);
+            this.checkEdit1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkEdit1.Name = "checkEdit1";
             this.checkEdit1.Properties.Caption = "是否默认";
-            this.checkEdit1.Size = new System.Drawing.Size(512, 19);
+            this.checkEdit1.Size = new System.Drawing.Size(906, 26);
             this.checkEdit1.StyleController = this.layoutControl1;
             this.checkEdit1.TabIndex = 8;
             this.checkEdit1.Tag = "LiFlowForm.bDefault";
             // 
             // textEdit_EntityName
             // 
-            this.textEdit_EntityName.Location = new System.Drawing.Point(321, 36);
+            this.textEdit_EntityName.Location = new System.Drawing.Point(549, 52);
+            this.textEdit_EntityName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textEdit_EntityName.Name = "textEdit_EntityName";
-            this.textEdit_EntityName.Size = new System.Drawing.Size(203, 20);
+            this.textEdit_EntityName.Size = new System.Drawing.Size(375, 28);
             this.textEdit_EntityName.StyleController = this.layoutControl1;
             this.textEdit_EntityName.TabIndex = 7;
             this.textEdit_EntityName.Tag = "LiFlowForm.entityName";
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(321, 12);
+            this.textEdit2.Location = new System.Drawing.Point(549, 18);
+            this.textEdit2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(203, 20);
+            this.textEdit2.Size = new System.Drawing.Size(375, 28);
             this.textEdit2.StyleController = this.layoutControl1;
             this.textEdit2.TabIndex = 5;
             this.textEdit2.Tag = "LiFlowForm.flowName";
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(63, 12);
+            this.textEdit1.Location = new System.Drawing.Point(93, 18);
+            this.textEdit1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(203, 20);
+            this.textEdit1.Size = new System.Drawing.Size(375, 28);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 4;
             this.textEdit1.Tag = "LiFlowForm.flowCode";
             // 
             // gridLookUpEdit_EntityKey
             // 
-            this.gridLookUpEdit_EntityKey.Location = new System.Drawing.Point(63, 36);
+            this.gridLookUpEdit_EntityKey.Location = new System.Drawing.Point(93, 52);
+            this.gridLookUpEdit_EntityKey.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridLookUpEdit_EntityKey.Name = "gridLookUpEdit_EntityKey";
             this.gridLookUpEdit_EntityKey.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookUpEdit_EntityKey.Properties.NullText = "";
             this.gridLookUpEdit_EntityKey.Properties.View = this.gridLookUpEdit1View;
-            this.gridLookUpEdit_EntityKey.Size = new System.Drawing.Size(203, 20);
+            this.gridLookUpEdit_EntityKey.Size = new System.Drawing.Size(375, 28);
             this.gridLookUpEdit_EntityKey.StyleController = this.layoutControl1;
             this.gridLookUpEdit_EntityKey.TabIndex = 6;
             this.gridLookUpEdit_EntityKey.Tag = "LiFlowForm.entityKey";
@@ -418,7 +442,7 @@
             this.layoutControlItem5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(536, 101);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(942, 140);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -426,51 +450,51 @@
             this.layoutControlItem1.Control = this.textEdit1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(258, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(456, 34);
             this.layoutControlItem1.Text = "流程编码";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(72, 22);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 71);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 100);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(516, 10);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(912, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textEdit2;
-            this.layoutControlItem2.Location = new System.Drawing.Point(258, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(456, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(258, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(456, 34);
             this.layoutControlItem2.Text = "流程名称";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(72, 22);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.gridLookUpEdit_EntityKey;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 34);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(258, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(456, 34);
             this.layoutControlItem3.Text = "单据编码";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(72, 22);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.textEdit_EntityName;
-            this.layoutControlItem4.Location = new System.Drawing.Point(258, 24);
+            this.layoutControlItem4.Location = new System.Drawing.Point(456, 34);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(258, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(456, 34);
             this.layoutControlItem4.Text = "单据名称";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(72, 22);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.checkEdit1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 68);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(516, 23);
+            this.layoutControlItem5.Size = new System.Drawing.Size(912, 32);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -492,25 +516,17 @@
             this.tabbedView1.RootContainer.Nodes.AddRange(new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer[] {
             dockingContainer1});
             // 
-            // btnRelease
-            // 
-            this.btnRelease.Caption = "发布";
-            this.btnRelease.Id = 6;
-            this.btnRelease.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnRelease.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.btnRelease.Name = "btnRelease";
-            this.btnRelease.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRelease_ItemClick);
-            // 
             // LiFlowForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 559);
+            this.ClientSize = new System.Drawing.Size(1393, 878);
+            this.Controls.Add(this.dockPanel2);
             this.Controls.Add(this.dockPanel4);
             this.Controls.Add(this.dockPanel3);
-            this.Controls.Add(this.dockPanel2);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LiFlowForm";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;

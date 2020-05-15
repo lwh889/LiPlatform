@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer dockingContainer1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer();
-            this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup();
-            this.document2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
-            this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+            this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup(this.components);
+            this.document2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
+            this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnAddDictGroup = new DevExpress.XtraBars.BarButtonItem();
             this.btnEditDictGroup = new DevExpress.XtraBars.BarButtonItem();
@@ -48,7 +49,7 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
@@ -63,8 +64,8 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager();
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
+            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
@@ -120,13 +121,14 @@
             this.btnDeleteDict,
             this.btnExit});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbon.MaxItemId = 9;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1});
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(877, 147);
+            this.ribbon.Size = new System.Drawing.Size(1253, 225);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnAddDictGroup
@@ -242,10 +244,11 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 541);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 851);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(877, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1253, 48);
             // 
             // dockManager1
             // 
@@ -272,17 +275,19 @@
             this.dockPanel3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel3.FloatSize = new System.Drawing.Size(317, 402);
             this.dockPanel3.ID = new System.Guid("8bdf5f1c-83c8-446b-b396-e0d4f3f1a7ff");
-            this.dockPanel3.Location = new System.Drawing.Point(654, 147);
+            this.dockPanel3.Location = new System.Drawing.Point(1030, 225);
+            this.dockPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel3.Name = "dockPanel3";
             this.dockPanel3.OriginalSize = new System.Drawing.Size(223, 200);
-            this.dockPanel3.Size = new System.Drawing.Size(223, 394);
+            this.dockPanel3.Size = new System.Drawing.Size(223, 626);
             this.dockPanel3.Text = "dockPanel3";
             // 
             // dockPanel3_Container
             // 
-            this.dockPanel3_Container.Location = new System.Drawing.Point(5, 23);
+            this.dockPanel3_Container.Location = new System.Drawing.Point(9, 35);
+            this.dockPanel3_Container.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel3_Container.Name = "dockPanel3_Container";
-            this.dockPanel3_Container.Size = new System.Drawing.Size(214, 367);
+            this.dockPanel3_Container.Size = new System.Drawing.Size(208, 585);
             this.dockPanel3_Container.TabIndex = 0;
             // 
             // dockPanel1
@@ -290,18 +295,20 @@
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanel1.ID = new System.Guid("0bcad339-a3fd-4357-a1ab-11ee825a6369");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 147);
+            this.dockPanel1.Location = new System.Drawing.Point(0, 225);
+            this.dockPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(200, 394);
+            this.dockPanel1.Size = new System.Drawing.Size(200, 626);
             this.dockPanel1.Text = "dockPanel1";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.treeList1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(6, 35);
+            this.dockPanel1_Container.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(191, 367);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(185, 585);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // treeList1
@@ -310,9 +317,10 @@
             this.treeListColumn1});
             this.treeList1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeList1.Location = new System.Drawing.Point(0, 0);
+            this.treeList1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.treeList1.Name = "treeList1";
             this.treeList1.OptionsBehavior.Editable = false;
-            this.treeList1.Size = new System.Drawing.Size(191, 367);
+            this.treeList1.Size = new System.Drawing.Size(185, 585);
             this.treeList1.TabIndex = 4;
             this.treeList1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeList1_MouseUp);
             // 
@@ -342,7 +350,7 @@
             this.dockPanel2_Container.Controls.Add(this.gridControl1);
             this.dockPanel2_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(448, 365);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(822, 583);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // gridControl1
@@ -352,7 +360,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.ribbon;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(448, 365);
+            this.gridControl1.Size = new System.Drawing.Size(822, 583);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -424,13 +432,14 @@
             // 
             // LiManageDict
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 572);
-            this.Controls.Add(this.dockPanel1);
+            this.ClientSize = new System.Drawing.Size(1253, 899);
             this.Controls.Add(this.dockPanel3);
+            this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LiManageDict";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;

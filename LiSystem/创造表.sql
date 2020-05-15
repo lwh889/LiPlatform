@@ -38,6 +38,7 @@ begin
 
 	declare @entityType nvarchar(20)
 	declare @panelId int
+	declare @dataBaseName nvarchar(30)
 	declare @tableType nvarchar(30)
 	declare @tableName nvarchar(30)
 	declare @parentTableName nvarchar(30)
@@ -59,16 +60,17 @@ begin
 	--
 
 	--表信息
-	select A1.name formCode,A1.text formText,formType, A2.parentTableName,A2.parentPrimaryKeyName,A2.id panelId, A2.type tableType, tableName,primaryKeyName,foreigntKeyName,keyType,entityColumnName,childEntityColumnNames
+	select A1.name formCode,A1.text formText,formType, A2.parentTableName,A2.parentPrimaryKeyName,A2.id panelId, A2.type tableType, tableName,primaryKeyName,foreigntKeyName,keyType,entityColumnName,childEntityColumnNames,A3.systemDataBaseName
 	into #TempTable
 	from LiForm A1 
 	left join LiPanel A2 on A1.id = A2.formModelId 
+	left join LiSystemInfo A3 on A3.systemCode = A1.systemCode
 	where A1.id = @formId
 
 
-	declare licursor cursor for select formCode,formText,formType,parentTableName,parentPrimaryKeyName,panelId,tableType,tableName,primaryKeyName,foreigntKeyName,keyType,entityColumnName,childEntityColumnNames  from #TempTable 
+	declare licursor cursor for select formCode,formText,formType,parentTableName,parentPrimaryKeyName,panelId,tableType,tableName,primaryKeyName,foreigntKeyName,keyType,entityColumnName,childEntityColumnNames,systemDataBaseName  from #TempTable 
 	open licursor
-	fetch next from licursor into @formCode,@formText,@formType,@parentTableName,@parentPrimaryKeyName,@panelId,@tableType,@tableName,@primaryKeyName,@foreigntKeyName,@keyType,@entityColumnName,@childEntityColumnNames
+	fetch next from licursor into @formCode,@formText,@formType,@parentTableName,@parentPrimaryKeyName,@panelId,@tableType,@tableName,@primaryKeyName,@foreigntKeyName,@keyType,@entityColumnName,@childEntityColumnNames,@dataBaseName
 	while(@@FETCH_STATUS = 0)
 	begin
 
@@ -109,7 +111,7 @@ begin
 		end
 
 
-		set @InsertSql = 'if not exists(select 1 from sysobjects where id=object_id(''' + @tableName + ''') and type = ''U'') BEGIN CREATE TABLE ' + @tableName + ' ( ' 
+		set @InsertSql = 'if not exists(select 1 from ' + @dataBaseName + '.dbo.sysobjects where id=object_id(''' + @dataBaseName + '.dbo.' + @tableName + ''') and type = ''U'') BEGIN CREATE TABLE ' + @dataBaseName + '.dbo.' + @tableName + ' ( ' 
 		set @UpdateSql = ''
 		set @ModelSql = @ModelSql+  ' if not exists (select 1 from TableInfo where entityKey = ''' + @formCode + ''' and tableName = ''' + @tableName + ''') 
 							BEGIN 
@@ -276,7 +278,7 @@ begin
 		if(@columnType is not null and @columnType <> 'GridLookUpEditRefAssist' )
 		begin
 			set @InsertSql = @InsertSql + @columnName
-			set @UpdateSql = @UpdateSql + ' if not exists( select 1 from syscolumns where id= object_id(''' + @tableName + ''') and name='''+ @columnName + ''') BEGIN  ALTER TABLE ' + @tableName + ' ADD ' + @columnName
+			set @UpdateSql = @UpdateSql + ' if not exists( select 1 from ' + @dataBaseName + '.dbo.syscolumns where id= object_id(''' + @dataBaseName + '.dbo.' + @tableName + ''') and name='''+ @columnName + ''') BEGIN  ALTER TABLE ' + @dataBaseName + '.dbo.' + @tableName + ' ADD ' + @columnName
 
 			declare @columnType_ModelSql nvarchar(50)
 			declare @length_ModelSql nvarchar(20)
@@ -379,7 +381,7 @@ begin
 		set @InsertSql = @InsertSql + ' dModifyDate datetime default getdate() , dCreateDate datetime default getdate() )  END '
 		----------------------
 
-		fetch next from licursor into @formCode,@formText,@formType,@parentTableName,@parentPrimaryKeyName,@panelId,@tableType,@tableName,@primaryKeyName,@foreigntKeyName,@keyType,@entityColumnName,@childEntityColumnNames
+		fetch next from licursor into @formCode,@formText,@formType,@parentTableName,@parentPrimaryKeyName,@panelId,@tableType,@tableName,@primaryKeyName,@foreigntKeyName,@keyType,@entityColumnName,@childEntityColumnNames,@dataBaseName
 
 		set @SqlAll = @SqlAll + @InsertSql + ' ELSE BEGIN ' + @UpdateSql + ' END '
 	end
@@ -391,7 +393,8 @@ begin
 	exec( @SqlAll)
 
 
-
+	exec('
+	
 	--菜单
 	
 	create table #LiAdminMeum(
@@ -412,12 +415,12 @@ begin
 	set @menuId = 0
 	set @menuParentId = 1
 
-	select @menuCode = [name] from LiForm where id = @formId
+	select @menuCode = [name] from LiForm where id = ' + @formId + '
 
 	select @menuId = Id from LiManageMeum where Code = @menuCode
 	
 	insert #LiAdminMeum ([ID],[Code],[Name],[isGroup],[isSystem],[GroupId],[ParentID],[imageIndex],[iOrder])
-	select [ID],[Code] + 'List',[Name] + '列表',[isGroup],[isSystem],[GroupId],[ParentID],[imageIndex],[iOrder] from LiManageMeum where id=@menuId 
+	select [ID],[Code] + ''List'',[Name] + ''列表'',[isGroup],[isSystem],[GroupId],[ParentID],[imageIndex],[iOrder] from LiManageMeum where id=@menuId 
 		 
 	while(@menuId > 1)
 	begin
@@ -434,9 +437,9 @@ begin
 	while(@@FETCH_STATUS = 0)
 	begin
 	
-		 if not exists( select 1 from LiAdminMeum where Code = @menuCode )
+		 if not exists( select 1 from ' +@dataBaseName + '.dbo.LiAdminMeum where Code = @menuCode )
 		 begin
-			insert LiAdminMeum ([Code],[Name],[isGroup],[isSystem],[GroupId],[ParentID],[imageIndex],[iOrder])
+			insert ' +@dataBaseName + '.dbo.LiAdminMeum ([Code],[Name],[isGroup],[isSystem],[GroupId],[ParentID],[imageIndex],[iOrder])
 			select [Code],[Name],[isGroup],[isSystem],[GroupId],@menuParentId,[imageIndex],[iOrder] from #LiAdminMeum where Code=@menuCode 
 			
 			 if exists( select 1 from #LiAdminMeum where [isGroup] = 1 and Code = @menuCode )
@@ -447,12 +450,12 @@ begin
 		 end
 		 else
 		 begin
-			update LiAdminMeum set [Code] = A.[Code],[Name] = A.[Name],[isGroup] = A.[isGroup],[isSystem] = A.[isSystem],[GroupId] = A.[GroupId],[imageIndex] = A.[imageIndex],[iOrder] = A.[iOrder]
-			from (select [Code],[Name],[isGroup],[isSystem],[GroupId],[ParentID],[imageIndex],[iOrder] from #LiAdminMeum where Code=@menuCode ) A where A.[Code] = LiAdminMeum.[Code]
+			update ' +@dataBaseName + '.dbo.LiAdminMeum set [Code] = A.[Code],[Name] = A.[Name],[isGroup] = A.[isGroup],[isSystem] = A.[isSystem],[GroupId] = A.[GroupId],[imageIndex] = A.[imageIndex],[iOrder] = A.[iOrder]
+			from (select [Code],[Name],[isGroup],[isSystem],[GroupId],[ParentID],[imageIndex],[iOrder] from #LiAdminMeum where Code=@menuCode ) A where A.[Code] = ' +@dataBaseName + '.dbo.LiAdminMeum.[Code]
 			
 			if exists( select 1 from #LiAdminMeum where [isGroup] = 1 and Code = @menuCode )
 			begin
-			select @menuParentId = id from LiAdminMeum where Code = @menuCode
+			select @menuParentId = id from ' +@dataBaseName + '.dbo.LiAdminMeum where Code = @menuCode
 			end
 		 end
 		
@@ -462,4 +465,5 @@ begin
 	close licursorMenu
 	Deallocate licursorMenu
 	
+	')
 end

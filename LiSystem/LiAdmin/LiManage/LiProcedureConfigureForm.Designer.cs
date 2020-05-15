@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiProcedureConfigureForm));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnNew = new DevExpress.XtraBars.BarButtonItem();
@@ -52,12 +53,12 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit_paramType = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
-            this.barManager3 = new DevExpress.XtraBars.BarManager();
+            this.barManager3 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar5 = new DevExpress.XtraBars.Bar();
             this.btnAddRowWhere = new DevExpress.XtraBars.BarButtonItem();
             this.btnInsertRowWhere = new DevExpress.XtraBars.BarButtonItem();
@@ -65,6 +66,9 @@
             this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
+            this.gridLookUpEdit_systemCode = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -84,6 +88,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_paramType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_systemCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -97,11 +104,12 @@
             this.btnExit,
             this.btnStatus});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbon.MaxItemId = 6;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(934, 147);
+            this.ribbon.Size = new System.Drawing.Size(1334, 225);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnNew
@@ -174,53 +182,59 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 492);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 774);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(934, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1334, 48);
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.gridLookUpEdit_systemCode);
             this.layoutControl1.Controls.Add(this.textEdit_procedureName);
             this.layoutControl1.Controls.Add(this.textEdit_entityKey);
             this.layoutControl1.Controls.Add(this.gridLookUpEdit_dataBaseName);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 147);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 225);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(934, 56);
+            this.layoutControl1.Size = new System.Drawing.Size(1334, 88);
             this.layoutControl1.TabIndex = 2;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // textEdit_procedureName
             // 
-            this.textEdit_procedureName.Location = new System.Drawing.Point(687, 12);
+            this.textEdit_procedureName.Location = new System.Drawing.Point(729, 18);
+            this.textEdit_procedureName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textEdit_procedureName.MenuManager = this.ribbon;
             this.textEdit_procedureName.Name = "textEdit_procedureName";
-            this.textEdit_procedureName.Size = new System.Drawing.Size(221, 20);
+            this.textEdit_procedureName.Size = new System.Drawing.Size(183, 28);
             this.textEdit_procedureName.StyleController = this.layoutControl1;
             this.textEdit_procedureName.TabIndex = 6;
             this.textEdit_procedureName.Tag = "LiProcedureConfigureForm.procedureName";
             // 
             // textEdit_entityKey
             // 
-            this.textEdit_entityKey.Location = new System.Drawing.Point(387, 12);
+            this.textEdit_entityKey.Location = new System.Drawing.Point(429, 18);
+            this.textEdit_entityKey.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textEdit_entityKey.MenuManager = this.ribbon;
             this.textEdit_entityKey.Name = "textEdit_entityKey";
-            this.textEdit_entityKey.Size = new System.Drawing.Size(221, 20);
+            this.textEdit_entityKey.Size = new System.Drawing.Size(183, 28);
             this.textEdit_entityKey.StyleController = this.layoutControl1;
             this.textEdit_entityKey.TabIndex = 5;
             this.textEdit_entityKey.Tag = "LiProcedureConfigureForm.entityKey";
             // 
             // gridLookUpEdit_dataBaseName
             // 
-            this.gridLookUpEdit_dataBaseName.Location = new System.Drawing.Point(87, 12);
+            this.gridLookUpEdit_dataBaseName.Location = new System.Drawing.Point(129, 18);
+            this.gridLookUpEdit_dataBaseName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridLookUpEdit_dataBaseName.MenuManager = this.ribbon;
             this.gridLookUpEdit_dataBaseName.Name = "gridLookUpEdit_dataBaseName";
             this.gridLookUpEdit_dataBaseName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gridLookUpEdit_dataBaseName.Properties.View = this.gridLookUpEdit1View;
-            this.gridLookUpEdit_dataBaseName.Size = new System.Drawing.Size(221, 20);
+            this.gridLookUpEdit_dataBaseName.Size = new System.Drawing.Size(183, 28);
             this.gridLookUpEdit_dataBaseName.StyleController = this.layoutControl1;
             this.gridLookUpEdit_dataBaseName.TabIndex = 4;
             this.gridLookUpEdit_dataBaseName.Tag = "LiProcedureConfigureForm.dataBaseName";
@@ -240,18 +254,19 @@
             this.emptySpaceItem1,
             this.layoutControlItem1,
             this.layoutControlItem2,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem4});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(934, 56);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1310, 98);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 24);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 58);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(914, 12);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1280, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -265,7 +280,7 @@
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.Tag = "";
             this.layoutControlItem1.Text = "数据库名称";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(72, 14);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(108, 22);
             // 
             // layoutControlItem2
             // 
@@ -278,7 +293,7 @@
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Tag = "";
             this.layoutControlItem2.Text = "存储过程标识";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(72, 14);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(108, 22);
             // 
             // layoutControlItem3
             // 
@@ -287,11 +302,11 @@
             this.layoutControlItem3.MaxSize = new System.Drawing.Size(300, 24);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(129, 24);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(314, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(680, 24);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.Tag = "";
             this.layoutControlItem3.Text = "存储过程名称";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(72, 14);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(108, 22);
             // 
             // panelControl1
             // 
@@ -301,20 +316,23 @@
             this.panelControl1.Controls.Add(this.barDockControl6);
             this.panelControl1.Controls.Add(this.barDockControl5);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 203);
+            this.panelControl1.Location = new System.Drawing.Point(0, 313);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(934, 289);
+            this.panelControl1.Size = new System.Drawing.Size(1334, 461);
             this.panelControl1.TabIndex = 3;
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 26);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gridControl1.Location = new System.Drawing.Point(3, 39);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemGridLookUpEdit_paramType});
-            this.gridControl1.Size = new System.Drawing.Size(930, 261);
+            this.gridControl1.Size = new System.Drawing.Size(1328, 419);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.Tag = "LiProcedureConfigureForm.datas";
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -342,6 +360,16 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "参数类型";
+            this.gridColumn2.ColumnEdit = this.repositoryItemGridLookUpEdit_paramType;
+            this.gridColumn2.FieldName = "paramType";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Tag = "LiProcedureConfigureForm.paramType";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
             // repositoryItemGridLookUpEdit_paramType
             // 
             this.repositoryItemGridLookUpEdit_paramType.AutoHeight = false;
@@ -357,16 +385,6 @@
             this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "参数类型";
-            this.gridColumn2.ColumnEdit = this.repositoryItemGridLookUpEdit_paramType;
-            this.gridColumn2.FieldName = "paramType";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Tag = "LiProcedureConfigureForm.paramType";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "参数长度";
@@ -380,9 +398,10 @@
             // 
             this.barDockControl7.CausesValidation = false;
             this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl7.Location = new System.Drawing.Point(2, 26);
+            this.barDockControl7.Location = new System.Drawing.Point(3, 39);
             this.barDockControl7.Manager = this.barManager3;
-            this.barDockControl7.Size = new System.Drawing.Size(0, 261);
+            this.barDockControl7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControl7.Size = new System.Drawing.Size(0, 419);
             // 
             // barManager3
             // 
@@ -448,35 +467,71 @@
             // 
             this.barDockControl5.CausesValidation = false;
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl5.Location = new System.Drawing.Point(2, 2);
+            this.barDockControl5.Location = new System.Drawing.Point(3, 3);
             this.barDockControl5.Manager = this.barManager3;
-            this.barDockControl5.Size = new System.Drawing.Size(930, 24);
+            this.barDockControl5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControl5.Size = new System.Drawing.Size(1328, 36);
             // 
             // barDockControl6
             // 
             this.barDockControl6.CausesValidation = false;
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl6.Location = new System.Drawing.Point(2, 287);
+            this.barDockControl6.Location = new System.Drawing.Point(3, 458);
             this.barDockControl6.Manager = this.barManager3;
-            this.barDockControl6.Size = new System.Drawing.Size(930, 0);
+            this.barDockControl6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControl6.Size = new System.Drawing.Size(1328, 0);
             // 
             // barDockControl8
             // 
             this.barDockControl8.CausesValidation = false;
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl8.Location = new System.Drawing.Point(932, 26);
+            this.barDockControl8.Location = new System.Drawing.Point(1331, 39);
             this.barDockControl8.Manager = this.barManager3;
-            this.barDockControl8.Size = new System.Drawing.Size(0, 261);
+            this.barDockControl8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControl8.Size = new System.Drawing.Size(0, 419);
+            // 
+            // gridLookUpEdit_systemCode
+            // 
+            this.gridLookUpEdit_systemCode.Location = new System.Drawing.Point(129, 42);
+            this.gridLookUpEdit_systemCode.MenuManager = this.ribbon;
+            this.gridLookUpEdit_systemCode.Name = "gridLookUpEdit_systemCode";
+            this.gridLookUpEdit_systemCode.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gridLookUpEdit_systemCode.Properties.View = this.gridView2;
+            this.gridLookUpEdit_systemCode.Size = new System.Drawing.Size(183, 28);
+            this.gridLookUpEdit_systemCode.StyleController = this.layoutControl1;
+            this.gridLookUpEdit_systemCode.TabIndex = 7;
+            this.gridLookUpEdit_systemCode.Tag = "LiProcedureConfigureForm.systemCode";
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.gridLookUpEdit_systemCode;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem4.MaxSize = new System.Drawing.Size(300, 34);
+            this.layoutControlItem4.MinSize = new System.Drawing.Size(167, 34);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(1280, 34);
+            this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem4.Text = "系统代码";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(108, 22);
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // LiProcedureConfigureForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 523);
+            this.ClientSize = new System.Drawing.Size(1334, 822);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LiProcedureConfigureForm";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
@@ -502,6 +557,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_paramType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_systemCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -545,5 +603,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit_systemCode;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

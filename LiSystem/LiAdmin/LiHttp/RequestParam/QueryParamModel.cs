@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LiHttp.RequestParam
 {
@@ -12,6 +9,22 @@ namespace LiHttp.RequestParam
     public class QueryParamModel : IParamModel
     {
 
+        public static void getWHereANDByTwoParam(QueryParamModel paramModel, string paramName1, string paramValue1, string paramName2, string paramValue2)
+        {
+            QueryComplexWhereModel queryComplexWhereModel = QueryComplexWhereModel.AND();
+            queryComplexWhereModel.wheres.Add(QueryComplexWhereModel.AND(paramName1, paramValue1));
+            queryComplexWhereModel.wheres.Add(QueryComplexWhereModel.AND(paramName2, paramValue2));
+
+            paramModel.complexWheres = queryComplexWhereModel;
+        }
+        public static void getWHereORByTwoParam(QueryParamModel paramModel, string paramName1, string paramValue1, string paramName2, string paramValue2)
+        {
+            QueryComplexWhereModel queryComplexWhereModel = QueryComplexWhereModel.OR();
+            queryComplexWhereModel.wheres.Add(QueryComplexWhereModel.OR(paramName1, paramValue1));
+            queryComplexWhereModel.wheres.Add(QueryComplexWhereModel.OR(paramName2, paramValue2));
+
+            paramModel.complexWheres = queryComplexWhereModel;
+        }
         /// <summary>
         /// 查询类型
         /// </summary>

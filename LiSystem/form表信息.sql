@@ -483,6 +483,8 @@ select 12, 'GroupId','组ID', 'int',30,0,0,0,0,null,0,null
 union all
 select 12, 'ParentID','父ID', 'int',9,0,0,0,0,null,0,null
 union all
+select 12, 'systemCode','系统代码', 'narchar',9,0,0,0,0,null,0,null
+union all
 select 12, 'imageIndex','图标索引', 'int',9,0,0,0,0,null,0,null
 union all
 select 12, 'iOrder','排序','int',9,0,0,0,0,null,0,null

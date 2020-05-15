@@ -103,7 +103,8 @@ namespace LiModel.Form
         [Edit]
         [Display(Name = "所属字典组", Order = 1)]
         [ControlTypeAttribute("TreeListLookUpEdit")]
-        public int ParentID { get; set; }	//父标签ID，父标签的数据ID
+        public int ParentID { get; set; }   //父标签ID，父标签的数据ID
+
 
         /// <summary>
         /// 字典组是否是系统

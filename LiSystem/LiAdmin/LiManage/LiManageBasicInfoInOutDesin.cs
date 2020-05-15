@@ -25,6 +25,7 @@ using LiModel.Util;
 using LiControl.Form;
 
 using Newtonsoft.Json;
+using LiModel.LiEnum;
 
 namespace LiManage
 {
@@ -74,6 +75,10 @@ namespace LiManage
         /// </summary>
         public string formStatusCode { set; get; }
 
+        #region 引用数据源
+        private SystemInfoModel systemInfoModel = new SystemInfoModel();
+        #endregion
+
         public void setNewStatus()
         {
             formStatusCode = "NewStatus";
@@ -111,6 +116,7 @@ namespace LiManage
 
         public void InitData()
         {
+            systemInfoModel.setDataSource(LiContexts.LiContext.getHttpEntity(LiEntityKey.SystemInfo).getEntityList<SystemInfoModel>());
             //读取Form上的控件
             DevFormUtil.getControlInForm(formID + ".", layoutControlItemDict, controlDict, this);
             DevFormUtil.getGridColumnInForm(formID + ".", gridColumnDict, this);
@@ -142,7 +148,8 @@ namespace LiManage
             GridlookUpEditShowModel gridlookUpEditShowModelComboBox_ComboBox = refControls["sysDatabases"];
             DataTable liComboBoxData = refDatas["sysDatabases"];
             GridlookUpEditUtil.InitDefaultComboBoxControl("name", "name", gridlookUpEditShowModelComboBox_ComboBox.searchColumns, gridlookUpEditShowModelComboBox_ComboBox.displayColumns, gridLookUpEdit_DataBaseName, this, liComboBoxData);
-                    
+
+            GridlookUpEditUtil.InitDefaultRefControl(GridlookUpEditShowMode.VALUE, systemInfoModel.getValueMember(), systemInfoModel.getDisplayMember(), systemInfoModel.getSearchColumns(), systemInfoModel.getDisplayColumns(), systemInfoModel.getDictModelDesc(), gridLookUpEdit_systemCode, this, systemInfoModel.getDataSource<List<SystemInfoModel>>());
         }
 
         public static Dictionary<string, DataTable> getEntitys_refData()

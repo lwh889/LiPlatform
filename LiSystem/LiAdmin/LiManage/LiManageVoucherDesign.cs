@@ -1297,15 +1297,15 @@ namespace LiManage
         {
             Dictionary<string, object> paramDict  = new Dictionary<string,object>();
             paramDict.Add("formId", formModel.id);
-            LiContexts.LiContext.getHttpEntity("sp_CreateTable", LiContext.SystemCode).execProcedure( paramDict);
+            LiContexts.LiContext.getHttpEntity("sp_CreateTable").execProcedureNoResult( paramDict);
 
-            if (LiContexts.LiContext.getHttpEntity("sp_CreateTable", LiContext.SystemCode).bSuccess)
+            if (LiContexts.LiContext.getHttpEntity("sp_CreateTable").bSuccess)
             {
                 MessageUtil.Show("发布成功", "系统提示");
             }
             else
             {
-                MessageUtil.Show("发布失败:" + LiContexts.LiContext.getHttpEntity("sp_CreateTable", LiContext.SystemCode).resultContent, "系统提示");
+                MessageUtil.Show("发布失败:" + LiContexts.LiContext.getHttpEntity("sp_CreateTable").resultContent, "系统提示");
             }
         }
 

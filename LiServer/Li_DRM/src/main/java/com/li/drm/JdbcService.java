@@ -93,6 +93,12 @@ public class JdbcService implements IJdbcPlusJson,IJdbcPlusModel {
     }
 
     @Override
+    public Integer procedureNoResult_Json(ProcedureModel procedureModel, Map<String, Object> paramValues) {
+        Init();
+        return jdbcPlusProcedureMs.procedureNoResult_Json(procedureModel, paramValues);
+    }
+
+    @Override
     public Integer deleteBy_Json(List<TableModel> tableModels, Map<String, Object> datas) {
         Init();
         return jdbcPlusJsonMs.deleteBy_Json(tableModels, datas);

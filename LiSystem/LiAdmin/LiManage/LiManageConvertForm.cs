@@ -20,7 +20,7 @@ using LiHttp.Enum;
 using LiContexts;
 using LiControl.Util;
 using LiModel.Util;
-
+using LiHttp.RequestParam;
 
 namespace LiManage
 {
@@ -64,8 +64,13 @@ namespace LiManage
             List<LiConvertHeadModel> list = LiContexts.LiContext.getHttpEntity(LiEntityKey.LiConvert, LiContext.SystemCode).getEntityList<LiConvertHeadModel>();
             gridControl1.DataSource = list;
 
-            tableModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>("master", "entityOrder");
-            tableBasicInfoModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>("Basic", "entityType");
+            QueryParamModel paramModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getQueryParamModel_ShowAllColumn();
+            QueryParamModel.getWHereANDByTwoParam(paramModel, "entityOrder", "master", "systemCode", LiContext.SystemCode);
+            tableModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(paramModel);
+
+            paramModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getQueryParamModel_ShowAllColumn();
+            QueryParamModel.getWHereANDByTwoParam(paramModel, "entityType", "Basic", "systemCode", LiContext.SystemCode);
+            tableBasicInfoModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(paramModel);
 
             columnDestModelList = new List<ColumnModel>();
             columnSourceModelList = new List<ColumnModel>();
@@ -173,8 +178,11 @@ namespace LiManage
         {
             LiConvertHeadModel entity = gridView1.GetFocusedRow() as LiConvertHeadModel;
             if (entity == null) return;
+            QueryParamModel paramModel;
 
-            List<TableModel> tableModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(entity.convertDest, "entityKey");
+            paramModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getQueryParamModel_ShowAllColumn();
+            QueryParamModel.getWHereANDByTwoParam(paramModel, "entityKey", entity.convertDest, "systemCode", LiContext.SystemCode);
+            List<TableModel> tableModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(paramModel);
             switch (e.Column.FieldName)
             {
                 case "convertDest":
@@ -201,7 +209,9 @@ namespace LiManage
 
                     break;
                 case "convertSource":
-                    List<TableModel> tableDestModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(entity.convertSource, "entityKey");
+                    paramModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getQueryParamModel_ShowAllColumn();
+                    QueryParamModel.getWHereANDByTwoParam(paramModel, "entityKey", entity.convertSource, "systemCode", LiContext.SystemCode);
+                    List<TableModel> tableDestModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(paramModel);
 
                     entity.queryFields.Clear();
                     foreach (TableModel tableModel in tableDestModelList)
@@ -245,7 +255,9 @@ namespace LiManage
             LiConvertHeadModel entity = gridView1.GetFocusedRow() as LiConvertHeadModel;
             if (entity == null) return;
 
-            List<TableModel> tableModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(entity.convertDest, "entityKey");
+            QueryParamModel paramModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getQueryParamModel_ShowAllColumn();
+            QueryParamModel.getWHereANDByTwoParam(paramModel, "entityKey", entity.convertDest, "systemCode", LiContext.SystemCode);
+            List<TableModel> tableModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(paramModel);
 
             columnDestModelList.Clear();
             foreach (TableModel tableModel in tableModelList)
@@ -260,7 +272,9 @@ namespace LiManage
             LiConvertHeadModel entity = gridView1.GetFocusedRow() as LiConvertHeadModel;
             if (entity == null) return;
 
-            List<TableModel> tableModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(entity.convertSource, "entityKey");
+            QueryParamModel paramModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getQueryParamModel_ShowAllColumn();
+            QueryParamModel.getWHereANDByTwoParam(paramModel, "entityKey", entity.convertSource, "systemCode", LiContext.SystemCode);
+            List<TableModel> tableModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(paramModel);
 
             columnSourceTableTypeDict.Clear();
             columnSourceModelList.Clear();
@@ -285,7 +299,9 @@ namespace LiManage
 
             if (entity.convertRelation == "2")
             {
-                List<TableModel> tableModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(entity.convertDest, "entityKey");
+                QueryParamModel paramModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getQueryParamModel_ShowAllColumn();
+                QueryParamModel.getWHereANDByTwoParam(paramModel, "entityKey", entity.convertDest, "systemCode", LiContext.SystemCode);
+                List<TableModel> tableModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(paramModel);
 
                 foreach (TableModel tableModel in tableModelList)
                 {
