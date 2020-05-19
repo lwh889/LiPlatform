@@ -16,7 +16,7 @@ namespace LiModel.Form
 
         public static PanelModel getInstance(int formModelIdTemp)
         {
-            return new PanelModel() { id = 0, formModelId = formModelIdTemp, dock = "top", type = "Basic", name = "panel1", text = "容器1", height = 100, width = 800, controlGroups = new List<ControlGroupModel>(), buttonGroups = new List<ButtonGroupModel>(),events = new List<EventModel>() };
+            return new PanelModel() { id = 0, formModelId = formModelIdTemp, dock = "top", type = "Basic", name = "panel1", text = "容器1", primaryKeyName = "id", height = 100, width = 800, keyType= "Identity", controlGroups = new List<ControlGroupModel>(), buttonGroups = new List<ButtonGroupModel>(),events = new List<EventModel>() };
         }
         /// <summary>
         /// 

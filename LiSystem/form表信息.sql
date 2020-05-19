@@ -305,6 +305,8 @@ select 5, 'id','主键','int',9,1,0,0,1,null,0,null
 union all
 select 5, 'buttonGroupId','外键','int',9,0,1,0,0,'id',1,'LiButtonGroup'
 union all
+select 5, 'iIndex','索引', 'int',9,0,0,0,0,null,0,null
+union all
 select 5, 'caption','标题', 'narchar',30,0,0,0,0,null,0,null
 union all
 select 5, 'name','名称', 'narchar',30,0,0,0,0,null,0,null

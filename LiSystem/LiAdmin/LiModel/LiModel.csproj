@@ -58,6 +58,10 @@
     <Compile Include="Converter\LiDateTimeConverter.cs" />
     <Compile Include="Converter\PasswordConverter.cs" />
     <Compile Include="Dev\GridlookUpEdit\GridlookUpEditShowModelType.cs" />
+    <Compile Include="LiEnum\DockType.cs" />
+    <Compile Include="LiEnum\ListButtonType.cs" />
+    <Compile Include="LiEnum\ButtonType.cs" />
+    <Compile Include="LiEnum\FormTemplateType.cs" />
     <Compile Include="LiEnum\GridlookUpEditShowMode.cs" />
     <Compile Include="LiEnum\JudgmentSymbol.cs" />
     <Compile Include="LiEnum\MessageType.cs" />
@@ -110,6 +114,9 @@
     <Compile Include="LiConvert\ConvertSourceTypeModel.cs" />
     <Compile Include="LiConvert\LiConvertBodyModel.cs" />
     <Compile Include="LiConvert\LiConvertHeadModel.cs" />
+    <Compile Include="LiModelFactory\ButtonFactory.cs" />
+    <Compile Include="LiModelFactory\ControlFactory.cs" />
+    <Compile Include="LiModelFactory\FormTemplateFactory.cs" />
     <Compile Include="LiTable\ClassName.cs" />
     <Compile Include="LiTable\ColumnType.cs" />
     <Compile Include="LiTable\DatabaseGeneratedType.cs" />

@@ -13,7 +13,7 @@ namespace LiModel.Form
     {
         public static ControlGroupModel getInstance(int panelModelId)
         {
-            return new ControlGroupModel() { id = 0, panelModelId = panelModelId, name = "controlGroup", text = "控件组1", autoAllocation = true, controls = new List<ControlModel>(), buttonGroups = new List<ButtonGroupModel>(), events = new List<EventModel>() };
+            return new ControlGroupModel() { id = 0, panelModelId = panelModelId, name = "controlGroup", text = "控件组1", autoAllocation = false, controls = new List<ControlModel>(), buttonGroups = new List<ButtonGroupModel>(), events = new List<EventModel>() };
         }
         /// <summary>
         /// 

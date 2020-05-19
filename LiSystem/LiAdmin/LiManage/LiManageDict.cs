@@ -25,6 +25,7 @@ using LiControl.Util;
 using LiModel.Util;
 using LiHttp.Enum;
 using LiContexts;
+using LiModel.LiModelFactory;
 
 namespace LiManage
 {
@@ -176,7 +177,7 @@ namespace LiManage
         /// <param name="layoutControlGroup"></param>
         public void InitControlToDockPanel(object entity, Dictionary<string, Control> controlDict, Dictionary<string, LayoutControlItem> layoutControlItemDict, LayoutControlGroup layoutControlGroup)
         {
-            List<ControlModel> controls = ControlModel.getInstancesByModel(entity);
+            List<ControlModel> controls = ControlFactory.getInstancesByModel(entity);
 
             List<ControlModel> lists = controls.OrderBy(m => m.row).ToList();
             foreach (ControlModel customerControlModel in lists)

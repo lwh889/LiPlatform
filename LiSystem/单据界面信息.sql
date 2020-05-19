@@ -19,6 +19,7 @@ create table LiForm(
 	statusFieldName nvarchar(30),
 	formType nvarchar(20),
 	systemCode nvarchar(20),
+	bTemplate bit default 0, --是否是模板
 	dCreateDate datetime default getdate()
 )
 --alter table LiForm add statusFieldName nvarchar(30)
@@ -26,6 +27,7 @@ create table LiForm(
 --alter table LiForm add codeFieldName nvarchar(30)
 --alter table LiForm add formType nvarchar(20)
 --alter table LiForm add systemCode nvarchar(20)
+--alter table LiForm add bTemplate bit default 0
 
 SET IDENTITY_Insert LiForm ON 
 insert into LiForm (id,name, text, height, width)
@@ -110,6 +112,7 @@ SET IDENTITY_Insert LiButtonGroup OFF
 create table LiButton(
 	id int identity(1,1) primary key not null,
 	buttonGroupId int REFERENCES LiButtonGroup(id),
+	iIndex int default 0,
 	caption nvarchar(20),	--标题
 	[name]  nvarchar(30),	--名称
 	iconsize nvarchar(20),	--图标大小
@@ -129,7 +132,8 @@ create table LiButton(
 --alter table LiButton add entityKey nvarchar(30)
 --alter table LiButton add userFieldName nvarchar(30)
 --alter table LiButton add dateFieldName nvarchar(30)
---alter table LiButton alter column icon nvarchar(100)
+--alter table LiButton add dateFieldName nvarchar(30)
+--alter table LiButton add iIndex int default 0
 
 SET IDENTITY_Insert LiButton ON
 declare @newid nvarchar(50)
@@ -266,22 +270,22 @@ SET IDENTITY_Insert LiControl OFF
 
 
 
---delete LiEvent where listButtonId  in (select id from LiListButton where formId in (select id from LiForm where [name] = 'SaleInvoice' and id != 11))
---delete LiListButton where formId in (select id from LiForm where [name] = 'SaleInvoice' and id != 11)
+--delete LiEvent where listButtonId  in (select id from LiListButton where formId in (select id from LiForm where [name] = 'SingleVoucher' and id != 11))
+--delete LiListButton where formId in (select id from LiForm where [name] = 'SingleVoucher' and id != 11)
 
---delete LiControl where controlGroupId in (select id from LiControlGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SaleInvoice' and id != 11)))
+--delete LiControl where controlGroupId in (select id from LiControlGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SingleVoucher' and id != 11)))
 
---delete LiEvent where buttonId in (select id from LiButton where buttonGroupId in (select id from LiButtonGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SaleInvoice' and id != 11))))
---delete LiEvent where buttonId in (select id from LiButton where buttonGroupId in (select id from LiButtonGroup where formId in (select id from LiForm where [name] = 'SaleInvoice' and id != 11)))
---delete LiEvent where buttonId in (select id from LiButton where buttonGroupId in (select id from LiButtonGroup where controlGroupId in (select id from LiControlGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SaleInvoice' and id != 11)))))
+--delete LiEvent where buttonId in (select id from LiButton where buttonGroupId in (select id from LiButtonGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SingleVoucher' and id != 11))))
+--delete LiEvent where buttonId in (select id from LiButton where buttonGroupId in (select id from LiButtonGroup where formId in (select id from LiForm where [name] = 'SingleVoucher' and id != 11)))
+--delete LiEvent where buttonId in (select id from LiButton where buttonGroupId in (select id from LiButtonGroup where controlGroupId in (select id from LiControlGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SingleVoucher' and id != 11)))))
 
---delete LiButton where buttonGroupId in (select id from LiButtonGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SaleInvoice' and id != 11)))
---delete LiButton where buttonGroupId in (select id from LiButtonGroup where formId in (select id from LiForm where [name] = 'SaleInvoice' and id != 11))
---delete LiButton where buttonGroupId in (select id from LiButtonGroup where controlGroupId in (select id from LiControlGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SaleInvoice' and id != 11))))
+--delete LiButton where buttonGroupId in (select id from LiButtonGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SingleVoucher' and id != 11)))
+--delete LiButton where buttonGroupId in (select id from LiButtonGroup where formId in (select id from LiForm where [name] = 'SingleVoucher' and id != 11))
+--delete LiButton where buttonGroupId in (select id from LiButtonGroup where controlGroupId in (select id from LiControlGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SingleVoucher' and id != 11))))
 
---delete LiButtonGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SaleInvoice' and id != 11))
---delete LiButtonGroup where formId in (select id from LiForm where [name] = 'SaleInvoice' and id != 11)
---delete LiButtonGroup where controlGroupId in (select id from LiControlGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SaleInvoice' and id != 11)))
---delete LiControlGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SaleInvoice' and id != 11))
---delete LiPanel where formModelId in (select id from LiForm where [name] = 'SaleInvoice' and id != 11)
---delete LiForm where [name] = 'SaleInvoice' and id != 11
+--delete LiButtonGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SingleVoucher' and id != 11))
+--delete LiButtonGroup where formId in (select id from LiForm where [name] = 'SingleVoucher' and id != 11)
+--delete LiButtonGroup where controlGroupId in (select id from LiControlGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SingleVoucher' and id != 11)))
+--delete LiControlGroup where panelModelId in (select id from LiPanel where formModelId in (select id from LiForm where [name] = 'SingleVoucher' and id != 11))
+--delete LiPanel where formModelId in (select id from LiForm where [name] = 'SingleVoucher' and id != 11)
+--delete LiForm where [name] = 'SingleVoucher' and id != 11

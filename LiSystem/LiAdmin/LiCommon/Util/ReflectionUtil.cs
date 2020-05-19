@@ -21,10 +21,19 @@ namespace LiCommon.Util
         /// <returns></returns>
         public static T CreateInstance<T>(string fullName, string assemblyName)
         {
-            string path = fullName + "," + assemblyName;//命名空间.类型名,程序集
-            Type o = Type.GetType(path);//加载类型
-            object obj = Activator.CreateInstance(o, true);//根据类型创建实例
-            return (T)obj;//类型转换并返回
+            try
+            {
+                string path = fullName + "," + assemblyName;//命名空间.类型名,程序集
+                Type o = Type.GetType(path);//加载类型
+                object obj = Activator.CreateInstance(o, true);//根据类型创建实例
+                return (T)obj;//类型转换并返回
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(string.Format("不存在{0}.{1}", fullName, assemblyName));
+            }
+
+            return default(T);
         }
 
 

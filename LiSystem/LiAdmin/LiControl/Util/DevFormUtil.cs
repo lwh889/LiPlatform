@@ -163,12 +163,16 @@ namespace LiControl.Util
                 if (control.GetType().Name == "RibbonControl")
                 {
                     RibbonControl ribbonControl = control as RibbonControl;
-                    foreach (BarButtonItem barButtonItem in ribbonControl.Items)
+                    foreach (var item in ribbonControl.Items)
                     {
-                        string tag = barButtonItem.Tag == null ? string.Empty : (string)barButtonItem.Tag;
-                        if (tag.Contains(key))
+                        if (item.GetType().FullName.Equals("DevExpress.XtraBars.BarButtonItem"))
                         {
-                            barButtonItemDict.Add(tag.Replace(key, ""), barButtonItem);
+                            BarButtonItem barButtonItem = (BarButtonItem)item;
+                            string tag = barButtonItem.Tag == null ? string.Empty : (string)barButtonItem.Tag;
+                            if (tag.Contains(key))
+                            {
+                                barButtonItemDict.Add(tag.Replace(key, ""), barButtonItem);
+                            }
                         }
                     }
                 }

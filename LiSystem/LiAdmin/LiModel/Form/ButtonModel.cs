@@ -16,11 +16,18 @@ namespace LiModel.Form
         {
             return new ButtonModel() { id = 0, buttonGroupId = buttonGroupId, caption = "按钮1", name = "button1", iconsize = "Large", categoryGuid = categoryGuid, events = new List<EventModel>() };
         }
+
         /// <summary>
         /// ID
         /// </summary>
         [Browsable(false)]  
         public int id { set; get; }
+
+        /// <summary>
+        /// 排序
+        /// </summary>
+        [Browsable(false)]
+        public int iIndex { set; get; }
 
         /// <summary>
         /// ID
@@ -41,9 +48,9 @@ namespace LiModel.Form
         public string name { set; get; }
 
         /// <summary>
-        /// 图标大小,Default,Large,SmallWithText,SmallWithoutText,All
+        /// 按钮类型，图标大小,Default,Large,SmallWithText,SmallWithoutText,All
         /// </summary>
-        [Browsable(true), Category("基本属性"), DisplayName("标题"), TypeConverter(typeof(PropertyGridListConvert)), PropertyGridListAttribute(new string[] { "Default", "Large", "SmallWithText", "SmallWithoutText", "All" })]
+        [Browsable(true), Category("基本属性"), DisplayName("按钮类型"), TypeConverter(typeof(PropertyGridListConvert)), PropertyGridListAttribute(new string[] { "Default", "Large", "SmallWithText", "SmallWithoutText", "All" })]
         [Description("")]
         public string iconsize { set; get; }
 
@@ -85,7 +92,7 @@ namespace LiModel.Form
         public string statusFieldName { set; get; }
 
         /// <summary>
-        /// 表体实体Key
+        /// 表体实体Key，表体按钮需要
         /// </summary>
         [Browsable(true), Category("基本属性"), DisplayName("表体实体Key"), Editor]
         public string entityKey { set; get; }
