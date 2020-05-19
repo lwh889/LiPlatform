@@ -235,11 +235,18 @@ public abstract class SqlMakerMsSql extends SqlMaker {
 
                 //如果子表有外键的情况
                 String primaryKeyName = fieldInfo.getPrimaryKeyName();
-                if(StringUtils.isNotNull(primaryKeyName)) {
-                    if (DatabaseGenerated.Identity == fieldInfo.getPrimaryKeyDatabaseGenerated() || DatabaseGenerated.Uniqueidentifier == fieldInfo.getPrimaryKeyDatabaseGenerated()) {
-                        builderValue.append(String.format("@%s_%s",primaryKeyName,tableInfo.getTableName() )).append(",");
-                    } else {
-                        builderValue.append(getColumnValueFormat(childEntry.getValue())).append(",");
+                String primaryKeyTableName = fieldInfo.getPrimaryKeyTableName();
+                if(StringUtils.isNotNull(primaryKeyName) && StringUtils.isNotNull(primaryKeyTableName)) {
+                    if(primaryKeyTableName.equals(tableInfo.getTableName()))
+                    {
+                        if (DatabaseGenerated.Identity == fieldInfo.getPrimaryKeyDatabaseGenerated() || DatabaseGenerated.Uniqueidentifier == fieldInfo.getPrimaryKeyDatabaseGenerated()) {
+                            builderValue.append(String.format("@%s_%s",primaryKeyName,tableInfo.getTableName() )).append(",");
+                        } else {
+                            builderValue.append(getColumnValueFormat(childEntry.getValue())).append(",");
+                        }
+                    }
+                    else{
+                        builderValue.append("null,");
                     }
                 }else{
                     builderValue.append(getColumnValueFormat(childEntry.getValue())).append(",");

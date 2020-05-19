@@ -299,6 +299,137 @@ namespace LiControl.Form
             loadData();
         }
 
-        
+        private void BtnAddNewStatus_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            List<ControlStatusModel> controlStatusModels = new List<ControlStatusModel>();
+
+            foreach (ControlStatusModel model in newControlStatusModels)
+            {
+                controlStatusModels.Add(model.Clone());
+            }
+
+            StatusModel statusModel = new StatusModel();
+            statusModel.code = "NewStatus";
+            statusModel.name = "新增状态";
+            statusModel.userFieldName = "cMaker";
+            statusModel.dateFieldName = "dMakeDate";
+            statusModel.statusFieldName = "billStatus";
+            statusModel.bNew = true;
+            statusModel.bShow = false;
+            statusModel.fid = voucherStatusModel.id;
+            statusModel.dataControlStatuss = controlStatusModels;
+
+            voucherStatusModel.dataStatuss.Add(statusModel);
+
+            gridControl1.DataSource = voucherStatusModel.dataStatuss;
+            gridControl1.RefreshDataSource();
+            gridView1.BestFitColumns();
+        }
+
+        private void BtnAddEditStatus_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            List<ControlStatusModel> controlStatusModels = new List<ControlStatusModel>();
+
+            foreach (ControlStatusModel model in newControlStatusModels)
+            {
+                controlStatusModels.Add(model.Clone());
+            }
+
+            StatusModel statusModel = new StatusModel();
+            statusModel.code = "EditStatus";
+            statusModel.name = "编辑状态";
+            statusModel.userFieldName = "cModifer";
+            statusModel.dateFieldName = "dModifiedDate";
+            statusModel.statusFieldName = "billStatus";
+            statusModel.bNew = false;
+            statusModel.bShow = false;
+            statusModel.fid = voucherStatusModel.id;
+            statusModel.dataControlStatuss = controlStatusModels;
+
+            voucherStatusModel.dataStatuss.Add(statusModel);
+
+            gridControl1.DataSource = voucherStatusModel.dataStatuss;
+            gridControl1.RefreshDataSource();
+            gridView1.BestFitColumns();
+        }
+
+        private void BtnAddShowStatus_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            List<ControlStatusModel> controlStatusModels = new List<ControlStatusModel>();
+
+            foreach (ControlStatusModel model in newControlStatusModels)
+            {
+                controlStatusModels.Add(model.Clone());
+            }
+
+            StatusModel statusModel = new StatusModel();
+            statusModel.code = "ShowStatus";
+            statusModel.name = "浏览状态";
+            statusModel.bNew = false;
+            statusModel.bShow = true;
+            statusModel.fid = voucherStatusModel.id;
+            statusModel.dataControlStatuss = controlStatusModels;
+
+            voucherStatusModel.dataStatuss.Add(statusModel);
+
+            gridControl1.DataSource = voucherStatusModel.dataStatuss;
+            gridControl1.RefreshDataSource();
+            gridView1.BestFitColumns();
+        }
+
+        private void BtnAddSubmitStatus_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            List<ControlStatusModel> controlStatusModels = new List<ControlStatusModel>();
+
+            foreach (ControlStatusModel model in newControlStatusModels)
+            {
+                controlStatusModels.Add(model.Clone());
+            }
+
+            StatusModel statusModel = new StatusModel();
+            statusModel.code = "SubmitStatus";
+            statusModel.name = "提交状态";
+            statusModel.userFieldName = "cSumbit";
+            statusModel.dateFieldName = "dSumbitDate";
+            statusModel.statusFieldName = "billStatus";
+            statusModel.bNew = false;
+            statusModel.bShow = false;
+            statusModel.fid = voucherStatusModel.id;
+            statusModel.dataControlStatuss = controlStatusModels;
+
+            voucherStatusModel.dataStatuss.Add(statusModel);
+
+            gridControl1.DataSource = voucherStatusModel.dataStatuss;
+            gridControl1.RefreshDataSource();
+            gridView1.BestFitColumns();
+        }
+
+        private void BtnAddAuditStatus_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            List<ControlStatusModel> controlStatusModels = new List<ControlStatusModel>();
+
+            foreach (ControlStatusModel model in newControlStatusModels)
+            {
+                controlStatusModels.Add(model.Clone());
+            }
+
+            StatusModel statusModel = new StatusModel();
+            statusModel.code = "AuditStatus";
+            statusModel.name = "审核状态";
+            statusModel.userFieldName = "cAuditor";
+            statusModel.dateFieldName = "dAuditDate";
+            statusModel.statusFieldName = "billStatus";
+            statusModel.bNew = false;
+            statusModel.bShow = false;
+            statusModel.fid = voucherStatusModel.id;
+            statusModel.dataControlStatuss = controlStatusModels;
+
+            voucherStatusModel.dataStatuss.Add(statusModel);
+
+            gridControl1.DataSource = voucherStatusModel.dataStatuss;
+            gridControl1.RefreshDataSource();
+            gridView1.BestFitColumns();
+        }
     }
 }

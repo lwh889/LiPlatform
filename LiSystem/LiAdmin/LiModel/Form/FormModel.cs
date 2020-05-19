@@ -8,14 +8,25 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 using LiModel.LiAttribute;
+using LiModel.LiEnum;
 
 namespace LiModel.Form
 {
     public class FormModel
     {
-        public static FormModel getInstance()
+        public static FormModel getInstance(string formTemplateType = FormTemplateType.SINGLEVOUCHER)
         {
-            return new FormModel() { id = 0, name = "LiForm1", text="表单标题1", codeFieldName="billCode", keyFieldName = "id", height = 100, width = 800, panels = new List<PanelModel>(), buttonGroups = new List<ButtonGroupModel>(), events = new List<EventModel>(), listButtons = new List<ListButtonModel>()};
+            string formType = "单据";
+            switch (formTemplateType)
+            {
+                case FormTemplateType.BASEINFO:
+                    formType = "基础档案";
+                    break;
+                case FormTemplateType.TREEBASEINFO:
+                    formType = "树形基础档案";
+                    break;
+            }
+            return new FormModel() { id = 0, name = "LiForm1", text="表单标题1", codeFieldName="billCode", keyFieldName = "id", statusFieldName = "billStatus", formType= formType, height = 100, width = 800, panels = new List<PanelModel>(), buttonGroups = new List<ButtonGroupModel>(), events = new List<EventModel>(), listButtons = new List<ListButtonModel>()};
         }
 
         /// <summary>

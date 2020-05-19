@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LiModel.LiEnum
 {
-    public class PanelType
+    public struct PanelType
     {
         public const string BASIC = "Basic";
 

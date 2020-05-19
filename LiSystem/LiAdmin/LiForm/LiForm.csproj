@@ -154,6 +154,7 @@
     <Compile Include="Dev\LiListForm.Designer.cs">
       <DependentUpon>LiListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Event\EventForm\LiEventDelete.cs" />
     <Compile Include="Event\EventForm\LiEventDeleteRowData.cs" />
     <Compile Include="Event\EventForm\LiEventEdit.cs" />
     <Compile Include="Event\EventForm\LiEventExit.cs" />
@@ -167,6 +168,8 @@
     <Compile Include="Event\EventForm\LiEventUnSubmit.cs" />
     <Compile Include="Event\EventForm\LiEventAudit.cs" />
     <Compile Include="Event\EventForm\LiEventUnAudit.cs" />
+    <Compile Include="Event\EventListForm\LiEventListAudit.cs" />
+    <Compile Include="Event\EventListForm\LiEventListDelete.cs" />
     <Compile Include="Event\EventListForm\LiEventListPreciseQuery.cs" />
     <Compile Include="Event\EventListForm\LiEventListPush.cs" />
     <Compile Include="Event\EventListForm\LiEventListQuery.cs" />
@@ -176,6 +179,9 @@
     <Compile Include="Event\EventListForm\LiEventListEdit.cs" />
     <Compile Include="Event\EventListForm\LiEventListExit.cs" />
     <Compile Include="Event\EventForm\LiEventRef.cs" />
+    <Compile Include="Event\EventListForm\LiEventListSubmit.cs" />
+    <Compile Include="Event\EventListForm\LiEventListUnAudit.cs" />
+    <Compile Include="Event\EventListForm\LiEventListUnSubmit.cs" />
     <Compile Include="Event\LiAEvent.cs" />
     <Compile Include="Event\Mediator\LiAEventMediator.cs" />
     <Compile Include="Event\Mediator\LiEventFormMediator.cs" />

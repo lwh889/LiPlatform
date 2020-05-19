@@ -38,6 +38,7 @@ begin
 
 	declare @entityType nvarchar(20)
 	declare @panelId int
+	declare @systemCode nvarchar(10)
 	declare @dataBaseName nvarchar(30)
 	declare @tableType nvarchar(30)
 	declare @tableName nvarchar(30)
@@ -60,7 +61,7 @@ begin
 	--
 
 	--±Ì–≈œ¢
-	select A1.name formCode,A1.text formText,formType, A2.parentTableName,A2.parentPrimaryKeyName,A2.id panelId, A2.type tableType, tableName,primaryKeyName,foreigntKeyName,keyType,entityColumnName,childEntityColumnNames,A3.systemDataBaseName
+	select A1.name formCode,A1.text formText,formType, A2.parentTableName,A2.parentPrimaryKeyName,A2.id panelId, A2.type tableType, tableName,primaryKeyName,foreigntKeyName,keyType,entityColumnName,childEntityColumnNames,A3.systemDataBaseName,A3.systemCode
 	into #TempTable
 	from LiForm A1 
 	left join LiPanel A2 on A1.id = A2.formModelId 
@@ -68,9 +69,9 @@ begin
 	where A1.id = @formId
 
 
-	declare licursor cursor for select formCode,formText,formType,parentTableName,parentPrimaryKeyName,panelId,tableType,tableName,primaryKeyName,foreigntKeyName,keyType,entityColumnName,childEntityColumnNames,systemDataBaseName  from #TempTable 
+	declare licursor cursor for select formCode,formText,formType,parentTableName,parentPrimaryKeyName,panelId,tableType,tableName,primaryKeyName,foreigntKeyName,keyType,entityColumnName,childEntityColumnNames,systemDataBaseName,systemCode  from #TempTable 
 	open licursor
-	fetch next from licursor into @formCode,@formText,@formType,@parentTableName,@parentPrimaryKeyName,@panelId,@tableType,@tableName,@primaryKeyName,@foreigntKeyName,@keyType,@entityColumnName,@childEntityColumnNames,@dataBaseName
+	fetch next from licursor into @formCode,@formText,@formType,@parentTableName,@parentPrimaryKeyName,@panelId,@tableType,@tableName,@primaryKeyName,@foreigntKeyName,@keyType,@entityColumnName,@childEntityColumnNames,@dataBaseName,@systemCode
 	while(@@FETCH_STATUS = 0)
 	begin
 
@@ -115,13 +116,13 @@ begin
 		set @UpdateSql = ''
 		set @ModelSql = @ModelSql+  ' if not exists (select 1 from TableInfo where entityKey = ''' + @formCode + ''' and tableName = ''' + @tableName + ''') 
 							BEGIN 
-							insert into TableInfo (dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
-							select ''LiSystem'',''' + @entityType + ''',''' + @formCode + ''',''' + @entityOrder + ''',' + @entityColumnNameTemp + ',''' + @tableName + ''',''' + @formCode + ''',''' + @formText + ''', null,''JsonModel'',''' + @primaryKeyName + ''',null,getdate()
+							insert into TableInfo (systemCode,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
+							select ''' + @systemCode + ''',''' + @dataBaseName + ''',''' + @entityType + ''',''' + @formCode + ''',''' + @entityOrder + ''',' + @entityColumnNameTemp + ',''' + @tableName + ''',''' + @formCode + ''',''' + @formText + ''', null,''JsonModel'',''' + @primaryKeyName + ''',null,getdate()
 							set @tableId = @@identity
 							END
 							ELSE
 							BEGIN
-							UPDATE TableInfo SET entityOrder = ''' + @entityOrder + ''',tableAliasName = ''' + @formCode + ''',tableAbbName = ''' + @formText + ''',keyName=''' + @primaryKeyName + ''' where entityKey = ''' + @formCode + ''' and tableName = ''' + @tableName + '''
+							UPDATE TableInfo SET systemCode = ''' + @systemCode + ''',dataBaseName = ''' + @dataBaseName + ''',entityOrder = ''' + @entityOrder + ''',tableAliasName = ''' + @formCode + ''',tableAbbName = ''' + @formText + ''',keyName=''' + @primaryKeyName + ''' where entityKey = ''' + @formCode + ''' and tableName = ''' + @tableName + '''
 							
 							select top 1  @tableId = id from TableInfo where entityKey = ''' + @formCode + ''' and tableName = ''' + @tableName + '''
 							END '
@@ -381,7 +382,7 @@ begin
 		set @InsertSql = @InsertSql + ' dModifyDate datetime default getdate() , dCreateDate datetime default getdate() )  END '
 		----------------------
 
-		fetch next from licursor into @formCode,@formText,@formType,@parentTableName,@parentPrimaryKeyName,@panelId,@tableType,@tableName,@primaryKeyName,@foreigntKeyName,@keyType,@entityColumnName,@childEntityColumnNames,@dataBaseName
+		fetch next from licursor into @formCode,@formText,@formType,@parentTableName,@parentPrimaryKeyName,@panelId,@tableType,@tableName,@primaryKeyName,@foreigntKeyName,@keyType,@entityColumnName,@childEntityColumnNames,@dataBaseName,@systemCode
 
 		set @SqlAll = @SqlAll + @InsertSql + ' ELSE BEGIN ' + @UpdateSql + ' END '
 	end
@@ -389,6 +390,7 @@ begin
 	Deallocate licursor
 
 	set @SqlAll = @SqlAll + @ModelSql
+	insert ShowResult (resultText) values (@SqlAll)
 	print @SqlAll
 	exec( @SqlAll)
 

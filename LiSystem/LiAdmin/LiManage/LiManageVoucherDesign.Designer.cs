@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiManageVoucherDesign));
-            DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer dockingContainer3 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer();
-            this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup();
-            this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
-            this.document5 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
-            this.document4 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+            DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer dockingContainer1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer();
+            this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup(this.components);
+            this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
+            this.document5 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
+            this.document4 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
+            this.document3 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
             this.repositoryItemGridLookUpEdit_Icon = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit_voucherStatus = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.document2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+            this.document2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnAddPanel = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddButton = new DevExpress.XtraBars.BarButtonItem();
@@ -72,16 +74,45 @@
             this.btnAddAuditDate = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddUserControl = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddDateControl = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem5 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem7 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem8 = new DevExpress.XtraBars.BarSubItem();
+            this.barSubItem9 = new DevExpress.XtraBars.BarSubItem();
+            this.btnSINGLEVOUCHER = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMVVOUCHER = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBASEINFO = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTREEBASEINFO = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem10 = new DevExpress.XtraBars.BarSubItem();
+            this.BtnNEWButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnEDITButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnDELETE = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnSAVEButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnSUBMITButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnUNSUBMITButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnAUDITButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnUNAUDITButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnREFButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnPUSHButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnEXITButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnADDROWButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnDELETEROWButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnINSERTROWButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnCOPYROWButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnINSERTCOPYROWButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnADDCOPYROWButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnUPROWButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnDOWNROWButton = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel5 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel5_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
@@ -179,21 +210,21 @@
             this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit_voucherStatusList = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView13 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager();
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
-            this.popupFormMenu = new DevExpress.XtraBars.PopupMenu();
-            this.popupPanelMenu = new DevExpress.XtraBars.PopupMenu();
-            this.popupButtonGroupMenu = new DevExpress.XtraBars.PopupMenu();
-            this.popupControlMenu = new DevExpress.XtraBars.PopupMenu();
-            this.popupButtonMenu = new DevExpress.XtraBars.PopupMenu();
-            this.popupEventMenu = new DevExpress.XtraBars.PopupMenu();
-            this.popupControlGroupMenu = new DevExpress.XtraBars.PopupMenu();
-            this.popupListButtonMenu = new DevExpress.XtraBars.PopupMenu();
-            this.document3 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.popupFormMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupPanelMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupButtonGroupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupControlMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupButtonMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupEventMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupControlGroupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupListButtonMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.document3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_Icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_voucherStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document2)).BeginInit();
@@ -262,7 +293,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupEventMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlGroupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupListButtonMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.document3)).BeginInit();
             this.SuspendLayout();
             // 
             // documentGroup1
@@ -302,6 +332,16 @@
             this.document4.Properties.AllowClose = DevExpress.Utils.DefaultBoolean.False;
             this.document4.Properties.AllowFloat = DevExpress.Utils.DefaultBoolean.True;
             this.document4.Properties.AllowFloatOnDoubleClick = DevExpress.Utils.DefaultBoolean.True;
+            // 
+            // document3
+            // 
+            this.document3.Caption = "事件";
+            this.document3.ControlName = "dockPanel9";
+            this.document3.FloatLocation = new System.Drawing.Point(636, 431);
+            this.document3.FloatSize = new System.Drawing.Size(1385, 306);
+            this.document3.Properties.AllowClose = DevExpress.Utils.DefaultBoolean.False;
+            this.document3.Properties.AllowFloat = DevExpress.Utils.DefaultBoolean.True;
+            this.document3.Properties.AllowFloatOnDoubleClick = DevExpress.Utils.DefaultBoolean.True;
             // 
             // repositoryItemGridLookUpEdit_Icon
             // 
@@ -365,10 +405,43 @@
             this.btnAddAuditor,
             this.btnAddAuditDate,
             this.btnAddUserControl,
-            this.btnAddDateControl});
+            this.btnAddDateControl,
+            this.barSubItem1,
+            this.barSubItem2,
+            this.barSubItem3,
+            this.barSubItem4,
+            this.barSubItem5,
+            this.barSubItem6,
+            this.barSubItem7,
+            this.barSubItem8,
+            this.barSubItem9,
+            this.btnSINGLEVOUCHER,
+            this.btnMVVOUCHER,
+            this.btnBASEINFO,
+            this.btnTREEBASEINFO,
+            this.barSubItem10,
+            this.BtnNEWButton,
+            this.BtnEDITButton,
+            this.BtnDELETE,
+            this.BtnSAVEButton,
+            this.BtnSUBMITButton,
+            this.BtnUNSUBMITButton,
+            this.BtnAUDITButton,
+            this.BtnUNAUDITButton,
+            this.BtnREFButton,
+            this.BtnPUSHButton,
+            this.BtnEXITButton,
+            this.BtnADDROWButton,
+            this.BtnDELETEROWButton,
+            this.BtnINSERTROWButton,
+            this.BtnCOPYROWButton,
+            this.BtnINSERTCOPYROWButton,
+            this.BtnADDCOPYROWButton,
+            this.BtnUPROWButton,
+            this.BtnDOWNROWButton});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ribbon.MaxItemId = 36;
+            this.ribbon.MaxItemId = 71;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -658,95 +731,332 @@
             this.btnAddDateControl.Name = "btnAddDateControl";
             this.btnAddDateControl.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddDateControl_ItemClick);
             // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "添加组件";
+            this.barSubItem1.Id = 37;
+            this.barSubItem1.ImageOptions.Image = global::LiManage.Properties.Resources.add_32x32;
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddPanel),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddButtonGroup),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddControlGroup),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddControl),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddListButton)});
+            this.barSubItem1.Name = "barSubItem1";
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "删除组件";
+            this.barSubItem2.Id = 39;
+            this.barSubItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem2.ImageOptions.Image")));
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDeletePanel),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDeleteButtonGroup),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDeleteButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDeleteControlGroup),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDeleteControl),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDeleteListButton)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // barSubItem3
+            // 
+            this.barSubItem3.Caption = "状态";
+            this.barSubItem3.Id = 40;
+            this.barSubItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem3.ImageOptions.Image")));
+            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnVoucherStatus),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnStatus)});
+            this.barSubItem3.Name = "barSubItem3";
+            // 
+            // barSubItem4
+            // 
+            this.barSubItem4.Caption = "功能组件";
+            this.barSubItem4.Id = 41;
+            this.barSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem5)});
+            this.barSubItem4.Name = "barSubItem4";
+            // 
+            // barSubItem5
+            // 
+            this.barSubItem5.Caption = "普通组件";
+            this.barSubItem5.Id = 42;
+            this.barSubItem5.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnVoucherCode),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddUserControl),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddDateControl)});
+            this.barSubItem5.Name = "barSubItem5";
+            // 
+            // barSubItem6
+            // 
+            this.barSubItem6.Caption = "事件";
+            this.barSubItem6.Id = 43;
+            this.barSubItem6.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btngAddGneralEvent),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddPluginEvent),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDeleteEvent)});
+            this.barSubItem6.Name = "barSubItem6";
+            // 
+            // barSubItem7
+            // 
+            this.barSubItem7.Caption = "表单组件";
+            this.barSubItem7.Id = 44;
+            this.barSubItem7.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem8)});
+            this.barSubItem7.Name = "barSubItem7";
+            // 
+            // barSubItem8
+            // 
+            this.barSubItem8.Caption = "通用组件";
+            this.barSubItem8.Id = 45;
+            this.barSubItem8.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddMaker),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddMakeDate),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddModifer),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddModifyDate),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddSumbit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddSumbitDate),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddAuditor),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddAuditDate)});
+            this.barSubItem8.Name = "barSubItem8";
+            // 
+            // barSubItem9
+            // 
+            this.barSubItem9.Caption = "表单模板";
+            this.barSubItem9.Id = 46;
+            this.barSubItem9.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSINGLEVOUCHER),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnMVVOUCHER),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBASEINFO),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnTREEBASEINFO)});
+            this.barSubItem9.Name = "barSubItem9";
+            // 
+            // btnSINGLEVOUCHER
+            // 
+            this.btnSINGLEVOUCHER.Caption = "单表单据";
+            this.btnSINGLEVOUCHER.Id = 47;
+            this.btnSINGLEVOUCHER.Name = "btnSINGLEVOUCHER";
+            this.btnSINGLEVOUCHER.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSINGLEVOUCHER_ItemClick);
+            // 
+            // btnMVVOUCHER
+            // 
+            this.btnMVVOUCHER.Caption = "主从表单据";
+            this.btnMVVOUCHER.Id = 48;
+            this.btnMVVOUCHER.Name = "btnMVVOUCHER";
+            this.btnMVVOUCHER.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnMVVOUCHER_ItemClick);
+            // 
+            // btnBASEINFO
+            // 
+            this.btnBASEINFO.Caption = "普通档案";
+            this.btnBASEINFO.Id = 49;
+            this.btnBASEINFO.Name = "btnBASEINFO";
+            this.btnBASEINFO.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnBASEINFO_ItemClick);
+            // 
+            // btnTREEBASEINFO
+            // 
+            this.btnTREEBASEINFO.Caption = "树形档案";
+            this.btnTREEBASEINFO.Id = 50;
+            this.btnTREEBASEINFO.Name = "btnTREEBASEINFO";
+            this.btnTREEBASEINFO.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnTREEBASEINFO_ItemClick);
+            // 
+            // barSubItem10
+            // 
+            this.barSubItem10.Caption = "按钮组件";
+            this.barSubItem10.Id = 51;
+            this.barSubItem10.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnNEWButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnEDITButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnDELETE),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnSAVEButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnSUBMITButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnUNSUBMITButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnAUDITButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnUNAUDITButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnREFButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnPUSHButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnEXITButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnADDROWButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnDELETEROWButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnINSERTROWButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnCOPYROWButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnINSERTCOPYROWButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnADDCOPYROWButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnUPROWButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnDOWNROWButton)});
+            this.barSubItem10.Name = "barSubItem10";
+            // 
+            // BtnNEWButton
+            // 
+            this.BtnNEWButton.Caption = "新增按钮";
+            this.BtnNEWButton.Id = 52;
+            this.BtnNEWButton.Name = "BtnNEWButton";
+            this.BtnNEWButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnNEWButton_ItemClick);
+            // 
+            // BtnEDITButton
+            // 
+            this.BtnEDITButton.Caption = "编辑按钮";
+            this.BtnEDITButton.Id = 53;
+            this.BtnEDITButton.Name = "BtnEDITButton";
+            this.BtnEDITButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnEDITButton_ItemClick);
+            // 
+            // BtnDELETE
+            // 
+            this.BtnDELETE.Caption = "删除按钮";
+            this.BtnDELETE.Id = 54;
+            this.BtnDELETE.Name = "BtnDELETE";
+            this.BtnDELETE.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDELETE_ItemClick);
+            // 
+            // BtnSAVEButton
+            // 
+            this.BtnSAVEButton.Caption = "保存按钮";
+            this.BtnSAVEButton.Id = 55;
+            this.BtnSAVEButton.Name = "BtnSAVEButton";
+            this.BtnSAVEButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSAVEButton_ItemClick);
+            // 
+            // BtnSUBMITButton
+            // 
+            this.BtnSUBMITButton.Caption = "提交按钮";
+            this.BtnSUBMITButton.Id = 56;
+            this.BtnSUBMITButton.Name = "BtnSUBMITButton";
+            this.BtnSUBMITButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSUBMITButton_ItemClick);
+            // 
+            // BtnUNSUBMITButton
+            // 
+            this.BtnUNSUBMITButton.Caption = "反提交按钮";
+            this.BtnUNSUBMITButton.Id = 57;
+            this.BtnUNSUBMITButton.Name = "BtnUNSUBMITButton";
+            this.BtnUNSUBMITButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUNSUBMITButton_ItemClick);
+            // 
+            // BtnAUDITButton
+            // 
+            this.BtnAUDITButton.Caption = "审核按钮";
+            this.BtnAUDITButton.Id = 58;
+            this.BtnAUDITButton.Name = "BtnAUDITButton";
+            this.BtnAUDITButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAUDITButton_ItemClick);
+            // 
+            // BtnUNAUDITButton
+            // 
+            this.BtnUNAUDITButton.Caption = "反审核按钮";
+            this.BtnUNAUDITButton.Id = 59;
+            this.BtnUNAUDITButton.Name = "BtnUNAUDITButton";
+            this.BtnUNAUDITButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUNAUDITButton_ItemClick);
+            // 
+            // BtnREFButton
+            // 
+            this.BtnREFButton.Caption = "参照按钮";
+            this.BtnREFButton.Id = 60;
+            this.BtnREFButton.Name = "BtnREFButton";
+            this.BtnREFButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnREFButton_ItemClick);
+            // 
+            // BtnPUSHButton
+            // 
+            this.BtnPUSHButton.Caption = "下推按钮";
+            this.BtnPUSHButton.Id = 61;
+            this.BtnPUSHButton.Name = "BtnPUSHButton";
+            this.BtnPUSHButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPUSHButton_ItemClick);
+            // 
+            // BtnEXITButton
+            // 
+            this.BtnEXITButton.Caption = "退出按钮";
+            this.BtnEXITButton.Id = 62;
+            this.BtnEXITButton.Name = "BtnEXITButton";
+            this.BtnEXITButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnEXITButton_ItemClick);
+            // 
+            // BtnADDROWButton
+            // 
+            this.BtnADDROWButton.Caption = "添加行按钮";
+            this.BtnADDROWButton.Id = 63;
+            this.BtnADDROWButton.Name = "BtnADDROWButton";
+            this.BtnADDROWButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnADDROWButton_ItemClick);
+            // 
+            // BtnDELETEROWButton
+            // 
+            this.BtnDELETEROWButton.Caption = "删除行按钮";
+            this.BtnDELETEROWButton.Id = 64;
+            this.BtnDELETEROWButton.Name = "BtnDELETEROWButton";
+            this.BtnDELETEROWButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDELETEROWButton_ItemClick);
+            // 
+            // BtnINSERTROWButton
+            // 
+            this.BtnINSERTROWButton.Caption = "插入行按钮";
+            this.BtnINSERTROWButton.Id = 65;
+            this.BtnINSERTROWButton.Name = "BtnINSERTROWButton";
+            this.BtnINSERTROWButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnINSERTROWButton_ItemClick);
+            // 
+            // BtnCOPYROWButton
+            // 
+            this.BtnCOPYROWButton.Caption = "复制行按钮";
+            this.BtnCOPYROWButton.Id = 66;
+            this.BtnCOPYROWButton.Name = "BtnCOPYROWButton";
+            this.BtnCOPYROWButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnCOPYROWButton_ItemClick);
+            // 
+            // BtnINSERTCOPYROWButton
+            // 
+            this.BtnINSERTCOPYROWButton.Caption = "插入复制行按钮";
+            this.BtnINSERTCOPYROWButton.Id = 67;
+            this.BtnINSERTCOPYROWButton.Name = "BtnINSERTCOPYROWButton";
+            this.BtnINSERTCOPYROWButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnINSERTCOPYROWButton_ItemClick);
+            // 
+            // BtnADDCOPYROWButton
+            // 
+            this.BtnADDCOPYROWButton.Caption = "添加复制行按钮";
+            this.BtnADDCOPYROWButton.Id = 68;
+            this.BtnADDCOPYROWButton.Name = "BtnADDCOPYROWButton";
+            this.BtnADDCOPYROWButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnADDCOPYROWButton_ItemClick);
+            // 
+            // BtnUPROWButton
+            // 
+            this.BtnUPROWButton.Caption = "上移按钮";
+            this.BtnUPROWButton.Id = 69;
+            this.BtnUPROWButton.Name = "BtnUPROWButton";
+            this.BtnUPROWButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUPROWButton_ItemClick);
+            // 
+            // BtnDOWNROWButton
+            // 
+            this.BtnDOWNROWButton.Caption = "下移按钮";
+            this.BtnDOWNROWButton.Id = 70;
+            this.BtnDOWNROWButton.Name = "BtnDOWNROWButton";
+            this.BtnDOWNROWButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDOWNROWButton_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup2,
             this.ribbonPageGroup3,
-            this.ribbonPageGroup6,
-            this.ribbonPageGroup5,
-            this.ribbonPageGroup4,
-            this.ribbonPageGroup7});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup4});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "功能区";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnAddPanel);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnAddButtonGroup);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnAddControlGroup);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnAddButton);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnAddControl);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnAddListButton);
-            this.ribbonPageGroup1.MergeOrder = 1;
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "添加";
-            // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnDeletePanel);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnDeleteButtonGroup);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnDeleteControlGroup);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnDeleteButton);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnDeleteControl);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnDeleteListButton);
-            this.ribbonPageGroup2.MergeOrder = 2;
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "删除";
             // 
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnNew);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnEdit);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnSave);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnStatus);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnVoucherStatus);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnVoucherCode);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnPublish);
             this.ribbonPageGroup3.MergeOrder = 3;
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "表单操作";
             // 
-            // ribbonPageGroup6
+            // ribbonPageGroup1
             // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.btngAddGneralEvent);
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnAddPluginEvent);
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnDeleteEvent);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "事件";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnPublish);
-            this.ribbonPageGroup5.ItemLinks.Add(this.btnAddListButton);
-            this.ribbonPageGroup5.MergeOrder = 4;
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "发布";
+            this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem2);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem3);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem4);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem6);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem7);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem9);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem10);
+            this.ribbonPageGroup1.MergeOrder = 1;
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "添加";
             // 
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.btnExit);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnDeleteButton);
             this.ribbonPageGroup4.MergeOrder = 45;
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "基本操作";
-            // 
-            // ribbonPageGroup7
-            // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnAddVoucherCode);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnAddMaker);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnAddMakeDate);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnAddModifer);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnAddModifyDate);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnAddSumbit);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnAddSumbitDate);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnAddAuditor);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnAddAuditDate);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnAddUserControl);
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnAddDateControl);
-            this.ribbonPageGroup7.MergeOrder = 6;
-            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
-            this.ribbonPageGroup7.Text = "常用控件";
             // 
             // ribbonStatusBar
             // 
@@ -886,7 +1196,7 @@
             this.dockPanel4_Container.Controls.Add(this.gridControl3);
             this.dockPanel4_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel4_Container.Name = "dockPanel4_Container";
-            this.dockPanel4_Container.Size = new System.Drawing.Size(1385, 306);
+            this.dockPanel4_Container.Size = new System.Drawing.Size(1217, 306);
             this.dockPanel4_Container.TabIndex = 0;
             // 
             // gridControl3
@@ -902,7 +1212,7 @@
             this.repositoryItemGridLookUpEdit_basicInfoShowFieldName,
             this.repositoryItemGridLookUpEdit_basicInfoAssistType,
             this.repositoryItemGridLookUpEdit_dictInfoType});
-            this.gridControl3.Size = new System.Drawing.Size(1385, 306);
+            this.gridControl3.Size = new System.Drawing.Size(1217, 306);
             this.gridControl3.TabIndex = 9;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -1150,7 +1460,7 @@
             this.dockPanel7_Container.Controls.Add(this.gridControl4);
             this.dockPanel7_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel7_Container.Name = "dockPanel7_Container";
-            this.dockPanel7_Container.Size = new System.Drawing.Size(1385, 306);
+            this.dockPanel7_Container.Size = new System.Drawing.Size(1217, 306);
             this.dockPanel7_Container.TabIndex = 0;
             // 
             // gridControl4
@@ -1163,7 +1473,7 @@
             this.gridControl4.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemGridLookUpEdit_statusFieldName,
             this.repositoryItemGridLookUpEdit_previousVoucherStatus});
-            this.gridControl4.Size = new System.Drawing.Size(1385, 306);
+            this.gridControl4.Size = new System.Drawing.Size(1217, 306);
             this.gridControl4.TabIndex = 9;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -1652,7 +1962,7 @@
             this.dockPanel10_Container.Controls.Add(this.gridControl7);
             this.dockPanel10_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel10_Container.Name = "dockPanel10_Container";
-            this.dockPanel10_Container.Size = new System.Drawing.Size(1385, 306);
+            this.dockPanel10_Container.Size = new System.Drawing.Size(1217, 306);
             this.dockPanel10_Container.TabIndex = 0;
             // 
             // gridControl7
@@ -1665,7 +1975,7 @@
             this.gridControl7.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemGridLookUpEdit_icon1,
             this.repositoryItemGridLookUpEdit_voucherStatusList});
-            this.gridControl7.Size = new System.Drawing.Size(1385, 306);
+            this.gridControl7.Size = new System.Drawing.Size(1217, 306);
             this.gridControl7.TabIndex = 8;
             this.gridControl7.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView7});
@@ -1779,9 +2089,9 @@
             this.document4,
             this.document3});
             this.tabbedView1.RootContainer.Element = null;
-            dockingContainer3.Element = this.documentGroup1;
+            dockingContainer1.Element = this.documentGroup1;
             this.tabbedView1.RootContainer.Nodes.AddRange(new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer[] {
-            dockingContainer3});
+            dockingContainer1});
             // 
             // popupFormMenu
             // 
@@ -1847,26 +2157,16 @@
             this.popupListButtonMenu.Name = "popupListButtonMenu";
             this.popupListButtonMenu.Ribbon = this.ribbon;
             // 
-            // document3
-            // 
-            this.document3.Caption = "事件";
-            this.document3.ControlName = "dockPanel9";
-            this.document3.FloatLocation = new System.Drawing.Point(636, 431);
-            this.document3.FloatSize = new System.Drawing.Size(1385, 306);
-            this.document3.Properties.AllowClose = DevExpress.Utils.DefaultBoolean.False;
-            this.document3.Properties.AllowFloat = DevExpress.Utils.DefaultBoolean.True;
-            this.document3.Properties.AllowFloatOnDoubleClick = DevExpress.Utils.DefaultBoolean.True;
-            // 
             // LiManageVoucherDesign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1751, 1092);
+            this.Controls.Add(this.dockPanel2);
+            this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.dockPanel8);
             this.Controls.Add(this.dockPanel6);
             this.Controls.Add(this.dockPanel3);
-            this.Controls.Add(this.dockPanel2);
-            this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -1879,6 +2179,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.document1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.document5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.document4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.document3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_Icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_voucherStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.document2)).EndInit();
@@ -1947,7 +2248,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupEventMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupControlGroupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupListButtonMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.document3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2033,7 +2333,6 @@
         private DevExpress.XtraBars.BarButtonItem btnEdit;
         private DevExpress.XtraBars.BarButtonItem btnSave;
         private DevExpress.XtraBars.BarButtonItem btnExit;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.PopupMenu popupFormMenu;
@@ -2044,11 +2343,9 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraBars.BarButtonItem btnStatus;
         private DevExpress.XtraBars.BarButtonItem btnPublish;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem btngAddGneralEvent;
         private DevExpress.XtraBars.BarButtonItem btnAddPluginEvent;
         private DevExpress.XtraBars.BarButtonItem btnDeleteEvent;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.Docking.DockPanel dockPanel9;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel9_Container;
         private DevExpress.XtraGrid.GridControl gridControl6;
@@ -2101,7 +2398,6 @@
         private DevExpress.XtraBars.BarButtonItem btnAddAuditDate;
         private DevExpress.XtraBars.BarButtonItem btnAddUserControl;
         private DevExpress.XtraBars.BarButtonItem btnAddDateControl;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.PopupMenu popupControlGroupMenu;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn40;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_voucherStatusList;
@@ -2115,5 +2411,38 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_previousVoucherStatus;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView15;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.Document document3;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarSubItem barSubItem3;
+        private DevExpress.XtraBars.BarSubItem barSubItem4;
+        private DevExpress.XtraBars.BarSubItem barSubItem5;
+        private DevExpress.XtraBars.BarSubItem barSubItem6;
+        private DevExpress.XtraBars.BarSubItem barSubItem7;
+        private DevExpress.XtraBars.BarSubItem barSubItem8;
+        private DevExpress.XtraBars.BarSubItem barSubItem9;
+        private DevExpress.XtraBars.BarButtonItem btnSINGLEVOUCHER;
+        private DevExpress.XtraBars.BarButtonItem btnMVVOUCHER;
+        private DevExpress.XtraBars.BarButtonItem btnBASEINFO;
+        private DevExpress.XtraBars.BarButtonItem btnTREEBASEINFO;
+        private DevExpress.XtraBars.BarSubItem barSubItem10;
+        private DevExpress.XtraBars.BarButtonItem BtnNEWButton;
+        private DevExpress.XtraBars.BarButtonItem BtnEDITButton;
+        private DevExpress.XtraBars.BarButtonItem BtnDELETE;
+        private DevExpress.XtraBars.BarButtonItem BtnSAVEButton;
+        private DevExpress.XtraBars.BarButtonItem BtnSUBMITButton;
+        private DevExpress.XtraBars.BarButtonItem BtnUNSUBMITButton;
+        private DevExpress.XtraBars.BarButtonItem BtnAUDITButton;
+        private DevExpress.XtraBars.BarButtonItem BtnUNAUDITButton;
+        private DevExpress.XtraBars.BarButtonItem BtnREFButton;
+        private DevExpress.XtraBars.BarButtonItem BtnPUSHButton;
+        private DevExpress.XtraBars.BarButtonItem BtnEXITButton;
+        private DevExpress.XtraBars.BarButtonItem BtnADDROWButton;
+        private DevExpress.XtraBars.BarButtonItem BtnDELETEROWButton;
+        private DevExpress.XtraBars.BarButtonItem BtnINSERTROWButton;
+        private DevExpress.XtraBars.BarButtonItem BtnCOPYROWButton;
+        private DevExpress.XtraBars.BarButtonItem BtnINSERTCOPYROWButton;
+        private DevExpress.XtraBars.BarButtonItem BtnADDCOPYROWButton;
+        private DevExpress.XtraBars.BarButtonItem BtnUPROWButton;
+        private DevExpress.XtraBars.BarButtonItem BtnDOWNROWButton;
     }
 }

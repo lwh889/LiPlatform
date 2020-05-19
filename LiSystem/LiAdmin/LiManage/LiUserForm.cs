@@ -30,6 +30,7 @@ using LiModel.Util;
 
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using LiModel.LiModelFactory;
 
 namespace LiManage
 {
@@ -209,7 +210,7 @@ namespace LiManage
         /// <param name="layoutControlGroup"></param>
         public void InitControlToDockPanel(object entity, Dictionary<string, Control> controlDict, Dictionary<string, LayoutControlItem> layoutControlItemDict, LayoutControlGroup layoutControlGroup)
         {
-            List<ControlModel> controls = ControlModel.getInstancesByModel(entity);
+            List<ControlModel> controls = ControlFactory.getInstancesByModel(entity);
 
             List<ControlModel> lists = controls.OrderBy(m => m.row).ToList();
             foreach (ControlModel customerControlModel in lists)

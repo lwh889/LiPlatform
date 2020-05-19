@@ -30,6 +30,7 @@ using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraVerticalGrid;
 using DevExpress.XtraLayout;
 using LiHttp.RequestParam;
+using LiModel.LiModelFactory;
 
 namespace LiManage
 {
@@ -1311,7 +1312,7 @@ namespace LiManage
 
         private void btnAddVoucherCode_ItemClick(object sender, ItemClickEventArgs e)
         {
-            addControl(ControlModel.getVoucherCode());
+            addControl(ControlFactory.getVoucherCode());
         }
 
         public void addControl(ControlModel controlModel)
@@ -1327,52 +1328,52 @@ namespace LiManage
 
         private void btnAddMaker_ItemClick(object sender, ItemClickEventArgs e)
         {
-            addControl(ControlModel.getUserControlMaker());
+            addControl(ControlFactory.getUserControlMaker());
         }
 
         private void btnAddMakeDate_ItemClick(object sender, ItemClickEventArgs e)
         {
-            addControl(ControlModel.getDateControlMakerDate());
+            addControl(ControlFactory.getDateControlMakerDate());
         }
 
         private void btnAddModifer_ItemClick(object sender, ItemClickEventArgs e)
         {
-            addControl(ControlModel.getUserControlModifer());
+            addControl(ControlFactory.getUserControlModifer());
         }
 
         private void btnAddModifyDate_ItemClick(object sender, ItemClickEventArgs e)
         {
-            addControl(ControlModel.getDateControlModifyDate());
+            addControl(ControlFactory.getDateControlModifyDate());
         }
 
         private void btnAddSumbit_ItemClick(object sender, ItemClickEventArgs e)
         {
-            addControl(ControlModel.getUserControlSumbit());
+            addControl(ControlFactory.getUserControlSubmit());
         }
 
         private void btnAddSumbitDate_ItemClick(object sender, ItemClickEventArgs e)
         {
-            addControl(ControlModel.getDateControlSumbitDate());
+            addControl(ControlFactory.getDateControlSubmitDate());
         }
 
         private void btnAddAuditor_ItemClick(object sender, ItemClickEventArgs e)
         {
-            addControl(ControlModel.getUserControlAuditor());
+            addControl(ControlFactory.getUserControlAuditor());
         }
 
         private void btnAddAuditDate_ItemClick(object sender, ItemClickEventArgs e)
         {
-            addControl(ControlModel.getDateControlAuditDate());
+            addControl(ControlFactory.getDateControlAuditDate());
         }
 
         private void btnAddUserControl_ItemClick(object sender, ItemClickEventArgs e)
         {
-            addControl(ControlModel.getUserControl());
+            addControl(ControlFactory.getUserControl());
         }
 
         private void btnAddDateControl_ItemClick(object sender, ItemClickEventArgs e)
         {
-            addControl(ControlModel.getDateControl());
+            addControl(ControlFactory.getDateControl());
         }
 
         private void repositoryItemGridLookUpEdit_statusFieldName_BeforePopup(object sender, EventArgs e)
@@ -1380,6 +1381,134 @@ namespace LiManage
             repositoryItemGridLookUpEdit_statusFieldName.DataSource = getVoucherStatusControls();
         }
 
+        public void addButton(string buttonType, string entityKey = "")
+        {
+
+            if (selectedGridRowData != null && selectedGridRowData.GetType().Name == "ButtonGroupModel")
+            {
+                ButtonGroupModel buttonGroupModel = (ButtonGroupModel)selectedGridRowData;
+                ButtonModel buttonModel = ButtonFactory.getFormButtonModel(buttonType, buttonGroupModel.id, buttonGroupModel.buttons.Count <= 0 ? Guid.NewGuid().ToString() : buttonGroupModel.buttons[0].categoryGuid, entityKey);
+
+                DevControlUtil.addRowInGridView<ButtonModel>(buttonModel, gridControl4);
+                gridView4.RefreshData();
+            }
+        }
+
+        private void BtnNEWButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNNEW);
+        }
+
+        private void BtnEDITButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNEDIT);
+        }
+
+        private void BtnDELETE_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNDELETE);
+        }
+
+        private void BtnSAVEButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNSAVE);
+        }
+
+        private void BtnSUBMITButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNSUBMIT);
+        }
+
+        private void BtnUNSUBMITButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNUNSUBMIT);
+        }
+
+        private void BtnAUDITButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNAUDIT);
+        }
+
+        private void BtnUNAUDITButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNUNAUDIT);
+        }
+
+        private void BtnREFButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNREF);
+        }
+
+        private void BtnPUSHButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNPUSH);
+
+        }
+
+        private void BtnEXITButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNEXIT);
+        }
+
+        private void BtnADDROWButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNADDROW);
+        }
+
+        private void BtnDELETEROWButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNDELETEROW);
+        }
+
+        private void BtnINSERTROWButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNINSERTROW);
+        }
+
+        private void BtnCOPYROWButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNCOPYROW);
+        }
+
+        private void BtnINSERTCOPYROWButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNINSERTCOPYROW);
+        }
+
+        private void BtnADDCOPYROWButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNADDCOPYROW);
+        }
+
+        private void BtnSINGLEVOUCHER_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormTemplateFactory.getFormModel_SingleVoucher(formModel);
+        }
+
+        private void BtnMVVOUCHER_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void BtnBASEINFO_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void BtnTREEBASEINFO_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void BtnUPROWButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNUPROW);
+        }
+
+        private void BtnDOWNROWButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNDOWNROW);
+        }
     }
 
     

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiSetReadOnlyForm));
-            DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer dockingContainer1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer();
+            DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer dockingContainer6 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer();
             this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup();
             this.document2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
@@ -85,6 +85,12 @@
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager();
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
             this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.btnAddNewStatus = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddEditStatus = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddShowStatus = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddSubmitStatus = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddAuditStatus = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -170,9 +176,15 @@
             this.btnExit,
             this.btnAddStatus,
             this.btnDeleteStatus,
-            this.btnRefreshStatus});
+            this.btnRefreshStatus,
+            this.barSubItem1,
+            this.btnAddNewStatus,
+            this.btnAddEditStatus,
+            this.btnAddShowStatus,
+            this.btnAddSubmitStatus,
+            this.btnAddAuditStatus});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 5;
+            this.barManager1.MaxItemId = 11;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar1
@@ -194,7 +206,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnRefreshStatus),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnDeleteStatus),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSave),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnExit)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnExit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem1)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -262,31 +275,35 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1198, 84);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControlTop.Size = new System.Drawing.Size(1711, 115);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 491);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 782);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1198, 23);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1711, 26);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 84);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 115);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 407);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 667);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1198, 84);
+            this.barDockControlRight.Location = new System.Drawing.Point(1711, 115);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 407);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 667);
             // 
             // dockPanel3
             // 
@@ -294,18 +311,20 @@
             this.dockPanel3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
             this.dockPanel3.FloatVertical = true;
             this.dockPanel3.ID = new System.Guid("e66a7725-3de6-4081-a8ba-d6bf6c516580");
-            this.dockPanel3.Location = new System.Drawing.Point(0, 84);
+            this.dockPanel3.Location = new System.Drawing.Point(0, 115);
+            this.dockPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel3.Name = "dockPanel3";
             this.dockPanel3.OriginalSize = new System.Drawing.Size(200, 87);
-            this.dockPanel3.Size = new System.Drawing.Size(1198, 87);
+            this.dockPanel3.Size = new System.Drawing.Size(1711, 87);
             this.dockPanel3.Text = "单据信息";
             // 
             // dockPanel3_Container
             // 
             this.dockPanel3_Container.Controls.Add(this.layoutControl1);
-            this.dockPanel3_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel3_Container.Location = new System.Drawing.Point(6, 35);
+            this.dockPanel3_Container.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel3_Container.Name = "dockPanel3_Container";
-            this.dockPanel3_Container.Size = new System.Drawing.Size(1190, 59);
+            this.dockPanel3_Container.Size = new System.Drawing.Size(1699, 43);
             this.dockPanel3_Container.TabIndex = 0;
             // 
             // layoutControl1
@@ -314,28 +333,31 @@
             this.layoutControl1.Controls.Add(this.code);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1190, 59);
+            this.layoutControl1.Size = new System.Drawing.Size(1699, 43);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // name
             // 
-            this.name.Location = new System.Drawing.Point(339, 12);
+            this.name.Location = new System.Drawing.Point(357, 18);
+            this.name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.name.MenuManager = this.barManager1;
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(269, 20);
+            this.name.Size = new System.Drawing.Size(255, 28);
             this.name.StyleController = this.layoutControl1;
             this.name.TabIndex = 5;
             this.name.Tag = "LiSetReadOnlyForm.name";
             // 
             // code
             // 
-            this.code.Location = new System.Drawing.Point(39, 12);
+            this.code.Location = new System.Drawing.Point(57, 18);
+            this.code.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.code.MenuManager = this.barManager1;
             this.code.Name = "code";
-            this.code.Size = new System.Drawing.Size(269, 20);
+            this.code.Size = new System.Drawing.Size(255, 28);
             this.code.StyleController = this.layoutControl1;
             this.code.TabIndex = 4;
             this.code.Tag = "LiSetReadOnlyForm.code";
@@ -350,7 +372,7 @@
             this.layoutControlItem2});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1190, 59);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1675, 64);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -363,14 +385,14 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(300, 24);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.Text = "编码";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(24, 14);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(36, 22);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 24);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1170, 15);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1645, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -380,41 +402,45 @@
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(300, 24);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(81, 24);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(870, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1345, 24);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "名称";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(24, 14);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(36, 22);
             // 
             // dockPanel1
             // 
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanel1.ID = new System.Guid("1935e979-b2eb-4e27-b70f-11ef65ae215a");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 171);
+            this.dockPanel1.Location = new System.Drawing.Point(0, 202);
+            this.dockPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(512, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(512, 320);
+            this.dockPanel1.Size = new System.Drawing.Size(512, 580);
             this.dockPanel1.Text = "状态列表";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.gridControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(6, 35);
+            this.dockPanel1_Container.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(503, 293);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(497, 539);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemGridLookUpEdit_userFieldName,
             this.repositoryItemGridLookUpEdit_dateFieldName,
             this.repositoryItemGridLookUpEdit_statusFieldName});
-            this.gridControl1.Size = new System.Drawing.Size(503, 293);
+            this.gridControl1.Size = new System.Drawing.Size(497, 539);
             this.gridControl1.TabIndex = 17;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -558,7 +584,7 @@
             this.dockPanel2_Container.Controls.Add(this.gridControl2);
             this.dockPanel2_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(680, 291);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(1191, 537);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // gridControl2
@@ -567,7 +593,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(680, 291);
+            this.gridControl2.Size = new System.Drawing.Size(1191, 537);
             this.gridControl2.TabIndex = 18;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -653,9 +679,9 @@
             this.tabbedView1.Documents.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseDocument[] {
             this.document2});
             this.tabbedView1.RootContainer.Element = null;
-            dockingContainer1.Element = this.documentGroup1;
+            dockingContainer6.Element = this.documentGroup1;
             this.tabbedView1.RootContainer.Nodes.AddRange(new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer[] {
-            dockingContainer1});
+            dockingContainer6});
             // 
             // document1
             // 
@@ -667,11 +693,61 @@
             this.document1.Properties.AllowFloat = DevExpress.Utils.DefaultBoolean.True;
             this.document1.Properties.AllowFloatOnDoubleClick = DevExpress.Utils.DefaultBoolean.True;
             // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "状态列表";
+            this.barSubItem1.Id = 5;
+            this.barSubItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.Image")));
+            this.barSubItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.LargeImage")));
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddNewStatus),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddEditStatus),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddShowStatus),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddSubmitStatus),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddAuditStatus)});
+            this.barSubItem1.Name = "barSubItem1";
+            this.barSubItem1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // btnAddNewStatus
+            // 
+            this.btnAddNewStatus.Caption = "新增状态";
+            this.btnAddNewStatus.Id = 6;
+            this.btnAddNewStatus.Name = "btnAddNewStatus";
+            this.btnAddNewStatus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddNewStatus_ItemClick);
+            // 
+            // btnAddEditStatus
+            // 
+            this.btnAddEditStatus.Caption = "编辑状态";
+            this.btnAddEditStatus.Id = 7;
+            this.btnAddEditStatus.Name = "btnAddEditStatus";
+            this.btnAddEditStatus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddEditStatus_ItemClick);
+            // 
+            // btnAddShowStatus
+            // 
+            this.btnAddShowStatus.Caption = "浏览状态";
+            this.btnAddShowStatus.Id = 8;
+            this.btnAddShowStatus.Name = "btnAddShowStatus";
+            this.btnAddShowStatus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddShowStatus_ItemClick);
+            // 
+            // btnAddSubmitStatus
+            // 
+            this.btnAddSubmitStatus.Caption = "提交状态";
+            this.btnAddSubmitStatus.Id = 9;
+            this.btnAddSubmitStatus.Name = "btnAddSubmitStatus";
+            this.btnAddSubmitStatus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddSubmitStatus_ItemClick);
+            // 
+            // btnAddAuditStatus
+            // 
+            this.btnAddAuditStatus.Caption = "审核状态";
+            this.btnAddAuditStatus.Id = 10;
+            this.btnAddAuditStatus.Name = "btnAddAuditStatus";
+            this.btnAddAuditStatus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddAuditStatus_ItemClick);
+            // 
             // LiSetReadOnlyForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1198, 514);
+            this.ClientSize = new System.Drawing.Size(1711, 808);
             this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.dockPanel3);
             this.Controls.Add(this.barDockControlLeft);
@@ -679,6 +755,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LiSetReadOnlyForm";
             this.Text = "状态配置表";
             this.Load += new System.EventHandler(this.LiSetReadOnlyForm_Load);
@@ -799,6 +876,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_statusFieldName;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarButtonItem btnAddNewStatus;
+        private DevExpress.XtraBars.BarButtonItem btnAddEditStatus;
+        private DevExpress.XtraBars.BarButtonItem btnAddShowStatus;
+        private DevExpress.XtraBars.BarButtonItem btnAddSubmitStatus;
+        private DevExpress.XtraBars.BarButtonItem btnAddAuditStatus;
     }
 }
