@@ -1482,22 +1482,75 @@ namespace LiManage
 
         private void BtnSINGLEVOUCHER_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (formModel.listButtons.Count > 0 || formModel.panels.Count > 0 || formModel.buttonGroups.Count > 0)
+            {
+                if( MessageUtil.ShowMsgBox("是否清空数据，重置模板数据？","温馨提示", MsgType.YesNo) == DialogResult.Yes)
+                {
+                    formModel.listButtons.Clear();
+                    formModel.panels.Clear();
+                    formModel.buttonGroups.Clear();
+                }
+                else
+                {
+                    return;
+                }
+            }
             FormTemplateFactory.getFormModel_SingleVoucher(formModel);
         }
 
         private void BtnMVVOUCHER_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            if (formModel.listButtons.Count > 0 || formModel.panels.Count > 0 || formModel.buttonGroups.Count > 0)
+            {
+                if (MessageUtil.ShowMsgBox("是否清空数据，重置模板数据？", "温馨提示", MsgType.YesNo) == DialogResult.Yes)
+                {
+                    formModel.listButtons.Clear();
+                    formModel.panels.Clear();
+                    formModel.buttonGroups.Clear();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            FormTemplateFactory.getFormModel_MSVoucher(formModel);
         }
 
         private void BtnBASEINFO_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            if (formModel.listButtons.Count > 0 || formModel.panels.Count > 0 || formModel.buttonGroups.Count > 0)
+            {
+                if (MessageUtil.ShowMsgBox("是否清空数据，重置模板数据？", "温馨提示", MsgType.YesNo) == DialogResult.Yes)
+                {
+                    formModel.listButtons.Clear();
+                    formModel.panels.Clear();
+                    formModel.buttonGroups.Clear();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            FormTemplateFactory.getFormModel_BasicInfo(formModel);
         }
 
         private void BtnTREEBASEINFO_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (formModel.listButtons.Count > 0 || formModel.panels.Count > 0 || formModel.buttonGroups.Count > 0)
+            {
+                if (MessageUtil.ShowMsgBox("是否清空数据，重置模板数据？", "温馨提示", MsgType.YesNo) == DialogResult.Yes)
+                {
+                    formModel.listButtons.Clear();
+                    formModel.panels.Clear();
+                    formModel.buttonGroups.Clear();
+                }
+                else
+                {
+                    return;
+                }
+            }
 
+            FormTemplateFactory.getFormModel_TreeBasicInfo(formModel);
         }
 
         private void BtnUPROWButton_ItemClick(object sender, ItemClickEventArgs e)

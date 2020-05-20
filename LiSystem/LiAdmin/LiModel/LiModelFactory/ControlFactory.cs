@@ -1,5 +1,6 @@
 ﻿using LiModel.Form;
 using LiModel.LiAttribute;
+using LiModel.LiEnum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -76,9 +77,56 @@ namespace LiModel.LiModelFactory
             return controls;
         }
 
+        public static ControlModel getCodeControl(int controlGroupId)
+        {
+            ControlModel controlModel = ControlModel.getInstance(controlGroupId);
+            controlModel.name = "cCode";
+            controlModel.text = "编码";
+            controlModel.width = WIDTH;
+            controlModel.length = 30;
+            controlModel.controltype = ControlType.TextEdit;
+            return controlModel;
+        }
+        public static ControlModel getNameControl(int controlGroupId)
+        {
+            ControlModel controlModel = ControlModel.getInstance(controlGroupId);
+            controlModel.name = "cName";
+            controlModel.text = "名称";
+            controlModel.width = WIDTH;
+            controlModel.length = 30;
+            controlModel.controltype = ControlType.TextEdit;
+            return controlModel;
+        }
+
         public static ControlModel getVoucherCode()
         {
             return new ControlModel() { id = 0, name = "billCode", text = "单据编号", width = WIDTH, length = 20, height = 24, col = 1, row = 1, controltype = "VoucherCodeEdit", bVisibleInList = true, bVisible = true, bIsNull = true };
+        }
+        public static ControlModel getRowNoControl()
+        {
+            return new ControlModel() { id = 0, name = "iRow", text = "行号", width = 80, length = 9, height = 24, col = 1, row = 1, controltype = "IntEdit", bVisibleInList = true, bVisible = true, bIsNull = true, bReadOnly = true};
+        }
+        public static ControlModel getQuantityControl()
+        {
+            return new ControlModel() { id = 0, name = "iQuantity", text = "数量", width = WIDTH, length = 9, height = 24, col = 2, row = 1, controltype = "DecimalEdit", scale = 6, bVisibleInList = true, bVisible = true, bIsNull = true};
+        }
+        public static ControlModel getPriceControl()
+        {
+            return new ControlModel() { id = 0, name = "iPrice", text = "单价", width = WIDTH, length = 9, height = 24, col = 3, row = 1, controltype = "DecimalEdit", scale = 6, bVisibleInList = true, bVisible = true, bIsNull = true };
+        }
+        public static ControlModel getAmountControl()
+        {
+            return new ControlModel() { id = 0, name = "iAmount", text = "金额", width = WIDTH, length = 9, height = 24, col = 4, row = 1, controltype = "DecimalEdit", scale = 2, bVisibleInList = true, bVisible = true, bIsNull = true };
+        }
+        public static ControlModel getMemoHeadControl()
+        {
+            return new ControlModel() { id = 0, name = "cMemo", text = "备注", width = WIDTH, length = 9, height = 24, col = 5, row = 1, controltype = "MemoEdit", bVisibleInList = true, bVisible = true, bIsNull = true };
+        }
+        public static ControlModel getMemoBodyControl()
+        {
+            ControlModel controlModel = getMemoHeadControl();
+            controlModel.name = "bMemo";
+            return controlModel;
         }
 
         public static ControlModel getVoucherDate()
@@ -142,6 +190,8 @@ namespace LiModel.LiModelFactory
             controlModel.name = "cMaker";
             controlModel.text = "制单人";
             controlModel.bReadOnly = true;
+            controlModel.row = 1;
+            controlModel.col = 1;
             return controlModel;
         }
         /// <summary>
@@ -155,6 +205,8 @@ namespace LiModel.LiModelFactory
             controlModel.name = "dMakeDate";
             controlModel.text = "制单日期";
             controlModel.bReadOnly = true;
+            controlModel.row = 1;
+            controlModel.col = 2;
             return controlModel;
         }
 
@@ -169,6 +221,8 @@ namespace LiModel.LiModelFactory
             controlModel.name = "cModifer";
             controlModel.text = "修改人";
             controlModel.bReadOnly = true;
+            controlModel.row = 1;
+            controlModel.col = 3;
             return controlModel;
         }
         /// <summary>
@@ -182,6 +236,8 @@ namespace LiModel.LiModelFactory
             controlModel.name = "dModifiedDate";
             controlModel.text = "修改日期";
             controlModel.bReadOnly = true;
+            controlModel.row = 1;
+            controlModel.col = 4;
             return controlModel;
         }
 
@@ -196,6 +252,8 @@ namespace LiModel.LiModelFactory
             controlModel.name = "cSumbit";
             controlModel.text = "提交人";
             controlModel.bReadOnly = true;
+            controlModel.row = 2;
+            controlModel.col = 1;
             return controlModel;
         }
         /// <summary>
@@ -209,6 +267,8 @@ namespace LiModel.LiModelFactory
             controlModel.name = "dSumbitDate";
             controlModel.text = "提交日期";
             controlModel.bReadOnly = true;
+            controlModel.row = 2;
+            controlModel.col = 2;
             return controlModel;
         }
 
@@ -223,6 +283,8 @@ namespace LiModel.LiModelFactory
             controlModel.name = "cAuditor";
             controlModel.text = "审核人";
             controlModel.bReadOnly = true;
+            controlModel.row = 2;
+            controlModel.col = 3;
             return controlModel;
         }
         /// <summary>
@@ -236,6 +298,8 @@ namespace LiModel.LiModelFactory
             controlModel.name = "dAuditDate";
             controlModel.text = "审核日期";
             controlModel.bReadOnly = true;
+            controlModel.row = 2;
+            controlModel.col = 4;
             return controlModel;
         }
     }

@@ -227,4 +227,3 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\es\DevExpress.XtraRichEd
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\ja\DevExpress.XtraRichEdit.v17.1.resources.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\ru\DevExpress.XtraRichEdit.v17.1.resources.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\App.config
-C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\Log4Net.config

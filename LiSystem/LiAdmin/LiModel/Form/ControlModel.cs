@@ -17,7 +17,7 @@ namespace LiModel.Form
 
         public static ControlModel getInstance(int controlGroupId)
         {
-            return new ControlModel() { id = 0, controlGroupId = controlGroupId, name = "control1", text = "控件名称", length = 300, height = 24, col = 1, row = 1, controltype = "TextEdit", bVisibleInList = true, bVisible = true, bIsNull = true };
+            return new ControlModel() { id = 0, controlGroupId = controlGroupId, name = "control1", text = "控件名称", length = 400, height = 24, col = 1, row = 1, controltype = "TextEdit", bVisibleInList = true, bVisible = true, bIsNull = true };
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace LiModel.Form
         public int row { set; get; }
 
         /// <summary>
-        /// 控件类型,在存储过程也要修改sp_CreateTable
+        /// 控件类型,在存储过程也要修改sp_CreateTable,Controltype
         /// </summary>
         [Browsable(true), Category("基本属性"), DisplayName("控件类型"), TypeConverter(typeof(PropertyGridListConvert)), PropertyGridListAttribute(new string[] { "VoucherCodeEdit", "TextEdit", "CheckEdit", "MemoEdit", "DecimalEdit", "IntEdit", "DateTimeEdit", "TimeEdit", "GridLookUpEditComboBox", "GridLookUpEditRef", "GridLookUpEditRefAssist", "TreeListLookUpEdit", "UserEdit", "DateEdit", "StatusEdit" })]
         public string controltype { set; get; }

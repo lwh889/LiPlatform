@@ -154,10 +154,14 @@
     <Compile Include="Dev\LiListForm.Designer.cs">
       <DependentUpon>LiListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Event\EventForm\LiEventAddCopyRowData.cs" />
+    <Compile Include="Event\EventForm\LiEventCopyRowData.cs" />
     <Compile Include="Event\EventForm\LiEventDelete.cs" />
     <Compile Include="Event\EventForm\LiEventDeleteRowData.cs" />
+    <Compile Include="Event\EventForm\LiEventDownRowData.cs" />
     <Compile Include="Event\EventForm\LiEventEdit.cs" />
     <Compile Include="Event\EventForm\LiEventExit.cs" />
+    <Compile Include="Event\EventForm\LiEventInsertCopyRowData.cs" />
     <Compile Include="Event\EventForm\LiEventInsertRowData.cs" />
     <Compile Include="Event\EventForm\LiEventItemClick.cs" />
     <Compile Include="Event\EventForm\LiEventNew.cs" />
@@ -168,6 +172,7 @@
     <Compile Include="Event\EventForm\LiEventUnSubmit.cs" />
     <Compile Include="Event\EventForm\LiEventAudit.cs" />
     <Compile Include="Event\EventForm\LiEventUnAudit.cs" />
+    <Compile Include="Event\EventForm\LiEventUpRowData.cs" />
     <Compile Include="Event\EventListForm\LiEventListAudit.cs" />
     <Compile Include="Event\EventListForm\LiEventListDelete.cs" />
     <Compile Include="Event\EventListForm\LiEventListPreciseQuery.cs" />

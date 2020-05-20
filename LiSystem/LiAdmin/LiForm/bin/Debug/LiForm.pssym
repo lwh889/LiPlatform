@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Symbols LinesOfCode="5093" PostSharpLinesOfCode="0" EnhancedTypesCount="1" SchemaVersion="1" PostSharpVersion="6.7.1.0" xmlns="http://schemas.postsharp.org/2.0/symbols">
+<Symbols LinesOfCode="5153" PostSharpLinesOfCode="0" EnhancedTypesCount="1" SchemaVersion="1" PostSharpVersion="6.7.1.0" xmlns="http://schemas.postsharp.org/2.0/symbols">
   <Class Class="#1=T:[LiCommon]LiCommon.LiPostSharp.LiExceptionAspect.ExceptionHandleAttribute">
-    <Instance Declaration="#2=M:[LiForm]LiForm.LiLoginForm::btnLogin_Click(System.Object, System.EventArgs)" Id="6cfffc93bd252549">
+    <Instance Declaration="#2=M:[LiForm]LiForm.LiLoginForm::btnLogin_Click(System.Object, System.EventArgs)" Id="6cfffc9366054cbb">
       <Target LinesAvoided="2">
         <JoinPoint Advising="#1" Description="#3=Wrapped by advice(s) OnException" Ordinal="0" />
       </Target>

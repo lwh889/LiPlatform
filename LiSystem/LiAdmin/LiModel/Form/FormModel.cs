@@ -80,7 +80,7 @@ namespace LiModel.Form
         public string statusFieldName { set; get; }
 
         /// <summary>
-        /// 控件类型,在存储过程也要修改sp_CreateTable
+        /// 控件类型,在存储过程也要修改sp_CreateTable,VoucherType
         /// </summary>
         [Browsable(true), Category("基本属性"), DisplayName("类型"), TypeConverter(typeof(PropertyGridListConvert)), PropertyGridListAttribute(new string[] { "单据", "树形基础档案", "基础档案" })]
         public string formType { set; get; }
