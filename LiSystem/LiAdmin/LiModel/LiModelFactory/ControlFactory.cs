@@ -1,6 +1,9 @@
 ﻿using LiModel.Form;
 using LiModel.LiAttribute;
+<<<<<<< HEAD
 using LiModel.LiEnum;
+=======
+>>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -77,6 +80,7 @@ namespace LiModel.LiModelFactory
             return controls;
         }
 
+<<<<<<< HEAD
         public static ControlModel getCodeControl(int controlGroupId)
         {
             ControlModel controlModel = ControlModel.getInstance(controlGroupId);
@@ -98,10 +102,13 @@ namespace LiModel.LiModelFactory
             return controlModel;
         }
 
+=======
+>>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
         public static ControlModel getVoucherCode()
         {
             return new ControlModel() { id = 0, name = "billCode", text = "单据编号", width = WIDTH, length = 20, height = 24, col = 1, row = 1, controltype = "VoucherCodeEdit", bVisibleInList = true, bVisible = true, bIsNull = true };
         }
+<<<<<<< HEAD
         public static ControlModel getRowNoControl()
         {
             return new ControlModel() { id = 0, name = "iRow", text = "行号", width = 80, length = 9, height = 24, col = 1, row = 1, controltype = "IntEdit", bVisibleInList = true, bVisible = true, bIsNull = true, bReadOnly = true};
@@ -128,6 +135,8 @@ namespace LiModel.LiModelFactory
             controlModel.name = "bMemo";
             return controlModel;
         }
+=======
+>>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
 
         public static ControlModel getVoucherDate()
         {
@@ -190,8 +199,11 @@ namespace LiModel.LiModelFactory
             controlModel.name = "cMaker";
             controlModel.text = "制单人";
             controlModel.bReadOnly = true;
+<<<<<<< HEAD
             controlModel.row = 1;
             controlModel.col = 1;
+=======
+>>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
             return controlModel;
         }
         /// <summary>
@@ -205,8 +217,11 @@ namespace LiModel.LiModelFactory
             controlModel.name = "dMakeDate";
             controlModel.text = "制单日期";
             controlModel.bReadOnly = true;
+<<<<<<< HEAD
             controlModel.row = 1;
             controlModel.col = 2;
+=======
+>>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
             return controlModel;
         }
 
@@ -221,8 +236,11 @@ namespace LiModel.LiModelFactory
             controlModel.name = "cModifer";
             controlModel.text = "修改人";
             controlModel.bReadOnly = true;
+<<<<<<< HEAD
             controlModel.row = 1;
             controlModel.col = 3;
+=======
+>>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
             return controlModel;
         }
         /// <summary>
@@ -236,8 +254,11 @@ namespace LiModel.LiModelFactory
             controlModel.name = "dModifiedDate";
             controlModel.text = "修改日期";
             controlModel.bReadOnly = true;
+<<<<<<< HEAD
             controlModel.row = 1;
             controlModel.col = 4;
+=======
+>>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
             return controlModel;
         }
 
@@ -252,8 +273,11 @@ namespace LiModel.LiModelFactory
             controlModel.name = "cSumbit";
             controlModel.text = "提交人";
             controlModel.bReadOnly = true;
+<<<<<<< HEAD
             controlModel.row = 2;
             controlModel.col = 1;
+=======
+>>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
             return controlModel;
         }
         /// <summary>
@@ -267,8 +291,11 @@ namespace LiModel.LiModelFactory
             controlModel.name = "dSumbitDate";
             controlModel.text = "提交日期";
             controlModel.bReadOnly = true;
+<<<<<<< HEAD
             controlModel.row = 2;
             controlModel.col = 2;
+=======
+>>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
             return controlModel;
         }
 
@@ -283,8 +310,11 @@ namespace LiModel.LiModelFactory
             controlModel.name = "cAuditor";
             controlModel.text = "审核人";
             controlModel.bReadOnly = true;
+<<<<<<< HEAD
             controlModel.row = 2;
             controlModel.col = 3;
+=======
+>>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
             return controlModel;
         }
         /// <summary>
@@ -298,8 +328,11 @@ namespace LiModel.LiModelFactory
             controlModel.name = "dAuditDate";
             controlModel.text = "审核日期";
             controlModel.bReadOnly = true;
+<<<<<<< HEAD
             controlModel.row = 2;
             controlModel.col = 4;
+=======
+>>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
             return controlModel;
         }
     }
