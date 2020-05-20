@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiManageVoucherDesign));
-            DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer dockingContainer1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer();
+            DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer dockingContainer2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer();
             this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup(this.components);
             this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
             this.document5 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
@@ -220,6 +220,9 @@
             this.popupEventMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupControlGroupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupListButtonMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barSubItem11 = new DevExpress.XtraBars.BarSubItem();
+            this.btnUpRow = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDownRow = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document5)).BeginInit();
@@ -438,10 +441,13 @@
             this.BtnINSERTCOPYROWButton,
             this.BtnADDCOPYROWButton,
             this.BtnUPROWButton,
-            this.BtnDOWNROWButton});
+            this.BtnDOWNROWButton,
+            this.barSubItem11,
+            this.btnUpRow,
+            this.btnDownRow});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ribbon.MaxItemId = 71;
+            this.ribbon.MaxItemId = 74;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -1047,6 +1053,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem7);
             this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem9);
             this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem10);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem11);
             this.ribbonPageGroup1.MergeOrder = 1;
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "添加";
@@ -2089,9 +2096,9 @@
             this.document4,
             this.document3});
             this.tabbedView1.RootContainer.Element = null;
-            dockingContainer1.Element = this.documentGroup1;
+            dockingContainer2.Element = this.documentGroup1;
             this.tabbedView1.RootContainer.Nodes.AddRange(new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer[] {
-            dockingContainer1});
+            dockingContainer2});
             // 
             // popupFormMenu
             // 
@@ -2156,6 +2163,29 @@
             this.popupListButtonMenu.ItemLinks.Add(this.btnDeleteListButton);
             this.popupListButtonMenu.Name = "popupListButtonMenu";
             this.popupListButtonMenu.Ribbon = this.ribbon;
+            // 
+            // barSubItem11
+            // 
+            this.barSubItem11.Caption = "操作";
+            this.barSubItem11.Id = 71;
+            this.barSubItem11.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnUpRow),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDownRow)});
+            this.barSubItem11.Name = "barSubItem11";
+            // 
+            // btnUpRow
+            // 
+            this.btnUpRow.Caption = "上移";
+            this.btnUpRow.Id = 72;
+            this.btnUpRow.Name = "btnUpRow";
+            this.btnUpRow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUpRow_ItemClick);
+            // 
+            // btnDownRow
+            // 
+            this.btnDownRow.Caption = "下移";
+            this.btnDownRow.Id = 73;
+            this.btnDownRow.Name = "btnDownRow";
+            this.btnDownRow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDownRow_ItemClick);
             // 
             // LiManageVoucherDesign
             // 
@@ -2444,5 +2474,8 @@
         private DevExpress.XtraBars.BarButtonItem BtnADDCOPYROWButton;
         private DevExpress.XtraBars.BarButtonItem BtnUPROWButton;
         private DevExpress.XtraBars.BarButtonItem BtnDOWNROWButton;
+        private DevExpress.XtraBars.BarSubItem barSubItem11;
+        private DevExpress.XtraBars.BarButtonItem btnUpRow;
+        private DevExpress.XtraBars.BarButtonItem btnDownRow;
     }
 }

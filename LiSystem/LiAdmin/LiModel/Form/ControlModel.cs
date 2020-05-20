@@ -17,11 +17,7 @@ namespace LiModel.Form
 
         public static ControlModel getInstance(int controlGroupId)
         {
-<<<<<<< HEAD
             return new ControlModel() { id = 0, controlGroupId = controlGroupId, name = "control1", text = "控件名称", length = 400, height = 24, col = 1, row = 1, controltype = "TextEdit", bVisibleInList = true, bVisible = true, bIsNull = true };
-=======
-            return new ControlModel() { id = 0, controlGroupId = controlGroupId, name = "control1", text = "控件名称", length = 300, height = 24, col = 1, row = 1, controltype = "TextEdit", bVisibleInList = true, bVisible = true, bIsNull = true };
->>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
         }
 
         /// <summary>

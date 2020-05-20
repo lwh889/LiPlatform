@@ -1482,7 +1482,6 @@ namespace LiManage
 
         private void BtnSINGLEVOUCHER_ItemClick(object sender, ItemClickEventArgs e)
         {
-<<<<<<< HEAD
             if (formModel.listButtons.Count > 0 || formModel.panels.Count > 0 || formModel.buttonGroups.Count > 0)
             {
                 if( MessageUtil.ShowMsgBox("是否清空数据，重置模板数据？","温馨提示", MsgType.YesNo) == DialogResult.Yes)
@@ -1496,14 +1495,11 @@ namespace LiManage
                     return;
                 }
             }
-=======
->>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
             FormTemplateFactory.getFormModel_SingleVoucher(formModel);
         }
 
         private void BtnMVVOUCHER_ItemClick(object sender, ItemClickEventArgs e)
         {
-<<<<<<< HEAD
             if (formModel.listButtons.Count > 0 || formModel.panels.Count > 0 || formModel.buttonGroups.Count > 0)
             {
                 if (MessageUtil.ShowMsgBox("是否清空数据，重置模板数据？", "温馨提示", MsgType.YesNo) == DialogResult.Yes)
@@ -1518,14 +1514,10 @@ namespace LiManage
                 }
             }
             FormTemplateFactory.getFormModel_MSVoucher(formModel);
-=======
-
->>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
         }
 
         private void BtnBASEINFO_ItemClick(object sender, ItemClickEventArgs e)
         {
-<<<<<<< HEAD
             if (formModel.listButtons.Count > 0 || formModel.panels.Count > 0 || formModel.buttonGroups.Count > 0)
             {
                 if (MessageUtil.ShowMsgBox("是否清空数据，重置模板数据？", "温馨提示", MsgType.YesNo) == DialogResult.Yes)
@@ -1540,14 +1532,10 @@ namespace LiManage
                 }
             }
             FormTemplateFactory.getFormModel_BasicInfo(formModel);
-=======
-
->>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
         }
 
         private void BtnTREEBASEINFO_ItemClick(object sender, ItemClickEventArgs e)
         {
-<<<<<<< HEAD
             if (formModel.listButtons.Count > 0 || formModel.panels.Count > 0 || formModel.buttonGroups.Count > 0)
             {
                 if (MessageUtil.ShowMsgBox("是否清空数据，重置模板数据？", "温馨提示", MsgType.YesNo) == DialogResult.Yes)
@@ -1563,9 +1551,6 @@ namespace LiManage
             }
 
             FormTemplateFactory.getFormModel_TreeBasicInfo(formModel);
-=======
-
->>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
         }
 
         private void BtnUPROWButton_ItemClick(object sender, ItemClickEventArgs e)
@@ -1576,6 +1561,16 @@ namespace LiManage
         private void BtnDOWNROWButton_ItemClick(object sender, ItemClickEventArgs e)
         {
             addButton(ButtonType.BTNDOWNROW);
+        }
+
+        private void BtnUpRow_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void BtnDownRow_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 

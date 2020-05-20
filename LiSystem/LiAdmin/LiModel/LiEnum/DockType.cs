@@ -8,10 +8,10 @@ namespace LiModel.LiEnum
 {
     public struct DockType
     {
-        public const string FILL = "fill";
         public const string TOP = "top";
+        public const string BOTTOM = "bottom";
         public const string LEFT = "left";
         public const string RIGHT = "right";
-        public const string BOTTOM = "bottom";
+        public const string FILL = "fill";
     }
 }

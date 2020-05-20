@@ -10,7 +10,6 @@ namespace LiModel.LiModelFactory
 {
     public class FormTemplateFactory
     {
-<<<<<<< HEAD
         public static FormModel getFormModel_BasicInfo(FormModel formModel)
         {
             formModel.formType = VoucherType.BasicInfo;
@@ -244,11 +243,6 @@ namespace LiModel.LiModelFactory
         public static FormModel getFormModel_SingleVoucher(FormModel formModel)
         {
             formModel.formType = VoucherType.Voucher;
-=======
-        public static FormModel getFormModel_SingleVoucher(FormModel formModel)
-        {
-
->>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
             //列表按钮
             formModel.listButtons.Add(ButtonFactory.getListButtonModel(ListButtonType.BTNQUERY, formModel.id, ButtonFactory.getCategoryGuidByFormModel(formModel)));
             formModel.listButtons.Add(ButtonFactory.getListButtonModel(ListButtonType.BTNPRECISEQUERY, formModel.id, ButtonFactory.getCategoryGuidByFormModel(formModel)));
@@ -279,17 +273,12 @@ namespace LiModel.LiModelFactory
 
             //修改dock,panel1,text,tableName,parentTableName,parentPrimaryKeyName,entityColumnName,childEntityColumnNames,可选primaryKeyName,foreigntKeyName,keyType
             PanelModel panelModel = PanelModel.getInstance(formModel.id);
-<<<<<<< HEAD
             panelModel.name = "basicPanel";
             panelModel.dock = DockType.FILL;
             panelModel.type = PanelType.BASIC;
             panelModel.primaryKeyName = "id";
             panelModel.keyType = KeyType.IDENTITY;
             panelModel.height = 200;
-=======
-            panelModel.dock = DockType.FILL;
-            panelModel.type = PanelType.BASIC;
->>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
             panelModel.tableName = "";
             formModel.panels.Add(panelModel);
 

@@ -58,13 +58,9 @@
     <Compile Include="Converter\LiDateTimeConverter.cs" />
     <Compile Include="Converter\PasswordConverter.cs" />
     <Compile Include="Dev\GridlookUpEdit\GridlookUpEditShowModelType.cs" />
-<<<<<<< HEAD
     <Compile Include="LiEnum\ControlType.cs" />
     <Compile Include="LiEnum\DockType.cs" />
     <Compile Include="LiEnum\KeyType.cs" />
-=======
-    <Compile Include="LiEnum\DockType.cs" />
->>>>>>> 5884da41c4c556e5dddecd5764f1e6d9153448c9
     <Compile Include="LiEnum\ListButtonType.cs" />
     <Compile Include="LiEnum\ButtonType.cs" />
     <Compile Include="LiEnum\FormTemplateType.cs" />
