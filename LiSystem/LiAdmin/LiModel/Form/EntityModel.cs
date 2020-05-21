@@ -17,7 +17,7 @@ namespace LiModel.Form
 
             foreach (PanelModel panelModel in formModel.panels)
             {
-                EntityModel entityModel = new EntityModel() { sEntityCode = panelModel.name, sEntityType = panelModel.keyType, sEntityName = panelModel.text, iShow = panelModel.keyType == PanelType.BASIC ? true : false };
+                EntityModel entityModel = new EntityModel() { sEntityCode = panelModel.name, sEntityType = panelModel.type, sEntityName = panelModel.text, sTableName = panelModel.tableName, iShow = panelModel.type == PanelType.BASIC ? true : false };
                 EntityModel.AddItemInDataSource(formModel.name, entityModel);
 
             }
@@ -65,9 +65,13 @@ namespace LiModel.Form
         /// 实体名称
         /// </summary>
         public string sEntityName { set; get; }
+        /// <summary>
+        /// 实体名称
+        /// </summary>
+        public string sTableName { set; get; }
 
         /// <summary>
-        /// 列宽
+        /// 是否显示
         /// </summary>
         public bool iShow { set; get; }
 

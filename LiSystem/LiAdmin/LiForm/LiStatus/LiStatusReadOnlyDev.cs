@@ -72,6 +72,12 @@ namespace LiForm.LiStatus
             setFieldControlValue(statusModel.dateFieldName, DateTime.Now, _controlDict);
             setFieldControlValue(statusModel.statusFieldName, statusModel.code, _controlDict);
 
+            LiStatusReadOnlyDev previousStatus = context.getPreviousStatus() as LiStatusReadOnlyDev;
+            if(previousStatus != null)
+            {
+                clearFieldControlValue(previousStatus.statusModel.userFieldName, _controlDict);
+                clearFieldControlValue(previousStatus.statusModel.dateFieldName, _controlDict);
+            }
         }
 
         /// <summary>
@@ -86,6 +92,20 @@ namespace LiForm.LiStatus
             {
                 Control control = controlDict[fieldName];
                 DevControlUtil.setContorlData(value, control);
+            }
+        }
+        /// <summary>
+        /// 设置控件值
+        /// </summary>
+        /// <param name="fieldName"></param>
+        /// <param name="value"></param>
+        /// <param name="controlDict"></param>
+        private void clearFieldControlValue(string fieldName, Dictionary<string, Control> controlDict)
+        {
+            if (!string.IsNullOrEmpty(fieldName) && controlDict.ContainsKey(fieldName))
+            {
+                Control control = controlDict[fieldName];
+                DevControlUtil.setContorlData(null, control);
             }
         }
 

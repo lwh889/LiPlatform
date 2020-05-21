@@ -14,6 +14,7 @@ namespace LiForm.Event.EventForm
 
             try
             {
+                this.liForm.downRow(this.focusEntityKey);
                 bSuccess = true;
             }
             catch (Exception ex)

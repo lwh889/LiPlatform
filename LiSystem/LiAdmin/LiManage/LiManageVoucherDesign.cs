@@ -822,7 +822,10 @@ namespace LiManage
 
                                 Dictionary<string, string> dictModelDesc = new Dictionary<string,string>();
                                 dictModelDesc.Add(controlModel.basicInfoTableKey, columnList.Where(m=>m.columnName == controlModel.basicInfoTableKey).FirstOrDefault().columnAbbName);
-                                dictModelDesc.Add(controlModel.basicInfoShowFieldName, columnList.Where(m => m.columnName == controlModel.basicInfoShowFieldName).FirstOrDefault().columnAbbName);
+                                if (!dictModelDesc.ContainsKey(controlModel.basicInfoShowFieldName))
+                                {
+                                    dictModelDesc.Add(controlModel.basicInfoShowFieldName, columnList.Where(m => m.columnName == controlModel.basicInfoShowFieldName).FirstOrDefault().columnAbbName);
+                                }
                                 gridlookUpEditShowModel.dictModelDesc = dictModelDesc;
 
                                 controlModel.gridlookUpEditShowModelJson = JsonUtil.GetJson(gridlookUpEditShowModel);
@@ -1565,12 +1568,47 @@ namespace LiManage
 
         private void BtnUpRow_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            if (selectedGridRowData != null)
+            {
+                switch (selectedGridRowData.GetType().Name)
+                {
+                    case "ButtonModel":
+                        DevControlUtil.UpRow<ButtonModel>(gridView4);
+                        gridControl4.RefreshDataSource();
+                        ResetButtonModelIndex(gridControl4);
+                        break;
+                }
+            }
         }
 
         private void BtnDownRow_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if(selectedGridRowData!= null)
+            {
+                switch (selectedGridRowData.GetType().Name)
+                {
+                    case "ButtonModel":
+                        DevControlUtil.DownRow<ButtonModel>(gridView4);
+                        gridControl4.RefreshDataSource();
+                        ResetButtonModelIndex(gridControl4);
+                        break;
+                }
+            }
+        }
 
+        /// <summary>
+        /// 重置按钮索引
+        /// </summary>
+        /// <param name="gridControl"></param>
+        private void ResetButtonModelIndex(GridControl gridControl)
+        {
+
+            int iRow = 1;
+            List<ButtonModel> buttonModels = gridControl.DataSource as List<ButtonModel>;
+            foreach (ButtonModel buttonModel in buttonModels)
+            {
+                buttonModel.iIndex = iRow++;
+            }
         }
     }
 

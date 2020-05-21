@@ -103,6 +103,16 @@ namespace LiForm.Dev
         private Dictionary<string, BarButtonItem> _liButtonDict = new Dictionary<string, BarButtonItem>();
 
         /// <summary>
+        /// 表格行号字段名
+        /// </summary>
+        private Dictionary<string, string> _liRowFieldDict = new Dictionary<string, string>();
+
+        /// <summary>
+        /// 表格主键字典
+        /// </summary>
+        private Dictionary<string, string> _liGridPrimaryKeyDict = new Dictionary<string, string>();
+
+        /// <summary>
         /// 表格控件
         /// </summary>
         private Dictionary<string, GridControl> _liGridControlDict = new Dictionary<string, GridControl>();
@@ -183,7 +193,8 @@ namespace LiForm.Dev
             } 
             get { return _voucherStatusModel; } 
         }
-
+        
+        public Dictionary<string, string> liRowFieldDict { set { _liRowFieldDict = value; } get { return _liRowFieldDict; } }
         public Dictionary<string, GridControl> liGridControlDict { set { _liGridControlDict = value; } get { return _liGridControlDict; } }
         public Dictionary<string, GridView> liGridViewDict { set { _liGridViewDict = value; } get { return _liGridViewDict; } }
 
@@ -193,7 +204,16 @@ namespace LiForm.Dev
         /// </summary>
         public LiStatusContext liStatusContext = new LiStatusContext();
 
+        private List<DataRow> _selectRows;
+        /// <summary>
+        /// 选择行
+        /// </summary>
+        public List<DataRow> SelectRows { set { _selectRows = value; }get{ return _selectRows; } }
 
+        /// <summary>
+        /// 表格主键字典
+        /// </summary>
+        public Dictionary<string, string> liGridPrimaryKeyDict { set { _liGridPrimaryKeyDict = value; } get { return _liGridPrimaryKeyDict; } }
         /// <summary>
         /// 单号或者唯一ID
         /// </summary>
@@ -288,6 +308,7 @@ namespace LiForm.Dev
                                 case "TreeListLookUpEdit":
                                     entityKeys.Add(controlModel.basicInfoKey);
                                     break;
+                                case "StatusEdit":
                                 case "GridLookUpEditComboBox":
                                     dictKeys.Add(controlModel.dictInfoType);
                                     break;
@@ -338,10 +359,8 @@ namespace LiForm.Dev
             LiAEvent liEventItemClick = liEventMediator.getLiEvent(e.Item.Name);
             liEventItemClick.focusEntityKey = buttonModel.entityKey;
 
-            if (liEventItemClick.sendEvent())
-            {
-                setVoucherStatus(buttonModel.voucherStatus);
-            }
+            //setVoucherStatus(buttonModel.voucherStatus);
+            liEventItemClick.sendEvent();
 
         }
 
@@ -349,7 +368,21 @@ namespace LiForm.Dev
         /// 设置单据状态
         /// </summary>
         /// <param name="voucherStatus"></param>
-        public void setVoucherStatus(string voucherStatus)
+        public void setVoucherStatus(string voucherStatus, string previousVoucherStatus = "")
+        {
+            if (!string.IsNullOrEmpty(voucherStatus))
+            {
+                liStatusContext.setStatus(liStatusContext.getStatus(voucherStatus));
+                liStatusContext.setPreviousStatus(liStatusContext.getStatus(previousVoucherStatus));
+                liStatusContext.Handle();
+            }
+        }
+
+        /// <summary>
+        /// 设置单据状态
+        /// </summary>
+        /// <param name="voucherStatus"></param>
+        public void clearVoucherStatus(string voucherStatus)
         {
             if (!string.IsNullOrEmpty(voucherStatus))
             {
@@ -591,9 +624,10 @@ namespace LiForm.Dev
                     if (_liGridControlDict.ContainsKey(kvp.Key))
                     {
                         GridControl gridControl = _liGridControlDict[kvp.Key];
+                        string rowFieldName = _liRowFieldDict[kvp.Key];
 
                         List<Dictionary<string, object>> lists = kvp.Value as List<Dictionary<string, object>>;
-                        DataTable dt = DataUtil.DictionaryToTable(lists);
+                        DataTable dt = DataUtil.DictionaryToTable(lists, rowFieldName);
                         //if (getVoucherStatus().isNewStatus())
                         //{
                         //    dt.Rows.Clear();
@@ -689,6 +723,26 @@ namespace LiForm.Dev
         }
 
         /// <summary>
+        /// 增加复制行
+        /// </summary>
+        /// <param name="entityKey"></param>
+        public void addCopyRow(string entityKey)
+        {
+            if (SelectRows == null || SelectRows.Count <= 0) return;
+
+            GridControl gridControl = liGridControlDict[entityKey];
+            GridView gridView = liGridViewDict[entityKey];
+
+            DataTable dt = gridControl.DataSource as DataTable;
+            foreach (DataRow dr in SelectRows)
+            {
+                DataRow drNew = dt.NewRow();
+                drNew.ItemArray = dr.ItemArray;
+                dt.Rows.InsertAt(drNew, gridView.DataRowCount-1);
+            }
+        }
+
+        /// <summary>
         /// 删除行
         /// </summary>
         /// <param name="entityKey"></param>
@@ -697,6 +751,70 @@ namespace LiForm.Dev
         {
             GridView gridView = liGridViewDict[entityKey];
             gridView.DeleteRow(rowHandle);
+        }
+
+        /// <summary>
+        /// 删除行
+        /// </summary>
+        /// <param name="entityKey"></param>
+        /// <param name="rowHandle"></param>
+        public void copyRow(string entityKey)
+        {
+            GridControl gridControl = liGridControlDict[entityKey];
+            GridView gridView = liGridViewDict[entityKey];
+            DataTable dt = gridControl.DataSource as DataTable;
+            SelectRows = DevControlUtil.getSelectDataRows(gridView, gridControl);
+            string primaryKey = liGridPrimaryKeyDict[entityKey];
+            foreach (DataRow dr in SelectRows)
+            {
+                dr[primaryKey] = dt.Columns[primaryKey].DefaultValue;
+            }
+        }
+
+        public void upRow(string entityKey)
+        {
+            GridControl gridControl = liGridControlDict[entityKey];
+            GridView gridView = liGridViewDict[entityKey];
+
+            DevControlUtil.UpDataRow(gridView, gridControl);
+            DevControlUtil.ResetRowNo(liRowFieldDict[entityKey], gridControl);
+
+        }
+
+        public void downRow(string entityKey)
+        {
+            GridControl gridControl = liGridControlDict[entityKey];
+            GridView gridView = liGridViewDict[entityKey];
+
+            DevControlUtil.DownDataRow(gridView, gridControl);
+            DevControlUtil.ResetRowNo(liRowFieldDict[entityKey], gridControl);
+
+        }
+
+        public void resetRowNo(string entityKey)
+        {
+            GridControl gridControl = liGridControlDict[entityKey];
+            DevControlUtil.ResetRowNo(liRowFieldDict[entityKey], gridControl);
+        }
+        /// <summary>
+        /// 插入新行
+        /// </summary>
+        /// <param name="entityKey"></param>
+        /// <param name="rowHandle"></param>
+        public void insertCopyRow(string entityKey, int rowHandle)
+        {
+            if (SelectRows == null || SelectRows.Count <= 0) return;
+
+            GridControl gridControl = liGridControlDict[entityKey];
+            GridView gridView = liGridViewDict[entityKey];
+
+            DataTable dt = gridControl.DataSource as DataTable;
+            foreach(DataRow dr in SelectRows)
+            {
+                DataRow drNew = dt.NewRow();
+                drNew.ItemArray = dr.ItemArray;
+                dt.Rows.InsertAt(drNew, rowHandle);
+            }
         }
 
         /// <summary>
@@ -739,11 +857,15 @@ namespace LiForm.Dev
         /// <summary>
         /// 保存单据
         /// </summary>
-        public bool saveVoucher()
+        public bool saveVoucher(ButtonModel buttonModel)
         {
             bool bSuccess = false;
             try
             {
+                if(buttonModel != null)
+                {
+                    setVoucherStatus(buttonModel.voucherStatus, buttonModel.previousVoucherStatus);
+                }
 
                 this.getData();
 
@@ -874,7 +996,7 @@ namespace LiForm.Dev
         /// <param name="e"></param>
         private void btnSaveDockPanelEdit_Click(object sender, EventArgs e)
         {
-            saveVoucher();
+            saveVoucher(null);
             //saveDict();
 
             loadTreeData();

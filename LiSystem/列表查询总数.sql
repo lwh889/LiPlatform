@@ -1,7 +1,8 @@
 alter procedure sp_QueryList_Count(
 @childTableName nvarchar(50),
 @entityKey nvarchar(50),
-@whereSql nvarchar(max)
+@whereSql nvarchar(max),
+@systemCode nvarchar(10)
 )
 as
 --ROW_NUMBER() over (order by cinvcode  ) as iRow,
@@ -40,6 +41,7 @@ SELECT  @tableId = id
   FROM [TableInfo]
   WHERE [entityKey] = @entityKey
   AND [entityOrder] = 'master'
+  AND systemCode = @systemCode
   
 --¸¸±í¹ØÁª
 set @leftjoinSql = @leftjoinSql + @dataBaseName + '.dbo.' + @tableName + ' Li' + @tableName 

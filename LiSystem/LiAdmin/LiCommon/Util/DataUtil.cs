@@ -95,9 +95,14 @@ namespace LiCommon.Util
         /// </summary>
         /// <param name="lists"></param>
         /// <returns></returns>
-        public static DataTable DictionaryToTable(List<Dictionary<string, object>> lists)
+        public static DataTable DictionaryToTable(List<Dictionary<string, object>> lists, string rowFieldName = "")
         {
             DataTable dt = new DataTable();
+            if (!string.IsNullOrEmpty(rowFieldName))
+            {
+                //行号排序
+                lists = lists.OrderBy(m => m[rowFieldName]).ToList();
+            }
 
             if (lists != null && lists.Count > 0)
             {

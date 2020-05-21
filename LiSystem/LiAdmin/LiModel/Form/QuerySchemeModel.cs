@@ -12,6 +12,8 @@ namespace LiModel.Form
     {
         [NotCopy]
         public int id;
+
+        public string entityKey;
         
         public string userCode;
 

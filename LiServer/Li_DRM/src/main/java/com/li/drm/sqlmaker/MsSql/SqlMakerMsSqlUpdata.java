@@ -204,15 +204,25 @@ public class SqlMakerMsSqlUpdata extends SqlMakerMsSql implements IUpdata {
                     buildSelect.append(String.format(" SELECT %s FROM %s.dbo.%s WHERE %s = %s and %s not in (",childTableInfo.getKeyName(),childTableInfo.getDataBaseName(), childTableInfo.getTableName(),childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName()),getColumnValueFormat(primaryKeyValue), childTableInfo.getKeyName() ));
 
 //null
+                    boolean bExistDeleteValue = true;
                     for(Object value : objects){
                         String valueStr = getColumnValueFormat(value);
+                        if(StringUtils.isNull(valueStr) || "null".equals(valueStr)) continue;
+
+                        bExistDeleteValue = false;
                         builderDelete.append( valueStr).append(",");
                         buildSelect.append( valueStr).append(",");
                     }
-                    builderDelete.deleteCharAt(builderDelete.length()-1);
-                    buildSelect.deleteCharAt(buildSelect.length()-1);
-                    builderDelete.append(") ");
-                    buildSelect.append(") ");
+
+                    if(!bExistDeleteValue){
+                        builderDelete.deleteCharAt(builderDelete.length()-1);
+                        buildSelect.deleteCharAt(buildSelect.length()-1);
+                        builderDelete.append(") ");
+                        buildSelect.append(") ");
+                    }else{
+                        builderDelete.delete(0, builderDelete.length()-1);
+                        buildSelect.delete(0, builderDelete.length()-1);
+                    }
 
                     deleteSqls.push(builderDelete.toString());
 

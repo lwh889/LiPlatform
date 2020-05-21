@@ -26,6 +26,158 @@ namespace LiControl.Util
    /// </summary>
     public class DevControlUtil
     {
+        /// <summary>
+        /// 上移
+        /// </summary>
+        /// <typeparam name="rowNoFieldName"></typeparam>
+        /// <param name="gridControl"></param>
+        public static void ResetRowNo(string rowNoFieldName,GridControl gridControl)
+        {
+            DataTable dt = gridControl.DataSource as DataTable;
+
+            if (dt != null && !string.IsNullOrEmpty(rowNoFieldName))
+            {
+                int iRow = 1;
+                foreach (DataRow dr in dt.Rows)
+                {
+                    dr[rowNoFieldName] = iRow++;
+                }
+            }
+
+            gridControl.RefreshDataSource();
+        }
+        /// <summary>
+        /// 上移
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <param name="gridView"></param>
+        public static void UpDataRow(GridView gridView, GridControl gridControl)
+        {
+            DataTable dt = gridControl.DataSource as DataTable;
+
+            int[] iSelectRows = gridView.GetSelectedRows();
+
+            if (dt != null && iSelectRows != null && iSelectRows.Length > 0)
+            {
+                foreach (int iRow in iSelectRows)
+                {
+                    DataRow newdata = dt.NewRow();
+                    newdata.ItemArray = dt.Rows[iRow].ItemArray;
+                    dt.Rows.RemoveAt(iRow);
+                    dt.Rows.InsertAt(newdata, iRow - 1);
+                    dt.AcceptChanges();
+                }
+
+
+                foreach (int iRow in iSelectRows)
+                {
+                    if (iRow == 0) continue;
+
+                    gridView.SelectRow(iRow - 1);
+                }
+            }
+
+            gridControl.RefreshDataSource();
+        }
+
+        public static void DownDataRow(GridView gridView, GridControl gridControl)
+        {
+            DataTable dt = gridControl.DataSource as DataTable;
+
+            int[] iSelectRows = gridView.GetSelectedRows();
+            Array.Reverse(iSelectRows);
+            if (dt != null && iSelectRows != null && iSelectRows.Length > 0)
+            {
+                foreach (int iRow in iSelectRows)
+                {
+                    if (iRow < dt.Rows.Count - 1)
+                    {
+                        DataRow newdata = dt.NewRow();
+                        newdata.ItemArray = dt.Rows[iRow].ItemArray;
+                        dt.Rows.RemoveAt(iRow);
+                        dt.Rows.InsertAt(newdata, iRow + 1);
+                        dt.AcceptChanges();
+                    }
+                }
+
+                foreach (int iRow in iSelectRows)
+                {
+                    if (iRow == dt.Rows.Count - 1) continue;
+
+                    gridView.SelectRow(iRow + 1);
+                }
+            }
+
+            gridControl.RefreshDataSource();
+        }
+
+        /// <summary>
+        /// 上移
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <param name="gridView"></param>
+        public static void UpRow<TEntity>(GridView gridView) where TEntity : new()
+        {
+
+            int[] iSelectRows = gridView.GetSelectedRows();
+
+            if (iSelectRows != null && iSelectRows.Length > 0)
+            {
+                var tempList = gridView.DataSource as List<TEntity>;
+                foreach (int iRow in iSelectRows)
+                {
+                    if (iRow == 0) continue;
+
+                    TEntity model = tempList[iRow];
+
+                    tempList.RemoveAt(iRow);
+                    gridView.UnselectRow(iRow);
+                    //  tempList.Add(model);
+                    tempList.Insert(iRow - 1, model);
+
+                }
+
+
+                foreach (int iRow in iSelectRows)
+                {
+                    if (iRow == 0) continue;
+
+                    gridView.SelectRow(iRow - 1);
+                }
+            }
+        }
+
+
+        public static void DownRow<TEntity>(GridView gridView) where TEntity : new()
+        {
+
+            int[] iSelectRows = gridView.GetSelectedRows();
+            Array.Reverse(iSelectRows);
+            if (iSelectRows != null && iSelectRows.Length > 0)
+            {
+                var tempList = gridView.DataSource as List<TEntity>;
+                foreach (int iRow in iSelectRows)
+                {
+                    if (iRow == tempList.Count - 1) continue;
+
+                    TEntity model = tempList[iRow];
+
+                    tempList.RemoveAt(iRow);
+                    gridView.UnselectRow(iRow);
+                    //  tempList.Add(model);
+                    tempList.Insert(iRow + 1, model);
+
+
+                }
+
+                foreach (int iRow in iSelectRows)
+                {
+                    if (iRow == tempList.Count - 1) continue;
+
+                    gridView.SelectRow(iRow + 1);
+                }
+            }
+        }
 
         public static void AddRow<TEntity>(GridControl gridControl) where TEntity : new()
         {

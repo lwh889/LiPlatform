@@ -36,18 +36,38 @@ namespace LiControl.Util
 
                 FieldModel fieldModel = kvp.Value.Tag as FieldModel;
 
-                if (kvp.Value.Name.Substring(kvp.Value.Name.Length - 2) == "_B")
+                if (fieldModel.sColumnControlType == ControlType.DateEdit || fieldModel.sColumnControlType == ControlType.DateTimeEdit)
                 {
-                    sWhere += string.Format(" and {0} >= {1} ", fieldModel.columnFieldName, getWhereValue(value, kvp.Value, IsProcedure));
-                }
-                else if (kvp.Value.Name.Substring(kvp.Value.Name.Length - 2) == "_E")
-                {
-                    sWhere += string.Format(" and {0} <= {1} ", fieldModel.columnFieldName, getWhereValue(value, kvp.Value, IsProcedure));
+                    if (kvp.Value.Name.Substring(kvp.Value.Name.Length - 2) == "_B")
+                    {
+                        sWhere += string.Format(" and cast({0} as date) >= {1} ", fieldModel.columnFieldName, getWhereValue(value, kvp.Value, IsProcedure));
+                    }
+                    else if (kvp.Value.Name.Substring(kvp.Value.Name.Length - 2) == "_E")
+                    {
+                        sWhere += string.Format(" and cast({0} as date) <= {1} ", fieldModel.columnFieldName, getWhereValue(value, kvp.Value, IsProcedure));
+                    }
+                    else
+                    {
+                        sWhere += string.Format(" and cast({0} as date) {1} {2} ", fieldModel.columnFieldName, JudgmentSymbol.getJudeSymbol(fieldModel.sJudgeSymbol), getWhereValue(value, kvp.Value, IsProcedure));
+                    }
                 }
                 else
                 {
-                    sWhere += string.Format(" and {0} {1} {2} ", fieldModel.columnFieldName, JudgmentSymbol.getJudeSymbol(fieldModel.sJudgeSymbol), getWhereValue(value, kvp.Value, IsProcedure));
+                    if (kvp.Value.Name.Substring(kvp.Value.Name.Length - 2) == "_B")
+                    {
+                        sWhere += string.Format(" and {0} >= {1} ", fieldModel.columnFieldName, getWhereValue(value, kvp.Value, IsProcedure));
+                    }
+                    else if (kvp.Value.Name.Substring(kvp.Value.Name.Length - 2) == "_E")
+                    {
+                        sWhere += string.Format(" and {0} <= {1} ", fieldModel.columnFieldName, getWhereValue(value, kvp.Value, IsProcedure));
+                    }
+                    else
+                    {
+                        sWhere += string.Format(" and {0} {1} {2} ", fieldModel.columnFieldName, JudgmentSymbol.getJudeSymbol(fieldModel.sJudgeSymbol), getWhereValue(value, kvp.Value, IsProcedure));
+                    }
+
                 }
+
             }
 
             return sWhere;

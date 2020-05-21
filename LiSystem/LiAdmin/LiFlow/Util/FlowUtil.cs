@@ -58,7 +58,7 @@ namespace LiFlow.Util
             liVersionFlowModel = null;
             liVoucherFlowTemp = getCurrentFlow(entityKey, voucherId);
 
-            if (liVoucherFlowTemp.flowStatus == null)
+            if (liVoucherFlowTemp == null || liVoucherFlowTemp.flowStatus == null)
             {
                 return null;
             }
@@ -439,6 +439,10 @@ namespace LiFlow.Util
 
 
                     }
+                }
+                else
+                {
+                    return true;
                 }
             }
             else

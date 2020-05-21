@@ -14,6 +14,8 @@ namespace LiForm.Event.EventForm
 
             try
             {
+                this.liForm.addCopyRow(this.focusEntityKey);
+                this.liForm.resetRowNo(this.focusEntityKey);
                 bSuccess = true;
             }
             catch (Exception ex)

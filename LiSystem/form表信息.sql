@@ -270,6 +270,8 @@ select 3, 'name','名称', 'narchar',30,0,0,0,0,null,0,null
 union all
 select 3, 'text','标题', 'narchar',30,0,0,0,0,null,0,null
 union all
+select 3, 'rowFieldName','行号字段名', 'narchar',20,0,0,0,0,null,0,null
+union all
 select 3, 'autoAllocation','是否自动分配', 'bit',9,0,0,0,0,null,0,null
 union all
 select 3, 'controls','数据集','collection', -1,0,0,2,0,null,0,null
@@ -298,7 +300,7 @@ select 4, 'allowTextClipping','allowTextClipping', 'bit',9,0,0,0,0,null,0,null
 union all
 select 4, 'buttons','数据集','collection', -1,0,0,2,0,null,0,null
 
-
+--select * from ColumnInfo where columnName = 'iIndex'
 --LiButton
 insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
 select 5, 'id','主键','int',9,1,0,0,1,null,0,null
@@ -347,6 +349,8 @@ union all
 select 6, 'col','列号', 'int',9,0,0,0,0,null,0,null
 union all
 select 6, 'row','行号', 'int',9,0,0,0,0,null,0,null
+union all
+select 6, 'colIndex','列表顺序', 'int',9,0,0,0,0,null,0,null
 union all
 select 6, 'controltype','控件类型', 'narchar',30,0,0,0,0,null,0,null
 union all
@@ -674,9 +678,11 @@ select 19, 'events','数据集','collection', -1,0,0,2,0,null,0,null
 insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
 select 20, 'id','主键','int',9,1,0,0,1,null,0,null
 union all
+select 20, 'entityKey','单据Key', 'narchar',30,0,0,0,0,null,0,null
+union all
 select 20, 'userCode','类型', 'narchar',30,0,0,0,0,null,0,null
 union all
-select 20, 'querySchemeName','类型', 'narchar',30,0,0,0,0,null,0,null
+select 20, 'querySchemeName','查询方案', 'narchar',30,0,0,0,0,null,0,null
 union all
 select 20, 'querys','数据集','collection', -1,0,0,2,0,null,0,null
 union all
@@ -720,6 +726,8 @@ union all
 select 22, 'sEntityCode','实体编码', 'narchar',30,0,0,0,0,null,0,null
 union all
 select 22, 'sEntityName','实体名称', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 22, 'sTableName','实体名称', 'narchar',30,0,0,0,0,null,0,null
 union all
 select 22, 'iShow','是否显示', 'bit',30,0,0,0,0,null,0,null
 

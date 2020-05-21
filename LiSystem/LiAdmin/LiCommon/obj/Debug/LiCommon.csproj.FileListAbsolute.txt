@@ -63,3 +63,4 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiCommon\bin\Debug\PostSharp.xml
 C:\LiProject\平台\LiSystem\LiAdmin\LiCommon\obj\Debug\PostSharp\touch
 C:\LiProject\平台\LiSystem\LiAdmin\LiCommon\obj\Debug\PostSharp\dependencies.txt
 C:\LiProject\平台\LiSystem\LiAdmin\LiCommon\obj\Debug\PostSharp\postsharp.app.config
+C:\LiProject\平台\LiSystem\LiAdmin\LiCommon\obj\Debug\LiCommon.csprojAssemblyReference.cache

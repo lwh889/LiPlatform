@@ -75,9 +75,11 @@ create table LiControlGroup(
 	panelModelId int REFERENCES LiPanel(id),
 	[text] nvarchar(20),
 	[name] nvarchar(30),
+	rowFieldName nvarchar(20),	--行号字段名
 	autoAllocation bit default 0,
 	dCreateDate datetime default getdate()
 )
+alter table LiControlGroup add rowFieldName nvarchar(20)
 
 SET IDENTITY_Insert LiControlGroup ON 
 insert LiControlGroup (id, panelModelId, text, name, autoAllocation)
@@ -166,6 +168,7 @@ create table LiControl(
 	[width] int default 0,
 	col int default 0 ,
 	[row] int default 0,
+	colIndex int default 1,	--列表顺序
 	controltype nvarchar(100),
 	bIsNull bit default 0,
 	bReadOnly bit default 0,
@@ -192,6 +195,7 @@ create table LiControl(
 --alter table LiControl add basicInfoShowMode nvarchar(20)
 --alter table LiControl add bReadOnly bit default 0
 --alter table LiControl add bRequired bit default 0
+--select * from LiControl
 
 create table LiEvent(
 	id int identity(1,1) primary key not null,
@@ -225,6 +229,7 @@ create table LiListButton(
 --alter table LiControl add [bIsNull] bit default 0
 --alter table LiControl add defaultVaule nvarchar(max)
 --alter table LiControl add scale int default 0
+--alter table LiControl add colIndex int default 1
 
 SET IDENTITY_Insert LiControl ON
 insert into LiControl(id, controlGroupId, name, text, length, height, col, row, controltype,basicInfoKey,basicInfoTableKey,basicInfoAssistFieldName)

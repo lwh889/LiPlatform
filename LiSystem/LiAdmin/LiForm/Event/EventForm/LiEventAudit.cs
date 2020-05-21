@@ -13,6 +13,7 @@ using LiFlow.Enums;
 using LiFlow.Util;
 using LiCommon.Util;
 using LiFlow.Model;
+using LiModel.Form;
 
 namespace LiForm.Event.EventForm
 {
@@ -21,6 +22,7 @@ namespace LiForm.Event.EventForm
         public override bool receiveEvent()
         {
             bool bSuccess = false;
+            ButtonModel buttonModel = this.Tag as ButtonModel;
 
             LiVoucherFlowModel liVoucherFlowModel = FlowUtil.getCurrentFlow(this.liForm.formCode, Convert.ToString(this.liForm.voucherId));
             if (liVoucherFlowModel != null)
@@ -33,7 +35,7 @@ namespace LiForm.Event.EventForm
                         case ApprovalType.Agree:
                             if(liFlowApprovalForm.bSuccess)
                             {
-                                bSuccess = this.liForm.saveVoucher();
+                                bSuccess = this.liForm.saveVoucher(buttonModel);
                             }
                             else{
                                 MessageUtil.Show(liFlowApprovalForm.resultContent,"温馨提示");
@@ -42,7 +44,7 @@ namespace LiForm.Event.EventForm
                         case ApprovalType.Disagree:
                             if (liFlowApprovalForm.bSuccess)
                             {
-                                bSuccess = this.liForm.saveVoucher();
+                                bSuccess = this.liForm.saveVoucher(buttonModel);
                             }
                             else
                             {
@@ -55,7 +57,7 @@ namespace LiForm.Event.EventForm
             }
             else
             {
-                bSuccess = this.liForm.saveVoucher();
+                bSuccess = this.liForm.saveVoucher(buttonModel);
             }
 
             return bSuccess;

@@ -479,8 +479,6 @@ namespace LiForm.Dev.Util
                     GridLookUpEdit gridLookUpEditComboBox = (GridLookUpEdit)control;
                     GridView gridViewComboBox = new GridView();
 
-
-
                     gridViewComboBox.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
                     gridViewComboBox.Name = string.Format("gridLookUpEditComboBoxView_{0}", control.Name);
                     gridViewComboBox.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -779,6 +777,13 @@ namespace LiForm.Dev.Util
                 setGridLayoutControlGroup(controlGroupModels[0], layoutControlGroup, liForm);
             }
 
+            //添加子表主键到字典
+            foreach(ControlGroupModel controlGroupModel in panelModel.controlGroups)
+            {
+                if(!liForm.liGridPrimaryKeyDict.ContainsKey(controlGroupModel.name))
+                    liForm.liGridPrimaryKeyDict.Add(controlGroupModel.name, panelModel.primaryKeyName);
+            }
+
             layoutControl.EndUpdate();
             return layoutControl;
         }
@@ -938,6 +943,7 @@ namespace LiForm.Dev.Util
             gridControl.BeginInit();
             gridView.BeginInit();
 
+            liForm.liRowFieldDict.Add(controlGroupModel.name, controlGroupModel.rowFieldName);
             liForm.liGridControlDict.Add(controlGroupModel.name, gridControl);
             liForm.liGridViewDict.Add(controlGroupModel.name, gridView);
             // 

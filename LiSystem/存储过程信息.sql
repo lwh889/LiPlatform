@@ -45,14 +45,19 @@ select 2,'childTableName', 'nvarchar', 50,GETDATE()
 union all
 select 2,'entityKey', 'nvarchar', 50,GETDATE()
 union all
+select 2,'systemCode', 'nvarchar', 10,GETDATE()
+union all
 select 2,'whereSql', 'nvarchar', 5000,GETDATE()
 union all
 select 2,'orderBySql', 'nvarchar', 50,GETDATE()
 union all
 select 2,'rangeSql', 'nvarchar', 50,GETDATE()
 
+select * from ParamInfo where paramName = 'systemCode'
 insert into ParamInfo(fid, paramName, paramType, paramLength, modifyDate)
 select 3,'childTableName', 'nvarchar', 50,GETDATE()
+union all
+select 3,'systemCode', 'nvarchar', 10,GETDATE()
 union all
 select 3,'entityKey', 'nvarchar', 50,GETDATE()
 union all

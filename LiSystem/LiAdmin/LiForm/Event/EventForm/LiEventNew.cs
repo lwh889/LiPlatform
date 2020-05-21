@@ -19,6 +19,7 @@ namespace LiForm.Event.EventForm
         public override bool receiveEvent()
         {
             bool bSuccess = false;
+            ButtonModel buttonModel = this.Tag as ButtonModel;
 
             try
             {

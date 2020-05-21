@@ -80,20 +80,72 @@ namespace LiForm.Dev
         /// </summary>
         private Dictionary<string, LiAEventMediator> _liEventMediatorDict = new Dictionary<string, LiAEventMediator>();
 
+        /// <summary>
+        /// 事件
+        /// </summary>
         public Dictionary<string, LiAEventMediator> liEventMediatorDict { set { _liEventMediatorDict = value; } get { return _liEventMediatorDict; } }
+
+        /// <summary>
+        /// 列表列
+        /// </summary>
         public Dictionary<string, GridColumn> liGridColumnDict { set { _liGridColumnDict = value; } get { return _liGridColumnDict; } }
         //public Dictionary<string, string> liFieldName { set { _liFieldName = value; } get { return _liFieldName; } }
 
+        /// <summary>
+        /// 列表按钮
+        /// </summary>
         public Dictionary<string, BarButtonItem> liButtonDict { set { _liButtonDict = value; } get { return _liButtonDict; } }
 
+        /// <summary>
+        /// 状态
+        /// </summary>
         public LiStatusContext liStatusContext = new LiStatusContext();
 
-        public List<QuerySchemeModel> querySchemeModels = new List<QuerySchemeModel>();
+        private List<QuerySchemeModel> _querySchemeModels;
+        /// <summary>
+        /// 当前所有查询方案
+        /// </summary>
+        public List<QuerySchemeModel> querySchemeModels { set{_querySchemeModels = value;} get { return _querySchemeModels; } }
+
+        /// <summary>
+        /// 查询方案按钮
+        /// </summary>
         private Dictionary<string, SimpleButton> querySchemeBtns = new Dictionary<string, SimpleButton>();
+
+        /// <summary>
+        /// 快速查询控件
+        /// </summary>
         private Dictionary<string, Control> liQuickQueryControlDict = new Dictionary<string, Control>();
 
         public ComponentResourceManager resources = new ComponentResourceManager(typeof(LiListForm));
 
+        private QuerySchemeModel _currentQuerySchemeModel;
+        //当前的查询方案
+        public QuerySchemeModel currentQuerySchemeModel
+        {
+            set {
+                _currentQuerySchemeModel = value;
+                if (_currentQuerySchemeModel != null)
+                {
+                    FormUtil.loadQuickQuery(_currentQuerySchemeModel.fields, liQuickQueryControlDict, layoutControlGroup2, layoutControl2);
+                    groupControl1.Refresh();
+                }
+
+                foreach (KeyValuePair<string, SimpleButton> kvp in querySchemeBtns)
+                {
+                    if (!kvp.Key.Equals(_currentQuerySchemeModel.querySchemeName))
+                    {
+                        kvp.Value.Appearance.BorderColor = Color.Transparent;
+                    }
+                    else
+                    {
+                        kvp.Value.Appearance.BorderColor = Color.Red;
+                    }
+
+                }
+
+            }
+            get { return _currentQuerySchemeModel; } }
         #region 引用数据源
         private FieldModel fieldModel = new FieldModel();
         #endregion
@@ -103,14 +155,34 @@ namespace LiForm.Dev
         /// </summary>
         public FormModel formModel { set; get; }
 
+        /// <summary>
+        /// 主表名
+        /// </summary>
         public string mainTableName { set; get; }
 
-
+        /// <summary>
+        /// 主键
+        /// </summary>
         public string primaryFieldName { set; get; }
+
         /// <summary>
         /// 实体名
         /// </summary>
         public string entityKey { set; get; }
+
+        private string _childTableName;
+        public string childTableName {
+            get {
+                foreach(EntityModel entityModel in currentQuerySchemeModel.entitys)
+                {
+                    if(entityModel.sEntityType == PanelType.GRID && entityModel.iShow)
+                    {
+                        return entityModel.sTableName;
+                    }
+                }
+                return _childTableName;
+            }
+        }
 
         public LiListForm(FormModel formModel)
         {
@@ -121,9 +193,6 @@ namespace LiForm.Dev
             FormUtil.setRibbon(this.ribbon);
 
             FormUtil.loadListRibbonButton(formModel.listButtons, this, resources);
-
-            //this.Controls.Add(this.ribbonStatusBar);
-            //this.Controls.Add(this.ribbon);
 
             Init();
         }
@@ -156,6 +225,8 @@ namespace LiForm.Dev
 
             querySchemeModels = LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).getEntityList<QuerySchemeModel>(LiContexts.LiContext.userInfo.userCode,"userCode");
             querySchemeModels.Insert(0, defaultQuerySchemeModel);
+
+            currentQuerySchemeModel = defaultQuerySchemeModel;
         }
 
         public void InitMainTableName()
@@ -200,31 +271,13 @@ namespace LiForm.Dev
                         gridColumn.Name = string.Format("Li{0}{1}_GridColumn", panelModel.tableName, control.name);
                         gridColumn.FieldName = string.Format("Li{0}_{1}", panelModel.tableName, control.name);
                         gridColumn.Visible = control.bVisibleInList;
-                        gridColumn.VisibleIndex = control.bVisibleInList ? control.col : -1;
+                        gridColumn.VisibleIndex = control.bVisibleInList ? control.colIndex : -1;
                         gridColumn.Width = control.width;
                         gridColumn.OptionsColumn.AllowEdit = false;
 
                         gridColumn.Tag = control;
 
                         liGridColumnDict.Add(control.name, gridColumn);
-
-                        fieldModelTemp.columnFieldName = gridColumn.FieldName;
-                        fieldModelTemp.fieldName = control.name;
-                        fieldModelTemp.code = string.Format("{0}_{1}", panelModel.tableName,gridColumn.FieldName);
-                        fieldModelTemp.name = gridColumn.Caption;
-                        fieldModelTemp.sEntityCode = panelModel.name;
-                        fieldModelTemp.sEntityName = panelModel.text;
-                        fieldModelTemp.iColumnWidth = control.width;
-                        fieldModelTemp.bColumnDisplay = control.bVisible;
-                        fieldModelTemp.bQuery = false;
-                        fieldModelTemp.bRange = false;
-                        fieldModelTemp.sColumnControlType = control.controltype;
-                        fieldModelTemp.sRefTypeCode = "";
-                        fieldModelTemp.sJudgeSymbol = JudgmentSymbol.Equal;
-
-                        FieldModel.AddItemInDataSource(formModel.name,fieldModelTemp);
-
-
 
                     }
                 }
@@ -233,12 +286,40 @@ namespace LiForm.Dev
 
         public void InitView()
         {
-            gridView1.Columns.Clear();
-            gridView1.Columns.AddRange(liGridColumnDict.Values.ToArray());
-            gridControl1.Refresh();
-
+            resetGridControl();
             FormUtil.loadQueryScheme(querySchemeModels, querySchemeBtns, new System.EventHandler(this.btnQueryScheme_Click), layoutControlGroup1);
             FormUtil.loadQuickQuery(querySchemeModels[0].fields, liQuickQueryControlDict, layoutControlGroup2, layoutControl2);
+        }
+
+        public void resetGridControl()
+        {
+            gridView1.Columns.Clear();
+
+            List<GridColumn> showGridColumnList = new List<GridColumn>();
+            List<FieldModel> fieldModels = new List<FieldModel>();
+            foreach (EntityModel entityModel in currentQuerySchemeModel.entitys)
+            {
+                if (entityModel.iShow)
+                {
+                    fieldModels.AddRange(currentQuerySchemeModel.fields.Where(m => m.sEntityCode == entityModel.sEntityCode).ToArray());
+                }
+            }
+
+            int iRow = 0;
+            GridColumn gc = liGridColumnDict["sel"];
+            gc.VisibleIndex = iRow++;
+            showGridColumnList.Add(gc);
+            foreach (FieldModel fieldModel in fieldModels)
+            {
+                gc = liGridColumnDict[fieldModel.fieldName];
+                if (!fieldModel.bColumnDisplay) continue;
+
+                gc.VisibleIndex = iRow++;
+                showGridColumnList.Add(gc);
+            }
+            gridView1.Columns.AddRange(showGridColumnList.ToArray());
+            gridControl1.Refresh();
+
         }
         /// <summary>
         /// 获取实体数据
@@ -321,16 +402,21 @@ namespace LiForm.Dev
 
         public void Query()
         {
+
+            resetGridControl();
+
             Dictionary<string, object> paramDict = new Dictionary<string, object>();
-            paramDict.Add("childTableName", "TestBody");
+            paramDict.Add("childTableName", childTableName);
+            paramDict.Add("systemCode", LiContext.SystemCode);
             paramDict.Add("entityKey", entityKey);
             paramDict.Add("whereSql", "");
 
             this.pageSum = LiContexts.LiContext.getHttpEntity("sp_QueryList_Count").execProcedureSingleValue_Int32( "iCount", paramDict);
 
             paramDict.Clear();
-            paramDict.Add("childTableName", "TestBody");
+            paramDict.Add("childTableName", childTableName);
             paramDict.Add("entityKey", entityKey);
+            paramDict.Add("systemCode", LiContext.SystemCode);
             paramDict.Add("whereSql", queryWhereStr);
             paramDict.Add("orderBySql", "");
             paramDict.Add("rangeSql", string.Format(" and iPageRow > {0} and iPageRow <= {1}", (pageCurrent - 1) * pageSize, pageSize * pageCurrent));
@@ -365,26 +451,8 @@ namespace LiForm.Dev
         {
             SimpleButton btn = (SimpleButton)sender;
 
-            QuerySchemeModel querySchemeModel = querySchemeModels.Where(m => m.querySchemeName == btn.Text).FirstOrDefault();
-            if (querySchemeModel != null)
-            {
-                FormUtil.loadQuickQuery(querySchemeModel.fields, liQuickQueryControlDict, layoutControlGroup2, layoutControl2);
-                groupControl1.Refresh();
-            }
-
-            foreach (KeyValuePair<string, SimpleButton> kvp in querySchemeBtns)
-            {
-                if (!kvp.Key.Equals(btn.Text))
-                {
-                    kvp.Value.Appearance.BorderColor = Color.Transparent;
-                }
-                else
-                {
-                    kvp.Value.Appearance.BorderColor = Color.Red;
-                }
-
-            }
-
+            currentQuerySchemeModel = querySchemeModels.Where(m => m.querySchemeName == btn.Text).FirstOrDefault();
+            
         }
 
         /// <summary>

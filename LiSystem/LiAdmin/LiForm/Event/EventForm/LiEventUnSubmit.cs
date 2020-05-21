@@ -11,6 +11,7 @@ using LiFlow.Enums;
 using LiFlow.Util;
 using LiFlow.Model;
 using LiCommon.Util;
+using LiModel.Form;
 
 namespace LiForm.Event.EventForm
 {
@@ -41,17 +42,25 @@ namespace LiForm.Event.EventForm
             LiVersionFlowModel liVersionFlowModel = null;
 
             bool bSuccess = false;
+            ButtonModel buttonModel = this.Tag as ButtonModel;
 
             try
             {
                 currentFlowNode = FlowUtil.getNextStepFlow(this.liForm.formCode, Convert.ToString(this.liForm.voucherId), out liVoucherFlowStepModel, out liVoucherFlowTemp, out liVersionFlowModel);
 
-                if (FlowUtil.revokeFlow(this.liForm.formCode, RevokeType.UnSubmit, this.liForm.formCode, Convert.ToString(this.liForm.voucherId), liVoucherFlowStepModel, out resultContent))
+                if(currentFlowNode != null)
                 {
-                    bSuccess = this.liForm.saveVoucher();
+                    if (FlowUtil.revokeFlow(this.liForm.formCode, RevokeType.UnSubmit, this.liForm.formCode, Convert.ToString(this.liForm.voucherId), liVoucherFlowStepModel, out resultContent))
+                    {
+                        bSuccess = this.liForm.saveVoucher(buttonModel);
+                    }
+                    MessageUtil.Show(resultContent, "温馨提示");
+                }
+                else
+                {
+                    bSuccess = this.liForm.saveVoucher(buttonModel);
                 }
 
-                MessageUtil.Show(resultContent, "温馨提示");
 
             }
             catch (Exception ex)

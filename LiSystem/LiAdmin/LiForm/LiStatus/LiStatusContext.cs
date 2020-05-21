@@ -9,6 +9,7 @@ namespace LiForm.LiStatus
     public class LiStatusContext
     {
         private LiAStatus status;
+        private LiAStatus previousStatus;
         private Dictionary<string, LiAStatus> stateDict = new Dictionary<string, LiAStatus>();
         public LiStatusContext()
         {
@@ -32,6 +33,15 @@ namespace LiForm.LiStatus
         public void setStatus(LiAStatus liStatus)
         {
             this.status = liStatus;
+        }
+
+        public void setPreviousStatus(LiAStatus liStatus)
+        {
+            this.previousStatus = liStatus;
+        }
+        public LiAStatus getPreviousStatus()
+        {
+            return previousStatus;
         }
 
         public LiAStatus getStatus(string statusName)

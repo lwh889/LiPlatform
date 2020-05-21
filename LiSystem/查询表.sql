@@ -5,10 +5,13 @@ drop table LiQueryScheme
 
 create table LiQueryScheme(
 	id int identity(1,1) primary key,
+	entityKey nvarchar(30) not null,
 	userCode nvarchar(20) not null,
 	querySchemeName nvarchar(30) not null,
 	createDate datetime default getdate()
 )
+
+--alter table LiQueryScheme add  entityKey nvarchar(30)  null
 
 create table LiQuery(
 	id int identity(1,1) primary key,
@@ -32,11 +35,13 @@ create table LiEntity(
 	sEntityType nvarchar(30) ,
 	sEntityCode nvarchar(30) ,
 	sEntityName nvarchar(50) ,
+	sTableName nvarchar(50) ,
 	iShow bit ,
 	
 	createDate datetime default getdate()
 )
 
+--alter table LiEntity add sTableName nvarchar(50)
 create table LiField(
 	id int identity(1,1) primary key,
 	querySchemeId int REFERENCES LiQueryScheme(id),

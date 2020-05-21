@@ -57,11 +57,13 @@ namespace LiForm.Dev
 
         private string entityKey;
 
-        public LiQueryForm(string entityKey)
+        public LiQueryForm(string entityKey, List<QuerySchemeModel> querySchemeModels)
         {
             InitializeComponent();
 
             this.entityKey = entityKey;
+            this.querySchemeModels = querySchemeModels;
+
             Init();
         }
 
@@ -116,15 +118,6 @@ namespace LiForm.Dev
         /// </summary>
         public void InitQueryScheme()
         {
-            QuerySchemeModel defaultQuerySchemeModel = new QuerySchemeModel();
-            defaultQuerySchemeModel.userCode = LiContexts.LiContext.userInfo.userCode;
-            defaultQuerySchemeModel.querySchemeName = "默认方案";
-            defaultQuerySchemeModel.entitys = EntityModel.getDataSource(entityKey); ;
-            defaultQuerySchemeModel.fields = FieldModel.getDataSource(entityKey);
-            defaultQuerySchemeModel.querys = new List<QueryModel>();
-
-            querySchemeModels = LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).getEntityList<QuerySchemeModel>(LiContexts.LiContext.userInfo.userCode, "userCode");
-            querySchemeModels.Insert(0, defaultQuerySchemeModel);
 
             FormUtil.loadQueryScheme(querySchemeModels, querySchemeBtns, new System.EventHandler(this.btnQueryScheme_Click), layoutControlGroup1);
 
@@ -200,6 +193,7 @@ namespace LiForm.Dev
             {
 
                 QuerySchemeModel querySchemeModel = new QuerySchemeModel();
+                querySchemeModel.entityKey = entityKey;
                 querySchemeModel.userCode = LiContexts.LiContext.userInfo.userCode;
                 querySchemeModel.querySchemeName = inputDialog.getValue();
                 querySchemeModel.entitys = new List<EntityModel>();
@@ -244,6 +238,7 @@ namespace LiForm.Dev
                 if (inputDialog.ShowDialog() == DialogResult.Yes)
                 {
                     QuerySchemeModel querySchemeModel = new QuerySchemeModel();
+                    querySchemeModel.entityKey = entityKey;
                     querySchemeModel.userCode = LiContexts.LiContext.userInfo.userCode;
                     querySchemeModel.querySchemeName = inputDialog.getValue();
                     querySchemeModel.entitys = gridControl2.DataSource as List<EntityModel>;
@@ -257,6 +252,9 @@ namespace LiForm.Dev
             }
             else
             {
+                currentQuerySchemeModel.entitys = gridControl2.DataSource as List<EntityModel>;
+                currentQuerySchemeModel.fields = gridControl3.DataSource as List<FieldModel>;
+                currentQuerySchemeModel.querys = gridControl1.DataSource as List<QueryModel>;
                 LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).updateEntity(currentQuerySchemeModel);
                 MessageUtil.Show(LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).tipStr, "温馨提示");
             }

@@ -19,12 +19,12 @@ namespace LiForm.Event.EventListForm
 
             try
             {
-                LiQueryForm queryForm = new LiQueryForm(this.liListForm.entityKey);
+                LiQueryForm queryForm = new LiQueryForm(this.liListForm.entityKey, this.liListForm.querySchemeModels);
                 if (queryForm.ShowDialog() == DialogResult.Yes)
                 {
                     string whereStr = DevFormUtil.getPreciseWhereStr(queryForm.returnQuerys, true);
                     this.liListForm.setQueryWhere(whereStr);
-
+                    this.liListForm.currentQuerySchemeModel = queryForm.currentQuerySchemeModel;
                     this.liListForm.Query();
                     this.liListForm.FillGridListCtrlQuery(this.liListForm.setFirstPage());
                     bSuccess = true;

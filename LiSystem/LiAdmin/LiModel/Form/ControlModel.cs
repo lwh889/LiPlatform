@@ -70,6 +70,12 @@ namespace LiModel.Form
         public int row { set; get; }
 
         /// <summary>
+        /// 第几列
+        /// </summary>
+        [Browsable(true), Category("基本属性"), DisplayName("列表顺序")]
+        public int colIndex { set; get; }
+
+        /// <summary>
         /// 控件类型,在存储过程也要修改sp_CreateTable,Controltype
         /// </summary>
         [Browsable(true), Category("基本属性"), DisplayName("控件类型"), TypeConverter(typeof(PropertyGridListConvert)), PropertyGridListAttribute(new string[] { "VoucherCodeEdit", "TextEdit", "CheckEdit", "MemoEdit", "DecimalEdit", "IntEdit", "DateTimeEdit", "TimeEdit", "GridLookUpEditComboBox", "GridLookUpEditRef", "GridLookUpEditRefAssist", "TreeListLookUpEdit", "UserEdit", "DateEdit", "StatusEdit" })]

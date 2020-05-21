@@ -15,6 +15,7 @@ namespace LiForm.Event.EventForm
             try
             {
                 this.liForm.deleteRow(this.focusEntityKey, this.liForm.getFocusRowHandle(this.focusEntityKey));
+                this.liForm.resetRowNo(this.focusEntityKey);
                 bSuccess = true;
             }
             catch(Exception ex)

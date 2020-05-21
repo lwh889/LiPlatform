@@ -9,6 +9,7 @@ using LiHttp.RequestParam;
 using LiForm.Dev.Util;
 using LiFlow.Util;
 using LiCommon.Util;
+using LiModel.Form;
 
 namespace LiForm.Event.EventForm
 {
@@ -17,6 +18,7 @@ namespace LiForm.Event.EventForm
         public override bool receiveEvent()
         {
             bool bSuccess = false;
+            ButtonModel buttonModel = this.Tag as ButtonModel;
 
             try
             {
@@ -24,7 +26,7 @@ namespace LiForm.Event.EventForm
 
                 if (FlowUtil.startFlow(this.liForm.formCode, Convert.ToString(this.liForm.voucherId), Convert.ToString(this.liForm.voucherCode), this.liForm.formDataDict, out resultContent))
                 {
-                    bSuccess = this.liForm.saveVoucher();
+                    bSuccess = this.liForm.saveVoucher(buttonModel);
                 }
 
                 MessageUtil.Show(resultContent, "温馨提示");

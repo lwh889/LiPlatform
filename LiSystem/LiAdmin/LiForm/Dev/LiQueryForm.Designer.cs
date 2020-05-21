@@ -234,31 +234,35 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(681, 49);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControlTop.Size = new System.Drawing.Size(973, 63);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 448);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 714);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(681, 23);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControlBottom.Size = new System.Drawing.Size(973, 26);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 49);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 63);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 399);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 651);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(681, 49);
+            this.barDockControlRight.Location = new System.Drawing.Point(973, 63);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 399);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 651);
             // 
             // btnDeleteStatus
             // 
@@ -275,10 +279,11 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 103);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 148);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(681, 345);
+            this.xtraTabControl1.Size = new System.Drawing.Size(973, 566);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -288,15 +293,18 @@
             // 
             this.xtraTabPage1.Controls.Add(this.gridControl1);
             this.xtraTabPage1.Controls.Add(this.toolStrip1);
+            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(675, 316);
+            this.xtraTabPage1.Size = new System.Drawing.Size(963, 521);
             this.xtraTabPage1.Text = "查询条件";
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl1.Location = new System.Drawing.Point(0, 25);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -309,7 +317,7 @@
             this.repositoryItemDateEdit_Date,
             this.repositoryItemCheckEdit_Bool,
             this.repositoryItemGridLookUpEdit_sJoin});
-            this.gridControl1.Size = new System.Drawing.Size(675, 291);
+            this.gridControl1.Size = new System.Drawing.Size(963, 496);
             this.gridControl1.TabIndex = 14;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -484,13 +492,14 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAddRow,
             this.btnInsertRow,
             this.btnDeleteRow});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(675, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(963, 25);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -498,7 +507,7 @@
             // 
             this.btnAddRow.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAddRow.Name = "btnAddRow";
-            this.btnAddRow.Size = new System.Drawing.Size(33, 22);
+            this.btnAddRow.Size = new System.Drawing.Size(48, 22);
             this.btnAddRow.Text = "增行";
             this.btnAddRow.Click += new System.EventHandler(this.btnAddRow_Click);
             // 
@@ -506,7 +515,7 @@
             // 
             this.btnInsertRow.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnInsertRow.Name = "btnInsertRow";
-            this.btnInsertRow.Size = new System.Drawing.Size(33, 22);
+            this.btnInsertRow.Size = new System.Drawing.Size(48, 22);
             this.btnInsertRow.Text = "插行";
             this.btnInsertRow.Click += new System.EventHandler(this.btnInsertRow_Click);
             // 
@@ -514,7 +523,7 @@
             // 
             this.btnDeleteRow.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDeleteRow.Name = "btnDeleteRow";
-            this.btnDeleteRow.Size = new System.Drawing.Size(33, 22);
+            this.btnDeleteRow.Size = new System.Drawing.Size(48, 22);
             this.btnDeleteRow.Text = "删行";
             this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
             // 
@@ -522,22 +531,25 @@
             // 
             this.xtraTabPage2.Controls.Add(this.gridControl3);
             this.xtraTabPage2.Controls.Add(this.gridControl2);
+            this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(675, 316);
+            this.xtraTabPage2.Size = new System.Drawing.Size(963, 497);
             this.xtraTabPage2.Text = "显示";
             // 
             // gridControl3
             // 
             this.gridControl3.AllowDrop = true;
             this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl3.Location = new System.Drawing.Point(0, 127);
+            this.gridControl3.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gridControl3.Location = new System.Drawing.Point(0, 200);
             this.gridControl3.MainView = this.gridView3;
+            this.gridControl3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl3.Name = "gridControl3";
             this.gridControl3.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCalcEdit_Width,
             this.repositoryItemGridLookUpEdit_controlType,
             this.repositoryItemGridLookUpEdit_sJudgeSymbol});
-            this.gridControl3.Size = new System.Drawing.Size(675, 189);
+            this.gridControl3.Size = new System.Drawing.Size(963, 297);
             this.gridControl3.TabIndex = 19;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -679,15 +691,17 @@
             // 
             this.gridControl2.AllowDrop = true;
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
+            this.gridControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCalcEdit1,
             this.repositoryItemGridLookUpEdit1,
             this.repositoryItemGridLookUpEdit2,
             this.repositoryItemGridLookUpEdit3});
-            this.gridControl2.Size = new System.Drawing.Size(675, 127);
+            this.gridControl2.Size = new System.Drawing.Size(963, 200);
             this.gridControl2.TabIndex = 18;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -776,10 +790,11 @@
             // layoutControl1
             // 
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 49);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 63);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(681, 54);
+            this.layoutControl1.Size = new System.Drawing.Size(973, 85);
             this.layoutControl1.TabIndex = 5;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -791,7 +806,7 @@
             this.emptySpaceItem1});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(681, 54);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(973, 85);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // emptySpaceItem1
@@ -799,20 +814,21 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(661, 34);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(943, 55);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // LiQueryForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 471);
+            this.ClientSize = new System.Drawing.Size(973, 740);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LiQueryForm";
             this.Text = "精确查询";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
