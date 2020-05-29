@@ -185,6 +185,18 @@ select 51,'LiSystem','Basic','liProcedure','slave','datas','ParamInfo','liParamI
 insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
 select 52,'LiSystem','Basic','liSystemInfo','master',null,'LiSystemInfo','liSystemInfo','系统信息表', null,'JsonModel','id',null,getdate()
 
+insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
+select 53,'LiSystem','Basic','liU8Voucher','master',null,'LiU8Voucher','liU8Voucher','U8API单据', null,'JsonModel','id',null,getdate()
+insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
+select 54,'LiSystem','Basic','liU8Voucher','slave','operations','LiU8Operation','liU8Operation','单据操作类型', null,'JsonModel','id',null,getdate()
+insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
+select 55,'LiSystem','Basic','liU8Voucher','slave','paramModels','LiU8Param','liU8Param','单据参数', null,'JsonModel','id',null,getdate()
+insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
+select 56,'LiSystem','Basic','liU8Voucher','slave','fields','LiU8Field','liU8Field','单据字段', null,'JsonModel','id',null,getdate()
+insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
+select 57,'LiSystem','Basic','liU8Voucher','slave','contexts','LiU8EnvContext','iU8EnvContext','单据字段', null,'JsonModel','id',null,getdate()
+
+
 SET IDENTITY_Insert TableInfo OFF
 
 --LiForm
@@ -658,6 +670,8 @@ select 19, 'id','主键','int',9,1,0,0,1,null,0,null
 union all
 select 19, 'formId','外键','int',9,0,1,0,0,'id',1,'LiForm'
 union all
+select 19, 'iIndex','顺序', 'int',9,0,0,0,0,null,0,null
+union all
 select 19, 'caption','标题', 'narchar',30,0,0,0,0,null,0,null
 union all
 select 19, 'name','名称', 'narchar',30,0,0,0,0,null,0,null
@@ -765,6 +779,12 @@ union all
 select 23, 'sRefTypeCode','引用类型', 'narchar',50,0,0,0,0,null,0,null
 union all
 select 23, 'sJudgeSymbol','判断符号', 'narchar',10,0,0,0,0,null,0,null
+union all
+select 23, 'basicInfoKey','基础档案Kdy', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 23, 'dictInfoType','字典档案类型', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 23, 'gridlookUpEditShowModelJson','Json字段', 'narchar',200,0,0,0,0,null,0,null
 
 
 --LiUsers
@@ -1292,7 +1312,6 @@ select 49, 'voucherCode','单据编号', 'narchar',30,0,0,0,0,null,0,null
 union all
 select 49, 'userCode','用户编码', 'narchar',30,0,0,0,0,null,0,null
 
-select * FROM  ColumnInfo where columnName = 'procedureName'
 
 --ProcedureInfo
 insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
@@ -1320,9 +1339,7 @@ select 51, 'paramType','参数类型', 'narchar',50,0,0,0,0,null,0,null
 union all
 select 51, 'paramLength','参数长度', 'int',9,0,0,0,0,null,0,null
 
-delete ColumnInfo where columnName in ('bDefault','systemTitle') and fid = 52
 
-delete from ColumnInfo where columnName in ('systemCode','systemDataBaseName','systemName') and fid = 52
 --LiSystemInfo
 insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
 select 52, 'id','主键','int',9,1,0,0,1,null,0,null
@@ -1340,6 +1357,103 @@ union all
 select 52, 'companyLogo','公司Logo', 'narchar',5000,0,0,0,0,null,0,null
 union all
 select 52, 'bDefault','默认信息', 'bit',1,0,0,0,0,null,0,null
+
+
+--LiU8Voucher
+insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+select 53, 'id','主键','int',9,1,0,0,1,null,0,null
+union all
+select 53, 'code','编码', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 53, 'name','名称', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 53, 'voucherType','单据类型', 'narchar',10,0,0,0,0,null,0,null
+union all
+select 53, 'operations','数据集','collection', -1,0,0,2,0,null,0,null
+
+--LiU8Operation
+insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+select 54, 'id','主键','int',9,1,0,0,1,null,0,null
+union all
+select 54, 'fid','外键','int',9,0,1,0,0,'id',1,'LiU8Voucher'
+union all
+select 54, 'operationCode','操作编码', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 54, 'operationName','操作名称', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 54, 'operationSymbol','操作符号', 'narchar',20,0,0,0,0,null,0,null
+union all
+select 54, 'paramModels','数据集','collection', -1,0,0,2,0,null,0,null
+union all
+select 54, 'fields','数据集','collection', -1,0,0,2,0,null,0,null
+
+--LiU8Param
+insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+select 55, 'id','主键','int',9,1,0,0,1,null,0,null
+union all
+select 55, 'fid','外键','int',9,0,1,0,0,'id',1,'LiU8Operation'
+union all
+select 55 'paramName','参数名', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 55, 'paramDesc','参数描述', 'narchar',200,0,0,0,0,null,0,null
+union all
+select 55, 'paramType','参数类型', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 55, 'paramDirection','参数方向', 'narchar',20,0,0,0,0,null,0,null
+union all
+select 55, 'paramTransMode','传递方式', 'narchar',20,0,0,0,0,null,0,null
+union all
+select 55, 'paramIsRequire','是否可选', 'bit',1,0,0,0,0,null,0,null
+union all
+select 55, 'paramBoObject','BO对象', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 55, 'paramBoType','是否BO表头', 'nvarchar',50,0,0,0,0,null,0,null
+union all
+select 55, 'paramDefaultValue','默认值', 'narchar',200,0,0,0,0,null,0,null
+
+
+--LiU8Field
+insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+select 56, 'id','主键','int',9,1,0,0,1,null,0,null
+union all
+select 56, 'fid','外键','int',9,0,1,0,0,'id',1,'LiU8Operation'
+union all
+select 56, 'fieldEntityType','实体类型', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 56, 'fieldName','字段名', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 56, 'fieldDesc','字段描述', 'narchar',200,0,0,0,0,null,0,null
+union all
+select 56, 'fieldType','字段类型', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 56, 'fieldIsRequire','是否必输', 'bit',1,0,0,0,0,null,0,null
+union all
+select 56, 'fieldMaxValue','最大值', 'narchar',200,0,0,0,0,null,0,null
+union all
+select 56, 'fieldMinValue','最小值', 'narchar',200,0,0,0,0,null,0,null
+union all
+select 56, 'fieldDefaultValue','默认值', 'narchar',200,0,0,0,0,null,0,null
+union all
+select 56, 'fieldbDefault','是否默认', 'bit',1,0,0,0,0,null,0,null
+union all
+select 56, 'fieldLength','最大长度', 'int',9,0,0,0,0,null,0,null
+
+
+--LiU8EnvContext
+insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+select 57, 'id','主键','int',9,1,0,0,1,null,0,null
+union all
+select 57, 'fid','外键','int',9,0,1,0,0,'id',1,'LiU8Operation'
+union all
+select 57 'contextName','上下文名称', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 57, 'contextDesc','描述', 'narchar',200,0,0,0,0,null,0,null
+union all
+select 57, 'contextType','上下文类型', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 57, 'contextDefaultValue','默认值', 'narchar',200,0,0,0,0,null,0,null
+
+
 GO
 
 exec sp_CreateTable 4

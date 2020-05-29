@@ -39,6 +39,44 @@ namespace LiForm.Dev.Util
     public class FormUtil
     {
         /// <summary>
+        /// 加载基础档案
+        /// </summary>
+        /// <param name="formModel"></param>
+        public static void loadBasicInfo(FormModel formModel)
+        {
+            ///获取基础档案Key，然后加载
+            List<string> entityKeys = new List<string>();
+            List<string> dictKeys = new List<string>();
+            foreach (PanelModel panelModel in formModel.panels)
+            {
+                foreach (ControlGroupModel controlGroupModel in panelModel.controlGroups)
+                {
+                    foreach (ControlModel controlModel in controlGroupModel.controls)
+                    {
+                        if (!entityKeys.Contains(controlModel.basicInfoKey))
+                        {
+                            switch (controlModel.controltype)
+                            {
+                                case "UserEdit":
+                                case "GridLookUpEditRef":
+                                case "TreeListLookUpEdit":
+                                    entityKeys.Add(controlModel.basicInfoKey);
+                                    break;
+                                case "StatusEdit":
+                                case "GridLookUpEditComboBox":
+                                    dictKeys.Add(controlModel.dictInfoType);
+                                    break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            ///加载基础档案
+            LiContexts.LiContext.addRefDataDataTable(entityKeys);
+            LiContexts.LiContext.addDictDataTable(dictKeys);
+        }
+        /// <summary>
         /// 下推单据
         /// </summary>
         /// <param name="liConvertHeadModel"></param>
@@ -91,6 +129,8 @@ namespace LiForm.Dev.Util
                 dtDest.Add(drDest);
             }
         }
+
+
         /// <summary>
         /// 加载快速查询界面
         /// </summary>
@@ -98,7 +138,7 @@ namespace LiForm.Dev.Util
         /// <param name="liControlDict"></param>
         /// <param name="layoutControlGroup"></param>
         /// <param name="layoutControl"></param>
-        public static void loadQuickQuery(List<FieldModel> fieldList,Dictionary<string, Control> liControlDict, LayoutControlGroup layoutControlGroup, LayoutControl layoutControl)
+        public static void loadQuickQuery(List<FieldModel> fieldList,Dictionary<string, Control> liControlDict, LayoutControlGroup layoutControlGroup, LayoutControl layoutControl, Control liListForm)
         {
 
             int i = 0;
@@ -116,7 +156,7 @@ namespace LiForm.Dev.Util
 
                 LayoutControlItem layoutControlItem = layoutControlGroup.AddItem();
 
-                Control control = ControlModelUtil.getControl(field.sColumnControlType);
+                Control control = getControl(field, layoutControl, liListForm);
                 control.Name = string.Format("{0}{1}", field.code, field.bRange ? "_B" : "");
                 control.Tag = field;
                 layoutControlItem.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
@@ -191,9 +231,9 @@ namespace LiForm.Dev.Util
                 SimpleButton simpleButton = new SimpleButton();
                 simpleButton.Text = querySchemeModel.querySchemeName;
                 simpleButton.Click += buttonHandler;
-                simpleButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+                simpleButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
 
-                layoutControlItem.MaxSize = simpleButton.CalcBestSize();
+                layoutControlItem.MinSize = simpleButton.CalcBestSize();
                 layoutControlItem.Control = simpleButton;
 
                 if (defaultLayoutControlItem != null)
@@ -286,7 +326,7 @@ namespace LiForm.Dev.Util
             ribbonPageGroup.Text = buttonGroupModel.text;
             ribbonPageGroup.MergeOrder = 1;
 
-            List<ButtonModel> buttons = buttonGroupModel.buttons;
+            List<ButtonModel> buttons = buttonGroupModel.buttons.OrderBy(m=>m.iIndex).ToList();
             //自动流式布局，大图标占整个，小图标，一行三个
             foreach (ButtonModel button in buttons)
             {
@@ -476,49 +516,20 @@ namespace LiForm.Dev.Util
             {
                 case "StatusEdit":
                 case "GridLookUpEditComboBox":
+                    setControlDataSource(controlModel.controltype, controlModel.dictInfoType, controlModel.gridlookUpEditShowModelJson, control, layoutControl, liForm);
                     GridLookUpEdit gridLookUpEditComboBox = (GridLookUpEdit)control;
-                    GridView gridViewComboBox = new GridView();
-
-                    gridViewComboBox.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-                    gridViewComboBox.Name = string.Format("gridLookUpEditComboBoxView_{0}", control.Name);
-                    gridViewComboBox.OptionsSelection.EnableAppearanceFocusedCell = false;
-                    gridViewComboBox.OptionsView.ShowGroupPanel = false;
-
-                    layoutControl.Controls.Add(gridLookUpEditComboBox);
-                    gridLookUpEditComboBox.Properties.View = gridViewComboBox;
-
-                    gridLookUpEditComboBox.StyleController = layoutControl;
-
-                    GridlookUpEditShowModel gridlookUpEditShowModelComboBox_ComboBox = JsonUtil.GetEntity<GridlookUpEditShowModel>(controlModel.gridlookUpEditShowModelJson);
-                    DataTable liComboBoxData = LiContexts.LiContext.getDictDataTable(controlModel.dictInfoType);
-                    GridlookUpEditUtil.InitDefaultComboBoxControl(gridlookUpEditShowModelComboBox_ComboBox.valueMember, gridlookUpEditShowModelComboBox_ComboBox.displayMember, gridlookUpEditShowModelComboBox_ComboBox.searchColumns, gridlookUpEditShowModelComboBox_ComboBox.displayColumns, gridLookUpEditComboBox, liForm, liComboBoxData);
-
+                   
                     break;
                 case "UserEdit":
                 case "GridLookUpEditRef":
+                    setControlDataSource(controlModel.controltype, controlModel.basicInfoKey, controlModel.gridlookUpEditShowModelJson, control, layoutControl, liForm);
                     GridLookUpEdit gridLookUpEditRef = (GridLookUpEdit)control;
                     
-                    GridView gridViewRef = new GridView();
-                    gridViewRef.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-                    gridViewRef.Name = string.Format("gridLookUpEditRefView_{0}", control.Name);
-                    gridViewRef.OptionsSelection.EnableAppearanceFocusedCell = false;
-                    gridViewRef.OptionsView.ShowGroupPanel = false;
-
-                    layoutControl.Controls.Add(gridLookUpEditRef);
-                    gridLookUpEditRef.Properties.View = gridViewRef;
                     gridLookUpEditRef.Properties.EditValueChanged += new System.EventHandler(liForm.gridLookUpEdit_Properties_EditValueChanged);
 
-                    gridLookUpEditRef.StyleController = layoutControl;
-
-                    GridlookUpEditShowModel gridlookUpEditShowModel = JsonUtil.GetEntity<GridlookUpEditShowModel>(controlModel.gridlookUpEditShowModelJson);
-                    DataTable liRefData = LiContexts.LiContext.getRefDataDataTable(controlModel.basicInfoKey);
-
-                    GridlookUpEditUtil.InitDefaultRefControl(GridlookUpEditShowModeUtil.getEnum(gridlookUpEditShowModel.showMode), gridlookUpEditShowModel.valueMember, gridlookUpEditShowModel.displayMember, gridlookUpEditShowModel.searchColumns, gridlookUpEditShowModel.displayColumns, gridlookUpEditShowModel.dictModelDesc, gridLookUpEditRef, liForm, liRefData);
                     break;
                 case "TreeListLookUpEdit":
-                    TreeListLookUpEdit treeListLookUpEdit = (TreeListLookUpEdit)control;
-                    DataTable liTreeRefData = LiContexts.LiContext.getRefDataDataTable(controlModel.basicInfoKey);
-                    treeListLookUpEdit.Properties.DataSource = liTreeRefData;
+                    setControlDataSource(controlModel.controltype, controlModel.basicInfoKey, controlModel.gridlookUpEditShowModelJson, control, layoutControl, liForm);
                     break;
                 default:
                     break;
@@ -528,21 +539,95 @@ namespace LiForm.Dev.Util
         }
 
 
-        
         /// <summary>
-        /// 获取表格控件
+        /// 获取控件
         /// </summary>
         /// <param name="controlModel"></param>
         /// <returns></returns>
-        public static RepositoryItem getRepositoryItemControl(ControlModel controlModel, GridControl gridControl1, LiForm liForm)
+        public static Control getControl(FieldModel fieldModel, LayoutControl layoutControl, Control liForm)
         {
+            Control control = ControlModelUtil.getControl(fieldModel.sColumnControlType);
 
-            RepositoryItem control = ControlModelUtil.getRepositoryItemControl(controlModel);
-            control.Name = controlModel.name;
-            control.Tag = controlModel;
-            control.AutoHeight = false;
+            switch (fieldModel.sColumnControlType)
+            {
+                case "StatusEdit":
+                case "GridLookUpEditComboBox":
+                    setControlDataSource(fieldModel.sColumnControlType, fieldModel.dictInfoType, fieldModel.gridlookUpEditShowModelJson, control, layoutControl, liForm);
+                    break;
+                case "UserEdit":
+                case "GridLookUpEditRef":
+                case "TreeListLookUpEdit":
+                    setControlDataSource(fieldModel.sColumnControlType, fieldModel.basicInfoKey, fieldModel.gridlookUpEditShowModelJson, control, layoutControl, liForm);
+                    break;
+            }
 
-            switch (controlModel.controltype)
+            return control;
+        }
+
+        public static void setControlDataSource(string controltype, string basicInfoKey, string gridlookUpEditShowModelJson, Control control, LayoutControl layoutControl, Control liForm)
+        {
+            switch (controltype)
+            {
+                case "StatusEdit":
+                case "GridLookUpEditComboBox":
+                    GridLookUpEdit gridLookUpEditComboBox = (GridLookUpEdit)control;
+                    GridView gridViewComboBox = new GridView();
+
+                    gridViewComboBox.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+                    gridViewComboBox.Name = string.Format("gridLookUpEditComboBoxView_{0}", control.Name);
+                    gridViewComboBox.OptionsSelection.EnableAppearanceFocusedCell = false;
+                    gridViewComboBox.OptionsView.ShowGroupPanel = false;
+
+                    if (layoutControl != null)
+                    {
+                        layoutControl.Controls.Add(gridLookUpEditComboBox);
+                        gridLookUpEditComboBox.StyleController = layoutControl;
+                    }
+                    gridLookUpEditComboBox.Properties.View = gridViewComboBox;
+
+                    GridlookUpEditShowModel gridlookUpEditShowModelComboBox_ComboBox = JsonUtil.GetEntity<GridlookUpEditShowModel>(gridlookUpEditShowModelJson);
+                    DataTable liComboBoxData = LiContexts.LiContext.getDictDataTable(basicInfoKey);
+                    GridlookUpEditUtil.InitDefaultComboBoxControl(gridlookUpEditShowModelComboBox_ComboBox.valueMember, gridlookUpEditShowModelComboBox_ComboBox.displayMember, gridlookUpEditShowModelComboBox_ComboBox.searchColumns, gridlookUpEditShowModelComboBox_ComboBox.displayColumns, gridLookUpEditComboBox, liForm, liComboBoxData);
+
+                    break;
+                case "UserEdit":
+                case "GridLookUpEditRef":
+                    GridLookUpEdit gridLookUpEditRef = (GridLookUpEdit)control;
+
+                    GridView gridViewRef = new GridView();
+                    gridViewRef.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+                    gridViewRef.Name = string.Format("gridLookUpEditRefView_{0}", control.Name);
+                    gridViewRef.OptionsSelection.EnableAppearanceFocusedCell = false;
+                    gridViewRef.OptionsView.ShowGroupPanel = false;
+
+                    if(layoutControl != null)
+                    {
+                        layoutControl.Controls.Add(gridLookUpEditRef);
+                        gridLookUpEditRef.StyleController = layoutControl;
+                    }
+
+                    gridLookUpEditRef.Properties.View = gridViewRef;
+
+                    GridlookUpEditShowModel gridlookUpEditShowModel = JsonUtil.GetEntity<GridlookUpEditShowModel>(gridlookUpEditShowModelJson);
+                    DataTable liRefData = LiContexts.LiContext.getRefDataDataTable(basicInfoKey);
+
+                    GridlookUpEditUtil.InitDefaultRefControl(GridlookUpEditShowModeUtil.getEnum(gridlookUpEditShowModel.showMode), gridlookUpEditShowModel.valueMember, gridlookUpEditShowModel.displayMember, gridlookUpEditShowModel.searchColumns, gridlookUpEditShowModel.displayColumns, gridlookUpEditShowModel.dictModelDesc, gridLookUpEditRef, liForm, liRefData);
+                    break;
+                case "TreeListLookUpEdit":
+                    TreeListLookUpEdit treeListLookUpEdit = (TreeListLookUpEdit)control;
+                    DataTable liTreeRefData = LiContexts.LiContext.getRefDataDataTable(basicInfoKey);
+                    treeListLookUpEdit.Properties.DataSource = liTreeRefData;
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+
+        public static void setGirdControlDataSource(string controltype, string basicInfoKey, string gridlookUpEditShowModelJson, GridControl gridControl1, RepositoryItem control, Control liForm)
+        {
+            switch (controltype)
             {
                 case "StatusEdit":
                 case "GridLookUpEditComboBox":
@@ -559,9 +644,9 @@ namespace LiForm.Dev.Util
                     gridControl1.RepositoryItems.Add(gridLookUpEditComboBox);
                     gridLookUpEditComboBox.View = gridViewComboBox;
 
-                    
-                    GridlookUpEditShowModel gridlookUpEditShowModelComboBox_ComboBox = JsonUtil.GetEntity<GridlookUpEditShowModel>(controlModel.gridlookUpEditShowModelJson);
-                    DataTable liComboBoxData = LiContexts.LiContext.getDictDataTable(controlModel.dictInfoType);
+
+                    GridlookUpEditShowModel gridlookUpEditShowModelComboBox_ComboBox = JsonUtil.GetEntity<GridlookUpEditShowModel>(gridlookUpEditShowModelJson);
+                    DataTable liComboBoxData = LiContexts.LiContext.getDictDataTable(basicInfoKey);
                     GridlookUpEditRepositoryItemUtil.InitDefaultComboBoxControl(gridlookUpEditShowModelComboBox_ComboBox.valueMember, gridlookUpEditShowModelComboBox_ComboBox.displayMember, gridlookUpEditShowModelComboBox_ComboBox.searchColumns, gridlookUpEditShowModelComboBox_ComboBox.displayColumns, gridLookUpEditComboBox, liForm, liComboBoxData);
 
                     break;
@@ -578,15 +663,47 @@ namespace LiForm.Dev.Util
                     gridControl1.RepositoryItems.Add(gridLookUpEditRef);
                     gridLookUpEditRef.View = gridViewRef;
 
-                    
-                    GridlookUpEditShowModel gridlookUpEditShowModel = JsonUtil.GetEntity<GridlookUpEditShowModel>(controlModel.gridlookUpEditShowModelJson);
-                    DataTable liRefData = LiContexts.LiContext.getRefDataDataTable(controlModel.basicInfoKey);
+
+                    GridlookUpEditShowModel gridlookUpEditShowModel = JsonUtil.GetEntity<GridlookUpEditShowModel>(gridlookUpEditShowModelJson);
+                    DataTable liRefData = LiContexts.LiContext.getRefDataDataTable(basicInfoKey);
                     GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowModeUtil.getEnum(gridlookUpEditShowModel.showMode), gridlookUpEditShowModel.valueMember, gridlookUpEditShowModel.displayMember, gridlookUpEditShowModel.searchColumns, gridlookUpEditShowModel.displayColumns, gridlookUpEditShowModel.dictModelDesc, gridLookUpEditRef, liForm, liRefData);
                     break;
                 case "TreeListLookUpEdit":
                     RepositoryItemTreeListLookUpEdit treeListLookUpEdit = (RepositoryItemTreeListLookUpEdit)control;
-                    DataTable liTreeRefData = LiContexts.LiContext.getRefDataDataTable(controlModel.basicInfoKey);
+                    DataTable liTreeRefData = LiContexts.LiContext.getRefDataDataTable(basicInfoKey);
                     treeListLookUpEdit.DataSource = liTreeRefData;
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+
+        /// <summary>
+        /// 获取表格控件
+        /// </summary>
+        /// <param name="controlModel"></param>
+        /// <returns></returns>
+        public static RepositoryItem getRepositoryItemControl(ControlModel controlModel, GridControl gridControl1, Control liForm)
+        {
+
+            RepositoryItem control = ControlModelUtil.getRepositoryItemControl(controlModel);
+            control.Name = controlModel.name;
+            control.Tag = controlModel;
+            control.AutoHeight = false;
+
+            switch (controlModel.controltype)
+            {
+                case "StatusEdit":
+                case "GridLookUpEditComboBox":
+                    setGirdControlDataSource(controlModel.controltype, controlModel.dictInfoType, controlModel.gridlookUpEditShowModelJson, gridControl1, control, liForm);
+                    
+                    break;
+                case "UserEdit":
+                case "GridLookUpEditRef":
+                case "TreeListLookUpEdit":
+                    setGirdControlDataSource(controlModel.controltype, controlModel.basicInfoKey, controlModel.gridlookUpEditShowModelJson, gridControl1, control, liForm);
                     break;
                 default:
                     break;
@@ -1077,7 +1194,7 @@ namespace LiForm.Dev.Util
             bar.OptionsBar.DrawBorder = false;
             bar.OptionsBar.DrawDragBorder = false;
 
-            List<ButtonModel> buttons = buttonGroupModel.buttons;
+            List<ButtonModel> buttons = buttonGroupModel.buttons.OrderBy(m => m.iIndex).ToList();
             foreach (ButtonModel button in buttons)
             {
                 string[] iconNames = string.IsNullOrEmpty(button.icon) ? new string[0] : button.icon.Split('|');

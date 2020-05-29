@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiFlow", "LiFlow\LiFlow.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiLog", "LiLog\LiLog.csproj", "{5E5364A8-932A-416E-A714-C343852C3287}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiU8API", "LiU8API\LiU8API.csproj", "{DE03FE09-54A3-4944-BA3D-5A8429303735}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiVoucherConvert", "LiVoucherConvert\LiVoucherConvert.csproj", "{CAD00872-C1B8-43FE-AE50-C14C7151CD3A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,14 @@ Global
 		{5E5364A8-932A-416E-A714-C343852C3287}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E5364A8-932A-416E-A714-C343852C3287}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E5364A8-932A-416E-A714-C343852C3287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE03FE09-54A3-4944-BA3D-5A8429303735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE03FE09-54A3-4944-BA3D-5A8429303735}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE03FE09-54A3-4944-BA3D-5A8429303735}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE03FE09-54A3-4944-BA3D-5A8429303735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD00872-C1B8-43FE-AE50-C14C7151CD3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD00872-C1B8-43FE-AE50-C14C7151CD3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD00872-C1B8-43FE-AE50-C14C7151CD3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD00872-C1B8-43FE-AE50-C14C7151CD3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

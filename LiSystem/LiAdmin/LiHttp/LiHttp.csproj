@@ -59,6 +59,7 @@
     <Compile Include="GetEntity\NewDataEntity.cs" />
     <Compile Include="GetEntity\VoucherDataEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestParam\DeleteBatchParamModel.cs" />
     <Compile Include="RequestParam\DeleteParamModel.cs" />
     <Compile Include="RequestParam\GetNewDataParamModel.cs" />
     <Compile Include="RequestParam\InsertParamModel.cs" />

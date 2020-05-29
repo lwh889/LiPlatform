@@ -47,7 +47,7 @@ namespace LiHttp.Server
             }
 
             UpdateBatchParamModel updateBatchParamModel = new UpdateBatchParamModel();
-            updateBatchParamModel.type = "insert";
+            updateBatchParamModel.type = "update";
             updateBatchParamModel.systemCode = systemCode;
             updateBatchParamModel.entityKey = entityKey;
             updateBatchParamModel.datas = dataList;

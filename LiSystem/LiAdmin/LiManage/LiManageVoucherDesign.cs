@@ -36,6 +36,8 @@ namespace LiManage
 {
     public partial class LiManageVoucherDesign : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+
+        DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo hitInfo;
         /// <summary>
         /// 单据状态
         /// </summary>
@@ -865,31 +867,12 @@ namespace LiManage
                 LiContexts.LiContext.getHttpEntity(LiEntityKey.FormModel).updateEntity(formModel);
                 MessageUtil.Show(LiContexts.LiContext.getHttpEntity(LiEntityKey.FormModel).tipStr, "温馨提示");
 
-                //if (LiContext.liHttpUpdate.httpPost(LiHttpSetting_DrmAdmin.getHttpUpdate(), LiHttpUpdate.getUpdateParamModel("form1", formModel), out resultContent))
-                //{
-                //    MessageUtil.Show("修改成功！", "温馨提示");
-                //    bSuccess = true;
-                //}
-                //else
-                //{
-                //    MessageUtil.Show("修改失败！" + resultContent, "温馨提示");
-                //}
             }
             else
             {
                 LiContexts.LiContext.getHttpEntity(LiEntityKey.FormModel).newEntity(formModel);
                 MessageUtil.Show(LiContexts.LiContext.getHttpEntity(LiEntityKey.FormModel).tipStr, "温馨提示");
 
-                //if (LiContext.liHttpInsert.httpPost(LiHttpSetting_DrmAdmin.getHttpInsert(), LiHttpInsert.getInsertParamModel("form1", formModel), out resultContent))
-                //{
-                //    MessageUtil.Show("保存成功！", "温馨提示");
-                //    bSuccess = true;
-
-                //}
-                //else
-                //{
-                //    MessageUtil.Show("保存失败！" + resultContent, "温馨提示");
-                //}
             }
 
             LiContext.getFormModelList(formModel.name, LiContext.SystemCode);
@@ -1395,6 +1378,14 @@ namespace LiManage
                 DevControlUtil.addRowInGridView<ButtonModel>(buttonModel, gridControl4);
                 gridView4.RefreshData();
             }
+            else if (selectedGridRowData != null && selectedGridRowData.GetType().Name == "ListButtonModel")
+            {
+                if (formModel.listButtons == null) formModel.listButtons = new List<ListButtonModel>();
+
+                ListButtonModel listButtonModel = ButtonFactory.getListButtonModel(buttonType, formModel.id, formModel.listButtons.Count <= 0 ? Guid.NewGuid().ToString() : formModel.listButtons[0].categoryGuid, entityKey);
+                DevControlUtil.addRowInGridView<ListButtonModel>(listButtonModel, gridControl7);
+                gridView7.RefreshData();
+            }
         }
 
         private void BtnNEWButton_ItemClick(object sender, ItemClickEventArgs e)
@@ -1577,6 +1568,11 @@ namespace LiManage
                         gridControl4.RefreshDataSource();
                         ResetButtonModelIndex(gridControl4);
                         break;
+                    case "ListButtonModel":
+                        DevControlUtil.UpRow<ListButtonModel>(gridView7);
+                        gridControl7.RefreshDataSource();
+                        ResetListButtonModelIndex(gridControl7);
+                        break;
                 }
             }
         }
@@ -1592,6 +1588,11 @@ namespace LiManage
                         gridControl4.RefreshDataSource();
                         ResetButtonModelIndex(gridControl4);
                         break;
+                    case "ListButtonModel":
+                        DevControlUtil.DownRow<ListButtonModel>(gridView7);
+                        gridControl7.RefreshDataSource();
+                        ResetListButtonModelIndex(gridControl7);
+                        break;
                 }
             }
         }
@@ -1602,7 +1603,6 @@ namespace LiManage
         /// <param name="gridControl"></param>
         private void ResetButtonModelIndex(GridControl gridControl)
         {
-
             int iRow = 1;
             List<ButtonModel> buttonModels = gridControl.DataSource as List<ButtonModel>;
             foreach (ButtonModel buttonModel in buttonModels)
@@ -1610,8 +1610,57 @@ namespace LiManage
                 buttonModel.iIndex = iRow++;
             }
         }
+
+        /// <summary>
+        /// 重置按钮索引
+        /// </summary>
+        /// <param name="gridControl"></param>
+        private void ResetListButtonModelIndex(GridControl gridControl)
+        {
+            int iRow = 1;
+            List<ListButtonModel> buttonModels = gridControl.DataSource as List<ListButtonModel>;
+            foreach (ListButtonModel buttonModel in buttonModels)
+            {
+                buttonModel.iIndex = iRow++;
+            }
+        }
+        private void BtnSelectAllButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNSELECTALL);
+        }
+
+        private void BtnReSelectButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNRESELECT);
+        }
+
+        private void BtnCancelSelectButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNCANCELSELECT);
+        }
+
+        private void BtnFirstButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNFIRST);
+        }
+
+        private void BtnPerviousButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNPREVIOUS);
+        }
+
+        private void BtnNextButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNNEXT);
+        }
+
+        private void BtnLastButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ButtonType.BTNLAST);
+        }
+
     }
 
-    
+
 
 }

@@ -25,6 +25,19 @@ namespace LiHttp.Server
             return deleteParamModel;
         }
 
+        public DeleteBatchParamModel getDeleteBatchParamModel(List<Dictionary<string, object>> dataList)
+        {
+
+            DeleteBatchParamModel deleteBatchParamModel = new DeleteBatchParamModel();
+            deleteBatchParamModel.type = "delete";
+            deleteBatchParamModel.systemCode = systemCode;
+            deleteBatchParamModel.entityKey = entityKey;
+            deleteBatchParamModel.datas = dataList;
+
+            return deleteBatchParamModel;
+        }
+
+
 
         public DeleteParamModel getDeleteParamModel( object entitys)
         {

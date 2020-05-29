@@ -35,9 +35,22 @@ namespace LiModel.Form
                         fieldModelTemp.bColumnDisplay = control.bVisible;
                         fieldModelTemp.bQuery = false;
                         fieldModelTemp.bRange = false;
-                        fieldModelTemp.sColumnControlType = control.controltype;
+                        switch (control.controltype)
+                        {
+                            case ControlType.VoucherCodeEdit:
+                            case ControlType.GridLookUpEditRefAssist:
+                                fieldModelTemp.sColumnControlType = ControlType.TextEdit;
+                                break;
+                            default:
+                                fieldModelTemp.sColumnControlType = control.controltype;
+                                break;
+                        }
                         fieldModelTemp.sRefTypeCode = "";
                         fieldModelTemp.sJudgeSymbol = JudgmentSymbol.Equal;
+
+                        fieldModelTemp.basicInfoKey = control.basicInfoKey;
+                        fieldModelTemp.dictInfoType = control.dictInfoType;
+                        fieldModelTemp.gridlookUpEditShowModelJson = control.gridlookUpEditShowModelJson;
 
                         FieldModel.AddItemInDataSource(formModel.name, fieldModelTemp);
                     }
@@ -158,6 +171,20 @@ namespace LiModel.Form
         /// </summary>
         public string sJudgeSymbol { set; get; }
 
+        /// <summary>
+        /// 字典类型
+        /// </summary>
+        public string dictInfoType { set; get; }
+
+        /// <summary>
+        /// 基础档案类型
+        /// </summary>
+        public string basicInfoKey { set; get; }
+
+        /// <summary>
+        /// 控件格式
+        /// </summary>
+        public string gridlookUpEditShowModelJson { set; get; }
 
     }
 }

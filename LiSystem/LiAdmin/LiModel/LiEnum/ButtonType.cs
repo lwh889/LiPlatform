@@ -19,6 +19,12 @@ namespace LiModel.LiEnum
         public const string BTNREF = "参照";
         public const string BTNPUSH = "下推";
         public const string BTNEXIT = "退出";
+
+        public const string BTNPREVIOUS = "上翻";
+        public const string BTNNEXT = "下翻";
+        public const string BTNFIRST = "第一";
+        public const string BTNLAST = "最后";
+
         public const string BTNADDROW = "添加行";
         public const string BTNDELETEROW = "删除行";
         public const string BTNINSERTROW = "插入行";

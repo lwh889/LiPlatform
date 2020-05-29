@@ -15,6 +15,7 @@ using DevExpress.XtraTreeList;
 using DevExpress.XtraTreeList.Columns;
 
 using LiModel.Form;
+using LiModel.LiEnum;
 
 namespace LiForm.Dev.Util
 {
@@ -242,6 +243,7 @@ namespace LiForm.Dev.Util
                     DateEdit dateEdit = new DateEdit();
                     control = dateEdit;
                     break;
+                case "StatusEdit":
                 case "GridLookUpEditComboBox":
                     GridLookUpEdit gridLookUpEditComboBox = new GridLookUpEdit();
                     control = gridLookUpEditComboBox;
@@ -316,6 +318,7 @@ namespace LiForm.Dev.Util
                     RepositoryItemDateEdit dateEdit = new RepositoryItemDateEdit();
                     control = dateEdit;
                     break;
+                case ControlType.StatusEdit:
                 case "GridLookUpEditComboBox":
                     RepositoryItemGridLookUpEdit gridLookUpEditComboBox = new RepositoryItemGridLookUpEdit();
                     control = gridLookUpEditComboBox;

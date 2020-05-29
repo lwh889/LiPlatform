@@ -225,6 +225,10 @@
       <Project>{78be7dd4-4ec9-4f02-9b76-b764c4499ee5}</Project>
       <Name>LiContexts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LiControl\LiControl.csproj">
+      <Project>{D7D95400-BB18-4CCC-A06F-EB7EDDD5914E}</Project>
+      <Name>LiControl</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LiFlow\LiFlow.csproj">
       <Project>{9c07849c-040a-4a00-83ae-21876db56e59}</Project>
       <Name>LiFlow</Name>

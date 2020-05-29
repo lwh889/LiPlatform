@@ -66,6 +66,12 @@ namespace LiModel.Form
         public string voucherStatus { set; get; }
 
         /// <summary>
+        /// 顺序
+        /// </summary>
+        [Browsable(true), Category("基本属性"), DisplayName("顺序")]
+        public int iIndex { set; get; }
+
+        /// <summary>
         /// 事件组
         /// </summary>
         [Browsable(false)]

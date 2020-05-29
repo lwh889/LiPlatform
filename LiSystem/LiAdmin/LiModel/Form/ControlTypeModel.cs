@@ -26,6 +26,10 @@ namespace LiModel.Form
                 _dataSource.Add(new GridlookUpEditModel() { code = "GridLookUpEditComboBox", name = "下拉框" });
                 _dataSource.Add(new GridlookUpEditModel() { code = "GridLookUpEditRef", name = "引用类型" });
                 _dataSource.Add(new GridlookUpEditModel() { code = "TreeListLookUpEdit", name = "树形控件" });
+                _dataSource.Add(new GridlookUpEditModel() { code = "StatusEdit", name = "状态控件" });
+                _dataSource.Add(new GridlookUpEditModel() { code = "UserEdit", name = "用户控件" });
+                _dataSource.Add(new GridlookUpEditModel() { code = "GridLookUpEditRefAssist", name = "引用辅助控件" });
+                _dataSource.Add(new GridlookUpEditModel() { code = "VoucherCodeEdit", name = "单据编号控件" });
             }
             return _dataSource;
         }

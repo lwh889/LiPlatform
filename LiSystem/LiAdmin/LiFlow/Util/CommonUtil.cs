@@ -21,10 +21,10 @@ namespace LiFlow.Util
         {
             StringBuilder sSqlWhere = new StringBuilder();
 
-            if (queryList.Count > 0) sSqlWhere.Append(" and ");
             foreach (LiVersionFlowConditionModel model in queryList)
             {
-                sSqlWhere.Append(string.Format(" {0} {1} {2} {3} {4} {5}", model.sBracketsBefore, model.sFieldName, JudgmentSymbol.getJudeSymbol(model.sJudgmentSymbol), getFlowWhereValue(model, IsProcedure), model.sJoin, model.sBracketsAfter));
+                    sSqlWhere.Append(" and ");
+                    sSqlWhere.Append(string.Format(" {0} {1} {2} {3} {4} {5}", model.sBracketsBefore, model.sFieldType == ControlType.StatusEdit || model.sFieldType == ControlType.GridLookUpEditComboBox ? model.sFieldName + "_Code" : model.sFieldName, JudgmentSymbol.getJudeSymbol(model.sJudgmentSymbol), getFlowWhereValue(model, IsProcedure), model.sJoin, model.sBracketsAfter));
             }
 
             return sSqlWhere.ToString();

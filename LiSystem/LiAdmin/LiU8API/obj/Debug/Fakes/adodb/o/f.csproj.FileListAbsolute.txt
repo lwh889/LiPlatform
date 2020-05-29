@@ -1,0 +1,2 @@
+C:\LiProject\平台\LiSystem\LiAdmin\LiU8API\obj\Debug\Fakes\adodb\o\f.csprojAssemblyReference.cache
+C:\LiProject\平台\LiSystem\LiAdmin\LiU8API\obj\Debug\Fakes\adodb\o\f.csproj.CoreCompileInputs.cache

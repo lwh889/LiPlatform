@@ -143,7 +143,7 @@ namespace LiForm.Dev
             gridView1.Columns.AddRange(liGridColumnDict.Values.ToArray());
             gridControl1.Refresh();
 
-            FormUtil.loadQuickQuery(liConvertHeadModel.queryFields, liQuickQueryControlDict, layoutControlGroup2, layoutControl2);
+            FormUtil.loadQuickQuery(liConvertHeadModel.queryFields, liQuickQueryControlDict, layoutControlGroup2, layoutControl2, this);
         }
 
         public void setQueryWhere(string queryWhereStr)

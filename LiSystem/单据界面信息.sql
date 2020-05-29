@@ -213,6 +213,7 @@ create table LiEvent(
 create table LiListButton(
 	id int identity(1,1) primary key not null,
 	formId int REFERENCES LiForm(id),
+	iIndex int default 0,
 	caption nvarchar(20),	--标题
 	[name]  nvarchar(30),	--名称
 	iconsize nvarchar(20),	--图标大小
@@ -224,6 +225,7 @@ create table LiListButton(
 --alter table LiListButton add userFieldName nvarchar(30)
 --alter table LiListButton add dateFieldName nvarchar(30)
 --alter table LiListButton alter column icon nvarchar(100)
+--alter table LiListButton add iIndex int default 0
 
 --alter table LiControl add [width] int default 0
 --alter table LiControl add [bIsNull] bit default 0

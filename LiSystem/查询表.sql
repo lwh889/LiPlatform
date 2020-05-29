@@ -60,9 +60,15 @@ create table LiField(
 	sColumnControlType nvarchar(50) ,
 	sRefTypeCode nvarchar(50) ,
 	sJudgeSymbol nvarchar(10) ,
+	dictInfoType nvarchar(50),
+	basicInfoKey nvarchar(50),
+	gridlookUpEditShowModelJson nvarchar(2000),
 	
 	createDate datetime default getdate()
 )
 
+--alter table LiField add dictInfoType nvarchar(50)
+--alter table LiField add basicInfoKey nvarchar(50)
+--alter table LiField add gridlookUpEditShowModelJson nvarchar(2000)
 --alter table LiField add columnFieldName nvarchar(100)
 --alter table LiField add convertId int REFERENCES LiConvertHead(id)

@@ -122,3 +122,4 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiFlow\bin\Debug\LiLog.pdb
 C:\LiProject\平台\LiSystem\LiAdmin\LiFlow\bin\Debug\log4net.xml
 C:\LiProject\平台\LiSystem\LiAdmin\LiFlow\obj\Debug\LiFlow.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiFlow\obj\Debug\LiFlow.dll.licenses
+C:\LiProject\平台\LiSystem\LiAdmin\LiFlow\bin\Debug\Log4Net.config

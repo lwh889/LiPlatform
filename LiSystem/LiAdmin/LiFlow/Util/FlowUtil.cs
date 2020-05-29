@@ -71,6 +71,43 @@ namespace LiFlow.Util
             return liVersionFlowNodeModel;
         }
 
+        public static bool sendMessageModel(string voucherId, string voucherCode, LiVersionFlowNodeModel liVersionFlowNodeModel, LiVersionFlowModel liVersionFlowModel, Dictionary<string, object> formDataDict, out string resultContent)
+        {
+            List<MessageModel> messageList = new List<MessageModel>();
+            foreach (LiVersionFlowUserModel liVersionFlowUserModelTemp in liVersionFlowNodeModel.users)
+            {
+
+                MessageModel messageModel = new MessageModel();
+                messageModel.messageType = MessageType.Flow;
+                messageModel.messageContent = replaceMessagePlaceholder(liVersionFlowNodeModel.flowNodeInformation, formDataDict);
+                messageModel.messageDate = DateTime.Now;
+                messageModel.flowVersionId = liVersionFlowModel.id;
+                messageModel.flowVersionNumber = liVersionFlowModel.flowVersionNumber;
+                messageModel.flowCode = liVersionFlowModel.flowCode;
+                messageModel.flowName = liVersionFlowModel.flowName;
+                messageModel.entityKey = liVersionFlowModel.entityKey;
+                messageModel.entityName = liVersionFlowModel.entityName;
+                messageModel.voucherId = Convert.ToString(voucherId);
+                messageModel.voucherCode = Convert.ToString(voucherCode);
+                messageModel.userCode = liVersionFlowUserModelTemp.userCode;
+
+                messageList.Add(messageModel);
+            }
+
+            LiContexts.LiContext.getHttpEntity(LiEntityKey.Message, LiContext.SystemCode).batchNewEntity(messageList);
+
+            if (LiContexts.LiContext.getHttpEntity(LiEntityKey.Message, LiContext.SystemCode).bSuccess)
+            {
+                resultContent = "已审核！消息已送！";
+            }
+            else
+            {
+                resultContent = "已审核！";
+            }
+
+            return true;
+        }
+
         /// <summary>
         /// 执行流程
         /// </summary>
@@ -120,12 +157,13 @@ namespace LiFlow.Util
                                 Dictionary<string, object> paramDict = new Dictionary<string, object>();
                                 paramDict.Clear();
                                 paramDict.Add("childTableName", "");
+                                paramDict.Add("systemCode", LiContext.SystemCode);
                                 paramDict.Add("entityKey", entityKey);
                                 paramDict.Add("whereSql", queryWhereStr);
                                 paramDict.Add("orderBySql", "");
 
                                 //7、如果满足，则生成流程步骤
-                                DataTable dt = LiContexts.LiContext.getHttpEntity("sp_QueryList").execProcedure_DataTable( paramDict);
+                                DataTable dt = LiContexts.LiContext.getHttpEntity("sp_QueryList").execProcedure_DataTable(paramDict);
                                 if (dt != null && dt.Rows.Count > 0)
                                 {
                                     //记录分支
@@ -148,42 +186,11 @@ namespace LiFlow.Util
                                     liVoucherFlowStep.flowVersionNextStepNodeId = liVersionFlowNodeModel.id;
 
                                     liVoucherFlowTemp.datas.Add(liVoucherFlowStep);
+
                                     LiContexts.LiContext.getHttpEntity(LiEntityKey.LiVoucherFlow, LiContext.SystemCode).updateEntity(liVoucherFlowTemp);
                                     if (LiContexts.LiContext.getHttpEntity(LiEntityKey.LiVoucherFlow, LiContext.SystemCode).bSuccess)
                                     {
-                                        List<MessageModel> messageList = new List<MessageModel>();
-                                        foreach (LiVersionFlowUserModel liVersionFlowUserModelTemp in liVersionFlowNodeModel.users)
-                                        {
-
-                                            MessageModel messageModel = new MessageModel();
-                                            messageModel.messageType = MessageType.Flow;
-                                            messageModel.messageContent = replaceMessagePlaceholder(liVersionFlowNodeModel.flowNodeInformation, formDataDict); 
-                                            messageModel.messageDate = DateTime.Now;
-                                            messageModel.flowVersionId = liVersionFlowModel.id;
-                                            messageModel.flowVersionNumber = liVersionFlowModel.flowVersionNumber;
-                                            messageModel.flowCode = liVersionFlowModel.flowCode;
-                                            messageModel.flowName = liVersionFlowModel.flowName;
-                                            messageModel.entityKey = liVersionFlowModel.entityKey;
-                                            messageModel.entityName = liVersionFlowModel.entityName;
-                                            messageModel.voucherId = Convert.ToString(voucherId);
-                                            messageModel.voucherCode = Convert.ToString(voucherCode);
-                                            messageModel.userCode = liVersionFlowUserModelTemp.userCode;
-
-                                            messageList.Add(messageModel);
-                                        }
-
-                                        LiContexts.LiContext.getHttpEntity(LiEntityKey.Message, LiContext.SystemCode).batchNewEntity(messageList);
-
-                                        if (LiContexts.LiContext.getHttpEntity(LiEntityKey.Message, LiContext.SystemCode).bSuccess)
-                                        {
-                                            resultContent = "已审核！消息已送！";
-                                        }
-                                        else
-                                        {
-                                            resultContent = "已审核！";
-                                        }
-
-                                        return true;
+                                        return sendMessageModel(voucherId, voucherCode, liVersionFlowNodeModel, liVersionFlowModel, formDataDict, out resultContent);
                                     }
                                     else
                                     {
@@ -222,6 +229,23 @@ namespace LiFlow.Util
                                 resultContent = "已审核";
 
                                 return true;
+                            }
+                            else
+                            {
+                                resultContent = "审核失败！";
+
+                                return false;
+                            }
+                        }
+                        //如果是节点，则判断所有条件
+                        else if (liVersionFlowNodeModel.flowNodeType == FlowNodeType.NODEELEMENT)
+                        {
+                            liVoucherFlowStep.flowVersionNextStepNodeId = liVersionFlowNodeModel.id;
+
+                            LiContexts.LiContext.getHttpEntity(LiEntityKey.LiVoucherFlow, LiContext.SystemCode).updateEntity(liVoucherFlowTemp);
+                            if (LiContexts.LiContext.getHttpEntity(LiEntityKey.LiVoucherFlow, LiContext.SystemCode).bSuccess)
+                            {
+                                return sendMessageModel(voucherId, voucherCode, liVersionFlowNodeModel, liVersionFlowModel, formDataDict, out resultContent);
                             }
                             else
                             {
@@ -487,6 +511,7 @@ namespace LiFlow.Util
                         paramDict.Clear();
                         paramDict.Add("childTableName", "");
                         paramDict.Add("entityKey", entityKey);
+                        paramDict.Add("systemCode", LiContext.SystemCode);
                         paramDict.Add("whereSql", queryWhereStr);
                         paramDict.Add("orderBySql", "");
 

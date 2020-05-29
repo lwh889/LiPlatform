@@ -290,38 +290,7 @@ namespace LiForm.Dev
 
         public void InitData()
         {
-            ///获取基础档案Key，然后加载
-            List<string> entityKeys = new List<string>();
-            List<string> dictKeys = new List<string>();
-            foreach (PanelModel panelModel in formModel.panels)
-            {
-                foreach (ControlGroupModel controlGroupModel in panelModel.controlGroups)
-                {
-                    foreach (ControlModel controlModel in controlGroupModel.controls)
-                    {
-                        if (!entityKeys.Contains(controlModel.basicInfoKey))
-                        {
-                            switch (controlModel.controltype)
-                            {
-                                case "UserEdit":
-                                case "GridLookUpEditRef":
-                                case "TreeListLookUpEdit":
-                                    entityKeys.Add(controlModel.basicInfoKey);
-                                    break;
-                                case "StatusEdit":
-                                case "GridLookUpEditComboBox":
-                                    dictKeys.Add(controlModel.dictInfoType);
-                                    break;
-                            }
-                        }
-                    }
-                }
-            }
-
-            ///加载基础档案
-            LiContexts.LiContext.addRefDataDataTable(entityKeys);
-            LiContexts.LiContext.addDictDataTable(dictKeys);
-
+            FormUtil.loadBasicInfo(formModel);
             //获取单号编码规则
             voucherCodeModel = LiContexts.LiContext.getVoucherCodeModels(formCode);
         }
@@ -341,12 +310,19 @@ namespace LiForm.Dev
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public void getEntitys(object key)
+        public void getEntityDataByVoucherCode(object key)
         {
-            //LiContexts.LiContext.getHttpEntity(formCode, LiContext.SystemCode).entityKey = formCode;
-
             formDataDict = LiContexts.LiContext.getHttpEntity(formCode, LiContext.SystemCode).getEntityDictionarySingle(key, formModel.codeFieldName);
-            //formDataDict =  LiContexts.LiContext.getHttpEntity().getEntityDictionarySingle(key, formModel.codeFieldName);
+
+        }
+        /// <summary>
+        /// 获取实体数据
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public void getEntityDataByVoucherId(object key)
+        {
+            formDataDict = LiContexts.LiContext.getHttpEntity(formCode, LiContext.SystemCode).getEntityDictionarySingle(key, formModel.keyFieldName);
 
         }
 
@@ -359,6 +335,7 @@ namespace LiForm.Dev
             LiAEvent liEventItemClick = liEventMediator.getLiEvent(e.Item.Name);
             liEventItemClick.focusEntityKey = buttonModel.entityKey;
 
+            //放在保存事件里
             //setVoucherStatus(buttonModel.voucherStatus);
             liEventItemClick.sendEvent();
 
@@ -889,7 +866,7 @@ namespace LiForm.Dev
 
                 }
 
-                this.getEntitys(this.voucherCode);
+                this.getEntityDataByVoucherCode(this.voucherCode);
                 this.loadData();
             }
             catch(Exception ex)
@@ -1031,6 +1008,90 @@ namespace LiForm.Dev
         {
             TreeList treeList = liTreeListDict[key];
             return treeList.GetFocusedDataRow();
+        }
+
+
+        public bool getJumpTurnVoucher(string jumpType, object voucherId)
+        {
+            bool bSuccess = false;
+            Dictionary<string, object> paramDict = new Dictionary<string, object>();
+            paramDict.Add("entityKey", formCode);
+            paramDict.Add("systemCode", LiContext.SystemCode);
+            paramDict.Add("voucherId", voucherId);
+
+            switch (jumpType)
+            {
+                case "First":
+                    paramDict.Add("turnPageType", "First");
+                    break;
+                case "Previous":
+                    paramDict.Add("turnPageType", "Previous");
+                    break;
+                case "Next":
+                    paramDict.Add("turnPageType", "Next");
+                    break;
+                case "Last":
+                    paramDict.Add("turnPageType", "Last");
+                    break;
+            }
+            int newVoucherId = LiContexts.LiContext.getHttpEntity("sp_turnPage").execProcedureSingleValue_Int32("id", paramDict);
+
+            if (newVoucherId == 0)
+            {
+                switch (jumpType)
+                {
+                    case "Previous":
+                        MessageUtil.Show("已经是第一张！", "温馨提示");
+                        break;
+                    case "Next":
+                        MessageUtil.Show("已经是最后一张！", "温馨提示");
+                        break;
+                    default:
+                        MessageUtil.Show("没有数据！", "温馨提示");
+                        break;
+                }
+            }
+            else
+            {
+                getEntityDataByVoucherId(newVoucherId);
+                bSuccess = true;
+            }
+            loadData();
+
+            return bSuccess;
+        }
+
+        public void jumpFirstPage()
+        {
+            getJumpTurnVoucher("First", voucherId);
+
+        }
+        public void jumpPreviousPage()
+        {
+            getJumpTurnVoucher("Previous", voucherId);
+        }
+        public void jumpNextPage()
+        {
+            getJumpTurnVoucher("Next", voucherId);
+        }
+        public void jumpLastPage()
+        {
+            getJumpTurnVoucher("Last", voucherId);
+        }
+
+
+        public bool deleteVoucher(out string resultContent)
+        {
+            bool bSuccess = false;
+            resultContent = "";
+            LiStatusReadOnlyDev liStatusReadOnlyDev = getVoucherStatus();
+            if (!liStatusReadOnlyDev.isNewStatus())
+            {
+                bSuccess= LiContexts.LiContext.getHttpEntity(formCode, LiContext.SystemCode).deleteEntity(formDataDict);
+                resultContent = LiContexts.LiContext.getHttpEntity(formCode, LiContext.SystemCode).resultContent;
+            }
+
+            return bSuccess;
         }
 
     }

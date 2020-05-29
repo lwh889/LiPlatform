@@ -235,6 +235,54 @@ namespace LiModel.LiModelFactory
                     buttonModel.statusFieldName = "";
                     eventModel.fullName = "LiForm.Event.EventForm.LiEventDownRowData";
                     break;
+                case ButtonType.BTNPREVIOUS:
+                    buttonModel.caption = ButtonType.BTNPREVIOUS;
+                    buttonModel.name = "btnPrevious";
+                    buttonModel.iconsize = "Large";
+                    buttonModel.entityKey = entityKey;
+                    buttonModel.icon = "U8|U8_previous page_32x32.png";
+                    buttonModel.voucherStatus = "";
+                    buttonModel.bClearStatus = false;
+                    buttonModel.previousVoucherStatus = "";
+                    buttonModel.statusFieldName = "";
+                    eventModel.fullName = "LiForm.Event.EventForm.LiEventPrevious";
+                    break;
+                case ButtonType.BTNFIRST:
+                    buttonModel.caption = ButtonType.BTNFIRST;
+                    buttonModel.name = "btnFirst";
+                    buttonModel.iconsize = "Large";
+                    buttonModel.entityKey = entityKey;
+                    buttonModel.icon = "U8|U8_first page_16x16.png";
+                    buttonModel.voucherStatus = "";
+                    buttonModel.bClearStatus = false;
+                    buttonModel.previousVoucherStatus = "";
+                    buttonModel.statusFieldName = "";
+                    eventModel.fullName = "LiForm.Event.EventForm.LiEventFirst";
+                    break;
+                case ButtonType.BTNLAST:
+                    buttonModel.caption = ButtonType.BTNLAST;
+                    buttonModel.name = "btnLast";
+                    buttonModel.iconsize = "Large";
+                    buttonModel.entityKey = entityKey;
+                    buttonModel.icon = "U8|U8_Last page_32x32.png";
+                    buttonModel.voucherStatus = "";
+                    buttonModel.bClearStatus = false;
+                    buttonModel.previousVoucherStatus = "";
+                    buttonModel.statusFieldName = "";
+                    eventModel.fullName = "LiForm.Event.EventForm.LiEventLast";
+                    break;
+                case ButtonType.BTNNEXT:
+                    buttonModel.caption = ButtonType.BTNNEXT;
+                    buttonModel.name = "btnNext";
+                    buttonModel.iconsize = "Large";
+                    buttonModel.entityKey = entityKey;
+                    buttonModel.icon = "U8|U8_Next page_32x32.png";
+                    buttonModel.voucherStatus = "";
+                    buttonModel.bClearStatus = false;
+                    buttonModel.previousVoucherStatus = "";
+                    buttonModel.statusFieldName = "";
+                    eventModel.fullName = "LiForm.Event.EventForm.LiEventNext";
+                    break;
             }
 
             buttonModel.events.Add(eventModel);
@@ -351,6 +399,30 @@ namespace LiModel.LiModelFactory
                     listButtonModel.icon = "U8|U8_Exit_32x32.png";
                     listButtonModel.voucherStatus = "";
                     eventModel.fullName = "LiForm.Event.EventListForm.LiEventListExit";
+                    break;
+                case ListButtonType.BTNSELECTALL:
+                    listButtonModel.caption = ListButtonType.BTNSELECTALL;
+                    listButtonModel.name = "btnSelectAll";
+                    listButtonModel.iconsize = "Large";
+                    listButtonModel.icon = "U8|U8_Select all_32x32.png";
+                    listButtonModel.voucherStatus = "";
+                    eventModel.fullName = "LiForm.Event.EventListForm.LiEventListSelectAll";
+                    break;
+                case ListButtonType.BTNRESELECT:
+                    listButtonModel.caption = ListButtonType.BTNRESELECT;
+                    listButtonModel.name = "btnReSelect";
+                    listButtonModel.iconsize = "Large";
+                    listButtonModel.icon = "U8|U8_reselect_16x16.png";
+                    listButtonModel.voucherStatus = "";
+                    eventModel.fullName = "LiForm.Event.EventListForm.LiEventListReSelect";
+                    break;
+                case ListButtonType.BTNCANCELSELECT:
+                    listButtonModel.caption = ListButtonType.BTNCANCELSELECT;
+                    listButtonModel.name = "btnCancelSelect";
+                    listButtonModel.iconsize = "Large";
+                    listButtonModel.icon = "U8|U8_Select none_32x32.png";
+                    listButtonModel.voucherStatus = "";
+                    eventModel.fullName = "LiForm.Event.EventListForm.LiEventListCancelSelect";
                     break;
             }
 

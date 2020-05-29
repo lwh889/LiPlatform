@@ -37,6 +37,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\DEV17\DevExpress.BonusSkins.v17.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\DEV17\DevExpress.Data.v17.1.dll</HintPath>
@@ -53,10 +54,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\DEV17\DevExpress.Utils.v17.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Utils.v17.1.UI, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\DEV17\DevExpress.XtraBars.v17.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.1.Wizard, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\DEV17\DevExpress.XtraEditors.v17.1.dll</HintPath>
@@ -89,6 +93,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\DEV17\DevExpress.XtraTreeList.v17.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v17.1, Version=17.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\SanTaiTransport\DLL\Newtonsoft.Json.dll</HintPath>
@@ -161,11 +166,15 @@
     <Compile Include="Event\EventForm\LiEventDownRowData.cs" />
     <Compile Include="Event\EventForm\LiEventEdit.cs" />
     <Compile Include="Event\EventForm\LiEventExit.cs" />
+    <Compile Include="Event\EventForm\LiEventFirst.cs" />
     <Compile Include="Event\EventForm\LiEventInsertCopyRowData.cs" />
     <Compile Include="Event\EventForm\LiEventInsertRowData.cs" />
     <Compile Include="Event\EventForm\LiEventItemClick.cs" />
+    <Compile Include="Event\EventForm\LiEventLast.cs" />
     <Compile Include="Event\EventForm\LiEventNew.cs" />
     <Compile Include="Event\EventForm\LiEventNewRowData.cs" />
+    <Compile Include="Event\EventForm\LiEventNext.cs" />
+    <Compile Include="Event\EventForm\LiEventPrevious.cs" />
     <Compile Include="Event\EventForm\LiEventPush.cs" />
     <Compile Include="Event\EventForm\LiEventSave.cs" />
     <Compile Include="Event\EventForm\LiEventSubmit.cs" />
@@ -174,6 +183,7 @@
     <Compile Include="Event\EventForm\LiEventUnAudit.cs" />
     <Compile Include="Event\EventForm\LiEventUpRowData.cs" />
     <Compile Include="Event\EventListForm\LiEventListAudit.cs" />
+    <Compile Include="Event\EventListForm\LiEventListCancelSelect.cs" />
     <Compile Include="Event\EventListForm\LiEventListDelete.cs" />
     <Compile Include="Event\EventListForm\LiEventListPreciseQuery.cs" />
     <Compile Include="Event\EventListForm\LiEventListPush.cs" />
@@ -184,6 +194,8 @@
     <Compile Include="Event\EventListForm\LiEventListEdit.cs" />
     <Compile Include="Event\EventListForm\LiEventListExit.cs" />
     <Compile Include="Event\EventForm\LiEventRef.cs" />
+    <Compile Include="Event\EventListForm\LiEventListReSelect.cs" />
+    <Compile Include="Event\EventListForm\LiEventListSelectAll.cs" />
     <Compile Include="Event\EventListForm\LiEventListSubmit.cs" />
     <Compile Include="Event\EventListForm\LiEventListUnAudit.cs" />
     <Compile Include="Event\EventListForm\LiEventListUnSubmit.cs" />

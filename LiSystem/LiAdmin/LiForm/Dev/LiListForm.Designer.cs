@@ -59,11 +59,12 @@
             this.ribbon.ExpandCollapseItem,
             this.ribbonGalleryBarItem1});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbon.MaxItemId = 2;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbon.Size = new System.Drawing.Size(897, 147);
+            this.ribbon.Size = new System.Drawing.Size(1281, 225);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // ribbonGalleryBarItem1
@@ -80,19 +81,22 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 546);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 859);
+            this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(897, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1281, 48);
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 310);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gridControl1.Location = new System.Drawing.Point(0, 438);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl1.MenuManager = this.ribbon;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(897, 198);
+            this.gridControl1.Size = new System.Drawing.Size(1281, 387);
             this.gridControl1.TabIndex = 10;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -109,18 +113,20 @@
             // pagerControl1
             // 
             this.pagerControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pagerControl1.Location = new System.Drawing.Point(0, 508);
+            this.pagerControl1.Location = new System.Drawing.Point(0, 825);
+            this.pagerControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pagerControl1.Name = "pagerControl1";
-            this.pagerControl1.Size = new System.Drawing.Size(897, 38);
+            this.pagerControl1.Size = new System.Drawing.Size(1281, 34);
             this.pagerControl1.TabIndex = 13;
             // 
             // layoutControl1
             // 
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.layoutControl1.Location = new System.Drawing.Point(2, 21);
+            this.layoutControl1.Location = new System.Drawing.Point(3, 33);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(893, 42);
+            this.layoutControl1.Size = new System.Drawing.Size(1275, 57);
             this.layoutControl1.TabIndex = 16;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -130,16 +136,17 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(893, 42);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1275, 57);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControl2
             // 
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl2.Location = new System.Drawing.Point(2, 63);
+            this.layoutControl2.Location = new System.Drawing.Point(3, 90);
+            this.layoutControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup2;
-            this.layoutControl2.Size = new System.Drawing.Size(893, 98);
+            this.layoutControl2.Size = new System.Drawing.Size(1275, 120);
             this.layoutControl2.TabIndex = 17;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -149,7 +156,7 @@
             this.layoutControlGroup2.GroupBordersVisible = false;
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(893, 98);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1275, 120);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // groupControl1
@@ -157,23 +164,25 @@
             this.groupControl1.Controls.Add(this.layoutControl2);
             this.groupControl1.Controls.Add(this.layoutControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl1.Location = new System.Drawing.Point(0, 147);
+            this.groupControl1.Location = new System.Drawing.Point(0, 225);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(897, 163);
+            this.groupControl1.Size = new System.Drawing.Size(1281, 213);
             this.groupControl1.TabIndex = 20;
             this.groupControl1.Text = "快速查询";
             // 
             // LiListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 577);
+            this.ClientSize = new System.Drawing.Size(1281, 907);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.pagerControl1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LiListForm";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;

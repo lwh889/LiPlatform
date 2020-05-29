@@ -1,0 +1,5 @@
+C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\obj\Debug\LiVoucherConvert.csproj.CoreCompileInputs.cache
+C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiVoucherConvert.dll
+C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiVoucherConvert.pdb
+C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\obj\Debug\LiVoucherConvert.dll
+C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\obj\Debug\LiVoucherConvert.pdb

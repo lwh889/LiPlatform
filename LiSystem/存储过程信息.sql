@@ -23,17 +23,20 @@ create table ParamInfo(
 	createDate datetime default getdate()
 )
 SET IDENTITY_Insert ProcedureInfo ON
-insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,modifyDate)
-select 1,'LiSystem','GetTableInfo','GetTableInfo',GETDATE()
-insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,modifyDate)
-select 2,'LiSystem','sp_QueryList','sp_QueryList',GETDATE()
-insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,modifyDate)
-select 3,'LiSystem','sp_QueryList_Count','sp_QueryList_Count',GETDATE()
-insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,modifyDate)
-select 4,'LiSystem','sp_getVoucherCode','sp_getVoucherCode',GETDATE()
-insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,modifyDate)
-select 5,'LiSystem','sp_CreateTable','sp_CreateTable',GETDATE()
+insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,systemCode,modifyDate)
+select 1,'LiSystem','GetTableInfo','GetTableInfo','LiSystem',GETDATE()
+insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,systemCode,modifyDate)
+select 2,'LiSystem','sp_QueryList','sp_QueryList','LiSystem',GETDATE()
+insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,systemCode,modifyDate)
+select 3,'LiSystem','sp_QueryList_Count','sp_QueryList_Count','LiSystem',GETDATE()
+insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,systemCode,modifyDate)
+select 4,'LiSystem','sp_getVoucherCode','sp_getVoucherCode','999',GETDATE()
+insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,systemCode,modifyDate)
+select 5,'LiSystem','sp_CreateTable','sp_CreateTable','LiSystem',GETDATE()
+insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,systemCode,modifyDate)
+select 6,'LiSystem','sp_turnPage','sp_turnPage','LiSystem',GETDATE()
 SET IDENTITY_Insert ProcedureInfo OFF
+
 
 insert into ParamInfo(fid, paramName, paramType, paramLength, modifyDate)
 select 1,'dataBaseName', 'nvarchar', 5000,GETDATE()
@@ -75,3 +78,13 @@ select 4,'dateValue', 'datetime', 9,GETDATE()
 
 insert into ParamInfo(fid, paramName, paramType, paramLength, modifyDate)
 select 5,'formId', 'int', 9,GETDATE()
+
+
+insert into ParamInfo(fid, paramName, paramType, paramLength, modifyDate)
+select 6,'entityKey', 'nvarchar', 30,GETDATE()
+union all
+select 6,'turnPageType', 'nvarchar', 10,GETDATE()
+union all
+select 6,'voucherId', 'nvarchar', 50,GETDATE()
+union all
+select 6,'systemCode', 'nvarchar', 10,GETDATE()

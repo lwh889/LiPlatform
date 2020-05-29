@@ -8,6 +8,10 @@ using LiHttp.GetEntity;
 using LiModel.Form;
 using LiForm.Dev.Util;
 using LiContexts.Model;
+using LiCommon.LiPostSharp.LiExceptionAspect;
+using LiCommon.Util;
+using LiLog;
+using LiContexts;
 
 namespace LiForm.Event.EventListForm
 {
@@ -25,14 +29,13 @@ namespace LiForm.Event.EventListForm
                     string entityKey = this.liListForm.getEntityKey();
                     string keyFieldName = this.liListForm.getVoucherKeyFieldName();
                     string primaryFieldName = this.liListForm.getPrimaryFieldName();
-                    ListButtonModel listButton = this.Tag as ListButtonModel;
-
-                    Dictionary<string, object> dict = LiContexts.LiContext.getHttpEntity(entityKey).getEntityDictionarySingle(dr[primaryFieldName], keyFieldName);
+                    Dictionary<string, object> dict = this.liListForm.getFormDataDict(dr[primaryFieldName]);
 
                     LiForm.Dev.LiForm liForm = FormUtil.getVoucher(entityKey, dict) as LiForm.Dev.LiForm;
 
                     LiContexts.LiContext.AddPageMdi(PageFormModel.getInstance(Convert.ToInt32(dict[keyFieldName]), liForm, entityKey), this.liListForm.getParentForm());
 
+                    ListButtonModel listButton = this.Tag as ListButtonModel;
                     liForm.setVoucherStatus(listButton.voucherStatus);
 
                     bSuccess = true;
@@ -40,6 +43,8 @@ namespace LiForm.Event.EventListForm
             }
             catch (Exception ex)
             {
+                LogUtil.Fatal("列表编辑错误：", ex);
+                MessageUtil.Show("列表编辑错误：" + ex.Message, "系统提示");
             }
 
             return bSuccess;

@@ -20,6 +20,9 @@ namespace LiHttp.Enum
         public const string _TableInfo = "liTableInfo";
         public static string TableInfo { get { return _TableInfo; } }
 
+        public const string _LiU8Voucher = "liU8Voucher";
+        public static string LiU8Voucher { get { return _LiU8Voucher; } }
+
         public const string _User = "liUsers";
         public static string User { get { return _User; } }
 

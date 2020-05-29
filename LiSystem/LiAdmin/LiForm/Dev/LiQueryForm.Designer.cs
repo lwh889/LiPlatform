@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiQueryForm));
             this.barManager1 = new DevExpress.XtraBars.BarManager();
-            this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnQuery = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnSave = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -65,10 +66,6 @@
             this.repositoryItemCalcEdit_Decimal = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemDateEdit_Date = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemCheckEdit_Bool = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnAddRow = new System.Windows.Forms.ToolStripButton();
-            this.btnInsertRow = new System.Windows.Forms.ToolStripButton();
-            this.btnDeleteRow = new System.Windows.Forms.ToolStripButton();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -100,6 +97,19 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.barManager2 = new DevExpress.XtraBars.BarManager();
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
+            this.bar4 = new DevExpress.XtraBars.Bar();
+            this.btnAddRow = new DevExpress.XtraBars.BarButtonItem();
+            this.btnInsertRow = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDeleteRow = new DevExpress.XtraBars.BarButtonItem();
+            this.repositoryItemGridLookUpEdit_Ref = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit4View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repositoryItemGridLookUpEdit_Commbox = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.gridView10 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -120,7 +130,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit_Date)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit_Date.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_Bool)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
@@ -141,12 +150,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_Ref)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit4View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_Commbox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar1,
             this.bar2,
             this.bar3});
             this.barManager1.DockControls.Add(this.barDockControlTop);
@@ -163,15 +176,8 @@
             this.btnSaveAs});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 6;
+            this.barManager1.RightToLeft = DevExpress.Utils.DefaultBoolean.False;
             this.barManager1.StatusBar = this.bar3;
-            // 
-            // bar1
-            // 
-            this.bar1.BarName = "Tools";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 1;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.Text = "Tools";
             // 
             // bar2
             // 
@@ -184,6 +190,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSave),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSaveAs),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnExit)});
+            this.bar2.OptionsBar.DrawDragBorder = false;
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -235,7 +242,7 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.barDockControlTop.Size = new System.Drawing.Size(973, 63);
+            this.barDockControlTop.Size = new System.Drawing.Size(973, 29);
             // 
             // barDockControlBottom
             // 
@@ -250,19 +257,19 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 63);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 29);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 651);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 685);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(973, 63);
+            this.barDockControlRight.Location = new System.Drawing.Point(973, 29);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 651);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 685);
             // 
             // btnDeleteStatus
             // 
@@ -279,11 +286,11 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 148);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 114);
             this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(973, 566);
+            this.xtraTabControl1.Size = new System.Drawing.Size(973, 600);
             this.xtraTabControl1.TabIndex = 4;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -292,17 +299,23 @@
             // xtraTabPage1
             // 
             this.xtraTabPage1.Controls.Add(this.gridControl1);
-            this.xtraTabPage1.Controls.Add(this.toolStrip1);
+            this.xtraTabPage1.Controls.Add(this.barDockControl3);
+            this.xtraTabPage1.Controls.Add(this.barDockControl4);
+            this.xtraTabPage1.Controls.Add(this.barDockControl2);
+            this.xtraTabPage1.Controls.Add(this.barDockControl1);
             this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(963, 521);
+            this.xtraTabPage1.Size = new System.Drawing.Size(963, 555);
             this.xtraTabPage1.Text = "查询条件";
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gridControl1.Location = new System.Drawing.Point(0, 25);
+            gridLevelNode1.RelationName = "Level1";
+            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.gridControl1.Location = new System.Drawing.Point(0, 29);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridControl1.MenuManager = this.barManager1;
@@ -316,8 +329,10 @@
             this.repositoryItemCalcEdit_Decimal,
             this.repositoryItemDateEdit_Date,
             this.repositoryItemCheckEdit_Bool,
-            this.repositoryItemGridLookUpEdit_sJoin});
-            this.gridControl1.Size = new System.Drawing.Size(963, 496);
+            this.repositoryItemGridLookUpEdit_sJoin,
+            this.repositoryItemGridLookUpEdit_Ref,
+            this.repositoryItemGridLookUpEdit_Commbox});
+            this.gridControl1.Size = new System.Drawing.Size(963, 526);
             this.gridControl1.TabIndex = 14;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -490,50 +505,13 @@
             this.repositoryItemCheckEdit_Bool.AutoHeight = false;
             this.repositoryItemCheckEdit_Bool.Name = "repositoryItemCheckEdit_Bool";
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnAddRow,
-            this.btnInsertRow,
-            this.btnDeleteRow});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(963, 25);
-            this.toolStrip1.TabIndex = 15;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btnAddRow
-            // 
-            this.btnAddRow.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnAddRow.Name = "btnAddRow";
-            this.btnAddRow.Size = new System.Drawing.Size(48, 22);
-            this.btnAddRow.Text = "增行";
-            this.btnAddRow.Click += new System.EventHandler(this.btnAddRow_Click);
-            // 
-            // btnInsertRow
-            // 
-            this.btnInsertRow.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnInsertRow.Name = "btnInsertRow";
-            this.btnInsertRow.Size = new System.Drawing.Size(48, 22);
-            this.btnInsertRow.Text = "插行";
-            this.btnInsertRow.Click += new System.EventHandler(this.btnInsertRow_Click);
-            // 
-            // btnDeleteRow
-            // 
-            this.btnDeleteRow.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDeleteRow.Name = "btnDeleteRow";
-            this.btnDeleteRow.Size = new System.Drawing.Size(48, 22);
-            this.btnDeleteRow.Text = "删行";
-            this.btnDeleteRow.Click += new System.EventHandler(this.btnDeleteRow_Click);
-            // 
             // xtraTabPage2
             // 
             this.xtraTabPage2.Controls.Add(this.gridControl3);
             this.xtraTabPage2.Controls.Add(this.gridControl2);
             this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(963, 497);
+            this.xtraTabPage2.Size = new System.Drawing.Size(963, 521);
             this.xtraTabPage2.Text = "显示";
             // 
             // gridControl3
@@ -549,7 +527,7 @@
             this.repositoryItemCalcEdit_Width,
             this.repositoryItemGridLookUpEdit_controlType,
             this.repositoryItemGridLookUpEdit_sJudgeSymbol});
-            this.gridControl3.Size = new System.Drawing.Size(963, 297);
+            this.gridControl3.Size = new System.Drawing.Size(963, 321);
             this.gridControl3.TabIndex = 19;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -790,7 +768,7 @@
             // layoutControl1
             // 
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 63);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 29);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
@@ -817,6 +795,119 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(943, 55);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // barManager2
+            // 
+            this.barManager2.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar4});
+            this.barManager2.DockControls.Add(this.barDockControl1);
+            this.barManager2.DockControls.Add(this.barDockControl2);
+            this.barManager2.DockControls.Add(this.barDockControl3);
+            this.barManager2.DockControls.Add(this.barDockControl4);
+            this.barManager2.Form = this.xtraTabPage1;
+            this.barManager2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.btnAddRow,
+            this.btnInsertRow,
+            this.btnDeleteRow});
+            this.barManager2.MainMenu = this.bar4;
+            this.barManager2.MaxItemId = 3;
+            // 
+            // barDockControl1
+            // 
+            this.barDockControl1.CausesValidation = false;
+            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl1.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl1.Manager = this.barManager2;
+            this.barDockControl1.Size = new System.Drawing.Size(963, 29);
+            // 
+            // barDockControl2
+            // 
+            this.barDockControl2.CausesValidation = false;
+            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl2.Location = new System.Drawing.Point(0, 555);
+            this.barDockControl2.Manager = this.barManager2;
+            this.barDockControl2.Size = new System.Drawing.Size(963, 0);
+            // 
+            // barDockControl3
+            // 
+            this.barDockControl3.CausesValidation = false;
+            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl3.Location = new System.Drawing.Point(0, 29);
+            this.barDockControl3.Manager = this.barManager2;
+            this.barDockControl3.Size = new System.Drawing.Size(0, 526);
+            // 
+            // barDockControl4
+            // 
+            this.barDockControl4.CausesValidation = false;
+            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl4.Location = new System.Drawing.Point(963, 29);
+            this.barDockControl4.Manager = this.barManager2;
+            this.barDockControl4.Size = new System.Drawing.Size(0, 526);
+            // 
+            // bar4
+            // 
+            this.bar4.BarName = "Main menu";
+            this.bar4.DockCol = 0;
+            this.bar4.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddRow),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnInsertRow),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnDeleteRow)});
+            this.bar4.OptionsBar.DrawDragBorder = false;
+            this.bar4.OptionsBar.MultiLine = true;
+            this.bar4.OptionsBar.UseWholeRow = true;
+            this.bar4.Text = "Main menu";
+            // 
+            // btnAddRow
+            // 
+            this.btnAddRow.Caption = "增行";
+            this.btnAddRow.Id = 0;
+            this.btnAddRow.Name = "btnAddRow";
+            this.btnAddRow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddRow_Click);
+            // 
+            // btnInsertRow
+            // 
+            this.btnInsertRow.Caption = "插行";
+            this.btnInsertRow.Id = 1;
+            this.btnInsertRow.Name = "btnInsertRow";
+            this.btnInsertRow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnInsertRow_Click);
+            // 
+            // btnDeleteRow
+            // 
+            this.btnDeleteRow.Caption = "删行";
+            this.btnDeleteRow.Id = 2;
+            this.btnDeleteRow.Name = "btnDeleteRow";
+            this.btnDeleteRow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDeleteRow_Click);
+            // 
+            // repositoryItemGridLookUpEdit_Ref
+            // 
+            this.repositoryItemGridLookUpEdit_Ref.AutoHeight = false;
+            this.repositoryItemGridLookUpEdit_Ref.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEdit_Ref.Name = "repositoryItemGridLookUpEdit_Ref";
+            this.repositoryItemGridLookUpEdit_Ref.View = this.repositoryItemGridLookUpEdit4View;
+            // 
+            // repositoryItemGridLookUpEdit4View
+            // 
+            this.repositoryItemGridLookUpEdit4View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit4View.Name = "repositoryItemGridLookUpEdit4View";
+            this.repositoryItemGridLookUpEdit4View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit4View.OptionsView.ShowGroupPanel = false;
+            // 
+            // repositoryItemGridLookUpEdit_Commbox
+            // 
+            this.repositoryItemGridLookUpEdit_Commbox.AutoHeight = false;
+            this.repositoryItemGridLookUpEdit_Commbox.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEdit_Commbox.Name = "repositoryItemGridLookUpEdit_Commbox";
+            this.repositoryItemGridLookUpEdit_Commbox.View = this.gridView10;
+            // 
+            // gridView10
+            // 
+            this.gridView10.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView10.Name = "gridView10";
+            this.gridView10.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView10.OptionsView.ShowGroupPanel = false;
+            // 
             // LiQueryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -828,6 +919,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LiQueryForm";
             this.Text = "精确查询";
@@ -852,8 +944,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit_Date.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit_Date)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit_Bool)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
@@ -874,6 +964,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_Ref)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit4View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_Commbox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -882,7 +977,6 @@
         #endregion
 
         private DevExpress.XtraBars.BarManager barManager1;
-        private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarLargeButtonItem btnQuery;
         private DevExpress.XtraBars.BarLargeButtonItem btnRefreshStatus;
@@ -931,10 +1025,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView9;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btnAddRow;
-        private System.Windows.Forms.ToolStripButton btnInsertRow;
-        private System.Windows.Forms.ToolStripButton btnDeleteRow;
         private DevExpress.XtraGrid.GridControl gridControl3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
@@ -953,5 +1043,18 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
         private DevExpress.XtraBars.BarButtonItem btnSaveAs;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraBars.BarDockControl barDockControl3;
+        private DevExpress.XtraBars.BarManager barManager2;
+        private DevExpress.XtraBars.Bar bar4;
+        private DevExpress.XtraBars.BarButtonItem btnAddRow;
+        private DevExpress.XtraBars.BarButtonItem btnInsertRow;
+        private DevExpress.XtraBars.BarButtonItem btnDeleteRow;
+        private DevExpress.XtraBars.BarDockControl barDockControl1;
+        private DevExpress.XtraBars.BarDockControl barDockControl2;
+        private DevExpress.XtraBars.BarDockControl barDockControl4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_Ref;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit4View;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_Commbox;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView10;
     }
 }

@@ -24,6 +24,11 @@ namespace LiForm.Dev
     public partial class LiQueryForm : DevExpress.XtraEditors.XtraForm
     {
         /// <summary>
+        /// 列表窗口
+        /// </summary>
+        public LiListForm liListForm;
+
+        /// <summary>
         /// 当前查询方案
         /// </summary>
         public QuerySchemeModel currentQuerySchemeModel;
@@ -31,9 +36,13 @@ namespace LiForm.Dev
         /// <summary>
         /// 所有查询方案
         /// </summary>
-        private List<QuerySchemeModel> querySchemeModels;
+        private List<QuerySchemeModel> _querySchemeModels;
 
-        
+        /// <summary>
+        /// 所有查询方案
+        /// </summary>
+        public List<QuerySchemeModel> querySchemeModels { set { _querySchemeModels = value; }get { return _querySchemeModels; } }
+
         private List<QueryModel> _returnQuerys;
 
         /// <summary>
@@ -57,12 +66,13 @@ namespace LiForm.Dev
 
         private string entityKey;
 
-        public LiQueryForm(string entityKey, List<QuerySchemeModel> querySchemeModels)
+        public LiQueryForm(LiListForm liListForm)
         {
             InitializeComponent();
 
-            this.entityKey = entityKey;
-            this.querySchemeModels = querySchemeModels;
+            this.entityKey = liListForm.entityKey;
+            this.querySchemeModels = liListForm.querySchemeModels;
+            this.liListForm = liListForm;
 
             Init();
         }
@@ -118,7 +128,6 @@ namespace LiForm.Dev
         /// </summary>
         public void InitQueryScheme()
         {
-
             FormUtil.loadQueryScheme(querySchemeModels, querySchemeBtns, new System.EventHandler(this.btnQueryScheme_Click), layoutControlGroup1);
 
             currentQuerySchemeModel = querySchemeModels[0];
@@ -129,7 +138,7 @@ namespace LiForm.Dev
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnAddRow_Click(object sender, EventArgs e)
+        private void btnAddRow_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             List<QueryModel> sList = gridControl1.DataSource as List<QueryModel>;
             QueryModel model = new QueryModel();
@@ -150,7 +159,7 @@ namespace LiForm.Dev
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnInsertRow_Click(object sender, EventArgs e)
+        private void btnInsertRow_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
             List<QueryModel> sList = gridControl1.DataSource as List<QueryModel>;
@@ -171,7 +180,7 @@ namespace LiForm.Dev
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnDeleteRow_Click(object sender, EventArgs e)
+        private void btnDeleteRow_Click(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             List<QueryModel> sList = gridControl1.DataSource as List<QueryModel>;
             QueryModel model = gridView1.GetFocusedRow() as QueryModel;
@@ -210,8 +219,10 @@ namespace LiForm.Dev
                 querySchemeModel.fields = ModelUtil.copyEntitys<FieldModel>(fields);
 
                 LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).newEntity(querySchemeModel);
-
                 MessageUtil.Show(LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).tipStr, "温馨提示");
+
+                querySchemeModels = liListForm.loadQuerySchemeModels();
+                FormUtil.loadQueryScheme(querySchemeModels, querySchemeBtns, new System.EventHandler(this.btnQueryScheme_Click), layoutControlGroup1);
             }
         }
 
@@ -247,6 +258,10 @@ namespace LiForm.Dev
 
                     LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).newEntity(querySchemeModel);
                     MessageUtil.Show(LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).tipStr, "温馨提示");
+
+                    querySchemeModels = liListForm.loadQuerySchemeModels();
+                    FormUtil.loadQueryScheme(querySchemeModels, querySchemeBtns, new System.EventHandler(this.btnQueryScheme_Click), layoutControlGroup1);
+
                 }
 
             }
@@ -329,7 +344,7 @@ namespace LiForm.Dev
 
             List<QueryModel> sList = gridControl1.DataSource as List<QueryModel>;
             QueryModel model = sList[e.RowHandle];
-
+            FieldModel fieldModel = FieldModel.getDataSource(entityKey).Where(m => m.columnFieldName == model.sFieldName).FirstOrDefault();
             switch (e.Column.FieldName)
             {
                 case "oQueryValue":
@@ -347,6 +362,16 @@ namespace LiForm.Dev
                         case "DecimalEdit":
                         case "CalcEdit":
                             e.RepositoryItem = repositoryItemCalcEdit_Decimal;
+                            break;
+                        case ControlType.StatusEdit:
+                        case ControlType.GridLookUpEditComboBox:
+                            e.RepositoryItem = ControlModelUtil.getRepositoryItemControl(model.sFieldType);
+                            FormUtil.setGirdControlDataSource(fieldModel.sColumnControlType, fieldModel.dictInfoType, fieldModel.gridlookUpEditShowModelJson, gridControl1, e.RepositoryItem, this);
+                            break;
+                        case ControlType.UserEdit:
+                        case ControlType.GridLookUpEditRef:
+                            e.RepositoryItem = ControlModelUtil.getRepositoryItemControl(model.sFieldType);
+                            FormUtil.setGirdControlDataSource(fieldModel.sColumnControlType, fieldModel.basicInfoKey, fieldModel.gridlookUpEditShowModelJson,gridControl1, e.RepositoryItem, this);
                             break;
                         default:
                             e.RepositoryItem = repositoryItemTextEdit_String;

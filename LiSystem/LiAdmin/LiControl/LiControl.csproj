@@ -109,6 +109,12 @@
     <Compile Include="Dev\PagerControl.Designer.cs">
       <DependentUpon>PagerControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dev\TransparentImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dev\TransparentImageExtend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Form\LiSetReadOnlyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     <EmbeddedResource Include="Dev\PagerControl.resx">
       <DependentUpon>PagerControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dev\TransparentImageExtend.resx">
+      <DependentUpon>TransparentImageExtend.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\LiSetReadOnlyForm.resx">
       <DependentUpon>LiSetReadOnlyForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +145,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -167,6 +177,15 @@
       <Project>{6df7e2ad-00ab-4bd7-8ea1-a81bc216261c}</Project>
       <Name>LiModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\U8_Audit_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\U8_audit2_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

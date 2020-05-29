@@ -38,32 +38,34 @@ namespace LiControl.Util
 
                 if (fieldModel.sColumnControlType == ControlType.DateEdit || fieldModel.sColumnControlType == ControlType.DateTimeEdit)
                 {
+                    if (Convert.ToString(value).IndexOf("0001-01-01") >= 0) continue;
+
                     if (kvp.Value.Name.Substring(kvp.Value.Name.Length - 2) == "_B")
                     {
-                        sWhere += string.Format(" and cast({0} as date) >= {1} ", fieldModel.columnFieldName, getWhereValue(value, kvp.Value, IsProcedure));
+                        sWhere += string.Format(" and cast({0} as date) >= {1} ", fieldModel.sColumnControlType == ControlType.StatusEdit || fieldModel.sColumnControlType == ControlType.StatusEdit ? fieldModel.columnFieldName+"_Code" : fieldModel.columnFieldName, getWhereValue(value, kvp.Value, IsProcedure));
                     }
                     else if (kvp.Value.Name.Substring(kvp.Value.Name.Length - 2) == "_E")
                     {
-                        sWhere += string.Format(" and cast({0} as date) <= {1} ", fieldModel.columnFieldName, getWhereValue(value, kvp.Value, IsProcedure));
+                        sWhere += string.Format(" and cast({0} as date) <= {1} ", fieldModel.sColumnControlType == ControlType.StatusEdit || fieldModel.sColumnControlType == ControlType.StatusEdit ? fieldModel.columnFieldName + "_Code" : fieldModel.columnFieldName, getWhereValue(value, kvp.Value, IsProcedure));
                     }
                     else
                     {
-                        sWhere += string.Format(" and cast({0} as date) {1} {2} ", fieldModel.columnFieldName, JudgmentSymbol.getJudeSymbol(fieldModel.sJudgeSymbol), getWhereValue(value, kvp.Value, IsProcedure));
+                        sWhere += string.Format(" and cast({0} as date) {1} {2} ", fieldModel.sColumnControlType == ControlType.StatusEdit || fieldModel.sColumnControlType == ControlType.StatusEdit ? fieldModel.columnFieldName + "_Code" : fieldModel.columnFieldName, JudgmentSymbol.getJudeSymbol(fieldModel.sJudgeSymbol), getWhereValue(value, kvp.Value, IsProcedure));
                     }
                 }
                 else
                 {
                     if (kvp.Value.Name.Substring(kvp.Value.Name.Length - 2) == "_B")
                     {
-                        sWhere += string.Format(" and {0} >= {1} ", fieldModel.columnFieldName, getWhereValue(value, kvp.Value, IsProcedure));
+                        sWhere += string.Format(" and {0} >= {1} ", fieldModel.sColumnControlType == ControlType.StatusEdit || fieldModel.sColumnControlType == ControlType.StatusEdit ? fieldModel.columnFieldName + "_Code" : fieldModel.columnFieldName, getWhereValue(value, kvp.Value, IsProcedure));
                     }
                     else if (kvp.Value.Name.Substring(kvp.Value.Name.Length - 2) == "_E")
                     {
-                        sWhere += string.Format(" and {0} <= {1} ", fieldModel.columnFieldName, getWhereValue(value, kvp.Value, IsProcedure));
+                        sWhere += string.Format(" and {0} <= {1} ", fieldModel.sColumnControlType == ControlType.StatusEdit || fieldModel.sColumnControlType == ControlType.StatusEdit ? fieldModel.columnFieldName + "_Code" : fieldModel.columnFieldName, getWhereValue(value, kvp.Value, IsProcedure));
                     }
                     else
                     {
-                        sWhere += string.Format(" and {0} {1} {2} ", fieldModel.columnFieldName, JudgmentSymbol.getJudeSymbol(fieldModel.sJudgeSymbol), getWhereValue(value, kvp.Value, IsProcedure));
+                        sWhere += string.Format(" and {0} {1} {2} ", fieldModel.sColumnControlType == ControlType.StatusEdit || fieldModel.sColumnControlType == ControlType.StatusEdit ? fieldModel.columnFieldName + "_Code" : fieldModel.columnFieldName, JudgmentSymbol.getJudeSymbol(fieldModel.sJudgeSymbol), getWhereValue(value, kvp.Value, IsProcedure));
                     }
 
                 }
@@ -122,10 +124,10 @@ namespace LiControl.Util
         {
             StringBuilder sSqlWhere = new StringBuilder();
 
-            if (queryList.Count > 0) sSqlWhere.Append(" and ");
             foreach (QueryModel model in queryList)
             {
-                sSqlWhere.Append(string.Format(" {0} {1} {2} {3} {4} {5}", model.sBracketsBefore, model.sFieldName, JudgmentSymbol.getJudeSymbol(model.sJudgmentSymbol), getPreciseWhereValue(model, IsProcedure), model.sJoin, model.sBracketsAfter));
+                    sSqlWhere.Append(" and ");
+                    sSqlWhere.Append(string.Format(" {0} {1} {2} {3} {4} {5}", model.sBracketsBefore, model.sFieldType == ControlType.StatusEdit || model.sFieldType == ControlType.StatusEdit ? model.sFieldName + "_Code" : model.sFieldName, JudgmentSymbol.getJudeSymbol(model.sJudgmentSymbol), getPreciseWhereValue(model, IsProcedure), model.sJoin, model.sBracketsAfter));
             }
 
             return sSqlWhere.ToString();

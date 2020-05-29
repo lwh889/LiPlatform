@@ -399,6 +399,106 @@ namespace LiControl.Util
             }
         }
 
+
+        #region GridControl选择函数
+        /// <summary>
+        /// GridControl所有行全选
+
+        /// </summary>
+        /// <param name="field">选择列的字段名</param>
+        /// <param name="dt">GridControl的Table</param>
+        /// <param name="flag">是否选择，True为选择，False为不选择</param>
+        /// <param name="gridcontrol">所操作的GridControl</param>
+        /// <param name="gridview">所操作的GridView</param>
+        public static void CheckAll(string field, DataTable dt, bool flag, GridControl gridcontrol, GridView gridview)
+        {
+            if (!string.IsNullOrEmpty(field))
+            {
+
+                if (dt == null)
+                    return;
+
+                gridview.CloseEditor();
+
+                //gridview.SelectAll();
+                ////int[] rows = gridview.GetSelectedRows();
+                ////foreach (int i in rows)
+                ////{
+                ////    DataRow dr = gridview.GetDataRow(i);
+                ////    gridview.UnselectRow(i);
+                ////}
+                for (int i = 0; i < gridview.DataRowCount; i++)
+                {
+                    DataRow dr = gridview.GetDataRow(i);
+                    dr[field] = flag;
+                }
+
+                gridview.RefreshData();
+                //gridcontrol.RefreshDataSource();
+            }
+            else
+            {
+                if (flag)
+                {
+                    gridview.SelectAll();
+                }
+                else
+                {
+                    for (int i = 0; i < gridview.RowCount; i++)
+                    {
+                        gridview.UnselectRow(i);
+                    }
+                }
+                gridview.RefreshData();
+            }
+        }
+
+        /// <summary>
+        /// GridControl所有行反选
+
+        /// </summary>
+        /// <param name="field">选择列的字段名</param>
+        /// <param name="dt">GridControl的Table</param>
+        /// <param name="gridcontrol">所操作的GridControl</param>
+        /// <param name="gridview">所操作的GridView</param>
+        public static void ReCheckAll(string field, DataTable dt, GridControl gridcontrol, GridView gridview)
+        {
+            if (!string.IsNullOrEmpty(field))
+            {
+
+                if (dt == null)
+                    return;
+
+                gridview.CloseEditor();
+
+                for (int i = 0; i < gridview.DataRowCount; i++)
+                {
+                    DataRow dr = gridview.GetDataRow(i);
+                    dr[field] = !bool.Parse(dr[field].ToString());
+                }
+
+                //gridcontrol.RefreshDataSource();
+                gridview.RefreshData();
+            }
+            else
+            {
+                for (int i = 0; i < gridview.RowCount; i++)
+                {
+                    if (gridview.IsRowSelected(i))
+                    {
+                        gridview.UnselectRow(i);
+                    }
+                    else
+                    {
+                        gridview.SelectRow(i);
+                    }
+                }
+                gridview.RefreshData();
+
+            }
+        }
+        #endregion
+
         public static BarItemVisibility getBarItemVisibility(bool bVisible)
         {
             if (bVisible)
@@ -467,7 +567,8 @@ namespace LiControl.Util
                     break;
                 case "DateEdit":
                     DateEdit dateEdit = (DateEdit)control;
-                    return dateEdit.DateTime.ToString("yyyy-MM-dd hh:mm:ss.fff");
+                    //return dateEdit.DateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
+                    return dateEdit.DateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
                     break;
                 case "GridLookUpEdit":
                     GridLookUpEdit gridLookUpEdit = (GridLookUpEdit)control;

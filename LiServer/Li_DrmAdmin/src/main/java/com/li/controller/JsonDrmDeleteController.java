@@ -45,4 +45,26 @@ public class JsonDrmDeleteController {
         }
         return response;
     }
+
+
+    @PostMapping("/deleteBatch")
+    R deleteBatch(@RequestBody Map<String, Object> params) {
+        R response;
+        try{
+            List<TableModel> tableInfos = jdbcService.getTableInfo(String.valueOf( params.get("entityKey")),String.valueOf(params.get("systemCode")));
+            //List<TableModel> tableInfos = jdbcService.queryBy(TableModel.class, "entityKey", params.get("entityKey"));
+
+            List<  Map<String, Object>> lists = (List<  Map<String, Object>> )params.get("datas");
+
+            jdbcService.deleteBy_Json(tableInfos, lists);
+            response = new R();
+            response.put("data", lists);
+        }catch (Exception ex){
+            logger.info("deleteBatch",ex);
+            response = R.error520(ex.getMessage());
+        }
+
+        return response;
+    }
+
 }

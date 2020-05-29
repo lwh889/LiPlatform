@@ -33,6 +33,7 @@ using LiContexts;
 
 using LiModel.LiEnum;
 using LiControl.Util;
+using LiHttp.RequestParam;
 
 namespace LiForm.Dev
 {
@@ -127,7 +128,7 @@ namespace LiForm.Dev
                 _currentQuerySchemeModel = value;
                 if (_currentQuerySchemeModel != null)
                 {
-                    FormUtil.loadQuickQuery(_currentQuerySchemeModel.fields, liQuickQueryControlDict, layoutControlGroup2, layoutControl2);
+                    FormUtil.loadQuickQuery(_currentQuerySchemeModel.fields, liQuickQueryControlDict, layoutControlGroup2, layoutControl2,this);
                     groupControl1.Refresh();
                 }
 
@@ -192,7 +193,7 @@ namespace LiForm.Dev
 
             FormUtil.setRibbon(this.ribbon);
 
-            FormUtil.loadListRibbonButton(formModel.listButtons, this, resources);
+            FormUtil.loadListRibbonButton(formModel.listButtons.OrderBy(m => m.iIndex).ToList(), this, resources);
 
             Init();
         }
@@ -206,6 +207,8 @@ namespace LiForm.Dev
         public void InitData()
         {
             entityKey = formModel.name;
+
+            FormUtil.loadBasicInfo(formModel);
 
             InitGridColumn();
 
@@ -223,7 +226,7 @@ namespace LiForm.Dev
             defaultQuerySchemeModel.fields = FieldModel.getDataSource(entityKey);
             defaultQuerySchemeModel.querys = new List<QueryModel>();
 
-            querySchemeModels = LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).getEntityList<QuerySchemeModel>(LiContexts.LiContext.userInfo.userCode,"userCode");
+            querySchemeModels = loadQuerySchemeModels();
             querySchemeModels.Insert(0, defaultQuerySchemeModel);
 
             currentQuerySchemeModel = defaultQuerySchemeModel;
@@ -268,8 +271,18 @@ namespace LiForm.Dev
 
                         GridColumn gridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
                         gridColumn.Caption = control.text;
-                        gridColumn.Name = string.Format("Li{0}{1}_GridColumn", panelModel.tableName, control.name);
-                        gridColumn.FieldName = string.Format("Li{0}_{1}", panelModel.tableName, control.name);
+                        switch (control.controltype)
+                        {
+                            case ControlType.StatusEdit:
+                            case ControlType.GridLookUpEditComboBox:
+                                gridColumn.Name = string.Format("Li{0}{1}_GridColumn_Name", panelModel.tableName, control.name);
+                                gridColumn.FieldName = string.Format("Li{0}_{1}_Name", panelModel.tableName, control.name);
+                                break;
+                            default:
+                                gridColumn.Name = string.Format("Li{0}{1}_GridColumn", panelModel.tableName, control.name);
+                                gridColumn.FieldName = string.Format("Li{0}_{1}", panelModel.tableName, control.name);
+                                break;
+                        }
                         gridColumn.Visible = control.bVisibleInList;
                         gridColumn.VisibleIndex = control.bVisibleInList ? control.colIndex : -1;
                         gridColumn.Width = control.width;
@@ -288,7 +301,7 @@ namespace LiForm.Dev
         {
             resetGridControl();
             FormUtil.loadQueryScheme(querySchemeModels, querySchemeBtns, new System.EventHandler(this.btnQueryScheme_Click), layoutControlGroup1);
-            FormUtil.loadQuickQuery(querySchemeModels[0].fields, liQuickQueryControlDict, layoutControlGroup2, layoutControl2);
+            //FormUtil.loadQuickQuery(querySchemeModels[0].fields, liQuickQueryControlDict, layoutControlGroup2, layoutControl2, this);
         }
 
         public void resetGridControl()
@@ -321,24 +334,15 @@ namespace LiForm.Dev
             gridControl1.Refresh();
 
         }
-        /// <summary>
-        /// 获取实体数据
-        /// </summary>
-        /// <param name="key"></param>
-        /// <returns></returns>
-        //public List<FormModel> getEntitys(object key)
-        //{
-        //    string resultContent;
-        //    QueryParamModel paramModel = LiHttpQuery.getQueryParamModel_ShowAllColumn("queryBy", "");
-        //    paramModel.wheres.Add(LiHttpQuery.getQueryWhereModel_Single(formModel.codeFieldName, key));
 
-        //    if (LiContexts.LiContext.liHttpQuery.httpPost(LiHttpSetting_DrmAdmin.getHttpQuery("query"), paramModel, out resultContent))
-        //    {
-        //        return JsonUtil.GetEntityToList<FormModel>(resultContent);
-        //    }
 
-        //    return null;
-        //}
+        public List<QuerySchemeModel> loadQuerySchemeModels()
+        {
+            QueryParamModel paramModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).getQueryParamModel_ShowAllColumn();
+            QueryParamModel.getWHereANDByTwoParam(paramModel, "userCode", LiContext.userInfo.userCode, "entityKey", entityKey);
+            return LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).getEntityList<QuerySchemeModel>(paramModel);
+
+        }
 
         public void barButtonItem_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -400,6 +404,10 @@ namespace LiForm.Dev
             queryWhereStr = DevFormUtil.getWhereStr(liQuickQueryControlDict, true);
         }
 
+        public void RefreshData()
+        {
+            Query();
+        }
         public void Query()
         {
 
@@ -474,6 +482,17 @@ namespace LiForm.Dev
         }
 
         /// <summary>
+        /// 获取选择行
+        /// </summary>
+        /// <returns></returns>
+        public DataRow[] getListSelectedDataRow()
+        {
+            DataTable dt = gridControl1.DataSource as DataTable;
+            DataRow[] drs = dt.Select(" sel = True ");
+
+            return drs;
+        }
+        /// <summary>
         /// 获取单据编码的字段名称
         /// </summary>
         /// <returns></returns>
@@ -518,6 +537,20 @@ namespace LiForm.Dev
             return primaryFieldName;
         }
 
+        public void selectAllRow()
+        {
+            DevControlUtil.CheckAll("sel", (DataTable)gridControl1.DataSource, true, gridControl1, gridView1);
+        }
+        public void reselectRow()
+        {
+            DevControlUtil.ReCheckAll("sel", (DataTable)gridControl1.DataSource, gridControl1, gridView1);
+        }
+
+        public void cancelSelectRow()
+        {
+            DevControlUtil.CheckAll("sel", (DataTable)gridControl1.DataSource, false, gridControl1, gridView1);
+        }
+
         public List<DataRow> getSelectedDataRows()
         {
             List<DataRow> SelectedDataRow = new List<DataRow>();
@@ -531,6 +564,12 @@ namespace LiForm.Dev
             return SelectedDataRow;
         }
 
+        public Dictionary<string, object> getFormDataDict(object voucherId)
+        {
+            string keyFieldName = getVoucherKeyFieldName();
+            return LiContexts.LiContext.getHttpEntity(entityKey, LiContext.SystemCode).getEntityDictionarySingle(voucherId, keyFieldName);
+
+        }
     }
 
 }

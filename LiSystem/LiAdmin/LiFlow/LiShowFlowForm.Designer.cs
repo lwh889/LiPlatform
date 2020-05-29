@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiShowFlowForm));
             this.graphControl1 = new LiFlow.UI.FlowDesignControl();
             this.SuspendLayout();
             // 
@@ -35,19 +36,22 @@
             // 
             this.graphControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.graphControl1.Location = new System.Drawing.Point(0, 0);
+            this.graphControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.graphControl1.Name = "graphControl1";
             this.graphControl1.ShowGrid = true;
-            this.graphControl1.Size = new System.Drawing.Size(694, 470);
+            this.graphControl1.Size = new System.Drawing.Size(991, 739);
             this.graphControl1.TabIndex = 0;
             // 
             // LiShowFlowForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 470);
+            this.ClientSize = new System.Drawing.Size(991, 739);
             this.Controls.Add(this.graphControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "LiShowFlowForm";
-            this.Text = "LiShowFlowForm";
+            this.Text = "查看流程图";
             this.Load += new System.EventHandler(this.LiShowFlowForm_Load);
             this.ResumeLayout(false);
 

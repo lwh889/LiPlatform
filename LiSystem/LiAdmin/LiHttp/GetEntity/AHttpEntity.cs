@@ -471,10 +471,38 @@ namespace LiHttp.GetEntity
 
             return bSuccess;
         }
-
-        public bool deleteEntity( object datas)
+        public bool batchDeleteEntity(List<Dictionary<string, object>> datas)
         {
+            if (liHttpDelete.httpPost(LiHttpSetting_DrmAdmin.getHttpDeleteBatch(), liHttpDelete.getDeleteBatchParamModel(datas), out resultContent))
+            {
+                tipStr = "删除成功！";
+                bSuccess = true;
+            }
+            else
+            {
+                tipStr = "删除失败！" + resultContent;
+                bSuccess = false;
+            }
+            return bSuccess;
+        }
 
+        public bool deleteEntity(Dictionary<string, object> datas)
+        {
+            if (liHttpDelete.httpPost(LiHttpSetting_DrmAdmin.getHttpDelete(), liHttpDelete.getDeleteParamModel(datas), out resultContent))
+            {
+                tipStr = "删除成功！";
+                bSuccess = true;
+            }
+            else
+            {
+                tipStr = "删除失败！";
+                bSuccess = false;
+            }
+
+            return bSuccess;
+        }
+        public bool deleteEntity(object datas)
+        {
             if (liHttpDelete.httpPost(LiHttpSetting_DrmAdmin.getHttpDelete(), liHttpDelete.getDeleteParamModel( datas), out resultContent))
             {
                 tipStr = "删除成功！";
@@ -511,7 +539,6 @@ namespace LiHttp.GetEntity
                     tipStr = "修改成功！";
                     bSuccess = true;
                 }
-
                 else
                 {
                     tipStr = "修改失败！" + resultContent;

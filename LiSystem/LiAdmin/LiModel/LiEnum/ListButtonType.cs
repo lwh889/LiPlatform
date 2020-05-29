@@ -21,5 +21,10 @@ namespace LiModel.LiEnum
         public const string BTNREF = "参照";
         public const string BTNPUSH = "下推";
         public const string BTNEXIT = "退出";
+
+        public const string BTNSELECTALL = "全选";
+        public const string BTNRESELECT = "反选";
+        public const string BTNCANCELSELECT = "取消选择";
+
     }
 }

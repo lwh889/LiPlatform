@@ -189,6 +189,15 @@ namespace LiHttp.Server
         /// </summary>
         /// <param name="serverExecName"></param>
         /// <returns></returns>
+        public static LiHttpSetting getHttpDeleteBatch()
+        {
+            return getHttpDelete("deleteBatch");
+        }
+        /// <summary>
+        /// 获取更新配置类
+        /// </summary>
+        /// <param name="serverExecName"></param>
+        /// <returns></returns>
         public static LiHttpSetting getHttpUpdate(string serverExecName)
         {
             if (!httpUpdateDict.ContainsKey(serverExecName))

@@ -6,6 +6,9 @@ spring:
   application:
     name: ormadmin
 
+server:
+  port: 8082
+  
 liorm:
   # 连接
   url: jdbc:sqlserver://127.0.0.1:1433;DatabaseName=LiSystem;

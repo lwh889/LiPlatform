@@ -24,12 +24,6 @@ namespace LiModel.Form
         public int id { set; get; }
 
         /// <summary>
-        /// 排序
-        /// </summary>
-        [Browsable(false)]
-        public int iIndex { set; get; }
-
-        /// <summary>
         /// ID
         /// </summary>
         [Browsable(false)]  
@@ -96,6 +90,12 @@ namespace LiModel.Form
         /// </summary>
         [Browsable(true), Category("基本属性"), DisplayName("表体实体Key"), Editor]
         public string entityKey { set; get; }
+
+        /// <summary>
+        /// 顺序
+        /// </summary>
+        [Browsable(true), Category("基本属性"), DisplayName("顺序")]
+        public int iIndex { set; get; }
 
         /// <summary>
         /// 事件组

@@ -107,6 +107,13 @@
             this.BtnADDCOPYROWButton = new DevExpress.XtraBars.BarButtonItem();
             this.BtnUPROWButton = new DevExpress.XtraBars.BarButtonItem();
             this.BtnDOWNROWButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnSelectAllButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnReSelectButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnCancelSelectButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnFirstButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnPerviousButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnNextButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnLastButton = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem11 = new DevExpress.XtraBars.BarSubItem();
             this.btnUpRow = new DevExpress.XtraBars.BarButtonItem();
             this.btnDownRow = new DevExpress.XtraBars.BarButtonItem();
@@ -185,6 +192,7 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dockPanel8 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel8_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gridControl5 = new DevExpress.XtraGrid.GridControl();
@@ -223,7 +231,6 @@
             this.popupEventMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupControlGroupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupListButtonMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document5)).BeginInit();
@@ -445,10 +452,17 @@
             this.BtnDOWNROWButton,
             this.barSubItem11,
             this.btnUpRow,
-            this.btnDownRow});
+            this.btnDownRow,
+            this.BtnSelectAllButton,
+            this.BtnReSelectButton,
+            this.BtnCancelSelectButton,
+            this.BtnFirstButton,
+            this.BtnPerviousButton,
+            this.BtnNextButton,
+            this.BtnLastButton});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ribbon.MaxItemId = 74;
+            this.ribbon.MaxItemId = 81;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -889,7 +903,14 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.BtnINSERTCOPYROWButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.BtnADDCOPYROWButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.BtnUPROWButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.BtnDOWNROWButton)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnDOWNROWButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnSelectAllButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnReSelectButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnCancelSelectButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnFirstButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnPerviousButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnNextButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnLastButton)});
             this.barSubItem10.Name = "barSubItem10";
             // 
             // BtnNEWButton
@@ -1024,6 +1045,55 @@
             this.BtnDOWNROWButton.Id = 70;
             this.BtnDOWNROWButton.Name = "BtnDOWNROWButton";
             this.BtnDOWNROWButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDOWNROWButton_ItemClick);
+            // 
+            // BtnSelectAllButton
+            // 
+            this.BtnSelectAllButton.Caption = "全选按钮";
+            this.BtnSelectAllButton.Id = 74;
+            this.BtnSelectAllButton.Name = "BtnSelectAllButton";
+            this.BtnSelectAllButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnSelectAllButton_ItemClick);
+            // 
+            // BtnReSelectButton
+            // 
+            this.BtnReSelectButton.Caption = "反选按钮";
+            this.BtnReSelectButton.Id = 75;
+            this.BtnReSelectButton.Name = "BtnReSelectButton";
+            this.BtnReSelectButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnReSelectButton_ItemClick);
+            // 
+            // BtnCancelSelectButton
+            // 
+            this.BtnCancelSelectButton.Caption = "取消选择按钮";
+            this.BtnCancelSelectButton.Id = 76;
+            this.BtnCancelSelectButton.Name = "BtnCancelSelectButton";
+            this.BtnCancelSelectButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnCancelSelectButton_ItemClick);
+            // 
+            // BtnFirstButton
+            // 
+            this.BtnFirstButton.Caption = "第一个按钮";
+            this.BtnFirstButton.Id = 77;
+            this.BtnFirstButton.Name = "BtnFirstButton";
+            this.BtnFirstButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnFirstButton_ItemClick);
+            // 
+            // BtnPerviousButton
+            // 
+            this.BtnPerviousButton.Caption = "上一个按钮";
+            this.BtnPerviousButton.Id = 78;
+            this.BtnPerviousButton.Name = "BtnPerviousButton";
+            this.BtnPerviousButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnPerviousButton_ItemClick);
+            // 
+            // BtnNextButton
+            // 
+            this.BtnNextButton.Caption = "下一个按钮";
+            this.BtnNextButton.Id = 79;
+            this.BtnNextButton.Name = "BtnNextButton";
+            this.BtnNextButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnNextButton_ItemClick);
+            // 
+            // BtnLastButton
+            // 
+            this.BtnLastButton.Caption = "最后一个按钮";
+            this.BtnLastButton.Id = 80;
+            this.BtnLastButton.Name = "BtnLastButton";
+            this.BtnLastButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLastButton_ItemClick);
             // 
             // barSubItem11
             // 
@@ -1496,6 +1566,7 @@
             // 
             // gridControl4
             // 
+            this.gridControl4.AllowDrop = true;
             this.gridControl4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl4.Location = new System.Drawing.Point(0, 0);
             this.gridControl4.MainView = this.gridView4;
@@ -1812,6 +1883,14 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 2;
+            // 
+            // gridColumn44
+            // 
+            this.gridColumn44.Caption = "行号字段名";
+            this.gridColumn44.FieldName = "iRowFieldName";
+            this.gridColumn44.Name = "gridColumn44";
+            this.gridColumn44.Visible = true;
+            this.gridColumn44.VisibleIndex = 3;
             // 
             // dockPanel8
             // 
@@ -2191,14 +2270,6 @@
             this.popupListButtonMenu.Name = "popupListButtonMenu";
             this.popupListButtonMenu.Ribbon = this.ribbon;
             // 
-            // gridColumn44
-            // 
-            this.gridColumn44.Caption = "行号字段名";
-            this.gridColumn44.FieldName = "iRowFieldName";
-            this.gridColumn44.Name = "gridColumn44";
-            this.gridColumn44.Visible = true;
-            this.gridColumn44.VisibleIndex = 3;
-            // 
             // LiManageVoucherDesign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -2490,5 +2561,12 @@
         private DevExpress.XtraBars.BarButtonItem btnUpRow;
         private DevExpress.XtraBars.BarButtonItem btnDownRow;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn44;
+        private DevExpress.XtraBars.BarButtonItem BtnSelectAllButton;
+        private DevExpress.XtraBars.BarButtonItem BtnReSelectButton;
+        private DevExpress.XtraBars.BarButtonItem BtnCancelSelectButton;
+        private DevExpress.XtraBars.BarButtonItem BtnFirstButton;
+        private DevExpress.XtraBars.BarButtonItem BtnPerviousButton;
+        private DevExpress.XtraBars.BarButtonItem BtnNextButton;
+        private DevExpress.XtraBars.BarButtonItem BtnLastButton;
     }
 }

@@ -19,7 +19,7 @@ namespace LiForm.Event.EventListForm
 
             try
             {
-                LiQueryForm queryForm = new LiQueryForm(this.liListForm.entityKey, this.liListForm.querySchemeModels);
+                LiQueryForm queryForm = new LiQueryForm(this.liListForm);
                 if (queryForm.ShowDialog() == DialogResult.Yes)
                 {
                     string whereStr = DevFormUtil.getPreciseWhereStr(queryForm.returnQuerys, true);

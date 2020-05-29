@@ -1,0 +1,106 @@
+日志时间：2020-05-25 09:38:40,630 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-05-25 09:44:01,362 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-05-25 09:49:42,065 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-05-25 09:51:35,914 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-05-25 09:56:13,687 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-05-25 10:48:29,133 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-05-25 10:55:27,461 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-05-25 11:03:47,669 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-05-25 11:09:59,970 
+日志级别：FATAL 
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：列表删除错误： 
+异常信息：LiCommon.LiException.LiHttpException: LiHttp模块出现异常【远程服务器返回错误: (500) 内部服务器错误。】
+   在 LiHttp.GetEntity.AHttpEntity.getEntityDictionaryInList(Object keyValue, String keyFieldName) 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiHttp\GetEntity\AHttpEntity.cs:行号 387
+   在 LiHttp.GetEntity.AHttpEntity.getEntityDictionarySingle(Object keyValue, String keyFieldName) 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiHttp\GetEntity\AHttpEntity.cs:行号 400
+   在 LiForm.Event.EventListForm.LiEventListDelete.receiveEvent() 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiForm\Event\EventListForm\LiEventListDelete.cs:行号 38
+ 
+
+日志时间：2020-05-25 11:10:09,714 
+日志级别：FATAL 
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：列表删除错误： 
+异常信息：LiCommon.LiException.LiHttpException: LiHttp模块出现异常【远程服务器返回错误: (500) 内部服务器错误。】
+   在 LiHttp.GetEntity.AHttpEntity.getEntityDictionaryInList(Object keyValue, String keyFieldName) 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiHttp\GetEntity\AHttpEntity.cs:行号 387
+   在 LiHttp.GetEntity.AHttpEntity.getEntityDictionarySingle(Object keyValue, String keyFieldName) 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiHttp\GetEntity\AHttpEntity.cs:行号 400
+   在 LiForm.Event.EventListForm.LiEventListDelete.receiveEvent() 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiForm\Event\EventListForm\LiEventListDelete.cs:行号 38
+ 
+
+日志时间：2020-05-25 21:41:23,689 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-05-25 22:50:07,558 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-05-25 22:50:52,757 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-05-25 22:53:16,457 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
