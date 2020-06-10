@@ -5,6 +5,7 @@ create table LiSystemInfo(
 	systemCode nvarchar(10) ,--系统代码
 	systemDataBaseName nvarchar(20) ,--系统数据库
 	systemName nvarchar(30) ,--系统名称
+	systemU8MenuId  nvarchar(10) ,--系统U8菜单ID
 	systemTitle nvarchar(50)  ,--系统标题
 	companyName nvarchar(50)  ,
 	companyLogo nvarchar(max)  ,
@@ -15,5 +16,6 @@ create table LiSystemInfo(
 
 	--alter table LiSystemInfo add systemTitle nvarchar(20)
 	--alter table LiSystemInfo add systemCode nvarchar(10) 
+	--alter table LiSystemInfo add systemU8MenuId nvarchar(10) 
 	--alter table LiSystemInfo add systemDataBaseName nvarchar(20)
 	--alter table LiSystemInfo add systemName nvarchar(30)

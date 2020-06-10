@@ -12,6 +12,7 @@ using LiHttp.Enum;
 using LiContexts;
 using LiModel.Basic;
 using LiContexts.Model;
+using LiCommon.Util;
 
 namespace LiManage
 {
@@ -113,6 +114,23 @@ namespace LiManage
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             openEditForm();
+        }
+
+        private void BtnDelete_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            TableModel tableModel = gridView1.GetFocusedRow() as TableModel;
+            if (tableModel != null)
+            {
+                LiContexts.LiContext.getHttpEntity(LiHttp.Enum.LiEntityKey.TableInfo).deleteEntity(tableModel);
+                if (LiContexts.LiContext.getHttpEntity(LiHttp.Enum.LiEntityKey.TableInfo).bSuccess)
+                {
+                    MessageUtil.Show("删除成功！", "温馨提示");
+                }
+                else
+                {
+                    MessageUtil.Show("删除失败！" + LiContexts.LiContext.getHttpEntity(LiHttp.Enum.LiEntityKey.TableInfo).resultContent, "温馨提示");
+                }
+            }
         }
     }
 }

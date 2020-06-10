@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LiModel.Basic;
 using LiModel.LiAttribute;
 using LiModel.LiEnum;
 namespace LiModel.Form
@@ -11,6 +12,16 @@ namespace LiModel.Form
     {
         public static Dictionary<string, object> dataSourceDict = new Dictionary<string, object>();
 
+        public static void InitDataSource(TableModel mainTableModel, List<TableModel> tableModelList)
+        {
+            EntityModel.clearDataSource(mainTableModel.entityKey);
+
+            foreach (TableModel tableModel in tableModelList)
+            {
+                EntityModel entityModel = new EntityModel() { sEntityCode = tableModel.tableName, sEntityType = tableModel.entityOrder == "master" ? PanelType.BASIC : PanelType.GRID, sEntityName = tableModel.tableAbbName, sTableName = tableModel.tableName, iShow = tableModel.entityOrder == "master" ? true : false };
+                EntityModel.AddItemInDataSource(mainTableModel.entityKey, entityModel);
+            }
+        }
         public static void InitDataSource( FormModel formModel)
         {
             EntityModel.clearDataSource(formModel.name);

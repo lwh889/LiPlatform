@@ -120,6 +120,9 @@
     <Compile Include="LiModelFactory\ButtonFactory.cs" />
     <Compile Include="LiModelFactory\ControlFactory.cs" />
     <Compile Include="LiModelFactory\FormTemplateFactory.cs" />
+    <Compile Include="LiPush\PushEventModel.cs" />
+    <Compile Include="LiPush\PushListButtonModel.cs" />
+    <Compile Include="LiPush\PushFormModel.cs" />
     <Compile Include="LiTable\ClassName.cs" />
     <Compile Include="LiTable\ColumnType.cs" />
     <Compile Include="LiTable\DatabaseGeneratedType.cs" />
@@ -127,6 +130,7 @@
     <Compile Include="LiTable\EntityType.cs" />
     <Compile Include="LiTable\RelationshipType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="U8\U8LoginInfo.cs" />
     <Compile Include="Users\AuthDataModel.cs" />
     <Compile Include="Users\AuthModel.cs" />
     <Compile Include="Users\RoleModel.cs" />

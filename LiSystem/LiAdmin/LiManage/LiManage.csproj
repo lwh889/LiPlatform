@@ -119,6 +119,12 @@
     <Compile Include="LiManageConvertForm.Designer.cs">
       <DependentUpon>LiManageConvertForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LiManagePushDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiManagePushDesign.Designer.cs">
+      <DependentUpon>LiManagePushDesign.cs</DependentUpon>
+    </Compile>
     <Compile Include="LiManageVoucherDesign.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LiManageConvertForm.resx">
       <DependentUpon>LiManageConvertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiManagePushDesign.resx">
+      <DependentUpon>LiManagePushDesign.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiManageVoucherDesign.resx">
       <DependentUpon>LiManageVoucherDesign.cs</DependentUpon>

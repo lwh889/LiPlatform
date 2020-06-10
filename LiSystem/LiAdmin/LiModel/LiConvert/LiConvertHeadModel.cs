@@ -109,6 +109,16 @@ namespace LiModel.LiConvert
         public string convertDest { set; get; }
 
         /// <summary>
+        /// 目标表头名称
+        /// </summary>
+        public string convertDestHeadName { set; get; }
+
+        /// <summary>
+        /// 目标表体名称
+        /// </summary>
+        public string convertDestBodyName { set; get; }
+
+        /// <summary>
         /// 源类型
         /// </summary>
         public string convertSourceType { set; get; }

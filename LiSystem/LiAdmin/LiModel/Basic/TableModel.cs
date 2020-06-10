@@ -45,6 +45,10 @@ namespace LiModel.Basic
         public override List<string> getSearchColumns()
         {
 
+            if (!SearchColumns.Contains("entityKey"))
+            {
+                SearchColumns.Add("entityKey");
+            }
             if (!SearchColumns.Contains("entityName"))
             {
                 SearchColumns.Add("entityName");

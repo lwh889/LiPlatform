@@ -41,6 +41,7 @@
             this.btnExit = new DevExpress.XtraBars.BarButtonItem();
             this.btnSave = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -55,39 +56,30 @@
             this.repositoryItemGridLookUpEdit_convertDestType = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEdit_convertDest = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit_convertSourceType = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEdit_convertSource = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit_convertRelation = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEdit_convertRelationField = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEdit_convertDestField = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.repositoryItemGridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEdit_convertSourceField = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.repositoryItemGridLookUpEdit4View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit_refBasicInfoType = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit5View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEdit_refBasicInfoField = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.repositoryItemGridLookUpEdit6View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gridControl8 = new DevExpress.XtraGrid.GridControl();
@@ -108,7 +100,8 @@
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document2)).BeginInit();
@@ -120,28 +113,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertDestType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertDest)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertSourceType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertRelation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertRelationField)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
             this.dockPanel2.SuspendLayout();
             this.dockPanel2_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertDestField)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertSourceField)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit4View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_refBasicInfoType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit5View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_refBasicInfoField)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit6View)).BeginInit();
             this.dockPanel3.SuspendLayout();
             this.dockPanel3_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl8)).BeginInit();
@@ -251,6 +232,13 @@
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem1_ItemClick);
             // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Id = 7;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem2_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -306,8 +294,8 @@
             this.dockPanel1.Location = new System.Drawing.Point(0, 225);
             this.dockPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(576, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(576, 616);
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(692, 200);
+            this.dockPanel1.Size = new System.Drawing.Size(692, 616);
             this.dockPanel1.Text = "转换方案";
             // 
             // dockPanel1_Container
@@ -316,7 +304,7 @@
             this.dockPanel1_Container.Location = new System.Drawing.Point(6, 35);
             this.dockPanel1_Container.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(561, 575);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(677, 575);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // gridControl1
@@ -330,12 +318,9 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemGridLookUpEdit_convertDestType,
-            this.repositoryItemGridLookUpEdit_convertDest,
             this.repositoryItemGridLookUpEdit_convertSourceType,
-            this.repositoryItemGridLookUpEdit_convertSource,
-            this.repositoryItemGridLookUpEdit_convertRelation,
-            this.repositoryItemGridLookUpEdit_convertRelationField});
-            this.gridControl1.Size = new System.Drawing.Size(561, 575);
+            this.repositoryItemGridLookUpEdit_convertRelation});
+            this.gridControl1.Size = new System.Drawing.Size(677, 575);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -350,12 +335,15 @@
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
-            this.gridColumn7});
+            this.gridColumn7,
+            this.gridColumn28,
+            this.gridColumn29});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.CustomRowCellEditForEditing += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.GridView1_CustomRowCellEditForEditing);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             this.gridView1.Click += new System.EventHandler(this.gridView1_Click);
             // 
@@ -402,26 +390,10 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "目标";
-            this.gridColumn3.ColumnEdit = this.repositoryItemGridLookUpEdit_convertDest;
             this.gridColumn3.FieldName = "convertDest";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
-            // 
-            // repositoryItemGridLookUpEdit_convertDest
-            // 
-            this.repositoryItemGridLookUpEdit_convertDest.AutoHeight = false;
-            this.repositoryItemGridLookUpEdit_convertDest.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEdit_convertDest.Name = "repositoryItemGridLookUpEdit_convertDest";
-            this.repositoryItemGridLookUpEdit_convertDest.View = this.gridView3;
-            // 
-            // gridView3
-            // 
-            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn4
             // 
@@ -450,26 +422,10 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "源";
-            this.gridColumn5.ColumnEdit = this.repositoryItemGridLookUpEdit_convertSource;
             this.gridColumn5.FieldName = "convertSource";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 5;
-            // 
-            // repositoryItemGridLookUpEdit_convertSource
-            // 
-            this.repositoryItemGridLookUpEdit_convertSource.AutoHeight = false;
-            this.repositoryItemGridLookUpEdit_convertSource.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEdit_convertSource.Name = "repositoryItemGridLookUpEdit_convertSource";
-            this.repositoryItemGridLookUpEdit_convertSource.View = this.gridView5;
-            // 
-            // gridView5
-            // 
-            this.gridView5.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView5.Name = "gridView5";
-            this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView5.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn6
             // 
@@ -498,27 +454,10 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "转换关系字段";
-            this.gridColumn7.ColumnEdit = this.repositoryItemGridLookUpEdit_convertRelationField;
             this.gridColumn7.FieldName = "convertRelationField";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 7;
-            // 
-            // repositoryItemGridLookUpEdit_convertRelationField
-            // 
-            this.repositoryItemGridLookUpEdit_convertRelationField.AutoHeight = false;
-            this.repositoryItemGridLookUpEdit_convertRelationField.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEdit_convertRelationField.Name = "repositoryItemGridLookUpEdit_convertRelationField";
-            this.repositoryItemGridLookUpEdit_convertRelationField.View = this.gridView7;
-            this.repositoryItemGridLookUpEdit_convertRelationField.BeforePopup += new System.EventHandler(this.repositoryItemGridLookUpEdit_convertRelationField_BeforePopup);
-            // 
-            // gridView7
-            // 
-            this.gridView7.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView7.Name = "gridView7";
-            this.gridView7.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView7.OptionsView.ShowGroupPanel = false;
             // 
             // dockPanel2
             // 
@@ -534,7 +473,7 @@
             this.dockPanel2_Container.Controls.Add(this.gridControl2);
             this.dockPanel2_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(877, 573);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(761, 573);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // gridControl2
@@ -545,11 +484,8 @@
             this.gridControl2.MenuManager = this.ribbon;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemGridLookUpEdit_convertDestField,
-            this.repositoryItemGridLookUpEdit_convertSourceField,
-            this.repositoryItemGridLookUpEdit_refBasicInfoType,
-            this.repositoryItemGridLookUpEdit_refBasicInfoField});
-            this.gridControl2.Size = new System.Drawing.Size(877, 573);
+            this.repositoryItemGridLookUpEdit_refBasicInfoType});
+            this.gridControl2.Size = new System.Drawing.Size(761, 573);
             this.gridControl2.TabIndex = 1;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -563,12 +499,17 @@
             this.gridColumn11,
             this.gridColumn12,
             this.gridColumn13,
-            this.gridColumn14});
+            this.gridColumn14,
+            this.gridColumn25,
+            this.gridColumn26,
+            this.gridColumn27});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ColumnAutoWidth = false;
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.GridView2_CustomRowCellEdit);
+            this.gridView2.CustomRowCellEditForEditing += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.GridView2_CustomRowCellEditForEditing);
             this.gridView2.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView2_CellValueChanged);
             // 
             // gridColumn8
@@ -578,30 +519,16 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 0;
+            this.gridColumn8.Width = 127;
             // 
             // gridColumn9
             // 
             this.gridColumn9.Caption = "目标字段";
-            this.gridColumn9.ColumnEdit = this.repositoryItemGridLookUpEdit_convertDestField;
             this.gridColumn9.FieldName = "convertDestField";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 1;
-            // 
-            // repositoryItemGridLookUpEdit_convertDestField
-            // 
-            this.repositoryItemGridLookUpEdit_convertDestField.AutoHeight = false;
-            this.repositoryItemGridLookUpEdit_convertDestField.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEdit_convertDestField.Name = "repositoryItemGridLookUpEdit_convertDestField";
-            this.repositoryItemGridLookUpEdit_convertDestField.View = this.repositoryItemGridLookUpEdit2View;
-            // 
-            // repositoryItemGridLookUpEdit2View
-            // 
-            this.repositoryItemGridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.repositoryItemGridLookUpEdit2View.Name = "repositoryItemGridLookUpEdit2View";
-            this.repositoryItemGridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.repositoryItemGridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            this.gridColumn9.Width = 154;
             // 
             // gridColumn10
             // 
@@ -610,31 +537,16 @@
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 2;
+            this.gridColumn10.Width = 127;
             // 
             // gridColumn11
             // 
             this.gridColumn11.Caption = "源字段";
-            this.gridColumn11.ColumnEdit = this.repositoryItemGridLookUpEdit_convertSourceField;
             this.gridColumn11.FieldName = "convertSourceField";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 3;
-            // 
-            // repositoryItemGridLookUpEdit_convertSourceField
-            // 
-            this.repositoryItemGridLookUpEdit_convertSourceField.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.repositoryItemGridLookUpEdit_convertSourceField.AutoHeight = false;
-            this.repositoryItemGridLookUpEdit_convertSourceField.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEdit_convertSourceField.Name = "repositoryItemGridLookUpEdit_convertSourceField";
-            this.repositoryItemGridLookUpEdit_convertSourceField.View = this.repositoryItemGridLookUpEdit4View;
-            // 
-            // repositoryItemGridLookUpEdit4View
-            // 
-            this.repositoryItemGridLookUpEdit4View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.repositoryItemGridLookUpEdit4View.Name = "repositoryItemGridLookUpEdit4View";
-            this.repositoryItemGridLookUpEdit4View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.repositoryItemGridLookUpEdit4View.OptionsView.ShowGroupPanel = false;
+            this.gridColumn11.Width = 166;
             // 
             // gridColumn12
             // 
@@ -642,7 +554,7 @@
             this.gridColumn12.FieldName = "bRef";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 4;
+            this.gridColumn12.VisibleIndex = 6;
             // 
             // gridColumn13
             // 
@@ -651,7 +563,8 @@
             this.gridColumn13.FieldName = "refBasicInfoType";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 5;
+            this.gridColumn13.VisibleIndex = 7;
+            this.gridColumn13.Width = 103;
             // 
             // repositoryItemGridLookUpEdit_refBasicInfoType
             // 
@@ -670,28 +583,37 @@
             // 
             // gridColumn14
             // 
-            this.gridColumn14.Caption = "引用档案对照字段";
-            this.gridColumn14.ColumnEdit = this.repositoryItemGridLookUpEdit_refBasicInfoField;
+            this.gridColumn14.Caption = "引用档案关联字段";
             this.gridColumn14.FieldName = "refBasicInfoField";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 6;
+            this.gridColumn14.VisibleIndex = 8;
             // 
-            // repositoryItemGridLookUpEdit_refBasicInfoField
+            // gridColumn25
             // 
-            this.repositoryItemGridLookUpEdit_refBasicInfoField.AutoHeight = false;
-            this.repositoryItemGridLookUpEdit_refBasicInfoField.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEdit_refBasicInfoField.Name = "repositoryItemGridLookUpEdit_refBasicInfoField";
-            this.repositoryItemGridLookUpEdit_refBasicInfoField.View = this.repositoryItemGridLookUpEdit6View;
-            this.repositoryItemGridLookUpEdit_refBasicInfoField.BeforePopup += new System.EventHandler(this.repositoryItemGridLookUpEdit_refBasicInfoField_BeforePopup);
+            this.gridColumn25.Caption = "引用档案值字段";
+            this.gridColumn25.FieldName = "refBasicInfoValueField";
+            this.gridColumn25.Name = "gridColumn25";
+            this.gridColumn25.Visible = true;
+            this.gridColumn25.VisibleIndex = 9;
             // 
-            // repositoryItemGridLookUpEdit6View
+            // gridColumn26
             // 
-            this.repositoryItemGridLookUpEdit6View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.repositoryItemGridLookUpEdit6View.Name = "repositoryItemGridLookUpEdit6View";
-            this.repositoryItemGridLookUpEdit6View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.repositoryItemGridLookUpEdit6View.OptionsView.ShowGroupPanel = false;
+            this.gridColumn26.Caption = "默认值";
+            this.gridColumn26.FieldName = "defaultValue";
+            this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 5;
+            this.gridColumn26.Width = 140;
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Caption = "是否默认";
+            this.gridColumn27.FieldName = "bDefault";
+            this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.Visible = true;
+            this.gridColumn27.VisibleIndex = 4;
+            this.gridColumn27.Width = 121;
             // 
             // dockPanel3
             // 
@@ -708,7 +630,7 @@
             this.dockPanel3_Container.Controls.Add(this.gridControl8);
             this.dockPanel3_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel3_Container.Name = "dockPanel3_Container";
-            this.dockPanel3_Container.Size = new System.Drawing.Size(877, 573);
+            this.dockPanel3_Container.Size = new System.Drawing.Size(761, 573);
             this.dockPanel3_Container.TabIndex = 0;
             // 
             // gridControl8
@@ -722,7 +644,7 @@
             this.repositoryItemCalcEdit_Width,
             this.repositoryItemGridLookUpEdit_controlType,
             this.repositoryItemGridLookUpEdit_sJudgeSymbol});
-            this.gridControl8.Size = new System.Drawing.Size(877, 573);
+            this.gridControl8.Size = new System.Drawing.Size(761, 573);
             this.gridControl8.TabIndex = 20;
             this.gridControl8.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView8});
@@ -879,12 +801,21 @@
             this.tabbedView1.RootContainer.Nodes.AddRange(new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer[] {
             dockingContainer1});
             // 
-            // barButtonItem2
+            // gridColumn28
             // 
-            this.barButtonItem2.Caption = "barButtonItem2";
-            this.barButtonItem2.Id = 7;
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem2_ItemClick);
+            this.gridColumn28.Caption = "目标表头名称";
+            this.gridColumn28.FieldName = "convertDestHeadName";
+            this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.Visible = true;
+            this.gridColumn28.VisibleIndex = 8;
+            // 
+            // gridColumn29
+            // 
+            this.gridColumn29.Caption = "目标表体名称";
+            this.gridColumn29.FieldName = "convertDestBodyName";
+            this.gridColumn29.Name = "gridColumn29";
+            this.gridColumn29.Visible = true;
+            this.gridColumn29.VisibleIndex = 9;
             // 
             // LiManageConvertForm
             // 
@@ -910,28 +841,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertDestType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertDest)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertSourceType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertRelation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertRelationField)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
             this.dockPanel2.ResumeLayout(false);
             this.dockPanel2_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertDestField)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_convertSourceField)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit4View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_refBasicInfoType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit5View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_refBasicInfoField)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit6View)).EndInit();
             this.dockPanel3.ResumeLayout(false);
             this.dockPanel3_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl8)).EndInit();
@@ -979,34 +898,22 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_convertDestType;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_convertDest;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_convertSourceType;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_convertSource;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_convertRelation;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_convertRelationField;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_convertDestField;
-        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit2View;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_convertSourceField;
-        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit4View;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_refBasicInfoType;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit5View;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_refBasicInfoField;
-        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit6View;
         private DevExpress.XtraBars.Docking.DockPanel dockPanel3;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel3_Container;
         private DevExpress.XtraGrid.GridControl gridControl8;
@@ -1028,5 +935,10 @@
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.Document document2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
     }
 }

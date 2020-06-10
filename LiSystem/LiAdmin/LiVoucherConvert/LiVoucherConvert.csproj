@@ -42,9 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Service\AVoucherConvert.cs" />
-    <Compile Include="Model\LiConvertFieldModel.cs" />
-    <Compile Include="Model\LiConvertBodyModel.cs" />
-    <Compile Include="Model\LiConvertHeadModel.cs" />
     <Compile Include="Model\LiReponseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Impl\LiVoucherConvert.cs" />
@@ -53,6 +50,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="U8Voucher\Service\Impl\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LiContexts\LiContexts.csproj">
+      <Project>{78be7dd4-4ec9-4f02-9b76-b764c4499ee5}</Project>
+      <Name>LiContexts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiHttp\LiHttp.csproj">
+      <Project>{30265638-3ea2-4ad7-81b9-0c99d769ea57}</Project>
+      <Name>LiHttp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiModel\LiModel.csproj">
+      <Project>{6df7e2ad-00ab-4bd7-8ea1-a81bc216261c}</Project>
+      <Name>LiModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiU8API\LiU8API.csproj">
+      <Project>{de03fe09-54a3-4944-ba3d-5a8429303735}</Project>
+      <Name>LiU8API</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

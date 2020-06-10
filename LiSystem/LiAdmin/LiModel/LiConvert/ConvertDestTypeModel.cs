@@ -10,7 +10,8 @@ namespace LiModel.LiConvert
 {
     public class ConvertDestTypeModel : GridlookUpEditModel
     {
-
+        public const string System = "System";
+        public const string U8 = "U8";
         public override List<string> getDisplayColumns()
         {
             if (!DisplayColumns.Contains("name"))
@@ -27,7 +28,7 @@ namespace LiModel.LiConvert
             if (_dataSource.Count <= 0)
             {
                 _dataSource.Add(new GridlookUpEditModel() { code = "System", name = "本系统" });
-                _dataSource.Add(new GridlookUpEditModel() { code = "SystemOut", name = "系统外" });
+                _dataSource.Add(new GridlookUpEditModel() { code = "U8", name = "U8" });
             }
             return _dataSource;
         }

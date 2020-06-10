@@ -1,0 +1,7 @@
+日志时间：2020-06-05 15:54:34,701 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTestList","cMenuName":"主从表列表","cAuthId":"TestGroup"} 
+异常信息： 
+

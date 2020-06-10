@@ -31,6 +31,9 @@ using DevExpress.XtraLayout;
 using LiHttp.GetEntity;
 using LiModel.Basic;
 using LiModel.LiTable;
+using System.Text.RegularExpressions;
+using LiForm.Dev.Util;
+using DevExpress.XtraEditors.Repository;
 
 namespace LiManage
 {
@@ -138,6 +141,9 @@ namespace LiManage
         #endregion
 
         #region 引用数据源
+        private DictGroupModel dictGroupModel = new DictGroupModel();
+        private TableModel tableModel = new TableModel();
+        private GridlookUpEditModel gridlookUpEditModel = new GridlookUpEditModel();
         private SystemInfoModel systemInfoModel = new SystemInfoModel();
         private ClassName className = new ClassName();
         private ColumnType columnType = new ColumnType();
@@ -158,6 +164,10 @@ namespace LiManage
         public Dictionary<string, GridlookUpEditShowModel> refControls;
         public Dictionary<string, DataTable> refDatas;
 
+        /// <summary>
+        /// 所有字段字典
+        /// </summary>
+        List<GridlookUpEditModel> basicInfoControls = new List<GridlookUpEditModel>();
         public LiTableConfigureForm(TableModel formData)
         {
             InitializeComponent();
@@ -173,6 +183,8 @@ namespace LiManage
 
         public void InitData()
         {
+            dictGroupModel.setDataSource(LiContexts.LiContext.getHttpEntity(LiEntityKey.DictGroup, LiContext.SystemCode).getEntityList<DictGroupModel>());
+            tableModel.setDataSource(LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>("master", "entityOrder"));
             systemInfoModel.setDataSource(LiContexts.LiContext.getHttpEntity(LiEntityKey.SystemInfo).getEntityList<SystemInfoModel>());
 
             //读取Form上的控件
@@ -207,6 +219,12 @@ namespace LiManage
 
             GridlookUpEditUtil.InitDefaultComboBoxControl(className.getValueMember(), className.getDisplayMember(), className.getSearchColumns(), className.getDisplayColumns(), gridLookUpEdit_className, this, className.getDataSource());
 
+            GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, gridlookUpEditModel.getValueMember(), gridlookUpEditModel.getDisplayMember(), gridlookUpEditModel.getSearchColumns(), gridlookUpEditModel.getDisplayColumns(), gridlookUpEditModel.getDictModelDesc(), repositoryItemGridLookUpEdit_basicInfoRelationFieldName, this, basicInfoControls);
+
+            GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, tableModel.getValueMember(), tableModel.getDisplayMember(), tableModel.getSearchColumns(), tableModel.getDisplayColumns(), tableModel.getDictModelDesc(), repositoryItemGridLookUpEdit_basicInfoType, this, tableModel.getDataSource<List<TableModel>>());
+
+            GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, dictGroupModel.getValueMember(), dictGroupModel.getDisplayMember(), dictGroupModel.getSearchColumns(), dictGroupModel.getDisplayColumns(), dictGroupModel.getDictModelDesc(), repositoryItemGridLookUpEdit_dictInfoType, this, dictGroupModel.getDataSource<List<DictGroupModel>>());
+
             GridlookUpEditRepositoryItemUtil.InitDefaultComboBoxControl(columnType.getValueMember(), columnType.getDisplayMember(), columnType.getSearchColumns(), columnType.getDisplayColumns(), repositoryItemGridLookUpEdit_columnType, this, columnType.getDataSource());
 
             GridlookUpEditRepositoryItemUtil.InitDefaultComboBoxControl(databaseGeneratedType.getValueMember(), databaseGeneratedType.getDisplayMember(), databaseGeneratedType.getSearchColumns(), databaseGeneratedType.getDisplayColumns(), repositoryItemGridLookUpEdit_databaseGeneratedType, this, databaseGeneratedType.getDataSource());
@@ -220,7 +238,7 @@ namespace LiManage
             GridlookUpEditShowModel gridlookUpEditShowModelComboBox_ComboBox = refControls["sysDatabases"];
             DataTable liComboBoxData = refDatas["sysDatabases"];
             GridlookUpEditUtil.InitDefaultComboBoxControl("name", "name", gridlookUpEditShowModelComboBox_ComboBox.searchColumns, gridlookUpEditShowModelComboBox_ComboBox.displayColumns, gridLookUpEdit_dataBaseName, this, liComboBoxData);
-                    
+
 
         }
 
@@ -268,6 +286,27 @@ namespace LiManage
 
         }
 
+        /// <summary>
+        /// 获取当前表格引用档案控件
+        /// </summary>
+        /// <returns></returns>
+        public List<GridlookUpEditModel> getBasicInfoFieldNames()
+        {
+            List<ColumnModel> columns = gridControl1.DataSource as List<ColumnModel>;
+            if (columns != null)
+            {
+                if (columns.Count != basicInfoControls.Count)
+                {
+                    basicInfoControls.Clear();
+                    foreach (ColumnModel column in columns)
+                    {
+                        basicInfoControls.Add(new GridlookUpEditModel() { code = column.columnName, name = column.columnAbbName });
+                    }
+                }
+            }
+            return basicInfoControls;
+
+        }
         private void btnNew_ItemClick(object sender, ItemClickEventArgs e)
         {
             formData = TableModel.getInstanceByBasic();
@@ -335,6 +374,7 @@ namespace LiManage
         private void LiTableConfigureForm_Load(object sender, EventArgs e)
         {
             loadData();
+            getBasicInfoFieldNames();
         }
 
         private void btnAddRowWhere_ItemClick(object sender, ItemClickEventArgs e)
@@ -350,6 +390,168 @@ namespace LiManage
         private void btnDeleteRow_ItemClick(object sender, ItemClickEventArgs e)
         {
             DevControlUtil.DeleteRow<ColumnModel>(gridControl1, gridView1);
+        }
+
+        private void BtnGetTableInfo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textEdit_tableName.Text))
+            {
+                MessageUtil.Show("表名不能为空！", "温馨提示");
+                return;
+            }
+
+            if (gridLookUpEdit_dataBaseName.EditValue == null)
+            {
+                MessageUtil.Show("数据库名不能为空！", "温馨提示");
+                return;
+            }
+
+            string resultContent;
+
+            Dictionary<string, object> paramDict = new Dictionary<string, object>();
+            paramDict.Add("dataBaseName", gridLookUpEdit_dataBaseName.EditValue);
+            paramDict.Add("tableName", textEdit_tableName.Text);
+            //ProcedureParamModel paramModel = LiHttpProcedure.getProcedureParamModel("GetTableInfo", paramDict);
+
+            DataTable dt = LiContexts.LiContext.getHttpEntity("GetTableInfo").execProcedure_DataTable(paramDict);
+            if (LiContexts.LiContext.getHttpEntity("GetTableInfo").bSuccess)
+            {
+                //DataTable dt = DataUtil.DictionaryToTable(JsonUtil.GetDictionaryToList(resultContent));
+
+                List<ColumnModel> listColumns;
+                if (gridControl1.DataSource == null)
+                {
+                    gridControl1.DataSource = new List<ColumnModel>();
+                }
+                listColumns = (List<ColumnModel>)gridControl1.DataSource;
+                listColumns.Clear();
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    ColumnModel column = new ColumnModel();
+                    column.columnName = Convert.ToString(dr["columnName"]);
+                    column.columnType = Convert.ToString(dr["columnType"]);
+                    column.length = Convert.ToInt32(dr["columnLength"]);
+                    column.primaryKey = Convert.ToBoolean(dr["bPrimaryKey"]);
+                    column.columnOrder = Convert.ToInt32(dr["columnOrder"]);
+                    column.columnScale = Convert.ToInt32(dr["columnScale"]);
+                    column.columnIsNull = Convert.ToBoolean(dr["bIsNull"]);
+                    column.bDisplayColumn = false;
+                    column.bSearchColumns = false;
+
+                    listColumns.Add(column);
+                }
+                gridControl1.DataSource = listColumns;
+                gridControl1.RefreshDataSource();
+
+                textEdit_keyName.Text = getPrimaryKey(listColumns);
+            }
+        }
+        public string getPrimaryKey(List<ColumnModel> listColumns)
+        {
+            ColumnModel columnModel = listColumns.Where(m => m.primaryKey == true).FirstOrDefault();
+            if (columnModel != null)
+            {
+                return columnModel.columnName;
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
+        private void BtnGetOutInfo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            RegexOptions ops = RegexOptions.Multiline;
+            Regex r = new Regex(@"\(\S*\)", ops);
+
+            string filename = "";
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Excel文件|*.xls;*.xlsx;*.csv|所有文件|*.*";
+            openFileDialog1.Title = "请选择Excel文件";
+            openFileDialog1.CheckPathExists = true;
+            openFileDialog1.FilterIndex = 1;
+            openFileDialog1.Multiselect = false;
+            openFileDialog1.DefaultExt = "所有文件|*.*";
+            openFileDialog1.DefaultExt = "*";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                filename = openFileDialog1.FileName;
+                if (filename == null || filename == "")
+                {
+                    MessageBox.Show("请选择导入文件！", "用友提示");
+                    return;
+                }
+                DataTable dt = ExcelUtil.ExcelToDataTable("Sheet1", true, filename);
+                if (dt != null)
+                {
+                    List<ColumnModel> listColumns = (List<ColumnModel>)gridControl1.DataSource;
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        string columnName = r.Replace(Convert.ToString(dr["ColumnName"]).Trim(), "").Replace(" ", "");
+                        ColumnModel columnModel = listColumns.Where(m => m.columnName == columnName).FirstOrDefault();
+
+                        if (columnModel != null)
+                        {
+                            columnModel.columnAbbName = r.Replace(Convert.ToString(dr["Description"]), "").Replace(" ", "");
+                        }
+                    }
+                    gridControl1.RefreshDataSource();
+                }
+            }
+        }
+
+        private void RepositoryItemGridLookUpEdit_basicInfoRelationFieldName_BeforePopup(object sender, EventArgs e)
+        {
+            repositoryItemGridLookUpEdit_basicInfoRelationFieldName.DataSource = getBasicInfoFieldNames();
+        }
+
+        private void GridView1_CustomRowCellEditForEditing(object sender, CustomRowCellEditEventArgs e)
+        {
+            if (e.RowHandle < 0) return;
+
+            ColumnModel columnModel = gridView1.GetFocusedRow() as ColumnModel;
+            TableModel tableModelTemp = tableModel.getDataSource<List<TableModel>>().Where(m => m.entityKey == Convert.ToString(columnModel.basicInfoType)).FirstOrDefault();
+            switch (e.Column.FieldName)
+            {
+                case "basicInfoShowFieldName":
+                    if(tableModelTemp != null)
+                    {
+                        e.RepositoryItem = ControlModelUtil.getRepositoryItemControl(ControlType.GridLookUpEditRef);
+                        GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, columnModel.getValueMember(), columnModel.getDisplayMember(), columnModel.getSearchColumns(), columnModel.getDisplayColumns(), columnModel.getDictModelDesc(), e.RepositoryItem as RepositoryItemGridLookUpEdit, this, tableModelTemp.datas);
+                    }
+                    break;
+                case "basicInfoKeyFieldName":
+                    if (tableModelTemp != null)
+                    {
+                        e.RepositoryItem = ControlModelUtil.getRepositoryItemControl(ControlType.GridLookUpEditRef);
+                        GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, columnModel.getValueMember(), columnModel.getDisplayMember(), columnModel.getSearchColumns(), columnModel.getDisplayColumns(), columnModel.getDictModelDesc(), e.RepositoryItem as RepositoryItemGridLookUpEdit, this, tableModelTemp.datas);
+                    }
+                    break;
+            }
+        }
+
+        private void GridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+
+            if (e.RowHandle < 0) return;
+
+            switch (e.Column.FieldName)
+            {
+                case "basicInfoType":
+                    ColumnModel columnModel = gridView1.GetFocusedRow() as ColumnModel;
+                    TableModel tableModelTemp = tableModel.getDataSource<List<TableModel>>().Where(m => m.entityKey == Convert.ToString(columnModel.basicInfoType)).FirstOrDefault();
+
+                    if (tableModelTemp != null)
+                    {
+                        columnModel.basicInfoKeyFieldName = columnModel.primaryKeyName;
+                    }
+                    else
+                    {
+                        columnModel.basicInfoKeyFieldName = string.Empty;
+                    }
+                    break;
+            }
         }
     }
 }

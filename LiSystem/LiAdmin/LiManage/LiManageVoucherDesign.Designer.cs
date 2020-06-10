@@ -117,6 +117,24 @@
             this.barSubItem11 = new DevExpress.XtraBars.BarSubItem();
             this.btnUpRow = new DevExpress.XtraBars.BarButtonItem();
             this.btnDownRow = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem12 = new DevExpress.XtraBars.BarSubItem();
+            this.btnListQuery = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListPreciseQuery = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListRefresh = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListNew = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListDelete = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListSubmit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListUnSubmit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListAudit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListUnAudit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListExit = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListSelectAll = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListReSelect = new DevExpress.XtraBars.BarButtonItem();
+            this.btnListCancelSelect = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnU8Publish = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -231,6 +249,7 @@
             this.popupEventMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupControlGroupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupListButtonMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.BtnListPushButton = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document5)).BeginInit();
@@ -459,10 +478,29 @@
             this.BtnFirstButton,
             this.BtnPerviousButton,
             this.BtnNextButton,
-            this.BtnLastButton});
+            this.BtnLastButton,
+            this.barSubItem12,
+            this.btnListQuery,
+            this.btnListPreciseQuery,
+            this.btnListRefresh,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.btnListNew,
+            this.btnListEdit,
+            this.btnListDelete,
+            this.btnListSubmit,
+            this.btnListUnSubmit,
+            this.btnListAudit,
+            this.btnListUnAudit,
+            this.btnListExit,
+            this.btnListSelectAll,
+            this.btnListReSelect,
+            this.btnListCancelSelect,
+            this.btnU8Publish,
+            this.BtnListPushButton});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ribbon.MaxItemId = 81;
+            this.ribbon.MaxItemId = 100;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -608,7 +646,7 @@
             // 
             // btnPublish
             // 
-            this.btnPublish.Caption = "发布";
+            this.btnPublish.Caption = "快速开发平台发布";
             this.btnPublish.Id = 16;
             this.btnPublish.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPublish.ImageOptions.Image")));
             this.btnPublish.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPublish.ImageOptions.LargeImage")));
@@ -1118,6 +1156,147 @@
             this.btnDownRow.Name = "btnDownRow";
             this.btnDownRow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDownRow_ItemClick);
             // 
+            // barSubItem12
+            // 
+            this.barSubItem12.Caption = "列表按钮";
+            this.barSubItem12.Id = 81;
+            this.barSubItem12.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnListQuery),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnListPreciseQuery),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnListRefresh),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnListNew),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnListEdit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnListDelete),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnListSubmit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnListUnSubmit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnListAudit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnListUnAudit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnListExit),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnListSelectAll),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnListReSelect),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnListCancelSelect),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnListPushButton)});
+            this.barSubItem12.Name = "barSubItem12";
+            // 
+            // btnListQuery
+            // 
+            this.btnListQuery.Caption = "查询按钮";
+            this.btnListQuery.Id = 82;
+            this.btnListQuery.Name = "btnListQuery";
+            this.btnListQuery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListQuery_ItemClick);
+            // 
+            // btnListPreciseQuery
+            // 
+            this.btnListPreciseQuery.Caption = "精确查询按钮";
+            this.btnListPreciseQuery.Id = 83;
+            this.btnListPreciseQuery.Name = "btnListPreciseQuery";
+            this.btnListPreciseQuery.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListPreciseQuery_ItemClick);
+            // 
+            // btnListRefresh
+            // 
+            this.btnListRefresh.Caption = "刷新按钮";
+            this.btnListRefresh.Id = 84;
+            this.btnListRefresh.Name = "btnListRefresh";
+            this.btnListRefresh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListRefresh_ItemClick);
+            // 
+            // btnListNew
+            // 
+            this.btnListNew.Caption = "新增按钮";
+            this.btnListNew.Id = 87;
+            this.btnListNew.Name = "btnListNew";
+            this.btnListNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListNew_ItemClick);
+            // 
+            // btnListEdit
+            // 
+            this.btnListEdit.Caption = "编辑按钮";
+            this.btnListEdit.Id = 88;
+            this.btnListEdit.Name = "btnListEdit";
+            this.btnListEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListEdit_ItemClick);
+            // 
+            // btnListDelete
+            // 
+            this.btnListDelete.Caption = "删除按钮";
+            this.btnListDelete.Id = 89;
+            this.btnListDelete.Name = "btnListDelete";
+            this.btnListDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListDelete_ItemClick);
+            // 
+            // btnListSubmit
+            // 
+            this.btnListSubmit.Caption = "提交按钮";
+            this.btnListSubmit.Id = 90;
+            this.btnListSubmit.Name = "btnListSubmit";
+            this.btnListSubmit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListSubmit_ItemClick);
+            // 
+            // btnListUnSubmit
+            // 
+            this.btnListUnSubmit.Caption = "撤销提交按钮";
+            this.btnListUnSubmit.Id = 91;
+            this.btnListUnSubmit.Name = "btnListUnSubmit";
+            this.btnListUnSubmit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListUnSubmit_ItemClick);
+            // 
+            // btnListAudit
+            // 
+            this.btnListAudit.Caption = "审核按钮";
+            this.btnListAudit.Id = 92;
+            this.btnListAudit.Name = "btnListAudit";
+            this.btnListAudit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListAudit_ItemClick);
+            // 
+            // btnListUnAudit
+            // 
+            this.btnListUnAudit.Caption = "反审核按钮";
+            this.btnListUnAudit.Id = 93;
+            this.btnListUnAudit.Name = "btnListUnAudit";
+            this.btnListUnAudit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListUnAudit_ItemClick);
+            // 
+            // btnListExit
+            // 
+            this.btnListExit.Caption = "退出按钮";
+            this.btnListExit.Id = 94;
+            this.btnListExit.Name = "btnListExit";
+            this.btnListExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListExit_ItemClick);
+            // 
+            // btnListSelectAll
+            // 
+            this.btnListSelectAll.Caption = "全选按钮";
+            this.btnListSelectAll.Id = 95;
+            this.btnListSelectAll.Name = "btnListSelectAll";
+            this.btnListSelectAll.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListSelectAll_ItemClick);
+            // 
+            // btnListReSelect
+            // 
+            this.btnListReSelect.Caption = "反选按钮";
+            this.btnListReSelect.Id = 96;
+            this.btnListReSelect.Name = "btnListReSelect";
+            this.btnListReSelect.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListReSelect_ItemClick);
+            // 
+            // btnListCancelSelect
+            // 
+            this.btnListCancelSelect.Caption = "取消选择按钮";
+            this.btnListCancelSelect.Id = 97;
+            this.btnListCancelSelect.Name = "btnListCancelSelect";
+            this.btnListCancelSelect.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListCancelSelect_ItemClick);
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "新增按钮";
+            this.barButtonItem4.Id = 85;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "编辑按钮";
+            this.barButtonItem5.Id = 86;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // btnU8Publish
+            // 
+            this.btnU8Publish.Caption = "U8平台发布";
+            this.btnU8Publish.Id = 98;
+            this.btnU8Publish.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnU8Publish.ImageOptions.Image")));
+            this.btnU8Publish.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnU8Publish.ImageOptions.LargeImage")));
+            this.btnU8Publish.Name = "btnU8Publish";
+            this.btnU8Publish.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnU8Publish_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1133,6 +1312,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.btnEdit);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnSave);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnPublish);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnU8Publish);
             this.ribbonPageGroup3.MergeOrder = 3;
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "表单操作";
@@ -1148,6 +1328,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem9);
             this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem10);
             this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem11);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barSubItem12);
             this.ribbonPageGroup1.MergeOrder = 1;
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "添加";
@@ -2270,6 +2451,13 @@
             this.popupListButtonMenu.Name = "popupListButtonMenu";
             this.popupListButtonMenu.Ribbon = this.ribbon;
             // 
+            // BtnListPushButton
+            // 
+            this.BtnListPushButton.Caption = "下推按钮";
+            this.BtnListPushButton.Id = 99;
+            this.BtnListPushButton.Name = "BtnListPushButton";
+            this.BtnListPushButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListPushButton_ItemClick);
+            // 
             // LiManageVoucherDesign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -2568,5 +2756,24 @@
         private DevExpress.XtraBars.BarButtonItem BtnPerviousButton;
         private DevExpress.XtraBars.BarButtonItem BtnNextButton;
         private DevExpress.XtraBars.BarButtonItem BtnLastButton;
+        private DevExpress.XtraBars.BarSubItem barSubItem12;
+        private DevExpress.XtraBars.BarButtonItem btnListQuery;
+        private DevExpress.XtraBars.BarButtonItem btnListPreciseQuery;
+        private DevExpress.XtraBars.BarButtonItem btnListRefresh;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem btnListNew;
+        private DevExpress.XtraBars.BarButtonItem btnListEdit;
+        private DevExpress.XtraBars.BarButtonItem btnListDelete;
+        private DevExpress.XtraBars.BarButtonItem btnListSubmit;
+        private DevExpress.XtraBars.BarButtonItem btnListUnSubmit;
+        private DevExpress.XtraBars.BarButtonItem btnListAudit;
+        private DevExpress.XtraBars.BarButtonItem btnListUnAudit;
+        private DevExpress.XtraBars.BarButtonItem btnListExit;
+        private DevExpress.XtraBars.BarButtonItem btnListSelectAll;
+        private DevExpress.XtraBars.BarButtonItem btnListReSelect;
+        private DevExpress.XtraBars.BarButtonItem btnListCancelSelect;
+        private DevExpress.XtraBars.BarButtonItem btnU8Publish;
+        private DevExpress.XtraBars.BarButtonItem BtnListPushButton;
     }
 }

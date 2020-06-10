@@ -58,3 +58,287 @@ UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
 2020-05-29 17:03:05,745 [1] INFO  - UserDataXML<ufsoft><Entry user="l2hcPxFFVqhyHhczzoworg==" data="2L7l9n+5BwPpFgSuYcRqBg==" accid="a6NFa0jGRZEY1Xh234A53g==" appserver="Gmi1DFyX9M5QNWNpn8gk6Q==" subid="uwhTyvIS7Z44ggGoDFpI8w==" iyear="EO5zSoPax5LRUAv6Ctk+vg==" connstring="s+wMSzmXQcIMJBUOSwuvEYCIJkcZ2MsPUixbvZwHqm8WXzccCVJloIJUURnAveWmLA9XvbBoc7HYoRL6lbjijHC5m2FMw4yQfVsIy4xRjWp+jF1twxSa5gtKcWZICOwg0rtlK+eZZoj0lrNh7zQYFUZ2XOy8yt/D9fbL7EDMZVHUafs7WMfyZbaL8xje3kbjll+z8nD7PyB0g0t3uxljqioqAfPfx2oa8UiIqnVr09UBZrHGygMjrcipJrJ5KzGm" operdate="OY+NE8VHiwBOJEohguLvUA==" datasource="38Ro7JHDTT1CyUjBsBLKUA==" languageid="3yknpUp5pEvCwLY7avpaFA==" workstationserial="Ya4cfyGisdadHc4K/hh2POFaIqBZ9DeKK0+8KiNADKHZpcvo/5ocii2fwELf+TPDcYJset9Nwrf06JiTQL4BUg==" rightserver="WHpnazANItCYLZqxzRAjiw==" iscompanyver="bfN8yuHN/0f7xihYcT2LWg==" secondconnstring="LLs8mNJh7fzYVnK2m75YA1XeKYMAOlS2/G8FojsHyNpDmfGNyo3zunh6eDvEcTL0rEOJMcs2gBbSyCDPAJZ/+vENhNOrCzFAnnUh7TGSWyOO68H0gmnqVvggB8DOuUu+ha3iFtMPLtED5Ndo+lZbTVzl9qaY3Z+OMW/sUIY3w8yetQ6s5rJiNeaKqJ/olGbtzxiu9GRy/dRkwQF65BJKGIYDpruP2AUH5p+YkztVMvOP/0zJF+FSwnq5JuJGkHPHhYvn/xhIDR10+jd3SaB4CalfTKBU3+KH2SR8c02FtNXu0oXrOz2mvCuou0W8r9MxVMWwSPh70vHOqJvbNkvmgV1X7DKokDmFQ44b8NVHjXrDu8fc/zlKszUS64AbxymtgfeRed8XKpoC6SGMGkWlArwQ6EbFCE753uw0d3IB4PbAkYZU+8G+e6Dr0+8/Kf3wFdTbJjI1s9i5sQa/5Lt9JpTuMhGcvVu8FTAL30ou72EDIjOZXLu8AGa1mAcNFGUd7jpCwFw/ixDMiXTPBYQwBk1bHbx2owe7kRcO8QV8b8XV8eCj+GmMRWGS+TfIpY66xa7uyQ++C0YMwuA3Hb/WXjnpGHKtjI8bgxnjjB30KULx5sZki11xMxPKiyrDQVMpL6Ui/ZV6PQvtSs9825SShKZODpU1pWZ8WT1w2hY1bdCjz/HoH7ZFoDJOQqSPaHG4GQqOqJuUGDfolQixd5eTofViwGOc699X+e/+rrs4RMx3AcugmTWg1oDGDXyuKXr/dYREfWFOFcevAd6GpwQxnixy56Qh7KxxLmHHmt5FCqc=" employeeid="ZgtMFs4XkyJBmaTiEa7MFQ==" isadmin="ExiPGWTLNQjymqE/zrlTMQ==" username="l2hcPxFFVqhyHhczzoworg==" accname="NbyxLfPPGUPKAKSR95CHkQ==" enttypeid="QCUjXLkv88LOQbaXE/p5PQ==" imonth="vDqLHyDggPnAmOlbtLwmwQ==" appServerserial="Ya4cfyGisdadHc4K/hh2POFaIqBZ9DeKK0+8KiNADKGsuF4ySYDZwnQfIJH3bbZY" roles="30JEPkY3GC0/fHF37mOOkA==" protocolport="jYMMQB2Mlc537MDI8/ir40AucRay3MYlhwr3cSHTl8iVhNb7V/K3g+7W02OeJWB3O8afxmgFAt3fIdP+aC4uGg==" barcode="Pdfr888HwVgwHvXYa3CecQ==" customer="xM58KX1LseCOJarh8xN+YjtxCVd1TOS6D5Bk3iC1xdbgd9Osv9g7afNuVkFNUu6gM0NCngTPEvAOzLqBGlWDGSZF0s08ICegf1a3bjtieHdUzBA5qG5IDO0KxqcH9eA2eWOUZj1UWn/bmktbWMlchz360aPwOvWvwqBpguaCaHcfrm7DN1SjiyPorNP4jZkSsUaimncCmKSAeq/XSqnn/o2DkSd47kDRNC4hWCNLGovnFBx1tvVB+rjVeUvXKljEQ9IJpDes1aXjJ2EX6zorDQ6yG/awhKRKWiFkZDkzadPwvn+5KY0jI0ase7EIudS53BkbanrIAiHuZQBhh4LNGNxpCuKg32858IZ1YuGVrVWNnn+WcmWA8vmPF6xjZOpisAdGndJIJSluA7+rdIWtK5Ad11NXFJSXAflbCKd/8q8=" authenmode="BbI3UK/CW4fBHY4KUVJuFQ==" authenextrainfo="30JEPkY3GC0/fHF37mOOkA==" industrytype="30JEPkY3GC0/fHF37mOOkA==" ibeginyear="QaktynJySL/YNdzjy27plw==" aiosrv="30JEPkY3GC0/fHF37mOOkA==" crmsrv="tAFqjrkWuXqaSBLiX5SXGhHu3r0G2Vh1diXM9hDJ/Ac=" utusrv="tAFqjrkWuXqaSBLiX5SXGsI/axObYbMLCMCi7vLFsXo=" remind="bfN8yuHN/0f7xihYcT2LWg==" usermode="vDqLHyDggPnAmOlbtLwmwQ==" sps="ExiPGWTLNQjymqE/zrlTMQ==" sysdate="8ffJ/FwS2vvb3XucTVVDQA==" /></ufsoft>
 2020-05-29 17:03:38,350 [1] INFO  - Subid:AS LSSubid:AS
 2020-05-29 17:03:38,424 [1] INFO  - client StopTimer
+2020-06-01 10:46:22,002 [1] INFO  - 
+2020-06-01 10:46:22,012 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 10:46:22,041 [1] INFO  - m_userToken != UserToken appserverlocalhost
+2020-06-01 10:46:22,045 [1] INFO  - localhost
+2020-06-01 10:46:22,045 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 10:46:23,083 [1] INFO  - UserDataXML<ufsoft><Entry user="ZgzVaq83TFSnj9DZcBWNfA==" data="hyLBRxIURo7OMQxhTwlxNw==" accid="CsHqOeTj5lupzVC3E4LGSQ==" appserver="knmMUS6dSHAvL/BsZmSu3w==" subid="89PW/T8CAK8H+gDYrSHiXw==" iyear="H1wCRGzPc4VQKjYF2m346w==" connstring="eo/mQQYYaYLk6DmVrX2QEgRAqvca3gYB3gQiGZV141gCZgMlPTHgaAz2m4MuxlLwuAmCbtwmb8M7FLE1RWPA4hQoI2tCOmhFvLrdPhXq6/heRJLd7VHni4JLMzaAoc+izt1p5hNu/Vua6mhfU22K3KFi7mUyUCjoaJoDsYj0aYZYdvkpJBSBrGWKmdI3fg8//f/Sm0plgwytRqK7Q7U9pxQ5DsfBsDqpjjGygJq31zLeTHw9dVOD0oc7bLDeE89d" operdate="tjrK264p6kJV4Qd5buvUlQ==" datasource="HelAyc9P5yvdkI9XIR9eTA==" languageid="2WcK7oxzj/5wL6ny+bI0Ug==" workstationserial="pc5LBdq+CxlRIb0/Uwb/cyZNcczDj7Wq7UwKDZeoxQSR97INUNwGJ5zmO/k9xovqfJG1xj9okBXNtxo+RDVQ3A==" rightserver="6wtuFoVfFYE8ueTt256eLA==" iscompanyver="u/0NcIa5uFBnF+Kt0pHLdA==" secondconnstring="/Zx+wZd6WKhklUBzWHP60w3dRGsp0RPrJJLnQcdbyCpAo2NLc7f/oUFRdDjvsgyC2kdoyubRXbr04NCYVM9q2f5fXLjzZFCgNFdqDhefopiC8IQHygPI5/pxav4NIq+gGKEmVQdKmGZwPH6AOfxDuoKfAWTkiKNtgg7elWItvDTn6LJjAFx9Bdmb1IbhXRz/9sDwjJaOp7ACHeu/AlYZ+y3QMZFYo8aLppiQ6edc6SDXHARmvQGvwGQuLZPIpzko/+xJGWjaISfhN7Spqc0BIf9GtjqsHhDCTO9vu2DP0qHLar/5pj0cgHHxARpCxyHs9Jo8SPb/nscrc65WT56+AA7NbiJg9ntPZb47Qr3u4LAvK2PmkmHoVpzRSxY5kf8sC/mnGqfuGdKroyUs7c8I1rk7/RI/a0hRodqVLp6t6zJzKY5y+UbWHvf6fotMapER3OA/XMYknkP92xuAY0Mt7RF2ljMdLk661sd5gsm/GDU5qHMQg0mWuCydNvxGglIAUfYZFLDwBdJFxRj9M7Sk7Rb0Az909IlJNUg+rYpRaufSWEuyJ7u8pOdRsI7n/Nhq8NOzXdQjS1+oByxhsMHrKgJsA6t23IR9RZekR94CuNJtw1f+4oFmctxexBrADc6dbdRFD3vI1oqYyxxriqELYRv8/aFeiju60XOPHVqXID6qN5iA/dtv74J0M0b1aUazEB6FVBFLZOpGThzIMQe1JNYEB+La8NOiMrtLEsYOJDgH3c1vaMu2kOAadB/rEIJfvm5nU4pvtX+Vp91/FBLJAFqShDIepSG+xVcNQRVhpxg=" employeeid="PNjEHGLG8BANqOmVko6Jyg==" isadmin="0NWo0uaEEFNvuSm3b/xCng==" username="ZgzVaq83TFSnj9DZcBWNfA==" accname="L4ExuMRoN6IJirDHf9jbbw==" enttypeid="o+Wf3O6k7quEu1KvK3BZRg==" imonth="+fp5oFZ3sERqWMuCxW2fwg==" appServerserial="pc5LBdq+CxlRIb0/Uwb/cyZNcczDj7Wq7UwKDZeoxQTkuAvHU4V+TnlVtw5P87Ym" roles="cKVMp3SDRFIXplFz9IcppA==" protocolport="zNcDPWJgLSDy8R7rCrfyHD7rg6rqpZ4wIWKkMt3S5/SSXccrkBpg82TYMBl2v+VmdoEZeZ4bts+ykTLmlKqEmw==" barcode="HBuo4keKip9wUoo8vtwZEw==" customer="CE4f1KbB5kXmgm18icr5LXWpxN4sF/8bIx5oNZL6JB/3N6LQML7vtA/2VS2urWykUuehtHA/NJZGpdxzgBGd3TVQCjqFU6DmZBmlvMT9wB2FrG/ADy924NIMgVjz3yzKCfHT4oJN0gTSNU1Uo0v+qra8NaSGdTP0l9NBzfAei4FqnkWL+57H+Hg0wtR9Sk0gn1cENg/AtRQOxKKyGQ9SS2Uv74GsM19tqJ79erKcRXLeLIIDL5HcRwmXI2f58nJEmoPrMS20FP2RF1RX6V04/UcCOVR87uEq9UoyFwpPOZHFDTgLRS1IPFAmoTnuJFzBx90XQnRBjbyNGT9Vc2M9snrg7bcmKd9h4IUIaahnSc+1WPpfqZo/ANHp7XCn5NBWjYUWopb50otYskAH8eJ7Lg6lCzk2g72i1yC77RQ8V34=" authenmode="VocrT784esbVe4J4UsvZ/Q==" authenextrainfo="cKVMp3SDRFIXplFz9IcppA==" industrytype="cKVMp3SDRFIXplFz9IcppA==" ibeginyear="i4VubFbuTILabKa3azyALg==" aiosrv="cKVMp3SDRFIXplFz9IcppA==" crmsrv="aF2eRVRoca/GwAqavZHwfCp+evR+qP+PcTBWd+K5G4k=" utusrv="aF2eRVRoca/GwAqavZHwfJ8uTPTO7/DfQIbiY5IQcYk=" remind="u/0NcIa5uFBnF+Kt0pHLdA==" usermode="+fp5oFZ3sERqWMuCxW2fwg==" sps="0NWo0uaEEFNvuSm3b/xCng==" sysdate="ZCbO9PAqXcVMo7uweTrP3w==" /></ufsoft>
+2020-06-01 10:51:50,515 [1] INFO  - 
+2020-06-01 10:51:50,527 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 10:51:50,532 [1] INFO  - m_userToken != UserToken appserverlocalhost
+2020-06-01 10:51:50,534 [1] INFO  - localhost
+2020-06-01 10:51:50,534 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 10:51:51,570 [1] INFO  - UserDataXML<ufsoft><Entry user="MLZn6+lIHDgUDlBiePLGXw==" data="aIzBAJT4920KfYTKCrRaTQ==" accid="Iz50zhdg9spGzIBXZ5lfhw==" appserver="TJiue1ZEunawOHrfxs3AyA==" subid="5FSEJ6GStMFLt5Zt0KUR2w==" iyear="zQccNNL8ih4q6amEfgDWBQ==" connstring="rrDWxjD5mLevyj5OHmCqKmh6FrqqkwE3Ng/V8Env7oAZP3lQ08S9imm7ZNt+NM2kvIEgjETY51ZyvzNhDB59TJQ2wcEdORA3phoTc+tc22CaS3X5D4rfYaWSE7Rtka0yG2huYzchXbZdoZGBXOFQzqSYn8AkCHxg1ONZ6wugofES1VU2AP92mrCA3COHP5ZFiiDyzcVCgA7mlCJ6AjkolAdLOEe1uDSdsnO5cyd5KAoMBmXu39upU9tU7K6POKlU" operdate="pGAJd2l/Q1n9dgei3aiMvQ==" datasource="gXoSWkcFlXfn8sxbcDbbHg==" languageid="KumWdY4CFVCzM447+S6cRQ==" workstationserial="RyClGHZLr7FJSAZv4KEL02Hz2++IA8oIMXRT+xFdb56K0202AMAT81ddQJe1+LFuoQvev1Rp+Y/n8YtP6huwUA==" rightserver="OdyDkOViTKqT9Hp7Yr9+aQ==" iscompanyver="hchLa4weXuo3JCcU/ZJpHg==" secondconnstring="T9QZgbPc2nitgzGJvhGHqVeWkXZp0r8ng5Z1O6FOnHk32eFNeo0AJ0MLSWzKVhLtySSiwhvxKI8GVnLunEL44SJcpHLjcMbeGj/bT7tliUt7NhkmB62QSkvLuj7wWpkuJ2k5hFrKJx8UCZxIZjrqgT1agCMEwmACXN5vcZ9mbjsrocyrmsoFD2KvTHdspOpafv9BUPE4Syrfq4FSBOyKbuEIWjE1SYEn+eODTZ7yWJc1xyPiG4Iv1zUj0jwvZxSJ0EZZ7ILGFygTJ73F4Zz9RjFU8lHzUg3uzp989ZWnc7cuM4IWXe2tetxsZ6h8AAX91oTcqPWhaBgLeq8NoL+MYGSwe78KChpkRUrMnfFXkD2/lQZvzUoIurHzbiZN8O+NO4QxIv9tCuNyUQ8jU29TpnvvtDhilNiq82oHRPPLbVOQvgaXW0kJJxx6q6k7GYLgwZgzsyTOvy1c4gzlVrJUAEGAxC1eWbkgdUJ79vn3olG95+uu744PCASLMGmJ8XsyHstgWBQ7M+8ZTvQ53Ah5f1LX1RTRpxmT25AzyPTiuGsbSfkm1Ah4RVTHWFCWYAkLZF4BFhdTf4nImqjn9A2KCd/o/6lDOlZq8eVtCDGwYZufOuDwuh6Q+pikFzH4s3ja9dzCRXwBB1Kq7XFuvkJAV3VKU0RTgD5dSNBHAKgWPPEr0KKWfsMIDWMeoyD0XaF20UxfnlNSvEiRIz4/rT6rrn4lk3s1MbCeg0bwWWJW4Oe1jdOQMk2K0tGCIAETE7yDyWwWiNgXf1Kw6IE5lLU7N1bteA0rvh5xj3waknCtjLQ=" employeeid="cd8mf9Xzotm0TuEZHgW0Dw==" isadmin="8NOGT6kk+U3Ku2833yIX6Q==" username="MLZn6+lIHDgUDlBiePLGXw==" accname="5xh0NBpfKPr3rCHnwQSHNw==" enttypeid="DXn1h25ajENyMx9C24vAhw==" imonth="0EwamPe4LMfR3G70xyGnSQ==" appServerserial="RyClGHZLr7FJSAZv4KEL02Hz2++IA8oIMXRT+xFdb55JY1A7I1nVd4iVl+VgRejg" roles="nzt2D8Y4AMr86BeoK7/9aA==" protocolport="sobpkxBnLG8WeHdy6tzLoXOYJEygyq3CzNzVSf54k24ztLuNuKyl8M8HcSA6N24awCDy5iKmepYvKcL39NkWIA==" barcode="IRpPPO5Pk/19t+ZSrv9AxQ==" customer="mboUY+fTfoj1u5e8UkXtygi1onwnthcruMD2KF212vz76EEgVETIOAE/i4z0HTMAKBkaRRON4V3raiRMPbhKgdHKLJr8xX9Q+j7vtO5b7nr54bBu8y3fTesDdtHMp2kHdKkmgchsU9hVG52sG5yzne4fm7ehJ411l7JqD1Gwt8jrPb5MX2IKK5DX3sQ4LlWIb/Reec20MNQZ/dTb5Sa06Tbl7yg7gGAhgud1OJys+HvwQPUNCTNe1fJLOik4AH0tNJ0m6B/wHfZYygkSNRZd77A7mU0ENJZvrfXQy44ksb6J8JPZindTWVWz01Mm2ke7Tzv45Y6nxL68lss+Boygd6FmgxWV3YoOKoW/ujneMuK+B9R/pBsFm/xQPTGokwNJYPd9iCAr8ghRVDcDSjVXd9umeiiCrR94pNwCb5uxiWE=" authenmode="dFo8q1LDMGeEKwZupH4viw==" authenextrainfo="nzt2D8Y4AMr86BeoK7/9aA==" industrytype="nzt2D8Y4AMr86BeoK7/9aA==" ibeginyear="vcDIw4VtWkFg/Wx2Gio4tA==" aiosrv="nzt2D8Y4AMr86BeoK7/9aA==" crmsrv="Ugus3dm0KUQFF84HsjWt5mby4rVNCovsZ+GmwlArIEo=" utusrv="Ugus3dm0KUQFF84HsjWt5sUowLHHN9mpnIenezOG0VY=" remind="hchLa4weXuo3JCcU/ZJpHg==" usermode="0EwamPe4LMfR3G70xyGnSQ==" sps="8NOGT6kk+U3Ku2833yIX6Q==" sysdate="owDT+7P2Eek/nxDeAGQ6Dg==" /></ufsoft>
+2020-06-01 10:53:50,275 [1] INFO  - 
+2020-06-01 10:53:50,284 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 10:53:50,287 [1] INFO  - m_userToken != UserToken appserverlocalhost
+2020-06-01 10:53:50,288 [1] INFO  - localhost
+2020-06-01 10:53:50,288 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 10:53:51,300 [1] INFO  - UserDataXML<ufsoft><Entry user="oi8p2zyyEZIy+45eO8yEDA==" data="FPzSJNXuSy9GmkbEDgH6CA==" accid="Jpf2JVszfUgXAhec/EFShg==" appserver="sQiH1wATi8NNHkL/M/uMJA==" subid="qJy6X7fAPq7GyHFfBTrQhw==" iyear="4qR8pqA7MvFt/bFFqPcx0Q==" connstring="G/jXlEwHYHrio6yRm7771VBrvK3nmTDUJvqjfkZRX9S7Nryz8YRiipeJKeYfdd+q3vZfZFTQkHUrWNELtq00ckb8xOohlZ7DeV0QGrm+3BsiqT7ZQBHK+J/1qIHrel5mo0U1IXVZjVpWlwor5gLuYdUGHPqbV8t3BlKGC0NBlgDTbrbnNEDzY3Mj0OKJY+yzGsPcOmCjarT4NImJcBg8d5/sbVdUZ3YPMTrKloMKtB38uSebP/munRSKD9jsV2m9" operdate="kmUCO8jvIcyZD5bBkERe0Q==" datasource="G5gLgYS1K+yz02XE+FmZYg==" languageid="NAcoEjeq+F6BtALPcnbl5A==" workstationserial="fh4mbbJnc9w1OwBvihM8rB36PCjCzqDG/zy0YDofcMyjq/FyY7xbV3ieVis7GZEzEBo4sWRY3PEVpTUgJWh6nw==" rightserver="6OHNb9PXZXuVhzZFLGEfwg==" iscompanyver="+X4FkQNbVtfn5tpMByQ+Nw==" secondconnstring="n1ckL4YcLoYl0F4SGenOKRm2NksRqBTdNHhGvMohyFH7bFW6B73h/ittGn88J9hUEluju8xM8Kd1VMphQxG6Ewfy5clMtPwbv7616PoF5go1om9QW/nts6S/LhliAP/VH/1IaxxNkT5QtC9EDicxDINAIL8CVHicRsGOhZrYmAMBn3s3UpQZJTQPvUkfNAurwuqqAi7luZE6Brnd51cR4fbRk6awioBkFpVnNa/JGx1WzDiT1Vz7T+hdFZtjf3UjzcklC/3jPEEz2dncPnpwz999M9I7AH1qrMaoG7HOF1nTdRdEXubxXBUgD9hUx3Rcq4j77HKPxwpzavCdJGxxyzKPzeUHVotA7aU3NRWmF2UsMoJ2F7DLBM+iLUqFYEBuTiPY1Lsxb8wFqsRrTeusUqeRJBagxKjqCwYfvN+5FfTJ0/NhcFpKxfA4ZKbx5DYE6PCIvdU2dQZssi+AedUvJxpVesKRc4pE1udbhHMFH4vUQOLr0ITziddm8eJV3UWciZXtPBBpKWX7CeqfgYKres52gEbB3lg3B/TZqxIDp/4eP7FLyFbKJKCIbvGgjvV7ULpnfLiI5DENdqGppmPI+CPZgCYlms/IQOy/kyh0xCuRh+Wbtgz0YttCw9Bh550vBlmleapFFLj5YDXjGobWSVZMt4J5I7GSdr8iq5RaxSdOp5h1xub+TFOl+HyezXVV1ySxLKnxjC+GD1oG8nWZ116QdDe0XXyKW7RH7kMS8mfSu+VoRcvlB3+zSQrAvk9ZE+MD6LOvFnhcRlQy1Sw1KZVqbpj85uiuR3z3qaempI4=" employeeid="Qzb8tKK26fleWnOnbq2i6g==" isadmin="jQrWanfgINQmvZ2lanvSPQ==" username="oi8p2zyyEZIy+45eO8yEDA==" accname="cgQz+FoBMGDW1h4y4yoCHQ==" enttypeid="J8K+DlBlConmAWOWY1czeQ==" imonth="SYokpph0pbuH4E6/V55LQg==" appServerserial="fh4mbbJnc9w1OwBvihM8rB36PCjCzqDG/zy0YDofcMxRcRmJrmqfixRNVuHPWuXU" roles="WwyeA/2Y92SYUx7n49+69w==" protocolport="rsFYkotwO4+sVgAlqhDy6ZTlEfQbr31k6AkurODDnZUKrv9RSQDeTTmlh3ryLo1Z3ua+HsxXYF6/Kf+Ri56BeQ==" barcode="WjQqnmlhqrDcwUqjstKyhA==" customer="ck8jSnxSJj7hh92xsEC0iqbAGIXEWFc3Tl7bkACPUGzpcozSgWEAh2n+Gt4MITi1htxidfI93d4y/vOHJZ9L2V1i8HgdFVCY6UzwgdEPM1qzKvMgOR/21+g3VBPQE7slxUxoLNzZdpXLLnaeguINfb1EAzk+U4vdob4vCGJehXAw26CY/IMonF+1GNY40mfmuBRN9I7cX//yYbYl4CLNpwbjxKADh4QdH6bhylJANkPwYZDAgtBC8eGFvajVK3UpEmNHuNkZPE/c+txTkNFJb20DZkDkXMb6P3HRTjnRYS3IhwgkC+7zE8W9kF+m8onA3UWSPxeks3HiFsrubtCohz+VJVZIy0uxwOZraMZP5V+IFWaD+fbcesJDWESonMjzD2T6X9Lqm0wJIoXeC7cOl9BFhPqHf+TCwiaNGvceIvI=" authenmode="j4fPeEyoyKv4VegjbP+XxQ==" authenextrainfo="WwyeA/2Y92SYUx7n49+69w==" industrytype="WwyeA/2Y92SYUx7n49+69w==" ibeginyear="o5tWY5e0xKZFKOJhQ0Gm2A==" aiosrv="WwyeA/2Y92SYUx7n49+69w==" crmsrv="wss5jXfutX3K7Y5gtBzJ43VAJu/weC9ju8/fqbXiRcc=" utusrv="wss5jXfutX3K7Y5gtBzJ427Ir5WKTHuXBtu6y1tBQiY=" remind="+X4FkQNbVtfn5tpMByQ+Nw==" usermode="SYokpph0pbuH4E6/V55LQg==" sps="jQrWanfgINQmvZ2lanvSPQ==" sysdate="BKwiPcsG4pyYGkq7CHhM7g==" /></ufsoft>
+2020-06-01 11:00:07,971 [1] INFO  - 
+2020-06-01 11:00:07,981 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 11:00:07,984 [1] INFO  - m_userToken != UserToken appserverlocalhost
+2020-06-01 11:00:07,986 [1] INFO  - localhost
+2020-06-01 11:00:07,986 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 11:00:09,033 [1] INFO  - UserDataXML<ufsoft><Entry user="/KHRyLad1DgEcJPzcGRmHQ==" data="tVKYLZ+pYSjbpuGnTGjgkA==" accid="Z8FrNtUzlhFSfva8FL1J9Q==" appserver="SF1ln+gsv/lYXBQkM1E/Fw==" subid="DDDiJi0H7kctWBvZUzOz/Q==" iyear="JXrdq1PGviUPyl6LLoDb8g==" connstring="G3vylS2MwQ+fv5WzqFJ76GpjPgIBOqduj/6FkL8FXgBpJYvOMlju3SL9xBA8pvMRsJmamRNbjQlbsE3CSDJ3tr6CX4eN2WPVfEsLt+o+8FW+/YyYW6tauWISfv8fpsGTWleeO/8aOGiozaqF37DUn2cjVDXYHX9mLg+jaiWNIsjR1pmRDQOqL7i6ZN2flt/CwL/XTrV8YjS75jex61jVXTStplzDj03VGHHKOtds1Ra75sqmHQCwUdyI/s35lHMk" operdate="a9mZLxRRw0sLz8FzzRjkLA==" datasource="T9jIxD2Ny01JGlik7576Ug==" languageid="DFOG5flHHEVX8OoFowmnMQ==" workstationserial="Qrw7NRpK3d9gRT1A/TuSrEzKUQiLFR5txLMevZj/5r9ZIpuBd3Mtvi1REdafkdBzy8bgiw7C8lUDmqwCWHIrbA==" rightserver="+X9x1wz0P9YBLCW79YwL4w==" iscompanyver="FhN9qFNGtBrqbhMxH28idw==" secondconnstring="deokKPj9tsOVNJBvQUWSrO5ZmsVuTDnWF1l95CsLFn+/NFdGGj59l1lA3raTdBiCx04cJUwnCV52oJUnvY0FDTKTM7q0/mKEpNTR3t2T8CogA+T/8EdsO4VHEu+iU7a8V/mfZKoJgKHjLSf26SmL/X89H+GDfHWlFZqC8MI8hBUge2Rub1DAZR3bi70N4OrWosEXnn0ubE/dq8PmqbYMOHuY5dBK8ctxB1xFZ3tgo5mbll/DjvVyh4OoDZ6h5PcyttWEiLQUUTDWzRLhGpn8yJzr4Gf3jCRRcFIPSQIoUKLcWoEEW0k0r43mbehXamtZsiIK1gKj+Qk9Cqylf0dO9u9IVqDPnKKX/hBedL1RirJDJjRbWtW5KRTvB9bp4Appw19FZGRTSBMfowa/oFfa1YMrOLH+l6Oo80fRjb0i0OWErAkZLTEfyzaIGygUwH8RjaGrDw3yPxKo00H1yHN9nUcxgd5PNDL6O9lwMBxKCajRnyGDIxFB8NFCVSEvJwaSKqHjjHe0+s2ZFvjS+NTwZSJG+BDRUoHDBylyW067KlNwwYK7KzE8DRMxK/eApSO0QanOKVvKYQXGY66RqkydJ3UYqGyW96d8APPV0tO1nQPFuR0v/DNOzu9wSELIYzvzQGi7KJte4tTpVq+EHd9LVK5Y88nQr7AAxk+SU1hHEww85vGSwKMuLfVhsUXCVRzFgIMgUbc8NFFHq5r6c8eaD82ozU/KE0G6A/wUKkDHn5SMiviBG4LwZjKyT7I8vY2wFvOzhqJLfw0NcQzMjDxTEMu1UZjKKPdUo/oM1a3iUVU=" employeeid="VR1QbfjaWTeUamJk/0sWAw==" isadmin="wI6xmuPP9Vmkfg2A6VUPew==" username="/KHRyLad1DgEcJPzcGRmHQ==" accname="8d/9cj0qbmb/pMYh+Jrwow==" enttypeid="kBQccu5QBq4G4qr0ZacrYA==" imonth="6PvT0ae74DcS08L4Lnaapg==" appServerserial="Qrw7NRpK3d9gRT1A/TuSrEzKUQiLFR5txLMevZj/5r/ZJhUuLaJQu0U/ObPtABqK" roles="btapDi/qY2e9FwtBrzpZjw==" protocolport="OuCYLXsnbHmx3oRzLrwmRuTC06yh8VEe65WYk+/J23yaUorlVsTqi/HB1OZHhb6olBMIWYOyKfZeBGUPbZKDdw==" barcode="nbGkvSTIPHyLYgYdPFmgBw==" customer="Frva8elwHHCFvIrgRkJXk0d0/7RLoFmTEmmd6bmiauLtiPlqdaYq9+dVXslpi9hqAxhXBWHjWCGdPK9FE21fVuGZCRKwQ25oc0tjqZxz1QiO6dbYyKq++qmRa8WKuqON5+fdC5FZMV1dcQ3MB5OjwUExPVmb+fFd9T/8vGbmIZ1ePTIw/EETlESmcZj3tXbvT+zg7r1ECpfCRhjiVEWC93DCVK1K041sSTm9VRzIMbyO+FtmFJTD97S6cmcdymH6RSX+0wDy27AvwKy+Ktb6xc5BsP+XonnPvjsLh4FNjnD5k3t8aAfxmquQMKiJwe86YJDkCLtvzTzD/dMapO9SbgQvoiqHLm790WR1d85YyXM5Rj0UIT3tZVABpysZmEl+02iO5SMdmUE5eXDXi5wwgLDMmGFjoUM05OUuBubAYj8=" authenmode="KdfSXp7gH2plrsb/y/zFWw==" authenextrainfo="btapDi/qY2e9FwtBrzpZjw==" industrytype="btapDi/qY2e9FwtBrzpZjw==" ibeginyear="99GnsFIO6S25zK8B17/91g==" aiosrv="btapDi/qY2e9FwtBrzpZjw==" crmsrv="C92g4clxS0+cpJ56iqQEI0U/mnyB1lgh+JFh13zNoh8=" utusrv="C92g4clxS0+cpJ56iqQEIx81S3aJkOJp3Httt1k2UMo=" remind="FhN9qFNGtBrqbhMxH28idw==" usermode="6PvT0ae74DcS08L4Lnaapg==" sps="wI6xmuPP9Vmkfg2A6VUPew==" sysdate="I4MMIfI45rhUFcEnhmCBOQ==" /></ufsoft>
+2020-06-01 11:03:51,301 [1] INFO  - 
+2020-06-01 11:03:51,311 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 11:03:51,314 [1] INFO  - m_userToken != UserToken appserverlocalhost
+2020-06-01 11:03:51,321 [1] INFO  - localhost
+2020-06-01 11:03:51,322 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 11:03:52,405 [1] INFO  - UserDataXML<ufsoft><Entry user="646VNJDKlvQI8VNc82ArVA==" data="qqt20TMGYS7VYbgYWdEmCA==" accid="thSycPCxuI6LG1LkPnpEiA==" appserver="yokSdfAWLYcn2jwsEynRfw==" subid="rSiqL8L3ayMNGUi4qiJD6w==" iyear="tBAg7X7ndSa1dqsYyA8Nzw==" connstring="L6M5DZM6Ej8SNXgTwvt4rZOCqKg/JCkf4SzfV6K7rrIHUBsnHjWF/N2WeS6UNnt9bkBEeCHLCGxLK7mbCjH92sBvzVLxu4nOSXF40uDLMhbucvREvaA8CYcuguFdosZ5VWcntJ9aD0DoDo3uYNcY8Y0TDGLDYDktuU0wgELTBRB5dfTSeHhgkhbKzxRb28NUS0845WrySAh+ucYrVAsDNSqBiBgRHcDpjaAa8O4cvKU1NgzCwUwa1/RFe9zozuP9" operdate="gt0BRbwbsm1ly9KmcO9pqA==" datasource="j1Kk6Jm/s4mWWtWU2pFbFg==" languageid="yb6lvffAtYoUdOKIQGhptg==" workstationserial="knRjq5ODIMfP9XUJ/T/Bl4///XEz93+SGvim5imnT2ZQM5fPZSONiCuyvQhGHqw/LbzxNUxlrP9PZ4tGCetFsg==" rightserver="uGu3I0wwzsj0hj1Hd39QmQ==" iscompanyver="MxjZesLV0uZBH40Dkzuj3A==" secondconnstring="I5Yaz/kVbRxzHZR/TbQOU0j65q0t57UG8rTPo2prsNnTPftU+22b+o307HIG9gn4L4Z7kfYsk7w8fVeA76S1Ulvt14RbYvl/cwKDQGNY1HwK9jklcnAE99L8E34ceSWhmjzfGv95uLSDtUpUlV/A2UOTOuOrKcCkZuuJjp+6l6z0ZUhckWR151j/UqqLDWu6dKg8EJPsvRxQfG0moAGwEZhcdL32xN16qfqjLjbTIzLbuaYJ6wZphAeRuuj1ZgyG/GqJ9hI/XgdPdzzjAmlaLsc50q/bz8RYOZfwiIoSLiTwHeke28O+Z57Wf1CHljMpdMBqZo3SXoTd89NJ8eXS2CU18OC6LBaBeDGtq1yA45QEpsuQj0OkkoJ0ZkeQecQaOXqj/1KVhg+meswDWFHLujT9Bnu48GEGvsptcG2fzuzWh6FPMHrbJ7u9aZ31Xn+wPa4WhuHXsfB22/cImyAGXPugGmRAPLJBHqrqfJMpiD0kD5n0wm8f5naqlfcThY+WfAO6nE46Vh+IOmzpvQzr/CHF5adsU1gtU78areRPxFvoAClSWj85Lk0pK6oAJL43OIs/jRVxiAODAufRs6Y86viFHv0UOeiNFdpDt/BZJrXXSvhLqCuNriQ5lhT4rqUorMh2tvkFSvnyPSc6qAeJSygUCv39Wda6ZhBinJf5Ym/CMAQNsj9mzzPJT80xRCE8KEhQ+HKjzGIuL9L1mw2eJKSD8yid/AMaklFq6ohzJ6Hrd80guyOjQv9ciimgRsbH7BQLTn/wqSvkgNKunyfYiSZC9haKKvkxukliZXDD2kI=" employeeid="gGMfa5qVyQj9NxbNfcsYow==" isadmin="Le9kkmEHe336P+HlbFbiXA==" username="646VNJDKlvQI8VNc82ArVA==" accname="OS9kMw6O+lCEGr8RGkF+fg==" enttypeid="rVXdRawmH43NmLYAKAzvsQ==" imonth="anZPpW+i9OszY5i3SqSoDw==" appServerserial="knRjq5ODIMfP9XUJ/T/Bl4///XEz93+SGvim5imnT2YA8S4cvb8GpAGQtM4RH0mC" roles="4ZNPhGJEGyLcR/ediyhviw==" protocolport="YR9oZzUa1JWXTJcKVwPNYJzbxpZQ++Vr+ORvW+9IeY9AtMwv5AQGgxGXRfGp91kXEMKLF9azgAv4rkOt8bo35Q==" barcode="rF2s70fJhLTaoQTEfXZu+g==" customer="ggaLpEITjZ4HtS2gQNTgKkhxt/qKAIQ5YizxSgeo51p3uDZGm9ridSgab5PxXeD9f1cJoU0MUYwtlD7vrI1LLSrmH9P6xI+n1jbkFWotlTQKa2Td6Zo7XAv90x8EIaVZ83/BIDpWpPjx/Io0471Zb6p/NRhbZzRIcGF0By1B5SpHjOtkhPsBmVHcfwY5T2wwKttejLlkqrIsnAGsXGuLiZN9EvqOzrd6djZugqaiD3LXj/OBJT0oDHNY5mdY8fq4KPDLbGKI5HlUYyT19zomLV1TjN3TWja3SrLT5Epb8DkTHqWknRQPLfEoaN6kVogZ1R13mDnMubX4huvv3PuxQXHaRHGYaZqkx04rZxTTEMHXaxFiRriwDqMLaFrHHpUBzfrc7TeXsuzAWRI8urFXdCZ3tuy+61aLr3CyMP1mSwo=" authenmode="Z6JLQ0gWAs0QCwEB/5D++A==" authenextrainfo="4ZNPhGJEGyLcR/ediyhviw==" industrytype="4ZNPhGJEGyLcR/ediyhviw==" ibeginyear="7ulDfFQAPhA4fyARB2mPww==" aiosrv="4ZNPhGJEGyLcR/ediyhviw==" crmsrv="ztY0aZOAR9pVr6Mhyojs0EG2LcGw4E+tkUQ5OH6rkZM=" utusrv="ztY0aZOAR9pVr6Mhyojs0IELIGIFaq2XIPyhuA/TmWk=" remind="MxjZesLV0uZBH40Dkzuj3A==" usermode="anZPpW+i9OszY5i3SqSoDw==" sps="Le9kkmEHe336P+HlbFbiXA==" sysdate="bEblVGE9rpphPxQtCOB8ow==" /></ufsoft>
+2020-06-01 11:06:36,137 [1] INFO  - 
+2020-06-01 11:06:36,147 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 11:06:36,150 [1] INFO  - m_userToken != UserToken appserverlocalhost
+2020-06-01 11:06:36,151 [1] INFO  - localhost
+2020-06-01 11:06:36,151 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 11:06:37,171 [1] INFO  - UserDataXML<ufsoft><Entry user="2V5VYsfnb+k7+MA1JDERfw==" data="jZldodrA5C7H+XUpUOpY0w==" accid="XdG1eiRBWReN4H1uIKSBJQ==" appserver="YwQn9h9qR29vatL0JgwJxQ==" subid="DK6PA+2g4RHvcvJ7IWdWog==" iyear="gxb+9SyxYW3mso7C56b3gw==" connstring="ihlogVsEnXcsadOHms7r8kIrN/5am6jjwoNYOb8OQM3z/CwqqvsJkoPn/hTJMFRaEBFo0nXNsMMyCl2H5fv/HBU/3DalWJgZ2ei/TXDfrHQvfF9nuvJG2i7slWh4iskJoXrlgNhhOAC3TW5JvGpqCAr6BgJQtiS4Uka1wNsUN5YLnvMcuRwMK3GT1mqM7Kpqk6roGAjB8PbwAaRCZGUBehO92bdvRZ7u5ACqJdp1kaVzmii1YIt2cvvP7kDx8wvo" operdate="OwX/cQJ9bfTM4IC1Qz6f+g==" datasource="J+nU1x14jj1I1bVOdnb9Lg==" languageid="PQI4P+rMKlKPZeQMLa3xpg==" workstationserial="10sWwZdyVlgdM8iFTGKt0WEtIF6qQRT0x8I9aGOlBfK1c6YQGusKgmMhChNAKh5w1VCYC7pU58jJeZXy0i2PmQ==" rightserver="GiZtR6jkxLWW4cx6EdhBaw==" iscompanyver="grahAYUqHBeSVneg/ZI84g==" secondconnstring="4Ca9QpKWgNbsImD7I7BagfWO8XIfvQcp47YXVticHSwAR7T6GkV2WS5q76i1RqF2KM/Q//hpdom40yW3ybh+CPCtR4sDWeP69EfAVMqZkXO/h5qcyDss+D2jjOwi1p0eX/7iyCyZ4c7V6ZNr3/AV7kSqw4EOJpdOtpTn8QDY1LnY81cJ+/+djNPGq4IYXo1vyZNTKV47xLYuNy/iyOSjc+9dWeEYdDhq9K2ta7gLIQeGjlk/shKedpU+cgr7+QWOLGvUEVtqNgJSzbVAyu+bfyE0p6fGzLJOk0C1b8N4qfEExG+K1MxjtnCP9kopyMDKdV7CS1Whorb306Pql1w0eB4wNkdA4e352NOVZYDmgOp1u9bCp9A3q7YH5kOR3IE1T21BCt1RoO5YeuO04DY9HHoJpykk1UuJxujadlz0zOC9k+jzeCwrXAMKilf1j8Zzjr2NrODutpihwY8Mohr7gwkNhdgX2es0sc1pdwK0ZcXt4ezR5ttXPvk6UBCIwnZ5pvzpj+ZSRe2P81Viuk1k93BYcSNow/6/I/ZzeX+yvYyNiWYZNL7E/E4js7GJia5Ag61hnJV0Gjt0S98eiG9DuRKppaNSbIagyR6AIPDxeLMo7tnPnn31oxOeqiaoLbgFT/zfQKFr2xAhdUm29rLOylf9wUXbXX2epLf0Sp492RaSdWcC05x4mhwJsLibgnRMqEQw4/JcM3Bi9626SDQgFgO4+hiac0IEhcHyYwOigEB7UIBMCZFz1Ls2tL+AGNMSK54qvnYlyuzDUDb6vd+CxlSpYY59Kpwdx7RCJlCvt50=" employeeid="tS/xPNV2YBLD81TyO1TRng==" isadmin="39k/iOjhI7M+kfxNwtVBSA==" username="2V5VYsfnb+k7+MA1JDERfw==" accname="WR9OXENaPj5WxVmZdg3rpg==" enttypeid="CQAek+pHjcIJbGLTTxq3vg==" imonth="pejZ+1a/FWujDndTa9yVqQ==" appServerserial="10sWwZdyVlgdM8iFTGKt0WEtIF6qQRT0x8I9aGOlBfJb+wH7wXWSLBb3UZ8CAQop" roles="mHW/9mtorKlQcwULM5+7mw==" protocolport="ZLgSo1ZcEXEmM8vAEQ2PPsOVXw5NcLLCtDKdN8TQCULSbIqcoKnA8k/0z/6VcLaeliU8rVGUzoOBOo2Pvook4A==" barcode="OowXp9DB0VoSgByoKn4XtQ==" customer="LzywkLmuJ97ZzVVDMgys0VRcn2SnMX7EvXQvDncGpGD4oLSFugGbVX5UEEFn7GM0PK5U/yibBKWXOWCVLHqUB2YgNph3Q5eQGm0NKHoOKDT5+lt/bCihD0hYqvT+ajCNNf9BSCavFI6osj7wzT5GtSO9IVPDzJHGmLXsQOIYilwcvtAEmHmoQYBF6OwjMreGQnXn8MmbtkFpBDKD6RU/lPp0eqvfXvKIjxIx7AFXNdSq11+UrOvnuOq3nkRl41Z1XRIDqeig5H/zXfJjn7Jb5yw8h540mbGz0KbWjEcwpB+9aT8CyYIlHM6pwl9EDPpIfiDTSkGRKrzGVQ0aLP1EfaQxiTxXLThQ5eSe1x4ALOtn1tz5ZmCrjBSCDF6K0z1mR+Eoohq9NWlFmX3PCJbxbft3ijL8Ei7kqtryCEGrDDA=" authenmode="cmgDrOwkkS4oaAU5GUw1+w==" authenextrainfo="mHW/9mtorKlQcwULM5+7mw==" industrytype="mHW/9mtorKlQcwULM5+7mw==" ibeginyear="P40TCXQXyKmWx/6YgOcbDA==" aiosrv="mHW/9mtorKlQcwULM5+7mw==" crmsrv="l/XhfJbVFTpfLkr3wBUabtkxxVTHK6tMIcoCYBSkWVc=" utusrv="l/XhfJbVFTpfLkr3wBUabg4YRPpQ2eVY7dy6mCvQXG4=" remind="grahAYUqHBeSVneg/ZI84g==" usermode="pejZ+1a/FWujDndTa9yVqQ==" sps="39k/iOjhI7M+kfxNwtVBSA==" sysdate="2seNt5dgYS3bcHZB2OsgiQ==" /></ufsoft>
+2020-06-01 11:16:07,385 [1] INFO  - Subid:AS LSSubid:AS
+2020-06-01 11:16:07,470 [1] INFO  - client StopTimer
+2020-06-01 11:16:07,485 [1] INFO  - Subid:AS LSSubid:AS
+2020-06-01 11:16:07,513 [1] INFO  - client StopTimer
+2020-06-01 12:04:06,200 [1] INFO  - 
+2020-06-01 12:04:06,210 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 12:04:06,214 [1] INFO  - m_userToken != UserToken appserverlocalhost
+2020-06-01 12:04:06,215 [1] INFO  - localhost
+2020-06-01 12:04:06,216 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 12:04:07,256 [1] INFO  - UserDataXML<ufsoft><Entry user="XWmqtOQuOALOrJVWaLZO9Q==" data="fY93emHqlzxS7ZUhle/Elw==" accid="LtQl3PPn7SqLV2Xu3yZfxg==" appserver="7PTrDJRQALnzea74l0bd0w==" subid="5ElGXyxFOacVKfca9Gz5Hw==" iyear="JFVcwV3v8fjl4JWLPid+cw==" connstring="scp+IUjahkbSKB5eZH7In2obwWpkC18qHcCU/vguaVJb9rZcJUcxWqL819TC0wdpmYtzRGnB0Bg8z2HX4uG4NHMPGsaQiJxPgQepFOS70ytXO6ADnB583Cy8wEKJNvbrXbHTggjPJAcjyY2gXCnwpflrg9hJIxU2ffziVTyFjunswPUkmmzaVjJErhXX1NbzqgqpShiMgKlQ8SpZJFlG10sKzNjoFjUL58Hx6piRy7nOK7ijazbuQwEmjg6TXghQ" operdate="wrJJm25W113uuaZHJ7QC8g==" datasource="2CmbKm42Q2E9nPm8IALwqQ==" languageid="cHR+TedbFn7EYP2x1PinGA==" workstationserial="Hm3QThP9FRqexyDkgQY84Ubi4zsb45ECSZ5D28BffK3OOuiSq4LWcqNjEsAePOFYWL8cvbcgvoeaaJA4xPms3w==" rightserver="DCHRHJWvkFrRQ6lT+eDjXw==" iscompanyver="4NpGy+8ArZlKeKiSHUVphw==" secondconnstring="PKhIaR14iF1rUNOalixIRfPgxzglyLRWOpwl/P6snJOem/iFzPFJiboAozMgYxYmcsfZOaOcnbItm42PT+a8VSRhaQnFZ11wfSTMmlv5UrWHjHbuDCdgW+6pexl9nHsENXASPLkgmhwEGpcB1SdgF/Um8lcbWEC2Y7zR3uZwj0HlKuyenbBvTz1Bc6ndmRe8Bdbb2nBWybKLmXR8uCVkPZqueebVztbEQfmm+SqA1WtdzojZHLuRgoZ5dVJakfia6ommuyK380wr88q851PiuEyJS+pEym65b7YcnUa17q4p6CtG+R6YKjnWLwwEsQeFBwzUvewduvKOA0IZuLkj+rmOI1EIn+RixBFfSein2qajuuSjOD7qb/zfW8Db4APHOcqASZH7HBt9RIz1fJDZsll+A2ce9fbrzy8y0Xu+Zspv2z+xqDvK7SDlj0XxTVs/CIaAzy30J9f4OhKSSPl3QWRG5yj4pdurnBIq2DLWxRaLsR2NltaNXK4IkYoyxQDhax4L5IOHtUVNWFbXLkCDBO24r5CXrQ5ave/nqR4GUEIQVum129+/K2wa7IALkQNnGmdOpQgvaLsOYF2h7i4Nk1l70s7p1Y1ckBUptkey/C4FJiMqPjy1nD+CtKomqA+CCdlvoRkFeQ7Rn2bBK3fahg9JUgcTcHbmOljt/Q+6ZmunVmrnbkOUOoO2zxH3uIm+iOcgHvP5jEg2IeyF9B5Quz4FsTQ8sjf3+ednwv9aLl6VMVcNMniEXdaK4DYhsJn5JVZSXAtfRhFJX6lW/lLSppEvq4RqTqC/9awwHFyPAU0=" employeeid="BEuKhHFBiM7dglrdwg3gvQ==" isadmin="FzIo+BQy1a1KwFH7mrj2EQ==" username="XWmqtOQuOALOrJVWaLZO9Q==" accname="85RDZHJ9qLLam71dB6aLJQ==" enttypeid="Vkjk/Wn+kHi0jqnh4yL3ow==" imonth="U5ZBN1jVVHZhdgbC8UfXIA==" appServerserial="Hm3QThP9FRqexyDkgQY84Ubi4zsb45ECSZ5D28BffK1ozPR72EUE8VhPKSXUF8Op" roles="esczV70xTp82sbjWPq2vMg==" protocolport="3h/Qs5LVHtsrYZpwyJ9HrBWY9ipLk93ws0fvTCASjqkLbQGZ8GzbUz9UbUPf6nPBVo2YGd7P2DBk7k+2bcG1Zg==" barcode="AM3MViMOawhhxPuYUtsRIg==" customer="z0SuS5T2xSqfqA3E2IPrtvZST2zpgh9ry5ZvAKT3hl71L5HgzB7kaSdLNl1+z90EngjTesSNsCC6eu7v0NuV4HUm4uHgR8inenQiQskV0qicf9QxYXNai1s7q3hj7prEoIbszRnSCcKG4YBFJQxPuhRVaFFZ/qmNfZ9oKFPu+d3pea2UCXgWQccd5oaecLt6lS602sMwC/xw+ZR+NpXT3uoDxiq4bnZuvHQnJtAhGQfh5ORINYBPGZBToTnguy7O2aqSVJfOnGhlO4XACFv7L6wE7sj8hZcCfiaKLkQaZlZi9hsNfoaW4YSs6WMK9R8JZ9gq6TPUgUCxQwv5p2arEuoPxCcd8xqmDwyPS2+7htewvEvJQ2FHY5/6xUSHsX38ov063sqggIn74pyuov5vPJFqlwsTgomLIjDk7attei0=" authenmode="YyDgxE43/TmQLjhMPbNz2A==" authenextrainfo="esczV70xTp82sbjWPq2vMg==" industrytype="esczV70xTp82sbjWPq2vMg==" ibeginyear="+1vcxwWjyhRxNP38NpN9Ow==" aiosrv="esczV70xTp82sbjWPq2vMg==" crmsrv="2ulk3Fzg2X2Uo7b0gRxm2hx+iz6fkVMloKMZEBJL5EU=" utusrv="2ulk3Fzg2X2Uo7b0gRxm2nuEHswlgEhczBBBMH4vicA=" remind="4NpGy+8ArZlKeKiSHUVphw==" usermode="U5ZBN1jVVHZhdgbC8UfXIA==" sps="FzIo+BQy1a1KwFH7mrj2EQ==" sysdate="ZZsDiN2GdzUM+SHGEj2bxA==" /></ufsoft>
+2020-06-01 15:45:59,678 [1] INFO  - 
+2020-06-01 15:45:59,689 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 15:45:59,693 [1] INFO  - m_userToken != UserToken appserverlocalhost
+2020-06-01 15:45:59,695 [1] INFO  - localhost
+2020-06-01 15:45:59,695 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-01 15:46:00,735 [1] INFO  - UserDataXML<ufsoft><Entry user="dcF5FdChVCypHuc8/W+UVA==" data="FmaaoaPcuPvas2cEUU++yw==" accid="82uW4vKu1JpUVeiI0PrQPw==" appserver="xnJlhOh3G6pAYN5DdpA/Zw==" subid="+jiJvW539vcQTGycd1dnfw==" iyear="tywSB5kUM+l/HzbmjdjFng==" connstring="BHqZ0LQZvOyTn/YelOwNsmy+sSt2KZINnz/OWbkFkaaJyIk54prrB06UG1VOXsNWsojt5KoPq7VWKV6KKDcJXJMgvg50zdfplS2FmOAmS5UFYBiFIMb5RQO4Uk/zAyogJd/tG7zD3DJ86LS5wxlX4pqvwocHICL8DOpXgGeuebBIP0jdVJeUMZjx2PotxRCHrd64ocxfB3/c88OSsrgpoNNuHypYs+PPqvJepUJHDL0GOoKJ+Kde2hF3ls6QTuCj" operdate="km0TtPa5vbxrbHoomQPTJQ==" datasource="bPRTCB9riFdp4KDGTjnrzQ==" languageid="2D4DTXNiZse7YRJ+ZgRLaw==" workstationserial="5om31rnkLhIZBdr59T7nQqI2TBffXJnJdS6Unoh8wi3SmvilQIeS6V7VrVGy0NikAG1dod/Owv4n9T16nTCKtQ==" rightserver="Q6nqd24y9oQz+ZsMTmNi7A==" iscompanyver="tFwQj9sp5Ly6rsnVroq0wg==" secondconnstring="o4tW94ZYXCwq3zjU8vZ93uo+L4tO5jUBd/P4sGFj+gr8WBfcqP1awP/k1uNj6nJ2f/iMKDVQ/EvXwEQIsOfrdi+hoRU3ZEhUXxOsHXfyFKLQQRl4u1kVLmnvRb0FOpNGDiOP7uBroRUfzhabYB89ygW+oS/enzYBKAhLa4IZBuadjp05P6WoEZ8eJfho2hI32nhZMPZ8gzDDYKI2CieePx87C8zte7xh9QNmG73kv73uhj79WJyIXyA0EjFy6/xxaeMBvOY2HTbOHT2u2H/3ert+iVE9/S7HoEM//9uwfDQGaLR314tikRBkl/u/3GTXBDmCUDs//K7t4CpJEu+jHIFSoyMCUr+pJ0q5ziCjoonClTmBMfIOPWzbGHDGQ8ZQLdxXlfVNHfXb5eLtarLKGnzBQesofVWIh2EkBg/Dd5Y16gXVHRhwR6/IYz4SY97zklstQp6B8dwq+NImZlA1hoiZ1BU5Vo+QI059ff7bCy4JUatfbD7tQPfDk5KUZMg4b8DcNbFJXXofqwj8b9hy+T1YeeMnTp2sqTeROk8wdhsuHHrG/4J3SZuRueq3NbWcXhBaAPhBrrysIft9qAIsEnK5MQJr3/c7E8IwqNdT7ewEpyyrEBPk/j0YRdgo4EzGvIWvcNEFdwuS70l+DNJBGUnl+EQ8s1t90SG0F2OEeAGT963e3LWQcci3hg9X9ZCeagsjffbDVlmT7BSod9FCUz4yGA6Rv990SfM8BbODwTqsh5MvuqPZNv9vNV0LvvnitMb76kC4eHtvBcNkgyjAwVgXj7JyGDj+LNL0EOt3/xQ=" employeeid="guSh/rz9CzQ1Y/QyERz4Uw==" isadmin="+lZ+L32yI3qY/VQeXfytjQ==" username="dcF5FdChVCypHuc8/W+UVA==" accname="/FepQnG3ERe8hwXWDrFCeHtCbB+8lT720/nig80aPfkb67IMlchBAKWMYAsaFJDU" enttypeid="vGEpKaKP3smymF2GK3A2cg==" imonth="C5WgVcLNNk1ocMq5e+fhtQ==" appServerserial="5om31rnkLhIZBdr59T7nQqI2TBffXJnJdS6Unoh8wi00s5SDIDCjVrkI/COI/47u" roles="guSh/rz9CzQ1Y/QyERz4Uw==" protocolport="8rv6ayLO2nbNOpE5UMl3osaRkFrj4e52Iq24JSKTQomR2tFfXtOVlSgumSu7s6mmc+VK/IE86530n3R5ocMYMw==" barcode="1KCa0lzKecLA9hGfToG4Zg==" customer="Keb48V9NhzGvr48cKyHrz/dgR8ljvFKGHfhSBhW+9Q22OSUdShiWukGbOYSgF8Iybmdx6A1DKnRGImv05gKi+8+6VJjSJ9vPRrKpwnx5Bo3IeCJckrdyIzKl8wd+2THh6QHAGr8yqApoFIzDTWeh1scVKc4xeWeUuYDD3So4yJ+SMZJT8e3GZPdYDt1ysWRf/qHJ8efZOs3LGEBheWEA2/NP+l7HRMiO3oH0ksR1IC672Rs2Qb6GAd4alwP3wU+LLShb4VtnhyaB9S5c4tlx/hoH5iltVtfgDQzyhcq1UqP5yF2ahpA27FcILMhugRkVdNa0LE1qb+aj634csnGu9rhHEzWxBjw4rW9qfwAIMqn6iIoavBg7KAKVz9KlwBSSz3oMe7fwpsocbFI6rMUFMV3jHe9ozannzgWoc8fPG4g=" authenmode="n9g4iaPeZsuIL9noSqnumQ==" authenextrainfo="guSh/rz9CzQ1Y/QyERz4Uw==" industrytype="guSh/rz9CzQ1Y/QyERz4Uw==" ibeginyear="fJTVNzDv1jbIgbB6m3SglA==" aiosrv="guSh/rz9CzQ1Y/QyERz4Uw==" crmsrv="5oHLUpUq6Jj+FNO4YXC9KVbsz6Cs/SWi4QPcDR/laiI=" utusrv="5oHLUpUq6Jj+FNO4YXC9KTVOnwoslLqTVpkgE/L7gr0=" remind="tFwQj9sp5Ly6rsnVroq0wg==" usermode="JoJLyjrVWnbFnqV8/3JN4A==" sps="+lZ+L32yI3qY/VQeXfytjQ==" sysdate="GbJ7cSWVSOUnE6LSficxPQ==" /></ufsoft>
+2020-06-10 15:10:35,860 [1] INFO  - 
+2020-06-10 15:10:35,873 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-10 15:10:35,877 [1] INFO  - m_userToken != UserToken appserverlocalhost
+2020-06-10 15:10:35,981 [1] INFO  - localhost
+2020-06-10 15:10:35,981 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-10 15:10:37,094 [1] INFO  - UserDataXML<ufsoft><Entry user="IAJRsPV+k1e5/4WLUxjDWg==" data="RUMrpSSw+hqczeP5zsKyiA==" accid="9MpNdzOLsDVGFdHHWz84FQ==" appserver="pojJkYfMsY5ClwbrofGFvA==" subid="bfOZTwGCDSI5X1mM0oX77g==" iyear="yPTGoZvhPxalMQd4PtCgeQ==" connstring="H02WgmNyDOBlfAFti43CrLPA0HksdatzYNUM0dQYeheGohzBLpsgVp71W0+IZgrQHjY3q942jZv5NxTANBnLw/2pCRm7j5IDDJalpN2BsTD/Ezg8GWLTfDKFHRWu0Jab0UD2MBCpCm65BP+qW0zEcg7bZ8lfVf6AknWQZhgMrybGTGNY079pfSufCnhERHHB/CWv+On0SfbTzRuDabkq+J/UxaY/RKSoYpseAsZxOovtPOglCKZrmUvBnlBZSAHH" operdate="xpHgEL6F6eh18KCjwtlpqw==" datasource="ES8sNr8/G0JVnnWhVnX+tA==" languageid="yLiWzt41QpRWdmFjJ0KEgw==" workstationserial="C6cW5JNv7QJOO0EZQ8HPMGWNJ58Je/XreCTcqK1ZCXvT5SHe2JfjlQENcNz+umsi1VsIOZigxL4uG4Uuzqk9ug==" rightserver="ocyB8Zh5nIZtsE0zyHnYFA==" iscompanyver="FvJXG1YOOnNQ9SdHlsN+iw==" secondconnstring="4KdlNL8GF75u9+RwT9Kj7xIVo9PgEeVTOExNo4JnfP2tmSz0C25up3rTCNJnx5TtZmcWMuHv1Irz480567hxwvo3BkYTbqGJ8HUcCd1ekUfWczOjc0NalvB4JzLhpLiOoJRl88VnVsMaQYCtW7tjbrk26SOKyZp4zzzEHllgl/sfcctWmgvuwzGoyx1BmXf81Io3OYo3wjND4h1N77kJNzCOYF0t/m+rJKZYLxslGa8lT0Nqy+4ydZXc1DfzXGXMbknv8lrfVN70zuSTTKdTLO7Ea1DMqS25QNtJJ6irIB1AVmDJkhJ/HyWnejR/8V8egwmxVBEiAqIdFELoldpCc0i4/hgiIun+uETh3Oc9RH7edeRmxl6jl1A86Y0LIgDonqYkZ1FvgOgQlK8k/bRPtNLJ/Ht5Dc2I28c5RnZF44etVqNJ1jsyaW3pU/6D2ozQrYydYo7FA+Qv5TNnnPGzzFo0o+kwlCjJmAezQMh1NlCTlo9FQ54zb9FhZGAHrvevoaJDihtcqfFBGHKEoCk5GD5YwWSObMTE4wBemhVl+wgKJVR0JXgOMhetF4EcekVOIveMGoVolQU39rCu996DHgiR+CD87/sBF/ysyc5OZLjSB2VcU0/HQ7EdN2YFqgGkyJNZlgIGYz/df/D6pKrDrY7TXH2VVI7F0PU9rdMx7jBsFZm2BNbBKjg0mFNl/F9SbiUhcOtz9ZJA7b7FL5OGlFlAUJsKkfFhpmIH7H5kCq72hLpoF3Dq9NOtjeXphpd+1oCz8hJD6qosW7xAGHV7sqZ+PS3zhKwnoAJcKu/xbNk=" employeeid="62BCmLJM63F8gJT0QwlbRQ==" isadmin="zjWS2qwbkao4G0vT9CA8MA==" username="IAJRsPV+k1e5/4WLUxjDWg==" accname="3q8nHlt226jKEVxNjl456AifH29N6NrAcvhBEkdhqLj/hTp39d5VppK3Crv93Eua" enttypeid="Nd+rg7rNleGNd7MVhpUKxA==" imonth="EjDoNnGvABl+/emQGQSJxQ==" appServerserial="C6cW5JNv7QJOO0EZQ8HPMGWNJ58Je/XreCTcqK1ZCXv3INWPcfIhzVkNqPgJVvcd" roles="62BCmLJM63F8gJT0QwlbRQ==" protocolport="s2YyrHDeTp+/t4iMVEWcCyduedTlcZ6xOyGiT/xZ9GZzv6X5KnSqErahNh+DwjHZ8Jyffw4eLxN2XPbKR+Vqnw==" barcode="s66IqdYTUZA0Q5Io1A/Ccw==" customer="MEOdcfiMswKsKbnZJ2972qpujwxRRC/96R0M9v8jOKlJM82avf3z3y0ygl7rP+agJadbfIAuS73zY1LphrRw8bBrkgNuLmnt5zfVWoEbKq8wcJ3cut/zS7E+rU/DWvJRhoy3ZLlp+9qYQMtIH0QuuRHBwlsidJJQ+QlVqm/ulujeSDcImYKpVxA5b8YCF+1OjB+Rr3exnMzoZqx88ve1K1PfLpruzSCnGjqw2d6BCGuOsPZ9CGaxqPrMQTaxmBynbeVZ+5ZGGP06PNAzhs/4RFVgDiU5djDtx+aamOAhds8dT3Z8+j6mS5jTmt9QS9PE9XRtJq1lKWJhS5jhA+9CjmR8uLkTNkxSmomB4uOndoEK14zh9gWdZ5Yg7monW7SVqBofI3RgcUjPV8Dsfz2HNMr9nm/hVqKPheqf//GNgzc=" authenmode="87sfijZPHPIJ6pkt48srSA==" authenextrainfo="62BCmLJM63F8gJT0QwlbRQ==" industrytype="62BCmLJM63F8gJT0QwlbRQ==" ibeginyear="8NaqafAeCbGqDOGQsGGZ+Q==" aiosrv="62BCmLJM63F8gJT0QwlbRQ==" crmsrv="Jo1lJ7bSwVlGbqQkuiCWl8rf75Fy467bmZdxF2UrvOI=" utusrv="Jo1lJ7bSwVlGbqQkuiCWl5BlGrN4PTw5sepH+/SWHZY=" remind="FvJXG1YOOnNQ9SdHlsN+iw==" usermode="CVpT2cZeqrTVhBo5XxmPog==" sps="zjWS2qwbkao4G0vT9CA8MA==" sysdate="rZ47xqhuRvu2bGF95dMy8w==" /></ufsoft>
+2020-06-10 15:12:43,875 [1] INFO  - 
+2020-06-10 15:12:43,885 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-10 15:12:43,890 [1] INFO  - m_userToken != UserToken appserverlocalhost
+2020-06-10 15:12:43,892 [1] INFO  - localhost
+2020-06-10 15:12:43,892 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/Framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--entry codebase:     file:///C:/LiProject/ƽ̨/LiSystem/LiAdmin/LiManage/bin/Debug/LiManage.exe
+	--entry assembly:     LiManage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+	--serverName:         localhost
+	--remote url:         tcp://localhost:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://localhost:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-06-10 15:12:45,038 [1] INFO  - UserDataXML<ufsoft><Entry user="8qRhO8UR07dxv3qAjKOAXA==" data="QseYzQnlLPi/4BXjQjXzqg==" accid="NuMjLeQnlGoY6qkX9+paPA==" appserver="2TS/ZvP/wZ2Vtd+CbiHNfA==" subid="Tl40lZWxKnmEyJTXF7Hk1g==" iyear="qRMStoCkqXb/S4loJ+s7yA==" connstring="DXkx6hMb2qPkUhYNNWvpURsmYFFP23ccay4x5H0dSVhHG9CTx8p7RP53pORvsrGHbo1JpbuHEEjxcszoWRg/WHpjjjWad6QqUxHxDR3tmMlYxEJcP0reRcZO0sa9kgt955D66lBOL/NdzQTN/qF47RvK+Cetf3muF37c6JGM60qDTQh52YQ80PeFtcHzXITThfOghCDJ9yeaKCpTpPTiqcPrbCCwMSHU1Cnsn5rQu0KlzlQ6Cw5KgMTKjq8JXzwm" operdate="7Vtgrqt0TE8CFZAh3SPl0Q==" datasource="w5+Wk6DhA1eGkxTkR0nfHQ==" languageid="hd/k1mcCH69pM1SweGn5Zw==" workstationserial="0zJFY1opYM2otyDZMUEXtAV5AaXN6AzR/Aqs+fw+glnrZs0x7uESos61Ayljsj1x9U2HJYo1Em6b1Qq0xxtbSw==" rightserver="VFEoIeHWnWdT1iHpgV9G6Q==" iscompanyver="V34Gd5ya7ub26W+B7JA8QQ==" secondconnstring="wOVXSp2MCuqsG3cOhjuCT5+Jdn/JQjqaaYnVqMoRrGtIsFZ1CQOhf6WpQU0xfZnX0/EyRuzFXZcUG0MfriPBsDxiZnsnxURp3LRrKH8p1won9tb26K01FWKmjyiIcpy7xsJWgGrnLz9wveMyzXrWmpBqYsNU6zT99r8p0spuERgFUBvCR35TGmmdE4w0OVO+pRctfkTIA+DfrUeOIhWIPnqqQ6ad2g/RUW8yZeVdgTstWsHC5/jmSLH74e2FokpjAD5pWNNd6TxWrdsUOrmz6z9hJruysZegNWySXrDcZDFTmYHOp+sm5Rz/Qwl5zLv8wYYwBHkskUm0xJ/53f5fOa9ETRFfLozzXRIJsDbWQv6TZjfTGUTrHLP7GttsjsKu4GCZP/DAbEZWwHkH/dcoh74Kf373Sg7GEDLk0i6yfYB+0IrBihHCqWcgDe/nssGzqKrDvb8sB9nRAMkCLFw9fBFRscaNWNlNTYa5G3zruQ4KdtdNQJequc9nOktDh6FRGicSr9oorueiIDY7zpmVsalD+DzgHW0UKGZydOGamSAZ2qMRRV/D5TEkzsC0BB89QDuVXZdLTjnDWmO+sFHn6sziqAR3eJO33wNpKTG6ZWcWJl7p1CC2ZR84o6dPLLfAtTfwLUDbopbbuFK127Fze79pjCIe50ypOHFUWkHLEugMN4iboddQJOpDfQa0tUCVVIzjAhazN9yzfI9orCc+AV4ODMc+DdN8szoYLYcX6bvckWc7Ituz/tAQKFUgqRfi5btpI+uv5s+PRx4sw7CBW/XPGuM45ZLA4OMJ7unL8P8=" employeeid="OwuVlNrWK8cofDI8qe0YyQ==" isadmin="QQOjtCeveLqaAh/yhmgdYQ==" username="8qRhO8UR07dxv3qAjKOAXA==" accname="kEkQ8HGPXuccViQu/Z48jXB0LEM8sUUPhCCFFeJQbVVUsKotGwLDVsFvaKVmQGVR" enttypeid="dk5/T08AbHYyb163yzzb7w==" imonth="ysdXA7lRooFHFe3p7UwpOw==" appServerserial="0zJFY1opYM2otyDZMUEXtAV5AaXN6AzR/Aqs+fw+glnknz6sjm+5RoabbbE/KQyf" roles="OwuVlNrWK8cofDI8qe0YyQ==" protocolport="8cY/n4hhuv2CoO/h8Km5A5p/0E9g2cqd/H70mZTI8iJvs/GmcwwA0DgshD8vju39naFJyVvt3TUplX/KVTVcaQ==" barcode="7m30aqyMElAh61TBZtjo2Q==" customer="itRHxc7gV17fbK1QYgqSlcL0l7Z+QAzZSmpQShwvahvOxBTAXPlRf3DcLBI0tJOYKCEWGSUiDWZxFJUpKrw4feoATdshZjVleLhsQshY0eo8P195Soi7P2ZKI7gYVqaCl+ZBh/V0re4cPbmowSKbrupksTgDSDEj05vURb8JXQU4MZyE8mZUm3YAmsfC8e0OR5zfzTeFzNmwaOPOK3wl/O6gOSKC0adcG5u8DPoHCeQOiHB6sfZxnMVX0SUlTDYEY9nI/cU+ZYNpPHnzjpZLVPoiKvX2SUvsWOHXvxxklaEysJ9eXd8D3gfZF2hbxVUhbO13RMWvW7jS0vMOJc0fzbxIj25hZmwbH8eR/giHD7CTFPW6ElBLiDIclLBiJmM+k1H2L6FpU8pT+u1pGLIJwmAWXy6kSrk9r3bpiP0HOHU=" authenmode="fiBlMm1BYW/PNSVUCqiJAQ==" authenextrainfo="OwuVlNrWK8cofDI8qe0YyQ==" industrytype="OwuVlNrWK8cofDI8qe0YyQ==" ibeginyear="CVPCzVdDb4lUY5NGVtddhg==" aiosrv="OwuVlNrWK8cofDI8qe0YyQ==" crmsrv="UoEsofbXCFnGR4yGihf2J7oKgAzMl+XMUUOf0aW6UFM=" utusrv="UoEsofbXCFnGR4yGihf2J4CwedbmbXYHaVAOv+SQbrE=" remind="V34Gd5ya7ub26W+B7JA8QQ==" usermode="yrI+ler9AWKK1+cb2BZcUQ==" sps="QQOjtCeveLqaAh/yhmgdYQ==" sysdate="yVDjbqSoJSxi6DKwRUBSfQ==" /></ufsoft>

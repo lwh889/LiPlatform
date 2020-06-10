@@ -1,0 +1,210 @@
+日志时间：2020-06-05 10:16:17,205 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-06-05 10:38:09,501 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{cAcc_Id:004,CurDate:2020-06-05,cUserId:demo,cUserName:demo,cUserPassWord:DEMO,dbServerName:127.0.0.1,SysPassword:111222,cMenuId:LWHU80101,cMenuName:\u4EA7\u54C1\u7EBFBG\u5BF9\u7167\u88681,cAuthId:LWHU80101,UfDbName:PROVIDER=SQLOLEDB;data source=127.0.0.1;user id=sa;password="111222";initial catalog=UFDATA_004_2014;Connect Timeout=30;Persist Security Info=True ;Current Language=Simplified Chinese;} 
+异常信息： 
+
+日志时间：2020-06-05 10:41:33,976 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：\u007B"cAcc_Id":"004","CurDate":"2020-06-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"LWHU80101","cMenuName":"\\u4EA7\\u54C1\\u7EBFBG\\u5BF9\\u7167\\u88681","cAuthId":"LWHU80101","UfDbName":"PROVIDER=SQLOLEDB;data 
+异常信息： 
+
+日志时间：2020-06-05 11:18:40,659 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{cAcc_Id:004,CurDate:2020-06-05,cUserId:demo,cUserName:demo,cUserPassWord:DEMO,dbServerName:127.0.0.1,SysPassword:111222,cMenuId:LWHU80101,cMenuName:产品线BG对照表1,cAuthId:LWHU80101,UfDbName:PROVIDER=SQLOLEDB;data source=127.0.0.1;user id=sa;password=111222;initial catalog=UFDATA_004_2014;Connect Timeout=30;Persist Security Info=True ;Current Language=Simplified Chinese;} 
+异常信息： 
+
+日志时间：2020-06-05 11:28:27,415 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{^^cAcc_Id^^:^^004^^,^^CurDate^^:^^2020-06-05^^,^^cUserId^^:^^demo^^,^^cUserName^^:^^demo^^,^^cUserPassWord^^:^^DEMO^^,^^dbServerName^^:^^127.0.0.1^^,^^SysPassword^^:^^111222^^,^^cMenuId^^:^^LWHU80101^^,^^cMenuName^^:^^产品线BG对照表1^^,^^cAuthId^^:^^LWHU80101^^,^^UfDbName^^:^^PROVIDER=SQLOLEDB;data source=127.0.0.1;user id=sa;password=^^111222^^;initial catalog=UFDATA_004_2014;Connect Timeout=30;Persist Security Info=True ;Current Language=Simplified Chinese;^^} 
+异常信息： 
+
+日志时间：2020-06-05 11:30:06,217 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{^^cAcc_Id^^:^^004^^,^^CurDate^^:^^2020-06-05^^,^^cUserId^^:^^demo^^,^^cUserName^^:^^demo^^,^^cUserPassWord^^:^^DEMO^^,^^dbServerName^^:^^127.0.0.1^^,^^SysPassword^^:^^111222^^,^^cMenuId^^:^^LWHU80101^^,^^cMenuName^^:^^产品线BG对照表1^^,^^cAuthId^^:^^LWHU80101^^,^^UfDbName^^:^^PROVIDER=SQLOLEDB;data 
+异常信息： 
+
+日志时间：2020-06-05 11:31:06,532 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{cAcc_Id:004,CurDate:2020-06-05,cUserId:demo,cUserName:demo,cUserPassWord:DEMO,dbServerName:127.0.0.1,SysPassword:111222,cMenuId:LWHU80101,cMenuName:产品线BG对照表1,cAuthId:LWHU80101,UfDbName:PROVIDER=SQLOLEDB;data 
+异常信息： 
+
+日志时间：2020-06-05 11:50:45,742 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{cAcc_Id:004,CurDate:2020-06-05,cUserId:demo,cUserName:demo,cUserPassWord:DEMO,dbServerName:127.0.0.1,SysPassword:111222,cMenuId:LWHU80101,cMenuName:产品线BG对照表1,cAuthId:LWHU80101,UfDbName:PROVIDER=SQLOLEDB;data 
+异常信息： 
+
+日志时间：2020-06-05 11:52:42,390 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"004","CurDate":"2020-06-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"LWHU80101","cMenuName":"产品线BG对照表1","cAuthId":"LWHU80101","UfDbName":"PROVIDER=SQLOLEDB;data 
+异常信息： 
+
+日志时间：2020-06-05 11:55:41,907 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"004","CurDate":"2020-06-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"LWHU80101","cMenuName":"产品线BG对照表1","cAuthId":"LWHU80101","UfDbName":"PROVIDER=SQLOLEDB;data^^source=127.0.0.1;user^^id=sa;password="111222";initial^^catalog=UFDATA_004_2014;Connect^^Timeout=30;Persist^^Security^^Info=True^^;Current^^Language=Simplified^^Chinese;"} 
+异常信息： 
+
+日志时间：2020-06-05 15:17:33,014 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：\u007B"cAcc_Id":"004","CurDate":"2020-06-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTest","cMenuName":"\\u4E3B\\u4ECE\\u8868","cAuthId":"TestGroup","UfDbName":"PROVIDER=SQLOLEDB;data 
+异常信息： 
+
+日志时间：2020-06-05 15:28:17,490 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTest","cMenuName":"主从表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 15:36:50,709 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTestList","cMenuName":"主从表列表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 15:37:15,208 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTestList","cMenuName":"主从表列表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 15:40:02,304 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTestList","cMenuName":"主从表列表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 15:51:38,726 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTestList","cMenuName":"主从表列表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 15:52:28,591 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTest","cMenuName":"主从表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 15:53:19,740 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTestList","cMenuName":"主从表列表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 15:54:00,908 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTest","cMenuName":"主从表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 15:59:44,631 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTest","cMenuName":"主从表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 16:25:03,704 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTest","cMenuName":"主从表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 16:29:26,490 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTestList","cMenuName":"主从表列表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 16:29:54,601 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTest","cMenuName":"主从表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 16:31:06,409 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTest","cMenuName":"主从表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 16:31:27,815 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTest","cMenuName":"主从表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 16:34:09,856 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTest","cMenuName":"主从表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 16:34:57,195 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTest","cMenuName":"主从表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 16:36:49,206 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTest","cMenuName":"主从表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 16:37:41,330 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTest","cMenuName":"主从表","cAuthId":"TestGroup"} 
+异常信息： 
+
+日志时间：2020-06-05 16:40:56,257 
+日志级别：INFO  
+用 户 ID： 
+用户姓名： 
+日志信息：U8方式登录系统：{"cAcc_Id":"999","CurDate":"2015-01-05","cUserId":"demo","cUserName":"demo","cUserPassWord":"DEMO","dbServerName":"127.0.0.1","SysPassword":"111222","cMenuId":"MSTest","cMenuName":"主从表","cAuthId":"TestGroup"} 
+异常信息： 
+

@@ -143,3 +143,5 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiForm\bin\Debug\de\DevExpress.XtraCharts.v
 C:\LiProject\平台\LiSystem\LiAdmin\LiForm\bin\Debug\es\DevExpress.XtraCharts.v17.1.Wizard.resources.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiForm\bin\Debug\ja\DevExpress.XtraCharts.v17.1.Wizard.resources.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiForm\bin\Debug\ru\DevExpress.XtraCharts.v17.1.Wizard.resources.dll
+C:\LiProject\平台\LiSystem\LiAdmin\LiForm\obj\Debug\LiForm.Dev.LiPushForm.resources
+C:\LiProject\平台\LiSystem\LiAdmin\LiForm\obj\Debug\LiForm.Dev.LiListForm3.resources

@@ -203,6 +203,7 @@ create table LiEvent(
 	panelModelId int REFERENCES LiPanel(id),
 	controlGroupId int REFERENCES LiControlGroup(id),
 	buttonId int REFERENCES LiButton(id),
+	listButtonId int REFERENCES LiListButton(id),
 	fullName nvarchar(300),
 	assemblyName nvarchar(50),
 	eventMemo nvarchar(300),

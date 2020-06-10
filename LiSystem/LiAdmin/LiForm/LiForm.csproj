@@ -127,6 +127,18 @@
     <Compile Include="Dev\LiInputDialog.Designer.cs">
       <DependentUpon>LiInputDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dev\LiListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dev\LiListForm.Designer.cs">
+      <DependentUpon>LiListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dev\LiPushForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dev\LiPushForm.Designer.cs">
+      <DependentUpon>LiPushForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dev\LiMessageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,11 +165,11 @@
     </Compile>
     <Compile Include="Dev\Util\ControlModelUtil.cs" />
     <Compile Include="Dev\Util\FormUtil.cs" />
-    <Compile Include="Dev\LiListForm.cs">
+    <Compile Include="Dev\LiListForm3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dev\LiListForm.Designer.cs">
-      <DependentUpon>LiListForm.cs</DependentUpon>
+    <Compile Include="Dev\LiListForm3.Designer.cs">
+      <DependentUpon>LiListForm3.cs</DependentUpon>
     </Compile>
     <Compile Include="Event\EventForm\LiEventAddCopyRowData.cs" />
     <Compile Include="Event\EventForm\LiEventCopyRowData.cs" />
@@ -235,6 +247,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dev\LiListForm.resx">
       <DependentUpon>LiListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\LiPushForm.resx">
+      <DependentUpon>LiPushForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dev\LiListForm3.resx">
+      <DependentUpon>LiListForm3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dev\LiMessageForm.resx">
       <DependentUpon>LiMessageForm.cs</DependentUpon>

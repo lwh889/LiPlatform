@@ -15,11 +15,21 @@ using LiModel.Form;
 using LiModel.Basic;
 using LiLog;
 using LiHttp.RequestParam;
+using LiContexts.LiEnum;
+using LiVoucherConvert;
+using LiVoucherConvert.Service;
+using LiModel.LiConvert;
+using LiVoucherConvert.Service.Impl;
+using LiVoucherConvert.Model;
 
 namespace LiContexts
 {
     public class LiContext
     {
+        /// <summary>
+        /// 单据转换
+        /// </summary>
+        public static VoucherConvertContext voucherConvertContext = new VoucherConvertContext();
 
         public static Dictionary<string, PageFormModel> pageFormModels = new Dictionary<string, PageFormModel>();
 
@@ -113,6 +123,7 @@ namespace LiContexts
         /// </summary>
         public static string SeverIP { set { _SeverIP = value; LiHttp.Server.LiHttpSetting.URL = string.Format("http://{0}:8002", value); } get { return _SeverIP; } }
 
+        public static string SystemLoginType = LoginType.LISYSTEM;
 
         static LiContext()
         {
@@ -327,6 +338,45 @@ namespace LiContexts
 
         }
 
+        /// <summary>
+        /// 获取单据转换
+        /// </summary>
+        /// <param name="convertType"></param>
+        /// <param name="convertCode"></param>
+        /// <returns></returns>
+        public static AVoucherConvert getVoucherConvert(string convertType, string convertCode)
+        {
+            string keyName = string.Format("{0}_{1}", convertType, convertCode);
+            AVoucherConvert voucherConvert = voucherConvertContext.get(keyName);
+            if(voucherConvert == null)
+            {
+                switch (convertType)
+                {
+                    case ConvertDestTypeModel.System:
+                        break;
+                    case ConvertDestTypeModel.U8:
+                        U8VoucherConvert u8VoucherConvert = new U8VoucherConvert();
+                        voucherConvertContext.put(keyName, u8VoucherConvert);
+                        break;
+                }
+            }
+
+            return voucherConvert;
+        }
+
+        /// <summary>
+        /// 下推单据
+        /// </summary>
+        /// <param name="convertType"></param>
+        /// <param name="convertCode"></param>
+        /// <returns></returns>
+        public static LiReponseModel pushVoucher(string convertType, string convertCode)
+        {
+            AVoucherConvert voucherConvert = getVoucherConvert(convertType, convertCode);
+            if (voucherConvert == null) return LiReponseModel.getInstance();
+            return voucherConvert.pushVoucher();
+        }
+
         //public static AHttpEntity getHttpEntity()
         //{
         //    return getHttpEntity<AHttpEntity>("Common");
@@ -339,18 +389,28 @@ namespace LiContexts
         }
         public static bool AddPageMdi(PageFormModel pageFormModel, Form parentForm)
         {
-            if (!pageFormModels.ContainsKey(pageFormModel.ToString()))
+            if(LiContext.SystemLoginType == LoginType.U8)
             {
-                pageFormModels.Add(pageFormModel.ToString(), pageFormModel);
-                if (pageFormModel.liForm.MdiParent == null)
-                    pageFormModel.liForm.MdiParent = parentForm;
                 pageFormModel.liForm.Show();
                 return true;
             }
             else
             {
-                pageFormModel = pageFormModels[pageFormModel.ToString()];
-                pageFormModel.liForm.Activate();
+
+                if (!pageFormModels.ContainsKey(pageFormModel.ToString()))
+                {
+                    pageFormModels.Add(pageFormModel.ToString(), pageFormModel);
+                    if (pageFormModel.liForm.MdiParent == null)
+                        pageFormModel.liForm.MdiParent = parentForm;
+                    pageFormModel.liForm.Show();
+                    return true;
+                }
+                else
+                {
+                    pageFormModel = pageFormModels[pageFormModel.ToString()];
+                    pageFormModel.liForm.Activate();
+                }
+
             }
 
 

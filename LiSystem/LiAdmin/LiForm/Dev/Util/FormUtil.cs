@@ -33,6 +33,7 @@ using LiModel.Util;
 using LiControl.Util;
 
 using Newtonsoft.Json;
+using LiModel.Basic;
 
 namespace LiForm.Dev.Util
 {
@@ -254,9 +255,9 @@ namespace LiForm.Dev.Util
         public static RibbonForm getVoucherList(string key, string systemCode)
         {
             FormModel formModel = LiContext.getFormModel(key, systemCode);
-            //FormModel formModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.FormModel).getEntitySingle<FormModel>(key,"name");
-            //FormModel formModel = FormModelEntity.getEntitySingle_FormModel(key);
-            LiListForm liListForm = new LiListForm(formModel);
+            List<TableModel> tableModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(key, "entityKey");
+            TableModel tableModel = tableModelList.Where(m => m.entityOrder == "master").FirstOrDefault();
+            LiListForm liListForm = new LiListForm(formModel, tableModel, tableModelList);
 
 
             return liListForm;

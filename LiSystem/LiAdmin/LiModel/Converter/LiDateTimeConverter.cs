@@ -19,6 +19,10 @@ namespace LiModel.Converter
             {
                 return GetTime(Convert.ToString(reader.Value));
             }
+            else if (objectType.Name == "DateTime" && reader.ValueType.Name == "String")
+            {
+                return Convert.ToDateTime(reader.Value);
+            }
             else
             {
                 return dtConverter.ReadJson(reader, objectType, existingValue, serializer);

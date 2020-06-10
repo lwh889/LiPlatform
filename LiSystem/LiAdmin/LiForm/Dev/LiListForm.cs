@@ -34,6 +34,8 @@ using LiContexts;
 using LiModel.LiEnum;
 using LiControl.Util;
 using LiHttp.RequestParam;
+using LiModel.Basic;
+using LiModel.LiTable;
 
 namespace LiForm.Dev
 {
@@ -65,12 +67,6 @@ namespace LiForm.Dev
         /// </summary>
         private Dictionary<string, GridColumn> _liGridColumnDict = new Dictionary<string, GridColumn>();
 
-
-        /// <summary>
-        /// 字段列表
-        /// </summary>
-        //private Dictionary<string, string> _liFieldName = new Dictionary<string, string>();
-
         /// <summary>
         /// 按钮
         /// </summary>
@@ -90,7 +86,6 @@ namespace LiForm.Dev
         /// 列表列
         /// </summary>
         public Dictionary<string, GridColumn> liGridColumnDict { set { _liGridColumnDict = value; } get { return _liGridColumnDict; } }
-        //public Dictionary<string, string> liFieldName { set { _liFieldName = value; } get { return _liFieldName; } }
 
         /// <summary>
         /// 列表按钮
@@ -118,7 +113,7 @@ namespace LiForm.Dev
         /// </summary>
         private Dictionary<string, Control> liQuickQueryControlDict = new Dictionary<string, Control>();
 
-        public ComponentResourceManager resources = new ComponentResourceManager(typeof(LiListForm));
+        public ComponentResourceManager resources = new ComponentResourceManager(typeof(LiListForm3));
 
         private QuerySchemeModel _currentQuerySchemeModel;
         //当前的查询方案
@@ -157,6 +152,16 @@ namespace LiForm.Dev
         public FormModel formModel { set; get; }
 
         /// <summary>
+        /// 主表信息
+        /// </summary>
+        public TableModel tableModel { set; get; }
+
+        /// <summary>
+        /// 所有表信息
+        /// </summary>
+        public List<TableModel> tableModelList { set; get; }
+
+        /// <summary>
         /// 主表名
         /// </summary>
         public string mainTableName { set; get; }
@@ -185,11 +190,15 @@ namespace LiForm.Dev
             }
         }
 
-        public LiListForm(FormModel formModel)
+        public LiListForm(FormModel formModel, TableModel tableModel, List<TableModel> tableModelList)
         {
             InitializeComponent();
 
             this.formModel = formModel;
+
+            this.tableModel = tableModel;
+
+            this.tableModelList = tableModelList;
 
             FormUtil.setRibbon(this.ribbon);
 
@@ -234,21 +243,14 @@ namespace LiForm.Dev
 
         public void InitMainTableName()
         {
-            foreach (PanelModel panelModel in formModel.panels)
-            {
-                if (panelModel.type == "Basic")
-                {
-                    primaryFieldName = string.Format("Li{0}_{1}", panelModel.tableName, formModel.keyFieldName);
-                    mainTableName = panelModel.tableName;
-                    return;
-                }
-            }
+            primaryFieldName = string.Format("Li{0}_{1}", tableModel.tableName, tableModel.keyName);
+            mainTableName = tableModel.tableName;
         }
 
         public void InitGridColumn()
         {
-            FieldModel.InitDataSource(formModel);
-            EntityModel.InitDataSource(formModel);
+            FieldModel.InitDataSource(tableModel,tableModelList);
+            EntityModel.InitDataSource(tableModel, tableModelList);
 
             GridColumn gridColumnSel = new DevExpress.XtraGrid.Columns.GridColumn();
             gridColumnSel.Caption = "选择";
@@ -260,39 +262,35 @@ namespace LiForm.Dev
             gridColumnSel.OptionsColumn.AllowEdit = true;
 
             liGridColumnDict.Add("sel", gridColumnSel);
-
-            foreach (PanelModel panelModel in formModel.panels)
+            foreach (TableModel tableModel in tableModelList)
             {
-                foreach (ControlGroupModel controlGroupModel in panelModel.controlGroups)
+                foreach (ColumnModel columnModel in tableModel.datas)
                 {
-                    foreach (ControlModel control in controlGroupModel.controls)
+                    if (columnModel.columnType == ColumnType.Collection) continue;
+
+                    GridColumn gridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+                    gridColumn.Caption = columnModel.columnAbbName;
+                    switch (columnModel.controlType)
                     {
-                        FieldModel fieldModelTemp = new FieldModel();
-
-                        GridColumn gridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-                        gridColumn.Caption = control.text;
-                        switch (control.controltype)
-                        {
-                            case ControlType.StatusEdit:
-                            case ControlType.GridLookUpEditComboBox:
-                                gridColumn.Name = string.Format("Li{0}{1}_GridColumn_Name", panelModel.tableName, control.name);
-                                gridColumn.FieldName = string.Format("Li{0}_{1}_Name", panelModel.tableName, control.name);
-                                break;
-                            default:
-                                gridColumn.Name = string.Format("Li{0}{1}_GridColumn", panelModel.tableName, control.name);
-                                gridColumn.FieldName = string.Format("Li{0}_{1}", panelModel.tableName, control.name);
-                                break;
-                        }
-                        gridColumn.Visible = control.bVisibleInList;
-                        gridColumn.VisibleIndex = control.bVisibleInList ? control.colIndex : -1;
-                        gridColumn.Width = control.width;
-                        gridColumn.OptionsColumn.AllowEdit = false;
-
-                        gridColumn.Tag = control;
-
-                        liGridColumnDict.Add(control.name, gridColumn);
-
+                        case ControlType.StatusEdit:
+                        case ControlType.GridLookUpEditComboBox:
+                            gridColumn.Name = string.Format("Li{0}{1}_GridColumn_Name", tableModel.tableName, columnModel.columnName);
+                            gridColumn.FieldName = string.Format("Li{0}_{1}_Name", tableModel.tableName, columnModel.columnName);
+                            break;
+                        default:
+                            gridColumn.Name = string.Format("Li{0}{1}_GridColumn", tableModel.tableName, columnModel.columnName);
+                            gridColumn.FieldName = string.Format("Li{0}_{1}", tableModel.tableName, columnModel.columnName);
+                            break;
                     }
+                    gridColumn.Visible = columnModel.bDisplayColumn;
+                    gridColumn.VisibleIndex = columnModel.bDisplayColumn ? columnModel.columnOrder : -1;
+                    gridColumn.Width = columnModel.columnWidth;
+                    gridColumn.OptionsColumn.AllowEdit = false;
+
+                    gridColumn.Tag = columnModel;
+
+                    liGridColumnDict.Add(gridColumn.FieldName, gridColumn);
+
                 }
             }
         }
@@ -324,7 +322,7 @@ namespace LiForm.Dev
             showGridColumnList.Add(gc);
             foreach (FieldModel fieldModel in fieldModels)
             {
-                gc = liGridColumnDict[fieldModel.fieldName];
+                gc = liGridColumnDict[fieldModel.columnFieldName];
                 if (!fieldModel.bColumnDisplay) continue;
 
                 gc.VisibleIndex = iRow++;

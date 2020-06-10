@@ -97,9 +97,19 @@ namespace LiModel.Basic
         public string columnType { set; get; }
 
         /// <summary>
+        /// 控件类型
+        /// </summary>
+        public string controlType { set; get; }
+
+        /// <summary>
         /// 长度
         /// </summary>
         public int length { set; get; }
+
+        /// <summary>
+        /// 宽度
+        /// </summary>
+        public int columnWidth { set; get; }
 
         /// <summary>
         /// 是否主键
@@ -170,6 +180,36 @@ namespace LiModel.Basic
         /// 是否显示
         /// </summary>
         public bool bVisible { set; get; }
+
+        /// <summary>
+        /// 基础档案类型
+        /// </summary>
+        public string basicInfoType { set; get; }
+
+        /// <summary>
+        /// 字典类型
+        /// </summary>
+        public string dictInfoType { set; get; }
+
+        /// <summary>
+        /// 基础档案显示属性
+        /// </summary>
+        public string basicInfoShowFieldName { set; get; }
+
+        /// <summary>
+        /// 基础档案关联字段名
+        /// </summary>
+        public string basicInfoRelationFieldName { set; get; }
+
+        /// <summary>
+        /// 基础档案主键字段
+        /// </summary>
+        public string basicInfoKeyFieldName { set; get; }
+
+        /// <summary>
+        /// 显示配置
+        /// </summary>
+        public string gridlookUpEditShowModelJson { set; get; }
 
         private DateTime _modifyDate;
 

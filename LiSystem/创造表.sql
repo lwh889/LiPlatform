@@ -58,6 +58,15 @@ begin
 	declare @bIsNull bit
 	declare @defaultVaule nvarchar(4000)
 	declare @columnScale int
+	
+	declare @columnWidth int
+	declare @basicInfoType nvarchar(50) 
+	declare @dictInfoType nvarchar(50) 
+	declare @basicInfoShowFieldName nvarchar(50) 
+	declare @basicInfoRelationFieldName nvarchar(50) 
+	declare @basicInfoKeyFieldName nvarchar(50)
+	declare @gridlookUpEditShowModelJson nvarchar(4000)
+
 	--
 
 	--表信息
@@ -153,9 +162,16 @@ begin
 		set @ModelSql = @ModelSql + ' if not exists (select 1 from ColumnInfo where fid = @tableId and columnName = ''' + @primaryKeyName + ''' )
 							BEGIN
 							--relationshipType要为0
-							insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+							insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName
+							,basicInfoType,dictInfoType,basicInfoShowFieldName,basicInfoRelationFieldName,basicInfoKeyFieldName,columnWidth,controlType,gridlookUpEditShowModelJson) 
 							select @tableId, ''' + @primaryKeyName + ''',''主键'',''' + @primaryKeyType + ''',9,1,0,0,' + @databaseGeneratedType + ',null,0,null
-							END'
+							null,null,null,null,null,null,''Key'',null
+							END
+							ELSE
+							BEGIN
+							update ColumnInfo set controlType = ''Key''  where fid =  @tableId  and columnName = ''' + @primaryKeyName + '''
+							END
+							'
 
 		if(@keyType = 'Identity')
 		begin
@@ -171,9 +187,15 @@ begin
 			set @ModelSql = @ModelSql + ' if not exists (select 1 from ColumnInfo where fid = @tableId and columnName = ''ParentID'' )
 								BEGIN
 								--relationshipType要为0
-								insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+								insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName
+								,basicInfoType,dictInfoType,basicInfoShowFieldName,basicInfoRelationFieldName,basicInfoKeyFieldName,columnWidth,controlType,gridlookUpEditShowModelJson)  
 								select @tableId, ''ParentID'',''树形父键'',''' + @primaryKeyType + ''',9,0,0,0,0,null,0,null
+								null,null,null,null,null,null,''Key'',null
 
+								END
+								ELSE
+								BEGIN
+								update ColumnInfo set controlType = ''Key''  where fid =  @tableId  and columnName = ''ParentID''
 								END'
 
 			if(@keyType = 'Identity')
@@ -204,8 +226,15 @@ begin
 			set @ModelSql = @ModelSql + ' if not exists (select 1 from ColumnInfo where fid = @tableId and columnName = ''' + @foreigntKeyName + ''' )
 							BEGIN
 							--relationshipType要为0
-							insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+							insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName
+							,basicInfoType,dictInfoType,basicInfoShowFieldName,basicInfoRelationFieldName,basicInfoKeyFieldName,columnWidth,controlType,gridlookUpEditShowModelJson)  
 							select @tableId,''' + @foreigntKeyName + ''',''外键'',''' + @foreigntKeyType + ''',9,0,1,0,'+ @foreigntDatabaseGeneratedType + ',''' + @parentPrimaryKeyName + ''',' + @parentDatabaseGeneratedType + ',''' + @parentTableName + '''
+							null,null,null,null,null,null,''Key'',null
+							
+							END
+							ELSE
+							BEGIN
+							update ColumnInfo set controlType = ''Key'' where fid =  @tableId  and columnName = ''' + @foreigntKeyName + '''
 							END'
 
 			set @InsertSql = @InsertSql + @foreigntKeyName 
@@ -227,8 +256,15 @@ begin
 			begin
 				set @ModelSql = @ModelSql + ' if not exists (select 1 from ColumnInfo where fid = @tableId and columnName = ''' + @childEntityColumnNames + ''' )
 				BEGIN
-				insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+				insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName
+				,basicInfoType,dictInfoType,basicInfoShowFieldName,basicInfoRelationFieldName,basicInfoKeyFieldName,columnWidth,controlType,gridlookUpEditShowModelJson)  
 				select @tableId,''' + @childEntityColumnNames + ''',''数据集'',''collection'', -1,0,0,2,0,null,0,null
+				null,null,null,null,null,null,''Collection'',null
+				
+				END
+				ELSE
+				BEGIN
+				update ColumnInfo set controlType = ''Collection'' where fid =  @tableId  and columnName = ''' + @childEntityColumnNames + '''
 				END'
 			end
 			else
@@ -239,8 +275,15 @@ begin
 					set @TempChildEntityColumnNames =left(@childEntityColumnNames,charindex(',',@childEntityColumnNames)-1)
 					set @ModelSql = @ModelSql + ' if not exists (select 1 from ColumnInfo where fid = @tableId and columnName = ''' + @TempChildEntityColumnNames + ''' )
 					BEGIN
-					insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+					insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName
+					,basicInfoType,dictInfoType,basicInfoShowFieldName,basicInfoRelationFieldName,basicInfoKeyFieldName,columnWidth,controlType,gridlookUpEditShowModelJson)  
 					select @tableId,''' + @TempChildEntityColumnNames + ''',''数据集'',''collection'', -1,0,0,2,0,null,0,null
+					null,null,null,null,null,null,''Collection'',null
+				
+					END
+					ELSE
+					BEGIN
+					update ColumnInfo set controlType = ''Collection'' where fid =  @tableId  and columnName = ''' + @TempChildEntityColumnNames + '''
 					END'
 
 					set @childEntityColumnNames=right(@childEntityColumnNames,len(@childEntityColumnNames)-charindex(',',@childEntityColumnNames))
@@ -248,8 +291,15 @@ begin
 					begin
 						set @ModelSql = @ModelSql + ' if not exists (select 1 from ColumnInfo where fid = @tableId and columnName = ''' + @childEntityColumnNames + ''' )
 						BEGIN
-						insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+						insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName
+						,basicInfoType,dictInfoType,basicInfoShowFieldName,basicInfoRelationFieldName,basicInfoKeyFieldName,columnWidth,controlType,gridlookUpEditShowModelJson)  
 						select @tableId,''' + @childEntityColumnNames + ''',''数据集'',''collection'', -1,0,0,2,0,null,0,null
+						null,null,null,null,null,null,''Collection'',null
+				
+						END
+						ELSE
+						BEGIN
+						update ColumnInfo set controlType = ''Collection'' where fid =  @tableId  and columnName = ''' + @childEntityColumnNames + '''
 						END'
 					end
 
@@ -264,6 +314,11 @@ begin
 		END
 
 		select A4.name columnName,A4.text columnDesc,A4.controltype columnType,A4.length columnLength,A4.bIsNull,A4.defaultVaule,A4.scale columnScale
+		,A4.width columnWidth,A4.basicInfoKey basicInfoType,A4.dictInfoType
+		,case when A4.controltype = 'GridLookUpEditRefAssist' then A4.basicInfoAssistFieldName else A4.basicInfoShowFieldName end basicInfoShowFieldName
+		,case when A4.controltype = 'GridLookUpEditRefAssist' then A4.basicInfoAssistType else A4.basicInfoTableKey end basicInfoRelationFieldName
+		,case when A4.controltype = 'GridLookUpEditRefAssist' then A4.basicInfoAssistType else A4.basicInfoTableKey end basicInfoKeyFieldName
+		,A4.gridlookUpEditShowModelJson
 		into #TempColumn
 		from LiForm A1 
 		left join LiPanel A2 on A1.id = A2.formModelId 
@@ -271,19 +326,25 @@ begin
 		left join LiControl A4 on A3.id = A4.controlGroupId
 		where A2.id = @panelId
 
-		declare licursorColumn cursor for select columnName,columnDesc,columnType,columnLength,bIsNull,defaultVaule,columnScale from #TempColumn 
+		declare licursorColumn cursor for select columnName,columnDesc,columnType,columnLength,bIsNull,defaultVaule,columnScale
+													,columnWidth,basicInfoType,dictInfoType,basicInfoShowFieldName
+													,basicInfoRelationFieldName,basicInfoKeyFieldName,gridlookUpEditShowModelJson from #TempColumn 
 		open licursorColumn
 		fetch next from licursorColumn into @columnName,@columnDesc,@columnType,@columnLength,@bIsNull,@defaultVaule,@columnScale
+												,@columnWidth,@basicInfoType,@dictInfoType,@basicInfoShowFieldName
+													,@basicInfoRelationFieldName,@basicInfoKeyFieldName,@gridlookUpEditShowModelJson
 		while(@@FETCH_STATUS = 0)
 		begin
-		if(@columnType is not null and @columnType <> 'GridLookUpEditRefAssist' )
+		if(@columnType is not null  )
 		begin
-			set @InsertSql = @InsertSql + @columnName
-			set @UpdateSql = @UpdateSql + ' if not exists( select 1 from ' + @dataBaseName + '.dbo.syscolumns where id= object_id(''' + @dataBaseName + '.dbo.' + @tableName + ''') and name='''+ @columnName + ''') BEGIN  ALTER TABLE ' + @dataBaseName + '.dbo.' + @tableName + ' ADD ' + @columnName
-
+		
 			declare @columnType_ModelSql nvarchar(50)
 			declare @length_ModelSql nvarchar(20)
 			set @columnType_ModelSql = ''
+			
+			set @InsertSql = @InsertSql + @columnName
+			set @UpdateSql = @UpdateSql + ' if not exists( select 1 from ' + @dataBaseName + '.dbo.syscolumns where id= object_id(''' + @dataBaseName + '.dbo.' + @tableName + ''') and name='''+ @columnName + ''') BEGIN  ALTER TABLE ' + @dataBaseName + '.dbo.' + @tableName + ' ADD ' + @columnName
+
 
 			if(@columnType = 'IntEdit')
 			begin
@@ -342,7 +403,15 @@ begin
 				set @length_ModelSql = '0'
 			end
 			
-			if(@columnType = 'GridLookUpEditComboBox' or @columnType = 'GridLookUpEditRef' or @columnType = 'TreeListLookUpEdit' or @columnType = 'StatusEdit')
+			if(@columnType = 'GridLookUpEditComboBox'or @columnType = 'StatusEdit')
+			begin
+				set @InsertSql = @InsertSql + ' nvarchar(255)'
+				set @UpdateSql = @UpdateSql + ' nvarchar(255)'
+				set @columnType_ModelSql = 'nvarchar'
+				set @length_ModelSql = '255'
+			end
+			
+			if( @columnType = 'GridLookUpEditRef' or @columnType = 'TreeListLookUpEdit' or @columnType = 'GridLookUpEditRefAssist' )
 			begin
 				set @InsertSql = @InsertSql + ' nvarchar(255)'
 				set @UpdateSql = @UpdateSql + ' nvarchar(255)'
@@ -366,15 +435,29 @@ begin
 			set @InsertSql = @InsertSql + ','
 			set @UpdateSql = @UpdateSql + ' END'
 
-			
 			set @ModelSql = @ModelSql + ' if not exists (select 1 from ColumnInfo where fid = @tableId and columnName = ''' + @columnName + ''' ) 
 										begin
-										insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+										insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName
+										,basicInfoType,dictInfoType,basicInfoShowFieldName,basicInfoRelationFieldName,basicInfoKeyFieldName,columnWidth,controlType,gridlookUpEditShowModelJson
+										) 
 										select @tableId, ''' + @columnName + ''',''' + @columnDesc + ''', ''' + @columnType_ModelSql + ''',' + @length_ModelSql + ',0,0,0,0,null,0,null
-										end '
+										, ''' + ISNULL(@basicInfoType,'') + ''', ''' + ISNULL(@dictInfoType,'') + ''', ''' + ISNULL(@basicInfoShowFieldName,'') + ''', ''' + ISNULL(@basicInfoRelationFieldName,'') + ''', ''' + ISNULL(@basicInfoKeyFieldName,'') + ''', ' + CAST(@columnWidth as nvarchar(20)) + ', ''' + ISNULL(@columnType,'') + ''', ''' + ISNULL(@gridlookUpEditShowModelJson,'') + '''
+										end 
+										
+										else
+										
+										begin
+											update ColumnInfo set columnAbbName = ''' + @columnDesc + ''',columnType = ''' + @columnType_ModelSql + ''',length = ' + @length_ModelSql + ',
+											basicInfoType = ''' + ISNULL(@basicInfoType,'') + ''',dictInfoType=''' + ISNULL(@dictInfoType,'') + ''',basicInfoShowFieldName=''' + ISNULL(@basicInfoShowFieldName,'') + ''',basicInfoRelationFieldName= ''' + ISNULL(@basicInfoRelationFieldName,'') + ''',
+											basicInfoKeyFieldName=''' + ISNULL(@basicInfoKeyFieldName,'') + ''',columnWidth=''' +  CAST(@columnWidth as nvarchar(20)) + ''',controlType=''' + ISNULL(@columnType,'') + ''',gridlookUpEditShowModelJson=''' + ISNULL(@gridlookUpEditShowModelJson,'') + '''
+											where fid =  @tableId  and columnName = ''' + @columnName + '''
+										end'
+
 			
 		end
 			fetch next from licursorColumn into @columnName,@columnDesc,@columnType,@columnLength,@bIsNull,@defaultVaule,@columnScale
+												,@columnWidth,@basicInfoType,@dictInfoType,@basicInfoShowFieldName
+													,@basicInfoRelationFieldName,@basicInfoKeyFieldName,@gridlookUpEditShowModelJson
 		end
 		close licursorColumn
 		Deallocate licursorColumn
@@ -390,82 +473,9 @@ begin
 	Deallocate licursor
 
 	set @SqlAll = @SqlAll + @ModelSql
-	insert ShowResult (resultText) values (@SqlAll)
+	insert ShowResult (resultText,dDate) values (@SqlAll,getdate())
 	print @SqlAll
 	exec( @SqlAll)
 
 
-	exec('
-	
-	--菜单
-	
-	create table #LiAdminMeum(
-		ID int not null,
-		Code nvarchar(30) not null,
-		Name nvarchar(30) not null,
-		isGroup bit not null,
-		isSystem bit default 0,
-		GroupId int not null,
-		ParentID int not null,
-		imageIndex int not null,
-		iOrder int not null
-	)
-
-	declare @menuCode nvarchar(50)
-	declare @menuParentId int
-	declare @menuId int
-	set @menuId = 0
-	set @menuParentId = 1
-
-	select @menuCode = [name] from LiForm where id = ' + @formId + '
-
-	select @menuId = Id from LiManageMeum where Code = @menuCode
-	
-	insert #LiAdminMeum ([ID],[Code],[Name],[isGroup],[isSystem],[GroupId],[ParentID],[imageIndex],[iOrder])
-	select [ID],[Code] + ''List'',[Name] + ''列表'',[isGroup],[isSystem],[GroupId],[ParentID],[imageIndex],[iOrder] from LiManageMeum where id=@menuId 
-		 
-	while(@menuId > 1)
-	begin
-		insert #LiAdminMeum ([ID],[Code],[Name],[isGroup],[isSystem],[GroupId],[ParentID],[imageIndex],[iOrder])
-		select [ID],[Code],[Name],[isGroup],[isSystem],[GroupId],[ParentID],[imageIndex],[iOrder] from LiManageMeum where id=@menuId 
-		 
-		select @menuId = ParentID from LiManageMeum where id=@menuId 
-	end
-
-	
-	declare licursorMenu cursor for select ID,Code from #LiAdminMeum order by ParentID
-	open licursorMenu
-	fetch next from licursorMenu into @menuId,@menuCode
-	while(@@FETCH_STATUS = 0)
-	begin
-	
-		 if not exists( select 1 from ' +@dataBaseName + '.dbo.LiAdminMeum where Code = @menuCode )
-		 begin
-			insert ' +@dataBaseName + '.dbo.LiAdminMeum ([Code],[Name],[isGroup],[isSystem],[GroupId],[ParentID],[imageIndex],[iOrder])
-			select [Code],[Name],[isGroup],[isSystem],[GroupId],@menuParentId,[imageIndex],[iOrder] from #LiAdminMeum where Code=@menuCode 
-			
-			 if exists( select 1 from #LiAdminMeum where [isGroup] = 1 and Code = @menuCode )
-			 begin
-				set @menuParentId = @@identity
-			 end
-
-		 end
-		 else
-		 begin
-			update ' +@dataBaseName + '.dbo.LiAdminMeum set [Code] = A.[Code],[Name] = A.[Name],[isGroup] = A.[isGroup],[isSystem] = A.[isSystem],[GroupId] = A.[GroupId],[imageIndex] = A.[imageIndex],[iOrder] = A.[iOrder]
-			from (select [Code],[Name],[isGroup],[isSystem],[GroupId],[ParentID],[imageIndex],[iOrder] from #LiAdminMeum where Code=@menuCode ) A where A.[Code] = ' +@dataBaseName + '.dbo.LiAdminMeum.[Code]
-			
-			if exists( select 1 from #LiAdminMeum where [isGroup] = 1 and Code = @menuCode )
-			begin
-			select @menuParentId = id from ' +@dataBaseName + '.dbo.LiAdminMeum where Code = @menuCode
-			end
-		 end
-		
-		fetch next from licursorMenu into @menuId,@menuCode
-
-	end
-	close licursorMenu
-	Deallocate licursorMenu
-	
-	')
 end

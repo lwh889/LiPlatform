@@ -1284,9 +1284,9 @@ namespace LiManage
         {
             Dictionary<string, object> paramDict  = new Dictionary<string,object>();
             paramDict.Add("formId", formModel.id);
-            LiContexts.LiContext.getHttpEntity("sp_CreateTable").execProcedureNoResult( paramDict);
+            LiContexts.LiContext.getHttpEntity("sp_DeployLiSystem").execProcedureNoResult( paramDict);
 
-            if (LiContexts.LiContext.getHttpEntity("sp_CreateTable").bSuccess)
+            if (LiContexts.LiContext.getHttpEntity("sp_DeployLiSystem").bSuccess)
             {
                 MessageUtil.Show("发布成功", "系统提示");
             }
@@ -1378,7 +1378,7 @@ namespace LiManage
                 DevControlUtil.addRowInGridView<ButtonModel>(buttonModel, gridControl4);
                 gridView4.RefreshData();
             }
-            else if (selectedGridRowData != null && selectedGridRowData.GetType().Name == "ListButtonModel")
+            else if (selectedGridRowData != null && selectedGridRowData.GetType().Name == "FormModel")
             {
                 if (formModel.listButtons == null) formModel.listButtons = new List<ListButtonModel>();
 
@@ -1659,6 +1659,96 @@ namespace LiManage
             addButton(ButtonType.BTNLAST);
         }
 
+        private void BtnListQuery_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNQUERY);
+        }
+
+        private void BtnListPreciseQuery_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNPRECISEQUERY);
+        }
+
+        private void BtnListRefresh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNREFRESH);
+        }
+
+        private void BtnListNew_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNNEW);
+        }
+
+        private void BtnListEdit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNEDIT);
+        }
+
+        private void BtnListDelete_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNDELETE);
+        }
+
+        private void BtnListSubmit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNSUBMIT);
+        }
+
+        private void BtnListUnSubmit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNUNSUBMIT);
+        }
+
+        private void BtnListAudit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNAUDIT);
+        }
+
+        private void BtnListUnAudit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNUNAUDIT);
+        }
+
+        private void BtnListExit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNEXIT);
+        }
+
+        private void BtnListSelectAll_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNSELECTALL);
+        }
+
+        private void BtnListReSelect_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNRESELECT);
+        }
+
+        private void BtnListCancelSelect_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNCANCELSELECT);
+        }
+
+        private void BtnU8Publish_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Dictionary<string, object> paramDict = new Dictionary<string, object>();
+            paramDict.Add("formId", formModel.id);
+            LiContexts.LiContext.getHttpEntity("sp_DeployU8").execProcedureNoResult(paramDict);
+
+            if (LiContexts.LiContext.getHttpEntity("sp_DeployU8").bSuccess)
+            {
+                MessageUtil.Show("发布成功", "系统提示");
+            }
+            else
+            {
+                MessageUtil.Show("发布失败:" + LiContexts.LiContext.getHttpEntity("sp_CreateTable").resultContent, "系统提示");
+            }
+        }
+
+        private void BtnListPushButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNPUSH);
+        }
     }
 
 

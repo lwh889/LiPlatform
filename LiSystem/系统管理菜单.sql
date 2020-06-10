@@ -25,6 +25,8 @@ select 'LiU8BasicInfoDesign','U8基础档案设计',1,1,3,0,3,3
 union all
 select 'LiSystemManage','系统管理',1,1,4,4,4,4
 union all
+select 'LiU8BasicInfoDesign','转换设计',1,1,5,0,5,5
+union all
 select 'LiDictDesign','数据字典设计',0,1,4,4,1,1
 union all
 select 'LiUsers','用户档案',0,1,4,4,2,2

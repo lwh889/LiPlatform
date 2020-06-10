@@ -32,13 +32,16 @@ namespace LiU8API.Util
                 case "MSXML2.IXMLDOMDocument2":
                     return  new DOMDocumentClass();
                 case "int":
-                    return default(int);
+                    int i = 0;
+                    return i;
                     break;
                 case "bool":
-                    return default(bool);
+                    bool b = false;
+                    return b;
                     break;
                 default:
-                    return default(string);
+                    string s = "";
+                    return s;
                     break;
             }
         }

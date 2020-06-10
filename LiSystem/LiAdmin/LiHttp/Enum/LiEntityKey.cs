@@ -44,6 +44,8 @@ namespace LiHttp.Enum
         public const string _FormModel = "form1";
         public static string FormModel { get { return _FormModel; } }
 
+        public const string _PushFormModel = "liPushForm";
+        public static string PushFormModel { get { return _PushFormModel; } }
 
 
         public const string _GeneralEvent = "liGeneralEvent";

@@ -10,6 +10,9 @@ namespace LiModel.LiConvert
 {
     public class ConvertSourceTypeModel : GridlookUpEditModel
     {
+        public const string System = "System";
+        public const string U8 = "U8";
+        public const string Excel = "Excel";
 
         public override List<string> getDisplayColumns()
         {
@@ -27,6 +30,7 @@ namespace LiModel.LiConvert
             {
                 _dataSource.Add(new GridlookUpEditModel() { code = "System", name = "本系统" });
                 _dataSource.Add(new GridlookUpEditModel() { code = "Excel", name = "Excel" });
+                _dataSource.Add(new GridlookUpEditModel() { code = "U8", name = "U8" });
             }
             return _dataSource;
         }

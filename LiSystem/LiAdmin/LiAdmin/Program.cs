@@ -20,13 +20,13 @@ namespace LiAdmin
 
             ImageUtil.loadAllImage();
 
-            //LiForm.LiLoginForm loginForm = new LiForm.LiLoginForm();
-            //while (DialogResult.Yes == loginForm.ShowDialog())
-            //{
-            //    Application.Run(new LiAdminForm());
-            //    return;
-            //}
-            Application.Run(new RibbonForm4());
+            LiForm.LiLoginForm loginForm = new LiForm.LiLoginForm();
+            while (DialogResult.Yes == loginForm.ShowDialog())
+            {
+                Application.Run(new LiAdminForm());
+                return;
+            }
+            //Application.Run(new RibbonForm4());
 
         }
 

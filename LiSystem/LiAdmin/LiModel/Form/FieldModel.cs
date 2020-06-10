@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using LiModel.LiAttribute;
 using System.Windows.Forms;
 using LiModel.LiEnum;
+using LiModel.Basic;
+using LiModel.LiTable;
 
 namespace LiModel.Form
 {
@@ -13,6 +15,69 @@ namespace LiModel.Form
     {
         public static Dictionary<string, object> dataSourceDict = new Dictionary<string, object>();
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tableModel">主表</param>
+        /// <param name="tableModels">所有表信息</param>
+        public static void InitDataSource(TableModel mainTableModel,List<TableModel> tableModels)
+        {
+            FieldModel.clearDataSource(mainTableModel.entityKey);
+
+            foreach(TableModel tableModel in tableModels)
+            {
+                foreach(ColumnModel columnModel in tableModel.datas)
+                {
+                    Console.WriteLine(columnModel.controlType);
+                    if (columnModel.columnType == ColumnType.Collection) continue;
+
+                    FieldModel fieldModelTemp = new FieldModel();
+                    switch (columnModel.controlType)
+                    {
+                        case ControlType.StatusEdit:
+                        case ControlType.GridLookUpEditComboBox:
+                            fieldModelTemp.columnFieldName = string.Format("Li{0}_{1}_Name", tableModel.tableName, columnModel.columnName);
+                            break;
+                        default:
+                            fieldModelTemp.columnFieldName = string.Format("Li{0}_{1}", tableModel.tableName, columnModel.columnName);
+                            break;
+                    }
+
+                    fieldModelTemp.fieldName = columnModel.columnName;
+                    fieldModelTemp.code = fieldModelTemp.columnFieldName;
+                    fieldModelTemp.name = columnModel.columnAbbName;
+                    fieldModelTemp.sEntityCode = tableModel.tableName;
+                    fieldModelTemp.sEntityName = tableModel.tableAbbName;
+                    fieldModelTemp.iColumnWidth = columnModel.columnWidth;
+                    fieldModelTemp.bColumnDisplay = columnModel.bDisplayColumn;
+                    fieldModelTemp.bQuery = false;
+                    fieldModelTemp.bRange = false;
+                    switch (columnModel.controlType)
+                    {
+                        case ControlType.VoucherCodeEdit:
+                        case ControlType.GridLookUpEditRefAssist:
+                            fieldModelTemp.sColumnControlType = ControlType.TextEdit;
+                            break;
+                        default:
+                            fieldModelTemp.sColumnControlType = columnModel.controlType;
+                            break;
+                    }
+                    fieldModelTemp.sRefTypeCode = "";
+                    fieldModelTemp.sJudgeSymbol = JudgmentSymbol.Equal;
+
+                    fieldModelTemp.basicInfoKey = columnModel.basicInfoType;
+                    fieldModelTemp.dictInfoType = columnModel.dictInfoType;
+                    fieldModelTemp.gridlookUpEditShowModelJson = columnModel.gridlookUpEditShowModelJson;
+
+                    FieldModel.AddItemInDataSource(tableModel.entityKey, fieldModelTemp);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 准备弃用
+        /// </summary>
+        /// <param name="formModel"></param>
         public static void InitDataSource( FormModel formModel)
         {
             FieldModel.clearDataSource(formModel.name);

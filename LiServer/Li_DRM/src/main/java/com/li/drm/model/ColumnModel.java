@@ -39,6 +39,11 @@ public class ColumnModel {
     private String columnType;
 
     /**
+     * 控件类型
+     */
+    private String controlType;
+
+    /**
      * 长度
      */
     private Integer length;
@@ -84,6 +89,11 @@ public class ColumnModel {
     private Integer columnOrder;
 
     /**
+     * 列宽度
+     */
+    private Integer columnWidth;
+
+    /**
      * 列小数位
      */
     private Integer columnScale;
@@ -113,6 +123,35 @@ public class ColumnModel {
      */
     private Boolean bVisible;
 
+    /**
+     * 基础档案类型
+     */
+    private String basicInfoType;
+
+    /**
+     * 字典类型
+     */
+    private String dictInfoType;
+
+    /**
+     * 基础档案显示属性
+     */
+    private String basicInfoShowFieldName;
+
+    /**
+     * 基础档案关联字段名
+     */
+    private String basicInfoRelationFieldName;
+
+    /**
+     * 基础档案关联字段名
+     */
+    private String basicInfoKeyFieldName;
+
+    /**
+     * 显示配置
+     */
+    private String gridlookUpEditShowModelJson;
     /**
      * 修改时间
      */

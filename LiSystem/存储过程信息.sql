@@ -35,6 +35,10 @@ insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,systemCode,mo
 select 5,'LiSystem','sp_CreateTable','sp_CreateTable','LiSystem',GETDATE()
 insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,systemCode,modifyDate)
 select 6,'LiSystem','sp_turnPage','sp_turnPage','LiSystem',GETDATE()
+insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,systemCode,modifyDate)
+select 7,'LiSystem','sp_DeployLiSystem','sp_DeployLiSystem','LiSystem',GETDATE()
+insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,systemCode,modifyDate)
+select 8,'LiSystem','sp_DeployU8','sp_DeployU8','LiSystem',GETDATE()
 SET IDENTITY_Insert ProcedureInfo OFF
 
 
@@ -88,3 +92,10 @@ union all
 select 6,'voucherId', 'nvarchar', 50,GETDATE()
 union all
 select 6,'systemCode', 'nvarchar', 10,GETDATE()
+
+insert into ParamInfo(fid, paramName, paramType, paramLength, modifyDate)
+select 7,'formId', 'int', 9,GETDATE()
+
+insert into ParamInfo(fid, paramName, paramType, paramLength, modifyDate)
+select 8,'formId', 'int', 9,GETDATE()
+

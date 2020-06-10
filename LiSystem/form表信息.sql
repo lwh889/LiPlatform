@@ -19,13 +19,14 @@ create table TableInfo(
 	modifyDate datetime,	--修改时间
 	createDate datetime default getdate()
 )
-
+select * from LiControl 
 create table ColumnInfo(
 	id int identity(1,1) primary key,
 	fid int REFERENCES TableInfo(id),
 	columnName nvarchar(50),	--列名
 	columnAbbName nvarchar(50),	--列简称
 	columnType nvarchar(50),	--列类型
+	controlType nvarchar(50),	--控件类型
 	length int default 0,	--数据长度
 	primaryKey bit default 0,	--主键
 	foreignKey bit default 0,	--外键
@@ -40,15 +41,31 @@ create table ColumnInfo(
 	columnScale int default 0, --列小数位
 	columnIsNull bit default 1,--列是否为空
 	columnDefaultValue nvarchar(max),--列默认值
-	
+	columnWidth int default 0,--列宽度
+
 	bSearchColumns bit default 0,	--该列是否可搜索
 	bDisplayColumn bit default 1,	--该列是否显示
 
 	bVisible bit default 1, --是否显示
-
+	
+	basicInfoType nvarchar(50),	--基础档案类型
+	dictInfoType nvarchar(50),	--字典类型
+	basicInfoShowFieldName nvarchar(50),	--基础档案显示属性
+	basicInfoRelationFieldName nvarchar(50),	--基础档案关联字段名
+	basicInfoKeyFieldName nvarchar(50),	--基础档案主键字段
+	gridlookUpEditShowModelJson nvarchar(4000),
 	modifyDate datetime,	--修改时间
 	createDate datetime default getdate()
 )
+
+--alter table ColumnInfo add basicInfoType nvarchar(50)	--基础档案类型
+--alter table ColumnInfo add dictInfoType nvarchar(50)
+--alter table ColumnInfo add basicInfoShowFieldName nvarchar(50)
+--alter table ColumnInfo add basicInfoRelationFieldName nvarchar(50)
+--alter table ColumnInfo add basicInfoKeyFieldName nvarchar(50)
+--alter table ColumnInfo add controlType nvarchar(50)
+--alter table ColumnInfo add columnWidth int default 0
+--alter table ColumnInfo add gridlookUpEditShowModelJson nvarchar(4000)
 
 SET IDENTITY_Insert TableInfo ON
 insert into TableInfo (id,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
@@ -195,6 +212,14 @@ insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityCo
 select 56,'LiSystem','Basic','liU8Voucher','slave','fields','LiU8Field','liU8Field','单据字段', null,'JsonModel','id',null,getdate()
 insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
 select 57,'LiSystem','Basic','liU8Voucher','slave','contexts','LiU8EnvContext','iU8EnvContext','单据字段', null,'JsonModel','id',null,getdate()
+
+
+insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
+select 58,'LiSystem','Basic','liPushForm','master',null,'LiPushForm','liPushForm','下推表头', null,'JsonModel','id',null,getdate()
+insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
+select 59,'LiSystem','Basic','liPushForm','slave','pushListbuttons','LiPushListButton','liPushListButton','列表按钮', null,'JsonModel','id',null,getdate()
+insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
+select 60,'LiSystem','Basic','liPushForm','slave','pushEvents','LiPushEvent','liPushEvent','下推事件', null,'JsonModel','id',null,getdate()
 
 
 SET IDENTITY_Insert TableInfo OFF
@@ -606,6 +631,22 @@ union all
 select 15, 'bVisible','是否显示', 'bit',50,0,0,0,0,null,0,null
 union all
 select 15, 'modifyDate','修改时间', 'dateTime',50,0,0,0,0,null,0,null
+union all
+select 15, 'basicInfoType','基础档案类型', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 15, 'dictInfoType','字典类型', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 15, 'basicInfoShowFieldName','基础档案显示属性', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 15, 'basicInfoRelationFieldName','基础档案关联字段名', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 15, 'basicInfoKeyFieldName','基础档案主键字段', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 15, 'columnWidth','列宽度', 'int',9,0,0,0,0,null,0,null
+union all
+select 15, 'controlType','控件类型', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 15, 'gridlookUpEditShowModelJson','显示配置', 'narchar',4000,0,0,0,0,null,0,null
 
 
 --LiAdminMeum
@@ -891,12 +932,17 @@ select 30, 'convertRelation','转换关系', 'narchar',20,0,0,0,0,null,0,null
 union all
 select 30, 'convertRelationField','转换关系字段', 'narchar',100,0,0,0,0,null,0,null
 union all
+select 30, 'convertDestHeadName','目标表头名称', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 30, 'convertDestBodyName','目标表体名称', 'narchar',50,0,0,0,0,null,0,null
+union all
 select 30, 'datas','数据集','collection', -1,0,0,2,0,null,0,null
 union all
 select 30, 'queryFields','数据集','collection', -1,0,0,2,0,null,0,null
 
 
 --LiConvertBody
+
 insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
 select 31, 'id','主键','int',9,1,0,0,1,null,0,null
 union all
@@ -919,13 +965,23 @@ union all
 select 31, 'refBasicInfoType','引用基础档案', 'narchar',30,0,0,0,0,null,0,null
 union all
 select 31, 'refBasicInfoField','引用对照字段', 'narchar',100,0,0,0,0,null,0,null
+union all
+select 31, 'refBasicInfoValueField','引用对照字段', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 31, 'bDefault','是否使用默认值', 'bit',10,0,0,0,0,null,0,null
+union all
+select 31, 'defaultValue','默认值字段', 'narchar',4000,0,0,0,0,null,0,null
 
-
+--select * from LiField
 
 insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
 select 32, 'id','主键','int',9,1,0,0,1,null,0,null
 union all
 select 32, 'querySchemeId','外键','int',9,0,1,0,0,'id',1,'LiQueryScheme'
+union all
+select 32, 'code','列表字段名', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 32, 'name','列表字段名称', 'narchar',30,0,0,0,0,null,0,null
 union all
 select 32, 'convertId','外键','int',9,0,1,0,0,'id',1,'LiConvertHead'
 union all
@@ -1350,6 +1406,8 @@ select 52, 'systemDataBaseName','系统数据库', 'narchar',20,0,0,0,0,null,0,null
 union all
 select 52, 'systemName','系统名称', 'narchar',30,0,0,0,0,null,0,null
 union all
+select 52, 'systemU8MenuId','系统U8菜单ID', 'narchar',10,0,0,0,0,null,0,null
+union all
 select 52, 'systemTitle','系统标题', 'narchar',50,0,0,0,0,null,0,null
 union all
 select 52, 'companyName','公司名称', 'narchar',50,0,0,0,0,null,0,null
@@ -1410,6 +1468,10 @@ union all
 select 55, 'paramBoType','是否BO表头', 'nvarchar',50,0,0,0,0,null,0,null
 union all
 select 55, 'paramDefaultValue','默认值', 'narchar',200,0,0,0,0,null,0,null
+union all
+select 55, 'parambID','是否是ID字段名', 'bit',1,0,0,0,0,null,0,null
+union all
+select 55, 'parambCode','是否是Code字段名', 'bit',1,0,0,0,0,null,0,null
 
 
 --LiU8Field
@@ -1452,6 +1514,64 @@ union all
 select 57, 'contextType','上下文类型', 'narchar',50,0,0,0,0,null,0,null
 union all
 select 57, 'contextDefaultValue','默认值', 'narchar',200,0,0,0,0,null,0,null
+
+
+--LiPushForm
+insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+select 58, 'id','主键','int',9,1,0,0,1,null,0,null
+union all
+select 58, 'name','名称', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 58, 'text','标题', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 58, 'height','高度', 'int',9,0,0,0,0,null,0,null
+union all
+select 58, 'width','宽度', 'int',9,0,0,0,0,null,0,null
+union all
+select 58, 'systemCode','系统代码', 'narchar',20,0,0,0,0,null,0,null
+union all
+select 58, 'pushEvents','数据集','collection', -1,0,0,2,0,null,0,null
+union all
+select 58, 'pushListButtons','数据集','collection', -1,0,0,2,0,null,0,null
+
+
+
+--LiPushListButton
+insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+select 59, 'id','主键','int',9,1,0,0,1,null,0,null
+union all
+select 59, 'pushFormId','外键','int',9,0,1,0,0,'id',1,'LiPushForm'
+union all
+select 59, 'iIndex','顺序', 'int',9,0,0,0,0,null,0,null
+union all
+select 59, 'caption','标题', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 59, 'name','名称', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 59, 'iconsize','图标大小', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 59, 'categoryGuid','类别ID', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 59, 'icon','图标名称', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 59, 'voucherStatus','单据状态', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 59, 'pushEvents','数据集','collection', -1,0,0,2,0,null,0,null
+
+--LiPushEvent
+insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+select 60, 'id','主键','int',9,1,0,0,1,null,0,null
+union all
+select 60, 'pushFormId','外键','int',9,0,1,0,0,'id',1,'LiPushForm'
+union all
+select 60, 'pushListButtonId','外键','int',9,0,1,0,0,'id',1,'LiPushListButton'
+
+union all
+select 60, 'fullName','全名称', 'narchar',300,0,0,0,0,null,0,null
+union all
+select 60, 'assemblyName','程序集', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 60, 'eventMemo','全名称', 'narchar',300,0,0,0,0,null,0,null
 
 
 GO

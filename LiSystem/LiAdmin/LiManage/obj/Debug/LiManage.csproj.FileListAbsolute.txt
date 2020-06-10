@@ -255,3 +255,4 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\Interop.TLI.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\Interop.VBAsyncPluginInvoker.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\UFIDA.U8.U8APIFramework.dll.config
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\UFSoft.AIF.MOM.Common.MessageObjectModel.xml
+C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiManagePushDesign.resources

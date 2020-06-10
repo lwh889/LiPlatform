@@ -344,7 +344,7 @@ namespace LiForm.Dev
         /// <summary>
         /// 设置单据状态
         /// </summary>
-        /// <param name="voucherStatus"></param>
+        /// <param name="voucherStatus">状态名称statusName</param>
         public void setVoucherStatus(string voucherStatus, string previousVoucherStatus = "")
         {
             if (!string.IsNullOrEmpty(voucherStatus))
@@ -385,6 +385,48 @@ namespace LiForm.Dev
                     break;
                 }
             }
+        }
+
+        /// <summary>
+        /// 获取新增状态
+        /// </summary>
+        /// <returns></returns>
+        public LiStatusReadOnlyDev getVoucherNewStatus()
+        {
+            Dictionary<string, LiAStatus> keyValues = liStatusContext.getStatusDict();
+            foreach (LiAStatus liAStatus in keyValues.Values)
+            {
+                if(liAStatus is LiStatusReadOnlyDev)
+                {
+                    LiStatusReadOnlyDev liStatusReadOnlyDev = liAStatus as LiStatusReadOnlyDev;
+                    if (liStatusReadOnlyDev.isNewStatus())
+                    {
+                        return liStatusReadOnlyDev;
+                    }
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// 获取浏览状态
+        /// </summary>
+        /// <returns></returns>
+        public LiStatusReadOnlyDev getVoucherShowStatus()
+        {
+            Dictionary<string, LiAStatus> keyValues = liStatusContext.getStatusDict();
+            foreach (LiAStatus liAStatus in keyValues.Values)
+            {
+                if (liAStatus is LiStatusReadOnlyDev)
+                {
+                    LiStatusReadOnlyDev liStatusReadOnlyDev = liAStatus as LiStatusReadOnlyDev;
+                    if (liStatusReadOnlyDev.isShowStatus())
+                    {
+                        return liStatusReadOnlyDev;
+                    }
+                }
+            }
+            return null;
         }
 
 

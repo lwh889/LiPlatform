@@ -101,6 +101,10 @@ namespace LiModel.Basic
         /// </summary>
         public string systemName { set; get; }
         /// <summary>
+        /// 系统U8菜单ID
+        /// </summary>
+        public string systemU8MenuId { set; get; }
+        /// <summary>
         /// 系统标题
         /// </summary>
         public string systemTitle { set; get; }

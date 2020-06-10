@@ -62,8 +62,20 @@ namespace LiModel.LiConvert
         public string refBasicInfoType { set; get; }
 
         /// <summary>
-        /// 引用对照字段
+        /// 引用关联字段
         /// </summary>
         public string refBasicInfoField { set; get; }
+        /// <summary>
+        /// 引用值字段
+        /// </summary>
+        public string refBasicInfoValueField { set; get; }
+        /// <summary>
+        /// 默认值字段
+        /// </summary>
+        public string defaultValue { set; get; }
+        /// <summary>
+        /// 是否使用默认值
+        /// </summary>
+        public bool bDefault { set; get; }
     }
 }

@@ -42,11 +42,11 @@ namespace LiU8API
             //如果当前环境中有login对象则可以省去第一步
             U8Login.clsLogin u8Login = new U8Login.clsLogin();
             String sSubId = "AS";
-            String sAccID = "(default)@999";
-            String sYear = "2015";
+            String sAccID = "(default)@004";
+            String sYear = "2020";
             String sUserID = "demo";
             String sPassword = "DEMO";
-            String sDate = "2015-01-21";
+            String sDate = "2020-05-21";
             String sServer = "localhost";
             String sSerial = "";
             if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate, ref sServer, ref sSerial))
@@ -116,7 +116,7 @@ namespace LiU8API
             broker = new U8ApiBroker(myApiAddress, envContext);
 
             //设置Broker参数
-            List<LiU8ParamModel> liU8Params = liU8OperationModel.paramModels.Where(m => string.IsNullOrEmpty(m.paramBoType)).ToList();
+            List<LiU8ParamModel> liU8Params = liU8OperationModel.paramModels.Where(m => string.IsNullOrWhiteSpace(m.paramBoType)).ToList();
             foreach(LiU8ParamModel liU8Param in liU8Params)
             {
                 //判断ID的字段名
@@ -182,8 +182,16 @@ namespace LiU8API
             {
                 domBody = broker.GetBoParam(domBodyFieldName);
                 domBody.RowCount = iRow; //设置BO对象(表头)行数，只能为一行
+                //domBody
+                //MSXML2.DOMDocument SourceDom = domBody as MSXML2.DOMDocument;
+                //IXMLDOMNodeList ndbodylist = SourceDom.selectNodes("//rs:data/z:row");
+                //foreach (IXMLDOMElement body in ndbodylist)
+                //{
+                //    if (body.attributes.getNamedItem("cfactorycode") == null)
+                //        //  '若没有当前元素，就增加当前元素
+                //        body.setAttribute("cfactorycode", "");
+                //}
             }
-
         }
 
         /// <summary>
