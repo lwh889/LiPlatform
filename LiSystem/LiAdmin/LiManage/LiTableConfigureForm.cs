@@ -141,6 +141,7 @@ namespace LiManage
         #endregion
 
         #region 引用数据源
+        private ControlTypeModel controlTypeModel = new ControlTypeModel();
         private DictGroupModel dictGroupModel = new DictGroupModel();
         private TableModel tableModel = new TableModel();
         private GridlookUpEditModel gridlookUpEditModel = new GridlookUpEditModel();
@@ -224,6 +225,8 @@ namespace LiManage
             GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, tableModel.getValueMember(), tableModel.getDisplayMember(), tableModel.getSearchColumns(), tableModel.getDisplayColumns(), tableModel.getDictModelDesc(), repositoryItemGridLookUpEdit_basicInfoType, this, tableModel.getDataSource<List<TableModel>>());
 
             GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, dictGroupModel.getValueMember(), dictGroupModel.getDisplayMember(), dictGroupModel.getSearchColumns(), dictGroupModel.getDisplayColumns(), dictGroupModel.getDictModelDesc(), repositoryItemGridLookUpEdit_dictInfoType, this, dictGroupModel.getDataSource<List<DictGroupModel>>());
+
+            GridlookUpEditRepositoryItemUtil.InitDefaultComboBoxControl(controlTypeModel.getValueMember(), controlTypeModel.getDisplayMember(), controlTypeModel.getSearchColumns(), controlTypeModel.getDisplayColumns(), repositoryItemGridLookUpEdit_controlType, this, controlTypeModel.getDataSource());
 
             GridlookUpEditRepositoryItemUtil.InitDefaultComboBoxControl(columnType.getValueMember(), columnType.getDisplayMember(), columnType.getSearchColumns(), columnType.getDisplayColumns(), repositoryItemGridLookUpEdit_columnType, this, columnType.getDataSource());
 
@@ -482,7 +485,7 @@ namespace LiManage
                     MessageBox.Show("请选择导入文件！", "用友提示");
                     return;
                 }
-                DataTable dt = ExcelUtil.ExcelToDataTable("Sheet1", true, filename);
+                DataTable dt = ExcelUtil.ExcelToDataTable(filename, "Sheet1", true);
                 if (dt != null)
                 {
                     List<ColumnModel> listColumns = (List<ColumnModel>)gridControl1.DataSource;

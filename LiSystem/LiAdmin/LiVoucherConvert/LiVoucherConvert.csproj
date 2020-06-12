@@ -31,6 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ADODB, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\U8SOFT\Interop\ADODB.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,10 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Service\AVoucherConvert.cs" />
+    <Compile Include="LiVoucherConvertUtil.cs" />
     <Compile Include="Model\LiReponseModel.cs" />
+    <Compile Include="Service\AVoucherConvert.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\Impl\LiVoucherConvert.cs" />
+    <Compile Include="Service\Impl\LiSystemConvert.cs" />
     <Compile Include="Service\Impl\U8VoucherConvert.cs" />
     <Compile Include="VoucherConvertContext.cs" />
   </ItemGroup>
@@ -52,10 +58,6 @@
     <Folder Include="U8Voucher\Service\Impl\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LiContexts\LiContexts.csproj">
-      <Project>{78be7dd4-4ec9-4f02-9b76-b764c4499ee5}</Project>
-      <Name>LiContexts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\LiHttp\LiHttp.csproj">
       <Project>{30265638-3ea2-4ad7-81b9-0c99d769ea57}</Project>
       <Name>LiHttp</Name>

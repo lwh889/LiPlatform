@@ -40,6 +40,7 @@ using LiControl.Util;
 using LiFlow.Model;
 using LiFlow.Util;
 using LiFlow.Enums;
+using LiModel.Basic;
 
 namespace LiForm.Dev
 {
@@ -141,6 +142,16 @@ namespace LiForm.Dev
         /// 浮动窗口容器
         /// </summary>
         private Dictionary<string, DockPanel> _liDockPanelDict = new Dictionary<string, DockPanel>();
+
+        /// <summary>
+        /// 主表信息
+        /// </summary>
+        public TableModel tableModel { set; get; }
+
+        /// <summary>
+        /// 所有表信息
+        /// </summary>
+        public List<TableModel> tableModelList { set; get; }
 
         /// <summary>
         /// 状态，用于只读控制
@@ -293,6 +304,9 @@ namespace LiForm.Dev
             FormUtil.loadBasicInfo(formModel);
             //获取单号编码规则
             voucherCodeModel = LiContexts.LiContext.getVoucherCodeModels(formCode);
+
+            tableModelList = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(formCode, "entityKey");
+            tableModel = tableModelList.Where(m => m.entityOrder == "master").FirstOrDefault();
         }
 
         public void InitControl()
@@ -540,6 +554,17 @@ namespace LiForm.Dev
                     {
                         foreach (Dictionary<string, object> dict in lists)
                         {
+                            //判断子表有没有主键
+                            if (!dict.ContainsKey(panelModel.primaryKeyName))
+                            {
+                                dict.Add(panelModel.primaryKeyName, DataUtil.GetDefaultValue(Type.GetType("System.Int32")));
+                            }
+                            //判断子表有没有外键
+                            if (!dict.ContainsKey(panelModel.foreigntKeyName))
+                            {
+                                dict.Add(panelModel.foreigntKeyName, DataUtil.GetDefaultValue(Type.GetType("System.Int32")));
+                            }
+
                             if (!dict.ContainsKey(controlModel.name))
                             {
                                 switch (controlModel.controltype)
@@ -673,6 +698,7 @@ namespace LiForm.Dev
                     GridView gridView = kvp.Value;
                     GridControl gridControl = _liGridControlDict[kvp.Key];
                     DataTable dt = (DataTable)gridControl.DataSource;
+                    if (dt == null) continue;
 
                     foreach (KeyValuePair<string, GridColumn> kvpColumn in _liGridColumnRefDict)
                     {

@@ -77,5 +77,18 @@ namespace LiModel.LiConvert
         /// 是否使用默认值
         /// </summary>
         public bool bDefault { set; get; }
+        /// <summary>
+        /// 是否反写ID
+        /// </summary>
+        public string reverseIdFieldName { set; get; }
+        /// <summary>
+        /// 是否反写编码
+        /// </summary>
+        public string reverseCodeFieldName { set; get; }
+        /// <summary>
+        /// 反写类型
+        /// </summary>
+        public bool bReverseType { set; get; }
+        
     }
 }

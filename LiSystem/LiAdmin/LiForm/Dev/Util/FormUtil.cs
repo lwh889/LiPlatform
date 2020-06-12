@@ -40,6 +40,13 @@ namespace LiForm.Dev.Util
     public class FormUtil
     {
         /// <summary>
+        /// 单据下推
+        /// </summary>
+        public static void pushVoucher()
+        {
+
+        }
+        /// <summary>
         /// 加载基础档案
         /// </summary>
         /// <param name="formModel"></param>
@@ -76,59 +83,6 @@ namespace LiForm.Dev.Util
             ///加载基础档案
             LiContexts.LiContext.addRefDataDataTable(entityKeys);
             LiContexts.LiContext.addDictDataTable(dictKeys);
-        }
-        /// <summary>
-        /// 下推单据
-        /// </summary>
-        /// <param name="liConvertHeadModel"></param>
-        /// <param name="drs"></param>
-        /// <param name="liForm"></param>
-        public static void pushVoucher(LiConvertHeadModel liConvertHeadModel,DataRow drHead, List<DataRow> drs, LiForm liForm, bool isPrefix = true)
-        {
-
-
-            //获取转换关系
-            List<LiConvertBodyModel> convertHeadList = liConvertHeadModel.datas.Where(m => m.convertDCollection == null).ToList();
-            List<LiConvertBodyModel> convertBodyList = liConvertHeadModel.datas.Where(m => m.convertDCollection != null).ToList();
-
-            //获取集合数据源
-            var groupList = convertBodyList.GroupBy(m => m.convertDCollection);
-            string collectionName = "";
-            foreach (var group in groupList)
-            {
-                collectionName = group.Key;
-            }
-            List<Dictionary<string, object>> dtDest = liForm.formDataDict[collectionName] as List<Dictionary<string, object>>;
-
-            //转换
-            foreach (LiConvertBodyModel convertHead in convertHeadList)
-            {
-                if (string.IsNullOrEmpty(convertHead.convertSourceField)) continue;
-                string fieldName = isPrefix ? string.Format("Li{0}_{1}", convertHead.convertSourceType, convertHead.convertSourceField): convertHead.convertSourceField;
-                liForm.formDataDict[convertHead.convertDestField] = drHead[fieldName];
-            }
-
-            foreach (DataRow dr in drs)
-            {
-                Dictionary<string, object> drDest = new Dictionary<string, object>();
-
-                foreach (LiConvertBodyModel convertBody in convertBodyList)
-                {
-                    if (string.IsNullOrEmpty(convertBody.convertSourceField)) continue;
-
-                    string fieldName = isPrefix ? string.Format("Li{0}_{1}", convertBody.convertSourceType, convertBody.convertSourceField) : convertBody.convertSourceField;
-                    if (drDest.ContainsKey(convertBody.convertDestField))
-                    {
-                        drDest[convertBody.convertDestField] = dr[fieldName];
-                    }
-                    else
-                    {
-                        drDest.Add(convertBody.convertDestField, dr[fieldName]);
-                    }
-                }
-
-                dtDest.Add(drDest);
-            }
         }
 
 

@@ -84,12 +84,6 @@ namespace LiManage
 
             GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, tableModel.getValueMember(), tableModel.getDisplayMember(), tableModel.getSearchColumns(), tableModel.getDisplayColumns(), tableModel.getDictModelDesc(), repositoryItemGridLookUpEdit_refBasicInfoType, this, tableBasicInfoModelList);
 
-            //GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, columnModel.getValueMember(), columnModel.getDisplayMember(), columnModel.getSearchColumns(), columnModel.getDisplayColumns(), columnModel.getDictModelDesc(), repositoryItemGridLookUpEdit_convertSourceField, this, columnSourceModelList);
-
-            //GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, columnModel.getValueMember(), columnModel.getDisplayMember(), columnModel.getSearchColumns(), columnModel.getDisplayColumns(), columnModel.getDictModelDesc(), repositoryItemGridLookUpEdit_convertRelationField, this, columnRelationModelList);
-
-            //GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, columnModel.getValueMember(), columnModel.getDisplayMember(), columnModel.getSearchColumns(), columnModel.getDisplayColumns(), columnModel.getDictModelDesc(), repositoryItemGridLookUpEdit_refBasicInfoField, this, columnBasicInfoModelList);
-
             GridlookUpEditRepositoryItemUtil.InitDefaultComboBoxControl(judgmentSymbolModel.getValueMember(), judgmentSymbolModel.getDisplayMember(), judgmentSymbolModel.getSearchColumns(), judgmentSymbolModel.getDisplayColumns(), repositoryItemGridLookUpEdit_sJudgeSymbol, this, judgmentSymbolModel.getDataSource());
 
             GridlookUpEditRepositoryItemUtil.InitDefaultComboBoxControl(controlTypeModel.getValueMember(), controlTypeModel.getDisplayMember(), controlTypeModel.getSearchColumns(), controlTypeModel.getDisplayColumns(), repositoryItemGridLookUpEdit_controlType, this, controlTypeModel.getDataSource());
@@ -330,6 +324,8 @@ namespace LiManage
 
             switch (e.Column.FieldName)
             {
+                case "reverseCodeFieldName":
+                case "reverseIdFieldName":
                 case "convertSourceField":
                     switch (entityHead.convertSourceType)
                     {
@@ -364,195 +360,11 @@ namespace LiManage
 
         private void BarButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            LiU8VoucherModel liU8VoucherModels = LiContexts.LiContext.getHttpEntity(LiEntityKey.LiU8Voucher).getEntitySingle<LiU8VoucherModel>(1, "id");
-
-            U8Voucher u8Voucher = new U8Voucher(OperationType.NEW, liU8VoucherModels);
-            u8Voucher.initDomHead();
-            u8Voucher.initDomBody(1);
-            u8Voucher.setDomHeadValue("id", "");
-            u8Voucher.setDomHeadValue("ivtid", "95");
-            u8Voucher.setDomHeadValue("cbustype", "普通销售");
-            u8Voucher.setDomHeadValue("cstcode", "01");
-            u8Voucher.setDomHeadValue("ddate", "2015-01-21");
-            u8Voucher.setDomHeadValue("ccuscode", "00000002");
-            u8Voucher.setDomHeadValue("cdepcode", "0302");
-            u8Voucher.setDomHeadValue("cpersoncode", "00023");
-            u8Voucher.setDomHeadValue("ccusoaddress", "武昌");
-            u8Voucher.setDomHeadValue("cexch_name", "人民币");
-            u8Voucher.setDomHeadValue("iexchrate", "1");
-            u8Voucher.setDomHeadValue("itaxrate", "17");
-            u8Voucher.setDomHeadValue("cmaker", "demo");
-            u8Voucher.setDomHeadValue("dpredatebt", "2015-01-21");
-            u8Voucher.setDomHeadValue("ccusphone", "023-35835833");
-            u8Voucher.setDomHeadValue("cstname", "普通销售");
-            u8Voucher.setDomHeadValue("iarmoney", "234100");
-            u8Voucher.setDomHeadValue("ccusname", "云飞电子科技集团");
-            u8Voucher.setDomHeadValue("ccusaddress", "湖北省武汉市武昌区信息路11号");
-            u8Voucher.setDomHeadValue("breturnflag", "0");
-            u8Voucher.setDomHeadValue("icuscreline", "1000000000");
-            u8Voucher.setDomHeadValue("ccusperson", "阚奇");
-            u8Voucher.setDomHeadValue("caddcode", "001");
-            u8Voucher.setDomHeadValue("cdeliverunit", "");
-            u8Voucher.setDomHeadValue("ccreditcuscode", "0111");
-            u8Voucher.setDomHeadValue("ccreditcusname", "云飞电子科技集团");
-            u8Voucher.setDomHeadValue("iverifystate", "0");
-            u8Voucher.setDomHeadValue("iswfcontrolled", "1");
-            u8Voucher.setDomHeadValue("zdsum", ".00");
-
-
-            u8Voucher.setDomBodyValue(0, "irowno", "1");
-            u8Voucher.setDomBodyValue(0, "autoid", "");
-            u8Voucher.setDomBodyValue(0, "id", "");
-            u8Voucher.setDomBodyValue(0, "cinvcode", "01019002065");
-            u8Voucher.setDomBodyValue(0, "bservice", "0");
-            u8Voucher.setDomBodyValue(0, "cinvname", "硬盘-1000G");
-            u8Voucher.setDomBodyValue(0, "cinvstd", "希捷 1000G/7200RPM/32M/SATA2/企业级");
-            u8Voucher.setDomBodyValue(0, "cinvm_unit", "PCS");
-            u8Voucher.setDomBodyValue(0, "igrouptype", "0");
-            u8Voucher.setDomBodyValue(0, "cgroupcode", "01");
-            u8Voucher.setDomBodyValue(0, "iquantity", "3.0000000000");
-            u8Voucher.setDomBodyValue(0, "iquotedprice", "100.0000000000");
-            u8Voucher.setDomBodyValue(0, "iunitprice", "85.4700000000");
-            u8Voucher.setDomBodyValue(0, "imoney", "170.94");
-            u8Voucher.setDomBodyValue(0, "itax", "29.06");
-            u8Voucher.setDomBodyValue(0, "isum", "200");
-            u8Voucher.setDomBodyValue(0, "inatunitprice", "85.4700000000");
-            u8Voucher.setDomBodyValue(0, "inatmoney", "170.94");
-            u8Voucher.setDomBodyValue(0, "inattax", "29.06");
-            u8Voucher.setDomBodyValue(0, "inatsum", "200");
-            u8Voucher.setDomBodyValue(0, "inatdiscount", "0");
-            u8Voucher.setDomBodyValue(0, "idiscount", "0");
-            u8Voucher.setDomBodyValue(0, "fsalecost", ".0000000000");
-            u8Voucher.setDomBodyValue(0, "fsaleprice", ".0000000000");
-            u8Voucher.setDomBodyValue(0, "dpredate", "2015-02-10");
-            u8Voucher.setDomBodyValue(0, "itaxunitprice", "100.0000000000");
-            u8Voucher.setDomBodyValue(0, "cconfigstatus", "未选配");
-            u8Voucher.setDomBodyValue(0, "dpremodate", "2015-02-09");
-            u8Voucher.setDomBodyValue(0, "batomodel", "0");
-            u8Voucher.setDomBodyValue(0, "dreleasedate", "2015-02-10T00:00:00");
-            u8Voucher.setDomBodyValue(0, "editprop", "A");
-
-            U8APIReponse u8APIReponse = u8Voucher.commit();
 
         }
 
         private void BarButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
-            LiU8VoucherModel liU8VoucherModels = LiContexts.LiContext.getHttpEntity(LiEntityKey.LiU8Voucher).getEntitySingle<LiU8VoucherModel>(3, "id");
-
-            U8Voucher u8Voucher = new U8Voucher(OperationType.NEW, liU8VoucherModels);
-            u8Voucher.initDomHead();
-            u8Voucher.initDomBody(1);
-
-
-            u8Voucher.setDomHeadValue("ivtid", "8173");
-            u8Voucher.setDomHeadValue("poid", "");
-            u8Voucher.setDomHeadValue("cbustype", "普通采购");
-            u8Voucher.setDomHeadValue("cpoid", "0000000003");
-            u8Voucher.setDomHeadValue("dpodate", "2020-06-01");
-            u8Voucher.setDomHeadValue("cvencode", "99001");
-            //u8Voucher.setDomHeadValue("cdepcode", "0401");
-            //u8Voucher.setDomHeadValue("cpersoncode", "00043");
-            u8Voucher.setDomHeadValue("nflat", "1");
-            u8Voucher.setDomHeadValue("itaxrate", "17");
-            u8Voucher.setDomHeadValue("icost", "0");
-            u8Voucher.setDomHeadValue("ibargain", "0");
-            u8Voucher.setDomHeadValue("cstate", "1");
-            u8Voucher.setDomHeadValue("idiscounttaxtype", "0");
-            u8Voucher.setDomHeadValue("cdefine1", "顾潇");
-            u8Voucher.setDomHeadValue("cvenabbname", "广州曜能量饮料有限公司");
-            //u8Voucher.setDomHeadValue("cdepname", "采购部");
-            //u8Voucher.setDomHeadValue("cpersonname", "顾潇");
-            u8Voucher.setDomHeadValue("cexch_name", "人民币");
-            u8Voucher.setDomHeadValue("cmaker", "demo9");
-            u8Voucher.setDomHeadValue("ireturncount", "0");
-            u8Voucher.setDomHeadValue("iverifystateex", "2");
-            u8Voucher.setDomHeadValue("iswfcontrolled", "0");
-            u8Voucher.setDomHeadValue("cverifier", "demo");
-            u8Voucher.setDomHeadValue("cvenname", "广州曜能量饮料有限公司");
-            u8Voucher.setDomHeadValue("cvenregcode", "cvenregcode");
-            //u8Voucher.setDomHeadValue("cvoucherstate", "审核");
-            u8Voucher.setDomHeadValue("cvenbank", "招商银行广州分行越秀支行");
-            u8Voucher.setDomHeadValue("cmaketime", "2020-06-01");
-            u8Voucher.setDomHeadValue("caudittime", "2020-06-01");
-            u8Voucher.setDomHeadValue("cauditdate", "2020-06-01");
-            //u8Voucher.setDomHeadValue("bstorageorder", "True");
-            //u8Voucher.setDomHeadValue("iprintcount", "0");
-            //u8Voucher.setDomHeadValue("csysbarcode", "||pupo|0000000037");
-            //u8Voucher.setDomHeadValue("editprop", "A");
-
-            //u8Voucher.setDomHeadValue("poid", "");
-            //u8Voucher.setDomHeadValue("cbustype", "普通采购");
-            //u8Voucher.setDomHeadValue("dpodate", "2015-01-05");
-            //u8Voucher.setDomHeadValue("cpoid", "0000000037");
-            ////u8Voucher.setDomHeadValue("cvenabbname", "95");
-            //u8Voucher.setDomHeadValue("cexch_name", "人民币");
-            //u8Voucher.setDomHeadValue("nflat", "1");
-            ////u8Voucher.setDomHeadValue("cmaker", "95");
-            //u8Voucher.setDomHeadValue("cvencode", "01005");
-            //u8Voucher.setDomHeadValue("cdepcode", "0401");
-            //u8Voucher.setDomHeadValue("cpersoncode", "00043");
-            //u8Voucher.setDomHeadValue("itaxrate", "17");
-            //u8Voucher.setDomHeadValue("nflat", "1");
-            //u8Voucher.setDomHeadValue("idiscounttaxtype", "0");
-            ////u8Voucher.setDomHeadValue("contractcodet", "95");
-            ////u8Voucher.setDomHeadValue("iflowid", "95");
-            ////u8Voucher.setDomHeadValue("cflowname", "95");
-            ////u8Voucher.setDomHeadValue("ccontactcode", "95");
-            ////u8Voucher.setDomHeadValue("cmobilephone", "95");
-            ////u8Voucher.setDomHeadValue("cappcode", "95");
-            ////u8Voucher.setDomHeadValue("csysbarcode", "95");
-
-            u8Voucher.setDomBodyValue(0, "id", "");
-            u8Voucher.setDomBodyValue(0, "poid", "");
-            u8Voucher.setDomBodyValue(0, "cinvcode", "010101");
-            u8Voucher.setDomBodyValue(0, "cinvname", "250ml曜能量");
-            u8Voucher.setDomBodyValue(0, "iquantity", "165.0000000000");
-            u8Voucher.setDomBodyValue(0, "inum", ".0000000000");
-            u8Voucher.setDomBodyValue(0, "iunitprice", "42.7400000000");
-            u8Voucher.setDomBodyValue(0, "imoney", "7051.28");
-            u8Voucher.setDomBodyValue(0, "itax", "1198.72");
-            u8Voucher.setDomBodyValue(0, "isum", "8250");
-            u8Voucher.setDomBodyValue(0, "inatunitprice", "42.7400000000");
-            u8Voucher.setDomBodyValue(0, "inatmoney", "7051.28");
-            u8Voucher.setDomBodyValue(0, "inattax", "1198.72");
-            u8Voucher.setDomBodyValue(0, "inatsum", "8250");
-            u8Voucher.setDomBodyValue(0, "darrivedate", "2020-06-01");
-            u8Voucher.setDomBodyValue(0, "cinvm_unit", "箱");
-            u8Voucher.setDomBodyValue(0, "igrouptype", "0");
-            //u8Voucher.setDomBodyValue(0, "cgroupcode", "01");
-            u8Voucher.setDomBodyValue(0, "iinvexchrate", ".00000000");
-            //u8Voucher.setDomBodyValue(0, "ccomunitcode", "0108");
-            u8Voucher.setDomBodyValue(0, "ipertaxrate", "17.000000");
-            u8Voucher.setDomBodyValue(0, "itaxprice", "50.000000");
-            u8Voucher.setDomBodyValue(0, "btaxcost", "True");
-            //u8Voucher.setDomBodyValue(0, "ireceivedqty", ".00000000");
-            u8Voucher.setDomBodyValue(0, "bgsp", "0");
-            u8Voucher.setDomBodyValue(0, "sotype", "0");
-            u8Voucher.setDomBodyValue(0, "cbcloser", "");
-            u8Voucher.setDomBodyValue(0, "iordertype", "0");
-            u8Voucher.setDomBodyValue(0, "ivouchrowno", "1");
-            u8Voucher.setDomBodyValue(0, "csrpolicy", "PE");
-            u8Voucher.setDomBodyValue(0, "irequiretrackstyle", "0");
-            //u8Voucher.setDomBodyValue(0, "cinvccode", "16");
-            //u8Voucher.setDomBodyValue(0, "binvtype", "0");
-            //u8Voucher.setDomBodyValue(0, "bservice", "0");
-            //u8Voucher.setDomBodyValue(0, "cbsysbarcode", "||pupo|0000000037|1");
-            u8Voucher.setDomBodyValue(0, "cplanmethod", "R");
-            u8Voucher.setDomBodyValue(0, "bgift", "0");
-            //u8Voucher.setDomBodyValue(0, "cfactorycode", "001");
-            //u8Voucher.setDomBodyValue(0, "cfactoryname", "工厂一");
-            u8Voucher.setDomBodyValue(0, "editprop", "A");
-
-            //u8Voucher.setDomBodyValue(0, "id", "");
-            //u8Voucher.setDomBodyValue(0, "cinvcode", "SJK001");
-            //u8Voucher.setDomBodyValue(0, "iquantity", "108.0000000000");
-            //u8Voucher.setDomBodyValue(0, "darrivedate", "2015-01-06");
-            //u8Voucher.setDomBodyValue(0, "ivouchrowno", 1);
-            ////u8Voucher.setDomBodyValue(0, "cbmemo", "A");
-            //u8Voucher.setDomBodyValue(0, "editprop", "A");
-
-            U8APIReponse u8APIReponse = u8Voucher.commit();
         }
 
 
@@ -584,6 +396,8 @@ namespace LiManage
                             break;
                     }
                     break;
+                case "reverseCodeFieldName":
+                case "reverseIdFieldName":
                 case "convertSourceField":
                     switch (entityHead.convertSourceType)
                     {
@@ -613,22 +427,31 @@ namespace LiManage
 
             switch (e.Column.FieldName)
             {
-                case "convertRelationField":
-                    List<ColumnModel> columnRelationModelList = new List<ColumnModel>();
-
-                    if (entity.convertRelation == "2")
+                case "convertCumulativeField":
+                case "convertPushField":
+                    switch (entity.convertRelation)
                     {
-                        List<TableModel> tableModelList = tableAllModelList.Where(m => m.entityKey == entity.convertDest).ToList();
-                        foreach (TableModel tableModel in tableModelList)
-                        {
-                            columnRelationModelList.AddRange(tableModel.datas.Where(m => m.columnType == "decimal" || m.columnType == "float" || m.columnType == "int" || m.columnType == "numeric" || m.columnType == "smallint" || m.columnType == "tinyint").ToArray());
-                        }
+                        case ConvertRelation.PUSHCUMULATIVE:
 
-                        e.RepositoryItem = ControlModelUtil.getRepositoryItemControl(ControlType.GridLookUpEditRef);
+                            switch (entity.convertSourceType)
+                            {
+                                case ConvertDestTypeModel.System:
 
-                        GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, columnModel.getValueMember(), columnModel.getDisplayMember(), columnModel.getSearchColumns(), columnModel.getDisplayColumns(), columnModel.getDictModelDesc(), e.RepositoryItem as RepositoryItemGridLookUpEdit, this, columnRelationModelList);
+                                    List<ColumnModel> columnRelationModelList = new List<ColumnModel>();
+                                    List<TableModel> tableModelList = tableAllModelList.Where(m => m.entityKey == entity.convertSource).ToList();
+                                    foreach (TableModel tableModel in tableModelList)
+                                    {
+                                        columnRelationModelList.AddRange(tableModel.datas.Where(m => m.columnType == "decimal" || m.columnType == "float" || m.columnType == "int" || m.columnType == "numeric" || m.columnType == "smallint" || m.columnType == "tinyint").ToArray());
+                                    }
+
+                                    e.RepositoryItem = ControlModelUtil.getRepositoryItemControl(ControlType.GridLookUpEditRef);
+
+                                    GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, columnModel.getValueMember(), columnModel.getDisplayMember(), columnModel.getSearchColumns(), columnModel.getDisplayColumns(), columnModel.getDictModelDesc(), e.RepositoryItem as RepositoryItemGridLookUpEdit, this, columnRelationModelList);
+                                    break;
+                            }
+                            break;
+
                     }
-
                     break;
                 case "convertDest":
                     switch (entity.convertDestType)

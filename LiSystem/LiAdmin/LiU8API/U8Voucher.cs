@@ -42,11 +42,11 @@ namespace LiU8API
             //如果当前环境中有login对象则可以省去第一步
             U8Login.clsLogin u8Login = new U8Login.clsLogin();
             String sSubId = "AS";
-            String sAccID = "(default)@004";
-            String sYear = "2020";
+            String sAccID = "(default)@999";
+            String sYear = "2015";
             String sUserID = "demo";
             String sPassword = "DEMO";
-            String sDate = "2020-05-21";
+            String sDate = "2015-05-21";
             String sServer = "localhost";
             String sSerial = "";
             if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate, ref sServer, ref sSerial))

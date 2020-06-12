@@ -936,6 +936,12 @@ select 30, 'convertDestHeadName','目标表头名称', 'narchar',50,0,0,0,0,null,0,nul
 union all
 select 30, 'convertDestBodyName','目标表体名称', 'narchar',50,0,0,0,0,null,0,null
 union all
+select 30, 'convertCumulativeField','累计字段', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 30, 'convertPushField','下推数量字段', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 30, 'convertPushTableName','下推表名', 'narchar',50,0,0,0,0,null,0,null
+union all
 select 30, 'datas','数据集','collection', -1,0,0,2,0,null,0,null
 union all
 select 30, 'queryFields','数据集','collection', -1,0,0,2,0,null,0,null
@@ -971,6 +977,12 @@ union all
 select 31, 'bDefault','是否使用默认值', 'bit',10,0,0,0,0,null,0,null
 union all
 select 31, 'defaultValue','默认值字段', 'narchar',4000,0,0,0,0,null,0,null
+union all
+select 31, 'reverseIdFieldName','反写ID', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 31, 'reverseCodeFieldName','反写编码', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 31, 'bReverseType','反写类型', 'bit',10,0,0,0,0,null,0,null
 
 --select * from LiField
 

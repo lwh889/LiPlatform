@@ -9,6 +9,21 @@ namespace LiModel.LiConvert
 {
     public class ConvertRelation : GridlookUpEditModel
     {
+        /// <summary>
+        /// 无限参照
+        /// </summary>
+        public const string INFINITE = "0";
+
+        /// <summary>
+        /// 下推一次
+        /// </summary>
+        public const string ONE = "1";
+
+        /// <summary>
+        /// 累计下推
+        /// </summary>
+        public const string PUSHCUMULATIVE = "2";
+
         public override List<string> getDisplayColumns()
         {
             if (!DisplayColumns.Contains("name"))

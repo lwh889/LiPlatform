@@ -42,7 +42,7 @@ BEGIN
 END
 
 
-if not exists (select 1 from LiFlowNo where entityKey = @entityKey and voucherCodeName =@voucherCodeName and iYear = @iYear and iMonth = @iMonth and iDay = @iDay)
+if not exists (select 1 from LiFlowNo where entityKey = @entityKey and voucherCodeName =@voucherCodeName and ISNULL(iYear,0) = ISNULL(@iYear,0) and ISNULL(iMonth,0) = ISNULL(@iMonth,0) and ISNULL(iDay,0) = ISNULL(@iDay,0))
 BEGIN
 	set @iFlowNo = 1
 	INSERT INTO LiFlowNo (entityKey,voucherCodeName,iYear,iMonth,iDay,iFlow,modifyDate)
@@ -50,8 +50,8 @@ BEGIN
 END
 ELSE
 BEGIN
-	SELECT @iFlowNo = iFlow + @iStep FROM LiFlowNo WHERE entityKey = @entityKey and voucherCodeName =@voucherCodeName and iYear = @iYear and iMonth = @iMonth and iDay = @iDay
-	UPDATE LiFlowNo SET iFlow = @iFlowNo,modifyDate = GETDATE()   WHERE entityKey = @entityKey and voucherCodeName =@voucherCodeName and iYear = @iYear and iMonth = @iMonth and iDay = @iDay
+	SELECT @iFlowNo = iFlow + @iStep FROM LiFlowNo WHERE entityKey = @entityKey and voucherCodeName =@voucherCodeName and ISNULL(iYear,0) = ISNULL(@iYear,0) and ISNULL(iMonth,0) = ISNULL(@iMonth,0) and ISNULL(iDay,0) = ISNULL(@iDay,0)
+	UPDATE LiFlowNo SET iFlow = @iFlowNo,modifyDate = GETDATE()   WHERE entityKey = @entityKey and voucherCodeName =@voucherCodeName and ISNULL(iYear,0) = ISNULL(@iYear,0) and ISNULL(iMonth,0) = ISNULL(@iMonth,0) and ISNULL(iDay,0) = ISNULL(@iDay,0)
 END
 
 select ISNULL(@prefixName,'') + ISNULL(@fieldTextValue,'')+ ISNULL(@fieldDateValue,'') + RIGHT('000000000000000000' + CAST(@iFlowNo as nvarchar(9)),@iZero) VoucherNo

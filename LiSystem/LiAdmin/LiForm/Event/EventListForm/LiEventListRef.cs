@@ -13,6 +13,11 @@ using LiModel.LiConvert;
 using LiForm.Dev.Util;
 using LiContexts;
 using LiContexts.Model;
+using LiVoucherConvert.Model;
+using LiCommon.Util;
+using LiVoucherConvert.Service.Impl;
+using LiVoucherConvert;
+using LiU8API.Model;
 
 namespace LiForm.Event.EventListForm
 {
@@ -24,27 +29,17 @@ namespace LiForm.Event.EventListForm
 
             try
             {
+
                 List<LiConvertHeadModel> list = LiContexts.LiContext.getHttpEntity(LiEntityKey.LiConvert, LiContext.SystemCode).getEntityList<LiConvertHeadModel>(this.liListForm.entityKey, "convertDest");
                 LiRefTypeForm form = new LiRefTypeForm(list);
                 if (form.ShowDialog() == DialogResult.Yes)
                 {
                     LiConvertHeadModel liConvertHeadModel = form.liConvertHeadModel;
-                    LiRefForm liRefForm = new LiRefForm(liConvertHeadModel);
+                    bSuccess = ListFormUtil.refVoucher(this.liListForm.entityKey, liConvertHeadModel, this.liListForm.tableModel, this.liListForm.tableModelList, this.liListForm.getParentForm(),null);
 
-                    if (liRefForm.ShowDialog() == DialogResult.Yes)
-                    {
-                        List<DataRow> drs = liRefForm.SelectDataRows;
-                        DataRow drHead = drs[0];
-                        //获取新窗体
-                        LiForm.Dev.LiForm liForm = FormUtil.getVoucher(this.liListForm.entityKey) as LiForm.Dev.LiForm;
-
-                        FormUtil.pushVoucher(liConvertHeadModel, drHead, drs, liForm);
-
-                        LiContext.AddPageMdi(PageFormModel.getInstance(0, liForm, this.liListForm.entityKey), this.liListForm.ParentForm);
-                        liForm.setVoucherNewStatus();
-                        bSuccess = true;
-                    }
                 }
+
+
             }
             catch (Exception ex)
             {

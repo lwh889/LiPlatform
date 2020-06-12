@@ -1,4 +1,6 @@
-﻿using LiHttp.Enum;
+﻿using LiHttp;
+using LiHttp.Enum;
+using LiModel.Basic;
 using LiModel.LiConvert;
 using LiU8API;
 using LiU8API.LiEnum;
@@ -39,6 +41,42 @@ namespace LiVoucherConvert.Service.Impl
             List< LiConvertBodyModel> convertHeads = liConvertHead.datas.Where(m => m.convertDestType == liConvertHead.convertDestHeadName).ToList();
             foreach(LiConvertBodyModel convertBodyModel in convertHeads)
             {
+                //反写数量
+                if (convertBodyModel.convertSourceType == liConvertHead.convertPushTableName && convertBodyModel.convertSourceField == liConvertHead.convertPushField)
+                {
+                    TableModel tableModel = tableModelList.Where(m => m.tableName == liConvertHead.convertPushTableName).FirstOrDefault();
+
+                    if (tableModel != null && liConvertHead.convertRelation == ConvertRelation.PUSHCUMULATIVE)
+                    {
+                        string idFieldName = isPrefix ? string.Format("Li{0}_{1}", convertBodyModel.convertSourceType, tableModel.keyName) : convertBodyModel.reverseIdFieldName;
+                        if (tableModel != null)
+                            reverseSql.Append(string.Format(" update {0}.dbo.{1} set {2} = ISNULL({2},0) + {3} where {4}= {5} ", tableModel.dataBaseName, tableModel.tableName, liConvertHead.convertCumulativeField, convertData[0]["pushQty"], tableModel.keyName, convertData[0][idFieldName]));
+                    }
+                }
+
+                //反写ID
+                if (!string.IsNullOrWhiteSpace(convertBodyModel.reverseIdFieldName))
+                {
+                    string fieldName = isPrefix ? string.Format("Li{0}_{1}", convertBodyModel.convertSourceType, convertBodyModel.reverseIdFieldName) : convertBodyModel.reverseIdFieldName;
+                    u8Voucher.setDomHeadValue(convertBodyModel.convertDestField, convertData[0][fieldName]);
+                    continue;
+                }
+
+                //反写编码
+                if (!string.IsNullOrWhiteSpace(convertBodyModel.reverseCodeFieldName))
+                {
+                    string fieldName = isPrefix ? string.Format("Li{0}_{1}", convertBodyModel.convertSourceType, convertBodyModel.reverseCodeFieldName) : convertBodyModel.reverseIdFieldName;
+                    u8Voucher.setDomHeadValue(convertBodyModel.convertDestField, convertData[0][fieldName]);
+                    continue;
+                }
+
+                //反写类型
+                if (convertBodyModel.bReverseType)
+                {
+                    u8Voucher.setDomHeadValue(convertBodyModel.convertDestField, oriVoucherType);
+                    continue;
+                }
+
                 if (convertBodyModel.bDefault == false && string.IsNullOrEmpty(convertBodyModel.convertSourceField))
                     continue;
 
@@ -55,13 +93,34 @@ namespace LiVoucherConvert.Service.Impl
 
             //表体转换
             int iRow = 0;
-            List<LiConvertBodyModel> convertBodys = liConvertHead.datas.Where(m => m.convertDestType == liConvertHead.convertDestHeadName).ToList();
+            List<LiConvertBodyModel> convertBodys = liConvertHead.datas.Where(m => m.convertDestType == liConvertHead.convertDestBodyName).ToList();
             foreach(DataRow dr in convertData)
             {
                 foreach (LiConvertBodyModel convertBodyModel in convertBodys)
                 {
+                    //反写数量
+                    if (convertBodyModel.convertSourceType == liConvertHead.convertPushTableName && convertBodyModel.convertSourceField == liConvertHead.convertPushField)
+                    {
+                        TableModel tableModel = tableModelList.Where(m => m.tableName == liConvertHead.convertPushTableName).FirstOrDefault();
+
+                        if(tableModel!=null && liConvertHead.convertRelation == ConvertRelation.PUSHCUMULATIVE)
+                        {
+                            string idFieldName = isPrefix ? string.Format("Li{0}_{1}", convertBodyModel.convertSourceType, tableModel.keyName) : convertBodyModel.reverseIdFieldName;
+                            if (tableModel != null)
+                                reverseSql.Append(string.Format(" update {0}.dbo.{1} set {2} = ISNULL({2},0) + {3} where {4}= {5} ", tableModel.dataBaseName, tableModel.tableName, liConvertHead.convertCumulativeField, convertData[iRow]["pushQty"], tableModel.keyName, convertData[iRow][idFieldName]));
+                        }
+                    }
+
+                    //反写ID
+                    if (!string.IsNullOrWhiteSpace(convertBodyModel.reverseIdFieldName))
+                    {
+                        string fieldName = isPrefix ? string.Format("Li{0}_{1}", convertBodyModel.convertSourceType, convertBodyModel.reverseIdFieldName) : convertBodyModel.reverseIdFieldName;
+                        u8Voucher.setDomBodyValue(iRow, convertBodyModel.convertDestField, convertData[iRow][fieldName]);
+                    }
+
                     if (convertBodyModel.bDefault == false && string.IsNullOrEmpty(convertBodyModel.convertSourceField))
                         continue;
+
 
                     if (convertBodyModel.bDefault)
                     {
@@ -70,14 +129,25 @@ namespace LiVoucherConvert.Service.Impl
                     else if (!string.IsNullOrEmpty(convertBodyModel.convertSourceField))
                     {
                         string fieldName = isPrefix ? string.Format("Li{0}_{1}", convertBodyModel.convertSourceType, convertBodyModel.convertSourceField) : convertBodyModel.convertSourceField;
-                        u8Voucher.setDomBodyValue(iRow, convertBodyModel.convertDestField, convertData[0][fieldName]);
+                        u8Voucher.setDomBodyValue(iRow, convertBodyModel.convertDestField, convertData[iRow][fieldName]);
                     }
                 }
                 ++iRow;
             }
 
-
             U8APIReponse u8APIReponse = u8Voucher.commit();
+
+            if (u8APIReponse.bSuccess)
+            {
+                if (liConvertHead.convertRelation == ConvertRelation.PUSHCUMULATIVE && reverseSql.Length>0)
+                {
+                    Dictionary<string, object> paramDict = new Dictionary<string, object>();
+                    paramDict.Add("execSql", reverseSql.ToString());
+
+                    LiHttpUtil.getHttpEntity("sp_ExecSql").execProcedureNoResult( paramDict);
+
+                }
+            }
             liReponse.bSuccess = u8APIReponse.bSuccess;
             liReponse.result = u8APIReponse.resultContent;
             liReponse.voucherId = u8APIReponse.voucherID;

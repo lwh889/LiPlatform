@@ -39,6 +39,8 @@ insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,systemCode,mo
 select 7,'LiSystem','sp_DeployLiSystem','sp_DeployLiSystem','LiSystem',GETDATE()
 insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,systemCode,modifyDate)
 select 8,'LiSystem','sp_DeployU8','sp_DeployU8','LiSystem',GETDATE()
+insert into ProcedureInfo (id,dataBaseName,entityKey,procedureName,systemCode,modifyDate)
+select 9,'LiSystem','sp_ExecSql','sp_ExecSql','LiSystem',GETDATE()
 SET IDENTITY_Insert ProcedureInfo OFF
 
 
@@ -99,3 +101,6 @@ select 7,'formId', 'int', 9,GETDATE()
 insert into ParamInfo(fid, paramName, paramType, paramLength, modifyDate)
 select 8,'formId', 'int', 9,GETDATE()
 
+
+insert into ParamInfo(fid, paramName, paramType, paramLength, modifyDate)
+select 9,'execSql', 'nvarchar', 5000,GETDATE()

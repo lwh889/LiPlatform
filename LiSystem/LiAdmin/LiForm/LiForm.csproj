@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -157,6 +158,12 @@
     <Compile Include="Dev\LiRefForm.Designer.cs">
       <DependentUpon>LiRefForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dev\LiRefQuantityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dev\LiRefQuantityForm.Designer.cs">
+      <DependentUpon>LiRefQuantityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dev\LiRefTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +178,7 @@
     <Compile Include="Dev\LiListForm3.Designer.cs">
       <DependentUpon>LiListForm3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dev\Util\ListFormUtil.cs" />
     <Compile Include="Event\EventForm\LiEventAddCopyRowData.cs" />
     <Compile Include="Event\EventForm\LiEventCopyRowData.cs" />
     <Compile Include="Event\EventForm\LiEventDelete.cs" />
@@ -263,6 +271,9 @@
     <EmbeddedResource Include="Dev\LiRefForm.resx">
       <DependentUpon>LiRefForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dev\LiRefQuantityForm.resx">
+      <DependentUpon>LiRefQuantityForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dev\LiRefTypeForm.resx">
       <DependentUpon>LiRefTypeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +317,14 @@
     <ProjectReference Include="..\LiModel\LiModel.csproj">
       <Project>{6df7e2ad-00ab-4bd7-8ea1-a81bc216261c}</Project>
       <Name>LiModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiU8API\LiU8API.csproj">
+      <Project>{de03fe09-54a3-4944-ba3d-5a8429303735}</Project>
+      <Name>LiU8API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiVoucherConvert\LiVoucherConvert.csproj">
+      <Project>{cad00872-c1b8-43fe-ae50-c14c7151cd3a}</Project>
+      <Name>LiVoucherConvert</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

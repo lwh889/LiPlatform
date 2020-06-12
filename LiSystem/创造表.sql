@@ -165,7 +165,7 @@ begin
 							insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName
 							,basicInfoType,dictInfoType,basicInfoShowFieldName,basicInfoRelationFieldName,basicInfoKeyFieldName,columnWidth,controlType,gridlookUpEditShowModelJson) 
 							select @tableId, ''' + @primaryKeyName + ''',''主键'',''' + @primaryKeyType + ''',9,1,0,0,' + @databaseGeneratedType + ',null,0,null
-							null,null,null,null,null,null,''Key'',null
+							,null,null,null,null,null,null,''Key'',null
 							END
 							ELSE
 							BEGIN
@@ -190,7 +190,7 @@ begin
 								insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName
 								,basicInfoType,dictInfoType,basicInfoShowFieldName,basicInfoRelationFieldName,basicInfoKeyFieldName,columnWidth,controlType,gridlookUpEditShowModelJson)  
 								select @tableId, ''ParentID'',''树形父键'',''' + @primaryKeyType + ''',9,0,0,0,0,null,0,null
-								null,null,null,null,null,null,''Key'',null
+								,null,null,null,null,null,null,''Key'',null
 
 								END
 								ELSE
@@ -229,7 +229,7 @@ begin
 							insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName
 							,basicInfoType,dictInfoType,basicInfoShowFieldName,basicInfoRelationFieldName,basicInfoKeyFieldName,columnWidth,controlType,gridlookUpEditShowModelJson)  
 							select @tableId,''' + @foreigntKeyName + ''',''外键'',''' + @foreigntKeyType + ''',9,0,1,0,'+ @foreigntDatabaseGeneratedType + ',''' + @parentPrimaryKeyName + ''',' + @parentDatabaseGeneratedType + ',''' + @parentTableName + '''
-							null,null,null,null,null,null,''Key'',null
+							,null,null,null,null,null,null,''Key'',null
 							
 							END
 							ELSE
@@ -259,7 +259,7 @@ begin
 				insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName
 				,basicInfoType,dictInfoType,basicInfoShowFieldName,basicInfoRelationFieldName,basicInfoKeyFieldName,columnWidth,controlType,gridlookUpEditShowModelJson)  
 				select @tableId,''' + @childEntityColumnNames + ''',''数据集'',''collection'', -1,0,0,2,0,null,0,null
-				null,null,null,null,null,null,''Collection'',null
+				,null,null,null,null,null,null,''Collection'',null
 				
 				END
 				ELSE
@@ -278,7 +278,7 @@ begin
 					insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName
 					,basicInfoType,dictInfoType,basicInfoShowFieldName,basicInfoRelationFieldName,basicInfoKeyFieldName,columnWidth,controlType,gridlookUpEditShowModelJson)  
 					select @tableId,''' + @TempChildEntityColumnNames + ''',''数据集'',''collection'', -1,0,0,2,0,null,0,null
-					null,null,null,null,null,null,''Collection'',null
+					,null,null,null,null,null,null,''Collection'',null
 				
 					END
 					ELSE
@@ -294,7 +294,7 @@ begin
 						insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName
 						,basicInfoType,dictInfoType,basicInfoShowFieldName,basicInfoRelationFieldName,basicInfoKeyFieldName,columnWidth,controlType,gridlookUpEditShowModelJson)  
 						select @tableId,''' + @childEntityColumnNames + ''',''数据集'',''collection'', -1,0,0,2,0,null,0,null
-						null,null,null,null,null,null,''Collection'',null
+						,null,null,null,null,null,null,''Collection'',null
 				
 						END
 						ELSE

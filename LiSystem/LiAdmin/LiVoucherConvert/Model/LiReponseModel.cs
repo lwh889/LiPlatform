@@ -31,5 +31,7 @@ namespace LiVoucherConvert.Model
         /// 返回结果内容
         /// </summary>
         public string result;
+
+        public Exception ex;
     }
 }

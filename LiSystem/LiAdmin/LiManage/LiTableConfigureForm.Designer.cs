@@ -115,6 +115,7 @@
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit_basicInfoRelationFieldName = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barManager3 = new DevExpress.XtraBars.BarManager(this.components);
@@ -125,7 +126,9 @@
             this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
-            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemGridLookUpEdit_controlType = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -181,6 +184,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_controlType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -756,7 +761,8 @@
             this.repositoryItemCheckEdit1,
             this.repositoryItemGridLookUpEdit_basicInfoType,
             this.repositoryItemGridLookUpEdit_dictInfoType,
-            this.repositoryItemGridLookUpEdit_basicInfoRelationFieldName});
+            this.repositoryItemGridLookUpEdit_basicInfoRelationFieldName,
+            this.repositoryItemGridLookUpEdit_controlType});
             this.gridControl1.Size = new System.Drawing.Size(1328, 238);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.Tag = "LiTableConfigureForm.datas";
@@ -788,7 +794,8 @@
             this.gridColumn20,
             this.gridColumn21,
             this.gridColumn22,
-            this.gridColumn23});
+            this.gridColumn23,
+            this.gridColumn24});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ColumnAutoWidth = false;
@@ -851,7 +858,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Tag = "LiTableConfigureForm.length";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 4;
             this.gridColumn4.Width = 111;
             // 
             // gridColumn5
@@ -861,7 +868,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Tag = "LiTableConfigureForm.primaryKey";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 5;
             // 
             // gridColumn6
             // 
@@ -870,7 +877,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Tag = "LiTableConfigureForm.foreignKey";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.VisibleIndex = 6;
             this.gridColumn6.Width = 72;
             // 
             // gridColumn7
@@ -881,7 +888,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Tag = "LiTableConfigureForm.relationshipType";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.VisibleIndex = 7;
             this.gridColumn7.Width = 126;
             // 
             // repositoryItemGridLookUpEdit_relationshipType
@@ -907,7 +914,7 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Tag = "LiTableConfigureForm.";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.VisibleIndex = 8;
             this.gridColumn8.Width = 108;
             // 
             // repositoryItemGridLookUpEdit_databaseGeneratedType
@@ -932,7 +939,7 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Tag = "LiTableConfigureForm.primaryKeyName";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 8;
+            this.gridColumn9.VisibleIndex = 9;
             this.gridColumn9.Width = 281;
             // 
             // gridColumn10
@@ -943,7 +950,7 @@
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Tag = "LiTableConfigureForm.primaryKeyDatabaseGenerated";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 9;
+            this.gridColumn10.VisibleIndex = 10;
             this.gridColumn10.Width = 318;
             // 
             // gridColumn11
@@ -953,7 +960,7 @@
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Tag = "LiTableConfigureForm.primaryKeyTableName";
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 10;
+            this.gridColumn11.VisibleIndex = 11;
             this.gridColumn11.Width = 243;
             // 
             // gridColumn12
@@ -963,7 +970,7 @@
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Tag = "LiTableConfigureForm.columnOrder";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 11;
+            this.gridColumn12.VisibleIndex = 12;
             this.gridColumn12.Width = 82;
             // 
             // gridColumn13
@@ -973,7 +980,7 @@
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Tag = "LiTableConfigureForm.columnScale";
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 12;
+            this.gridColumn13.VisibleIndex = 13;
             this.gridColumn13.Width = 114;
             // 
             // gridColumn14
@@ -983,7 +990,7 @@
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Tag = "LiTableConfigureForm.columnIsNull";
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 13;
+            this.gridColumn14.VisibleIndex = 14;
             this.gridColumn14.Width = 133;
             // 
             // gridColumn15
@@ -993,7 +1000,7 @@
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Tag = "LiTableConfigureForm.columnDefaultValue";
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 14;
+            this.gridColumn15.VisibleIndex = 15;
             this.gridColumn15.Width = 103;
             // 
             // gridColumn16
@@ -1003,7 +1010,7 @@
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.Tag = "LiTableConfigureForm.bSearchColumns";
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 15;
+            this.gridColumn16.VisibleIndex = 16;
             this.gridColumn16.Width = 172;
             // 
             // gridColumn17
@@ -1013,7 +1020,7 @@
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Tag = "LiTableConfigureForm.bDisplayColumn";
             this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 16;
+            this.gridColumn17.VisibleIndex = 17;
             this.gridColumn17.Width = 129;
             // 
             // gridColumn18
@@ -1023,7 +1030,7 @@
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Tag = "LiTableConfigureForm.bVisible";
             this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 17;
+            this.gridColumn18.VisibleIndex = 18;
             this.gridColumn18.Width = 123;
             // 
             // gridColumn19
@@ -1033,7 +1040,7 @@
             this.gridColumn19.FieldName = "basicInfoType";
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 19;
+            this.gridColumn19.VisibleIndex = 20;
             this.gridColumn19.Width = 163;
             // 
             // repositoryItemGridLookUpEdit_basicInfoType
@@ -1058,7 +1065,7 @@
             this.gridColumn20.FieldName = "dictInfoType";
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 18;
+            this.gridColumn20.VisibleIndex = 19;
             this.gridColumn20.Width = 153;
             // 
             // repositoryItemGridLookUpEdit_dictInfoType
@@ -1082,7 +1089,7 @@
             this.gridColumn21.FieldName = "basicInfoShowFieldName";
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 22;
+            this.gridColumn21.VisibleIndex = 23;
             this.gridColumn21.Width = 202;
             // 
             // gridColumn22
@@ -1092,7 +1099,7 @@
             this.gridColumn22.FieldName = "basicInfoRelationFieldName";
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 20;
+            this.gridColumn22.VisibleIndex = 21;
             this.gridColumn22.Width = 175;
             // 
             // repositoryItemGridLookUpEdit_basicInfoRelationFieldName
@@ -1110,6 +1117,15 @@
             this.gridView5.Name = "gridView5";
             this.gridView5.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView5.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn23
+            // 
+            this.gridColumn23.Caption = "基础档案主键";
+            this.gridColumn23.FieldName = "basicInfoKeyFieldName";
+            this.gridColumn23.Name = "gridColumn23";
+            this.gridColumn23.Visible = true;
+            this.gridColumn23.VisibleIndex = 22;
+            this.gridColumn23.Width = 199;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -1212,14 +1228,30 @@
             this.barDockControl8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.barDockControl8.Size = new System.Drawing.Size(0, 238);
             // 
-            // gridColumn23
+            // gridColumn24
             // 
-            this.gridColumn23.Caption = "基础档案主键";
-            this.gridColumn23.FieldName = "basicInfoKeyFieldName";
-            this.gridColumn23.Name = "gridColumn23";
-            this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 21;
-            this.gridColumn23.Width = 199;
+            this.gridColumn24.Caption = "控件类型";
+            this.gridColumn24.ColumnEdit = this.repositoryItemGridLookUpEdit_controlType;
+            this.gridColumn24.FieldName = "controlType";
+            this.gridColumn24.Name = "gridColumn24";
+            this.gridColumn24.Visible = true;
+            this.gridColumn24.VisibleIndex = 3;
+            this.gridColumn24.Width = 147;
+            // 
+            // repositoryItemGridLookUpEdit_controlType
+            // 
+            this.repositoryItemGridLookUpEdit_controlType.AutoHeight = false;
+            this.repositoryItemGridLookUpEdit_controlType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEdit_controlType.Name = "repositoryItemGridLookUpEdit_controlType";
+            this.repositoryItemGridLookUpEdit_controlType.View = this.gridView6;
+            // 
+            // gridView6
+            // 
+            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView6.OptionsView.ShowGroupPanel = false;
             // 
             // LiTableConfigureForm
             // 
@@ -1292,6 +1324,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_controlType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1394,5 +1428,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_basicInfoRelationFieldName;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_controlType;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
     }
 }

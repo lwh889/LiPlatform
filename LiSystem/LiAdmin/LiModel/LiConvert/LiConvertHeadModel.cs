@@ -134,11 +134,24 @@ namespace LiModel.LiConvert
         public string convertRelation { set; get; }
 
         /// <summary>
-        /// 转换关系字段
+        /// 转换关系字段,弃用
         /// </summary>
         public string convertRelationField { set; get; }
 
+        /// <summary>
+        /// 累计字段
+        /// </summary>
+        public string convertCumulativeField { set; get; }
 
+        /// <summary>
+        /// 下推数量字段
+        /// </summary>
+        public string convertPushField { set; get; }
+
+        /// <summary>
+        /// 下推数量表名
+        /// </summary>
+        public string convertPushTableName { set; get; }
         /// <summary>
         /// 列表按钮
         /// </summary>

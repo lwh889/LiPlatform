@@ -132,6 +132,7 @@
             this.btnListSelectAll = new DevExpress.XtraBars.BarButtonItem();
             this.btnListReSelect = new DevExpress.XtraBars.BarButtonItem();
             this.btnListCancelSelect = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnListPushButton = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.btnU8Publish = new DevExpress.XtraBars.BarButtonItem();
@@ -249,7 +250,7 @@
             this.popupEventMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupControlGroupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupListButtonMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.BtnListPushButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnListRefButton = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document5)).BeginInit();
@@ -497,10 +498,11 @@
             this.btnListReSelect,
             this.btnListCancelSelect,
             this.btnU8Publish,
-            this.BtnListPushButton});
+            this.BtnListPushButton,
+            this.BtnListRefButton});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ribbon.MaxItemId = 100;
+            this.ribbon.MaxItemId = 101;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -1175,7 +1177,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnListSelectAll),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnListReSelect),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnListCancelSelect),
-            new DevExpress.XtraBars.LinkPersistInfo(this.BtnListPushButton)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnListPushButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnListRefButton)});
             this.barSubItem12.Name = "barSubItem12";
             // 
             // btnListQuery
@@ -1275,6 +1278,13 @@
             this.btnListCancelSelect.Id = 97;
             this.btnListCancelSelect.Name = "btnListCancelSelect";
             this.btnListCancelSelect.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListCancelSelect_ItemClick);
+            // 
+            // BtnListPushButton
+            // 
+            this.BtnListPushButton.Caption = "下推按钮";
+            this.BtnListPushButton.Id = 99;
+            this.BtnListPushButton.Name = "BtnListPushButton";
+            this.BtnListPushButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListPushButton_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -2451,12 +2461,12 @@
             this.popupListButtonMenu.Name = "popupListButtonMenu";
             this.popupListButtonMenu.Ribbon = this.ribbon;
             // 
-            // BtnListPushButton
+            // BtnListRefButton
             // 
-            this.BtnListPushButton.Caption = "下推按钮";
-            this.BtnListPushButton.Id = 99;
-            this.BtnListPushButton.Name = "BtnListPushButton";
-            this.BtnListPushButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListPushButton_ItemClick);
+            this.BtnListRefButton.Caption = "参照按钮";
+            this.BtnListRefButton.Id = 100;
+            this.BtnListRefButton.Name = "BtnListRefButton";
+            this.BtnListRefButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListRefButton_ItemClick);
             // 
             // LiManageVoucherDesign
             // 
@@ -2775,5 +2785,6 @@
         private DevExpress.XtraBars.BarButtonItem btnListCancelSelect;
         private DevExpress.XtraBars.BarButtonItem btnU8Publish;
         private DevExpress.XtraBars.BarButtonItem BtnListPushButton;
+        private DevExpress.XtraBars.BarButtonItem BtnListRefButton;
     }
 }

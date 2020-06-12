@@ -27,16 +27,8 @@ namespace LiForm.Event.EventForm
                 if (form.ShowDialog() == DialogResult.Yes)
                 {
                     LiConvertHeadModel liConvertHeadModel = form.liConvertHeadModel;
-                    LiRefForm liRefForm = new LiRefForm(liConvertHeadModel);
-                    if (liRefForm.ShowDialog() == DialogResult.Yes)
-                    {
-                        List<DataRow> drs = liRefForm.SelectDataRows;
-                        DataRow drHead = drs[0];
-                        FormUtil.pushVoucher(liConvertHeadModel, drHead, drs, this.liForm);
-                        this.liForm.loadData();
 
-                        bSuccess = true;
-                    }
+                    bSuccess = ListFormUtil.refVoucher(this.liListForm.entityKey, liConvertHeadModel, this.liListForm.tableModel, this.liListForm.tableModelList, this.liListForm.getParentForm(), this.liForm);
                 }
             }
             catch (Exception ex)

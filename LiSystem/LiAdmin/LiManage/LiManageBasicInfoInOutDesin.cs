@@ -362,7 +362,7 @@ namespace LiManage
                     MessageBox.Show("请选择导入文件！", "用友提示");
                     return;
                 }
-                DataTable dt = ExcelUtil.ExcelToDataTable("Sheet1", true, filename);
+                DataTable dt = ExcelUtil.ExcelToDataTable(filename, "Sheet1", true);
                 if (dt != null)
                 {
                     List<ColumnModel> listColumns = (List<ColumnModel>)gridControl1.DataSource;

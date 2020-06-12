@@ -3,12 +3,9 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiVoucherConvert
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiVoucherConvert.pdb
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\obj\Debug\LiVoucherConvert.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\obj\Debug\LiVoucherConvert.pdb
-C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiContexts.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiHttp.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiModel.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiU8API.dll
-C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\DevExpress.XtraBars.v17.1.dll
-C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiLog.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiCommon.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\Newtonsoft.Json.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\UFIDA.U8.U8APIFramework.dll
@@ -17,7 +14,6 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\Interop.MSXML2.d
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\DevExpress.Utils.v17.1.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\DevExpress.XtraEditors.v17.1.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\DevExpress.Data.v17.1.dll
-C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\log4net.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\NPOI.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\PostSharp.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\NPOI.OOXML.dll
@@ -31,7 +27,6 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\DevExpress.Print
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\DevExpress.Sparkline.v17.1.Core.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\ICSharpCode.SharpZipLib.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\NPOI.OpenXmlFormats.dll
-C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\ADODB.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\MOMProtocol.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\MOMEngineDAC.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\MOMEngine.dll
@@ -47,16 +42,13 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\Interop.U8APITra
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\IAppReceive.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\Interop.TLI.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\Interop.VBAsyncPluginInvoker.dll
-C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiContexts.pdb
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiHttp.pdb
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiHttp.dll.config
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiModel.pdb
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiU8API.pdb
-C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiLog.pdb
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\LiCommon.pdb
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\Newtonsoft.Json.xml
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\UFIDA.U8.U8APIFramework.dll.config
-C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\log4net.xml
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\PostSharp.xml
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\UFSoft.AIF.MOM.Common.MessageObjectModel.xml
 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\bin\Debug\DevExpress.Sparkline.v17.1.Core.xml

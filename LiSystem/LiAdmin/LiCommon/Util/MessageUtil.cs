@@ -34,7 +34,15 @@ namespace LiCommon.Util
         /// <summary>
         /// 是/否
         /// </summary>
-        YesNo = 5
+        YesNo = 5,
+        /// <summary>
+        /// 错误
+        /// </summary>
+        SystemTip = 6,
+        /// <summary>
+        /// 错误
+        /// </summary>
+        WarmTip = 7
     }
     #endregion
 
@@ -157,6 +165,28 @@ namespace LiCommon.Util
         public static DialogResult Show(string text)
         {
             return XtraMessageBox.Show(text);
+        }
+
+        public static DialogResult Show(string text,MsgType msgType)
+        {
+            switch (msgType)
+            {
+                case MsgType.SystemTip:
+                    return XtraMessageBox.Show(text,"系统提示");
+                case MsgType.WarmTip:
+                    return XtraMessageBox.Show(text,"系统提示");
+                default:
+                    return XtraMessageBox.Show(text);
+            }
+        }
+
+        public static DialogResult ShowBySystemTip(string text)
+        {
+            return Show(text, MsgType.SystemTip);
+        }
+        public static DialogResult ShowByWarmTip(string text)
+        {
+            return Show(text, MsgType.WarmTip);
         }
 
         public static DialogResult Show(string text, string caption)

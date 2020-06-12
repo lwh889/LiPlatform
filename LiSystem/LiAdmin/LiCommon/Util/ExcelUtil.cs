@@ -225,7 +225,7 @@ namespace LiCommon.Util
         }
 
      
-        public static DataTable ExcelToDataTable(string sheetName, bool isFirstRowColumn,string fileName)
+        public static DataTable ExcelToDataTable(string fileName, string sheetName = null, bool isFirstRowColumn=true)
         {
             IWorkbook workbook = null;
             ISheet sheet = null;

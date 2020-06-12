@@ -61,6 +61,7 @@
     <Compile Include="LiConvert\LiConvertFieldModel.cs" />
     <Compile Include="LiEnum\ControlType.cs" />
     <Compile Include="LiEnum\DockType.cs" />
+    <Compile Include="LiEnum\EntityOrderType.cs" />
     <Compile Include="LiEnum\KeyType.cs" />
     <Compile Include="LiEnum\ListButtonType.cs" />
     <Compile Include="LiEnum\ButtonType.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="LiEnum\GridlookUpEditShowMode.cs" />
     <Compile Include="LiEnum\JudgmentSymbol.cs" />
     <Compile Include="LiEnum\MessageType.cs" />
+    <Compile Include="LiEnum\ShowGridColumnMode.cs" />
     <Compile Include="LiEnum\VoucherType.cs" />
     <Compile Include="LiEnum\PanelType.cs" />
     <Compile Include="Form\GridlookUpEditModel.cs" />

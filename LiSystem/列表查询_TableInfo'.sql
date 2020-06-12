@@ -77,6 +77,7 @@ begin
 
 	if(@controlType = 'GridLookUpEditComboBox' or @controlType = 'StatusEdit' )
 	begin
+		set @fieldSql = @fieldSql + ' LiDict_' + @tableName + '_' + @columnName + '.dictCode Li' + @tableName + '_' + @columnName +  ','
 		set @fieldSql = @fieldSql + ' LiDict_' + @tableName + '_' + @columnName + '.dictCode Li' + @tableName + '_' + @columnName +  '_Code,'
 		set @fieldSql = @fieldSql + ' LiDict_' + @tableName + '_' + @columnName + '.dictName Li' + @tableName + '_' + @columnName +  '_Name,'
 	end
@@ -160,7 +161,7 @@ BEGIN
 		
 		set @leftjoinSql = @leftjoinSql + ' LEFT JOIN ' + @dataBaseName + '.dbo.' + @tableName + ' Li' + @tableName + ' ON'+ ' Li' + @tableName + '.' + @foreignKeyName + ' = Li' + @parentTableName + '.' + @primaryKeyName
 		
-
+		---如果没查询出来，controlType可能为NULL
 		declare liCursorColumn cursor for select [columnName],[columnType] from ColumnInfo CI WHERE CI.fid = @tableId and controlType not in ('GridLookUpEditRefAssist','Collection')
 		open liCursorColumn
 		fetch next from liCursorColumn into @columnName,@columnType
@@ -169,6 +170,7 @@ BEGIN
 		
 				if(@controlType = 'GridLookUpEditComboBox' or @controlType = 'StatusEdit' )
 				begin
+					set @fieldSql = @fieldSql + ' LiDict_' + @parentAttrTableName + '_' + @columnName + '.dictCode Li' + @parentAttrTableName + '_' + @columnName +  ','
 					set @fieldSql = @fieldSql + ' LiDict_' + @parentAttrTableName + '_' + @columnName + '.dictCode Li' + @parentAttrTableName + '_' + @columnName +  '_Code,'
 					set @fieldSql = @fieldSql + ' LiDict_' + @parentAttrTableName + '_' + @columnName + '.dictName Li' + @parentAttrTableName + '_' + @columnName +  '_Name,'
 				end

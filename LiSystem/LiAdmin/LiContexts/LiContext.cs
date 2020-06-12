@@ -21,19 +21,14 @@ using LiVoucherConvert.Service;
 using LiModel.LiConvert;
 using LiVoucherConvert.Service.Impl;
 using LiVoucherConvert.Model;
+using LiHttp;
 
 namespace LiContexts
 {
     public class LiContext
     {
-        /// <summary>
-        /// 单据转换
-        /// </summary>
-        public static VoucherConvertContext voucherConvertContext = new VoucherConvertContext();
-
         public static Dictionary<string, PageFormModel> pageFormModels = new Dictionary<string, PageFormModel>();
 
-        public static Dictionary<string, AHttpEntity> httpEntitys = new Dictionary<string, AHttpEntity>();
 
         private static Dictionary<string, DataTable> _liRefDataDataTable = new Dictionary<string, DataTable>();
 
@@ -310,9 +305,14 @@ namespace LiContexts
 
         }
 
+        /// <summary>
+        /// 弃用
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="httpEntity"></param>
         public static void addHttpEntity(string key, AHttpEntity httpEntity)
         {
-            httpEntitys.Add(key, httpEntity);
+            LiHttpUtil.addHttpEntity(key, httpEntity);
         }
 
         //public static TEntity getHttpEntity<TEntity>(string entityKey, string systemCode = SYSTEMCODE) where TEntity : class
@@ -326,55 +326,38 @@ namespace LiContexts
         //    return entity;
         //}
 
+        /// <summary>
+        /// 弃用
+        /// </summary>
+        /// <param name="entityKey"></param>
+        /// <param name="systemCode"></param>
+        /// <returns></returns>
         public static AHttpEntity getHttpEntity(string entityKey, string systemCode = SYSTEMCODE_DEFAULT)
         {
-            string keyStr = string.Concat(entityKey, "_", systemCode);
-            if (!httpEntitys.ContainsKey(keyStr))
-            {
-                httpEntitys.Add(keyStr, new HttpEntity(entityKey, systemCode));
-            }
-            AHttpEntity entity = httpEntitys[keyStr];
-            return entity;
+            return  LiHttpUtil.getHttpEntity(entityKey, systemCode); ;
 
         }
 
         /// <summary>
-        /// 获取单据转换
+        /// 弃用，获取单据转换
         /// </summary>
         /// <param name="convertType"></param>
         /// <param name="convertCode"></param>
         /// <returns></returns>
         public static AVoucherConvert getVoucherConvert(string convertType, string convertCode)
         {
-            string keyName = string.Format("{0}_{1}", convertType, convertCode);
-            AVoucherConvert voucherConvert = voucherConvertContext.get(keyName);
-            if(voucherConvert == null)
-            {
-                switch (convertType)
-                {
-                    case ConvertDestTypeModel.System:
-                        break;
-                    case ConvertDestTypeModel.U8:
-                        U8VoucherConvert u8VoucherConvert = new U8VoucherConvert();
-                        voucherConvertContext.put(keyName, u8VoucherConvert);
-                        break;
-                }
-            }
-
-            return voucherConvert;
+            return LiVoucherConvertUtil.getVoucherConvert(convertType, convertCode);
         }
 
         /// <summary>
-        /// 下推单据
+        /// 弃用，下推单据
         /// </summary>
         /// <param name="convertType"></param>
         /// <param name="convertCode"></param>
         /// <returns></returns>
         public static LiReponseModel pushVoucher(string convertType, string convertCode)
         {
-            AVoucherConvert voucherConvert = getVoucherConvert(convertType, convertCode);
-            if (voucherConvert == null) return LiReponseModel.getInstance();
-            return voucherConvert.pushVoucher();
+            return LiVoucherConvertUtil.pushVoucher(convertType, convertCode);
         }
 
         //public static AHttpEntity getHttpEntity()

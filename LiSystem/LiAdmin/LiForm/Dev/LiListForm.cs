@@ -252,47 +252,8 @@ namespace LiForm.Dev
             FieldModel.InitDataSource(tableModel,tableModelList);
             EntityModel.InitDataSource(tableModel, tableModelList);
 
-            GridColumn gridColumnSel = new DevExpress.XtraGrid.Columns.GridColumn();
-            gridColumnSel.Caption = "选择";
-            gridColumnSel.Name = "LiSel_GridColumn";
-            gridColumnSel.FieldName = "sel";
-            gridColumnSel.Visible = true;
-            gridColumnSel.VisibleIndex = 0;
-            gridColumnSel.Width = 80;
-            gridColumnSel.OptionsColumn.AllowEdit = true;
+            ListFormUtil.getGridColumn(tableModelList, liGridColumnDict);
 
-            liGridColumnDict.Add("sel", gridColumnSel);
-            foreach (TableModel tableModel in tableModelList)
-            {
-                foreach (ColumnModel columnModel in tableModel.datas)
-                {
-                    if (columnModel.columnType == ColumnType.Collection) continue;
-
-                    GridColumn gridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-                    gridColumn.Caption = columnModel.columnAbbName;
-                    switch (columnModel.controlType)
-                    {
-                        case ControlType.StatusEdit:
-                        case ControlType.GridLookUpEditComboBox:
-                            gridColumn.Name = string.Format("Li{0}{1}_GridColumn_Name", tableModel.tableName, columnModel.columnName);
-                            gridColumn.FieldName = string.Format("Li{0}_{1}_Name", tableModel.tableName, columnModel.columnName);
-                            break;
-                        default:
-                            gridColumn.Name = string.Format("Li{0}{1}_GridColumn", tableModel.tableName, columnModel.columnName);
-                            gridColumn.FieldName = string.Format("Li{0}_{1}", tableModel.tableName, columnModel.columnName);
-                            break;
-                    }
-                    gridColumn.Visible = columnModel.bDisplayColumn;
-                    gridColumn.VisibleIndex = columnModel.bDisplayColumn ? columnModel.columnOrder : -1;
-                    gridColumn.Width = columnModel.columnWidth;
-                    gridColumn.OptionsColumn.AllowEdit = false;
-
-                    gridColumn.Tag = columnModel;
-
-                    liGridColumnDict.Add(gridColumn.FieldName, gridColumn);
-
-                }
-            }
         }
 
         public void InitView()

@@ -1749,6 +1749,11 @@ namespace LiManage
         {
             addButton(ListButtonType.BTNPUSH);
         }
+
+        private void BtnListRefButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNREF);
+        }
     }
 
 
