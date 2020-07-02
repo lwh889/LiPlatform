@@ -27,6 +27,7 @@ namespace LiContexts
 {
     public class LiContext
     {
+
         public static Dictionary<string, PageFormModel> pageFormModels = new Dictionary<string, PageFormModel>();
 
 
@@ -128,6 +129,7 @@ namespace LiContexts
 
             //liHttpDelete = new LiHttpInsert
         }
+
 
         //获取对应的引用数据
         public static DataTable getRefDataDataTable(string key)

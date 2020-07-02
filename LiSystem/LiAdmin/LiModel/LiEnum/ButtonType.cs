@@ -18,6 +18,8 @@ namespace LiModel.LiEnum
         public const string BTNUNAUDIT = "反审核";
         public const string BTNREF = "参照";
         public const string BTNPUSH = "下推";
+        public const string BTNUPSHOW = "上查";
+        public const string BTNDOWNSHOW = "下查";
         public const string BTNEXIT = "退出";
 
         public const string BTNPREVIOUS = "上翻";

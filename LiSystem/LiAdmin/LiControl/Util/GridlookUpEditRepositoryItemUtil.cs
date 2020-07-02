@@ -22,6 +22,10 @@ namespace LiControl.Util
     /// </summary>
     public class GridlookUpEditRepositoryItemUtil
     {
+        public static Dictionary<RepositoryItemGridLookUpEdit, CustomDisplayTextEventHandler> customDisplayTextEventHandlerDict = new Dictionary<RepositoryItemGridLookUpEdit, CustomDisplayTextEventHandler>();
+        public static Dictionary<RepositoryItemGridLookUpEdit, EventHandler> eventHandlerDict = new Dictionary<RepositoryItemGridLookUpEdit, EventHandler>();
+        public static Dictionary<RepositoryItemGridLookUpEdit, ChangingEventHandler> changingEventHandlerDict = new Dictionary<RepositoryItemGridLookUpEdit, ChangingEventHandler>();
+
         /// <summary>
         /// 下拉框显示
         /// </summary>
@@ -61,14 +65,25 @@ namespace LiControl.Util
             }
 
             //绑定下拉框事件
+            if (eventHandlerDict.ContainsKey(gridlookUpEdit))
+            {
+                gridlookUpEdit.Popup -= eventHandlerDict[gridlookUpEdit];
+                eventHandlerDict.Remove(gridlookUpEdit);
+            }
             Action<object, EventArgs> gridLookUpEdit1_Popup = (sender, e) =>
             {
                 FilterLookup(sender, searchColumns);
             };
-            gridlookUpEdit.Popup += new EventHandler(gridLookUpEdit1_Popup);
+            eventHandlerDict.Add(gridlookUpEdit, new EventHandler(gridLookUpEdit1_Popup));
+            gridlookUpEdit.Popup += eventHandlerDict[gridlookUpEdit];
 
 
             //绑定值改变事件
+            if (changingEventHandlerDict.ContainsKey(gridlookUpEdit))
+            {
+                gridlookUpEdit.EditValueChanging -= changingEventHandlerDict[gridlookUpEdit];
+                changingEventHandlerDict.Remove(gridlookUpEdit);
+            }
             Action<object, ChangingEventArgs> gridLEdit1_EditValueChanging = (sender, e) =>
             {
                 if (!view.Visible) view.Show();
@@ -77,7 +92,8 @@ namespace LiControl.Util
                     FilterLookup(sender, searchColumns);
                 }));
             };
-            gridlookUpEdit.EditValueChanging += new ChangingEventHandler(gridLEdit1_EditValueChanging);
+            changingEventHandlerDict.Add(gridlookUpEdit, new ChangingEventHandler(gridLEdit1_EditValueChanging));
+            gridlookUpEdit.EditValueChanging += changingEventHandlerDict[gridlookUpEdit];
 
         }
 
@@ -140,6 +156,11 @@ namespace LiControl.Util
             }
 
             //自定义显示值
+            if (customDisplayTextEventHandlerDict.ContainsKey(gridlookUpEdit))
+            {
+                gridlookUpEdit.CustomDisplayText -= customDisplayTextEventHandlerDict[gridlookUpEdit];
+                customDisplayTextEventHandlerDict.Remove(gridlookUpEdit);
+            }
             Action<object, CustomDisplayTextEventArgs> gridLookUpEdit1_CustomDisplayText = (sender, e) =>
             {
                 switch (showMode)
@@ -158,17 +179,28 @@ namespace LiControl.Util
                         break;
                 }
             };
-            gridlookUpEdit.CustomDisplayText += new CustomDisplayTextEventHandler(gridLookUpEdit1_CustomDisplayText);
+            customDisplayTextEventHandlerDict.Add(gridlookUpEdit, new CustomDisplayTextEventHandler(gridLookUpEdit1_CustomDisplayText));
+            gridlookUpEdit.CustomDisplayText += customDisplayTextEventHandlerDict[gridlookUpEdit];
 
             //绑定下拉框事件
+            if (eventHandlerDict.ContainsKey(gridlookUpEdit))
+            {
+                gridlookUpEdit.Popup -= eventHandlerDict[gridlookUpEdit];
+                eventHandlerDict.Remove(gridlookUpEdit);
+            }
             Action<object, EventArgs> gridLookUpEdit1_Popup = (sender, e) =>
             {
                 FilterLookup(sender, searchColumns);
             };
-            gridlookUpEdit.Popup += new EventHandler(gridLookUpEdit1_Popup);
-
+            eventHandlerDict.Add(gridlookUpEdit, new EventHandler(gridLookUpEdit1_Popup));
+            gridlookUpEdit.Popup += eventHandlerDict[gridlookUpEdit];
 
             //绑定值改变事件
+            if (changingEventHandlerDict.ContainsKey(gridlookUpEdit))
+            {
+                gridlookUpEdit.EditValueChanging -= changingEventHandlerDict[gridlookUpEdit];
+                changingEventHandlerDict.Remove(gridlookUpEdit);
+            }
             Action<object, ChangingEventArgs> gridLEdit1_EditValueChanging = (sender, e) =>
             {
 
@@ -178,7 +210,8 @@ namespace LiControl.Util
                     FilterLookup(sender, searchColumns);
                 }));
             };
-            gridlookUpEdit.EditValueChanging += new ChangingEventHandler(gridLEdit1_EditValueChanging);
+            changingEventHandlerDict.Add(gridlookUpEdit, new ChangingEventHandler(gridLEdit1_EditValueChanging));
+            gridlookUpEdit.EditValueChanging += changingEventHandlerDict[gridlookUpEdit];
         }
 
         /// <summary>

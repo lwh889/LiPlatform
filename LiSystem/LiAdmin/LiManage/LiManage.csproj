@@ -149,6 +149,12 @@
     <Compile Include="LiSystemInfoForm.Designer.cs">
       <DependentUpon>LiSystemInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LiManageConvertForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiManageConvertForm2.Designer.cs">
+      <DependentUpon>LiManageConvertForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="LiTableConfigureForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,12 @@
     </Compile>
     <Compile Include="LiSystemInfoListForm.Designer.cs">
       <DependentUpon>LiSystemInfoListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiManageConvertListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiManageConvertListForm.Designer.cs">
+      <DependentUpon>LiManageConvertListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LiTableConfigureListForm.cs">
       <SubType>Form</SubType>
@@ -245,11 +257,17 @@
     <EmbeddedResource Include="LiSystemInfoForm.resx">
       <DependentUpon>LiSystemInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LiManageConvertForm2.resx">
+      <DependentUpon>LiManageConvertForm2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LiTableConfigureForm.resx">
       <DependentUpon>LiTableConfigureForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiSystemInfoListForm.resx">
       <DependentUpon>LiSystemInfoListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiManageConvertListForm.resx">
+      <DependentUpon>LiManageConvertListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiTableConfigureListForm.resx">
       <DependentUpon>LiTableConfigureListForm.cs</DependentUpon>

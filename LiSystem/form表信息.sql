@@ -14,12 +14,14 @@ create table TableInfo(
 	tableDesc nvarchar(255),	--表描述
 	className nvarchar(50),	--json数据转化到实体的类名
 	keyName nvarchar(50),	--主键名
+	bDefaultBody bit default 0,	--默认表体
 	childTableEntityColumnName nvarchar(500),	--外键名 --不要
 	
 	modifyDate datetime,	--修改时间
 	createDate datetime default getdate()
 )
-select * from LiControl 
+--alter table TableInfo add bDefaultBody bit default 0
+
 create table ColumnInfo(
 	id int identity(1,1) primary key,
 	fid int REFERENCES TableInfo(id),
@@ -48,6 +50,11 @@ create table ColumnInfo(
 
 	bVisible bit default 1, --是否显示
 	
+	bExtendField bit default 0, --是否扩展字段表
+	extendTableName nvarchar(50),	--扩展字段表名
+	extendTableKeyFieldName nvarchar(50),	--扩展字段表名外键
+	extendRelationTableKeyFieldName nvarchar(50),	--扩展关联表主键
+
 	basicInfoType nvarchar(50),	--基础档案类型
 	dictInfoType nvarchar(50),	--字典类型
 	basicInfoShowFieldName nvarchar(50),	--基础档案显示属性
@@ -66,6 +73,10 @@ create table ColumnInfo(
 --alter table ColumnInfo add controlType nvarchar(50)
 --alter table ColumnInfo add columnWidth int default 0
 --alter table ColumnInfo add gridlookUpEditShowModelJson nvarchar(4000)
+--alter table ColumnInfo add bExtendField bit default 0
+--alter table ColumnInfo add extendTableName nvarchar(50)
+--alter table ColumnInfo add extendTableKeyFieldName nvarchar(50)
+--alter table ColumnInfo add extendRelationTableKeyFieldName nvarchar(50)
 
 SET IDENTITY_Insert TableInfo ON
 insert into TableInfo (id,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
@@ -582,6 +593,8 @@ select 14, 'className','类名', 'narchar',50,0,0,0,0,null,0,null
 union all
 select 14, 'keyName','主键名', 'narchar',50,0,0,0,0,null,0,null
 union all
+select 14, 'bDefaultBody','默认表体', 'bit',1,0,0,0,0,null,0,null
+union all
 select 14, 'childTableEntityColumnName','子表实体名', 'narchar',50,0,0,0,0,null,0,null
 union all
 select 14, 'modifyDate','修改时间', 'dateTime',50,0,0,0,0,null,0,null
@@ -589,6 +602,7 @@ union all
 select 14, 'datas','数据集','collection', -1,0,0,2,0,null,0,null
 
 --ColumnInfo
+--select * from ColumnInfo where fid = 15
 insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
 select 15, 'id','主键','int',9,1,0,0,1,null,0,null
 union all
@@ -647,7 +661,14 @@ union all
 select 15, 'controlType','控件类型', 'narchar',50,0,0,0,0,null,0,null
 union all
 select 15, 'gridlookUpEditShowModelJson','显示配置', 'narchar',4000,0,0,0,0,null,0,null
-
+union all
+select 15, 'bExtendField','是否扩展字段表', 'bit',50,0,0,0,0,null,0,null
+union all
+select 15, 'extendTableName','扩展字段表名称', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 15, 'extendTableKeyFieldName','扩展字段表名外键', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 15, 'extendRelationTableKeyFieldName','扩展关联表主键', 'narchar',50,0,0,0,0,null,0,null
 
 --LiAdminMeum
 insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
@@ -942,10 +963,19 @@ select 30, 'convertPushField','下推数量字段', 'narchar',50,0,0,0,0,null,0,null
 union all
 select 30, 'convertPushTableName','下推表名', 'narchar',50,0,0,0,0,null,0,null
 union all
+select 30, 'bSourceTableFiliter','源表过滤', 'bit',10,0,0,0,0,null,0,null
+union all
+select 30, 'convertCumulativeTextField','累计文本字段', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 30, 'convertCumulativeIDField','累计ID字段', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 30, 'convertCumulativeTableName','累计表名', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 30, 'convertCumulativeDatabaseName','累计表名数据库', 'narchar',50,0,0,0,0,null,0,null
+union all
 select 30, 'datas','数据集','collection', -1,0,0,2,0,null,0,null
 union all
 select 30, 'queryFields','数据集','collection', -1,0,0,2,0,null,0,null
-
 
 --LiConvertBody
 
@@ -983,6 +1013,10 @@ union all
 select 31, 'reverseCodeFieldName','反写编码', 'narchar',50,0,0,0,0,null,0,null
 union all
 select 31, 'bReverseType','反写类型', 'bit',10,0,0,0,0,null,0,null
+union all
+select 31, 'bCumulativeRelationQty','累计关联数量字段', 'bit',10,0,0,0,0,null,0,null
+union all
+select 31, 'bCumulativeRelationID','累计关联ID字段', 'bit',10,0,0,0,0,null,0,null
 
 --select * from LiField
 

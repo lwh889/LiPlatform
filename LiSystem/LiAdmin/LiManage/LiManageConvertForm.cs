@@ -338,6 +338,7 @@ namespace LiManage
                                 if(columnModel != null)
                                 {
                                     entityBody.convertSourceType = tableModel.tableName;
+                                    break;
                                 }
                             }
 
@@ -507,6 +508,11 @@ namespace LiManage
                     }
                     break;
             }
+        }
+
+        private void GridControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
     public struct ConvertDestColumnInfo

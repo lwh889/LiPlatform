@@ -86,6 +86,14 @@ namespace LiModel.LiConvert
         /// </summary>
         public string reverseCodeFieldName { set; get; }
         /// <summary>
+        /// 累计关联数量字段
+        /// </summary>
+        public bool bCumulativeRelationQty { set; get; }
+        /// <summary>
+        /// 累计关联ID字段
+        /// </summary>
+        public bool bCumulativeRelationID { set; get; }
+        /// <summary>
         /// 反写类型
         /// </summary>
         public bool bReverseType { set; get; }

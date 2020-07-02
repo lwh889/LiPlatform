@@ -1754,6 +1754,71 @@ namespace LiManage
         {
             addButton(ListButtonType.BTNREF);
         }
+
+        private void BtnUpShowButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNUPSHOW);
+        }
+
+        private void BtnDownShowButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addButton(ListButtonType.BTNDOWNSHOW);
+        }
+
+        private void BtnAddHeadSourceID_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addControl(ControlFactory.getHeadSourceIDControl());
+        }
+
+        private void BtnAddHeadSourceCode_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addControl(ControlFactory.getHeadSourceCodeControl());
+        }
+
+        private void BtnAddHeadSourceType_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addControl(ControlFactory.getHeadSourceTypeControl());
+        }
+
+        private void BtnAddBodySourceID_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addControl(ControlFactory.getBodySourceIDControl());
+        }
+
+        private void BtnAddBodySourceCode_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addControl(ControlFactory.getBodySourceCodeControl());
+        }
+
+        private void BtnAddBodySourceType_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addControl(ControlFactory.getBodySourceTypeControl());
+        }
+
+        private void BtnAddBodySourceQty_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addControl(ControlFactory.getBodySourceQtyControl());
+        }
+
+        private void BtnAddBHeadSourceQty_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addControl(ControlFactory.getHeadSourceQtyControl());
+        }
+
+        private void BtnAddHeadConvertCode_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addControl(ControlFactory.getHeadConvertCodeControl());
+        }
+
+        private void BtnAddBodyConvertCode_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addControl(ControlFactory.getBodyConvertCodeControl());
+        }
+
+        private void BtnAddQty_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            addControl(ControlFactory.getQuantityControl());
+        }
     }
 
 

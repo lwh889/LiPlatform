@@ -68,8 +68,10 @@ declare @controlType nvarchar(50)
 declare @basicInfoShowFieldName nvarchar(50)
 declare @basicInfoRelationFieldName nvarchar(50)
 declare @basicInfoKeyFieldName nvarchar(50)
+declare @extendTableKeyFieldName nvarchar(50)
+declare @extendRelationTableKeyFieldName nvarchar(50)
 
-declare liCursorColumn cursor for select [columnName],[columnType],[controlType] from ColumnInfo CI WHERE CI.fid = @tableId and CI.controlType not in ('GridLookUpEditRefAssist','Collection')
+declare liCursorColumn cursor for select [columnName],[columnType],[controlType] from ColumnInfo CI WHERE CI.fid = @tableId and CI.controlType not in ('GridLookUpEditRefAssist','Collection') and ISNULL(CI.bExtendField,0) <> 1
 open liCursorColumn
 fetch next from liCursorColumn into @columnName,@columnType,@controlType
 while(@@FETCH_STATUS = 0)
@@ -131,6 +133,24 @@ end
 close liCursorColumnDict
 Deallocate liCursorColumnDict
 
+--扩展字段
+declare liCursorColumnExtend cursor for 
+	select [columnName],[columnType],TI.dataBaseName,CI.extendTableName,CI.extendTableKeyFieldName,CI.extendRelationTableKeyFieldName
+		from ColumnInfo CI
+		left join TableInfo TI on CI.fid = TI.id 
+		WHERE CI.fid = @tableId and ISNULL(bExtendField,0) = 1
+open liCursorColumnExtend
+fetch next from liCursorColumnExtend into @columnName,@columnType,@dataBaseName,@tableName,@extendTableKeyFieldName,@extendRelationTableKeyFieldName
+while(@@FETCH_STATUS = 0)
+begin
+	set @fieldSql = @fieldSql + ' Li' + @tableName + '_' + @columnName + '.' + @columnName + ' Li' + @tableName + '_' + @columnName +  ','
+	set @leftjoinSql = @leftjoinSql + ' LEFT JOIN ' +  @dataBaseName + '.dbo.' + @tableName + ' Li' + @tableName + '_' + @columnName + ' ON'+ ' Li' + @tableName + '_' + @columnName + '.' + @extendTableKeyFieldName + ' = Li' + @parentTableName + '.' + @extendRelationTableKeyFieldName
+
+	fetch next from liCursorColumnExtend into @columnName,@columnType,@dataBaseName,@tableName,@extendTableKeyFieldName,@extendRelationTableKeyFieldName
+end
+close liCursorColumnExtend
+Deallocate liCursorColumnExtend
+
 
 if(ISNULL(@childTableName, '') <> '')
 BEGIN
@@ -162,7 +182,7 @@ BEGIN
 		set @leftjoinSql = @leftjoinSql + ' LEFT JOIN ' + @dataBaseName + '.dbo.' + @tableName + ' Li' + @tableName + ' ON'+ ' Li' + @tableName + '.' + @foreignKeyName + ' = Li' + @parentTableName + '.' + @primaryKeyName
 		
 		---如果没查询出来，controlType可能为NULL
-		declare liCursorColumn cursor for select [columnName],[columnType] from ColumnInfo CI WHERE CI.fid = @tableId and controlType not in ('GridLookUpEditRefAssist','Collection')
+		declare liCursorColumn cursor for select [columnName],[columnType] from ColumnInfo CI WHERE CI.fid = @tableId and controlType not in ('GridLookUpEditRefAssist','Collection') and ISNULL(CI.bExtendField,0) <> 1
 		open liCursorColumn
 		fetch next from liCursorColumn into @columnName,@columnType
 			while(@@FETCH_STATUS = 0)
@@ -223,6 +243,26 @@ BEGIN
 		close liCursorColumnDict
 		Deallocate liCursorColumnDict
 		
+
+		--扩展字段
+		declare liCursorColumnExtend cursor for 
+			select [columnName],[columnType],TI.dataBaseName,CI.extendTableName,CI.extendTableKeyFieldName,CI.extendRelationTableKeyFieldName
+			from ColumnInfo CI
+			left join TableInfo TI on CI.fid = TI.id 
+			WHERE CI.fid = @tableId and ISNULL(bExtendField,0) = 1
+		open liCursorColumnExtend
+		fetch next from liCursorColumnExtend into @columnName,@columnType,@dataBaseName,@tableName,@extendTableKeyFieldName,@extendRelationTableKeyFieldName
+		while(@@FETCH_STATUS = 0)
+		begin
+			set @fieldSql = @fieldSql + ' Li' + @tableName + '_' + @columnName + '.' + @columnName + ' Li' + @tableName + '_' + @columnName +  ','
+			set @leftjoinSql = @leftjoinSql + ' LEFT JOIN ' +  @dataBaseName + '.dbo.' + @tableName + ' Li' + @tableName + '_' + @columnName + ' ON'+ ' Li' + @tableName + '_' + @columnName + '.' + @extendTableKeyFieldName + ' = Li' + @parentAttrTableName + '.' + @extendRelationTableKeyFieldName
+
+			fetch next from liCursorColumnExtend into @columnName,@columnType,@dataBaseName,@tableName,@extendTableKeyFieldName,@extendRelationTableKeyFieldName
+		end
+		close liCursorColumnExtend
+		Deallocate liCursorColumnExtend
+		
+
 		fetch next from liCursorTable into @tableId,@dataBaseName,@entityType,@entityOrder,@entityColumnName,@tableName,@parentDataBaseName,@tableAliasName,@keyName
 
 	end

@@ -58,6 +58,10 @@
     <Folder Include="U8Voucher\Service\Impl\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LiCommon\LiCommon.csproj">
+      <Project>{e230d61a-c177-4ef2-b257-e7f0a3b62a0d}</Project>
+      <Name>LiCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LiHttp\LiHttp.csproj">
       <Project>{30265638-3ea2-4ad7-81b9-0c99d769ea57}</Project>
       <Name>LiHttp</Name>

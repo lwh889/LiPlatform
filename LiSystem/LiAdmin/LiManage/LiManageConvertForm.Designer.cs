@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiManageConvertForm));
-            DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer dockingContainer2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer();
+            DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer dockingContainer1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer();
             this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup(this.components);
             this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
             this.document2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
@@ -86,6 +86,7 @@
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gridControl8 = new DevExpress.XtraGrid.GridControl();
@@ -106,7 +107,6 @@
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document2)).BeginInit();
@@ -275,8 +275,9 @@
             // dockManager1
             // 
             this.dockManager1.Form = this;
+            this.dockManager1.HiddenPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanel1});
             this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel1,
             this.dockPanel2,
             this.dockPanel3});
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
@@ -329,6 +330,7 @@
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridControl1.Click += new System.EventHandler(this.GridControl1_Click);
             // 
             // gridView1
             // 
@@ -361,6 +363,7 @@
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 0;
+            this.gridColumn15.Width = 117;
             // 
             // gridColumn1
             // 
@@ -369,6 +372,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 145;
             // 
             // gridColumn2
             // 
@@ -378,6 +382,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.Width = 67;
             // 
             // repositoryItemGridLookUpEdit_convertDestType
             // 
@@ -466,6 +471,7 @@
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.Visible = true;
             this.gridColumn28.VisibleIndex = 10;
+            this.gridColumn28.Width = 122;
             // 
             // gridColumn29
             // 
@@ -474,6 +480,7 @@
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.Visible = true;
             this.gridColumn29.VisibleIndex = 11;
+            this.gridColumn29.Width = 122;
             // 
             // gridColumn7
             // 
@@ -482,6 +489,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 9;
+            this.gridColumn7.Width = 86;
             // 
             // gridColumn30
             // 
@@ -678,6 +686,15 @@
             this.gridColumn32.VisibleIndex = 8;
             this.gridColumn32.Width = 135;
             // 
+            // gridColumn34
+            // 
+            this.gridColumn34.Caption = "反写类型字段名";
+            this.gridColumn34.FieldName = "bReverseType";
+            this.gridColumn34.Name = "gridColumn34";
+            this.gridColumn34.Visible = true;
+            this.gridColumn34.VisibleIndex = 9;
+            this.gridColumn34.Width = 145;
+            // 
             // dockPanel3
             // 
             this.dockPanel3.Controls.Add(this.dockPanel3_Container);
@@ -693,7 +710,7 @@
             this.dockPanel3_Container.Controls.Add(this.gridControl8);
             this.dockPanel3_Container.Location = new System.Drawing.Point(0, 0);
             this.dockPanel3_Container.Name = "dockPanel3_Container";
-            this.dockPanel3_Container.Size = new System.Drawing.Size(547, 573);
+            this.dockPanel3_Container.Size = new System.Drawing.Size(1453, 573);
             this.dockPanel3_Container.TabIndex = 0;
             // 
             // gridControl8
@@ -707,7 +724,7 @@
             this.repositoryItemCalcEdit_Width,
             this.repositoryItemGridLookUpEdit_controlType,
             this.repositoryItemGridLookUpEdit_sJudgeSymbol});
-            this.gridControl8.Size = new System.Drawing.Size(547, 573);
+            this.gridControl8.Size = new System.Drawing.Size(1453, 573);
             this.gridControl8.TabIndex = 20;
             this.gridControl8.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView8});
@@ -860,18 +877,9 @@
             this.document1,
             this.document2});
             this.tabbedView1.RootContainer.Element = null;
-            dockingContainer2.Element = this.documentGroup1;
+            dockingContainer1.Element = this.documentGroup1;
             this.tabbedView1.RootContainer.Nodes.AddRange(new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer[] {
-            dockingContainer2});
-            // 
-            // gridColumn34
-            // 
-            this.gridColumn34.Caption = "反写类型字段名";
-            this.gridColumn34.FieldName = "bReverseType";
-            this.gridColumn34.Name = "gridColumn34";
-            this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 9;
-            this.gridColumn34.Width = 145;
+            dockingContainer1});
             // 
             // LiManageConvertForm
             // 

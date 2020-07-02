@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LiCommon.Util;
 using LiModel.LiConvert;
 using LiVoucherConvert.Model;
 
@@ -45,6 +46,8 @@ namespace LiVoucherConvert.Service.Impl
                     string fieldName = isPrefix ? string.Format("Li{0}_{1}", convertHead.convertSourceType, convertHead.convertSourceField) : convertHead.convertSourceField;
                     formDataDict[convertHead.convertDestField] = drHead[fieldName];
                 }
+                //记录转换编码
+                formDataDict["hConvertCode"] = liConvertHead.convertCode;
 
                 //转换表体
                 if (!string.IsNullOrEmpty(collectionName))
@@ -55,8 +58,25 @@ namespace LiVoucherConvert.Service.Impl
                     {
                         Dictionary<string, object> drDest = new Dictionary<string, object>();
 
+                        //重置关联数量
+                        LiConvertBodyModel convertQtyBody = convertBodyList.Where(m => m.bCumulativeRelationQty).FirstOrDefault();
+                        if(liConvertHead.convertRelation == ConvertRelation.PUSHCUMULATIVE && convertQtyBody != null)
+                        {
+                            if (convertQtyBody.bCumulativeRelationQty)
+                            {
+                                string qtyFieldName = SQLUtil.getFieldNameFormat(convertQtyBody.convertSourceType, liConvertHead.convertPushField);
+                                decimal qty = dr[qtyFieldName] == DBNull.Value ? 0 : Convert.ToDecimal(dr[qtyFieldName]);
+
+                                string cumulativeQtyFieldName = SQLUtil.getFieldNameFormat(liConvertHead.convertCumulativeTableName, liConvertHead.convertCumulativeField);
+                                decimal cumulativeQty = dr[cumulativeQtyFieldName] == DBNull.Value ? 0 : Convert.ToDecimal(dr[cumulativeQtyFieldName]);
+
+                                dr[qtyFieldName] = qty - cumulativeQty < 0 ? 0 : qty - cumulativeQty;
+                            }
+                        }
+
                         foreach (LiConvertBodyModel convertBody in convertBodyList)
                         {
+                            //默认值
                             if (convertBody.bDefault)
                             {
                                 if (drDest.ContainsKey(convertBody.convertDestField))
@@ -73,6 +93,8 @@ namespace LiVoucherConvert.Service.Impl
                             if (string.IsNullOrEmpty(convertBody.convertSourceField)) continue;
 
                             string fieldName = isPrefix ? string.Format("Li{0}_{1}", convertBody.convertSourceType, convertBody.convertSourceField) : convertBody.convertSourceField;
+
+
                             if (drDest.ContainsKey(convertBody.convertDestField))
                             {
                                 drDest[convertBody.convertDestField] = dr[fieldName];
@@ -83,6 +105,8 @@ namespace LiVoucherConvert.Service.Impl
                             }
                         }
 
+                        //记录转换编码
+                        drDest["bConvertCode"] = liConvertHead.convertCode;
                         dtDest.Add(drDest);
 
                     }

@@ -11,6 +11,9 @@ namespace LiModel.LiTable
 {
     public class EntityOrder : GridlookUpEditModel
     {
+
+        public const string MASTER = "master";
+        public const string SLAVE = "slave";
         public override List<string> getDisplayColumns()
         {
             if (!DisplayColumns.Contains("name"))

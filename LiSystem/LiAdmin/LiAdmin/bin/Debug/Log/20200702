@@ -1,0 +1,113 @@
+日志时间：2020-07-02 10:06:21,513 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-07-02 10:10:10,025 
+日志级别：FATAL 
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：列表删除错误： 
+异常信息：System.Collections.Generic.KeyNotFoundException: 给定关键字不在字典中。
+   在 System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   在 LiForm.Event.EventListForm.LiEventListDelete.receiveEvent() 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiForm\Event\EventListForm\LiEventListDelete.cs:行号 59
+ 
+
+日志时间：2020-07-02 10:14:46,763 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-07-02 10:21:50,940 
+日志级别：FATAL 
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：列表删除错误： 
+异常信息：LiCommon.LiException.LiHttpException: LiHttp模块出现异常【StatementCallback; uncategorized SQLException for SQL [exec sp_executesql N' EXEC LiSystem.dbo.sp_ExecSql @execSql',N' @execSql nvarchar(max)',' update UFDATA_999_2014.dbo.SO_SODetails_extradefine set cbdefine7=  A.iQuantity from ( select SUM(ISNULL(iQuantity,0)) iQuantity,bSourceID from LiDATA_999_2020.dbo.SaleChangeBody where bConvertCode=''SaleSystem4'' group by bSourceID  ) A where UFDATA_999_2014.dbo.SO_SODetails_extradefine.iSOsID = A.bSourceID   update UFDATA_999_2014.dbo.SO_SODetails_extradefine set = NULL where iSOsID not in (select bSourceID from LiDATA_999_2020.dbo.SaleChangeBody where fid in (select  from UFDATA_999_2014.dbo.SO_SODetails_extradefine where  is not null) )  ']; SQL state [S0001]; error code [102]; “=”附近有语法错误。; nested exception is com.microsoft.sqlserver.jdbc.SQLServerException: “=”附近有语法错误。】
+   在 LiHttp.GetEntity.AHttpEntity.execProcedureNoResult(Dictionary`2 paramDict) 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiHttp\GetEntity\AHttpEntity.cs:行号 140
+   在 LiVoucherConvert.LiVoucherConvertUtil.reverseData(String IDValue, LiConvertHeadModel liConvertHeadModel, List`1 sourceTables, Boolean bDelete) 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\LiVoucherConvertUtil.cs:行号 131
+   在 LiForm.Event.EventListForm.LiEventListDelete.receiveEvent() 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiForm\Event\EventListForm\LiEventListDelete.cs:行号 59
+ 
+
+日志时间：2020-07-02 10:33:13,503 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-07-02 10:46:16,597 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-07-02 11:26:02,128 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-07-02 11:41:02,444 
+日志级别：FATAL 
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：列表删除错误： 
+异常信息：LiCommon.LiException.LiHttpException: LiHttp模块出现异常【StatementCallback; bad SQL grammar [exec sp_executesql N' EXEC LiSystem.dbo.sp_ExecSql @execSql',N' @execSql nvarchar(max)','  update UFDATA_999_2014.dbo.SO_SODetails_extradefine set cbdefine8= NULL where iSOsID not in (select bSourceID from LiDATA_999_2020.dbo.SaleChangeBody where  in (select cbdefine8 from UFDATA_999_2014.dbo.SO_SODetails_extradefine where cbdefine8 is not null) )  ']; nested exception is com.microsoft.sqlserver.jdbc.SQLServerException: 关键字 'in' 附近有语法错误。】
+   在 LiHttp.GetEntity.AHttpEntity.execProcedureNoResult(Dictionary`2 paramDict) 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiHttp\GetEntity\AHttpEntity.cs:行号 140
+   在 LiVoucherConvert.LiVoucherConvertUtil.reverseData(String IDValue, LiConvertHeadModel liConvertHeadModel, List`1 sourceTables, Boolean bDelete) 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\LiVoucherConvertUtil.cs:行号 132
+   在 LiForm.Event.EventListForm.LiEventListDelete.receiveEvent() 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiForm\Event\EventListForm\LiEventListDelete.cs:行号 59
+ 
+
+日志时间：2020-07-02 11:44:01,538 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-07-02 11:57:20,416 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-07-02 14:04:14,719 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-07-02 15:06:25,751 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-07-02 15:18:21,071 
+日志级别：INFO  
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：登录系统 
+异常信息： 
+
+日志时间：2020-07-02 15:22:14,736 
+日志级别：FATAL 
+用 户 ID：demo 
+用户姓名：demo 
+日志信息：列表删除错误： 
+异常信息：LiCommon.LiException.LiHttpException: LiHttp模块出现异常【StatementCallback; bad SQL grammar [exec sp_executesql N' EXEC LiSystem.dbo.sp_ExecSql @execSql',N' @execSql nvarchar(max)',' update UFDATA_999_2014.dbo.So_SoMain_extradefine set chdefine2=  A.cDefine7 from ( select SUM(ISNULL(cDefine7,0)) cDefine7,hSourceID from LiDATA_999_2020.dbo.SaleChangeHead where hConvertCode=''SaleSystem5'' group by hSourceID  ) A where UFDATA_999_2014.dbo.So_SoMain_extradefine.ID = A.hSourceID   update UFDATA_999_2014.dbo.So_SoMain_extradefine set chdefine2= NULL where ID not in (select hSourceID from LiDATA_999_2020.dbo.SaleChangeHead where hConvertCode=''SaleSystem5'' )  ']; nested exception is com.microsoft.sqlserver.jdbc.SQLServerException: 列名 'cDefine7' 无效。】
+   在 LiHttp.GetEntity.AHttpEntity.execProcedureNoResult(Dictionary`2 paramDict) 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiHttp\GetEntity\AHttpEntity.cs:行号 140
+   在 LiVoucherConvert.LiVoucherConvertUtil.reverseData(String IDValue, LiConvertHeadModel liConvertHeadModel, List`1 sourceTables, Boolean bDelete) 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiVoucherConvert\LiVoucherConvertUtil.cs:行号 142
+   在 LiForm.Event.EventListForm.LiEventListDelete.receiveEvent() 位置 C:\LiProject\平台\LiSystem\LiAdmin\LiForm\Event\EventListForm\LiEventListDelete.cs:行号 59
+ 
+

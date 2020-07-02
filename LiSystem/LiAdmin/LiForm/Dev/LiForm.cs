@@ -41,6 +41,9 @@ using LiFlow.Model;
 using LiFlow.Util;
 using LiFlow.Enums;
 using LiModel.Basic;
+using LiModel.LiConvert;
+using LiHttp;
+using LiVoucherConvert;
 
 namespace LiForm.Dev
 {
@@ -142,6 +145,16 @@ namespace LiForm.Dev
         /// 浮动窗口容器
         /// </summary>
         private Dictionary<string, DockPanel> _liDockPanelDict = new Dictionary<string, DockPanel>();
+
+        /// <summary>
+        /// 当前单据转换信息
+        /// </summary>
+        private LiConvertHeadModel _liConvertHeadModel;
+
+        /// <summary>
+        /// 当前单据转换信息
+        /// </summary>
+        public LiConvertHeadModel liConvertHeadModel { set { _liConvertHeadModel = value; } get { return _liConvertHeadModel; } }
 
         /// <summary>
         /// 主表信息
@@ -718,6 +731,12 @@ namespace LiForm.Dev
             {
                 MessageUtil.Show("加载数据错误：" + ex.Message, "系统提示");
             }
+
+            //加载单据转换规则
+            if (liConvertHeadModel == null && formDataDict.ContainsKey("hConvertCode") && !string.IsNullOrEmpty(Convert.ToString(formDataDict["hConvertCode"])))
+            {
+                liConvertHeadModel = LiContext.getHttpEntity(LiEntityKey.LiConvert, LiContext.SystemCode).getEntitySingle<LiConvertHeadModel>(formDataDict["hConvertCode"], "convertCode");
+            }
         }
 
 
@@ -755,6 +774,26 @@ namespace LiForm.Dev
             DataRow dr = gridView.GetDataRow(e.RowHandle);
 
             DevControlUtil.bringGridRefAssistValue((ControlModel)gridColumn.Tag, dr, liGridColumnRefDict, liGridColumnRefAssistDict, LiContexts.LiContext.liRefDataDataTable, gridColumn);
+
+
+            //关联数量判断
+            if(liConvertHeadModel != null && liConvertHeadModel.convertRelation == ConvertRelation.PUSHCUMULATIVE)
+            {
+                LiConvertBodyModel liConvertBody = liConvertHeadModel.datas.Where(m => m.bCumulativeRelationQty == true).FirstOrDefault();
+                if(liConvertBody != null)
+                {
+                    decimal qty = dr[liConvertBody.convertDestField] == DBNull.Value ? 0 : Convert.ToDecimal(dr[liConvertBody.convertDestField]);
+                    decimal sourceQty = dr["bSourceQty"] == DBNull.Value ? 0 : Convert.ToDecimal(dr["bSourceQty"]);
+
+                    if (sourceQty < qty)
+                    {
+                        dr[liConvertBody.convertDestField] = sourceQty;
+                    }
+
+                }
+            }
+
+            gridView.RefreshRowCell(e.RowHandle, gridColumn);
         }
 
         /// <summary>
@@ -919,8 +958,7 @@ namespace LiForm.Dev
                     //LiContexts.LiContext.getHttpEntity().entityKey = this.formCode;
                     LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).updateEntity(this.formDataDict);
                     bSuccess = LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).bSuccess;
-                    MessageUtil.Show(LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).tipStr, "温馨提示");
-
+                    
                 }
                 else
                 {
@@ -930,11 +968,21 @@ namespace LiForm.Dev
                     //LiContexts.LiContext.getHttpEntity().entityKey = this.formCode;
                     LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).newEntity(this.formDataDict);
                     bSuccess = LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).bSuccess;
-                    MessageUtil.Show(LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).tipStr, "温馨提示");
-
+                    
                 }
 
+
+                MessageUtil.Show(LiContexts.LiContext.getHttpEntity(this.formCode, LiContext.SystemCode).tipStr, "温馨提示");
                 this.getEntityDataByVoucherCode(this.voucherCode);
+
+                if (bSuccess)
+                {
+                    if (liConvertHeadModel != null)
+                    {
+                        LiVoucherConvertUtil.reverseData(Convert.ToString(voucherId), liConvertHeadModel, tableModelList);
+                    }
+                }
+
                 this.loadData();
             }
             catch(Exception ex)
@@ -996,6 +1044,16 @@ namespace LiForm.Dev
         public LiStatusReadOnlyDev getVoucherStatus()
         {
             return liStatusContext.getCurrentStatus() as LiStatusReadOnlyDev;
+        }
+
+        /// <summary>
+        /// 获取单据当前状态
+        /// </summary>
+        /// <returns></returns>
+        public string getVoucherStatusName()
+        {
+            LiStatusReadOnlyDev liStatusReadOnlyDev = liStatusContext.getCurrentStatus() as LiStatusReadOnlyDev;
+            return liStatusReadOnlyDev.statusName;
         }
 
         /// <summary>
@@ -1156,6 +1214,11 @@ namespace LiForm.Dev
             if (!liStatusReadOnlyDev.isNewStatus())
             {
                 bSuccess= LiContexts.LiContext.getHttpEntity(formCode, LiContext.SystemCode).deleteEntity(formDataDict);
+
+                if (bSuccess && liConvertHeadModel != null)
+                {
+                    LiVoucherConvertUtil.reverseData(Convert.ToString(voucherId), liConvertHeadModel, tableModelList, true);
+                }
                 resultContent = LiContexts.LiContext.getHttpEntity(formCode, LiContext.SystemCode).resultContent;
             }
 

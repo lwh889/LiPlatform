@@ -82,6 +82,16 @@
             this.barSubItem6 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem7 = new DevExpress.XtraBars.BarSubItem();
             this.barSubItem8 = new DevExpress.XtraBars.BarSubItem();
+            this.btnAddHeadSourceID = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddHeadSourceCode = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddHeadSourceType = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddBodySourceID = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddBodySourceCode = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddBodySourceType = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddBodySourceQty = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddBHeadSourceQty = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddHeadConvertCode = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddBodyConvertCode = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem9 = new DevExpress.XtraBars.BarSubItem();
             this.btnSINGLEVOUCHER = new DevExpress.XtraBars.BarButtonItem();
             this.btnMVVOUCHER = new DevExpress.XtraBars.BarButtonItem();
@@ -114,6 +124,8 @@
             this.BtnPerviousButton = new DevExpress.XtraBars.BarButtonItem();
             this.BtnNextButton = new DevExpress.XtraBars.BarButtonItem();
             this.BtnLastButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnUpShowButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnDownShowButton = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem11 = new DevExpress.XtraBars.BarSubItem();
             this.btnUpRow = new DevExpress.XtraBars.BarButtonItem();
             this.btnDownRow = new DevExpress.XtraBars.BarButtonItem();
@@ -133,9 +145,11 @@
             this.btnListReSelect = new DevExpress.XtraBars.BarButtonItem();
             this.btnListCancelSelect = new DevExpress.XtraBars.BarButtonItem();
             this.BtnListPushButton = new DevExpress.XtraBars.BarButtonItem();
+            this.BtnListRefButton = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.btnU8Publish = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -250,7 +264,7 @@
             this.popupEventMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupControlGroupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupListButtonMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.BtnListRefButton = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAddQty = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document5)).BeginInit();
@@ -499,10 +513,24 @@
             this.btnListCancelSelect,
             this.btnU8Publish,
             this.BtnListPushButton,
-            this.BtnListRefButton});
+            this.BtnListRefButton,
+            this.BtnUpShowButton,
+            this.BtnDownShowButton,
+            this.btnAddHeadSourceID,
+            this.btnAddHeadSourceCode,
+            this.btnAddHeadSourceType,
+            this.barButtonItem1,
+            this.btnAddBodySourceID,
+            this.btnAddBodySourceCode,
+            this.btnAddBodySourceType,
+            this.btnAddBodySourceQty,
+            this.btnAddBHeadSourceQty,
+            this.btnAddHeadConvertCode,
+            this.btnAddBodyConvertCode,
+            this.btnAddQty});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ribbon.MaxItemId = 101;
+            this.ribbon.MaxItemId = 115;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -878,8 +906,89 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAddSumbit),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAddSumbitDate),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnAddAuditor),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddAuditDate)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddAuditDate),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddHeadSourceID),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddHeadSourceCode),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddHeadSourceType),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddBodySourceID),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddBodySourceCode),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddBodySourceType),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddBodySourceQty),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddBHeadSourceQty),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddHeadConvertCode),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddBodyConvertCode),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnAddQty)});
             this.barSubItem8.Name = "barSubItem8";
+            // 
+            // btnAddHeadSourceID
+            // 
+            this.btnAddHeadSourceID.Caption = "添加表头源单ID";
+            this.btnAddHeadSourceID.Id = 103;
+            this.btnAddHeadSourceID.Name = "btnAddHeadSourceID";
+            this.btnAddHeadSourceID.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddHeadSourceID_ItemClick);
+            // 
+            // btnAddHeadSourceCode
+            // 
+            this.btnAddHeadSourceCode.Caption = "添加表头源单编码";
+            this.btnAddHeadSourceCode.Id = 104;
+            this.btnAddHeadSourceCode.Name = "btnAddHeadSourceCode";
+            this.btnAddHeadSourceCode.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddHeadSourceCode_ItemClick);
+            // 
+            // btnAddHeadSourceType
+            // 
+            this.btnAddHeadSourceType.Caption = "添加表头源单类型";
+            this.btnAddHeadSourceType.Id = 105;
+            this.btnAddHeadSourceType.Name = "btnAddHeadSourceType";
+            this.btnAddHeadSourceType.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddHeadSourceType_ItemClick);
+            // 
+            // btnAddBodySourceID
+            // 
+            this.btnAddBodySourceID.Caption = "添加表体源单ID";
+            this.btnAddBodySourceID.Id = 107;
+            this.btnAddBodySourceID.Name = "btnAddBodySourceID";
+            this.btnAddBodySourceID.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddBodySourceID_ItemClick);
+            // 
+            // btnAddBodySourceCode
+            // 
+            this.btnAddBodySourceCode.Caption = "添加表体源单编码";
+            this.btnAddBodySourceCode.Id = 108;
+            this.btnAddBodySourceCode.Name = "btnAddBodySourceCode";
+            this.btnAddBodySourceCode.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddBodySourceCode_ItemClick);
+            // 
+            // btnAddBodySourceType
+            // 
+            this.btnAddBodySourceType.Caption = "添加表体源单类型";
+            this.btnAddBodySourceType.Id = 109;
+            this.btnAddBodySourceType.Name = "btnAddBodySourceType";
+            this.btnAddBodySourceType.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddBodySourceType_ItemClick);
+            // 
+            // btnAddBodySourceQty
+            // 
+            this.btnAddBodySourceQty.Caption = "添加表体源单数量";
+            this.btnAddBodySourceQty.Id = 110;
+            this.btnAddBodySourceQty.Name = "btnAddBodySourceQty";
+            this.btnAddBodySourceQty.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddBodySourceQty_ItemClick);
+            // 
+            // btnAddBHeadSourceQty
+            // 
+            this.btnAddBHeadSourceQty.Caption = "添加表头源单数量";
+            this.btnAddBHeadSourceQty.Id = 111;
+            this.btnAddBHeadSourceQty.Name = "btnAddBHeadSourceQty";
+            this.btnAddBHeadSourceQty.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddBHeadSourceQty_ItemClick);
+            // 
+            // btnAddHeadConvertCode
+            // 
+            this.btnAddHeadConvertCode.Caption = "添加表头转换编码";
+            this.btnAddHeadConvertCode.Id = 112;
+            this.btnAddHeadConvertCode.Name = "btnAddHeadConvertCode";
+            this.btnAddHeadConvertCode.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddHeadConvertCode_ItemClick);
+            // 
+            // btnAddBodyConvertCode
+            // 
+            this.btnAddBodyConvertCode.Caption = "添加表体转换编码";
+            this.btnAddBodyConvertCode.Id = 113;
+            this.btnAddBodyConvertCode.Name = "btnAddBodyConvertCode";
+            this.btnAddBodyConvertCode.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddBodyConvertCode_ItemClick);
             // 
             // barSubItem9
             // 
@@ -950,7 +1059,9 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.BtnFirstButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.BtnPerviousButton),
             new DevExpress.XtraBars.LinkPersistInfo(this.BtnNextButton),
-            new DevExpress.XtraBars.LinkPersistInfo(this.BtnLastButton)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnLastButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnUpShowButton),
+            new DevExpress.XtraBars.LinkPersistInfo(this.BtnDownShowButton)});
             this.barSubItem10.Name = "barSubItem10";
             // 
             // BtnNEWButton
@@ -1135,6 +1246,20 @@
             this.BtnLastButton.Name = "BtnLastButton";
             this.BtnLastButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnLastButton_ItemClick);
             // 
+            // BtnUpShowButton
+            // 
+            this.BtnUpShowButton.Caption = "上查按钮";
+            this.BtnUpShowButton.Id = 101;
+            this.BtnUpShowButton.Name = "BtnUpShowButton";
+            this.BtnUpShowButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUpShowButton_ItemClick);
+            // 
+            // BtnDownShowButton
+            // 
+            this.BtnDownShowButton.Caption = "下查按钮";
+            this.BtnDownShowButton.Id = 102;
+            this.BtnDownShowButton.Name = "BtnDownShowButton";
+            this.BtnDownShowButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnDownShowButton_ItemClick);
+            // 
             // barSubItem11
             // 
             this.barSubItem11.Caption = "操作";
@@ -1286,6 +1411,13 @@
             this.BtnListPushButton.Name = "BtnListPushButton";
             this.BtnListPushButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListPushButton_ItemClick);
             // 
+            // BtnListRefButton
+            // 
+            this.BtnListRefButton.Caption = "参照按钮";
+            this.BtnListRefButton.Id = 100;
+            this.BtnListRefButton.Name = "BtnListRefButton";
+            this.BtnListRefButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListRefButton_ItemClick);
+            // 
             // barButtonItem4
             // 
             this.barButtonItem4.Caption = "新增按钮";
@@ -1306,6 +1438,12 @@
             this.btnU8Publish.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnU8Publish.ImageOptions.LargeImage")));
             this.btnU8Publish.Name = "btnU8Publish";
             this.btnU8Publish.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnU8Publish_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 106;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // ribbonPage1
             // 
@@ -2461,12 +2599,12 @@
             this.popupListButtonMenu.Name = "popupListButtonMenu";
             this.popupListButtonMenu.Ribbon = this.ribbon;
             // 
-            // BtnListRefButton
+            // btnAddQty
             // 
-            this.BtnListRefButton.Caption = "参照按钮";
-            this.BtnListRefButton.Id = 100;
-            this.BtnListRefButton.Name = "BtnListRefButton";
-            this.BtnListRefButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnListRefButton_ItemClick);
+            this.btnAddQty.Caption = "添加数量控件";
+            this.btnAddQty.Id = 114;
+            this.btnAddQty.Name = "btnAddQty";
+            this.btnAddQty.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnAddQty_ItemClick);
             // 
             // LiManageVoucherDesign
             // 
@@ -2786,5 +2924,19 @@
         private DevExpress.XtraBars.BarButtonItem btnU8Publish;
         private DevExpress.XtraBars.BarButtonItem BtnListPushButton;
         private DevExpress.XtraBars.BarButtonItem BtnListRefButton;
+        private DevExpress.XtraBars.BarButtonItem BtnUpShowButton;
+        private DevExpress.XtraBars.BarButtonItem BtnDownShowButton;
+        private DevExpress.XtraBars.BarButtonItem btnAddHeadSourceID;
+        private DevExpress.XtraBars.BarButtonItem btnAddHeadSourceCode;
+        private DevExpress.XtraBars.BarButtonItem btnAddHeadSourceType;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnAddBodySourceID;
+        private DevExpress.XtraBars.BarButtonItem btnAddBodySourceCode;
+        private DevExpress.XtraBars.BarButtonItem btnAddBodySourceType;
+        private DevExpress.XtraBars.BarButtonItem btnAddBodySourceQty;
+        private DevExpress.XtraBars.BarButtonItem btnAddBHeadSourceQty;
+        private DevExpress.XtraBars.BarButtonItem btnAddHeadConvertCode;
+        private DevExpress.XtraBars.BarButtonItem btnAddBodyConvertCode;
+        private DevExpress.XtraBars.BarButtonItem btnAddQty;
     }
 }

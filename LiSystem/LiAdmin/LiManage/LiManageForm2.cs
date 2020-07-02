@@ -417,7 +417,7 @@ namespace LiManage
 
                     if (currentTreeDataModel.Code == "LiConvert")
                     {
-                        LiManageConvertForm ribbonForm = new LiManageConvertForm();
+                        LiManageConvertListForm ribbonForm = new LiManageConvertListForm();
                         AddPageMdi(PageFormModel.getInstance(0, ribbonForm, currentTreeDataModel.Code, "", false));
                     }
 

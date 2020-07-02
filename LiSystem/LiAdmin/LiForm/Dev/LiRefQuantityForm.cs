@@ -131,7 +131,7 @@ namespace LiForm.Dev
                     string qtyFieldName = ListFormUtil.getFieldNameFormat(liConvertHeadModel.convertPushTableName, liConvertHeadModel.convertPushField);
                     decimal qty = dr[qtyFieldName] == DBNull.Value ? 0 : Convert.ToDecimal(dr[qtyFieldName]); 
 
-                    string cumulativeQtyFieldName = ListFormUtil.getFieldNameFormat(liConvertHeadModel.convertPushTableName, liConvertHeadModel.convertCumulativeField);
+                    string cumulativeQtyFieldName = ListFormUtil.getFieldNameFormat(liConvertHeadModel.convertCumulativeTableName, liConvertHeadModel.convertCumulativeField);
                     decimal cumulativeQty = dr[cumulativeQtyFieldName]==DBNull.Value ? 0 : Convert.ToDecimal(dr[cumulativeQtyFieldName]);
 
                     decimal pushQty = Convert.ToDecimal(dr["pushQty"]);
@@ -139,6 +139,10 @@ namespace LiForm.Dev
                     if(cumulativeQty+pushQty > qty)
                     {
                         messageStr.Append(string.Format("第【{0}】行已超出原有数量！", iRow));
+                    }
+                    else
+                    {
+                        dr[qtyFieldName] = dr["pushQty"];
                     }
                     ++iRow;
                 }
@@ -189,6 +193,26 @@ namespace LiForm.Dev
                 copyDr.ItemArray = dr.ItemArray;
                 dt.Rows.Add(copyDr);
             }
+
+            //foreach(DataRow dr in dt.Rows)
+            //{
+            //    //修改数量
+            //    if (liConvertHeadModel != null && liConvertHeadModel.convertRelation == ConvertRelation.PUSHCUMULATIVE)
+            //    {
+            //        LiConvertBodyModel liConvertBody = liConvertHeadModel.datas.Where(m => m.bCumulativeRelationQty == true).FirstOrDefault();
+            //        if (liConvertBody != null)
+            //        {
+            //            string qtyFieldName = SQLUtil.getFieldNameFormat(liConvertBody.convertSourceType, liConvertBody.convertSourceField);
+            //            decimal qty = dr[qtyFieldName] == DBNull.Value ? 0 : Convert.ToDecimal(dr[qtyFieldName]);
+
+            //            string cumulativeQtyFieldName = SQLUtil.getFieldNameFormat(liConvertHeadModel.convertCumulativeTableName, liConvertHeadModel.convertCumulativeField);
+            //            decimal cumulativeQty = dr[cumulativeQtyFieldName] == DBNull.Value ? 0 : Convert.ToDecimal(dr[cumulativeQtyFieldName]);
+
+            //            dr[qtyFieldName] = qty - cumulativeQty < 0 ? 0 : qty - cumulativeQty;
+
+            //        }
+            //    }
+            //}
             this.gridControl1.DataSource = dt;
             gridView1.BestFitColumns();
         }

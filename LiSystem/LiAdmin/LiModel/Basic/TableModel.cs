@@ -159,6 +159,10 @@ namespace LiModel.Basic
         public string keyName { set; get; }
 
         /// <summary>
+        /// 默认表体
+        /// </summary>
+        public bool bDefaultBody { set; get; }
+        /// <summary>
         /// 子表实体名
         /// </summary>
         public string childTableEntityColumnName { set; get; }

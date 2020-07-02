@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiTableConfigureForm));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnNew = new DevExpress.XtraBars.BarButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
@@ -43,7 +42,6 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.chartPropertyGridControl1 = new DevExpress.XtraCharts.Designer.ChartPropertyGridControl();
             this.gridLookUpEdit_systemCode = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.memoEdit_tableDesc = new DevExpress.XtraEditors.MemoEdit();
@@ -77,7 +75,6 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -116,6 +113,13 @@
             this.repositoryItemGridLookUpEdit_basicInfoRelationFieldName = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemGridLookUpEdit_controlType = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barManager3 = new DevExpress.XtraBars.BarManager(this.components);
@@ -126,9 +130,8 @@
             this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
-            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemGridLookUpEdit_controlType = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
+            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -165,7 +168,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -182,10 +184,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_basicInfoRelationFieldName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_controlType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -307,7 +311,7 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.chartPropertyGridControl1);
+            this.layoutControl1.Controls.Add(this.checkEdit1);
             this.layoutControl1.Controls.Add(this.gridLookUpEdit_systemCode);
             this.layoutControl1.Controls.Add(this.memoEdit_tableDesc);
             this.layoutControl1.Controls.Add(this.textEdit_keyName);
@@ -329,15 +333,6 @@
             this.layoutControl1.Size = new System.Drawing.Size(1334, 269);
             this.layoutControl1.TabIndex = 2;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // chartPropertyGridControl1
-            // 
-            this.chartPropertyGridControl1.Location = new System.Drawing.Point(18, 234);
-            this.chartPropertyGridControl1.Name = "chartPropertyGridControl1";
-            this.chartPropertyGridControl1.SelectedObject = null;
-            this.chartPropertyGridControl1.ServiceProvider = null;
-            this.chartPropertyGridControl1.Size = new System.Drawing.Size(1298, 17);
-            this.chartPropertyGridControl1.TabIndex = 17;
             // 
             // gridLookUpEdit_systemCode
             // 
@@ -361,11 +356,11 @@
             // 
             // memoEdit_tableDesc
             // 
-            this.memoEdit_tableDesc.Location = new System.Drawing.Point(111, 124);
+            this.memoEdit_tableDesc.Location = new System.Drawing.Point(111, 156);
             this.memoEdit_tableDesc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.memoEdit_tableDesc.MenuManager = this.ribbon;
             this.memoEdit_tableDesc.Name = "memoEdit_tableDesc";
-            this.memoEdit_tableDesc.Size = new System.Drawing.Size(801, 90);
+            this.memoEdit_tableDesc.Size = new System.Drawing.Size(801, 65);
             this.memoEdit_tableDesc.StyleController = this.layoutControl1;
             this.memoEdit_tableDesc.TabIndex = 15;
             this.memoEdit_tableDesc.Tag = "LiTableConfigureForm.tableDesc";
@@ -550,7 +545,7 @@
             this.layoutControlItem11,
             this.layoutControlItem12,
             this.layoutControlItem13,
-            this.layoutControlItem14});
+            this.layoutControlItem15});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1334, 269);
@@ -571,9 +566,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 202);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 209);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1304, 14);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1304, 30);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -699,11 +694,11 @@
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.memoEdit_tableDesc;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 106);
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 138);
             this.layoutControlItem12.MaxSize = new System.Drawing.Size(900, 0);
             this.layoutControlItem12.MinSize = new System.Drawing.Size(78, 20);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(1304, 96);
+            this.layoutControlItem12.Size = new System.Drawing.Size(1304, 71);
             this.layoutControlItem12.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem12.Text = "描述";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(90, 22);
@@ -719,15 +714,6 @@
             this.layoutControlItem13.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem13.Text = "系统代码";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(90, 22);
-            // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.Control = this.chartPropertyGridControl1;
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 216);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(1304, 23);
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem14.TextVisible = false;
             // 
             // panelControl1
             // 
@@ -747,9 +733,6 @@
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            gridLevelNode1.RelationName = "Level1";
-            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(3, 39);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -795,7 +778,11 @@
             this.gridColumn21,
             this.gridColumn22,
             this.gridColumn23,
-            this.gridColumn24});
+            this.gridColumn24,
+            this.gridColumn25,
+            this.gridColumn26,
+            this.gridColumn27,
+            this.gridColumn28});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ColumnAutoWidth = false;
@@ -1127,6 +1114,65 @@
             this.gridColumn23.VisibleIndex = 22;
             this.gridColumn23.Width = 199;
             // 
+            // gridColumn24
+            // 
+            this.gridColumn24.Caption = "控件类型";
+            this.gridColumn24.ColumnEdit = this.repositoryItemGridLookUpEdit_controlType;
+            this.gridColumn24.FieldName = "controlType";
+            this.gridColumn24.Name = "gridColumn24";
+            this.gridColumn24.Visible = true;
+            this.gridColumn24.VisibleIndex = 3;
+            this.gridColumn24.Width = 147;
+            // 
+            // repositoryItemGridLookUpEdit_controlType
+            // 
+            this.repositoryItemGridLookUpEdit_controlType.AutoHeight = false;
+            this.repositoryItemGridLookUpEdit_controlType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEdit_controlType.Name = "repositoryItemGridLookUpEdit_controlType";
+            this.repositoryItemGridLookUpEdit_controlType.View = this.gridView6;
+            // 
+            // gridView6
+            // 
+            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView6.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn25
+            // 
+            this.gridColumn25.Caption = "扩展字段表名称";
+            this.gridColumn25.FieldName = "extendTableName";
+            this.gridColumn25.Name = "gridColumn25";
+            this.gridColumn25.Visible = true;
+            this.gridColumn25.VisibleIndex = 24;
+            this.gridColumn25.Width = 172;
+            // 
+            // gridColumn26
+            // 
+            this.gridColumn26.Caption = "是否扩展字段表";
+            this.gridColumn26.FieldName = "bExtendField";
+            this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 25;
+            this.gridColumn26.Width = 140;
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Caption = "扩展字段表名外键";
+            this.gridColumn27.FieldName = "extendTableKeyFieldName";
+            this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.Visible = true;
+            this.gridColumn27.VisibleIndex = 26;
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.Caption = "扩展关联表主键";
+            this.gridColumn28.FieldName = "extendRelationTableKeyFieldName";
+            this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.Visible = true;
+            this.gridColumn28.VisibleIndex = 27;
+            // 
             // repositoryItemCheckEdit1
             // 
             this.repositoryItemCheckEdit1.AutoHeight = false;
@@ -1228,30 +1274,25 @@
             this.barDockControl8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.barDockControl8.Size = new System.Drawing.Size(0, 238);
             // 
-            // gridColumn24
+            // checkEdit1
             // 
-            this.gridColumn24.Caption = "控件类型";
-            this.gridColumn24.ColumnEdit = this.repositoryItemGridLookUpEdit_controlType;
-            this.gridColumn24.FieldName = "controlType";
-            this.gridColumn24.Name = "gridColumn24";
-            this.gridColumn24.Visible = true;
-            this.gridColumn24.VisibleIndex = 3;
-            this.gridColumn24.Width = 147;
+            this.checkEdit1.Location = new System.Drawing.Point(18, 124);
+            this.checkEdit1.MenuManager = this.ribbon;
+            this.checkEdit1.Name = "checkEdit1";
+            this.checkEdit1.Properties.Caption = "默认表体";
+            this.checkEdit1.Size = new System.Drawing.Size(1298, 26);
+            this.checkEdit1.StyleController = this.layoutControl1;
+            this.checkEdit1.TabIndex = 18;
+            this.checkEdit1.Tag = "LiTableConfigureForm.bDefaultBody";
             // 
-            // repositoryItemGridLookUpEdit_controlType
+            // layoutControlItem15
             // 
-            this.repositoryItemGridLookUpEdit_controlType.AutoHeight = false;
-            this.repositoryItemGridLookUpEdit_controlType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemGridLookUpEdit_controlType.Name = "repositoryItemGridLookUpEdit_controlType";
-            this.repositoryItemGridLookUpEdit_controlType.View = this.gridView6;
-            // 
-            // gridView6
-            // 
-            this.gridView6.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView6.Name = "gridView6";
-            this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView6.OptionsView.ShowGroupPanel = false;
+            this.layoutControlItem15.Control = this.checkEdit1;
+            this.layoutControlItem15.Location = new System.Drawing.Point(0, 106);
+            this.layoutControlItem15.Name = "layoutControlItem15";
+            this.layoutControlItem15.Size = new System.Drawing.Size(1304, 32);
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem15.TextVisible = false;
             // 
             // LiTableConfigureForm
             // 
@@ -1304,7 +1345,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -1322,10 +1362,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_basicInfoRelationFieldName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit_controlType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1409,11 +1451,9 @@
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit2View;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_databaseGeneratedType;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit3View;
-        private DevExpress.XtraCharts.Designer.ChartPropertyGridControl chartPropertyGridControl1;
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit_systemCode;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private DevExpress.XtraBars.BarButtonItem btnGetTableInfo;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraBars.BarButtonItem btnGetOutInfo;
@@ -1431,5 +1471,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit_controlType;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
+        private DevExpress.XtraEditors.CheckEdit checkEdit1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
     }
 }

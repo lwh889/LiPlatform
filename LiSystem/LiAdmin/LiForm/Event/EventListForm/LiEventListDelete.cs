@@ -1,6 +1,9 @@
 ﻿using LiCommon.Util;
 using LiContexts;
+using LiHttp.Enum;
 using LiLog;
+using LiModel.LiConvert;
+using LiVoucherConvert;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -46,8 +49,16 @@ namespace LiForm.Event.EventListForm
 
                         if (dataList.Count > 0)
                         {
-                            bSuccess = LiContexts.LiContext.getHttpEntity(entityKey, LiContext.SystemCode).batchDeleteEntity(dataList);
+                            foreach (Dictionary<string, object> formDataDict in dataList)
+                            {
+                                bSuccess = LiContexts.LiContext.getHttpEntity(entityKey, LiContext.SystemCode).deleteEntity(formDataDict);
 
+                                LiConvertHeadModel liConvertHeadModel = LiContext.getHttpEntity(LiEntityKey.LiConvert, LiContext.SystemCode).getEntitySingle<LiConvertHeadModel>(formDataDict["hConvertCode"], "convertCode");
+                                if (bSuccess && liConvertHeadModel != null)
+                                {
+                                    LiVoucherConvertUtil.reverseData(Convert.ToString(formDataDict[keyFieldName]), liConvertHeadModel, this.liListForm.tableModelList, true);
+                                }
+                            }
                             this.liListForm.RefreshData();
                         }
                     }

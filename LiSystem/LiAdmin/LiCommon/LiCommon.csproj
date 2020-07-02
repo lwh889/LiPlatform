@@ -126,6 +126,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="LiException\GetException.cs" />
+    <Compile Include="LiException\LiVoucherConvertException.cs" />
     <Compile Include="LiException\PostException.cs" />
     <Compile Include="LiException\LiHttpException.cs" />
     <Compile Include="LiPostSharp\LiExceptionAspect\ExceptionHandleAttribute.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="Util\QueryUtil.cs" />
     <Compile Include="Util\ReflectionUtil.cs" />
     <Compile Include="Util\RegexUtil.cs" />
+    <Compile Include="Util\SQLUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

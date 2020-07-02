@@ -139,7 +139,7 @@ namespace LiModel.LiConvert
         public string convertRelationField { set; get; }
 
         /// <summary>
-        /// 累计字段
+        /// 累计数量字段
         /// </summary>
         public string convertCumulativeField { set; get; }
 
@@ -152,14 +152,39 @@ namespace LiModel.LiConvert
         /// 下推数量表名
         /// </summary>
         public string convertPushTableName { set; get; }
+
+        /// <summary>
+        /// 累计ID字段
+        /// </summary>
+        public string convertCumulativeIDField { set; get; }
+
+        /// <summary>
+        /// 累计表名
+        /// </summary>
+        public string convertCumulativeTableName { set; get; }
+
+        /// <summary>
+        /// 累计表名数据库
+        /// </summary>
+        public string convertCumulativeDatabaseName { set; get; }
+        /// <summary>
+        /// 累计文本字段
+        /// </summary>
+        public string convertCumulativeTextField { set; get; }
+
+        /// <summary>
+        /// 源表过滤
+        /// </summary>
+        public bool bSourceTableFiliter { set; get; }
+
         /// <summary>
         /// 列表按钮
         /// </summary>
-        public List<LiConvertBodyModel> datas;
+        public List<LiConvertBodyModel> datas { set; get; }
 
         /// <summary>
         /// 查询内容
         /// </summary>
-        public List<FieldModel> queryFields;
+        public List<FieldModel> queryFields { set; get; }
     }
 }

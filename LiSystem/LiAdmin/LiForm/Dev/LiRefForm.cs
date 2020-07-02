@@ -34,7 +34,9 @@ using LiModel.LiEnum;
 using LiForm.Dev.Util;
 using LiModel.Util;
 using LiControl.Util;
-
+using LiContexts;
+using LiModel.Basic;
+using LiVoucherConvert;
 
 namespace LiForm.Dev
 {
@@ -61,6 +63,11 @@ namespace LiForm.Dev
         /// </summary>
         public string queryWhereStr = string.Empty;
 
+        /// <summary>
+        /// 表体表名
+        /// </summary>
+        string bodyTableName = string.Empty;
+
         private List<DataRow> _SelectDataRows = new List<DataRow>();
 
         public List<DataRow> SelectDataRows { set { _SelectDataRows = value; } get { return _SelectDataRows; } }
@@ -76,16 +83,17 @@ namespace LiForm.Dev
         private Dictionary<string, Control> liQuickQueryControlDict = new Dictionary<string, Control>();
 
         private LiConvertHeadModel liConvertHeadModel;
-
+        private List<TableModel> tableModelList;
         private string entityKey;
 
 
-        public LiRefForm(LiConvertHeadModel liConvertHeadModel)
+        public LiRefForm(string bodyTableName, LiConvertHeadModel liConvertHeadModel, List<TableModel> tableModelList)
         {
             InitializeComponent();
 
             this.liConvertHeadModel = liConvertHeadModel;
-
+            this.bodyTableName = bodyTableName;
+            this.tableModelList = tableModelList;
             Init();
         }
 
@@ -154,25 +162,30 @@ namespace LiForm.Dev
         public void getQuickQueryWhere()
         {
             queryWhereStr = DevFormUtil.getWhereStr(liQuickQueryControlDict, true);
+
+            queryWhereStr += LiVoucherConvertUtil.getFiliterSQL(liConvertHeadModel, tableModelList);
         }
 
         public void Query()
         {
-            Dictionary<string, object> paramDict = new Dictionary<string, object>();
-            paramDict.Add("childTableName", "TestBody");
-            paramDict.Add("entityKey", entityKey);
-            paramDict.Add("whereSql", "");
 
-            this.pageSum = LiContexts.LiContext.getHttpEntity("sp_QueryList_Count").execProcedureSingleValue_Int32( "iCount", paramDict);
+            Dictionary<string, object> paramDict = new Dictionary<string, object>();
+            paramDict.Add("childTableName", bodyTableName);
+            paramDict.Add("systemCode", LiContext.SystemCode);
+            paramDict.Add("entityKey", entityKey);
+            paramDict.Add("whereSql", queryWhereStr);
+
+            this.pageSum = LiContexts.LiContext.getHttpEntity("sp_QueryList_Count").execProcedureSingleValue_Int32("iCount", paramDict);
 
             paramDict.Clear();
-            paramDict.Add("childTableName", "TestBody");
+            paramDict.Add("childTableName", bodyTableName);
             paramDict.Add("entityKey", entityKey);
+            paramDict.Add("systemCode", LiContext.SystemCode);
             paramDict.Add("whereSql", queryWhereStr);
             paramDict.Add("orderBySql", "");
             paramDict.Add("rangeSql", string.Format(" and iPageRow > {0} and iPageRow <= {1}", (pageCurrent - 1) * pageSize, pageSize * pageCurrent));
 
-            gridControl1.DataSource = LiContexts.LiContext.getHttpEntity("sp_QueryList").execProcedure_DataTable( paramDict);
+            gridControl1.DataSource = LiContexts.LiContext.getHttpEntity("sp_QueryList").execProcedure_DataTable(paramDict);
 
             gridView1.BestFitColumns();
         }

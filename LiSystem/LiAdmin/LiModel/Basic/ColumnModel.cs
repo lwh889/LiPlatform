@@ -211,6 +211,26 @@ namespace LiModel.Basic
         /// </summary>
         public string gridlookUpEditShowModelJson { set; get; }
 
+        /// <summary>
+        /// 扩展字段表名
+        /// </summary>
+        public string extendTableName { set; get; }
+
+        /// <summary>
+        /// 扩展字段表名外键
+        /// </summary>
+        public string extendTableKeyFieldName { set; get; }
+
+        /// <summary>
+        /// 扩展关联表主键
+        /// </summary>
+        public string extendRelationTableKeyFieldName { set; get; }
+
+        /// <summary>
+        /// 是否扩展字段表
+        /// </summary>
+        public bool bExtendField { set; get; }
+
         private DateTime _modifyDate;
 
         /// <summary>

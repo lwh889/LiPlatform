@@ -11,28 +11,24 @@ using LiHttp.Enum;
 using LiContexts;
 using LiModel.LiConvert;
 using LiForm.Dev.Util;
+using LiCommon.LiPostSharp.LiExceptionAspect;
 
 namespace LiForm.Event.EventForm
 {
     public class LiEventRef : LiAEvent
     {
+        [ExceptionHandle]
         public override bool receiveEvent()
         {
             bool bSuccess = false;
 
-            try
+            List<LiConvertHeadModel> list = LiContexts.LiContext.getHttpEntity(LiEntityKey.LiConvert, LiContext.SystemCode).getEntityList<LiConvertHeadModel>(this.liForm.formCode, "convertDest");
+            LiRefTypeForm form = new LiRefTypeForm(list);
+            if (form.ShowDialog() == DialogResult.Yes)
             {
-                List<LiConvertHeadModel> list = LiContexts.LiContext.getHttpEntity(LiEntityKey.LiConvert, LiContext.SystemCode).getEntityList<LiConvertHeadModel>(this.liForm.formCode, "convertDest");
-                LiRefTypeForm form = new LiRefTypeForm(list);
-                if (form.ShowDialog() == DialogResult.Yes)
-                {
-                    LiConvertHeadModel liConvertHeadModel = form.liConvertHeadModel;
+                LiConvertHeadModel liConvertHeadModel = form.liConvertHeadModel;
 
-                    bSuccess = ListFormUtil.refVoucher(this.liListForm.entityKey, liConvertHeadModel, this.liListForm.tableModel, this.liListForm.tableModelList, this.liListForm.getParentForm(), this.liForm);
-                }
-            }
-            catch (Exception ex)
-            {
+                bSuccess = ListFormUtil.refVoucher(this.liForm.formCode, liConvertHeadModel, this.liForm.tableModel, this.liForm.tableModelList, this.liForm.ParentForm, this.liForm);
             }
 
             return bSuccess;

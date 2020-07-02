@@ -256,3 +256,5 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\Interop.VBAsyncPluginInv
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\UFIDA.U8.U8APIFramework.dll.config
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\UFSoft.AIF.MOM.Common.MessageObjectModel.xml
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiManagePushDesign.resources
+C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiManageConvertForm2.resources
+C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiManageConvertListForm.resources

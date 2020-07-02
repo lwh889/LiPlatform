@@ -3,6 +3,7 @@ using LiCommon.Util;
 using LiContexts;
 using LiContexts.Model;
 using LiHttp.Enum;
+using LiHttp.RequestParam;
 using LiModel.Basic;
 using LiModel.LiConvert;
 using LiModel.LiEnum;
@@ -35,29 +36,29 @@ namespace LiForm.Dev.Util
             switch (liConvertHeadModel.convertRelation)
             {
                 case ConvertRelation.PUSHCUMULATIVE:
-                    LiRefQuantityForm liRefQuantityForm = new LiRefQuantityForm(liConvertHeadModel, tableModelList, drsBody);
+                    if(liConvertHeadModel.convertDestType != ConvertDestTypeModel.System)
+                    {
+                        LiRefQuantityForm liRefQuantityForm = new LiRefQuantityForm(liConvertHeadModel, tableModelList, drsBody);
 
-                    if (liRefQuantityForm.ShowDialog() == DialogResult.Yes)
-                    {
-                        drsBody = liRefQuantityForm.SelectDataRows;
-                    }
-                    else
-                    {
-                        return bSuccess;
+                        if (liRefQuantityForm.ShowDialog() == DialogResult.Yes)
+                        {
+                            drsBody = liRefQuantityForm.SelectDataRows;
+                        }
+                        else
+                        {
+                            return bSuccess;
+                        }
                     }
                     break;
                 case ConvertRelation.ONE:
-                    List<LiConvertBodyModel> liConvertBodyModels = liConvertHeadModel.datas.Where(m => string.IsNullOrWhiteSpace(m.reverseIdFieldName)).ToList();
-                    if (liConvertBodyModels != null)
+                    string idFieldName = string.Format("Li{0}_{1}", liConvertHeadModel.convertCumulativeTableName, liConvertHeadModel.convertCumulativeTextField);
+
+                    foreach(DataRow dr in drsBody)
                     {
-                        foreach (LiConvertBodyModel liConvertBody in liConvertBodyModels)
+                        if (!string.IsNullOrWhiteSpace(Convert.ToString(dr[idFieldName])))
                         {
-                            string idFieldName = string.Format("Li{0}_{1}", liConvertBody.convertSourceType, tableModel.keyName);
-                            if (!string.IsNullOrWhiteSpace(Convert.ToString(drsBody[0][idFieldName])))
-                            {
-                                MessageUtil.ShowByWarmTip("已下推！");
-                                return bSuccess;
-                            }
+                            MessageUtil.ShowByWarmTip("已下推！");
+                            return bSuccess;
                         }
                     }
                     break;
@@ -79,6 +80,7 @@ namespace LiForm.Dev.Util
                     {
                         LiContext.AddPageMdi(PageFormModel.getInstance(0, liFormDest, liConvertHeadModel.convertDest), parentForm);
                         liFormDest.setVoucherNewStatus();
+                        liFormDest.liConvertHeadModel = liConvertHeadModel;
                         bSuccess = true;
                     }
                     else
@@ -113,11 +115,18 @@ namespace LiForm.Dev.Util
         /// <summary>
         /// 单据参照，列表
         /// </summary>
-        public static bool refVoucher(string entityKey, LiConvertHeadModel liConvertHeadModel, TableModel tableModel, List<TableModel> tableModelList, Form parentForm, LiForm liFormDest)
+        public static bool refVoucher( string entityKey, LiConvertHeadModel liConvertHeadModel, TableModel tableModel, List<TableModel> tableModelList, Form parentForm, LiForm liFormDest)
         {
             bool bSuccess = false;
 
-
+            string bodyTableName = string.Empty;
+            QueryParamModel paramModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getQueryParamModel_ShowAllColumn();
+            QueryParamModel.getWHereANDByTwoParam(paramModel, "bDefaultBody", "1", "entityKey", liConvertHeadModel.convertSource);
+            TableModel bodyTableModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntitySingle<TableModel>(paramModel);
+            if (bodyTableModel != null)
+            {
+                bodyTableName = bodyTableModel.tableName;
+            }
             List<DataRow> drs = null;
             LiReponseModel liReponse;
 
@@ -141,12 +150,10 @@ namespace LiForm.Dev.Util
                     }
                     break;
                 default:
-                    LiRefForm liRefForm = new LiRefForm(liConvertHeadModel);
+                    LiRefForm liRefForm = new LiRefForm(bodyTableName, liConvertHeadModel, tableModelList);
                     if (liRefForm.ShowDialog() == DialogResult.Yes)
                     {
-
                         drs = liRefForm.SelectDataRows;
-
                     }
                     break;
             }
@@ -160,31 +167,32 @@ namespace LiForm.Dev.Util
             switch (liConvertHeadModel.convertRelation)
             {
                 case ConvertRelation.PUSHCUMULATIVE:
-                    LiRefQuantityForm liRefQuantityForm = new LiRefQuantityForm(liConvertHeadModel, tableModelList, drs);
+                    if (liConvertHeadModel.convertDestType != ConvertDestTypeModel.System)
+                    {
+                        List<TableModel> sourceTableModelList = LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>(liConvertHeadModel.convertSource, "entityKey");
+                        LiRefQuantityForm liRefQuantityForm = new LiRefQuantityForm(liConvertHeadModel, sourceTableModelList, drs);
 
-                    if (liRefQuantityForm.ShowDialog() == DialogResult.Yes)
-                    {
-                        drs = liRefQuantityForm.SelectDataRows;
-                    }
-                    else
-                    {
-                        return bSuccess;
+                        if (liRefQuantityForm.ShowDialog() == DialogResult.Yes)
+                        {
+                            drs = liRefQuantityForm.SelectDataRows;
+                        }
+                        else
+                        {
+                            return bSuccess;
+                        }
                     }
                     break;
                 case ConvertRelation.ONE:
-                    List<LiConvertBodyModel> liConvertBodyModels = liConvertHeadModel.datas.Where(m => string.IsNullOrWhiteSpace(m.reverseIdFieldName)).ToList();
-                    if (liConvertBodyModels != null)
+                    string idFieldName = string.Format("Li{0}_{1}", liConvertHeadModel.convertCumulativeTableName, liConvertHeadModel.convertCumulativeTextField);
+                    foreach(DataRow dr in drs)
                     {
-                        foreach (LiConvertBodyModel liConvertBody in liConvertBodyModels)
+                        if (!string.IsNullOrWhiteSpace(Convert.ToString(dr[idFieldName])))
                         {
-                            string idFieldName = string.Format("Li{0}_{1}", liConvertBody.convertSourceType, tableModel.keyName);
-                            if (!string.IsNullOrWhiteSpace(Convert.ToString(drs[0][idFieldName])))
-                            {
-                                MessageUtil.ShowByWarmTip("已下推！");
-                                return bSuccess;
-                            }
+                            MessageUtil.ShowByWarmTip("已下推！");
+                            return bSuccess;
                         }
                     }
+
                     break;
             }
 
@@ -198,6 +206,7 @@ namespace LiForm.Dev.Util
                         liFormDest = FormUtil.getVoucher(liConvertHeadModel.convertDest) as LiForm;
                         isNewForm = true;
                     }
+
                     LiSystemConvert liVoucherConvert = LiVoucherConvertUtil.getVoucherConvert(liConvertHeadModel.convertDestType, liConvertHeadModel.convertCode) as LiSystemConvert;
                     liVoucherConvert.convertData = drs;
                     liVoucherConvert.formDataDict = liFormDest.formDataDict;
@@ -215,7 +224,9 @@ namespace LiForm.Dev.Util
                         else
                         {
                             liFormDest.loadData();
+                            liFormDest.setVoucherStatus(liFormDest.getVoucherStatusName());
                         }
+                        liFormDest.liConvertHeadModel = liConvertHeadModel;
                         bSuccess = true;
                     }
                     else
@@ -233,7 +244,7 @@ namespace LiForm.Dev.Util
 
         public static string getFieldNameFormat(string tableName, string columnName)
         {
-            return string.Format("Li{0}_{1}", tableName, columnName);
+            return SQLUtil.getFieldNameFormat(tableName, columnName);
         }
         /// <summary>
         /// 根据TableModel信息获取列

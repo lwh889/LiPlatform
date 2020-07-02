@@ -302,5 +302,170 @@ namespace LiModel.LiModelFactory
             controlModel.col = 4;
             return controlModel;
         }
+
+        /// <summary>
+        /// 表头源单ID控件
+        /// </summary>
+        /// <param name="controlGroupId"></param>
+        /// <returns></returns>
+        public static ControlModel getHeadSourceIDControl()
+        {
+            ControlModel controlModel =  ControlModel.getInstance();
+            controlModel.name = "hSourceID";
+            controlModel.text = "源单ID";
+            controlModel.bReadOnly = true;
+            controlModel.bVisible = false;
+
+            return controlModel;
+        }
+
+        /// <summary>
+        /// 表头源单编码控件
+        /// </summary>
+        /// <param name="controlGroupId"></param>
+        /// <returns></returns>
+        public static ControlModel getHeadSourceCodeControl()
+        {
+            ControlModel controlModel = ControlModel.getInstance();
+            controlModel.name = "hSourceCode";
+            controlModel.text = "源单编码";
+            controlModel.bReadOnly = true;
+            controlModel.bVisible = false;
+
+            return controlModel;
+        }
+
+        /// <summary>
+        /// 表头源单编码控件
+        /// </summary>
+        /// <param name="controlGroupId"></param>
+        /// <returns></returns>
+        public static ControlModel getHeadSourceTypeControl()
+        {
+            ControlModel controlModel = ControlModel.getInstance();
+            controlModel.name = "hSourceType";
+            controlModel.text = "源单类型";
+            controlModel.bReadOnly = true;
+            controlModel.bVisible = false;
+
+            return controlModel;
+        }
+
+        /// <summary>
+        /// 表体源单ID控件
+        /// </summary>
+        /// <param name="controlGroupId"></param>
+        /// <returns></returns>
+        public static ControlModel getBodySourceIDControl()
+        {
+            ControlModel controlModel = ControlModel.getInstance();
+            controlModel.name = "bSourceID";
+            controlModel.text = "源单ID";
+            controlModel.bReadOnly = true;
+            controlModel.bVisible = false;
+
+            return controlModel;
+        }
+
+        /// <summary>
+        /// 表体源单编码控件
+        /// </summary>
+        /// <param name="controlGroupId"></param>
+        /// <returns></returns>
+        public static ControlModel getBodySourceCodeControl()
+        {
+            ControlModel controlModel = ControlModel.getInstance();
+            controlModel.name = "bSourceCode";
+            controlModel.text = "源单编码";
+            controlModel.bReadOnly = true;
+            controlModel.bVisible = false;
+
+            return controlModel;
+        }
+
+        /// <summary>
+        /// 表体源单编码控件
+        /// </summary>
+        /// <param name="controlGroupId"></param>
+        /// <returns></returns>
+        public static ControlModel getBodySourceTypeControl()
+        {
+            ControlModel controlModel = ControlModel.getInstance();
+            controlModel.name = "bSourceType";
+            controlModel.text = "源单类型";
+            controlModel.bReadOnly = true;
+            controlModel.bVisible = false;
+
+            return controlModel;
+        }
+
+        /// <summary>
+        /// 表体源单编码控件
+        /// </summary>
+        /// <returns></returns>
+        public static ControlModel getHeadSourceQtyControl()
+        {
+            ControlModel controlModel = ControlModel.getInstance();
+            controlModel.name = "hSourceQty";
+            controlModel.text = "源单数量";
+            controlModel.bReadOnly = true;
+            controlModel.bVisible = true;
+            controlModel.controltype = ControlType.DecimalEdit;
+            controlModel.length = 15;
+            controlModel.scale = 6;
+
+            return controlModel;
+        }
+
+        /// <summary>
+        /// 表体源单编码控件
+        /// </summary>
+        /// <returns></returns>
+        public static ControlModel getBodySourceQtyControl()
+        {
+            ControlModel controlModel = ControlModel.getInstance();
+            controlModel.name = "bSourceQty";
+            controlModel.text = "源单数量";
+            controlModel.bReadOnly = true;
+            controlModel.bVisible = true;
+            controlModel.controltype = ControlType.DecimalEdit;
+            controlModel.length = 15;
+            controlModel.scale = 6;
+
+            return controlModel;
+        }
+
+
+        /// <summary>
+        /// 表体源单ID控件
+        /// </summary>
+        /// <param name="controlGroupId"></param>
+        /// <returns></returns>
+        public static ControlModel getHeadConvertCodeControl()
+        {
+            ControlModel controlModel = ControlModel.getInstance();
+            controlModel.name = "hConvertCode";
+            controlModel.text = "单据转换";
+            controlModel.bReadOnly = true;
+            controlModel.bVisible = false;
+
+            return controlModel;
+        }
+
+        /// <summary>
+        /// 表体源单ID控件
+        /// </summary>
+        /// <param name="controlGroupId"></param>
+        /// <returns></returns>
+        public static ControlModel getBodyConvertCodeControl()
+        {
+            ControlModel controlModel = ControlModel.getInstance();
+            controlModel.name = "bConvertCode";
+            controlModel.text = "单据转换";
+            controlModel.bReadOnly = true;
+            controlModel.bVisible = false;
+
+            return controlModel;
+        }
     }
 }

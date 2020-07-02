@@ -18,33 +18,27 @@ using LiU8API.Model;
 using LiVoucherConvert.Model;
 using LiCommon.Util;
 using LiVoucherConvert;
+using LiCommon.LiPostSharp.LiExceptionAspect;
 
 namespace LiForm.Event.EventListForm
 {
     public class LiEventListPush : LiAEvent
     {
+        [ExceptionHandle]
         public override bool receiveEvent()
         {
             bool bSuccess = false;
 
-            try
+            List<LiConvertHeadModel> list = LiContexts.LiContext.getHttpEntity(LiEntityKey.LiConvert, LiContext.SystemCode).getEntityList<LiConvertHeadModel>(this.liListForm.entityKey, "convertSource");
+            LiRefTypeForm form = new LiRefTypeForm(list);
+            if (form.ShowDialog() == DialogResult.Yes)
             {
+                LiConvertHeadModel liConvertHeadModel = form.liConvertHeadModel;
 
-                List<LiConvertHeadModel> list = LiContexts.LiContext.getHttpEntity(LiEntityKey.LiConvert, LiContext.SystemCode).getEntityList<LiConvertHeadModel>(this.liListForm.entityKey, "convertSource");
-                LiRefTypeForm form = new LiRefTypeForm(list);
-                if (form.ShowDialog() == DialogResult.Yes)
-                {
-                    LiConvertHeadModel liConvertHeadModel = form.liConvertHeadModel;
+                List<DataRow> drs = this.liListForm.getSelectedDataRows();
+                bSuccess = ListFormUtil.pushVoucher(this.liListForm.entityKey, liConvertHeadModel, this.liListForm.tableModel, this.liListForm.tableModelList, drs[0], drs, this.liListForm.getParentForm());
 
-                    List<DataRow> drs = this.liListForm.getSelectedDataRows();
-                    bSuccess = ListFormUtil.pushVoucher(this.liListForm.entityKey, liConvertHeadModel, this.liListForm.tableModel, this.liListForm.tableModelList, drs[0], drs, this.liListForm.getParentForm());
-
-                }
             }
-            catch (Exception ex)
-            {
-            }
-
             return bSuccess;
 
         }
