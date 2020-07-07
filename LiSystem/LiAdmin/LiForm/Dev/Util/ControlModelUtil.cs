@@ -16,6 +16,8 @@ using DevExpress.XtraTreeList.Columns;
 
 using LiModel.Form;
 using LiModel.LiEnum;
+using LiCommon.LiEnum;
+using LiContexts;
 
 namespace LiForm.Dev.Util
 {
@@ -32,7 +34,7 @@ namespace LiForm.Dev.Util
             Control control = null;
             switch (controlModel.controltype)
             {
-                case "VoucherCodeEdit":
+                case ControlType.VoucherCodeEdit:
                     TextEdit voucherCodeEdit = new TextEdit();
                     voucherCodeEdit.Properties.ReadOnly = true;
                     voucherCodeEdit.Properties.NullValuePromptShowForEmptyValue = true;
@@ -40,53 +42,53 @@ namespace LiForm.Dev.Util
                     voucherCodeEdit.Text = "保存自动生成...";
                     control = voucherCodeEdit;
                     break;
-                case "TextEdit":
+                case ControlType.TextEdit:
                     TextEdit textEdit = new TextEdit();
                     textEdit.Properties.ReadOnly = controlModel.bReadOnly;
                     control = textEdit;
                     break;
-                case "CheckEdit":
+                case ControlType.CheckEdit:
                     CheckEdit checkEdit = new CheckEdit();
                     checkEdit.Properties.ReadOnly = controlModel.bReadOnly;
                     control = checkEdit;
                     break;
-                case "MemoEdit":
+                case ControlType.MemoEdit:
                     MemoEdit memoEdit = new MemoEdit();
                     memoEdit.Properties.ReadOnly = controlModel.bReadOnly;
                     control = memoEdit;
                     break;
-                case "IntEdit":
-                case "DecimalEdit":
-                case "CalcEdit":
+                case ControlType.IntEdit:
+                case ControlType.DecimalEdit:
+                case ControlType.CalcEdit:
                     CalcEdit calcEdit = new CalcEdit();
                     calcEdit.Properties.ReadOnly = controlModel.bReadOnly;
                     control = calcEdit;
                     break;
-                case "DateTimeEdit":
-                case "TimeEdit":
-                case "DateEdit":
+                case ControlType.DateTimeEdit:
+                case ControlType.TimeEdit:
+                case ControlType.DateEdit:
                     DateEdit dateEdit = new DateEdit();
                     dateEdit.Properties.ReadOnly = controlModel.bReadOnly;
                     control = dateEdit;
                     break;
-                case "StatusEdit":
-                case "GridLookUpEditComboBox":
+                case ControlType.StatusEdit:
+                case ControlType.GridLookUpEditComboBox:
                     GridLookUpEdit gridLookUpEditComboBox = new GridLookUpEdit();
                     gridLookUpEditComboBox.Properties.ReadOnly = controlModel.bReadOnly;
                     control = gridLookUpEditComboBox;
                     break;
-                case "UserEdit":
-                case "GridLookUpEditRef":
+                case ControlType.UserEdit:
+                case ControlType.GridLookUpEditRef:
                     GridLookUpEdit gridLookUpEditRef = new GridLookUpEdit();
                     gridLookUpEditRef.Properties.ReadOnly = controlModel.bReadOnly;
                     control = gridLookUpEditRef;
                     break;
-                case "GridLookUpEditRefAssist":
+                case ControlType.GridLookUpEditRefAssist:
                     TextEdit textRefAssistEdit = new TextEdit();
                     textRefAssistEdit.Properties.ReadOnly = true;
                     control = textRefAssistEdit;
                     break;
-                case "TreeListLookUpEdit":
+                case ControlType.TreeListLookUpEdit:
                     TreeListLookUpEdit treeListLookUpEdit = new TreeListLookUpEdit();
                     treeListLookUpEdit.Properties.BeginInit();
                     treeListLookUpEdit.Properties.NullText = "";
@@ -126,53 +128,53 @@ namespace LiForm.Dev.Util
             RepositoryItem control = null;
             switch (controlModel.controltype)
             {
-                case "TextEdit":
+                case ControlType.TextEdit:
                     RepositoryItemTextEdit textEdit = new RepositoryItemTextEdit();
                     textEdit.ReadOnly = controlModel.bReadOnly;
                     control = textEdit;
                     break;
-                case "CheckEdit":
+                case ControlType.CheckEdit:
                     RepositoryItemCheckEdit checkEdit = new RepositoryItemCheckEdit();
                     checkEdit.ReadOnly = controlModel.bReadOnly;
                     control = checkEdit;
                     break;
-                case "MemoEdit":
+                case ControlType.MemoEdit:
                     RepositoryItemMemoEdit memoEdit = new RepositoryItemMemoEdit();
                     memoEdit.ReadOnly = controlModel.bReadOnly;
                     control = memoEdit;
                     break;
-                case "DecimalEdit":
-                case "IntEdit":
-                case "CalcEdit":
+                case ControlType.DecimalEdit:
+                case ControlType.IntEdit:
+                case ControlType.CalcEdit:
                     RepositoryItemCalcEdit calcEdit = new RepositoryItemCalcEdit();
                     calcEdit.ReadOnly = controlModel.bReadOnly;
                     control = calcEdit;
                     break;
-                case "DateTimeEdit":
-                case "TimeEdit":
-                case "DateEdit":
+                case ControlType.DateTimeEdit:
+                case ControlType.TimeEdit:
+                case ControlType.DateEdit:
                     RepositoryItemDateEdit dateEdit = new RepositoryItemDateEdit();
                     dateEdit.ReadOnly = controlModel.bReadOnly;
                     control = dateEdit;
                     break;
-                case "StatusEdit":
-                case "GridLookUpEditComboBox":
+                case ControlType.StatusEdit:
+                case ControlType.GridLookUpEditComboBox:
                     RepositoryItemGridLookUpEdit gridLookUpEditComboBox = new RepositoryItemGridLookUpEdit();
                     gridLookUpEditComboBox.ReadOnly = controlModel.bReadOnly;
                     control = gridLookUpEditComboBox;
                     break;
-                case "UserEdit":
-                case "GridLookUpEditRef":
+                case ControlType.UserEdit:
+                case ControlType.GridLookUpEditRef:
                     RepositoryItemGridLookUpEdit gridLookUpEditRef = new RepositoryItemGridLookUpEdit();
                     gridLookUpEditRef.ReadOnly = controlModel.bReadOnly;
                     control = gridLookUpEditRef;
                     break;
-                case "GridLookUpEditRefAssist":
+                case ControlType.GridLookUpEditRefAssist:
                     RepositoryItemTextEdit textRefAssistEdit = new RepositoryItemTextEdit();
                     textRefAssistEdit.ReadOnly = controlModel.bReadOnly;
                     control = textRefAssistEdit;
                     break;
-                case "TreeListLookUpEdit":
+                case ControlType.TreeListLookUpEdit:
                     RepositoryItemTreeListLookUpEdit treeListLookUpEdit = new RepositoryItemTreeListLookUpEdit();
                     treeListLookUpEdit.ReadOnly = controlModel.bReadOnly;
                     treeListLookUpEdit.NullText = "";
@@ -211,7 +213,7 @@ namespace LiForm.Dev.Util
             Control control = null;
             switch (controlType)
             {
-                case "VoucherCodeEdit":
+                case ControlType.VoucherCodeEdit:
                     TextEdit voucherCodeEdit = new TextEdit();
                     voucherCodeEdit.Properties.ReadOnly = true;
                     voucherCodeEdit.Properties.NullValuePromptShowForEmptyValue = true;
@@ -219,45 +221,45 @@ namespace LiForm.Dev.Util
                     voucherCodeEdit.Text = "保存自动生成...";
                     control = voucherCodeEdit;
                     break;
-                case "TextEdit":
+                case ControlType.TextEdit:
                     TextEdit textEdit = new TextEdit();
                     control = textEdit;
                     break;
-                case "CheckEdit":
+                case ControlType.CheckEdit:
                     CheckEdit checkEdit = new CheckEdit();
                     control = checkEdit;
                     break;
-                case "MemoEdit":
+                case ControlType.MemoEdit:
                     MemoEdit memoEdit = new MemoEdit();
                     control = memoEdit;
                     break;
-                case "IntEdit":
-                case "DecimalEdit":
-                case "CalcEdit":
+                case ControlType.IntEdit:
+                case ControlType.DecimalEdit:
+                case ControlType.CalcEdit:
                     CalcEdit calcEdit = new CalcEdit();
                     control = calcEdit;
                     break;
-                case "DateTimeEdit":
-                case "TimeEdit":
-                case "DateEdit":
+                case ControlType.DateTimeEdit:
+                case ControlType.TimeEdit:
+                case ControlType.DateEdit:
                     DateEdit dateEdit = new DateEdit();
                     control = dateEdit;
                     break;
-                case "StatusEdit":
-                case "GridLookUpEditComboBox":
+                case ControlType.StatusEdit:
+                case ControlType.GridLookUpEditComboBox:
                     GridLookUpEdit gridLookUpEditComboBox = new GridLookUpEdit();
                     control = gridLookUpEditComboBox;
                     break;
-                case "UserEdit":
-                case "GridLookUpEditRef":
+                case ControlType.UserEdit:
+                case ControlType.GridLookUpEditRef:
                     GridLookUpEdit gridLookUpEditRef = new GridLookUpEdit();
                     control = gridLookUpEditRef;
                     break;
-                case "GridLookUpEditRefAssist":
+                case ControlType.GridLookUpEditRefAssist:
                     TextEdit textRefAssistEdit = new TextEdit();
                     control = textRefAssistEdit;
                     break;
-                case "TreeListLookUpEdit":
+                case ControlType.TreeListLookUpEdit:
                     TreeListLookUpEdit treeListLookUpEdit = new TreeListLookUpEdit();
 
                     treeListLookUpEdit.Properties.ValueMember = "ID";
@@ -294,41 +296,41 @@ namespace LiForm.Dev.Util
             RepositoryItem control = null;
             switch (controlType)
             {
-                case "TextEdit":
+                case ControlType.TextEdit:
                     RepositoryItemTextEdit textEdit = new RepositoryItemTextEdit();
                     control = textEdit;
                     break;
-                case "CheckEdit":
+                case ControlType.CheckEdit:
                     RepositoryItemCheckEdit checkEdit = new RepositoryItemCheckEdit();
                     control = checkEdit;
                     break;
-                case "MemoEdit":
+                case ControlType.MemoEdit:
                     RepositoryItemMemoEdit memoEdit = new RepositoryItemMemoEdit();
                     control = memoEdit;
                     break;
-                case "DecimalEdit":
-                case "IntEdit":
-                case "CalcEdit":
+                case ControlType.DecimalEdit:
+                case ControlType.IntEdit:
+                case ControlType.CalcEdit:
                     RepositoryItemCalcEdit calcEdit = new RepositoryItemCalcEdit();
                     control = calcEdit;
                     break;
-                case "DateTimeEdit":
-                case "TimeEdit":
-                case "DateEdit":
+                case ControlType.DateTimeEdit:
+                case ControlType.TimeEdit:
+                case ControlType.DateEdit:
                     RepositoryItemDateEdit dateEdit = new RepositoryItemDateEdit();
                     control = dateEdit;
                     break;
                 case ControlType.StatusEdit:
-                case "GridLookUpEditComboBox":
+                case ControlType.GridLookUpEditComboBox:
                     RepositoryItemGridLookUpEdit gridLookUpEditComboBox = new RepositoryItemGridLookUpEdit();
                     control = gridLookUpEditComboBox;
                     break;
-                case "UserEdit":
-                case "GridLookUpEditRef":
+                case ControlType.UserEdit:
+                case ControlType.GridLookUpEditRef:
                     RepositoryItemGridLookUpEdit gridLookUpEditRef = new RepositoryItemGridLookUpEdit();
                     control = gridLookUpEditRef;
                     break;
-                case "GridLookUpEditRefAssist":
+                case ControlType.GridLookUpEditRefAssist:
                     RepositoryItemTextEdit textRefAssistEdit = new RepositoryItemTextEdit();
                     control = textRefAssistEdit;
                     break;

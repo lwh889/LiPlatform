@@ -29,7 +29,7 @@ namespace LiFlow.Util
         /// <returns></returns>
         public static string replaceMessagePlaceholder(string messageStr, Dictionary<string, object> formDataDict)
         {
-            List<string> placeholders = RegexUtil.CollectString(@"\{(.*?)\}", messageStr);
+            List<string> placeholders = RegexUtil.CollectStrings(@"\{(.*?)\}", messageStr);
 
             foreach (string placeholder in placeholders)
             {

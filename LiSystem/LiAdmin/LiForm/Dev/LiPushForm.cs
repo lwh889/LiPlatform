@@ -34,6 +34,7 @@ using LiContexts;
 using LiModel.LiEnum;
 using LiControl.Util;
 using LiHttp.RequestParam;
+using LiCommon.LiEnum;
 
 namespace LiForm.Dev
 {
@@ -185,6 +186,10 @@ namespace LiForm.Dev
             }
         }
 
+        /// <summary>
+        /// 没用
+        /// </summary>
+        /// <param name="formModel"></param>
         public LiPushForm(FormModel formModel)
         {
             InitializeComponent();

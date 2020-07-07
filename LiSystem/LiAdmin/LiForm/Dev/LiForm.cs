@@ -44,11 +44,18 @@ using LiModel.Basic;
 using LiModel.LiConvert;
 using LiHttp;
 using LiVoucherConvert;
+using LiCommon.LiEnum;
+using LiCommon.LiExpression;
 
 namespace LiForm.Dev
 {
     public partial class LiForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private bool _bInit = false;
+        /// <summary>
+        /// 是否初始化
+        /// </summary>
+        private bool bInit { set { _bInit = value; } get { return _bInit; } }
 
         /// <summary>
         /// 普通控件缓存
@@ -268,6 +275,7 @@ namespace LiForm.Dev
 
         public LiForm(FormModel formModel)
         {
+            bInit = true;
             InitializeComponent();
 
             this.formModel = formModel;
@@ -304,6 +312,7 @@ namespace LiForm.Dev
             this.Controls.Add(this.ribbon);
 
 
+            bInit = false;
         }
 
         public void Init()
@@ -514,12 +523,14 @@ namespace LiForm.Dev
 
         private void LiForm_Load(object sender, EventArgs e)
         {
+            bInit = true;
             loadData();
 
             if (getVoucherType() == VoucherType.TreeBasicInfo)
             {
                 loadTreeData();
             }
+            bInit = false;
         }
 
         public void getData()
@@ -555,6 +566,7 @@ namespace LiForm.Dev
         /// </summary>
         private void repairAttrData()
         {
+            //就修复表体
             foreach (PanelModel panelModel in formModel.panels)
             {
                 if (string.IsNullOrEmpty(panelModel.entityColumnName)) continue;
@@ -580,36 +592,44 @@ namespace LiForm.Dev
 
                             if (!dict.ContainsKey(controlModel.name))
                             {
-                                switch (controlModel.controltype)
+                                //设置默认值
+                                if (!string.IsNullOrWhiteSpace(controlModel.controlDefaultVaule))
                                 {
-                                    case "IntEdit":
-                                        dict.Add(controlModel.name, DataUtil.GetDefaultValue(Type.GetType("System.Int32")));
-                                        break;
-                                    case "CheckEdit":
-                                        dict.Add(controlModel.name, DataUtil.GetDefaultValue(Type.GetType("System.Boolean")));
-                                        break;
-                                    case "DecimalEdit":
-                                    case "CalcEdit":
-                                        dict.Add(controlModel.name, DataUtil.GetDefaultValue(Type.GetType("System.Double")));
-                                        break;
-                                    case "DateTimeEdit":
-                                    case "TimeEdit":
-                                    case "DateEdit":
-                                        dict.Add(controlModel.name, DataUtil.GetDefaultValue(Type.GetType("System.DateTime")));
-                                        break;
-                                    case "VoucherCodeEdit":
-                                    case "TextEdit":
-                                    case "MemoEdit":
-                                    case "GridLookUpEditComboBox":
-                                    case "UserEdit":
-                                    case "GridLookUpEditRef":
-                                    case "GridLookUpEditRefAssist":
-                                    case "TreeListLookUpEdit":
-                                        dict.Add(controlModel.name, DataUtil.GetDefaultValue(Type.GetType("System.String")));
-                                        break;
-                                    default:
-                                        dict.Add(controlModel.name, DataUtil.GetDefaultValue(Type.GetType("System.String")));
-                                        break;
+                                    dict.Add(controlModel.name, LiContext.defaultValueContext.getDefaultValue(controlModel.controlDefaultVaule));
+                                }
+                                else
+                                {
+                                    switch (controlModel.controltype)
+                                    {
+                                        case "IntEdit":
+                                            dict.Add(controlModel.name, DataUtil.GetDefaultValue(Type.GetType("System.Int32")));
+                                            break;
+                                        case "CheckEdit":
+                                            dict.Add(controlModel.name, DataUtil.GetDefaultValue(Type.GetType("System.Boolean")));
+                                            break;
+                                        case "DecimalEdit":
+                                        case "CalcEdit":
+                                            dict.Add(controlModel.name, DataUtil.GetDefaultValue(Type.GetType("System.Double")));
+                                            break;
+                                        case "DateTimeEdit":
+                                        case "TimeEdit":
+                                        case "DateEdit":
+                                            dict.Add(controlModel.name, DataUtil.GetDefaultValue(Type.GetType("System.DateTime")));
+                                            break;
+                                        case "VoucherCodeEdit":
+                                        case "TextEdit":
+                                        case "MemoEdit":
+                                        case "GridLookUpEditComboBox":
+                                        case "UserEdit":
+                                        case "GridLookUpEditRef":
+                                        case "GridLookUpEditRefAssist":
+                                        case "TreeListLookUpEdit":
+                                            dict.Add(controlModel.name, DataUtil.GetDefaultValue(Type.GetType("System.String")));
+                                            break;
+                                        default:
+                                            dict.Add(controlModel.name, DataUtil.GetDefaultValue(Type.GetType("System.String")));
+                                            break;
+                                    }
                                 }
                             }
                         }
@@ -753,12 +773,43 @@ namespace LiForm.Dev
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void gridLookUpEdit_Properties_EditValueChanged(object sender, EventArgs e)
+        public void devControl_EditValueChanged(object sender, EventArgs e)
         {
             Control control = (Control)sender;
             ControlModel controlModel = (ControlModel)control.Tag;
 
-            DevControlUtil.bringRefAssistValue(liControlRefAssistDict, LiContexts.LiContext.liRefDataDataTable, controlModel, control);
+            switch (controlModel.controltype)
+            {
+                case ControlType.GridLookUpEditRef:
+                    DevControlUtil.bringRefAssistValue(liControlRefAssistDict, LiContexts.LiContext.liRefDataDataTable, controlModel, control);
+                    break;
+            }
+
+            if (bInit) return;
+            //关联数量判断
+            if (liConvertHeadModel != null && liConvertHeadModel.convertRelation == ConvertRelation.PUSHCUMULATIVE)
+            {
+                LiConvertBodyModel liConvertBody = liConvertHeadModel.datas.Where(m => m.convertDestField == controlModel.name && m.bCumulativeRelationQty).FirstOrDefault();
+                if (liConvertBody != null)
+                {
+                    PanelModel panelModel = formModel.panels.Where(m => m.tableName == liConvertBody.convertDestType).FirstOrDefault();
+                    if (panelModel.type == PanelType.BASIC)
+                    {
+                        CalcEdit qtyControl = liControlDict[liConvertBody.convertDestField] as CalcEdit;
+                        CalcEdit sourceQtyControl = liControlDict["hSourceQty"] as CalcEdit;
+
+                        decimal qty = qtyControl.EditValue == DBNull.Value ? 0 : Convert.ToDecimal(qtyControl.EditValue);
+                        decimal sourceQty = sourceQtyControl.EditValue == DBNull.Value ? 0 : Convert.ToDecimal(sourceQtyControl.EditValue);
+
+                        if (sourceQty < qty)
+                        {
+                            qtyControl.EditValue = sourceQty;
+                        }
+                    }
+                }
+            }
+
+            FormUtil.editValueChangeHead(controlModel, liControlDict, formModel);
         }
 
         /// <summary>
@@ -771,10 +822,10 @@ namespace LiForm.Dev
             GridView gridView = (GridView)sender;
 
             GridColumn gridColumn = e.Column;
+            ControlModel controlModel = (ControlModel)gridColumn.Tag;
             DataRow dr = gridView.GetDataRow(e.RowHandle);
 
             DevControlUtil.bringGridRefAssistValue((ControlModel)gridColumn.Tag, dr, liGridColumnRefDict, liGridColumnRefAssistDict, LiContexts.LiContext.liRefDataDataTable, gridColumn);
-
 
             //关联数量判断
             if(liConvertHeadModel != null && liConvertHeadModel.convertRelation == ConvertRelation.PUSHCUMULATIVE)
@@ -782,16 +833,21 @@ namespace LiForm.Dev
                 LiConvertBodyModel liConvertBody = liConvertHeadModel.datas.Where(m => m.bCumulativeRelationQty == true).FirstOrDefault();
                 if(liConvertBody != null)
                 {
-                    decimal qty = dr[liConvertBody.convertDestField] == DBNull.Value ? 0 : Convert.ToDecimal(dr[liConvertBody.convertDestField]);
-                    decimal sourceQty = dr["bSourceQty"] == DBNull.Value ? 0 : Convert.ToDecimal(dr["bSourceQty"]);
-
-                    if (sourceQty < qty)
+                    PanelModel panelModel = formModel.panels.Where(m => m.tableName == liConvertBody.convertDestType).FirstOrDefault();
+                    if (panelModel.type == PanelType.GRID)
                     {
-                        dr[liConvertBody.convertDestField] = sourceQty;
-                    }
+                        decimal qty = dr[liConvertBody.convertDestField] == DBNull.Value ? 0 : Convert.ToDecimal(dr[liConvertBody.convertDestField]);
+                        decimal sourceQty = dr["bSourceQty"] == DBNull.Value ? 0 : Convert.ToDecimal(dr["bSourceQty"]);
 
+                        if (sourceQty < qty)
+                        {
+                            dr[liConvertBody.convertDestField] = sourceQty;
+                        }
+                    }
                 }
             }
+
+            FormUtil.editValueChangeBody(dr, controlModel, liControlDict, liGridColumnDict, formModel);
 
             gridView.RefreshRowCell(e.RowHandle, gridColumn);
         }

@@ -96,6 +96,8 @@ select 6,'form1','slave','controls','LiControl','licontrol1','控件', null,'JsonM
 union all
 select 17,'form1','slave','events','LiEvent','liEvent1','事件组', null,'JsonModel','id','events',getdate()
 union all
+select 61,'form1','slave','events','LiControlEvent','liEvent1','控件事件组', null,'JsonModel','id','controlEvents',getdate()
+union all
 select 19,'form1','slave','listButtons','LiListButton','liListButton1','列表按钮组', null,'JsonModel','id','listButtons',getdate()
 union all
 select 7,'liManageMeum','master',null,'LiManageMeum','limanagemeum1','系统管理菜单', null,'JsonModel','id',null,getdate()
@@ -414,6 +416,8 @@ select 6, 'bRequired','是否必填', 'bit',9,0,0,0,0,null,0,null
 union all
 select 6, 'defaultVaule','默认值', 'nvarchar',5000,0,0,0,0,null,0,null
 union all
+select 6, 'controlDefaultVaule','控件默认值', 'nvarchar',5000,0,0,0,0,null,0,null
+union all
 select 6, 'basicInfoKey','基础档案Kdy', 'narchar',50,0,0,0,0,null,0,null
 union all
 select 6, 'basicInfoTableKey','基础档案主键字段名', 'narchar',50,0,0,0,0,null,0,null
@@ -433,6 +437,8 @@ union all
 select 6, 'gridlookUpEditShowModelJson','Json字段', 'narchar',200,0,0,0,0,null,0,null
 union all
 select 6, 'basicInfoShowMode','基础档案显示模式', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 6, 'controlEvents','数据集','collection', -1,0,0,2,0,null,0,null
 
 
 
@@ -1619,6 +1625,20 @@ select 60, 'assemblyName','程序集', 'narchar',50,0,0,0,0,null,0,null
 union all
 select 60, 'eventMemo','全名称', 'narchar',300,0,0,0,0,null,0,null
 
+
+--LiButtonGroup
+insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+select 61, 'id','主键','int',9,1,0,0,1,null,0,null
+union all
+select 61, 'controlId','外键','int',9,0,1,0,0,'id',1,'LiControl'
+union all
+select 61, 'eventType','事件类型', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 61, 'eventExpression','事件表达式', 'narchar',5000,0,0,0,0,null,0,null
+union all
+select 61, 'bEnable','是否启用', 'bit',1,0,0,0,0,null,0,null
+union all
+select 61, 'eventMemo','事件类型', 'narchar',300,0,0,0,0,null,0,null
 
 GO
 

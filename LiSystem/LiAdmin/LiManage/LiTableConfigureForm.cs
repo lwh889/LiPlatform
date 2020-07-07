@@ -34,6 +34,7 @@ using LiModel.LiTable;
 using System.Text.RegularExpressions;
 using LiForm.Dev.Util;
 using DevExpress.XtraEditors.Repository;
+using LiCommon.LiEnum;
 
 namespace LiManage
 {
@@ -280,7 +281,6 @@ namespace LiManage
             {
                 ModelUtil.setModelValue<TableModel>(kvp.Key, DevControlUtil.getControlData(kvp.Value), formData);
             }
-
 
             foreach (KeyValuePair<string, GridControl> kvp in gridControlDict)
             {

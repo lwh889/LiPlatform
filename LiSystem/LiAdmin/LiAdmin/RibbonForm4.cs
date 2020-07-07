@@ -68,6 +68,11 @@ namespace LiAdmin
         {
 
         }
+
+        private void TextEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

@@ -97,14 +97,14 @@ namespace LiVoucherConvert
                     {
                         sqlStr = string.Format(" update {0}.dbo.{1} set {2}= ISNULL({2},0) + A.{3} from ( select SUM(ISNULL({3},0)) {3},{7} from {4}.dbo.{5} where {8}=''{9}'' group by {7}  ) A where {0}.dbo.{1}.{6} = A.{7} "
                                             , liConvertHeadModel.convertCumulativeDatabaseName, liConvertHeadModel.convertCumulativeTableName, liConvertHeadModel.convertCumulativeField
-                                                       , liConvertBodyQty.convertSourceField, sourceTableModel.dataBaseName, sourceTableModel.tableName
+                                                       , liConvertBodyQty.convertDestField, sourceTableModel.dataBaseName, sourceTableModel.tableName
                                                        , liConvertHeadModel.convertCumulativeIDField, liConvertBodyID.convertDestField, sourceIDField, IDValue);
                     }
                     else
                     {
                         sqlStr = string.Format(" update {0}.dbo.{1} set {2}=  A.{3} from ( select SUM(ISNULL({3},0)) {3},{7} from {4}.dbo.{5} where {10}=''{9}'' group by {7}  ) A where {0}.dbo.{1}.{6} = A.{7} "
                                             , liConvertHeadModel.convertCumulativeDatabaseName, liConvertHeadModel.convertCumulativeTableName, liConvertHeadModel.convertCumulativeField
-                                                       , liConvertBodyQty.convertSourceField, sourceTableModel.dataBaseName, sourceTableModel.tableName
+                                                       , liConvertBodyQty.convertDestField, sourceTableModel.dataBaseName, sourceTableModel.tableName
                                                        , liConvertHeadModel.convertCumulativeIDField, liConvertBodyID.convertDestField, sourceIDField
                                                        , liConvertHeadModel.convertCode, sourceTableModel.entityOrder == EntityOrderType.Master ? "hConvertCode" : "bConvertCode");
 

@@ -15,6 +15,7 @@ using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraGrid.Views.Grid;
 using LiModel.Form;
 using LiModel.LiEnum;
+using LiCommon.LiEnum;
 
 namespace LiControl.Util
 {

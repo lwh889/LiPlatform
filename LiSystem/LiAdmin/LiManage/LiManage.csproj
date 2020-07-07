@@ -77,6 +77,12 @@
     <Compile Include="LiAuthForm.Designer.cs">
       <DependentUpon>LiAuthForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LiControlEventExpressionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiControlEventExpressionForm.Designer.cs">
+      <DependentUpon>LiControlEventExpressionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LiGeneralEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </Compile>
     <EmbeddedResource Include="LiAuthForm.resx">
       <DependentUpon>LiAuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiControlEventExpressionForm.resx">
+      <DependentUpon>LiControlEventExpressionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiGeneralEventForm.resx">
       <DependentUpon>LiGeneralEventForm.cs</DependentUpon>

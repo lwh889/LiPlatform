@@ -243,7 +243,13 @@ namespace LiCommon.Util
             return regex.Split(input);
         }
 
-        public static List<string> CollectString(string pattern, string input)
+        /// <summary>
+        /// 根据正则表达式获取出字符串，分割成列表，在用
+        /// </summary>
+        /// <param name="pattern"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static List<string> CollectStrings(string pattern, string input)
         {
             List<string> sList = new List<string>();
             
@@ -254,6 +260,24 @@ namespace LiCommon.Util
                 sList.Add(match.Groups[1].Value);
             }
             return sList;
+        }
+        /// <summary>
+        /// 根据正则表达式获取出字符串，分割成列表，在用
+        /// </summary>
+        /// <param name="pattern"></param>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static string CollectString(string pattern, string input)
+        {
+            List<string> sList = new List<string>();
+
+            string sheetData = Regex.Match(input, pattern, RegexOptions.Multiline).Groups[1].Value;
+            MatchCollection matchs = Regex.Matches(input, pattern, RegexOptions.Multiline);
+
+            if (matchs != null && matchs.Count > 0)
+                return matchs[0].Groups[1].Value;
+            else
+                return string.Empty;
         }
         /* *******************************************************************
          * 1、通过“:”来分割字符串看得到的字符串数组长度是否小于等于8

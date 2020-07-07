@@ -34,17 +34,172 @@ using LiControl.Util;
 
 using Newtonsoft.Json;
 using LiModel.Basic;
+using LiCommon.LiExpression;
+using LiCommon.LiEnum;
 
 namespace LiForm.Dev.Util
 {
     public class FormUtil
     {
         /// <summary>
-        /// 单据下推
+        /// 自定义值变化事件，表头
         /// </summary>
-        public static void pushVoucher()
+        public static void editValueChangeHead(ControlModel controlModel, Dictionary<string, Control> liControlDict, FormModel formModel)
         {
 
+            //值变化事件
+            if (controlModel.controlEvents.Count > 0)
+            {
+                foreach (ControlEventModel controlEventModel in controlModel.controlEvents)
+                {
+                    if (controlEventModel.bEnable && controlEventModel.eventType == ControlEventTypeModel.EditValueChanged)
+                    {
+                        string[] params1 = controlEventModel.eventExpression.Split('=');
+
+                        //返回参数类型
+                        string returnType = "object";
+                        string finalParam = RegexUtil.CollectString(@"\[(.*?)\]", params1[0]);
+                        string[] finalParams = finalParam.Split(':');
+
+                        Control finalControl = liControlDict[finalParams[1]];
+                        ControlModel finalControlModel = finalControl.Tag as ControlModel;
+
+                        //计算参数
+                        List<string> calParamList = RegexUtil.CollectStrings(@"\[(.*?)\]", params1[1]);
+                        Dictionary<string, object> calParamDict = new Dictionary<string, object>();
+                        Dictionary<string, string> calParamTypeDict = new Dictionary<string, string>();
+                        foreach (string calParam in calParamList)
+                        {
+                            string[] calParams = calParam.Split(':');
+
+                            PanelModel panel = formModel.panels.Where(m => m.tableName == calParams[0]).FirstOrDefault();
+                            if (panel != null && panel.type == PanelType.BASIC)
+                            {
+                                //获取参数值
+                                Control calControl = liControlDict[calParams[1]];
+                                string calParamKey = calParam.Replace(":", "_");
+                                if (!calParamDict.ContainsKey(calParamKey))
+                                {
+                                    calParamDict.Add(calParamKey, DevControlUtil.getControlData(calControl));
+                                }
+
+                                if (!calParamTypeDict.ContainsKey(calParamKey))
+                                {
+                                    //获取参数类型
+                                    ControlModel calControlModel = calControl.Tag as ControlModel;
+                                    calParamTypeDict.Add(calParamKey, ControlType.getDataTypeByControlType(calControlModel.controltype));
+                                }
+                            }
+                        }
+
+                        string paramType = string.Empty;
+                        foreach (KeyValuePair<string, string> keyValue in calParamTypeDict)
+                        {
+                            paramType += string.Format("{0} {1},", keyValue.Value, keyValue.Key);
+                        }
+                        if (paramType.Length > 0)
+                        {
+                            paramType = paramType.Substring(0, paramType.Length - 1);
+                        }
+                        Expression expression = new Expression(returnType, paramType, params1[1].Replace("[", "").Replace("]", "").Replace(":", "_"));
+                        DevControlUtil.setContorlData(expression.Compute(calParamDict.Values.ToArray()), finalControl);
+                    }
+                }
+            }
+
+        }
+
+        /// <summary>
+        /// 自定义值变化事件，表体
+        /// </summary>
+        /// <param name="dr"></param>
+        /// <param name="controlModel"></param>
+        /// <param name="liGridColumnDict"></param>
+        /// <param name="formModel"></param>
+        public static void editValueChangeBody(DataRow dr, ControlModel controlModel, Dictionary<string, Control> liControlDict, Dictionary<string, GridColumn> liGridColumnDict, FormModel formModel)
+        {
+            //值变化事件
+            if (controlModel.controlEvents.Count > 0)
+            {
+                foreach (ControlEventModel controlEventModel in controlModel.controlEvents)
+                {
+                    if (controlEventModel.bEnable && controlEventModel.eventType == ControlEventTypeModel.EditValueChanged)
+                    {
+                        string[] params1 = controlEventModel.eventExpression.Split('=');
+
+                        //返回参数类型
+                        string returnType = string.Empty;
+                        string finalParam = RegexUtil.CollectString(@"\[(.*?)\]", params1[0]);
+                        string[] finalParams = finalParam.Split(':');
+                        GridColumn finalGridColumn = liGridColumnDict[finalParams[1]];
+                        ControlModel finalControlModel = finalGridColumn.Tag as ControlModel;
+                        returnType = ControlType.getDataTypeByControlType(finalControlModel.controltype);
+
+                        //计算参数
+                        List<string> calParamList = RegexUtil.CollectStrings(@"\[(.*?)\]", params1[1]);
+                        Dictionary<string, object> calParamDict = new Dictionary<string, object>();
+                        Dictionary<string, string> calParamTypeDict = new Dictionary<string, string>();
+                        foreach (string calParam in calParamList)
+                        {
+                            string[] calParams = calParam.Split(':');
+
+                            PanelModel panel = formModel.panels.Where(m => m.tableName == calParams[0]).FirstOrDefault();
+                            if (panel != null )
+                            {
+                                string calParamKey = string.Empty;
+                                switch (panel.type)
+                                {
+                                    case PanelType.BASIC:
+                                        //获取参数值
+                                        Control calControl = liControlDict[calParams[1]];
+                                        calParamKey = calParam.Replace(":", "_");
+                                        if (!calParamDict.ContainsKey(calParamKey))
+                                        {
+                                            calParamDict.Add(calParamKey, DevControlUtil.getControlData(calControl));
+                                        }
+
+                                        if (!calParamTypeDict.ContainsKey(calParamKey))
+                                        {
+                                            //获取参数类型
+                                            ControlModel calControlModel = calControl.Tag as ControlModel;
+                                            calParamTypeDict.Add(calParamKey, ControlType.getDataTypeByControlType(calControlModel.controltype));
+                                        }
+                                        break;
+                                    case PanelType.GRID:
+                                        //获取参数值
+                                        GridColumn calGridColumn = liGridColumnDict[calParams[1]];
+                                        calParamKey = calParam.Replace(":", "_");
+                                        if (!calParamDict.ContainsKey(calParamKey))
+                                        {
+                                            calParamDict.Add(calParamKey, dr[calGridColumn.FieldName]);
+                                        }
+
+                                        if (!calParamTypeDict.ContainsKey(calParamKey))
+                                        {
+                                            //获取参数类型
+                                            ControlModel calControlModel = calGridColumn.Tag as ControlModel;
+                                            calParamTypeDict.Add(calParamKey, ControlType.getDataTypeByControlType(calControlModel.controltype));
+
+                                        }
+                                        break;
+                                }
+                            }
+                        }
+
+                        string paramType = string.Empty;
+                        foreach (KeyValuePair<string, string> keyValue in calParamTypeDict)
+                        {
+                            paramType += string.Format("{0} {1},", keyValue.Value, keyValue.Key);
+                        }
+                        if (paramType.Length > 0)
+                        {
+                            paramType = paramType.Substring(0, paramType.Length - 1);
+                        }
+                        Expression expression = new Expression(returnType, paramType, params1[1].Replace("[", "").Replace("]", "").Replace(":", "_"));
+                        dr[finalGridColumn.FieldName] = expression.Compute(calParamDict.Values.ToArray());
+                    }
+                }
+            }
         }
         /// <summary>
         /// 加载基础档案
@@ -225,7 +380,57 @@ namespace LiForm.Dev.Util
             //Dictionary<string, object> dictData = LiContexts.LiContext.getHttpEntity<NewDataEntity>("NewData").getEntityNewData(key);
             //Dictionary<string, object> dictData = NewDataEntity.getEntityNewData(key);
 
-            return FormUtil.getVoucher(key, LiContexts.LiContext.getVoucherEmptyDatas(key));
+            LiForm liForm = FormUtil.getVoucher(key, LiContexts.LiContext.getVoucherEmptyDatas(key)) as LiForm;
+            foreach (PanelModel panelModel in liForm.formModel.panels)
+            {
+                switch (panelModel.type)
+                {
+                    case PanelType.BASIC:
+                        foreach(ControlGroupModel controlGroup in panelModel.controlGroups)
+                        {
+                            foreach(ControlModel control in controlGroup.controls)
+                            {
+                                if (!string.IsNullOrWhiteSpace(control.controlDefaultVaule))
+                                {
+                                    if (liForm.formDataDict.ContainsKey(control.name))
+                                    {
+                                        liForm.formDataDict[control.name] = LiContext.defaultValueContext.getDefaultValue(control.controlDefaultVaule);
+                                    }
+                                    else
+                                    {
+                                        liForm.formDataDict.Add(control.name, LiContext.defaultValueContext.getDefaultValue(control.controlDefaultVaule));
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                    case PanelType.GRID:
+                        List<Dictionary<string, object>> bodyDatas = liForm.formDataDict[panelModel.entityColumnName] as List<Dictionary<string, object>>;
+                        foreach(Dictionary<string, object> bodyDataDict in bodyDatas)
+                        {
+                            foreach (ControlGroupModel controlGroup in panelModel.controlGroups)
+                            {
+                                foreach (ControlModel control in controlGroup.controls)
+                                {
+                                    if (!string.IsNullOrWhiteSpace(control.controlDefaultVaule))
+                                    {
+                                        if (bodyDataDict.ContainsKey(control.name))
+                                        {
+                                            bodyDataDict[control.name] = LiContext.defaultValueContext.getDefaultValue(control.controlDefaultVaule);
+                                        }
+                                        else
+                                        {
+                                            bodyDataDict.Add(control.name, LiContext.defaultValueContext.getDefaultValue(control.controlDefaultVaule));
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        break;
+                }
+
+            }
+            return liForm;
 
 
         }
@@ -463,6 +668,7 @@ namespace LiForm.Dev.Util
         /// <returns></returns>
         public static Control getControl(ControlModel controlModel, LayoutControl layoutControl, LiForm liForm)
         {
+
             Control control = ControlModelUtil.getControl(controlModel);
             control.Name = controlModel.name;
             control.Tag = controlModel;
@@ -480,13 +686,15 @@ namespace LiForm.Dev.Util
                     setControlDataSource(controlModel.controltype, controlModel.basicInfoKey, controlModel.gridlookUpEditShowModelJson, control, layoutControl, liForm);
                     GridLookUpEdit gridLookUpEditRef = (GridLookUpEdit)control;
                     
-                    gridLookUpEditRef.Properties.EditValueChanged += new System.EventHandler(liForm.gridLookUpEdit_Properties_EditValueChanged);
+                    gridLookUpEditRef.Properties.EditValueChanged += new System.EventHandler(liForm.devControl_EditValueChanged);
 
                     break;
                 case "TreeListLookUpEdit":
                     setControlDataSource(controlModel.controltype, controlModel.basicInfoKey, controlModel.gridlookUpEditShowModelJson, control, layoutControl, liForm);
                     break;
                 default:
+                    BaseEdit baseEdit = control as BaseEdit;
+                    baseEdit.EditValueChanged += new System.EventHandler(liForm.devControl_EditValueChanged);
                     break;
             }
 

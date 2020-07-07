@@ -124,11 +124,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="LiEnum\ControlType.cs" />
     <Compile Include="LiException\GetException.cs" />
     <Compile Include="LiException\LiVoucherConvertException.cs" />
     <Compile Include="LiException\PostException.cs" />
     <Compile Include="LiException\LiHttpException.cs" />
+    <Compile Include="LiExpression\Expression.cs" />
+    <Compile Include="LiExpression\LiDefaultValue\LiDateTime\DTMonthInFirstDayTerminalExp.cs" />
+    <Compile Include="LiExpression\LiDefaultValue\LiDateTime\DTTomorrowTerminalExp.cs" />
+    <Compile Include="LiExpression\LiDefaultValue\LiDateTime\DTYesterdayTerminalExp.cs" />
+    <Compile Include="LiExpression\LiDefaultValue\LiDateTime\DTToDayTerminalExp.cs" />
+    <Compile Include="LiExpression\LiDefaultValue\DefaultValueContext.cs" />
+    <Compile Include="LiExpression\LiDefaultValue\DefaultValueExpression.cs" />
+    <Compile Include="LiExpression\LiDefaultValue\IDefaultValueExpression.cs" />
+    <Compile Include="LiExpression\LiDefaultValue\DefaultValueTerminalExpression.cs" />
+    <Compile Include="LiExpression\LiDefaultValue\LiNumber\IntEditTerminalExp.cs" />
+    <Compile Include="LiExpression\LiDefaultValue\LiNumber\DecimalTerminalExp.cs" />
+    <Compile Include="LiExpression\LiDefaultValue\LiString\TextTerminalExp.cs" />
     <Compile Include="LiPostSharp\LiExceptionAspect\ExceptionHandleAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\AttributeUtil.cs" />
@@ -143,6 +155,7 @@
     <Compile Include="Util\IOUtil.cs" />
     <Compile Include="Util\JsonUtil.cs" />
     <Compile Include="Util\MessageUtil.cs" />
+    <Compile Include="Util\ModelConvertUtil.cs" />
     <Compile Include="Util\NetUtil.cs" />
     <Compile Include="Util\QueryUtil.cs" />
     <Compile Include="Util\ReflectionUtil.cs" />
@@ -152,6 +165,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

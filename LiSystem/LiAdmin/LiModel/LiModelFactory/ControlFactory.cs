@@ -1,4 +1,5 @@
-﻿using LiModel.Form;
+﻿using LiCommon.LiEnum;
+using LiModel.Form;
 using LiModel.LiAttribute;
 using LiModel.LiEnum;
 using System;

@@ -137,6 +137,13 @@ namespace LiModel.Form
         /// </summary>
         [Browsable(true), Category("基本属性"), DisplayName("默认值")]
         public string defaultVaule { set; get; }
+
+        /// <summary>
+        /// 默认值
+        /// </summary>
+        [Browsable(true), Category("基本属性"), DisplayName("控件默认值")]
+        public string controlDefaultVaule { set; get; }
+
         /// <summary>
         ///  是否显示
         /// </summary>
@@ -197,5 +204,13 @@ namespace LiModel.Form
         /// </summary>
         [Browsable(true), Category("基本属性"), DisplayName("基础档案显示模式"), TypeConverter(typeof(PropertyGridListConvert)), PropertyGridListAttribute(new string[] { "VALUE", "NAME", "NAME_VALUE", "VALUE_NAME" })]
         public string basicInfoShowMode { set; get; }
+
+
+        /// <summary>
+        /// 控件事件组
+        /// </summary>
+        [Browsable(false)]
+        public List<ControlEventModel> controlEvents { set; get; }
+
     }
 }

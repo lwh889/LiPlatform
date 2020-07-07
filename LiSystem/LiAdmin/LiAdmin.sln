@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiVoucherConvert", "LiVouch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiU8Form", "LiU8Form\LiU8Form.csproj", "{5694BE55-95F2-404B-AD8B-A6DF5EE7427A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiU8CO", "LiU8CO\LiU8CO.csproj", "{7B16CB62-9276-4931-9FE6-7313D5EADB90}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,10 @@ Global
 		{5694BE55-95F2-404B-AD8B-A6DF5EE7427A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5694BE55-95F2-404B-AD8B-A6DF5EE7427A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5694BE55-95F2-404B-AD8B-A6DF5EE7427A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B16CB62-9276-4931-9FE6-7313D5EADB90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B16CB62-9276-4931-9FE6-7313D5EADB90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B16CB62-9276-4931-9FE6-7313D5EADB90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B16CB62-9276-4931-9FE6-7313D5EADB90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

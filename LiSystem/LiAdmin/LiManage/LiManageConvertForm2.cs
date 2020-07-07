@@ -37,6 +37,7 @@ using DevExpress.XtraEditors.Repository;
 using LiModel.LiConvert;
 using LiU8API.Model;
 using LiHttp.RequestParam;
+using LiCommon.LiEnum;
 
 namespace LiManage
 {

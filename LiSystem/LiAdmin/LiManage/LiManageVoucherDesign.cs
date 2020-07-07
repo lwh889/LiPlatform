@@ -329,6 +329,7 @@ namespace LiManage
             gridControl5.DataSource = null;
             gridControl6.DataSource = null;
             gridControl7.DataSource = null;
+            gridControl17.DataSource = null;
 
             loadGridData(formModel.panels, gridView1, gridControl1);
 
@@ -449,6 +450,15 @@ namespace LiManage
 
         }
 
+        public void loadControlGrid(ControlModel controlModel)
+        {
+            if (controlModel == null) return;
+
+            gridControl17.DataSource = null;
+
+            loadGridData(controlModel.controlEvents, gridView17, gridControl17);
+
+        }
         public void loadListButtonGrid(ListButtonModel listButtonModel)
         {
             if (listButtonModel == null) return;
@@ -543,6 +553,8 @@ namespace LiManage
         private void gridView3_Click(object sender, EventArgs e)
         {
             ControlModel controlModel = (ControlModel)gridView3.GetFocusedRow();
+            loadControlGrid(controlModel);
+
             loadpropertyGridControl(controlModel, gridView3, propertyGridControl2);
         }
 
@@ -1818,6 +1830,32 @@ namespace LiManage
         private void BtnAddQty_ItemClick(object sender, ItemClickEventArgs e)
         {
             addControl(ControlFactory.getQuantityControl());
+        }
+
+        private void BtnAddControlEvent_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ControlModel controlModel = (ControlModel)selectedGridRowData;
+            ControlEventModel controlEventModel = ControlEventModel.getInstance(controlModel.id);
+
+            DevControlUtil.addRowInGridView<ControlEventModel>(controlEventModel, gridControl17);
+
+            gridControl17.RefreshDataSource();
+        }
+
+        private void BtnRemoveControlEvent_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            deleteGridRow(selectedGridRowData, gridControl17);
+            gridView17.RefreshData();
+        }
+
+        private void GridView17_DoubleClick(object sender, EventArgs e)
+        {
+            ControlEventModel controlEvent = gridView17.GetFocusedRow() as ControlEventModel;
+            if (controlEvent == null) return;
+            LiControlEventExpressionForm liForm = new LiControlEventExpressionForm(controlEvent, formModel);
+            liForm.ShowDialog();
+
+            gridView17.RefreshRow(gridView17.FocusedRowHandle);
         }
     }
 

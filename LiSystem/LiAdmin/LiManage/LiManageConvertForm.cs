@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors.Repository;
+using LiCommon.LiEnum;
 using LiCommon.Util;
 using LiContexts;
 using LiControl.Util;

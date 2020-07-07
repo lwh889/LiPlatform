@@ -258,3 +258,5 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\UFSoft.AIF.MOM.Common.Me
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiManagePushDesign.resources
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiManageConvertForm2.resources
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiManageConvertListForm.resources
+C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiControlEventExpressionForm.resources
+C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\Log4Net.config

@@ -22,11 +22,17 @@ using LiModel.LiConvert;
 using LiVoucherConvert.Service.Impl;
 using LiVoucherConvert.Model;
 using LiHttp;
+using LiCommon.LiExpression.LiDefaultValue;
 
 namespace LiContexts
 {
     public class LiContext
     {
+        public static DefaultValueContext _defaultValueContext;
+        /// <summary>
+        /// 默认值表达式
+        /// </summary>
+        public static DefaultValueContext defaultValueContext { set { _defaultValueContext = value; } get { return _defaultValueContext; } }
 
         public static Dictionary<string, PageFormModel> pageFormModels = new Dictionary<string, PageFormModel>();
 
@@ -123,6 +129,7 @@ namespace LiContexts
 
         static LiContext()
         {
+            defaultValueContext = new DefaultValueContext();
             //addHttpEntity("NewData", new NewDataEntity());
             //addHttpEntity("VoucherData", new VoucherDataEntity());
             //addHttpEntity("Procedure", new ProcedureEntity());

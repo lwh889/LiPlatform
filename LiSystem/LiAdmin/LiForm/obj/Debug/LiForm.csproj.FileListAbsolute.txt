@@ -175,3 +175,4 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiForm\bin\Debug\UFSoft.AIF.MOM.Common.Mess
 C:\LiProject\平台\LiSystem\LiAdmin\LiForm\bin\Debug\ADODB.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiForm\bin\Debug\Interop.MSXML2.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiForm\obj\Debug\LiForm.Dev.LiRefQuantityForm.resources
+C:\LiProject\平台\LiSystem\LiAdmin\LiForm\obj\Debug\LiForm.Dev.LiReportForm.resources

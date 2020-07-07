@@ -18,6 +18,7 @@ using DevExpress.XtraBars;
 using LiModel.Util;
 using LiModel.Form;
 using LiCommon.Util;
+using LiCommon.LiEnum;
 
 namespace LiControl.Util
 {
@@ -308,7 +309,11 @@ namespace LiControl.Util
                         if (drInfo != null)
                         {
                             ControlModel controlAssistModel = (ControlModel)gridColumnAssist.Tag;
-                            dr[gridColumnAssist.FieldName] = drInfo[controlAssistModel.basicInfoAssistFieldName];
+                            DataColumn dc = drInfo.Table.Columns[controlAssistModel.basicInfoAssistFieldName];
+                            if(dc != null)
+                            {
+                                dr[gridColumnAssist.FieldName] = drInfo[controlAssistModel.basicInfoAssistFieldName];
+                            }
                         }
                         else
                         {
@@ -549,43 +554,34 @@ namespace LiControl.Util
         {
             switch (control.GetType().Name)
             {
-                case "TextEdit":
+                case ControlType.TextEdit:
                     TextEdit textEdit = (TextEdit)control;
                     return textEdit.Text;
-                    break;
-                case "CheckEdit":
+                case ControlType.CheckEdit:
                     CheckEdit checkEdit = (CheckEdit)control;
-                    return checkEdit.EditValue;
-                    break;
-                case "MemoEdit":
+                    return checkEdit.EditValue == DBNull.Value || checkEdit.EditValue == null ? false :true;
+                case ControlType.MemoEdit:
                     MemoEdit memoEdit = (MemoEdit)control;
                     return memoEdit.Text;
-                    break;
-                case "CalcEdit":
+                case ControlType.CalcEdit:
                     CalcEdit calcEdit = (CalcEdit)control;
-                    return calcEdit.EditValue;
-                    break;
-                case "DateEdit":
+                    return calcEdit.EditValue == DBNull.Value || calcEdit.EditValue == null || string.IsNullOrWhiteSpace(Convert.ToString(calcEdit.EditValue)) ? 0 : Convert.ToDouble(calcEdit.EditValue);
+                case ControlType.DateEdit:
                     DateEdit dateEdit = (DateEdit)control;
                     //return dateEdit.DateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
                     return dateEdit.DateTime.ToString("yyyy-MM-dd HH:mm:ss.fff");
-                    break;
-                case "GridLookUpEdit":
+                case ControlType.GridLookUpEdit:
                     GridLookUpEdit gridLookUpEdit = (GridLookUpEdit)control;
                     return gridLookUpEdit.EditValue;
-                    break;
-                case "TreeListLookUpEdit":
+                case ControlType.TreeListLookUpEdit:
                     TreeListLookUpEdit treeListLookUpEdit = (TreeListLookUpEdit)control;
                     return treeListLookUpEdit.EditValue;
-                    break;
-                case "GridControl":
+                case ControlType.GridControl:
                     GridControl gridControl = (GridControl)control;
                     return gridControl.DataSource;
-                    break;
-                case "PictureEdit":
+                case ControlType.PictureEdit:
                     PictureEdit pictureEdit = (PictureEdit)control;
                     return pictureEdit.Image;
-                    break;
             }
             return null;
         }

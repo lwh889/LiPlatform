@@ -1,0 +1,152 @@
+2020-07-06 14:31:57,136 [1] INFO  - begin login useriddemo
+2020-07-06 14:31:57,144 [1] INFO  - begin  appServer:
+2020-07-06 14:31:57,145 [1] INFO  - begin SendSymmetricKey
+2020-07-06 14:31:57,165 [1] INFO  - end SendSymmetricKey
+2020-07-06 14:31:57,176 [1] INFO  - WIN-VR75UK1COEO
+2020-07-06 14:31:57,176 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-06 14:31:57,380 [1] INFO  - begin SubLogin:AS
+2020-07-06 14:31:57,380 [1] INFO  - begin SubAuthenticate
+2020-07-06 14:31:57,499 [1] INFO  - end SubAuthenticate
+2020-07-06 14:31:57,499 [1] INFO  - end SubLogin
+2020-07-06 15:21:48,942 [1] INFO  - begin login useriddemo
+2020-07-06 15:21:48,951 [1] INFO  - begin  appServer:
+2020-07-06 15:21:48,953 [1] INFO  - begin SendSymmetricKey
+2020-07-06 15:21:48,974 [1] INFO  - end SendSymmetricKey
+2020-07-06 15:21:48,975 [1] INFO  - WIN-VR75UK1COEO
+2020-07-06 15:21:48,975 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-06 15:21:49,188 [1] INFO  - begin SubLogin:AS
+2020-07-06 15:21:49,188 [1] INFO  - begin SubAuthenticate
+2020-07-06 15:21:49,301 [1] INFO  - end SubAuthenticate
+2020-07-06 15:21:49,301 [1] INFO  - end SubLogin
+2020-07-06 15:54:02,224 [1] INFO  - begin login useriddemo
+2020-07-06 15:54:02,234 [1] INFO  - begin  appServer:
+2020-07-06 15:54:02,235 [1] INFO  - begin SendSymmetricKey
+2020-07-06 15:54:02,262 [1] INFO  - end SendSymmetricKey
+2020-07-06 15:54:02,263 [1] INFO  - WIN-VR75UK1COEO
+2020-07-06 15:54:02,264 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-06 15:54:02,489 [1] INFO  - begin SubLogin:AS
+2020-07-06 15:54:02,489 [1] INFO  - begin SubAuthenticate
+2020-07-06 15:54:02,608 [1] INFO  - end SubAuthenticate
+2020-07-06 15:54:02,608 [1] INFO  - end SubLogin
+2020-07-06 16:16:15,472 [1] INFO  - begin login useriddemo
+2020-07-06 16:16:15,482 [1] INFO  - begin  appServer:
+2020-07-06 16:16:15,483 [1] INFO  - begin SendSymmetricKey
+2020-07-06 16:16:15,510 [1] INFO  - end SendSymmetricKey
+2020-07-06 16:16:15,511 [1] INFO  - WIN-VR75UK1COEO
+2020-07-06 16:16:15,512 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-06 16:16:15,753 [1] INFO  - begin SubLogin:AS
+2020-07-06 16:16:15,753 [1] INFO  - begin SubAuthenticate
+2020-07-06 16:16:15,882 [1] INFO  - end SubAuthenticate
+2020-07-06 16:16:15,882 [1] INFO  - end SubLogin
+2020-07-06 16:27:05,221 [1] INFO  - begin login useriddemo
+2020-07-06 16:27:05,228 [1] INFO  - begin  appServer:
+2020-07-06 16:27:05,229 [1] INFO  - begin SendSymmetricKey
+2020-07-06 16:27:05,252 [1] INFO  - end SendSymmetricKey
+2020-07-06 16:27:05,253 [1] INFO  - WIN-VR75UK1COEO
+2020-07-06 16:27:05,254 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-06 16:27:05,470 [1] INFO  - begin SubLogin:AS
+2020-07-06 16:27:05,470 [1] INFO  - begin SubAuthenticate
+2020-07-06 16:27:05,633 [1] INFO  - end SubAuthenticate
+2020-07-06 16:27:05,633 [1] INFO  - end SubLogin
+2020-07-06 16:49:19,615 [1] INFO  - begin login useriddemo
+2020-07-06 16:49:19,624 [1] INFO  - begin  appServer:
+2020-07-06 16:49:19,625 [1] INFO  - begin SendSymmetricKey
+2020-07-06 16:49:19,649 [1] INFO  - end SendSymmetricKey
+2020-07-06 16:49:19,650 [1] INFO  - WIN-VR75UK1COEO
+2020-07-06 16:49:19,650 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-06 16:49:19,848 [1] INFO  - begin SubLogin:AS
+2020-07-06 16:49:19,848 [1] INFO  - begin SubAuthenticate
+2020-07-06 16:49:19,961 [1] INFO  - end SubAuthenticate
+2020-07-06 16:49:19,961 [1] INFO  - end SubLogin
+2020-07-07 10:57:23,741 [1] INFO  - begin login useriddemo
+2020-07-07 10:57:23,751 [1] INFO  - begin  appServer:
+2020-07-07 10:57:23,752 [1] INFO  - begin SendSymmetricKey
+2020-07-07 10:57:23,777 [1] INFO  - end SendSymmetricKey
+2020-07-07 10:57:23,778 [1] INFO  - WIN-VR75UK1COEO
+2020-07-07 10:57:23,779 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-07 10:57:24,007 [1] INFO  - begin SubLogin:AS
+2020-07-07 10:57:24,007 [1] INFO  - begin SubAuthenticate
+2020-07-07 10:57:24,132 [1] INFO  - end SubAuthenticate
+2020-07-07 10:57:24,133 [1] INFO  - end SubLogin
+2020-07-07 11:02:36,782 [1] INFO  - begin login useriddemo
+2020-07-07 11:02:36,789 [1] INFO  - begin  appServer:
+2020-07-07 11:02:36,790 [1] INFO  - begin SendSymmetricKey
+2020-07-07 11:02:36,810 [1] INFO  - end SendSymmetricKey
+2020-07-07 11:02:36,810 [1] INFO  - WIN-VR75UK1COEO
+2020-07-07 11:02:36,811 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-07 11:02:37,027 [1] INFO  - begin SubLogin:AS
+2020-07-07 11:02:37,027 [1] INFO  - begin SubAuthenticate
+2020-07-07 11:02:37,137 [1] INFO  - end SubAuthenticate
+2020-07-07 11:02:37,137 [1] INFO  - end SubLogin

@@ -2,6 +2,7 @@
 drop table LiListButton
 drop table LiEvent
 drop table LiButton
+drop table LiControlEvent
 drop table LiControl
 drop table LiButtonGroup
 drop table LiControlGroup
@@ -174,6 +175,7 @@ create table LiControl(
 	bReadOnly bit default 0,
 	bRequired bit default 0,
 	defaultVaule nvarchar(max),
+	controlDefaultVaule nvarchar(max),	--控件默认值
 	basicInfoKey nvarchar(50),
 	basicInfoTableKey nvarchar(50),
 	basicInfoShowFieldName nvarchar(50),
@@ -186,6 +188,7 @@ create table LiControl(
 	bVisibleInList bit default 1,
 	dCreateDate datetime default getdate()
 )
+
 --alter table LiControl add bVisible bit default 1
 --alter table LiControl add bVisibleInList bit default 1
 --alter table LiControl add basicInfoShowFieldName nvarchar(50)
@@ -195,7 +198,21 @@ create table LiControl(
 --alter table LiControl add basicInfoShowMode nvarchar(20)
 --alter table LiControl add bReadOnly bit default 0
 --alter table LiControl add bRequired bit default 0
+--alter table LiControl add controlDefaultVaule nvarchar(max)
 --select * from LiControl
+
+create table LiControlEvent(
+	id int identity(1,1) primary key not null,
+	controlId int REFERENCES LiControl(id),
+	[eventType]  nvarchar(30),	--事件类型
+	[eventExpression]  nvarchar(max),	--事件表达式
+	[bEnable] bit default 0,	--是否启用
+	[eventMemo]  nvarchar(300),	--事件备注
+	dCreateDate datetime default getdate()
+)
+
+--alter table LiControlEvent add [bEnable] bit default 0
+--alter table LiControlEvent add [eventMemo]  nvarchar(300)
 
 create table LiEvent(
 	id int identity(1,1) primary key not null,

@@ -33,6 +33,23 @@ namespace LiVoucherConvert.Service.Impl
                 {
                     collectionName = group.Key;
                 }
+
+                //重置表头关联数量
+                LiConvertBodyModel convertQtyHead = convertHeadList.Where(m => m.bCumulativeRelationQty).FirstOrDefault();
+                if (liConvertHead.convertRelation == ConvertRelation.PUSHCUMULATIVE && convertQtyHead != null)
+                {
+                    if (convertQtyHead.bCumulativeRelationQty)
+                    {
+                        string qtyFieldName = SQLUtil.getFieldNameFormat(convertQtyHead.convertSourceType, liConvertHead.convertPushField);
+                        decimal qty = drHead[qtyFieldName] == DBNull.Value ? 0 : Convert.ToDecimal(drHead[qtyFieldName]);
+
+                        string cumulativeQtyFieldName = SQLUtil.getFieldNameFormat(liConvertHead.convertCumulativeTableName, liConvertHead.convertCumulativeField);
+                        decimal cumulativeQty = drHead[cumulativeQtyFieldName] == DBNull.Value ? 0 : Convert.ToDecimal(drHead[cumulativeQtyFieldName]);
+
+                        drHead[qtyFieldName] = qty - cumulativeQty < 0 ? 0 : qty - cumulativeQty;
+                    }
+                }
+
                 //转换表头
                 foreach (LiConvertBodyModel convertHead in convertHeadList)
                 {

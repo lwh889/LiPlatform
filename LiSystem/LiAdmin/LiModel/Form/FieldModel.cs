@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using LiModel.LiEnum;
 using LiModel.Basic;
 using LiModel.LiTable;
+using LiCommon.LiEnum;
 
 namespace LiModel.Form
 {

@@ -4,6 +4,9 @@ using System.Linq;
 using LiCommon.Util;
 using PostSharp.Aspects;
 using PostSharp.Serialization;
+using System.Reflection;
+using System.CodeDom.Compiler;
+using Microsoft.CSharp;
 
 namespace LiAdmin
 {
@@ -29,8 +32,6 @@ namespace LiAdmin
             //Application.Run(new RibbonForm4());
 
         }
-
-
 
     }
 
