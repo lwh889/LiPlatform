@@ -521,7 +521,67 @@ namespace LiU8CO
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            U8COContext.Text();
+            U8COContext.TextNew();
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            U8COContext.TextAudit();
+        }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            U8COContext.TextUnAudit();
+        }
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            U8COContext.TextDelete();
+        }
+
+        private void Button9_Click(object sender, EventArgs e)
+        {
+            U8COContext.SONew();
+        }
+
+        private void Button10_Click(object sender, EventArgs e)
+        {
+            U8COContext.PUNew();
+        }
+
+        private void Button11_Click(object sender, EventArgs e)
+        {
+            U8COContext.SOAudit();
+        }
+
+        private void Button12_Click(object sender, EventArgs e)
+        {
+            U8COContext.PUAudit();
+        }
+
+        private void Button13_Click(object sender, EventArgs e)
+        {
+            U8COContext.PUUnAudit();
+        }
+
+        private void Button14_Click(object sender, EventArgs e)
+        {
+            U8COContext.PUDelete();
+        }
+
+        private void Button15_Click(object sender, EventArgs e)
+        {
+            U8COContext.SOUnAudit();
+        }
+
+        private void Button16_Click(object sender, EventArgs e)
+        {
+            U8COContext.SODelete();
+        }
+
+        private void Button17_Click(object sender, EventArgs e)
+        {
+            U8COContext.Text11New();
         }
     }
 }

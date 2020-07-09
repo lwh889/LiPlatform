@@ -9,7 +9,7 @@ namespace LiU8CO.Util
 {
     public class DomUtil
     {
-        public static void FormatDom(ref MSXML2.DOMDocument SourceDom, string editprop)
+        public static void FormatDom(ref MSXML2.IXMLDOMDocument2 SourceDom, string editprop)
         {
             IXMLDOMElement ele_body;
 

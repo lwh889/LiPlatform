@@ -32,12 +32,16 @@ namespace LiU8CO.Model
         public string voucherClassify { set; get; }
 
         /// <summary>
-        /// 表头DOMSQL
+        /// 表头DOMSQL,只用于库存单据
         /// </summary>
         public string domHeadSql { set; get; }
+        /// <summary>
+        /// 时间SQL
+        /// </summary>
+        public string timeStampSql { set; get; }
 
         /// <summary>
-        /// 表体DOMSQL
+        /// 表体DOMSQL,可能暂时不用
         /// </summary>
         public string domBodySql { set; get; }
 

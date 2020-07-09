@@ -1,0 +1,87 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LiU8CO.LiEnum
+{
+    public struct VouchType
+    {
+        public const string PurchaseIn = "01";
+        public const string DispatchList = "5";
+        public const string EnDispatchList = "6";
+        public const string SASettleVouch = "7";
+        public const string OtherInvouch = "8";
+        public const string otheroutvouch = "9";
+        public const string ProductIn = "10";
+        public const string MaterialOut = "11";
+        public const string TransVouch = "12";
+        public const string GroupVouch = "13";
+        public const string SepVouch = "14";
+        public const string ShapeChangVouch = "15";
+        public const string CheckVouch = "18";
+        public const string PosAdjustVouch = "19";
+        public const string AdjustInVouch = "20";
+        public const string AdjustOutVouch = "21";
+        public const string PurchaseInvoice = "25";
+        public const string SpecialInvoice = "26";
+        public const string GeneralInvoice = "27";
+        public const string SaleMove = "28";
+        public const string RetailDaily = "29";
+        public const string SaleOutVouch = "32";
+        public const string QcInput = "34";
+        public const string MaterialFd = "39";
+        public const string ScrapVouch = "45";
+        public const string ScrapOut = "46";
+        public const string DecReady = "47";
+        public const string DecReadyQc = "48";
+        public const string VouchRef = "50";
+        public const string RedMaterialOut = "50";
+        public const string QcDispatch = "51";
+        public const string InvPosition = "51";
+        public const string QcScrapVouch = "55";
+        public const string ArriveList = "56";
+        public const string PurchaseOrder = "57";
+        public const string ROPCgjh = "60";
+        public const string TransRequestVouch = "62";
+        public const string TransSimulate = "63";
+        public const string MaterialAppealVouch = "64";
+        public const string IssueInVouch = "65";
+        public const string IssueOutVouch = "66";
+        public const string BHAdviseVouch = "68";
+        public const string GspVoucher = "93";
+        public const string GspQyCj = "94";
+        public const string GspQDInform = "95";
+        public const string GspQQHB = "96";
+        public const string GspQyThYs = "97";
+        public const string GspQyRkys = "98";
+        public const string ProductOrder = "99";
+        public const string QmVoucher = "100";
+        public const string QmZj = "101";
+        public const string QmBlpcl = "102";
+        public const string CgJyd = "103";
+        public const string CpJyd = "104";
+        public const string CgCld = "105";
+        public const string CpCld = "106";
+        public const string ZkpCld = "110";
+        public const string CThCld = "111";
+        public const string ChCld = "112";
+        public const string ThCld = "113";
+        public const string Jcjyd = "115";
+        public const string EXSaleList = "120";
+        public const string StockUPList = "121";
+        public const string IMArriveList = "122";
+        public const string ReceiptDocument = "123";
+        public const string SaleOrder = "124";
+        public const string ExOrder = "125";
+        public const string ReplenishApply = "126";
+        public const string LendingOutbound = "127";
+        public const string PartApplyVouch = "128";
+        public const string FittingsBackVouch = "129";
+        public const string FailureBackVouch = "130";
+        public const string PartConsumeVouch = "131";
+        public const string ReserveAdjust = "998";
+        public const string OmOrder = "999";
+    }
+}

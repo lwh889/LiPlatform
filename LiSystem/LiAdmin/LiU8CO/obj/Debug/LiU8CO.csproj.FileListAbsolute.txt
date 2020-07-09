@@ -50,3 +50,13 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiU8CO\bin\Debug\es\DevExpress.Pdf.v17.1.Co
 C:\LiProject\平台\LiSystem\LiAdmin\LiU8CO\bin\Debug\ja\DevExpress.Pdf.v17.1.Core.resources.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiU8CO\bin\Debug\ru\DevExpress.Pdf.v17.1.Core.resources.dll
 C:\LiProject\平台\LiSystem\LiAdmin\LiU8CO\obj\Debug\LiU8CO.csproj.CopyComplete
+C:\LiProject\平台\LiSystem\LiAdmin\LiU8CO\bin\Debug\Interop.VoucherCO_Sa.dll
+C:\LiProject\平台\LiSystem\LiAdmin\LiU8CO\obj\Debug\Interop.Info_PU.dll
+C:\LiProject\平台\LiSystem\LiAdmin\LiU8CO\obj\Debug\Interop.SysInfo.dll
+C:\LiProject\平台\LiSystem\LiAdmin\LiU8CO\obj\Debug\Interop.VoucherCO_PU.dll
+C:\LiProject\平台\LiSystem\LiAdmin\LiU8CO\obj\Debug\Interop.VoucherCO_Sa.dll
+C:\LiProject\平台\LiSystem\LiAdmin\LiU8CO\bin\Debug\Interop.VoucherCO_PU.dll
+C:\LiProject\平台\LiSystem\LiAdmin\LiU8CO\obj\Debug\Interop.ErrHandler.dll
+C:\LiProject\平台\LiSystem\LiAdmin\LiU8CO\obj\Debug\Interop.UFOMCommon.dll
+C:\LiProject\平台\LiSystem\LiAdmin\LiU8CO\obj\Debug\Interop.VoucherVerify.dll
+C:\LiProject\平台\LiSystem\LiAdmin\LiU8CO\obj\Debug\Interop.VoucherVO.dll

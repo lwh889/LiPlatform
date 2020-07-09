@@ -60,12 +60,26 @@ namespace LiCommon.Util
                if (kvp.Value.GetType().Name == "JArray")
                {
                    List<Dictionary<string, object>> childDict = new List<Dictionary<string, object>>();
+                    List<object> childArray = new List<object>();
                     Newtonsoft.Json.Linq.JArray ja = (Newtonsoft.Json.Linq.JArray)JsonConvert.DeserializeObject(kvp.Value.ToString());
                     foreach (Newtonsoft.Json.Linq.JToken jt in ja)
                     {
-                        childDict.Add(GetDictionary(jt.ToString()));
+                        if (jt.HasValues)
+                        {
+                            childDict.Add(GetDictionary(jt.ToString()));
+                            if (!jsonDictTemp.ContainsKey(kvp.Key))
+                            {
+                                jsonDictTemp.Add(kvp.Key, childDict);
+                            }
+                        }
+                        else {
+                            childArray.Add(jt.ToString());
+                            if (!jsonDictTemp.ContainsKey(kvp.Key))
+                            {
+                                jsonDictTemp.Add(kvp.Key, childArray);
+                            }
+                        }
                     }
-                    jsonDictTemp.Add(kvp.Key, childDict);
 
                }else if (kvp.Value.GetType().Name == "JObject")
                {

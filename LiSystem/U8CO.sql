@@ -1,4 +1,5 @@
-
+drop table LiU8COField
+drop table LiU8COVoucher
 create table LiU8COVoucher(
 	id int identity(1,1) primary key not null,
 	[code]  nvarchar(30),	--编码
@@ -7,9 +8,11 @@ create table LiU8COVoucher(
 	voucherClassify  nvarchar(10),	--单据分类
 	domHeadSql  nvarchar(4000),	--单据分类
 	domBodySql  nvarchar(4000),	--单据分类
+	timeStampSql  nvarchar(4000),	--单据分类
 	dCreateDate datetime default getdate()
 )
 
+--alter table LiU8COVoucher add timeStampSql  nvarchar(4000) 
 
 create table LiU8COField(
 	id int identity(1,1) primary key not null,

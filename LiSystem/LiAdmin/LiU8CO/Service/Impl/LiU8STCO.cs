@@ -1,4 +1,5 @@
-﻿using LiU8CO.Model;
+﻿using LiCommon.Util;
+using LiU8CO.Model;
 using LiU8CO.Util;
 using MSXML2;
 using System;
@@ -9,17 +10,22 @@ using System.Threading.Tasks;
 
 namespace LiU8CO.Service.Impl
 {
-    public class LiU8STCO : ALiU8CO,ILiU8CO
+    public class LiU8STCO : ALiU8CO, ILiU8CO
     {
         private USERPCO.VoucherCO STCo;
 
         private MSXML2.IXMLDOMDocument2 domPos;
 
+        private IXMLDOMDocument2 _DomMsg;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public IXMLDOMDocument2 DomMsg { set { _DomMsg = value; } get { return _DomMsg; } }
+
         public LiU8STCO()
         {
-            domHead = new MSXML2.DOMDocumentClass();
-            domBody = new MSXML2.DOMDocumentClass();
-            domPos = new MSXML2.DOMDocumentClass();
+            DomMsg = new MSXML2.DOMDocumentClass();
         }
         public void InitCO()
         {
@@ -35,69 +41,29 @@ namespace LiU8CO.Service.Impl
 
         public void InitDom(int row)
         {
-            //表头
-            rs.Open(liU8COVoucher.domHeadSql, conn, ADODB.CursorTypeEnum.adOpenForwardOnly, ADODB.LockTypeEnum.adLockOptimistic, -1);
-            rs.Save(domHead, ADODB.PersistFormatEnum.adPersistXML);
-            rs.Close();
-            //清除原有数据
-            foreach (IXMLDOMNode en in domHead.selectNodes("//z:row"))
-            {
-                domHead.selectSingleNode("//rs:data").removeChild(en);
-            }
-            //增加
-            DomUtil.FormatDom(ref domHead, "A");
-            eleHead = domHead.selectSingleNode("//z:row") as IXMLDOMElement;
+            domHead = new MSXML2.DOMDocumentClass();
+            domBody = new MSXML2.DOMDocumentClass();
+            domPos = new MSXML2.DOMDocumentClass();
 
+            //STCo.GetDefaultVoucherDom(vouchType, "24", ref domHead, ref domBody, ref domPos, ref errMsg);
+            setDomHeadByDataBase(domHead);
+            setDomBodyByDataBase(domBody, row);
 
-            //表体
-            rs.Open(liU8COVoucher.domBodySql, conn, ADODB.CursorTypeEnum.adOpenForwardOnly, ADODB.LockTypeEnum.adLockOptimistic, -1);
-            rs.Save(domBody, ADODB.PersistFormatEnum.adPersistXML);
-            rs.Close();
-            //清除原有数据
-            foreach (IXMLDOMNode en in domBody.selectNodes("//z:row"))
-            {
-                domBody.selectSingleNode("//rs:data").removeChild(en);
-            }
-            //增加
-            DomUtil.FormatDom(ref domBody, "");
-            MSXML2.DOMDocument domBodyCopy = (MSXML2.DOMDocument)domBody.cloneNode(true);
-            foreach (IXMLDOMNode en in domBody.selectNodes("//z:row"))
-            {
-                domBody.selectSingleNode("//rs:data").removeChild(en);
-            }
-            IXMLDOMNode ele = domBodyCopy.selectSingleNode("//z:row");
-            for (int i = 0; i < row; i++){
-                domBody.selectSingleNode("//rs:data").appendChild(ele.cloneNode(true));
-            }
+            SetDefaultValue();
+
+            ////测试
+            //domHead.selectSingleNode("//rs:data/z:row").attributes.getNamedItem("id").nodeValue = "";
+            //domBody.selectSingleNode("//rs:data/z:row").attributes.getNamedItem("id").nodeValue = "";
+            //domBody.selectSingleNode("//rs:data/z:row").attributes.getNamedItem("autoid").nodeValue = "";
         }
-
-        public void setDefaultValue()
+        public void SetApiContext(string paramName, object paramValue)
         {
-            List<LiU8COFieldModel> liU8COHeadFields = liU8COVoucher.liU8COFields.Where(m => m.fieldEntityType == "Head" && m.fieldbDefault == true).ToList();
-            foreach(LiU8COFieldModel liU8COField in liU8COHeadFields)
-            {
-                setDomHeadValue(liU8COField.fieldName, liU8COField.fieldDefaultValue);
-            }
-
-
-            List<LiU8COFieldModel> liU8COBodyFields = liU8COVoucher.liU8COFields.Where(m => m.fieldEntityType == "Body" && m.fieldbDefault == true).ToList();
-
-            IXMLDOMNodeList ndbodylist = domBody.selectNodes("//rs:data/z:row");
-            foreach (IXMLDOMElement body in ndbodylist)
-            {
-                setDomBodyRow(body);
-                foreach (LiU8COFieldModel liU8COField in liU8COBodyFields)
-                {
-                    setDomBodyValue(liU8COField.fieldName, liU8COField.fieldDefaultValue);
-                }
-            }
+            AttributeUtil.setValue<LiU8STCO>(paramName, paramValue, this);
         }
-
         public LiU8COReponseModel Insert()
         {
-            setDefaultValue();
             liU8COReponse = LiU8COReponseModel.getInstance();
-            liU8COReponse.bSuccess = STCo.Insert("01", domHead, domBody, domPos, ref errMsg, null, ref vouchId);
+            liU8COReponse.bSuccess = STCo.Insert(vouchType, domHead, domBody, domPos, ref errMsg, null, ref vouchId, ref _DomMsg, false, false);
             liU8COReponse.resultContent = errMsg;
             liU8COReponse.voucherID = vouchId;
 
@@ -105,15 +71,27 @@ namespace LiU8CO.Service.Impl
         }
         public LiU8COReponseModel Audit()
         {
-            return null;
+            liU8COReponse = LiU8COReponseModel.getInstance();
+            liU8COReponse.bSuccess = STCo.Verify(vouchType, vouchId, ref errMsg, null, null, null, false, false);
+            liU8COReponse.resultContent = errMsg;
+            liU8COReponse.voucherID = vouchId;
+            return liU8COReponse;
         }
         public LiU8COReponseModel UnAudit()
         {
-            return null;
+            liU8COReponse = LiU8COReponseModel.getInstance();
+            liU8COReponse.bSuccess = STCo.UnVerify(vouchType, vouchId, ref errMsg, null, getTimestamp(this.vouchId), null, false, false);
+            liU8COReponse.resultContent = errMsg;
+            liU8COReponse.voucherID = vouchId;
+            return liU8COReponse;
         }
         public LiU8COReponseModel Delete()
         {
-            return null;
+            liU8COReponse = LiU8COReponseModel.getInstance();
+            liU8COReponse.bSuccess = STCo.Delete(vouchType, vouchId, ref errMsg, null, null, null, false, false, true);
+            liU8COReponse.resultContent = errMsg;
+            liU8COReponse.voucherID = vouchId;
+            return liU8COReponse;
         }
     }
 }

@@ -155,5 +155,29 @@ namespace LiCommon.Util
             return false;
         }
 
+
+        /// <summary>
+        /// 根据字段名，设置值
+        /// </summary>
+        /// <param name="attributeName">属性名</param>
+        /// <param name="value">值</param>
+        /// <param name="dataSource">实体</param>
+        public static void setValue<TEntity>(string attributeName, object value, object dataSource) where TEntity :class
+        {
+            TEntity entity = dataSource as TEntity;
+
+            var t = entity.GetType();
+            var properties = t.GetProperties();
+
+            foreach (var property in properties)
+            {
+                if (property.Name.Equals(attributeName))
+                {
+                    property.SetValue(entity, value);
+                    break;
+                }
+            }
+
+        }
     }
 }
