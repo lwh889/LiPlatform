@@ -427,3 +427,571 @@ UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
 2020-07-09 17:45:23,096 [1] INFO  - begin SubAuthenticate
 2020-07-09 17:45:23,252 [1] INFO  - end SubAuthenticate
 2020-07-09 17:45:23,253 [1] INFO  - end SubLogin
+2020-07-09 17:47:20,948 [1] INFO  - Subid:ST LSSubid:ST
+2020-07-09 17:47:20,987 [1] INFO  - client StopTimer
+2020-07-09 17:47:21,012 [1] INFO  - Subid:ST LSSubid:ST
+2020-07-09 17:47:21,036 [1] INFO  - client StopTimer
+2020-07-10 10:36:18,790 [1] INFO  - begin login useriddemo
+2020-07-10 10:36:18,799 [1] INFO  - begin  appServer:
+2020-07-10 10:36:18,800 [1] INFO  - begin SendSymmetricKey
+2020-07-10 10:36:18,820 [1] INFO  - end SendSymmetricKey
+2020-07-10 10:36:18,821 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 10:36:18,822 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 10:36:19,007 [1] INFO  - begin SubLogin:ST
+2020-07-10 10:36:19,007 [1] INFO  - begin SubAuthenticate
+2020-07-10 10:36:19,154 [1] INFO  - end SubAuthenticate
+2020-07-10 10:36:19,154 [1] INFO  - end SubLogin
+2020-07-10 11:03:45,893 [1] INFO  - begin login useriddemo
+2020-07-10 11:03:45,902 [1] INFO  - begin  appServer:
+2020-07-10 11:03:45,903 [1] INFO  - begin SendSymmetricKey
+2020-07-10 11:03:45,933 [1] INFO  - end SendSymmetricKey
+2020-07-10 11:03:45,936 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 11:03:45,938 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 11:03:46,149 [1] INFO  - begin SubLogin:ST
+2020-07-10 11:03:46,149 [1] INFO  - begin SubAuthenticate
+2020-07-10 11:03:46,297 [1] INFO  - end SubAuthenticate
+2020-07-10 11:03:46,297 [1] INFO  - end SubLogin
+2020-07-10 11:25:52,168 [1] INFO  - begin login useriddemo
+2020-07-10 11:25:52,178 [1] INFO  - begin  appServer:
+2020-07-10 11:25:52,179 [1] INFO  - begin SendSymmetricKey
+2020-07-10 11:25:52,202 [1] INFO  - end SendSymmetricKey
+2020-07-10 11:25:52,204 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 11:25:52,212 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 11:25:52,426 [1] INFO  - begin SubLogin:ST
+2020-07-10 11:25:52,426 [1] INFO  - begin SubAuthenticate
+2020-07-10 11:25:52,569 [1] INFO  - end SubAuthenticate
+2020-07-10 11:25:52,569 [1] INFO  - end SubLogin
+2020-07-10 14:21:51,752 [1] INFO  - begin login useriddemo
+2020-07-10 14:21:51,760 [1] INFO  - begin  appServer:
+2020-07-10 14:21:51,762 [1] INFO  - begin SendSymmetricKey
+2020-07-10 14:21:51,784 [1] INFO  - end SendSymmetricKey
+2020-07-10 14:21:51,785 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 14:21:51,786 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 14:21:51,988 [1] INFO  - begin SubLogin:ST
+2020-07-10 14:21:51,988 [1] INFO  - begin SubAuthenticate
+2020-07-10 14:21:52,156 [1] INFO  - end SubAuthenticate
+2020-07-10 14:21:52,156 [1] INFO  - end SubLogin
+2020-07-10 14:22:22,461 [1] INFO  - Subid:ST LSSubid:ST
+2020-07-10 14:22:22,509 [1] INFO  - client StopTimer
+2020-07-10 14:36:19,888 [1] INFO  - begin login useriddemo
+2020-07-10 14:36:19,897 [1] INFO  - begin  appServer:
+2020-07-10 14:36:19,898 [1] INFO  - begin SendSymmetricKey
+2020-07-10 14:36:19,923 [1] INFO  - end SendSymmetricKey
+2020-07-10 14:36:19,924 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 14:36:19,924 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 14:36:20,145 [1] INFO  - begin SubLogin:ST
+2020-07-10 14:36:20,145 [1] INFO  - begin SubAuthenticate
+2020-07-10 14:36:20,290 [1] INFO  - end SubAuthenticate
+2020-07-10 14:36:20,290 [1] INFO  - end SubLogin
+2020-07-10 15:04:51,930 [1] INFO  - begin login useriddemo
+2020-07-10 15:04:51,938 [1] INFO  - begin  appServer:
+2020-07-10 15:04:51,940 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:04:51,962 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:04:51,964 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:04:51,976 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:04:52,190 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:04:52,190 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:04:52,338 [1] INFO  - end SubAuthenticate
+2020-07-10 15:04:52,338 [1] INFO  - end SubLogin
+2020-07-10 15:11:32,963 [1] INFO  - m_userToken != UserToken appserverWIN-VR75UK1COEO
+2020-07-10 15:11:33,015 [1] INFO  - UserDataXML<ufsoft><Entry user="+BBrce28u8Jt1XW0Ix6a0A==" data="RXjwCBxcbw0/KKpPaO139A==" accid="SkDoF8z/gEF9L8EynmdAcw==" appserver="uR32veVF2UMY+Vv/1+PuSQ==" subid="5ko9PNql0trQpj1H883pZw==" iyear="CNjlP2vxwDuyFRiFF1/n5g==" connstring="KjuMppR1Yneug4GlNApc7m9N/nYdV7CDr++nw7b2PCb8Bj9HoCrDEr2G6PbxjVgnQuVXWAN3+VlOWv1vlyCCjuCCq52Gx7tGW71LExmVx2mZImB/fY6hVXKai9VbQ+6scyaRHFMbsrnZOdSicO+G6ywifRg/it0QCxalv/MOihg9sIND9f1GMze+9AQQ9rNbdZcQSl8gNutZ5uPanD9oQPm/7F/AZo4ZtnXHbTshYQ0sf8xTbz9egfvBJEMD0A0F" operdate="Uar83li2bbfjJ96rlfdVsA==" datasource="qnqOk9tY/MCsCkXZSHl8mw==" languageid="BqbvCbZu85Ku+mZjR5WsQQ==" workstationserial="Pgf67xoMplaBBWlIT86uHGIlRYiRiAvANS9xKQhyU5IYwXaz++9F5zZVb4hn8AWa2iXJXqcVuR9Sb/SBEQRLig==" rightserver="uR32veVF2UMY+Vv/1+PuSQ==" iscompanyver="XXYiJLjjoPkFbOeLI2orag==" secondconnstring="gV/kF4OyIfRrWosNucvQLU9Ix8UP9GtZmT98l7QXvIs6eCDgM1Q49G/V5lpFCRJkoJQy4hRfB9YPPviOCR2udNHOBtQWkbo9DQnD4rV/fQgTX2AKRuQP2tZUrHen/sS550jLaefxnh+gEkIg1FICXJTH7Bcz0X5pG+QUdTvLnUzZKXo0t3qlQWh0M/lGWH1niYm19bceXIaNdueQkhQwJfProdry/52be/6W1cnVESYygZLv1tHVuufdvyFPbOJStFx3cKGrhl5/atIoVhFPe5rG1NwHeVg+eJTJCJLHxMeDDUiwluvXpe6JUHbcyVva/+Y+2nNLRy46k5ukMUg/BSKp0h+a/pGSfZNBe1lmPk2rOLCifEseYxfO+Bf/YWplItWIPZE4qQGc/40QA6gt+JTuDGy9+6/pztt0QFkxyueOd0jIKHCgq5SOKsNr+LpCxe03eJXmDQj/PBaWl9x/xHdLD5CfAyniAD70y0c6eYTqY4SvDPJzKhBb3C7HTks4es2+Fb4uDMfePuRySH9cYNhpdrO7m/UWYU71IrMcywGsxVeG56kTtl/L+QTDpAKttrRaYKOk2ZP2ZB9dAREm94hbOatayiO7nGj9RhmA++9ZVHqk4msVym2W5PIdoAawVoKQpML7hJ7zRWuh6AFJiXJsHcmN+olZhbzf4Wha7ZZ1QpPkYQ/nKi489bsaqE1g8PaM64EsP8TycVm9OMWP7IXYI86BVSVYCg2tOC6G7U7V7+W+p3zUdYmPZMOJSRVehkmVOSiskjiNQ8ZFO8fstc6t7JLAQjcEhgPbam3hVM0=" employeeid="8I06sKcbtrk+6iAMsfTY1Q==" isadmin="XaSRsA6VEEL4vOF69k04lw==" username="+BBrce28u8Jt1XW0Ix6a0A==" accname="57DhewhTc/CCFXEllq7tSw==" enttypeid="HuPw5RAdMC+D8qrEZXPQ/g==" imonth="6aLJ1tOIo9EUMJByJWhj0w==" appServerserial="Pgf67xoMplaBBWlIT86uHGIlRYiRiAvANS9xKQhyU5J8mCd/pl8Xpa1zkjSSgO/V" roles="8WneiUPZ1MRk9pBAlcx2aQ==" protocolport="4rgn2vLbvGcqX3Pq6wNb6MKPCzDABXRQFArRuIOCYcZby5249mc0Rofns6RQOw4bAMHdtr7kdRiQ6O413EjAKw==" barcode="H/PTtyeQ8xZqoVw0qGwrsA==" customer="Ytl/6ehAsA7CWB3h0KO/DVO1g83VbMchSBxKRHf2Qncv1353HbGqTmowu2iwEx6p2XaEhNkp9Vn5Z4WKPAzEDMc2ziocEDbeboBVLbOrh8sOvIO3qUY27hW+uwBIS0wn+rwwrHzVB3kVxxuIqTDfFhGihWpwJr645xPcSIrhvdoWMYA0NDvN6E5Y4yOFE77VKtm1xE2RgMOJBmFIrPNHnquBJyCUrA1O2qaFGtWAHTEkSdqXS0NK/M1I9b+zCgBIZ+n8Ux+4Ugte77sLkFpZQY/lO9SRnysig4HqcwMFBGA5JVf1cdUDje6GQZbYFmUa/KFaqnwcSDYuggNHr1KLWRjXBEoHviPxKNKTvHu7RR1apN78EWOHVHYBOce+LPqgem9wTxvVXB3b3JBWlX02Wk3BaBSGLi+mR0faGxbpTzY=" authenmode="w1bSo4O8XLnryD5i6LwMbA==" authenextrainfo="8WneiUPZ1MRk9pBAlcx2aQ==" industrytype="8WneiUPZ1MRk9pBAlcx2aQ==" ibeginyear="j5S+utw8krwmR0rGzWX7hQ==" aiosrv="8WneiUPZ1MRk9pBAlcx2aQ==" crmsrv="avxXy4Rd/GVmGUmD92mFCEMTaKuUQXVH9CbkMGHTJzg=" utusrv="avxXy4Rd/GVmGUmD92mFCIiPbeFtwHk7tqodLTdasn8=" remind="XXYiJLjjoPkFbOeLI2orag==" usermode="6aLJ1tOIo9EUMJByJWhj0w==" sps="XaSRsA6VEEL4vOF69k04lw==" sysdate="mDjDlD1YQIoUikTkaNKh1Q==" /></ufsoft>
+2020-07-10 15:11:55,211 [1] INFO  - begin login useriddemo
+2020-07-10 15:11:55,211 [1] INFO  - begin  appServer:
+2020-07-10 15:11:55,212 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:11:55,235 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:11:55,236 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:11:55,236 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:11:55,433 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:11:55,433 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:11:55,589 [1] INFO  - end SubAuthenticate
+2020-07-10 15:11:55,589 [1] INFO  - end SubLogin
+2020-07-10 15:12:14,531 [1] INFO  - begin login useriddemo
+2020-07-10 15:12:14,531 [1] INFO  - begin  appServer:
+2020-07-10 15:12:14,532 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:12:14,553 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:12:14,553 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:12:14,554 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:12:14,752 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:12:14,752 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:12:14,915 [1] INFO  - end SubAuthenticate
+2020-07-10 15:12:14,915 [1] INFO  - end SubLogin
+2020-07-10 15:12:24,294 [1] INFO  - begin login useriddemo
+2020-07-10 15:12:24,294 [1] INFO  - begin  appServer:
+2020-07-10 15:12:24,294 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:12:24,320 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:12:24,321 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:12:24,322 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:12:24,567 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:12:24,567 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:12:24,777 [1] INFO  - end SubAuthenticate
+2020-07-10 15:12:24,777 [1] INFO  - end SubLogin
+2020-07-10 15:12:25,839 [1] INFO  - m_userToken != UserToken appserverWIN-VR75UK1COEO
+2020-07-10 15:12:25,870 [1] INFO  - UserDataXML<ufsoft><Entry user="BBpvyufhDBlWK5S8Rt0Phw==" data="CQ1+7tQtCgxTNu/jC4evEg==" accid="XQIWkoWijSlEb1wjL4naRA==" appserver="YytTdpneqTdYuxpJX2KUNA==" subid="BjYasW4BWmfjYU4s/i4DSA==" iyear="/KCjNJ9j7HZcXIQH8m4Iuw==" connstring="P21uoqy6HQkq+kKaEvBLi0Cvhavr0niH3gZXzLbmC8r8aMN1sBP33Nt+vConKjSwzrfAD3oemlSbf/mCNfac5Gwu8aoSzD/7uRTFIEkQ3SymXfQ9qxiPjpE/EkCaxd1Sc+PBLPTwig+ge2A/LbGN8AxEKSiej7fDzUGfGpGnf22Yuu5jXzbLIgyxLLztwpfFsOu4sf+7a8s3icQ0wc29O16ipyldPiTf47lP8sVtpcOVSQLk2UY9cPfCceC+sN8+" operdate="mxRiQ/Fd5LAPI6Pejng1Kw==" datasource="NmCAwzb9Y7Mn/t26Af08oQ==" languageid="Nj5fcC+FfXrdhPfMJot5Vg==" workstationserial="erBsY/6bZtVJxpJEqmRd73hukByEfqZOz0Cy5tPdk0ihIFe0P4VCsPSOaaDAkrKAsUyRsDSXkoCccB+Zj5uOlw==" rightserver="YytTdpneqTdYuxpJX2KUNA==" iscompanyver="3w3GLRhjcQ8lJO7Akoi5TQ==" secondconnstring="C4zHfq9CSij+tswHdRg61DxG4dmdKrtnG4Me7Kdlz1DMLlj+6Bl1/Ysl5zASvxrqBmkNlq8gCEDOAmVBhFsiJivEg8VmYcrEgZbV7mkKVT1ydGva5MrubFcgKzW5Sao4MOXIyzmBmnf6rpiiREX1g3gqyphiqQHwf0abVwze5ZUoIBKA4FWLXMXPdpeZkqeHeEyKAVB+7ZHTdBfVYuIz1cPdWtJ5AFN52FxiMIMIqXrybQqWLgCIQ8eY5AT9uCjZAS6V33HOiCwHWiNAU6r1dvbFjGNundUFQbgXib7qeSCJBhmqO8BSJ70DaM9i04Zf+UZGqui3FQ4yeP/wUVUsUwfcyn4LAgTRrFd8YtwDrRM3p66eZHnPLAAKMzKfLVoTmJBgsiGcj6qN7VYjO7gnNEARtCNAiDvTt/jrLpTS+5pYg1VV/iJw97BqLwUmsUfsGBlIZJwrhLtO/Xql0Gs8KC9pR9nfDkQAqAdCO3Gf6FggU1m5j5wTBP8FQBBpLtl59ShAHVt1C0nvcBADwxPKkXyaJbFMGpvG1ZUphiGJsWwHzE7Qbh+0Kz5tww2BIDSFTHgobauT+LmHwQUjtUJOpLQ+GsR2JnSW7Pq0/p51UO7IvrUiNlmwdKVZ3ESCA4zSnNY7xyCFHWOSMBQMRdFLKoVtQJbqxXsh62zhKskrW6Q9OHsv6VzjviEE0MMLaeVt2APmoHQ+ZHUy7FMtQBzXcpBrWOdTri7Nh7f3YBct8hSb43Td9OQ0hAcbImzYC7wKTNxd/RY292XJImmnYLWuBicLGBEYVx6JFAQ3O6qSaWc=" employeeid="kCnT8FEe2y/mmEUlgCsRCQ==" isadmin="EeCozkOgTXbZpKZCtpspig==" username="BBpvyufhDBlWK5S8Rt0Phw==" accname="ELcW2bG5Ew5vMvmTBN4AbQ==" enttypeid="QotLPCFcrU9wdDCdkNVpmw==" imonth="LhDFN558pRbfvR5gAAD7Iw==" appServerserial="erBsY/6bZtVJxpJEqmRd73hukByEfqZOz0Cy5tPdk0g2KAl2r5fC803r7ys6j77B" roles="9h/SOLqqKm7b0PQtgfW6pg==" protocolport="LgeuVBhJ4FU7EkABdq95O1edWk4Lp5q6B/bO2ZW00GOOhdVDq/jR9lUaA3KRrQxHzHMnrzvaeutJXyuQRxnE4Q==" barcode="i3vBG8VvAdBFkTTNTNQwZQ==" customer="TbItUVp5e6C/g+VHJGxr/GvjsXp80GI44jXklDYSYHRlaBzZsD/7m2L5ICj+skOYWuWW6n6u5q+0BqGZNBHpt85rjaQOXbPrgGFPkrvU/XOTnnb1SzOp/gimpYHKD2sPhArBhKbxu0O9mgPXqDE1A2dQA5kLbo8wflznFdmb4sloPluWFinRwmqFbYfcaELX2//AxfkGWR+lcP9Nu7Dm2ARjaIAbi+FlRBgtDIGkZ4fnAgnt/qsOkt8KNdmkUDkz+056p3Jq39j/BxjCR+Nzw/UJp1exOeJDBxPKrdQvNVfQtn5Y7JeETJoFe43YyWz/+zFfCCmXBBKDd94hTdJ1KKCrD3kR8tvjUGDjR2zJfQJANe+RM4Dw+wlKDggyZ5VnY80V7bU4eZ0m9dnsk2PfS+lMtpJWeilrCy/J5dbQAhU=" authenmode="g5sWK3Al0JPDFSEXop7lIA==" authenextrainfo="9h/SOLqqKm7b0PQtgfW6pg==" industrytype="9h/SOLqqKm7b0PQtgfW6pg==" ibeginyear="UCAABwWzjaRpONaO8DDhkQ==" aiosrv="9h/SOLqqKm7b0PQtgfW6pg==" crmsrv="qEEXH5z8Q9EFhbsxHgX7SJxHk8PHmyA3Q6INLDO9k2U=" utusrv="qEEXH5z8Q9EFhbsxHgX7SBGNeJMJHbSvLlrg9hxDLUE=" remind="3w3GLRhjcQ8lJO7Akoi5TQ==" usermode="LhDFN558pRbfvR5gAAD7Iw==" sps="EeCozkOgTXbZpKZCtpspig==" sysdate="mESIL/SE3PfFuIra4vh3yA==" /></ufsoft>
+2020-07-10 15:12:40,908 [1] INFO  - begin login useriddemo
+2020-07-10 15:12:40,908 [1] INFO  - begin  appServer:
+2020-07-10 15:12:40,909 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:12:40,930 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:12:40,931 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:12:40,934 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:12:41,121 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:12:41,122 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:12:41,271 [1] INFO  - end SubAuthenticate
+2020-07-10 15:12:41,271 [1] INFO  - end SubLogin
+2020-07-10 15:12:50,956 [1] INFO  - begin login useriddemo
+2020-07-10 15:12:50,956 [1] INFO  - begin  appServer:
+2020-07-10 15:12:50,957 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:12:50,978 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:12:50,979 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:12:50,983 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:12:51,289 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:12:51,289 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:12:51,455 [1] INFO  - end SubAuthenticate
+2020-07-10 15:12:51,455 [1] INFO  - end SubLogin
+2020-07-10 15:17:40,980 [1] INFO  - Subid:ST LSSubid:ST
+2020-07-10 15:17:41,504 [1] INFO  - client StopTimer
+2020-07-10 15:17:41,532 [1] INFO  - Subid:ST LSSubid:ST
+2020-07-10 15:17:41,576 [1] INFO  - client StopTimer
+2020-07-10 15:19:39,251 [1] INFO  - Subid:ST LSSubid:ST
+2020-07-10 15:19:39,282 [1] INFO  - client StopTimer
+2020-07-10 15:40:50,377 [1] INFO  - m_userToken != UserToken appserverWIN-VR75UK1COEO
+2020-07-10 15:40:50,472 [1] INFO  - UserDataXML<ufsoft><Entry user="4D9ipHbYtXib25D+TQ/XFQ==" data="V48augKUAeCvSZuwX3NrQA==" accid="9gIMbA2g2SKM/3s55BKmTw==" appserver="s6MyL9A+RfEu4f0tFZ7J6w==" subid="67RxxFKTi7CPwIuQ0bAueQ==" iyear="5RDBJ42FO98jfBj7TBq0Sg==" connstring="mKiJbafqbBoTU1SkjAowR8NQuWYOy7YgsfqSd0s8XTbChE3ZabjvlZ/zvJwKe4HXZEi52fZhMjqJhFFKI9NEC/Qh0+PImcEuKGkFKyN/f1DXnsJXJ3UQUErCSCq03Ia+sIizlvLrWLuUq8w4MuBmdJuu2jj2limRSEY4YV8ZIpPOhbfn+c2N28bpOK+8w7kXT09m8w6ea7xfh+XTLPuVu+6qKqSOtNKXzhTO8sIB5PWAne08IMPzBCKZkJaIiRr0" operdate="iLWXUJEYWE6sDaPRkSfyGA==" datasource="uGl482zPLqx0aWyWbRDsow==" languageid="C8LFbUkxjMR5DOuH6YF2YA==" workstationserial="KHTnLTNx2/e+KZtoeWIaC0aMG0GW3y/SrywIvtlwWR72xta5kRQTqxAM9qpqLkX4Bl4CxQhTkeujykV6xBfz6Q==" rightserver="s6MyL9A+RfEu4f0tFZ7J6w==" iscompanyver="CELXKk7uut9eSjvslKjcVA==" secondconnstring="VSUPVekXPazMvuE++TlVUPgSnvYsNnlu9rHgvNxoL2monVjgJZQZFexICZweGcKcIkF81qHNrDy5WgLrEcu+PmqaClb5mNZvJkZLvmljxe7/FjCB2yex4PlYvJmR8IZab58Hd3i//GVWQgbLzOwsKQSCgBQ1jnrBCblkbhQpuyzz/tp7Zu26hLfNscMCXEveAvjw+u32ZiBnKLjmsZA4ykKDroFZ7s1H5H0fpuhDjcYi/+aZaHk8Ztb73FBBwhOGKUom3cF8OhjzVXI8jpZVWZgRXBsSu9wQHnsFPONWbpLj/s8U3zVtD7zvfs5RmPiJib1wgDhkdo3AIsdwlj+XL9C2zhrxKNBHI+IA9O4OWrnAM4Hd3MY6cXTeTyjFHmdL6j29fVGjcbLJbcyu1AlIgJ2rHuaTDnSo57n5SFi+5pEfjADu2F4LEqyHEJsmOv6sKOuAFEtvnTa18P9+M3A2WVDWYrTt/+3+OIrELSqiY7AYVny9/xHi725FCgY9FAQEYNaItviONFdBJX9CECSZ2LCppP2FmRpSjEFBzHwzsywPg87uuQrGmCmTkgCEtuhD3sc40rXX0O7BkDajMbLrJ5Ap+moBcmUdSEX+FruD9SWe4rCv6HSfEw3MEh18Ovhbj78BZE0691QxVwEST4CyeQbp3gk5LmRgaSIXPKDuofVpCpHde+dthwmGrRaKrHfvJjo5aUwf6ZnPlOTiWeONrBjrprSAVmaBPSoTY5ioSg3Av7XRmhCVGMQnnFnimRSWvIIXDpPocSxcVnOi9EqQbWAHEZooiw1U+H77QhKKfH8=" employeeid="S9wWlYP/e/UgEeW6KQhrvw==" isadmin="yN5XC6IuRE8HzxcHQ7hsWw==" username="4D9ipHbYtXib25D+TQ/XFQ==" accname="MiUij5LeZ9bgIjyPADppCA==" enttypeid="RDtMyK2xM7HPfPPi9TOVXQ==" imonth="dTFWXzceNL2l7byNt8aXxQ==" appServerserial="KHTnLTNx2/e+KZtoeWIaC0aMG0GW3y/SrywIvtlwWR7gR/wmnyzqCqCU1lqQyluF" roles="FKRoMLZf2h/BVfOhN3ruJQ==" protocolport="50SNhqSS6Iv7T2bA8mCKO6xhKLcgj59MOwcrA9AOItL9HlgRSweC64g5bFq23xlYAniYdResc19JlDzor/+Scw==" barcode="xmEyrMc3iRpQ94lIQUuTnQ==" customer="XXIpKfqje0Zn5fLvQWbVDobieYg1e910hZ7b8D7RfFc7OifyTvqWZSRvHUz0DRD1eWHJDuaXVZk/ypgjIxraC+a6eeMLywarpbPN6m5iVKRqqaBY2QlkPMPPdloxuMGqAw5Q7kDpxqIP9eHkRQJs6GRYERR7MnU4GZysNySyzJO+5enBgCjlnWtnOSKnMkuY2xqEd3MAGhuTc9VtrV7F4SahLAQvtz9SOh/psV325iTvQNz9+YgSxjG6sXdm8nkoTbeXQA9QFzi9XKfHAqGenJznrxWlYBCBgVZN0ME/9UPXDcKEIGm1nI1JdNgytT825OZPrzCjHpWLvW1dx34j848LpGVhP0QV3lgAJja0dzNGypuo5hWCdHuP0EAElaGwy30cxB3YTfGPzswZOUwmdq8tBCsHln1wuZEFDkgBvtM=" authenmode="VJOe/8php3DcFvbxV5CVIQ==" authenextrainfo="FKRoMLZf2h/BVfOhN3ruJQ==" industrytype="FKRoMLZf2h/BVfOhN3ruJQ==" ibeginyear="mxHKQQqNSv7Pd/P4p9LJSg==" aiosrv="FKRoMLZf2h/BVfOhN3ruJQ==" crmsrv="eMBULLxm63FHDmsnLjH1T3VbFNFA7OwvQqFfUig741I=" utusrv="eMBULLxm63FHDmsnLjH1T170a14782ikUJYZVPywn1I=" remind="CELXKk7uut9eSjvslKjcVA==" usermode="dTFWXzceNL2l7byNt8aXxQ==" sps="yN5XC6IuRE8HzxcHQ7hsWw==" sysdate="qr5qSrWkOMF95LydeKeMkg==" /></ufsoft>
+2020-07-10 15:41:47,826 [1] INFO  - begin login useriddemo
+2020-07-10 15:41:47,827 [1] INFO  - begin  appServer:
+2020-07-10 15:41:47,828 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:41:47,850 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:41:47,851 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:41:47,852 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:41:48,042 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:41:48,042 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:41:48,196 [1] INFO  - end SubAuthenticate
+2020-07-10 15:41:48,196 [1] INFO  - end SubLogin
+2020-07-10 15:41:59,959 [1] INFO  - begin login useriddemo
+2020-07-10 15:41:59,960 [1] INFO  - begin  appServer:
+2020-07-10 15:41:59,963 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:41:59,989 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:41:59,990 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:41:59,990 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:42:00,212 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:42:00,212 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:42:00,370 [1] INFO  - end SubAuthenticate
+2020-07-10 15:42:00,370 [1] INFO  - end SubLogin
+2020-07-10 15:42:10,683 [1] INFO  - begin login useriddemo
+2020-07-10 15:42:10,683 [1] INFO  - begin  appServer:
+2020-07-10 15:42:10,684 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:42:10,703 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:42:10,704 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:42:10,705 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:42:10,890 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:42:10,890 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:42:11,131 [1] INFO  - end SubAuthenticate
+2020-07-10 15:42:11,131 [1] INFO  - end SubLogin
+2020-07-10 15:42:12,019 [1] INFO  - m_userToken != UserToken appserverWIN-VR75UK1COEO
+2020-07-10 15:42:12,037 [1] INFO  - UserDataXML<ufsoft><Entry user="CnZYFJMariwGM+hyUWm/aQ==" data="88rsmsGL27K3p7bkIG9ysQ==" accid="TaW7Q480V+oO8FXUky3DqA==" appserver="0pC8LCwhxfqYhotEha+9rQ==" subid="1hwjH7MP+YAsjY8aTaPzjw==" iyear="MXcnHdUKY/4J3Ls/xTrtBg==" connstring="UK6XaRv9s26qKx5sEXL2uE7CJibaDPp0y+W8CwQ3TWuTLIU2x0Li2sykyda6763QWsgn7eROHBO/KgGSbjPNyuFBC4wvvYO4S4vlBEuNFqBIGVOOM4HFwGF37ZLTiOW7mOZLlbYjHG+GB8tq0qpkH6hCrCQJhY9T3Wad6DGJ8GSy+f53Ti/vH7CRWY0BNDIaSrHhqnXKqSlwtXaJq/SwP5+O3XEKi/Bi4v3oMKln63dHXwx7mhyp8BkijYLQFsni" operdate="dufO0Se7PKxTnz2kKJ2B8A==" datasource="b8wo5k4HaaQw6LXHthAm0A==" languageid="ZIXDCYSbdw1ahMHNpnKbaQ==" workstationserial="+HkrMRo1UTc6zFkkQIKZ5PszOhtMERKpHCOPDt+YEpEG818+ioYebloTqMVtUNqNPzWjhvasrOPQYhIsKuQ/wQ==" rightserver="0pC8LCwhxfqYhotEha+9rQ==" iscompanyver="ppLmFdp9kS/T4eehC/ukcA==" secondconnstring="0dwOBpnBSP1qruBpITLEmJ+a35ABHrHIDbXauO5pF+Vvb/7opfDMgd8014Qd1LxUGoMi3s+8HzSCKxW3yWGu4o2dfMOaQAr6xw9mI6Usg+xyYd7CWOaVuRNoGFOu7N4FTpWOcgxxQpYZtVoKgaKgqV1X8AODjrEzsGJUGFDj1vPLU0sgKE7s4F8tthLGRxioAbyg8+QcHXQpYwBBk7JPszcB7kfIMF03+L99Imf2FdW51vZhUSWE9+D/PxvJplkR45xZOrjQDOSaLeQB/3R8n1UpavNIToiMYefLmrxVyRSv6ICITOqht10iyCcrb9QV0B7yyTtV1NzNtuDT8q6vKXX3EWSXyJabbd1xoGZYF2wHldBvqlD1qhaSlJ+hHyrzRgnDmMhzRevrSIfgYwjzIvvqF+tlJVWxPSQyIbzAdoc02MhIsX5pQol/0sGwE8tW4THASxFx8IE+0tTKc+pnGyYPhFwgSWZ466SBVNbAR/+Q/RCDsJg2eeF9By2MeGTHE87ucLX/VYvPtnFNbZSYrOySLkZq5LoKNybnqnToD8n4DytFI9XeljA+EN9hjdw2rQr+o5rxdO0AICRNq7g5I4xEBL7oFRvvISAj0Y2wX2yf4nM6/cwkVBjn5FkbmT3sb4oGTYOLqKJBE7LlgBBl9i717NvvubYTnrDXzzomBC759Id8Ohn2deb7QZe6SRiUvuGq+x8VtfOliMMtbLaC7AG+oszUsYnZXD5BlorO0Or8mKuj7sn5sOOrn8cVimLpEeFDITNeBmim5+XB0XOzkE/ccUgtCb9WrsWLIxpduHg=" employeeid="2gZkHqGnB++5BSqIjONBiw==" isadmin="bsSHRObadd1sBDX3sDYq9w==" username="CnZYFJMariwGM+hyUWm/aQ==" accname="6iIanT2krqfdmzLXQDMEKA==" enttypeid="2jbaK7uMKiW4TQX/9JBQQQ==" imonth="YJMf5SDr8yI26CQsR4azOg==" appServerserial="+HkrMRo1UTc6zFkkQIKZ5PszOhtMERKpHCOPDt+YEpF3aUirQ3mM4grSkxRjLG5T" roles="e1fGHXYJlV3o3AhVYzZcOg==" protocolport="AZFlxkEpDl4gYTl9ATPJLORm+sDUDlErtu4xdHwd1I5b6WvAWI35MTSve3Hr8WCN7nu6e2G++abVWrAbB0Z5Lg==" barcode="Rt1hhj9dRtCTOtvOG870yA==" customer="xwOYEYIdQTlyICgDW6z17qEY5bscPqAk3bMpygtmyrKIeQcvUll95qeiQODxyBxxtFlpOjjYi/e+yeYlSmeLaxrrJxU5+A/0s59B3+PSI81T/NmQEReW83jL9t6pU+ku13jf+Z0SCB35kq4IbHZ6P4oPx5xMjA1gSjH3QTTiKIqNd2qsyadpKnSC8eY06dLP8j2F2KkTca868cQmeG05v9K1umBDo+tCV6U0ZIYpvYcqwsm5VNbfZrc8SvbHI4k2YARL34xlr0iSv1FXJvodAZV8kWBcmQWtHepksfmONw6wB1c3PYqv2cKtbSzErpJDtVcZIeguYvxKA8KErwougw3U20odd5GCf18doEDFWjRpBU/Iu1I9C12uduc8Tn1pDylUyPX8IWpBcyp0yJJD9lk/6f0/4FT74TVG0uS1dxs=" authenmode="XnYFl4XPH9R3scRC7nHjeg==" authenextrainfo="e1fGHXYJlV3o3AhVYzZcOg==" industrytype="e1fGHXYJlV3o3AhVYzZcOg==" ibeginyear="NJ6HwA8pIDrGitzmYrFLbQ==" aiosrv="e1fGHXYJlV3o3AhVYzZcOg==" crmsrv="ANIsQ2q921Qd7oYa6oAfwVqUv/ltwSarWmNWcyNCfBo=" utusrv="ANIsQ2q921Qd7oYa6oAfwVjIdgQ8L9wn8ScXqAu87q0=" remind="ppLmFdp9kS/T4eehC/ukcA==" usermode="YJMf5SDr8yI26CQsR4azOg==" sps="bsSHRObadd1sBDX3sDYq9w==" sysdate="yq/nSadUNrd3v7ziJdd21g==" /></ufsoft>
+2020-07-10 15:42:45,888 [1] INFO  - begin login useriddemo
+2020-07-10 15:42:45,888 [1] INFO  - begin  appServer:
+2020-07-10 15:42:45,889 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:42:45,911 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:42:45,912 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:42:45,914 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:42:46,120 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:42:46,120 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:42:46,290 [1] INFO  - end SubAuthenticate
+2020-07-10 15:42:46,290 [1] INFO  - end SubLogin
+2020-07-10 15:42:46,397 [1] INFO  - Subid:ST LSSubid:ST
+2020-07-10 15:42:46,432 [1] INFO  - client StopTimer
+2020-07-10 15:42:57,185 [1] INFO  - begin login useriddemo
+2020-07-10 15:42:57,185 [1] INFO  - begin  appServer:
+2020-07-10 15:42:57,186 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:42:57,211 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:42:57,212 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:42:57,213 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:42:57,404 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:42:57,404 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:42:57,563 [1] INFO  - end SubAuthenticate
+2020-07-10 15:42:57,563 [1] INFO  - end SubLogin
+2020-07-10 15:50:22,074 [1] INFO  - m_userToken != UserToken appserverWIN-VR75UK1COEO
+2020-07-10 15:50:22,095 [1] INFO  - UserDataXML<ufsoft><Entry user="Ie1z+gXmLb6BXLdkzC1M5Q==" data="DTeaqipTv35LC3o1ubOCVA==" accid="Y94uftc43n78qcdCy/SD4A==" appserver="z+vgj4nQuHBMTV1L39mxZA==" subid="q+YIcCJBT2iADCRzYPGj1Q==" iyear="UgOHQa9Jz70lXtxGeHU6YA==" connstring="UyOga+JhItc1UbjU5mhgtchLnfMl+nYGVPmBlbMZJyTEVOpYy6hjfn4sVQS5W8uYxNT97VUCIizHvvhY8pTbfdMBSGIb/b+XiuXInmQzuUMtKa+F5ABVpm5wVPliF9Enstyn9OkrHzb/kQAreUUzEOzatB4d5LxtXuScIDPovfyAFMvmdLUgl6sD8/x4xSfl/71/b9sXvLkzYxODYXxu3WAVrZmBw43fd4woDRUHw5epnph4o13Tx+xjVUVSPqps" operdate="vju538kDQ4XY8PUpNDKUJA==" datasource="R4qRfFQJTNSRpZy/3tk8XA==" languageid="AjE9Fd6KcqbymUhkNUxvEg==" workstationserial="fstE+soy1Zd71TMrQPISoiqn4z50U4vAIpixBiL9LnzQ2mr+TBsdlfNjEmpxVEPEwKxGZ8TZfpfLnwdI0OUUgw==" rightserver="z+vgj4nQuHBMTV1L39mxZA==" iscompanyver="94qmnRKU8atThWIRhd44oQ==" secondconnstring="pChO2jkQsYLxFb5sOLn/Tv/MRsvzcH19DWzt/1aDFx3kEnVH1LcaTaJMcQ6j+MsJANFlNu0y9gT+QapZ8QTStcGpWZvgOEUAP9zTj14oyFqy0qYGE8J8jYP27FSei+R8rfcfRuGWp7DWjCTSrlcxPeqb99EDhG5llCj5t5tcBqyL2MrkkUq4qFoQJ9QVUJdPoVl0FHUheH5W0jIL0/+eRVBxZehrilDcDoJce3bXPd/7yLWC2zpT7y85GgVjj5YArDvNKNnw0AZUTLvhmXSg9IcpqmTMtf89X3OS944XBbVDg5SnXD+QXivfxA8kGIhroq23ZyFK3gJtW5KulGP+e/1WVw9uNc7Lz010covWbstuIyRQ8dgq/hvX7stYMBVyJu9W3lHRDPiNIFjsQ60BrsVM1lh7jxk7uTMIT8oGxNxPE4lwfwXtq8Uo1/r+m+G66/SQ3XiCX1Lk8CcfIzh6LA+S8RieF8h+N+vmFvwG1+RKTLUvaVhCYL9XefQisjTce+VaTAKFe1ElnyXxbV+/tZ38A5fHkj/aNB5HzZhRkONdRQtOC8xRrqjUfGhl082NGBrB+GtNh3W2wYbiAnS/5y9aySAFNnWNpbjqxexOGxOq4sxhd6/8zo6cYVYRF5m3z2jyw3c8TRfJB1slomoiPreuGpazoYvyNaPAOQL0RDeRXxOlNwm0FMI1DSzUYzbUGbE03Uva7iD3d49nwG5p/imN7GpRHwUBhlDwcQcSDvazyjNueLysFmsx94cifnQd3N5XSIB8YbFRd80RzGvRAfGwh99DVXiOZvbJsxdXg4A=" employeeid="dROj1X7uHAeq2KmJxNiyGQ==" isadmin="ZLIuZ0VK3w+yyR0fuSCLPA==" username="Ie1z+gXmLb6BXLdkzC1M5Q==" accname="MoimcDEcRHmfK4NtW4QZ2Q==" enttypeid="A18vOWMLds5d/zb3fzG2+w==" imonth="uL4emftcRLAbyMpXhHIDuA==" appServerserial="fstE+soy1Zd71TMrQPISoiqn4z50U4vAIpixBiL9LnxFbk4cAjdRqWCfh0wnRRAB" roles="XZxg66Sid/UgB07a6QN8Tw==" protocolport="AwXhtyEu0qfrE1vAteV2j5zrZcLLKbSHaM2RJYmlBcbOoYJY21Y1egEmJr+LgywBhdY2NIqgpLaEVczDexYn5A==" barcode="JTSJXMzfRJBl72wh0hxQBQ==" customer="WvOuPGY6ilzxPFxuLbjqstpQSeJVoNM6/yongQgVmnAFOiNaqqdjKl2ll+laM6MzeYL/bZnczHIGGvDf2S0jIwYfnUE6kEpkevB9hi+pc87e8lxuuT0brfK+1/HYg8w9pIN7SdeRP+7Yt6wUAEo+gQxT1Mz1hx8lif1JY+d/vaVUflgNJHUT72jcUbYcfQzXcy3vlSw6wKvpseCuvwgXPAMYxF1hMq76YdLM4Pndg0zkBFgbRj16SfgayhLrPDH9G97zMXxXJc7ybFsJYa1F9L04fj1Gw32uDIAgp6RX7ISgdezSHNILyXQ1xxpDB8P7zoIwyp9X38WZYqjnSB97p4kjBkX/eH8+IhGKUOjux09XXzonP810CSeToYo6OfYe3txtTgHF6PYcSSHc8/EiFjU7YYV47l1SVxJjvVLBAUk=" authenmode="O2J0XAxqrTZhKzvNJ3RtgA==" authenextrainfo="XZxg66Sid/UgB07a6QN8Tw==" industrytype="XZxg66Sid/UgB07a6QN8Tw==" ibeginyear="qxvCW/L1m+2Q7FrLI7v6+A==" aiosrv="XZxg66Sid/UgB07a6QN8Tw==" crmsrv="OakkyRLMyXHehudpG1UrnDlIj1TCb3SVsMjfvPKsCyk=" utusrv="OakkyRLMyXHehudpG1UrnFR74Kch/6whjIx3/zCeCf0=" remind="94qmnRKU8atThWIRhd44oQ==" usermode="uL4emftcRLAbyMpXhHIDuA==" sps="ZLIuZ0VK3w+yyR0fuSCLPA==" sysdate="6YRoPbTPM7hgGegwmqP7Hw==" /></ufsoft>
+2020-07-10 15:50:38,753 [1] INFO  - begin login useriddemo
+2020-07-10 15:50:38,753 [1] INFO  - begin  appServer:
+2020-07-10 15:50:38,760 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:50:38,778 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:50:38,779 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:50:38,779 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:50:38,980 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:50:38,980 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:50:39,154 [1] INFO  - end SubAuthenticate
+2020-07-10 15:50:39,155 [1] INFO  - end SubLogin
+2020-07-10 15:50:48,556 [1] INFO  - begin login useriddemo
+2020-07-10 15:50:48,556 [1] INFO  - begin  appServer:
+2020-07-10 15:50:48,557 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:50:48,578 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:50:48,579 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:50:48,580 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:50:48,789 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:50:48,790 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:50:48,967 [1] INFO  - end SubAuthenticate
+2020-07-10 15:50:48,967 [1] INFO  - end SubLogin
+2020-07-10 15:50:57,992 [1] INFO  - begin login useriddemo
+2020-07-10 15:50:57,992 [1] INFO  - begin  appServer:
+2020-07-10 15:50:57,993 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:50:58,013 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:50:58,014 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:50:58,014 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:50:58,197 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:50:58,197 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:50:58,372 [1] INFO  - end SubAuthenticate
+2020-07-10 15:50:58,372 [1] INFO  - end SubLogin
+2020-07-10 15:50:59,278 [1] INFO  - m_userToken != UserToken appserverWIN-VR75UK1COEO
+2020-07-10 15:50:59,302 [1] INFO  - UserDataXML<ufsoft><Entry user="qjxlAiGfeZHP6jfdNkskOA==" data="jiN9n/sVarq1AAU+fmQnDg==" accid="7dGYMQKFkLInrBpLKImE7A==" appserver="ygFhdUu2D7s23OQqU843dg==" subid="oUwN1bfMzMTLE3ursePZRA==" iyear="7E7Ckp9FaajrVPkKwsfDag==" connstring="BszOBG7ue1nR7Dg+uX3E0zAcPqD5h3M0jzXc7uOtSVFZDLoG2Zr5DChiYLs/MH7mHO4Q8WOQPxRuVxSrvGWdrk188PLfo4Awddtx9FWfxitvfsMRrvTYu4ezaRxrRZXQy4vvH2cpM8VF/op1lEQ9hnEtmc/QkH0dWzK13le5rn9S0zLkaZqjYUP2px52IPytutJe0Mwaah1FwbHx/U4H6ydArHN1rkimsw+l0yIKFGxLzrgTaWv0f7B2J3+PD+mp" operdate="3RTG00sDCYGMQh1KbG2pmA==" datasource="GsNX2IyAGiDnX/0rcPRu3A==" languageid="mFlNAeqbzb8AYo5WH9Ajhg==" workstationserial="tZjLA9mZRbu/7SxnnmIRlpDjGkAFbjvjlkLbZnW3dRfmLbnrllCvgyRB8Eh3UG0VuveV8WN0l1FsmakjCmAIWg==" rightserver="ygFhdUu2D7s23OQqU843dg==" iscompanyver="Z7aeCvPw1ZTz5g+9MRKehQ==" secondconnstring="sCzpfEkJybwZJabXR1yIEy6LiUVIzQniUWht4CF1SQoZv+xWiVStAU7522pNcwsUJkPARIxsyaoJukIU7z6H4uBXwyRdaAt5E9TSHYqHBODSnHEVwovnTwB99y+2eZ/e9A4qvvieHlXROpJBpNOkWF3fW1SswIAVFL1KG2+QBGbYEYOG4EDcB1KGipGldWUPhPCt/uJE5L6zwisDVP+c5oV+KJWNv+j09+Zm7pFmM9zP3zdxiae2i/qtCHvzA293UK7haVMMzo+4g3u6Ser8fWIdkA3AeolOvq2xjTBR1qlIGGT8ko2JBxFJ9pd97AR2LSfM29d4cUEkg6wIGQicnTnw0dTc0eniim1FNah3eg0K9lAZecTlqA/ob9qNlEdkPL8Sn6hXYHjAq8zelZnQEr3ZiWtO9V7rF6z8APKDsXwWU7oVO/OKujuA4wcXSZ83ZTuuxmHmqrdVib204cT7gPzUvjppl5QlkfrbZiEJMOeWPQux8fD6cd5BJwYgAPw8lB83ni2i6hVsgrFePEZyqpmlsk91IWMbAbWpFDKVx6T5dHbt2vZBTwLGMPYQ3ngyBFm2gperdEYv/gH1U/cHc4y7WFPU17ruXiJVssGKBgdTG9CLIPvuRszNHfKMTJQospT7BNSU9VoxsJLf4KSXcq3D0nXsf6/naSnaBfwKEUK+57D5GJv3grsJRHhwMk0OST2StmJ5xhov+P3dkNIjLm+RmJKpAKEoQXjMKwhilrC4u7QTh3IjtNf9cIFS5Bolrdx41Rdo7EACgoB1GqcBs74DFssVU9S79FMoy6RKylM=" employeeid="g0ilyXxJ/6UCm6TcDJODqA==" isadmin="XkPJAB7LXWYx3wOvQMoBgg==" username="qjxlAiGfeZHP6jfdNkskOA==" accname="Z9zUs2Mt2bpAjiF1z8aohg==" enttypeid="SorGlD3cQ/q9Pk7rMJqyNg==" imonth="AQoB1mAh06Q6Wg2KCKknEg==" appServerserial="tZjLA9mZRbu/7SxnnmIRlpDjGkAFbjvjlkLbZnW3dRc3Lz86+ol10B63uPfm406L" roles="UYQK98wSEqxbnJyT9SKKAg==" protocolport="Tae3EBMgg+wZWeuWNhiE2h8T0FfHxt8wYjN/J8rWVnKVZzgZ+h2dxTO8uQokwts1JhCoazd5+ETq78kHeRmtsw==" barcode="0omnUFUgP4Yxj21lr92vJg==" customer="HOLW8EyaEzQgx/Zsg9q7ZkpOIRqbgFRm7uUVzs7K2ip+7nISouUvDVz1p5dSnloC6bfqTEb7deWWO1vVROFQQBMNKZ20EXSgfazNpJuStcljtwf7QryYdGxZLuvvv7eJS/yFiN9GJP6uoZi64Y/26Z0baBa+m0KORZ04iYxCvuksAsfc0cN1jvL7Ya9FKYe1M6BWchlzCFzoKRTe9uXbd4awUsH9/fH2jz2Zf5mUiUfR4EiByxdZWF6TR9pjVHqPZ0nn5kQUZW1tZn9vUiXNOhgykkfI/GBTmyxeyGP819Ha4MydX1CAwfoQTsN+8gHJWiMFtk0MA7GPvXr5XlKvTrPBtjJXHK5FOe5tIrCOv5Mtclv45xotAIzq2NxqNLHL7DhHSAIZ/oW9ayqR3VHlzS8/wJmvZf0oWrJPCxfBXak=" authenmode="2ftNWvQKeKXTlT5A7EcTiQ==" authenextrainfo="UYQK98wSEqxbnJyT9SKKAg==" industrytype="UYQK98wSEqxbnJyT9SKKAg==" ibeginyear="MW/lvmahbLKLGLCWjLR2zA==" aiosrv="UYQK98wSEqxbnJyT9SKKAg==" crmsrv="waaHPsaOVCmjbmxAna7kYQAgbvgyesHjvODo9ihTowc=" utusrv="waaHPsaOVCmjbmxAna7kYX9j1yl9khUmyP0NCOawHzk=" remind="Z7aeCvPw1ZTz5g+9MRKehQ==" usermode="AQoB1mAh06Q6Wg2KCKknEg==" sps="XkPJAB7LXWYx3wOvQMoBgg==" sysdate="4fiioYcDVO/FLdLVs75yMw==" /></ufsoft>
+2020-07-10 15:51:18,712 [1] INFO  - begin login useriddemo
+2020-07-10 15:51:18,712 [1] INFO  - begin  appServer:
+2020-07-10 15:51:18,713 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:51:18,736 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:51:18,737 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:51:18,738 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:51:18,927 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:51:18,927 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:51:19,072 [1] INFO  - end SubAuthenticate
+2020-07-10 15:51:19,072 [1] INFO  - end SubLogin
+2020-07-10 15:51:27,432 [1] INFO  - begin login useriddemo
+2020-07-10 15:51:27,432 [1] INFO  - begin  appServer:
+2020-07-10 15:51:27,433 [1] INFO  - begin SendSymmetricKey
+2020-07-10 15:51:27,453 [1] INFO  - end SendSymmetricKey
+2020-07-10 15:51:27,454 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 15:51:27,455 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 15:51:27,647 [1] INFO  - begin SubLogin:ST
+2020-07-10 15:51:27,647 [1] INFO  - begin SubAuthenticate
+2020-07-10 15:51:27,805 [1] INFO  - end SubAuthenticate
+2020-07-10 15:51:27,805 [1] INFO  - end SubLogin
+2020-07-10 16:01:17,725 [1] INFO  - m_userToken != UserToken appserverWIN-VR75UK1COEO
+2020-07-10 16:01:17,750 [1] INFO  - UserDataXML<ufsoft><Entry user="ozFKWjGO5i36NCZa3/2m+w==" data="aZ3uPvguEEDEbBYOaqm9Kg==" accid="xS7XNvDEd9Oh1gX7ayh6PA==" appserver="M9mJ2gqJRtw87nrsvRcpWQ==" subid="B5pEnSeoz5KMYg1Voc9xag==" iyear="BPw8RTiAKwsLp6OCEflpiA==" connstring="j81s1aNZi1P0CEZp1IdaAAAt+xGQeSnEqS7egvyamRwXKbXyqNSGkikhi4IkUDreK5CKlivZMxzBb4vZmOcF6M4TdCCVryH2aOuK/yRPWUNFkg58h8WHdJSRATY9GWslhAMOG2J1a6k4XWMaPN9tMM89ZdJb+JPCXTeu1l5r4LCkJijcq8emhAwzpEzIJGKHrvhUG+ckFCUy9tGxfaBSXU4cwjZGhUjUHsRSBwJEk7HDi/p9FhEIMDyyOvQBg/Ij" operdate="IAW/FVfzWSf3jVEfZT3ECA==" datasource="HzxTdNzL3U1VLsla6Zx2sQ==" languageid="xt9zDNVagG1NQT2MWdDbZw==" workstationserial="/yO8qp7NwMdfjOVr9r5e5PInzR9CajDzg5fmZ2oh1DmTev8gqkruskT9z/oyQEOe/FxSmEBRKHmCj0jGIK1LCg==" rightserver="M9mJ2gqJRtw87nrsvRcpWQ==" iscompanyver="IjZR36RYEytSzac978zFUg==" secondconnstring="RqlQhokQ77ZG5yeJI/ZqDufu4yOfORxk/vDcge7Qr4Om0M5BFpdTmsKvSvfwFvL0MDLXMGAwTswUJgidYBFdT36glW+mg3TSwXVuIJxxkJX61rMPH3rlM21WYfraSj/m47vhkMNh5XC7FB7FY+j2qWxkQ+ZDy4MDT7878dZQ5om119MkAGnc5tWxiRUJzZHty8aKzmoaJIsHin0pK4Rn8ocUHppiKMU8gTQslIq/j/NRlXysL/jFQtu/aSyytarqrtpwxoRiYrKKe5Dz3IMJwUReuZciWPzDxRv3sTG8g4/aqdpgvMUNeFO78WHwV/NkPgfOc08AejGf2ufSsgKADmWLbEvkkRSorE2CxERwBfcmRlsGAh2RQ7jYZRXOVPbya38McYThBPlNDcFLVGrkvD3w7dQAUQFQTr/VeYy412Q7hnnx2GUdxZ+47xLlZbPDrsaaKMkNCFt+ULW8ZCk3946FpGMmr85dn3tqMtjQdomKX6OriYNuHx2N57dOtlZiyIQhImhXj16sw4vN+O1mJLVtEOzNDbNh6ZL/j2IJtW5/yupqo0EtYXVpk/b7FoqFN0N51H53Smi5eL6jnUHMdjrhoBl5E4fr+DNL+o343Y6J8U4Nv5wUDsc3sr37w9ubool485NjB1pOb0Q2JyTaFF+5UW4ulreyGfkzENPoYJt5cNVVX8ooyUNvE+uAOSHiBi0dYIhB1HhfNwWUKgvzVBWg74LQ5Ys/lIrdR/m1aUfB2RCwLORmo/c4SoSOJkJH6QSbzgPCh++oSyDyqypgtxHhr1psc+Kvb3UCoKg+eaQ=" employeeid="MMRBwiuJjKYI5UgKPxEZNQ==" isadmin="JJuBqAPQ1LUtaXs0wvkRkQ==" username="ozFKWjGO5i36NCZa3/2m+w==" accname="6msQVpXO7koqpgDlg5juBg==" enttypeid="xmkK9EnLRkd2MbsLZGBZTA==" imonth="ZbvvEmIoto3Z9kOPSgN1EA==" appServerserial="/yO8qp7NwMdfjOVr9r5e5PInzR9CajDzg5fmZ2oh1Dk/KoscvRnuxnModGwCF7ps" roles="fOaw3YhJTxyk20MYM7uSpg==" protocolport="RMwJ3fXQ+zctxx4m730XzXHQeMNEffaxzYj2lnftMPpOXlERlfBVumQmy6rMVN+5C10GaI/13C6G5DIe2De5qw==" barcode="C3JJsMC6qBsX+C32ygG9yA==" customer="5ymybX8Oz0jSPqeRzx+UvTJTPqvuzpoajv4SbzuFU+LZaWkx3yT1+bNJFj6SkngirT2PqI6RO9mjrbbcJxpTbDM+npZld8V+aVHz5rBkFLUhjbshaRYX9fdmv1G1SYYIdDNN5ApyyHUGAtrcd4DAd/WuxTlvmTmacIo0KO2CEwrojwJiakTHKSBm9/tkHved53K6OtUt4s/sKoCMkMVrAyHGmIXk2hVtkh7+3xqreh7tWxNYSocBZT4boW0hhJnF2pYpSYlP2XUF49ht4jL8mw3HLKvDaV3xhXiRT4+SSQdnK+MSP0dMMIrUdRuxOWue+Wt4c7BGdlP5ruDz0moVvzfr6YV/+UCLECShlBEN+wtVhP4rzRd7YjgRJmdXsWCYAVeBv59n2ivMgau/raAn/ApcMHI53czkPtYBbEaiv/c=" authenmode="gwNglCFpRfEoGs+A2IBfIw==" authenextrainfo="fOaw3YhJTxyk20MYM7uSpg==" industrytype="fOaw3YhJTxyk20MYM7uSpg==" ibeginyear="55EtqUV8tesMXyANFxWEag==" aiosrv="fOaw3YhJTxyk20MYM7uSpg==" crmsrv="Wx3l8Br1DEIrvMzo3iMJHt47DpcAjdQM6Qpi14DbuW4=" utusrv="Wx3l8Br1DEIrvMzo3iMJHsKTg+XhtwpLuoLsdacUHj0=" remind="IjZR36RYEytSzac978zFUg==" usermode="ZbvvEmIoto3Z9kOPSgN1EA==" sps="JJuBqAPQ1LUtaXs0wvkRkQ==" sysdate="l7kczlVKxKdlOzbpvdsXbg==" /></ufsoft>
+2020-07-10 16:01:34,060 [1] INFO  - begin login useriddemo
+2020-07-10 16:01:34,060 [1] INFO  - begin  appServer:
+2020-07-10 16:01:34,061 [1] INFO  - begin SendSymmetricKey
+2020-07-10 16:01:34,083 [1] INFO  - end SendSymmetricKey
+2020-07-10 16:01:34,089 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 16:01:34,090 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 16:01:34,275 [1] INFO  - begin SubLogin:ST
+2020-07-10 16:01:34,275 [1] INFO  - begin SubAuthenticate
+2020-07-10 16:01:34,418 [1] INFO  - end SubAuthenticate
+2020-07-10 16:01:34,418 [1] INFO  - end SubLogin
+2020-07-10 16:01:44,160 [1] INFO  - begin login useriddemo
+2020-07-10 16:01:44,160 [1] INFO  - begin  appServer:
+2020-07-10 16:01:44,161 [1] INFO  - begin SendSymmetricKey
+2020-07-10 16:01:44,185 [1] INFO  - end SendSymmetricKey
+2020-07-10 16:01:44,186 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 16:01:44,186 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 16:01:44,408 [1] INFO  - begin SubLogin:ST
+2020-07-10 16:01:44,408 [1] INFO  - begin SubAuthenticate
+2020-07-10 16:01:44,586 [1] INFO  - end SubAuthenticate
+2020-07-10 16:01:44,587 [1] INFO  - end SubLogin
+2020-07-10 16:01:45,247 [1] INFO  - m_userToken != UserToken appserverWIN-VR75UK1COEO
+2020-07-10 16:01:45,264 [1] INFO  - UserDataXML<ufsoft><Entry user="aYdKdFhTLSUKXKm93sR37A==" data="huP8Rnp3aCkCHAGZOVBnew==" accid="8fR7hSQdyKQMtBMnLjkADA==" appserver="dArw+Rz0kYXKYgsJtp052g==" subid="AHG/0BHbl1kXEQWXMIBvHw==" iyear="ODRUiy4IJxYgpVPMiigGZw==" connstring="oDcFhxUs6AQZl7XLYYZKb/733gqg++oCGtOY10kcb9P5oXQGMfowMfq2/5ZpI66h2xV85q+8fwGj0wy6fjtR+J8xVvJNTplxjmUk0WzMHZRB8jgt7dQD0WjJZc9Olh4rliW7o9zqNtai2M0ZpOU9/jyEwra1PLv3S2HIE8NMYS+t5owB/S4U9TV0HSw27YnAbuTUSjQttyr53xyjs1m7QAUXRsSchE2ws04SfT2ZhIlXTuohCh/FfNdXu68dBZxU" operdate="qEqctZ40PIe4bkz1gVACjQ==" datasource="kpZv1I6VgUjjvkCpRR2BrQ==" languageid="d7z0EhIX4NGo/3lOEWBBUQ==" workstationserial="6iidk+fIDd4LM/BrIg+K/oOkIDFMBlXrpSN7kmgBIlnRz0Dkh6GQ9FpXdAxWJUBnOjQPb2L4xgqWCzSDfXJBHQ==" rightserver="dArw+Rz0kYXKYgsJtp052g==" iscompanyver="yiZeGLn8tw2wAE4RTObEqw==" secondconnstring="zJHJ3p0H4ecIUcLRbNq/se1loZOk4smp34lW7fzK2mxK2QIgS9W9mv+jmpTDvthAslVvwf3HHBc4yXF18UgL+P2GYeD64TLTrCF7cznj9Yka+cncWFz1iag6e7eyK5JadVean0rJvKL0bGKwybTOV6vdz9GPDxldmP+UJf7/HY3EDuu6fa7m5aUG98BHPNe9JQplMtyuWJbuzvy9RLEahzMqFccwpHpZApA3BtWdbQN137Vt/gzh+BpNXWdKBONk3QFPcNyF3jj3yMMBHcNVv/xz4jKuq3hqXUcQakEEomVUs6XWTnsYi78taNWF8x1J8ICXOempjqhmfQWWErp/TFgCWnFjW7dj/48J7/wFjxYoiVc25CyLuVTK18Lx6YOdcYbSQ/c7wQX7bHt6QfhhgxG0VPkOvfvWtdx6PWWI6YHPMIaxGLpVJzCA5AzvTABoGpl0VgGuMkCNaLvov/SXSoEybSWirJ9h2Qg+0VJ5nexe5pm/RL1ccbeNsGoM6hNRoLav09GcbG3JqncJdrbqxzyKZBwTCzh1kcGA6MWxNJXjj4n0wFBuxZrxeCGh0gZa3MVap1rzfeq3d2od04e4flVuAaAW/ReVFxASX6MEQb69PctRj0kjuvESma4/4pVNOFxrdng/gKs8aVuNqifP+xkiemrpwmeAyudGiPNtohm7SujOz+ZRl5ozaBlzq05ZX4sGzCIWyvOfH5yd00xseNcY6Yxdn1nMb1NvZHye1++kBHKKkR/ZDY+T+9CTZNkX0l+rXo0hRpxYIoclLw030MtDX+0MNyDHori6HbYEuiA=" employeeid="IBecAElC4CSLeljO27KJoA==" isadmin="1lC/UAww8zjoeeN7go9UGg==" username="aYdKdFhTLSUKXKm93sR37A==" accname="NfZuntrLO+rLfc+0brDFQQ==" enttypeid="nvo4M9Yao9ClEeMU799E+g==" imonth="fTWSs06hhS5JWAZrN8NWbA==" appServerserial="6iidk+fIDd4LM/BrIg+K/oOkIDFMBlXrpSN7kmgBIlnme+i6biCEksGnBhOlM2VY" roles="7JKIv6jaTeHDknOFqImtJA==" protocolport="GJDyWu16IGFYlUWpNvTyNOV0yJjskyv+WXjIb+itpJcmhDAvlWxaRJK3lOjIiUveIGyu0Wwo7hbTax9beRoNPQ==" barcode="tlOVwNdcAovK9eLAwgxV7Q==" customer="yuApQZHfvFcF0IZHOuviFt4aYCP/sQwM6W5azM2I1StNyD8n2DgQoawDvOL+C1EgTFUsgYSENH1A459PKoXBDbp31huFnsp9c36W6ZLhSrCBynxVBViMnCCUMJU4OO+dRL2G6qZZDeJ+rS5IMU9oGxDjsKVJ2zSsA4C+4UUIdgRCgESxkWUBhE/L4SW2LlfHwwE8deC/eYG+yqhim4Q9Y5byxwtQWr7wCAqThmJsWOVfr3vo7zRWKt5fPZkl4pGnar8GhNTAlBO0E39zK3FwKAvutkfB/xYU9zK1GMS3MQG8mBZuGB2COZrATbIg8D0MjHIO1j0geaSfRgKiRyPGMcv5CbnO7lMFNMPwiysLrNjlZW8wHH2vDw1XYMKLNx1oSKfVjnuIbE8X57E39VKtxaoE7jfuY5KYvCN4yNeK054=" authenmode="WhfQoGeRK5x3iBWoDsbwOA==" authenextrainfo="7JKIv6jaTeHDknOFqImtJA==" industrytype="7JKIv6jaTeHDknOFqImtJA==" ibeginyear="ZlKe9894e43IZ3i+euHV6A==" aiosrv="7JKIv6jaTeHDknOFqImtJA==" crmsrv="vskXjJjCQs+LCv9r8P//ZbddbXFxTLuUlcj+nzoATj8=" utusrv="vskXjJjCQs+LCv9r8P//ZX7RzXLOz1rpsZgiYbrVoSQ=" remind="yiZeGLn8tw2wAE4RTObEqw==" usermode="fTWSs06hhS5JWAZrN8NWbA==" sps="1lC/UAww8zjoeeN7go9UGg==" sysdate="W3qTSd3KjXFJGL5GYbblvA==" /></ufsoft>
+2020-07-10 16:01:54,320 [1] INFO  - begin login useriddemo
+2020-07-10 16:01:54,321 [1] INFO  - begin  appServer:
+2020-07-10 16:01:54,322 [1] INFO  - begin SendSymmetricKey
+2020-07-10 16:01:54,342 [1] INFO  - end SendSymmetricKey
+2020-07-10 16:01:54,343 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 16:01:54,343 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 16:01:54,563 [1] INFO  - begin SubLogin:ST
+2020-07-10 16:01:54,563 [1] INFO  - begin SubAuthenticate
+2020-07-10 16:01:54,710 [1] INFO  - end SubAuthenticate
+2020-07-10 16:01:54,710 [1] INFO  - end SubLogin
+2020-07-10 16:01:55,557 [1] INFO  - m_userToken != UserToken appserverWIN-VR75UK1COEO
+2020-07-10 16:01:55,567 [1] INFO  - UserDataXML<ufsoft><Entry user="y77eHUmCJ3jvNzNDdBjVDQ==" data="IppQe55NGfek8GB1Bc5HTg==" accid="lnbWaV25xOad2mEhMvaNvw==" appserver="R0oiPUduNkkwqzx38e2W2Q==" subid="eVHFJCgYmz9b70UQlh8J4g==" iyear="Et4QkCBqmLop4Q6kU3SCOQ==" connstring="ZzUY32OnUnAT443XSIiQ8enEkmQlbqOG67mBxYmNN9odbDWI+Ry2AHAEwfmD9JTNAr3eVsy3G6xg69dxry/GqO4d3xJ6AOwAJhhJieNHLfhDPJvFRdkuTWTp3TaB1Z9RcxK1t9yeRqgx4vnc9jXvXda1VujRWm5wDJc/JcPaIMEVqBT2dHoq6LWAw9W6utFbh1ufEOgXEpzi7LTslxyjX2MKVqxF7vXWNTUavfHhYLYtxoCVG6EZEknAxqqzkOmJ" operdate="f4whlzDGNezIiKLWTyWfxg==" datasource="3CaCemsh9solIGEdmjW2Sg==" languageid="3IQKiSs5w8Zpqgkv2OdTCA==" workstationserial="ldY9wQD9WO1GpM5roiLX4U7fSV/l2hs6iiU73qsNnDBQbIAEHvggKoNVbI8Ti8A9canzhvWkE4iv/yeJSj1xpg==" rightserver="R0oiPUduNkkwqzx38e2W2Q==" iscompanyver="v7r5pzgj+G+hEdBAGKwUag==" secondconnstring="DQwJgFTKPjvjHmkRQMTF75gVPkhSdCpXPBb8hskUMh/aXW8b4GtxDrbS9ZZ9uR4ezmreDYrGhrAjeVEuLsfGpEWgmwlw0dZDHicbuB7MHlQ1zzA4zVFS+EfDITrpfRSinTi+E906k8gTdWX0osAAjAo3OyOMDFOlgu01TMYQVslpO4TJlz9nQOEOFoylbFRlhRXhOBBo79HP+BIpPzsflDiAR2Ekg8/b1XtXc2xpGLi+0AM4MDbyhwaO1hO7Jy0rQ2U0GN0O4Yuu3ivRNb78B20iqHjeO2Q6XO13JwRG94RZ+EkxiG96Z/EVw48/2FGKbqLMC13fuU3dXNfOHTtz5qz/Z8GH1r8mGU+91/Y8Wr7yS1LdKAnJktajXa//JH++6E4zvEDgpwly7PVpKctzaITA8bshrOxAKkc6SxUZ4ZYi2Ta8p7LmK965n30h+0lJFkOParxAtb5T2Ct+TQkOjVTem7irQf5FUYuVOIt4L7NlCiSIaRJws2w9BLpczEiFsjPfYACruFVl6VkQNInVH2ZxR4pVfyLUcd5nPgBY5k8pPT/hlIUJLk/mRnhcES3mhuqjS4IALwGs1yIkN4X8odDXMYrCtk4wmmxUY1QPhqIFPx6LfC+HWiF0RQYldKdxBD5fzepocdDwvThhMzdLtNUUbApItWBkcDug/o4eeGed+gkfD0qCx1v39gPU5w+9Dm1afiWuNZOKRPrSpFGx47duNMtN0q3MFmaoHFKM9E008NsdREDIfuoVP33x/tnaZrBCkLBk+JdaeIayfa1BtRVcZBgYG2NdR+VtHdrMTTo=" employeeid="QSQ9muly48GqF9692xwaKQ==" isadmin="5byhEpAL8kpsDcBJPBfM0g==" username="y77eHUmCJ3jvNzNDdBjVDQ==" accname="yoaCG8DmQjISms+KBwkQHw==" enttypeid="fu8m3CZU6dAR5JcVVdgEsw==" imonth="ES7xe07ZSJNskTbaqd7fTA==" appServerserial="ldY9wQD9WO1GpM5roiLX4U7fSV/l2hs6iiU73qsNnDBG+aYAKKFrlj4fM34JgHZM" roles="QfZyq4zkPGcUFFmWxVSt0Q==" protocolport="6eMX3vhbNpKwxCYUYFYar666LHeuC1GtpQs7hRQdPRCyvUJUeq6id7ZglizJ0Sz4fI/4sAQTbm5GII8PV5QuLA==" barcode="uKjTUfpSlZvvig16KhGa8g==" customer="VcZ+gacJXxhherO4PdXxU+5cBtodxhniE3HtudLwi6riha3oagLmmO6vXnohooJbGJE+jW0D8tLc19CASFTmt8V3gCstXqLTIjZcd4b4WTKVqndDEfJkK/J5dIBgwCNZ5IYWdJDU6KE6ewDChc/GFpc3DjCJ0d+Ay1uX6g3QDOTcHAtpQDdTQek8lxQGzrh0vqyyXWDMR/zBU/jbxBH/Ul3NaS23NGACIDjhju8/JcKH9F8sALOj1ofW6kK6cc0B8qOic9RAtgJ4t3t5xG5WZjV5Jlgtqec28IhhtCs/oh1LvRDiJFz7sgyj78aAQG202pBk59ycT+gXB8It+XbsE1dHBmjYnZCHwIOK6Wx0dBBw9rhWbN/jAloZTN2FC9t9p4lmRrqN38VweKRGvt6jr+HjawurKzytJpsY/3cDJwk=" authenmode="NDcm6QMAc90O2avRqAMBzg==" authenextrainfo="QfZyq4zkPGcUFFmWxVSt0Q==" industrytype="QfZyq4zkPGcUFFmWxVSt0Q==" ibeginyear="2N/zkGNJHQ9lqc8D5wLt5A==" aiosrv="QfZyq4zkPGcUFFmWxVSt0Q==" crmsrv="auebTJbdcApJj7wG3PEdxni7SA4YJ49NQI11BSmRGMM=" utusrv="auebTJbdcApJj7wG3PEdxsmi7GePIKq/igmH5vf1rVY=" remind="v7r5pzgj+G+hEdBAGKwUag==" usermode="ES7xe07ZSJNskTbaqd7fTA==" sps="5byhEpAL8kpsDcBJPBfM0g==" sysdate="AlH4e+zyo7b4H8BBv1wjkA==" /></ufsoft>
+2020-07-10 16:02:03,523 [1] INFO  - begin login useriddemo
+2020-07-10 16:02:03,523 [1] INFO  - begin  appServer:
+2020-07-10 16:02:03,524 [1] INFO  - begin SendSymmetricKey
+2020-07-10 16:02:03,544 [1] INFO  - end SendSymmetricKey
+2020-07-10 16:02:03,545 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 16:02:03,545 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 16:02:03,740 [1] INFO  - begin SubLogin:ST
+2020-07-10 16:02:03,740 [1] INFO  - begin SubAuthenticate
+2020-07-10 16:02:03,899 [1] INFO  - end SubAuthenticate
+2020-07-10 16:02:03,900 [1] INFO  - end SubLogin
+2020-07-10 16:02:11,535 [1] INFO  - Subid:ST LSSubid:ST
+2020-07-10 16:02:11,574 [1] INFO  - client StopTimer
+2020-07-10 16:02:13,061 [1] INFO  - begin login useriddemo
+2020-07-10 16:02:13,061 [1] INFO  - begin  appServer:
+2020-07-10 16:02:13,062 [1] INFO  - begin SendSymmetricKey
+2020-07-10 16:02:13,083 [1] INFO  - end SendSymmetricKey
+2020-07-10 16:02:13,084 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 16:02:13,085 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 16:02:13,282 [1] INFO  - begin SubLogin:ST
+2020-07-10 16:02:13,282 [1] INFO  - begin SubAuthenticate
+2020-07-10 16:02:13,464 [1] INFO  - end SubAuthenticate
+2020-07-10 16:02:13,464 [1] INFO  - end SubLogin
+2020-07-10 16:02:13,966 [1] INFO  - m_userToken != UserToken appserverWIN-VR75UK1COEO
+2020-07-10 16:02:13,977 [1] INFO  - UserDataXML<ufsoft><Entry user="WaQrSfEXWqdEnSk7p/ww0w==" data="FDQT2R11YcDkX7J2vy2MXg==" accid="DmphJ9lcU81OVYalGzXXWQ==" appserver="AkqsSfIdn8gbgyh8IVZZaQ==" subid="iBsQA8+lfmcKkcaXVbBy3w==" iyear="XYgOQXqXY8e8qjGdzhx98A==" connstring="K9XcqcHPrmZzdoQbOyWsmqIYRYjLRRt+pNtCvjm6QMUVcT4yGrB/6aw8PKuETZWQ+bCK5vnDMgxZScUrmo7k3y71Vsu8xt6DiKKreEpWVOIuJkZETCx9VL6pA9dNVPjciAGKro6yUgqsDHS56ShmpvTajzU9sa3Au/w+ZO09I3Umfw0NKKdVshKU+L2AqeXI1gq7XAzS79vglpGyFJB5BXinOFA6uW6/DCerj6XyEIiq3FQEHznmgc06uc4qxsQ1" operdate="RPEhO6vcNIkvdJTrSE0MGA==" datasource="4AbYszs2JN+hY7YqRczNAQ==" languageid="WLVRlpFhMjcYn0TWbXrjhQ==" workstationserial="xMoVX2qcXNaTEB+bB3Syj6sL5vQ+WqKdayd8d8F945B38oGrYPqR3bTtPqol7gXeMsbgou4+OR/e+GsqdL4CVw==" rightserver="AkqsSfIdn8gbgyh8IVZZaQ==" iscompanyver="cs+gbPlHeXMezdg/vJCYbA==" secondconnstring="bwt4DGXy2uBlApXmHmeCoBEoVUzM6hx3ClSUbKAXG71SuVImYd9rLZeIE7mnWi11JHgIHAcLFfVtduWBp8UwmaCrkZWi6uOs4TgIEl8taO3YWkm0dcUnBcMzCIGLNgZEVhM1bKzhbi/vzGM6rafn0lXWNnnyrD/XhobEDNACsoh4aoyVJNsrxlrnrOv6S1o5LKzHB0YcZl/PEwcu1AIGuv1xR4OQoa6DdLuRBAcO8GWBBif0AG2tBBjaao6434PxtqPrPsZ75t9YgY8I5AdGoSUS0FhXBN1JEDjDJpo+8zaxqUBje63G3Fe++xH0ZlmybBQu9xqjhb6AmjpBqbsInQqHIRoZuqHPSMxDBUVLsaB2tI3QjN1v+fF+vOUDmMZj3cmQ3Y3bHj2VhpwumiOWm5O/QiGqZNghrRIjWp8QzJUwJpdAfWgdrKvWc0jZuHuMlQn8UPKnoMdb6sMVqot4frmsYZyZjakx9iWiSHvw0EmuSwCEHWgPju7uhU4OQXH8mQY2IF0PTSap6pC1+bPLEfMnP/rwuPfJ5ZWbr34I0Lxq8KcCerEED/OGTIv2CyaD35ZDlpBga9Bs69BjAfzgOpBTE2ilTt3X/nFKuvDEzNLnlyR/tViVKBgXZ/qj8zW4Wsz92sw4dSV4uNnraCD5w6HkzAuQsQgTrCH6VDFvAbbTUYY+87yr+bMz5mLp1gCgbaupzIBHKvbdccgMhp1fWDoHizu40pN7BiXb+CSV2XNQMfhtmgG29tRh4W/ewT7rZjVxeLUD8AYOvaKq10fQlFi+qTr4xGpRBFGLI4FlmJ8=" employeeid="C2GgSJgZlGB5+0lE3RFnTA==" isadmin="JrgrvhT1vM1LoGkxY0odUQ==" username="WaQrSfEXWqdEnSk7p/ww0w==" accname="lGI+LnMjVvKd+eCaU9JCUg==" enttypeid="D3Fyg0O/VDjpAsprQydDsw==" imonth="CbYMFrGxkm3fd5vAg31qkA==" appServerserial="xMoVX2qcXNaTEB+bB3Syj6sL5vQ+WqKdayd8d8F945A9/UaFz92UcFVNlXNXZykJ" roles="c1BQwWEw5BMI/m4DK/t38Q==" protocolport="ambxs6cX9b3Y8BmnxOXbbk9Lkx9zPhCLCHHxsx7txqe9t/Xzg5dumL8h3b3mciaC2D3zvWbY6lhPPXVTKL3Rag==" barcode="osYvQHIyWJGj6NW/SDgHIg==" customer="jzcx9vo8kuduOYZN+11T4M80n29SSZ3BB+R90cuGZBJe6CZzzj29Pa7FWCoRTOUFeZRggAhM2Rb7+8c3End2yZxzlu5CaGS9nXL0aA1+y57mUIV7BTf2nkjR4IAabqnuxKop+BvFAV0oqK8cIpE0jr+IH8mTxWe7kM/B98XeR0Ijnj/MsbQ1UVRUu0gtnYtvRfigdPkSwuS/EM0lBu7JKfcgm+BdWkxpCWXt4CgZazWS6bIPS3xq2BAR5COd091tucER9B97qv7JaLd7rqKZ2FyB5PVVw7cz/3k0+/vc88IK/UD3C9MjaJVZofCVr6Wy0n2fi+T6yg24nm3Mwc661tHdTlIJZki9+HWs+PMPWWooOjgA2RlvIYXqDIkzwR8riCgtudBSOXLibVJcZnJYS/FeTwjT9VcyTVGt5k5xfuE=" authenmode="GQ4lruJnERkd8b+3EG026A==" authenextrainfo="c1BQwWEw5BMI/m4DK/t38Q==" industrytype="c1BQwWEw5BMI/m4DK/t38Q==" ibeginyear="IxUmZt0POW8sIyVbEqeznA==" aiosrv="c1BQwWEw5BMI/m4DK/t38Q==" crmsrv="ssvlPEwv4D+4zr9t7WgIlleA1iOD6350q3p9qYpzvfA=" utusrv="ssvlPEwv4D+4zr9t7WgIlrtjzHZDoD6VpHOC4vuU6ow=" remind="cs+gbPlHeXMezdg/vJCYbA==" usermode="CbYMFrGxkm3fd5vAg31qkA==" sps="JrgrvhT1vM1LoGkxY0odUQ==" sysdate="szC6tUsWKNYog+CUctKUOg==" /></ufsoft>
+2020-07-10 16:02:20,048 [1] INFO  - begin login useriddemo
+2020-07-10 16:02:20,048 [1] INFO  - begin  appServer:
+2020-07-10 16:02:20,049 [1] INFO  - begin SendSymmetricKey
+2020-07-10 16:02:20,070 [1] INFO  - end SendSymmetricKey
+2020-07-10 16:02:20,070 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 16:02:20,071 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 16:02:20,255 [1] INFO  - begin SubLogin:ST
+2020-07-10 16:02:20,255 [1] INFO  - begin SubAuthenticate
+2020-07-10 16:02:20,408 [1] INFO  - end SubAuthenticate
+2020-07-10 16:02:20,408 [1] INFO  - end SubLogin
+2020-07-10 16:02:29,567 [1] INFO  - begin login useriddemo
+2020-07-10 16:02:29,567 [1] INFO  - begin  appServer:
+2020-07-10 16:02:29,568 [1] INFO  - begin SendSymmetricKey
+2020-07-10 16:02:29,588 [1] INFO  - end SendSymmetricKey
+2020-07-10 16:02:29,589 [1] INFO  - WIN-VR75UK1COEO
+2020-07-10 16:02:29,590 [1] DEBUG - 
+UFSoft.U8.Framework.InvokeService.GetObject(System.Type, string, Hashtable):
+	--remote type:        UFSoft.U8.Framework.Login.BO.I_CreditIdentity
+	--calling codebase:   file:///C:/U8SOFT/framework/UFSoft.U8.Framework.Login.BO.DLL
+	--calling assembly:   UFSoft.U8.Framework.Login.BO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=22eca903d177133a
+	--executing codebase: file:///C:/Windows/assembly/GAC_MSIL/UFSoft.U8.Framework.InvokeService/1.0.860.0__27100cfe39774293/UFSoft.U8.Framework.InvokeService.dll
+	--executing assembly: UFSoft.U8.Framework.InvokeService, Version=1.0.860.0, Culture=neutral, PublicKeyToken=27100cfe39774293
+	--serverName:         WIN-VR75UK1COEO
+	--remote url:         tcp://WIN-VR75UK1COEO:11520/U8ApplicationEx/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+	--active url:         tcp://WIN-VR75UK1COEO:11520/UFSoft.U8.Framework.Login.BO.CreditIdentity.rem
+2020-07-10 16:02:29,773 [1] INFO  - begin SubLogin:ST
+2020-07-10 16:02:29,773 [1] INFO  - begin SubAuthenticate
+2020-07-10 16:02:29,924 [1] INFO  - end SubAuthenticate
+2020-07-10 16:02:29,924 [1] INFO  - end SubLogin

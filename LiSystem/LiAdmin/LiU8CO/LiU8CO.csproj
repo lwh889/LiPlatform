@@ -51,10 +51,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LiEnum\EntityType.cs" />
     <Compile Include="LiEnum\OperationType.cs" />
-    <Compile Include="LiEnum\VouchType.cs" />
+    <Compile Include="LiEnum\PuVouchType.cs" />
+    <Compile Include="LiEnum\U8Sub.cs" />
+    <Compile Include="Model\LiU8ApiGetDataModel.cs" />
     <Compile Include="Model\LiU8COFieldModel.cs" />
     <Compile Include="Model\LiU8COReponseModel.cs" />
+    <Compile Include="Model\LiU8ApiDataModel.cs" />
+    <Compile Include="Model\LiU8ApiIdModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\ALiU8CO.cs" />
@@ -63,7 +68,9 @@
     <Compile Include="Service\Impl\LiU8SACO.cs" />
     <Compile Include="Service\Impl\LiU8STCO.cs" />
     <Compile Include="Service\ILiU8CO.cs" />
+    <Compile Include="Service\LiGetVouchData.cs" />
     <Compile Include="U8COContext.cs" />
+    <Compile Include="U8COContextTest.cs" />
     <Compile Include="Util\DomUtil.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -276,6 +283,10 @@
     <ProjectReference Include="..\LiCommon\LiCommon.csproj">
       <Project>{e230d61a-c177-4ef2-b257-e7f0a3b62a0d}</Project>
       <Name>LiCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LiModel\LiModel.csproj">
+      <Project>{6df7e2ad-00ab-4bd7-8ea1-a81bc216261c}</Project>
+      <Name>LiModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LiU8CO.LiEnum
 {
-    public struct VouchType
+    public struct PuVouchType
     {
         public const string PurchaseIn = "01";
         public const string DispatchList = "5";

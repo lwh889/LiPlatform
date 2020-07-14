@@ -211,13 +211,13 @@ namespace LiForm.Dev
                 querySchemeModel.querys = new List<QueryModel>();
 
                 List<QueryModel> querys = gridControl1.DataSource as List<QueryModel>;
-                querySchemeModel.querys = ModelUtil.copyEntitys<QueryModel>(querys);
+                querySchemeModel.querys = LiModel.Util.ModelUtil.copyEntitys<QueryModel>(querys);
 
                 List<EntityModel> entitys = gridControl2.DataSource as List<EntityModel>;
-                querySchemeModel.entitys = ModelUtil.copyEntitys<EntityModel>(entitys);
+                querySchemeModel.entitys = LiModel.Util.ModelUtil.copyEntitys<EntityModel>(entitys);
 
                 List<FieldModel> fields = gridControl3.DataSource as List<FieldModel>;
-                querySchemeModel.fields = ModelUtil.copyEntitys<FieldModel>(fields);
+                querySchemeModel.fields = LiModel.Util.ModelUtil.copyEntitys<FieldModel>(fields);
 
                 LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).newEntity(querySchemeModel);
                 MessageUtil.Show(LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).tipStr, "温馨提示");

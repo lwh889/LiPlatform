@@ -156,6 +156,7 @@
     <Compile Include="Util\JsonUtil.cs" />
     <Compile Include="Util\MessageUtil.cs" />
     <Compile Include="Util\ModelConvertUtil.cs" />
+    <Compile Include="Util\ModelUtil.cs" />
     <Compile Include="Util\NetUtil.cs" />
     <Compile Include="Util\QueryUtil.cs" />
     <Compile Include="Util\ReflectionUtil.cs" />

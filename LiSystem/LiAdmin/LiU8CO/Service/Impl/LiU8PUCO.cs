@@ -103,12 +103,12 @@ namespace LiU8CO.Service.Impl
             SetDefaultValue();
         }
 
-        public LiU8COReponseModel Insert()
+        public LiU8COReponseModel Insert(bool bAudit)
         {
             liU8COReponse = LiU8COReponseModel.getInstance();
             liU8COReponse.resultContent = PUCo.VoucherSave(domHead, domBody, VoucherState, ref vouchIdObject, ref _CurDom, _usMode, ref _sOverDetailsXml,ref _DomMsg );
             liU8COReponse.bSuccess = string.IsNullOrEmpty(liU8COReponse.resultContent);
-            liU8COReponse.voucherID = Convert.ToString(vouchIdObject);
+            liU8COReponse.vouchID = Convert.ToString(vouchIdObject);
             return liU8COReponse;
         }
 
@@ -124,7 +124,7 @@ namespace LiU8CO.Service.Impl
             return liU8COReponse;
         }
 
-        public LiU8COReponseModel UnAudit()
+        public LiU8COReponseModel UnAudit(bool bDelete)
         {
             IXMLDOMDocument2 domHead = new MSXML2.DOMDocumentClass();
             IXMLDOMDocument2 domBody = new MSXML2.DOMDocumentClass();
@@ -149,7 +149,7 @@ namespace LiU8CO.Service.Impl
         }
         public void SetApiContext(string paramName, object paramValue )
         {
-            AttributeUtil.setValue<LiU8PUCO>(paramName, paramValue, this);
+            ModelUtil.setValue<LiU8PUCO>(paramName, paramValue, this);
         }
         public VoucherCO_PU.vouchertype getVouchType(string vouchType)
         {

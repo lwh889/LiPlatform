@@ -10,6 +10,8 @@ using System.Data.SqlClient;
 using System.Collections;
 using System.Windows.Forms;
 using USCOMMON;
+using LiU8CO.Model;
+using LiCommon.Util;
 
 namespace LiU8CO
 {
@@ -521,67 +523,186 @@ namespace LiU8CO
 
         private void Button5_Click(object sender, EventArgs e)
         {
-            U8COContext.TextNew();
+            U8COContextTest.TextNew();
         }
 
         private void Button6_Click(object sender, EventArgs e)
         {
-            U8COContext.TextAudit();
+            U8COContextTest.TextAudit();
         }
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            U8COContext.TextUnAudit();
+            U8COContextTest.TextUnAudit();
         }
 
         private void Button8_Click(object sender, EventArgs e)
         {
-            U8COContext.TextDelete();
+            U8COContextTest.TextDelete();
         }
 
         private void Button9_Click(object sender, EventArgs e)
         {
-            U8COContext.SONew();
+            U8COContextTest.SONew();
         }
 
         private void Button10_Click(object sender, EventArgs e)
         {
-            U8COContext.PUNew();
+            U8COContextTest.PUNew();
         }
 
         private void Button11_Click(object sender, EventArgs e)
         {
-            U8COContext.SOAudit();
+            U8COContextTest.SOAudit();
         }
 
         private void Button12_Click(object sender, EventArgs e)
         {
-            U8COContext.PUAudit();
+            U8COContextTest.PUAudit();
         }
 
         private void Button13_Click(object sender, EventArgs e)
         {
-            U8COContext.PUUnAudit();
+            U8COContextTest.PUUnAudit();
         }
 
         private void Button14_Click(object sender, EventArgs e)
         {
-            U8COContext.PUDelete();
+            U8COContextTest.PUDelete();
         }
 
         private void Button15_Click(object sender, EventArgs e)
         {
-            U8COContext.SOUnAudit();
+            U8COContextTest.SOUnAudit();
         }
 
         private void Button16_Click(object sender, EventArgs e)
         {
-            U8COContext.SODelete();
+            U8COContextTest.SODelete();
         }
 
         private void Button17_Click(object sender, EventArgs e)
         {
-            U8COContext.Text11New();
+            U8COContextTest.Text11New();
+        }
+
+        private void 新增ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text10New();
+        }
+
+        private void 新增ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text09New();
+        }
+
+        private void 新增ToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text08New();
+        }
+
+        private void 新增ToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text32New();
+        }
+
+        private void 审核ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text32Audit();
+        }
+
+        private void 反审ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text32UnAudit();
+        }
+
+        private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text32Delete();
+        }
+
+        private void 审核ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text08Audit();
+        }
+
+        private void 反审ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text08UnAudit();
+        }
+
+        private void 删除ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text08Delete();
+        }
+
+        private void 审核ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text09Audit();
+        }
+
+        private void 反审ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text09UnAudit();
+        }
+
+        private void 删除ToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text09Delete();
+        }
+
+        private void 审核ToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text10Audit();
+        }
+
+        private void 反审ToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text10UnAudit();
+        }
+
+        private void 删除ToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            U8COContextTest.Text10Delete();
+        }
+
+        private void 获取数据ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            LiU8ApiGetDataModel liU8ApiGetData = new LiU8ApiGetDataModel();
+            liU8ApiGetData.iEnd = 10;
+            liU8ApiGetData.iStart = 1;
+            liU8ApiGetData.sAccID = "999";
+            liU8ApiGetData.sCardNumber = "0301";
+            liU8ApiGetData.sDate = "2015-01-10";
+            liU8ApiGetData.sPassword = "DEMO";
+            liU8ApiGetData.sSubId = "ST";
+            liU8ApiGetData.sUserID = "demo";
+            liU8ApiGetData.sYear = "2015";
+            liU8ApiGetData.sWhereString = "";
+            liU8ApiGetData.sSelectFields = "*";
+            liU8ApiGetData.sOrderByString = "ID desc";
+
+            U8COContext.getU8VouchListCount(liU8ApiGetData);
+        }
+
+        private void 获取数据列表ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LiU8ApiGetDataModel liU8ApiGetData = new LiU8ApiGetDataModel();
+            liU8ApiGetData.iEnd = 1000;
+            liU8ApiGetData.iStart = 1;
+            liU8ApiGetData.sAccID = "999";
+            liU8ApiGetData.sCardNumber = "0301";
+            liU8ApiGetData.sDate = "2015-01-10";
+            liU8ApiGetData.sPassword = "DEMO";
+            liU8ApiGetData.sSubId = "ST";
+            liU8ApiGetData.sUserID = "demo";
+            liU8ApiGetData.sYear = "2015";
+            liU8ApiGetData.sWhereString = "";
+            liU8ApiGetData.sSelectFields = " cvouchtype cinvname,id,cinvcode,crdcode,crdname ";
+            liU8ApiGetData.sOrderByString = "ID desc";
+
+            string json = JsonUtil.GetJson(liU8ApiGetData);
+            U8COContext.getU8VouchList(liU8ApiGetData);
         }
     }
 }

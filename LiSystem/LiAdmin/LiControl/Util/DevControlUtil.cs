@@ -224,7 +224,7 @@ namespace LiControl.Util
             if (liGridColumnRefDict.ContainsKey(gridColumn.FieldName))
             {
 
-                object value = ModelUtil.getModelValue<TEntity>(gridColumn.FieldName, entity);
+                object value = LiModel.Util.ModelUtil.getModelValue<TEntity>(gridColumn.FieldName, entity);
 
                 DataRow drInfo = getBasicInfoValue(basicInfoKey, basicInfoTableKey, value, liRefDataDataTable);
 
@@ -234,11 +234,11 @@ namespace LiControl.Util
                 {
                     if (drInfo != null)
                     {
-                        ModelUtil.setModelValue<TEntity>(gridColumnAssist.FieldName, drInfo[basicInfoAssistFieldName], entity);
+                        LiModel.Util.ModelUtil.setModelValue<TEntity>(gridColumnAssist.FieldName, drInfo[basicInfoAssistFieldName], entity);
                     }
                     else
                     {
-                        ModelUtil.setModelValue<TEntity>(gridColumnAssist.FieldName, DBNull.Value, entity);
+                        LiModel.Util.ModelUtil.setModelValue<TEntity>(gridColumnAssist.FieldName, DBNull.Value, entity);
                     }
                 }
             }
@@ -260,7 +260,7 @@ namespace LiControl.Util
                 if (liGridColumnRefDict.ContainsKey(gridColumn.FieldName))
                 {
 
-                    object value = ModelUtil.getModelValue<TEntity>(gridColumn.FieldName, entity);
+                    object value = LiModel.Util.ModelUtil.getModelValue<TEntity>(gridColumn.FieldName, entity);
 
                     DataRow drInfo = getBasicInfoValue(controlModel, value, liRefDataDataTable);
 
@@ -271,11 +271,11 @@ namespace LiControl.Util
                         if (drInfo != null)
                         {
                             ControlModel controlAssistModel = (ControlModel)gridColumnAssist.Tag;
-                            ModelUtil.setModelValue<TEntity>(gridColumnAssist.FieldName, drInfo[controlAssistModel.basicInfoAssistFieldName], entity);
+                            LiModel.Util.ModelUtil.setModelValue<TEntity>(gridColumnAssist.FieldName, drInfo[controlAssistModel.basicInfoAssistFieldName], entity);
                         }
                         else
                         {
-                            ModelUtil.setModelValue<TEntity>(gridColumnAssist.FieldName, DBNull.Value, entity);
+                            LiModel.Util.ModelUtil.setModelValue<TEntity>(gridColumnAssist.FieldName, DBNull.Value, entity);
                         }
                     }
                 }

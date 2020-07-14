@@ -1,9 +1,11 @@
 ﻿using LiCommon.Util;
+using LiU8CO.LiEnum;
 using LiU8CO.Model;
 using LiU8CO.Service;
 using LiU8CO.Service.Impl;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,396 +14,168 @@ namespace LiU8CO
 {
     public class U8COContext
     {
-        public static void Text11New()
+        public static List<Dictionary<string, object>> getU8VouchList(LiU8ApiGetDataModel liU8ApiGetData)
         {
-            string json = "{\"sOperationType\":\"NEW\",\"sSubId\":\"ST\",\"sAccID\":\"999\",\"sYear\":\"2015\",\"sUserID\":\"demo\",\"sPassword\":\"DEMO\",\"sDate\":\"2015-01-21\",\"sVouchType\":\"11\",\"vouchData\":[{\"id\":\"\",\"cvouchtype\":\"11\",\"cwhcode\":\"02\",\"ddate\":\"2015-01-06\",\"ccode\":\"0000000058\",\"crdcode\":\"21\",\"cdepcode\":\"0501\",\"cmaker\":\"demo\",\"csource\":\"库存\",\"cbustype\":\"领料\",\"cfactorycode\":\"002\",\"editprop\":\"A\",\"datas\":[{\"autoid\":\"\",\"id\":\"\",\"cinvcode\":\"01019002066\",\"iquantity\":\"2.0000000000\",\"irowno\":\"1\",\"editprop\":\"A\"}]}]}";
-            Dictionary<string, object> dict = JsonUtil.GetDictionary(json);
-            List<Dictionary<string, object>> vouchDatas = dict["vouchData"] as List<Dictionary<string, object>>;
-
-            U8Login.clsLogin u8Login = new U8Login.clsLogin();
-            String sSubId = Convert.ToString(dict["sSubId"]);
-            String sAccID = Convert.ToString(dict["sAccID"]);
-            String sYear = Convert.ToString(dict["sYear"]);
-            String sUserID = Convert.ToString(dict["sUserID"]);
-            String sPassword = Convert.ToString(dict["sPassword"]);
-            String sDate = Convert.ToString(dict["sDate"]);
-
-            if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate))
+            U8Login.clsLogin u8Login = getLogin(liU8ApiGetData);
+            LiGetVouchData liGetVouchData = new LiGetVouchData();
+            liGetVouchData.Init(u8Login);
+            DataTable dt = liGetVouchData.getU8VouchList(liU8ApiGetData);
+            return null;
+        }
+        public static List<Dictionary<string, object>> getU8VouchListCount(LiU8ApiGetDataModel liU8ApiGetData)
+        {
+            U8Login.clsLogin u8Login = getLogin(liU8ApiGetData);
+            LiGetVouchData liGetVouchData = new LiGetVouchData();
+            liGetVouchData.Init(u8Login);
+            int iCount = liGetVouchData.getU8VouchListCount(liU8ApiGetData);
+            return null;
+        }
+        public static ILiU8CO getLiU8CO(object liU8ApiInfo)
+        {
+            string sSubId = string.Empty;
+            string sVouchType = string.Empty;
+            U8Login.clsLogin u8Login = null;
+            switch (liU8ApiInfo.GetType().Name)
             {
-                Console.WriteLine("登陆失败，原因：" + u8Login.ShareString);
-                return;
+                case "LiU8ApiIdModel":
+                    u8Login = getLogin(liU8ApiInfo as LiU8ApiIdModel);
+                    break;
+                case "LiU8ApiDataModel":
+                    u8Login = getLogin(liU8ApiInfo as LiU8ApiDataModel);
+                    break;
             }
-            ILiU8CO liU8STCO = new LiU8STCO();
-            liU8STCO.Init(Convert.ToString(dict["sSubId"]), Convert.ToString(dict["sVouchType"]), u8Login);
-            liU8STCO.InitCO();
-            foreach (Dictionary<string, object> vouchData in vouchDatas)
+            ILiU8CO liU8CO = null;
+            switch (sSubId)
+            {
+                case U8Sub.PU:
+                    liU8CO = new LiU8PUCO();
+                    break;
+                case U8Sub.SA:
+                    liU8CO = new LiU8SACO();
+                    break;
+                case U8Sub.ST:
+                    liU8CO = new LiU8STCO();
+                    break;
+            }
+            liU8CO.Init(sSubId, sVouchType, u8Login);
+            liU8CO.InitCO();
+
+            return liU8CO;
+        }
+        public static List<LiU8COReponseModel> DeleteVouch(LiU8ApiIdModel liU8ApiId)
+        {
+            ILiU8CO liU8CO = getLiU8CO(liU8ApiId);
+
+            List<LiU8COReponseModel> u8COReponseModels = new List<LiU8COReponseModel>();
+            foreach (object vouchId in liU8ApiId.vouchIds)
+            {
+                liU8CO.SetVouchID(Convert.ToString(vouchId));
+                LiU8COReponseModel liU8COReponse = liU8CO.Delete();
+            }
+            return u8COReponseModels;
+        }
+
+        public static List<LiU8COReponseModel> AuditVouch(LiU8ApiIdModel liU8ApiId)
+        {
+            ILiU8CO liU8CO = getLiU8CO(liU8ApiId);
+
+            List<LiU8COReponseModel> u8COReponseModels = new List<LiU8COReponseModel>();
+            foreach (object vouchId in liU8ApiId.vouchIds)
+            {
+                liU8CO.SetVouchID(Convert.ToString(vouchId));
+                LiU8COReponseModel liU8COReponse = liU8CO.Audit();
+            }
+            return u8COReponseModels;
+        }
+
+        public static List<LiU8COReponseModel> UnAuditVouch(LiU8ApiIdModel liU8ApiId)
+        {
+            ILiU8CO liU8CO = getLiU8CO(liU8ApiId.sSubId);
+
+            List<LiU8COReponseModel> u8COReponseModels = new List<LiU8COReponseModel>();
+            foreach (object vouchId in liU8ApiId.vouchIds)
+            {
+                liU8CO.SetVouchID(Convert.ToString(vouchId));
+                LiU8COReponseModel liU8COReponse = liU8CO.UnAudit(liU8ApiId.bDelete);
+            }
+            return u8COReponseModels;
+        }
+
+        public static List<LiU8COReponseModel> AddU8Vouch(LiU8ApiDataModel liU8ApiData)
+        {
+            ILiU8CO liU8CO = getLiU8CO(liU8ApiData.sSubId);
+
+            List<LiU8COReponseModel> u8COReponseModels = new List<LiU8COReponseModel>();
+            foreach (Dictionary<string, object> vouchData in liU8ApiData.vouchDatas)
             {
                 List<Dictionary<string, object>> bodyDatas = vouchData["datas"] as List<Dictionary<string, object>>;
 
-                liU8STCO.InitDom(bodyDatas.Count);
-                liU8STCO.SetVouchData(vouchData);
-                LiU8COReponseModel liU8COReponse = liU8STCO.Insert();
+                liU8CO.InitDom(bodyDatas.Count);
+                liU8CO.SetVouchData(vouchData);
+                LiU8COReponseModel liU8COReponse = liU8CO.Insert(liU8ApiData.bAudit);
+
+                u8COReponseModels.Add(liU8COReponse);
             }
+            return u8COReponseModels;
         }
-        public static void PUNew()
+
+        public static U8Login.clsLogin getLogin(LiU8ApiIdModel liU8ApiData)
         {
-            string json = "{\"sOperationType\":\"NEW\",\"sSubId\":\"PU\",\"sAccID\":\"999\",\"sYear\":\"2015\",\"sUserID\":\"demo\",\"sPassword\":\"DEMO\",\"sDate\":\"2015-01-21\",\"sVouchType\":\"1\",\"bPositive\":true,\"sBillType\":\"\",\"sBusType\":\"普通采购\",\"VoucherState\":2,\"vouchData\":[{\"ivtid\":\"8173\",\"poid\":\"\",\"cbustype\":\"普通采购\",\"dpodate\":\"2015-01-09\",\"cvencode\":\"01005\",\"cdepcode\":\"0401\",\"cpersoncode\":\"00043\",\"itaxrate\":\"17\",\"cexch_name\":\"人民币\",\"cmaker\":\"demo\",\"bstorageorder\":\"True\",\"editprop\":\"A\",\"datas\":[{\"id\":\"\",\"poid\":\"\",\"cinvcode\":\"SJK001\",\"iquantity\":\"1080\",\"darrivedate\":\"2015-01-21\",\"ipertaxrate\":\"17.0\",\"ivouchrowno\":\"1\",\"cfactorycode\":\"001\",\"cfactoryname\":\"工厂一\",\"editprop\":\"A\"}]}]}";
-            Dictionary<string, object> dict = JsonUtil.GetDictionary(json);
-            List<Dictionary<string, object>> vouchDatas = dict["vouchData"] as List<Dictionary<string, object>>;
 
             U8Login.clsLogin u8Login = new U8Login.clsLogin();
-            String sSubId = Convert.ToString(dict["sSubId"]);
-            String sAccID = Convert.ToString(dict["sAccID"]);
-            String sYear = Convert.ToString(dict["sYear"]);
-            String sUserID = Convert.ToString(dict["sUserID"]);
-            String sPassword = Convert.ToString(dict["sPassword"]);
-            String sDate = Convert.ToString(dict["sDate"]);
+            string sSubId = ModelUtil.getValue<LiU8ApiIdModel, string>("sSubId", liU8ApiData);
+            string sAccID = ModelUtil.getValue<LiU8ApiIdModel, string>("sAccID", liU8ApiData);
+            string sYear = ModelUtil.getValue<LiU8ApiIdModel, string>("sYear", liU8ApiData);
+            string sUserID = ModelUtil.getValue<LiU8ApiIdModel, string>("sUserID", liU8ApiData);
+            string sPassword = ModelUtil.getValue<LiU8ApiIdModel, string>("sPassword", liU8ApiData);
+            string sDate = ModelUtil.getValue<LiU8ApiIdModel, string>("sDate", liU8ApiData);
 
             if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate))
             {
                 Console.WriteLine("登陆失败，原因：" + u8Login.ShareString);
-                return;
+                return null;
             }
-            ILiU8CO liU8PUCO = new LiU8PUCO();
-            liU8PUCO.Init(Convert.ToString(dict["sSubId"]), Convert.ToString(dict["sVouchType"]), u8Login);
 
-            liU8PUCO.SetApiContext("bPositive", Convert.ToBoolean(dict["bPositive"]));
-            liU8PUCO.SetApiContext("sBillType", Convert.ToString(dict["sBillType"]));
-            liU8PUCO.SetApiContext("sBusType", Convert.ToString(dict["sBusType"]));
-            liU8PUCO.InitCO();
-            foreach (Dictionary<string, object> vouchData in vouchDatas)
-            {
-                List<Dictionary<string, object>> bodyDatas = vouchData["datas"] as List<Dictionary<string, object>>;
-
-                liU8PUCO.InitDom(bodyDatas.Count);
-                liU8PUCO.SetVouchData(vouchData);
-                liU8PUCO.SetApiContext("VoucherState", Convert.ToInt16(dict["VoucherState"]));
-
-                LiU8COReponseModel liU8COReponse = liU8PUCO.Insert();
-            }
+            return u8Login;
         }
-        public static void SONew()
+
+        public static U8Login.clsLogin getLogin(LiU8ApiDataModel liU8ApiData)
         {
-            string json = "{\"sOperationType\":\"NEW\",\"sSubId\":\"SA\",\"sAccID\":\"999\",\"sYear\":\"2015\",\"sUserID\":\"demo\",\"sPassword\":\"DEMO\",\"sDate\":\"2015-01-21\",\"sVouchType\":\"12\",\"vouchData\":[{\"cstcode\":\"01\",\"ddate\":\"2015-01-21\",\"ccuscode\":\"00000002\",\"cdepcode\":\"0302\",\"cpersoncode\":\"00023\",\"itaxrate\":\"17\",\"cmaker\":\"demo\",\"ccreditcuscode\":\"00000002\",\"cinvoicecompany\":\"00000002\",\"editprop\":\"A\",\"datas\":[{\"autoid\":\"\",\"id\":\"\",\"cinvcode\":\"01019002065\",\"iquantity\":\"3\",\"iquotedprice\":\"100\",\"iunitprice\":\"85.47\",\"iinvsprice\":\"650\",\"iinvncost\":\"550\",\"imoney\":\"170.94\",\"itax\":\"29.06\",\"isum\":\"200\",\"inatunitprice\":\"85.47\",\"inatmoney\":\"170.94\",\"inattax\":\"29.06\",\"inatsum\":\"200\",\"cbsysbarcode\":\"1\",\"dpredate\":\"2015-02-10\",\"dpremodate\":\"2015-02-10\",\"itaxunitprice\":\"100\",\"irowno\":\"1\",\"editprop\":\"A\"}]}]}";
-            Dictionary<string, object> dict = JsonUtil.GetDictionary(json);
-            List<Dictionary<string, object>> vouchDatas = dict["vouchData"] as List<Dictionary<string, object>>;
 
             U8Login.clsLogin u8Login = new U8Login.clsLogin();
-            String sSubId = Convert.ToString(dict["sSubId"]);
-            String sAccID = Convert.ToString(dict["sAccID"]);
-            String sYear = Convert.ToString(dict["sYear"]);
-            String sUserID = Convert.ToString(dict["sUserID"]);
-            String sPassword = Convert.ToString(dict["sPassword"]);
-            String sDate = Convert.ToString(dict["sDate"]);
+            string sSubId = ModelUtil.getValue<LiU8ApiDataModel,string>("sSubId", liU8ApiData);
+            string sAccID = ModelUtil.getValue<LiU8ApiDataModel, string>("sAccID", liU8ApiData);
+            string sYear = ModelUtil.getValue<LiU8ApiDataModel, string>("sYear", liU8ApiData);
+            string sUserID = ModelUtil.getValue<LiU8ApiDataModel, string>("sUserID", liU8ApiData);
+            string sPassword = ModelUtil.getValue<LiU8ApiDataModel, string>("sPassword", liU8ApiData);
+            string sDate = ModelUtil.getValue<LiU8ApiDataModel, string>("sDate", liU8ApiData);
 
             if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate))
             {
                 Console.WriteLine("登陆失败，原因：" + u8Login.ShareString);
-                return;
+                return null;
             }
-            ILiU8CO liU8SACO = new LiU8SACO();
-            liU8SACO.Init(Convert.ToString(dict["sSubId"]), Convert.ToString(dict["sVouchType"]), u8Login);
-            liU8SACO.InitCO();
-            foreach (Dictionary<string, object> vouchData in vouchDatas)
-            {
-                List<Dictionary<string, object>> bodyDatas = vouchData["datas"] as List<Dictionary<string, object>>;
 
-                liU8SACO.InitDom(bodyDatas.Count);
-                liU8SACO.SetVouchData(vouchData);
-                LiU8COReponseModel liU8COReponse = liU8SACO.Insert();
-            }
+            return u8Login;
         }
-        public static void TextDelete()
+        public static U8Login.clsLogin getLogin(LiU8ApiGetDataModel liU8ApiGetData)
         {
-            string json = "{\"sOperationType\":\"Delete\",\"sSubId\":\"ST\",\"sAccID\":\"999\",\"sYear\":\"2015\",\"sUserID\":\"demo\",\"sPassword\":\"DEMO\",\"sDate\":\"2015-01-21\",\"sVouchType\":\"01\",\"vouchIds\":[\"1000000466\",\"1000000465\"]}";
-            Dictionary<string, object> dict = JsonUtil.GetDictionary(json);
-            List<object> vouchDatas = dict["vouchIds"] as List<object>;
 
             U8Login.clsLogin u8Login = new U8Login.clsLogin();
-            String sSubId = Convert.ToString(dict["sSubId"]);
-            String sAccID = Convert.ToString(dict["sAccID"]);
-            String sYear = Convert.ToString(dict["sYear"]);
-            String sUserID = Convert.ToString(dict["sUserID"]);
-            String sPassword = Convert.ToString(dict["sPassword"]);
-            String sDate = Convert.ToString(dict["sDate"]);
+            string sSubId = ModelUtil.getValue<LiU8ApiGetDataModel, string>("sSubId", liU8ApiGetData);
+            string sAccID = ModelUtil.getValue<LiU8ApiGetDataModel, string>("sAccID", liU8ApiGetData);
+            string sYear = ModelUtil.getValue<LiU8ApiGetDataModel, string>("sYear", liU8ApiGetData);
+            string sUserID = ModelUtil.getValue<LiU8ApiGetDataModel, string>("sUserID", liU8ApiGetData);
+            string sPassword = ModelUtil.getValue<LiU8ApiGetDataModel, string>("sPassword", liU8ApiGetData);
+            string sDate = ModelUtil.getValue<LiU8ApiGetDataModel, string>("sDate", liU8ApiGetData);
 
             if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate))
             {
                 Console.WriteLine("登陆失败，原因：" + u8Login.ShareString);
-                return;
+                return null;
             }
-            ILiU8CO liU8STCO = new LiU8STCO();
-            liU8STCO.Init(Convert.ToString(dict["sSubId"]), Convert.ToString(dict["sVouchType"]), u8Login);
-            liU8STCO.InitCO();
-            foreach (object vouchData in vouchDatas)
-            {
-                liU8STCO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8STCO.Delete();
-            }
-        }
-        public static void PUDelete()
-        {
-            string json = "{\"sOperationType\":\"Delete\",\"sSubId\":\"PU\",\"sAccID\":\"999\",\"sYear\":\"2015\",\"sUserID\":\"demo\",\"sPassword\":\"DEMO\",\"sDate\":\"2015-01-21\",\"bPositive\":true,\"sBillType\":\"\",\"sBusType\":\"普通采购\",\"sVouchType\":\"1\",\"vouchIds\":[\"1000000051\"]}";
-            Dictionary<string, object> dict = JsonUtil.GetDictionary(json);
-            List<object> vouchDatas = dict["vouchIds"] as List<object>;
 
-            U8Login.clsLogin u8Login = new U8Login.clsLogin();
-            String sSubId = Convert.ToString(dict["sSubId"]);
-            String sAccID = Convert.ToString(dict["sAccID"]);
-            String sYear = Convert.ToString(dict["sYear"]);
-            String sUserID = Convert.ToString(dict["sUserID"]);
-            String sPassword = Convert.ToString(dict["sPassword"]);
-            String sDate = Convert.ToString(dict["sDate"]);
-
-            if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate))
-            {
-                Console.WriteLine("登陆失败，原因：" + u8Login.ShareString);
-                return;
-            }
-            ILiU8CO liU8PUCO = new LiU8PUCO();
-            liU8PUCO.Init(Convert.ToString(dict["sSubId"]), Convert.ToString(dict["sVouchType"]), u8Login);
-            liU8PUCO.SetApiContext("bPositive", Convert.ToBoolean(dict["bPositive"]));
-            liU8PUCO.SetApiContext("sBillType", Convert.ToString(dict["sBillType"]));
-            liU8PUCO.SetApiContext("sBusType", Convert.ToString(dict["sBusType"]));
-            liU8PUCO.InitCO();
-            foreach (object vouchData in vouchDatas)
-            {
-                liU8PUCO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8PUCO.Delete();
-            }
-        }
-        public static void SODelete()
-        {
-            string json = "{\"sOperationType\":\"Delete\",\"sSubId\":\"SA\",\"sAccID\":\"999\",\"sYear\":\"2015\",\"sUserID\":\"demo\",\"sPassword\":\"DEMO\",\"sDate\":\"2015-01-21\",\"sVouchType\":\"12\",\"vouchIds\":[\"1000000313\",\"1000000312\"]}";
-            Dictionary<string, object> dict = JsonUtil.GetDictionary(json);
-            List<object> vouchDatas = dict["vouchIds"] as List<object>;
-
-            U8Login.clsLogin u8Login = new U8Login.clsLogin();
-            String sSubId = Convert.ToString(dict["sSubId"]);
-            String sAccID = Convert.ToString(dict["sAccID"]);
-            String sYear = Convert.ToString(dict["sYear"]);
-            String sUserID = Convert.ToString(dict["sUserID"]);
-            String sPassword = Convert.ToString(dict["sPassword"]);
-            String sDate = Convert.ToString(dict["sDate"]);
-
-            if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate))
-            {
-                Console.WriteLine("登陆失败，原因：" + u8Login.ShareString);
-                return;
-            }
-            ILiU8CO liU8SACO = new LiU8SACO();
-            liU8SACO.Init(Convert.ToString(dict["sSubId"]), Convert.ToString(dict["sVouchType"]), u8Login);
-            liU8SACO.InitCO();
-            foreach (object vouchData in vouchDatas)
-            {
-                liU8SACO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8SACO.Delete();
-            }
-        }
-        public static void TextUnAudit()
-        {
-            string json = "{\"sOperationType\":\"UnAudit\",\"sSubId\":\"ST\",\"sAccID\":\"999\",\"sYear\":\"2015\",\"sUserID\":\"demo\",\"sPassword\":\"DEMO\",\"sDate\":\"2015-01-21\",\"sVouchType\":\"01\",\"vouchIds\":[\"1000000466\",\"1000000465\"]}";
-            Dictionary<string, object> dict = JsonUtil.GetDictionary(json);
-            List<object> vouchDatas = dict["vouchIds"] as List<object>;
-
-            U8Login.clsLogin u8Login = new U8Login.clsLogin();
-            String sSubId = Convert.ToString(dict["sSubId"]);
-            String sAccID = Convert.ToString(dict["sAccID"]);
-            String sYear = Convert.ToString(dict["sYear"]);
-            String sUserID = Convert.ToString(dict["sUserID"]);
-            String sPassword = Convert.ToString(dict["sPassword"]);
-            String sDate = Convert.ToString(dict["sDate"]);
-
-            if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate))
-            {
-                Console.WriteLine("登陆失败，原因：" + u8Login.ShareString);
-                return;
-            }
-            ILiU8CO liU8STCO = new LiU8STCO();
-            liU8STCO.Init(Convert.ToString(dict["sSubId"]), Convert.ToString(dict["sVouchType"]), u8Login);
-            liU8STCO.InitCO();
-            foreach (object vouchData in vouchDatas)
-            {
-                liU8STCO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8STCO.UnAudit();
-            }
-        }
-        public static void TextAudit()
-        {
-            string json = "{\"sOperationType\":\"Audit\",\"sSubId\":\"ST\",\"sAccID\":\"999\",\"sYear\":\"2015\",\"sUserID\":\"demo\",\"sPassword\":\"DEMO\",\"sDate\":\"2015-01-21\",\"sVouchType\":\"01\",\"vouchIds\":[\"1000000466\",\"1000000465\"]}";
-            Dictionary<string, object> dict = JsonUtil.GetDictionary(json);
-            List<object> vouchDatas = dict["vouchIds"] as List<object>;
-
-            U8Login.clsLogin u8Login = new U8Login.clsLogin();
-            String sSubId = Convert.ToString(dict["sSubId"]);
-            String sAccID = Convert.ToString(dict["sAccID"]);
-            String sYear = Convert.ToString(dict["sYear"]);
-            String sUserID = Convert.ToString(dict["sUserID"]);
-            String sPassword = Convert.ToString(dict["sPassword"]);
-            String sDate = Convert.ToString(dict["sDate"]);
-
-            if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate))
-            {
-                Console.WriteLine("登陆失败，原因：" + u8Login.ShareString);
-                return;
-            }
-            ILiU8CO liU8STCO = new LiU8STCO();
-            liU8STCO.Init(Convert.ToString(dict["sSubId"]), Convert.ToString(dict["sVouchType"]), u8Login);
-            liU8STCO.InitCO();
-            foreach (object vouchData in vouchDatas)
-            {
-                liU8STCO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8STCO.Audit();
-            }
-        }
-        public static void PUUnAudit()
-        {
-            string json = "{\"sOperationType\":\"UnAudit\",\"sSubId\":\"PU\",\"sAccID\":\"999\",\"sYear\":\"2015\",\"sUserID\":\"demo\",\"sPassword\":\"DEMO\",\"sDate\":\"2015-01-21\",\"bPositive\":true,\"sBillType\":\"\",\"sBusType\":\"普通采购\",\"sVouchType\":\"1\",\"vouchIds\":[\"1000000053\",\"1000000052\"]}";
-            Dictionary<string, object> dict = JsonUtil.GetDictionary(json);
-            List<object> vouchDatas = dict["vouchIds"] as List<object>;
-
-            U8Login.clsLogin u8Login = new U8Login.clsLogin();
-            String sSubId = Convert.ToString(dict["sSubId"]);
-            String sAccID = Convert.ToString(dict["sAccID"]);
-            String sYear = Convert.ToString(dict["sYear"]);
-            String sUserID = Convert.ToString(dict["sUserID"]);
-            String sPassword = Convert.ToString(dict["sPassword"]);
-            String sDate = Convert.ToString(dict["sDate"]);
-
-            if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate))
-            {
-                Console.WriteLine("登陆失败，原因：" + u8Login.ShareString);
-                return;
-            }
-            ILiU8CO liU8PUCO = new LiU8PUCO();
-            liU8PUCO.Init(Convert.ToString(dict["sSubId"]), Convert.ToString(dict["sVouchType"]), u8Login);
-            liU8PUCO.SetApiContext("bPositive", Convert.ToBoolean(dict["bPositive"]));
-            liU8PUCO.SetApiContext("sBillType", Convert.ToString(dict["sBillType"]));
-            liU8PUCO.SetApiContext("sBusType", Convert.ToString(dict["sBusType"]));
-            liU8PUCO.InitCO();
-            foreach (object vouchData in vouchDatas)
-            {
-                liU8PUCO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8PUCO.UnAudit();
-            }
-        }
-        public static void SOUnAudit()
-        {
-            string json = "{\"sOperationType\":\"UnAudit\",\"sSubId\":\"SA\",\"sAccID\":\"999\",\"sYear\":\"2015\",\"sUserID\":\"demo\",\"sPassword\":\"DEMO\",\"sDate\":\"2015-01-21\",\"sVouchType\":\"12\",\"vouchIds\":[\"1000000313\",\"1000000312\"]}";
-            Dictionary<string, object> dict = JsonUtil.GetDictionary(json);
-            List<object> vouchDatas = dict["vouchIds"] as List<object>;
-
-            U8Login.clsLogin u8Login = new U8Login.clsLogin();
-            String sSubId = Convert.ToString(dict["sSubId"]);
-            String sAccID = Convert.ToString(dict["sAccID"]);
-            String sYear = Convert.ToString(dict["sYear"]);
-            String sUserID = Convert.ToString(dict["sUserID"]);
-            String sPassword = Convert.ToString(dict["sPassword"]);
-            String sDate = Convert.ToString(dict["sDate"]);
-
-            if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate))
-            {
-                Console.WriteLine("登陆失败，原因：" + u8Login.ShareString);
-                return;
-            }
-            ILiU8CO liU8SACO = new LiU8SACO();
-            liU8SACO.Init(Convert.ToString(dict["sSubId"]), Convert.ToString(dict["sVouchType"]), u8Login);
-            liU8SACO.InitCO();
-            foreach (object vouchData in vouchDatas)
-            {
-                liU8SACO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8SACO.UnAudit();
-            }
-        }
-        public static void PUAudit()
-        {
-            string json = "{\"sOperationType\":\"Audit\",\"sSubId\":\"PU\",\"sAccID\":\"999\",\"sYear\":\"2015\",\"sUserID\":\"demo\",\"sPassword\":\"DEMO\",\"sDate\":\"2015-01-21\",\"bPositive\":true,\"sBillType\":\"\",\"sBusType\":\"普通采购\",\"sVouchType\":\"1\",\"vouchIds\":[\"1000000053\",\"1000000052\"]}";
-            Dictionary<string, object> dict = JsonUtil.GetDictionary(json);
-            List<object> vouchDatas = dict["vouchIds"] as List<object>;
-
-            U8Login.clsLogin u8Login = new U8Login.clsLogin();
-            String sSubId = Convert.ToString(dict["sSubId"]);
-            String sAccID = Convert.ToString(dict["sAccID"]);
-            String sYear = Convert.ToString(dict["sYear"]);
-            String sUserID = Convert.ToString(dict["sUserID"]);
-            String sPassword = Convert.ToString(dict["sPassword"]);
-            String sDate = Convert.ToString(dict["sDate"]);
-
-            if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate))
-            {
-                Console.WriteLine("登陆失败，原因：" + u8Login.ShareString);
-                return;
-            }
-            ILiU8CO liU8PUCO = new LiU8PUCO();
-            liU8PUCO.Init(Convert.ToString(dict["sSubId"]), Convert.ToString(dict["sVouchType"]), u8Login);
-            liU8PUCO.SetApiContext("bPositive", Convert.ToBoolean(dict["bPositive"]));
-            liU8PUCO.SetApiContext("sBillType", Convert.ToString(dict["sBillType"]));
-            liU8PUCO.SetApiContext("sBusType", Convert.ToString(dict["sBusType"]));
-            liU8PUCO.InitCO();
-            foreach (object vouchData in vouchDatas)
-            {
-                liU8PUCO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8PUCO.Audit();
-            }
-        }
-        public static void SOAudit()
-        {
-            string json = "{\"sOperationType\":\"Audit\",\"sSubId\":\"SA\",\"sAccID\":\"999\",\"sYear\":\"2015\",\"sUserID\":\"demo\",\"sPassword\":\"DEMO\",\"sDate\":\"2015-01-21\",\"sVouchType\":\"12\",\"vouchIds\":[\"1000000313\",\"1000000312\"]}";
-            Dictionary<string, object> dict = JsonUtil.GetDictionary(json);
-            List<object> vouchDatas = dict["vouchIds"] as List<object>;
-
-            U8Login.clsLogin u8Login = new U8Login.clsLogin();
-            String sSubId = Convert.ToString(dict["sSubId"]);
-            String sAccID = Convert.ToString(dict["sAccID"]);
-            String sYear = Convert.ToString(dict["sYear"]);
-            String sUserID = Convert.ToString(dict["sUserID"]);
-            String sPassword = Convert.ToString(dict["sPassword"]);
-            String sDate = Convert.ToString(dict["sDate"]);
-
-            if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate))
-            {
-                Console.WriteLine("登陆失败，原因：" + u8Login.ShareString);
-                return;
-            }
-            ILiU8CO liU8SACO = new LiU8SACO();
-            liU8SACO.Init(Convert.ToString(dict["sSubId"]), Convert.ToString(dict["sVouchType"]), u8Login);
-            liU8SACO.InitCO();
-            foreach (object vouchData in vouchDatas)
-            {
-                liU8SACO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8SACO.Audit();
-            }
-        }
-        public static void TextNew()
-        {
-            string json = "{\"sOperationType\":\"NEW\",\"sSubId\":\"ST\",\"sAccID\":\"999\",\"sYear\":\"2015\",\"sUserID\":\"demo\",\"sPassword\":\"DEMO\",\"sDate\":\"2015-01-21\",\"sVouchType\":\"01\",\"vouchData\":[{\"cvouchtype\":\"01\",\"cbustype\":\"普通采购\",\"csource\":\"库存\",\"cwhcode\":\"50\",\"ddate\":\"2015-01-18\",\"caddcode\":\"0401\",\"cdepcode\":\"0401\",\"cpersoncode\":\"00043\",\"cvencode\":\"01002\",\"cmaker\":\"demo\",\"itaxrate\":\"17\",\"iexchrate\":\"1\",\"cexch_name\":\"人民币\",\"datas\":[{\"cinvcode\":\"0340\",\"iquantity\":\"100\",\"iunitcost\":\"75\",\"iprice\":\"7500\",\"iaprice\":\"7500\",\"facost\":\"75\",\"ioritaxcost\":\"87.75\",\"ioricost\":\"75\",\"iorimoney\":\"7500\",\"ioritaxprice\":\"1275\",\"iorisum\":\"8775\",\"itaxprice\":\"1275\",\"isum\":\"8775\",\"itaxrate\":\"17\",\"irowno\":\"1\"},{\"cinvcode\":\"0340\",\"iquantity\":\"100\",\"iunitcost\":\"75\",\"iprice\":\"7500\",\"iaprice\":\"7500\",\"facost\":\"75\",\"ioritaxcost\":\"87.75\",\"ioricost\":\"75\",\"iorimoney\":\"7500\",\"ioritaxprice\":\"1275\",\"iorisum\":\"8775\",\"itaxprice\":\"1275\",\"isum\":\"8775\",\"itaxrate\":\"17\",\"irowno\":\"2\"}]}]}";
-            Dictionary<string, object> dict = JsonUtil.GetDictionary(json);
-            List<Dictionary<string, object>> vouchDatas = dict["vouchData"] as List<Dictionary<string, object>>;
-            
-            U8Login.clsLogin u8Login = new U8Login.clsLogin();
-            String sSubId = Convert.ToString(dict["sSubId"]);
-            String sAccID = Convert.ToString(dict["sAccID"]);
-            String sYear = Convert.ToString(dict["sYear"]);
-            String sUserID = Convert.ToString(dict["sUserID"]);
-            String sPassword = Convert.ToString(dict["sPassword"]);
-            String sDate = Convert.ToString(dict["sDate"]);
-
-            if (!u8Login.Login(ref sSubId, ref sAccID, ref sYear, ref sUserID, ref sPassword, ref sDate))
-            {
-                Console.WriteLine("登陆失败，原因：" + u8Login.ShareString);
-                return;
-            }
-            ILiU8CO liU8STCO = new LiU8STCO();
-            liU8STCO.Init(Convert.ToString(dict["sSubId"]), Convert.ToString(dict["sVouchType"]),u8Login);
-            liU8STCO.InitCO();
-            foreach(Dictionary<string, object> vouchData in vouchDatas)
-            {
-                List<Dictionary<string, object>> bodyDatas = vouchData["datas"] as List<Dictionary<string, object>>;
-
-                liU8STCO.InitDom(bodyDatas.Count);
-                liU8STCO.SetVouchData(vouchData);
-                LiU8COReponseModel liU8COReponse = liU8STCO.Insert();
-            }
+            return u8Login;
         }
     }
 }

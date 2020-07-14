@@ -113,7 +113,7 @@ namespace LiControl.Form
         {
             foreach (KeyValuePair<string, Control> kvp in controlDict)
             {
-                DevControlUtil.setContorlData(ModelUtil.getModelValue<VoucherStatusModel>(kvp.Key, voucherStatusModel), kvp.Value);
+                DevControlUtil.setContorlData(LiModel.Util.ModelUtil.getModelValue<VoucherStatusModel>(kvp.Key, voucherStatusModel), kvp.Value);
             }
 
             gridControl1.DataSource = voucherStatusModel.dataStatuss;
@@ -138,7 +138,7 @@ namespace LiControl.Form
         {
             foreach (KeyValuePair<string, Control> kvp in controlDict)
             {
-                ModelUtil.setModelValue<VoucherStatusModel>(kvp.Key, DevControlUtil.getControlData(kvp.Value), voucherStatusModel);
+                LiModel.Util.ModelUtil.setModelValue<VoucherStatusModel>(kvp.Key, DevControlUtil.getControlData(kvp.Value), voucherStatusModel);
             }
             voucherStatusModel.dataStatuss = (List<StatusModel>)gridControl1.DataSource;
         }

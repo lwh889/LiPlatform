@@ -45,6 +45,35 @@
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.cOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.材料出库单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.新增ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.产成品入库单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.新增ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.审核ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.反审ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.其他出库单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.新增ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.审核ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.反审ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.其他入库单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.新增ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.审核ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.反审ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.销售出库单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.新增ToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.审核ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.反审ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.采购入库单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.获取数据ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.获取数据ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.获取数据列表ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -217,6 +246,231 @@
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.Button17_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cOToolStripMenuItem,
+            this.获取数据ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1309, 32);
+            this.menuStrip1.TabIndex = 17;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // cOToolStripMenuItem
+            // 
+            this.cOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.材料出库单ToolStripMenuItem,
+            this.产成品入库单ToolStripMenuItem,
+            this.其他出库单ToolStripMenuItem,
+            this.其他入库单ToolStripMenuItem,
+            this.销售出库单ToolStripMenuItem,
+            this.采购入库单ToolStripMenuItem});
+            this.cOToolStripMenuItem.Name = "cOToolStripMenuItem";
+            this.cOToolStripMenuItem.Size = new System.Drawing.Size(74, 28);
+            this.cOToolStripMenuItem.Text = "库存CO";
+            // 
+            // 材料出库单ToolStripMenuItem
+            // 
+            this.材料出库单ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新增ToolStripMenuItem});
+            this.材料出库单ToolStripMenuItem.Name = "材料出库单ToolStripMenuItem";
+            this.材料出库单ToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
+            this.材料出库单ToolStripMenuItem.Text = "材料出库单";
+            // 
+            // 新增ToolStripMenuItem
+            // 
+            this.新增ToolStripMenuItem.Name = "新增ToolStripMenuItem";
+            this.新增ToolStripMenuItem.Size = new System.Drawing.Size(124, 30);
+            this.新增ToolStripMenuItem.Text = "新增";
+            this.新增ToolStripMenuItem.Click += new System.EventHandler(this.Button17_Click);
+            // 
+            // 产成品入库单ToolStripMenuItem
+            // 
+            this.产成品入库单ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新增ToolStripMenuItem1,
+            this.审核ToolStripMenuItem3,
+            this.反审ToolStripMenuItem3,
+            this.删除ToolStripMenuItem3});
+            this.产成品入库单ToolStripMenuItem.Name = "产成品入库单ToolStripMenuItem";
+            this.产成品入库单ToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
+            this.产成品入库单ToolStripMenuItem.Text = "产成品入库单";
+            // 
+            // 新增ToolStripMenuItem1
+            // 
+            this.新增ToolStripMenuItem1.Name = "新增ToolStripMenuItem1";
+            this.新增ToolStripMenuItem1.Size = new System.Drawing.Size(124, 30);
+            this.新增ToolStripMenuItem1.Text = "新增";
+            this.新增ToolStripMenuItem1.Click += new System.EventHandler(this.新增ToolStripMenuItem1_Click);
+            // 
+            // 审核ToolStripMenuItem3
+            // 
+            this.审核ToolStripMenuItem3.Name = "审核ToolStripMenuItem3";
+            this.审核ToolStripMenuItem3.Size = new System.Drawing.Size(124, 30);
+            this.审核ToolStripMenuItem3.Text = "审核";
+            this.审核ToolStripMenuItem3.Click += new System.EventHandler(this.审核ToolStripMenuItem3_Click);
+            // 
+            // 反审ToolStripMenuItem3
+            // 
+            this.反审ToolStripMenuItem3.Name = "反审ToolStripMenuItem3";
+            this.反审ToolStripMenuItem3.Size = new System.Drawing.Size(124, 30);
+            this.反审ToolStripMenuItem3.Text = "反审";
+            this.反审ToolStripMenuItem3.Click += new System.EventHandler(this.反审ToolStripMenuItem3_Click);
+            // 
+            // 删除ToolStripMenuItem3
+            // 
+            this.删除ToolStripMenuItem3.Name = "删除ToolStripMenuItem3";
+            this.删除ToolStripMenuItem3.Size = new System.Drawing.Size(124, 30);
+            this.删除ToolStripMenuItem3.Text = "删除";
+            this.删除ToolStripMenuItem3.Click += new System.EventHandler(this.删除ToolStripMenuItem3_Click);
+            // 
+            // 其他出库单ToolStripMenuItem
+            // 
+            this.其他出库单ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新增ToolStripMenuItem2,
+            this.审核ToolStripMenuItem2,
+            this.反审ToolStripMenuItem2,
+            this.删除ToolStripMenuItem2});
+            this.其他出库单ToolStripMenuItem.Name = "其他出库单ToolStripMenuItem";
+            this.其他出库单ToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
+            this.其他出库单ToolStripMenuItem.Text = "其他出库单";
+            // 
+            // 新增ToolStripMenuItem2
+            // 
+            this.新增ToolStripMenuItem2.Name = "新增ToolStripMenuItem2";
+            this.新增ToolStripMenuItem2.Size = new System.Drawing.Size(124, 30);
+            this.新增ToolStripMenuItem2.Text = "新增";
+            this.新增ToolStripMenuItem2.Click += new System.EventHandler(this.新增ToolStripMenuItem2_Click);
+            // 
+            // 审核ToolStripMenuItem2
+            // 
+            this.审核ToolStripMenuItem2.Name = "审核ToolStripMenuItem2";
+            this.审核ToolStripMenuItem2.Size = new System.Drawing.Size(124, 30);
+            this.审核ToolStripMenuItem2.Text = "审核";
+            this.审核ToolStripMenuItem2.Click += new System.EventHandler(this.审核ToolStripMenuItem2_Click);
+            // 
+            // 反审ToolStripMenuItem2
+            // 
+            this.反审ToolStripMenuItem2.Name = "反审ToolStripMenuItem2";
+            this.反审ToolStripMenuItem2.Size = new System.Drawing.Size(124, 30);
+            this.反审ToolStripMenuItem2.Text = "反审";
+            this.反审ToolStripMenuItem2.Click += new System.EventHandler(this.反审ToolStripMenuItem2_Click);
+            // 
+            // 删除ToolStripMenuItem2
+            // 
+            this.删除ToolStripMenuItem2.Name = "删除ToolStripMenuItem2";
+            this.删除ToolStripMenuItem2.Size = new System.Drawing.Size(124, 30);
+            this.删除ToolStripMenuItem2.Text = "删除";
+            this.删除ToolStripMenuItem2.Click += new System.EventHandler(this.删除ToolStripMenuItem2_Click);
+            // 
+            // 其他入库单ToolStripMenuItem
+            // 
+            this.其他入库单ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新增ToolStripMenuItem3,
+            this.审核ToolStripMenuItem1,
+            this.反审ToolStripMenuItem1,
+            this.删除ToolStripMenuItem1});
+            this.其他入库单ToolStripMenuItem.Name = "其他入库单ToolStripMenuItem";
+            this.其他入库单ToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
+            this.其他入库单ToolStripMenuItem.Text = "其他入库单";
+            // 
+            // 新增ToolStripMenuItem3
+            // 
+            this.新增ToolStripMenuItem3.Name = "新增ToolStripMenuItem3";
+            this.新增ToolStripMenuItem3.Size = new System.Drawing.Size(124, 30);
+            this.新增ToolStripMenuItem3.Text = "新增";
+            this.新增ToolStripMenuItem3.Click += new System.EventHandler(this.新增ToolStripMenuItem3_Click);
+            // 
+            // 审核ToolStripMenuItem1
+            // 
+            this.审核ToolStripMenuItem1.Name = "审核ToolStripMenuItem1";
+            this.审核ToolStripMenuItem1.Size = new System.Drawing.Size(124, 30);
+            this.审核ToolStripMenuItem1.Text = "审核";
+            this.审核ToolStripMenuItem1.Click += new System.EventHandler(this.审核ToolStripMenuItem1_Click);
+            // 
+            // 反审ToolStripMenuItem1
+            // 
+            this.反审ToolStripMenuItem1.Name = "反审ToolStripMenuItem1";
+            this.反审ToolStripMenuItem1.Size = new System.Drawing.Size(124, 30);
+            this.反审ToolStripMenuItem1.Text = "反审";
+            this.反审ToolStripMenuItem1.Click += new System.EventHandler(this.反审ToolStripMenuItem1_Click);
+            // 
+            // 删除ToolStripMenuItem1
+            // 
+            this.删除ToolStripMenuItem1.Name = "删除ToolStripMenuItem1";
+            this.删除ToolStripMenuItem1.Size = new System.Drawing.Size(124, 30);
+            this.删除ToolStripMenuItem1.Text = "删除";
+            this.删除ToolStripMenuItem1.Click += new System.EventHandler(this.删除ToolStripMenuItem1_Click);
+            // 
+            // 销售出库单ToolStripMenuItem
+            // 
+            this.销售出库单ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新增ToolStripMenuItem4,
+            this.审核ToolStripMenuItem,
+            this.反审ToolStripMenuItem,
+            this.删除ToolStripMenuItem});
+            this.销售出库单ToolStripMenuItem.Name = "销售出库单ToolStripMenuItem";
+            this.销售出库单ToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
+            this.销售出库单ToolStripMenuItem.Text = "销售出库单";
+            // 
+            // 新增ToolStripMenuItem4
+            // 
+            this.新增ToolStripMenuItem4.Name = "新增ToolStripMenuItem4";
+            this.新增ToolStripMenuItem4.Size = new System.Drawing.Size(124, 30);
+            this.新增ToolStripMenuItem4.Text = "新增";
+            this.新增ToolStripMenuItem4.Click += new System.EventHandler(this.新增ToolStripMenuItem4_Click);
+            // 
+            // 审核ToolStripMenuItem
+            // 
+            this.审核ToolStripMenuItem.Name = "审核ToolStripMenuItem";
+            this.审核ToolStripMenuItem.Size = new System.Drawing.Size(124, 30);
+            this.审核ToolStripMenuItem.Text = "审核";
+            this.审核ToolStripMenuItem.Click += new System.EventHandler(this.审核ToolStripMenuItem_Click);
+            // 
+            // 反审ToolStripMenuItem
+            // 
+            this.反审ToolStripMenuItem.Name = "反审ToolStripMenuItem";
+            this.反审ToolStripMenuItem.Size = new System.Drawing.Size(124, 30);
+            this.反审ToolStripMenuItem.Text = "反审";
+            this.反审ToolStripMenuItem.Click += new System.EventHandler(this.反审ToolStripMenuItem_Click);
+            // 
+            // 删除ToolStripMenuItem
+            // 
+            this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(124, 30);
+            this.删除ToolStripMenuItem.Text = "删除";
+            this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
+            // 
+            // 采购入库单ToolStripMenuItem
+            // 
+            this.采购入库单ToolStripMenuItem.Name = "采购入库单ToolStripMenuItem";
+            this.采购入库单ToolStripMenuItem.Size = new System.Drawing.Size(196, 30);
+            this.采购入库单ToolStripMenuItem.Text = "采购入库单";
+            // 
+            // 获取数据ToolStripMenuItem
+            // 
+            this.获取数据ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.获取数据ToolStripMenuItem1,
+            this.获取数据列表ToolStripMenuItem});
+            this.获取数据ToolStripMenuItem.Name = "获取数据ToolStripMenuItem";
+            this.获取数据ToolStripMenuItem.Size = new System.Drawing.Size(92, 28);
+            this.获取数据ToolStripMenuItem.Text = "获取数据";
+            // 
+            // 获取数据ToolStripMenuItem1
+            // 
+            this.获取数据ToolStripMenuItem1.Name = "获取数据ToolStripMenuItem1";
+            this.获取数据ToolStripMenuItem1.Size = new System.Drawing.Size(252, 30);
+            this.获取数据ToolStripMenuItem1.Text = "获取数据数量";
+            this.获取数据ToolStripMenuItem1.Click += new System.EventHandler(this.获取数据ToolStripMenuItem1_Click);
+            // 
+            // 获取数据列表ToolStripMenuItem
+            // 
+            this.获取数据列表ToolStripMenuItem.Name = "获取数据列表ToolStripMenuItem";
+            this.获取数据列表ToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.获取数据列表ToolStripMenuItem.Text = "获取数据列表";
+            this.获取数据列表ToolStripMenuItem.Click += new System.EventHandler(this.获取数据列表ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -239,10 +493,15 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -265,6 +524,34 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 材料出库单ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 新增ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 产成品入库单ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 新增ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 其他出库单ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 其他入库单ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 销售出库单ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 采购入库单ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 新增ToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem 新增ToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem 新增ToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem 审核ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 反审ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 审核ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 反审ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 审核ToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem 反审ToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem 审核ToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem 反审ToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem 获取数据ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 获取数据ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 获取数据列表ToolStripMenuItem;
     }
 }
 
