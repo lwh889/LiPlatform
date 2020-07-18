@@ -21,6 +21,8 @@ namespace LiU8CO.Service
             conn = new ADODB.ConnectionClass();
             oleDA = new OleDbDataAdapter();
 
+            liGetVouchData = new LiGetVouchData();
+
             errMsg = string.Empty;
             vouchId = string.Empty;
         }
@@ -40,6 +42,8 @@ namespace LiU8CO.Service
         /// </summary>
         public void Init(string voucherClassify, string voucherType, U8Login.clsLogin u8Login)
         {
+            liGetVouchData.Init(u8Login);
+
             this.voucherClassify = voucherClassify;
             this.vouchType = voucherType;
             this.u8Login = u8Login;
@@ -274,7 +278,16 @@ namespace LiU8CO.Service
             {
                 if (keyValues.Key == bodyEntityName)
                 {
-                    List<Dictionary<string, object>> bodyDatas = keyValues.Value as List<Dictionary<string, object>>;
+                    List<Dictionary<string, object>> bodyDatas = null;
+                    if (keyValues.Value != null && keyValues.Value.GetType().Name == "JArray")
+                    {
+                        bodyDatas = JsonUtil.GetDictionaryToList(Convert.ToString(keyValues.Value));
+                    }
+                    else
+                    {
+                        bodyDatas = keyValues.Value as List<Dictionary<string, object>>;
+                    }
+
                     int iRow = 0;
                     foreach (Dictionary<string, object> bodyData in bodyDatas)
                     {
@@ -292,6 +305,28 @@ namespace LiU8CO.Service
             }
         }
 
+        public void GetVouchDataByID(LiU8COReponseModel liU8COReponse)
+        {
+
+            LiU8ApiGetDataModel liU8ApiGetData = LiU8ApiGetDataModel.convertLiU8ApiGetDataModel(liU8ApiInfo);
+            if (liU8ApiGetData != null)
+            {
+                liU8ApiGetData.sOrderByString = string.Format(" {0} DESC ", liU8COVoucher.headKeyFieldName);
+                liU8ApiGetData.sWhereString = string.Format(" and {0} = '{1}'", liU8COVoucher.headKeyFieldName, liU8COReponse.vouchID);
+                liU8ApiGetData.sCardNumber = liU8COVoucher.cardNumber;
+
+                try
+                {
+                    DataTable dt = liGetVouchData.getU8VouchList(liU8ApiGetData);
+                    liU8COReponse.vouchDatas = DataTableUtil.getDictionaryToListByDataTable(dt);
+                }
+                catch (Exception ex)
+                {
+                    liU8COReponse.resultContent = ex.Message;
+                }
+
+            }
+        }
         public void SetVouchID(string vouchID)
         {
             this.vouchId = vouchID;
@@ -364,5 +399,20 @@ namespace LiU8CO.Service
         /// 单据信息
         /// </summary>
         public LiU8COVoucherModel liU8COVoucher;
+
+
+        private LiGetVouchData _liGetVouchData;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public LiGetVouchData liGetVouchData { set { _liGetVouchData = value; } get { return _liGetVouchData; } }
+
+        private object _liU8ApiInfo;
+        /// <summary>
+        /// 操作U8CO信息模型
+        /// </summary>
+        public object liU8ApiInfo { set { _liU8ApiInfo = value; } get { return _liU8ApiInfo; } }
+
     }
 }

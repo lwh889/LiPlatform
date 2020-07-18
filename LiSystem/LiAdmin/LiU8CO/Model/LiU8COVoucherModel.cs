@@ -27,6 +27,20 @@ namespace LiU8CO.Model
         public string voucherType { set; get; }
 
         /// <summary>
+        /// 单据类型
+        /// </summary>
+        public string headKeyFieldName { set; get; }
+
+        /// <summary>
+        /// 单据类型
+        /// </summary>
+        public string bodyKeyFieldName { set; get; }
+        /// <summary>
+        /// 单据类型
+        /// </summary>
+        public string cardNumber { set; get; }
+
+        /// <summary>
         /// 单据分类
         /// </summary>
         public string voucherClassify { set; get; }

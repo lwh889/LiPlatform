@@ -10,14 +10,19 @@ namespace LiU8CO.Model
     {
         public static LiU8COReponseModel getInstance()
         {
-            return new LiU8COReponseModel() { bSuccess = false, resultContent = string.Empty, outBodyVouchID = new List<Dictionary<string, string>>() };
+            return new LiU8COReponseModel() { bSuccess = false, resultContent = string.Empty};
         }
         public bool bSuccess;
+        public bool bAuditSuccess;
+        public bool bDeleteSuccess;
         public string vouchID;
         public string vouchCode;
         public string resultContent;
-        public string outHeadVouchID;
-        public List<Dictionary<string,string>> outBodyVouchID;
+        /// <summary>
+        /// 单据数据
+        /// </summary>
+        public List<Dictionary<string, object>> vouchDatas { set; get; }
+        public int vouchDataRowCount { set; get; }
         public Exception apiEx;
     }
 }

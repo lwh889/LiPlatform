@@ -53,3 +53,13 @@ union all
 select '单据','按钮','审核','LiForm.Event.EventForm.LiEventAudit','LiForm'
 union all
 select '单据','按钮','反审核','LiForm.Event.EventForm.LiEventUnAudit','LiForm'
+union all
+select '报表','按钮','查询','LiForm.Event.EventReportForm.LiEventReportQuery','LiForm'
+union all
+select '报表','按钮','精确查询','LiForm.Event.EventReportForm.LiEventReportPreciseQuery','LiForm'
+union all
+select '报表','按钮','刷新','LiForm.Event.EventReportForm.LiEventReportRefresh','LiForm'
+union all
+select '报表','按钮','导出','LiForm.Event.EventReportForm.LiEventReportExport','LiForm'
+union all
+select '报表','按钮','退出','LiForm.Event.EventReportForm.LiEventReportExit','LiForm'

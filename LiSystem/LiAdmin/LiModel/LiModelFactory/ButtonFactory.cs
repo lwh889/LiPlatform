@@ -1,5 +1,6 @@
 ﻿using LiModel.Form;
 using LiModel.LiEnum;
+using LiModel.LiReport;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -429,6 +430,56 @@ namespace LiModel.LiModelFactory
             listButtonModel.events.Add(eventModel);
             return listButtonModel;
 
+        }
+
+        public static LiReportButtonModel getReportButtonModel(string reportButtonType, int reportId, string categoryGuid)
+        {
+            LiReportButtonModel liReportButtonModel = LiReportButtonModel.getInstance(reportId, categoryGuid);
+            liReportButtonModel.reportId = reportId;
+            liReportButtonModel.caption = reportButtonType;
+
+            LiReportEventModel liReportEvent = LiReportEventModel.getInstance(liReportButtonModel.id);
+            liReportEvent.assemblyName = "LiForm";
+            switch (reportButtonType)
+            {
+                case ReportButtonType.BTNQUERY:
+                    liReportButtonModel.name = "btnQuery";
+                    liReportButtonModel.icon = "U8|U8_query_32x32.png";
+
+                    liReportEvent.fullName = "LiForm.Event.EventReportForm.LiEventReportQuery";
+                    break;
+                case ReportButtonType.BTNPRECISEQUERY:
+                    liReportButtonModel.caption = "精确查询";
+                    liReportButtonModel.name = "btnPreciseQuery";
+                    liReportButtonModel.icon = "U8|U8_Query Budgetinfor_32x32.png";
+
+                    liReportEvent.fullName = "LiForm.Event.EventReportForm.LiEventReportPreciseQuery";
+                    break;
+                case ReportButtonType.BTNREFRESH:
+                    liReportButtonModel.caption = "刷新";
+                    liReportButtonModel.name = "btnRefresh";
+                    liReportButtonModel.icon = "U8|U8_refresh_32x32.png";
+
+                    liReportEvent.fullName = "LiForm.Event.EventReportForm.LiEventReportRefresh";
+                    break;
+                case ReportButtonType.BTNEXPORT:
+                    liReportButtonModel.caption = "导出";
+                    liReportButtonModel.name = "btnExport";
+                    liReportButtonModel.icon = "U8|U8_export_32x32.png";
+
+                    liReportEvent.fullName = "LiForm.Event.EventReportForm.LiEventReportExport";
+                    break;
+                case ReportButtonType.BTNEXIT:
+                    liReportButtonModel.caption = "退出";
+                    liReportButtonModel.name = "btnExit";
+                    liReportButtonModel.icon = "U8|U8_Exit_32x32.png";
+
+                    liReportEvent.fullName = "LiForm.Event.EventReportForm.LiEventReportExit";
+                    break;
+            }
+            liReportButtonModel.events.Add(liReportEvent);
+
+            return liReportButtonModel;
         }
 
         public static string getCategoryGuidByButtonGroupModel(ButtonGroupModel buttonGroupModel)

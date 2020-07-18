@@ -122,12 +122,12 @@ namespace LiManage
             {
                 foreach (KeyValuePair<string, Control> kvp in controlDict)
                 {
-                    DevControlUtil.setContorlData(ModelUtil.getModelValue<ControlEventModel>(kvp.Key, formData), kvp.Value);
+                    DevControlUtil.setContorlData(LiModel.Util.ModelUtil.getModelValue<ControlEventModel>(kvp.Key, formData), kvp.Value);
                 }
 
                 foreach (KeyValuePair<string, GridControl> kvp in gridControlDict)
                 {
-                    DevControlUtil.setContorlData(ModelUtil.getModelValue<ControlEventModel>(kvp.Key, formData), kvp.Value);
+                    DevControlUtil.setContorlData(LiModel.Util.ModelUtil.getModelValue<ControlEventModel>(kvp.Key, formData), kvp.Value);
                 }
             }
             catch (Exception ex)
@@ -141,12 +141,12 @@ namespace LiManage
         {
             foreach (KeyValuePair<string, Control> kvp in controlDict)
             {
-                ModelUtil.setModelValue<ControlEventModel>(kvp.Key, DevControlUtil.getControlData(kvp.Value), formData);
+                LiModel.Util.ModelUtil.setModelValue<ControlEventModel>(kvp.Key, DevControlUtil.getControlData(kvp.Value), formData);
             }
 
             foreach (KeyValuePair<string, GridControl> kvp in gridControlDict)
             {
-                ModelUtil.setModelValue<ControlEventModel>(kvp.Key, DevControlUtil.getControlData(kvp.Value), formData);
+                LiModel.Util.ModelUtil.setModelValue<ControlEventModel>(kvp.Key, DevControlUtil.getControlData(kvp.Value), formData);
             }
         }
 

@@ -6,6 +6,9 @@ create table LiU8COVoucher(
 	[name]  nvarchar(50),	--名称
 	voucherType  nvarchar(10),	--单据类型
 	voucherClassify  nvarchar(10),	--单据分类
+	headKeyFieldName  nvarchar(20) ,
+	bodyKeyFieldName  nvarchar(20) ,
+	cardNumber  nvarchar(20) ,
 	domHeadSql  nvarchar(4000),	--单据分类
 	domBodySql  nvarchar(4000),	--单据分类
 	timeStampSql  nvarchar(4000),	--单据分类
@@ -13,6 +16,9 @@ create table LiU8COVoucher(
 )
 
 --alter table LiU8COVoucher add timeStampSql  nvarchar(4000) 
+--alter table LiU8COVoucher add headKeyFieldName  nvarchar(20) 
+--alter table LiU8COVoucher add bodyKeyFieldName  nvarchar(20) 
+--alter table LiU8COVoucher add cardNumber  nvarchar(20) 
 
 create table LiU8COField(
 	id int identity(1,1) primary key not null,

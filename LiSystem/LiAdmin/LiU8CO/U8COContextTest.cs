@@ -42,7 +42,7 @@ namespace LiU8CO
             foreach (object vouchData in vouchDatas)
             {
                 liU8STCO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8STCO.UnAudit(false);
+                LiU8COReponseModel liU8COReponse = liU8STCO.UnAudit();
             }
         }
         public static void Text32Audit()
@@ -77,7 +77,7 @@ namespace LiU8CO
 
                 liU8STCO.InitDom(bodyDatas.Count);
                 liU8STCO.SetVouchData(vouchData);
-                LiU8COReponseModel liU8COReponse = liU8STCO.Insert(false);
+                LiU8COReponseModel liU8COReponse = liU8STCO.Insert();
             }
         }
 
@@ -110,7 +110,7 @@ namespace LiU8CO
             foreach (object vouchData in vouchDatas)
             {
                 liU8STCO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8STCO.UnAudit(false);
+                LiU8COReponseModel liU8COReponse = liU8STCO.UnAudit();
             }
         }
         public static void Text08Audit()
@@ -145,7 +145,7 @@ namespace LiU8CO
 
                 liU8STCO.InitDom(bodyDatas.Count);
                 liU8STCO.SetVouchData(vouchData);
-                LiU8COReponseModel liU8COReponse = liU8STCO.Insert(false);
+                LiU8COReponseModel liU8COReponse = liU8STCO.Insert();
             }
         }
         public static void Text09Delete()
@@ -177,7 +177,7 @@ namespace LiU8CO
             foreach (object vouchData in vouchDatas)
             {
                 liU8STCO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8STCO.UnAudit(false);
+                LiU8COReponseModel liU8COReponse = liU8STCO.UnAudit();
             }
         }
         public static void Text09Audit()
@@ -212,7 +212,7 @@ namespace LiU8CO
 
                 liU8STCO.InitDom(bodyDatas.Count);
                 liU8STCO.SetVouchData(vouchData);
-                LiU8COReponseModel liU8COReponse = liU8STCO.Insert(false);
+                LiU8COReponseModel liU8COReponse = liU8STCO.Insert();
             }
         }
         public static void Text10Delete()
@@ -244,7 +244,7 @@ namespace LiU8CO
             foreach (object vouchData in vouchDatas)
             {
                 liU8STCO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8STCO.UnAudit(false);
+                LiU8COReponseModel liU8COReponse = liU8STCO.UnAudit();
             }
         }
         public static void Text10Audit()
@@ -281,7 +281,7 @@ namespace LiU8CO
 
                 liU8STCO.InitDom(bodyDatas.Count);
                 liU8STCO.SetVouchData(vouchData);
-                LiU8COReponseModel liU8COReponse = liU8STCO.Insert(false);
+                LiU8COReponseModel liU8COReponse = liU8STCO.Insert();
             }
         }
         public static void Text11New()
@@ -300,7 +300,7 @@ namespace LiU8CO
 
                 liU8STCO.InitDom(bodyDatas.Count);
                 liU8STCO.SetVouchData(vouchData);
-                LiU8COReponseModel liU8COReponse = liU8STCO.Insert(false);
+                LiU8COReponseModel liU8COReponse = liU8STCO.Insert();
             }
         }
 
@@ -346,7 +346,7 @@ namespace LiU8CO
                 liU8PUCO.SetVouchData(vouchData);
                 liU8PUCO.SetApiContext("VoucherState", Convert.ToInt16(dict["VoucherState"]));
 
-                LiU8COReponseModel liU8COReponse = liU8PUCO.Insert(false);
+                LiU8COReponseModel liU8COReponse = liU8PUCO.Insert();
             }
         }
         public static void SONew()
@@ -365,7 +365,7 @@ namespace LiU8CO
 
                 liU8SACO.InitDom(bodyDatas.Count);
                 liU8SACO.SetVouchData(vouchData);
-                LiU8COReponseModel liU8COReponse = liU8SACO.Insert(false);
+                LiU8COReponseModel liU8COReponse = liU8SACO.Insert();
             }
         }
         public static void TextDelete()
@@ -432,7 +432,7 @@ namespace LiU8CO
             foreach (object vouchData in vouchDatas)
             {
                 liU8STCO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8STCO.UnAudit(false);
+                LiU8COReponseModel liU8COReponse = liU8STCO.UnAudit();
             }
         }
         public static void TextAudit()
@@ -467,7 +467,7 @@ namespace LiU8CO
             foreach (object vouchData in vouchDatas)
             {
                 liU8PUCO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8PUCO.UnAudit(false);
+                LiU8COReponseModel liU8COReponse = liU8PUCO.UnAudit();
             }
         }
         public static void SOUnAudit()
@@ -483,7 +483,7 @@ namespace LiU8CO
             foreach (object vouchData in vouchDatas)
             {
                 liU8SACO.SetVouchID(Convert.ToString(vouchData));
-                LiU8COReponseModel liU8COReponse = liU8SACO.UnAudit(false);
+                LiU8COReponseModel liU8COReponse = liU8SACO.UnAudit();
             }
         }
         public static void PUAudit()
@@ -537,7 +537,7 @@ namespace LiU8CO
 
                 liU8STCO.InitDom(bodyDatas.Count);
                 liU8STCO.SetVouchData(vouchData);
-                LiU8COReponseModel liU8COReponse = liU8STCO.Insert(false);
+                LiU8COReponseModel liU8COReponse = liU8STCO.Insert();
             }
         }
     }

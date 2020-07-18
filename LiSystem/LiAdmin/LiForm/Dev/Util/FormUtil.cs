@@ -36,6 +36,7 @@ using Newtonsoft.Json;
 using LiModel.Basic;
 using LiCommon.LiExpression;
 using LiCommon.LiEnum;
+using LiModel.LiReport;
 
 namespace LiForm.Dev.Util
 {
@@ -625,6 +626,89 @@ namespace LiForm.Dev.Util
                         break;
                 }
                 liListForm.liButtonDict.Add(barButtonItem.Name, barButtonItem);
+
+                ribbonPageGroup.ItemLinks.Add(barButtonItem);
+                ribbon.Items.Add(barButtonItem);
+
+            }
+
+            ribbonPage.Groups.Clear();
+            ribbonPage.Groups.Add(ribbonPageGroup);
+
+            ribbon.Pages.Add(ribbonPage);
+        }
+
+        /// <summary>
+        /// 报表按钮工具栏加载
+        /// </summary>
+        /// <param name="buttonGroupModel"></param>
+        /// <param name="ribbon"></param>
+        /// <param name="ribbonPage"></param>
+        /// <param name="resources"></param>
+        public static void loadReportRibbonButton(List<LiReportButtonModel> buttons, LiReportForm liReportForm, System.ComponentModel.ComponentResourceManager resources)
+        {
+            DevExpress.XtraBars.Ribbon.RibbonControl ribbon = liReportForm.ribbon;
+            DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage = liReportForm.ribbonPage1;
+
+            DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+
+            ribbonPageGroup.AllowMinimize = true;
+            ribbonPageGroup.AllowTextClipping = true;
+            ribbonPageGroup.Name = "Report";
+            ribbonPageGroup.Text = "报表";
+            ribbonPageGroup.MergeOrder = 1;
+
+            //自动流式布局，大图标占整个，小图标，一行三个
+            foreach (LiReportButtonModel button in buttons)
+            {
+                DevExpress.XtraBars.BarButtonItem barButtonItem = new DevExpress.XtraBars.BarButtonItem();
+                barButtonItem.Caption = button.caption;
+                barButtonItem.CategoryGuid = new System.Guid(button.categoryGuid);
+                barButtonItem.Glyph = ((System.Drawing.Image)(liReportForm.resources.GetObject("barButtonItem1.Glyph")));
+                barButtonItem.Id = button.id;
+                barButtonItem.Name = button.name;
+                barButtonItem.Tag = button;
+
+                LiAEventMediator liAEventMediator = new LiEventFormMediator();
+                liReportForm.liEventMediatorDict.Add(String.Format("{0}", button.name), liAEventMediator);
+                ///为了发送事件
+                LiAEvent liEvent = new LiEventItemClick(String.Format("{0}", button.name));
+                liEvent.Tag = button;
+                liEvent.liReportForm = liReportForm;
+                liAEventMediator.register(liEvent);
+
+                foreach (LiReportEventModel eventModel in button.events)
+                {
+                    LiAEvent obj = ReflectionUtil.CreateInstance<LiAEvent>(eventModel.fullName, eventModel.assemblyName);
+                    obj.Tag = button;
+                    obj.liReportForm = liReportForm;
+                    obj.id = button.name + eventModel.fullName;
+                    liAEventMediator.register(obj);
+                }
+
+                barButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(liReportForm.barButtonItem_ItemClick);
+
+                string[] iconNames = string.IsNullOrEmpty(button.icon) ? new string[0] : button.icon.Split('|');
+                switch (button.iconsize)
+                {
+                    //大图标
+                    case "All":
+                    case "Default":
+                    case "Large":
+                        barButtonItem.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+                        if (iconNames.Length > 1)
+                            barButtonItem.ImageOptions.LargeImage = ImageUtil.getBitmap(iconNames[0], iconNames[1]);
+
+                        break;
+                    //小图标
+                    case "SmallWithText":
+                    case "SmallWithoutText":
+                        barButtonItem.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
+                        if (iconNames.Length > 1)
+                            barButtonItem.ImageOptions.Image = ImageUtil.getBitmap(iconNames[0], iconNames[1]);
+                        break;
+                }
+                liReportForm.liButtonDict.Add(barButtonItem.Name, barButtonItem);
 
                 ribbonPageGroup.ItemLinks.Add(barButtonItem);
                 ribbon.Items.Add(barButtonItem);

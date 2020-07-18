@@ -459,6 +459,13 @@ namespace LiManage
 
                     }
 
+                    if (currentTreeDataModel.Code == "LiReportDesignForm")
+                    {
+
+                        LiReportDesignListForm ribbonForm = new LiReportDesignListForm(this);
+                        AddPageMdi(PageFormModel.getInstance(0, ribbonForm, currentTreeDataModel.Code, "", false));
+
+                    }
 
                 }
             }

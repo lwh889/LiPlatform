@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiManageVoucherDesign));
             DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer dockingContainer1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer();
-            this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup();
-            this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
-            this.document5 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
-            this.document4 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
-            this.document3 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
-            this.document6 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+            this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup(this.components);
+            this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
+            this.document5 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
+            this.document4 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
+            this.document3 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
+            this.document6 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
             this.repositoryItemGridLookUpEdit_Icon = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit_voucherStatus = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.document2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+            this.document2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnAddPanel = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddButton = new DevExpress.XtraBars.BarButtonItem();
@@ -158,7 +159,7 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel5 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel5_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
@@ -263,18 +264,18 @@
             this.gridView17 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn46 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager();
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
-            this.popupFormMenu = new DevExpress.XtraBars.PopupMenu();
-            this.popupPanelMenu = new DevExpress.XtraBars.PopupMenu();
-            this.popupButtonGroupMenu = new DevExpress.XtraBars.PopupMenu();
-            this.popupControlMenu = new DevExpress.XtraBars.PopupMenu();
-            this.popupButtonMenu = new DevExpress.XtraBars.PopupMenu();
-            this.popupEventMenu = new DevExpress.XtraBars.PopupMenu();
-            this.popupControlGroupMenu = new DevExpress.XtraBars.PopupMenu();
-            this.popupListButtonMenu = new DevExpress.XtraBars.PopupMenu();
             this.gridColumn47 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn48 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.popupFormMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupPanelMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupButtonGroupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupControlMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupButtonMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupEventMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupControlGroupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupListButtonMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document5)).BeginInit();
@@ -2627,6 +2628,24 @@
             this.gridColumn46.VisibleIndex = 1;
             this.gridColumn46.Width = 357;
             // 
+            // gridColumn47
+            // 
+            this.gridColumn47.Caption = "是否启用";
+            this.gridColumn47.FieldName = "bEnable";
+            this.gridColumn47.Name = "gridColumn47";
+            this.gridColumn47.Visible = true;
+            this.gridColumn47.VisibleIndex = 2;
+            this.gridColumn47.Width = 99;
+            // 
+            // gridColumn48
+            // 
+            this.gridColumn48.Caption = "事件类型";
+            this.gridColumn48.FieldName = "eventMemo";
+            this.gridColumn48.Name = "gridColumn48";
+            this.gridColumn48.Visible = true;
+            this.gridColumn48.VisibleIndex = 3;
+            this.gridColumn48.Width = 311;
+            // 
             // documentManager1
             // 
             this.documentManager1.ContainerControl = this;
@@ -2714,24 +2733,6 @@
             this.popupListButtonMenu.ItemLinks.Add(this.btnDeleteListButton);
             this.popupListButtonMenu.Name = "popupListButtonMenu";
             this.popupListButtonMenu.Ribbon = this.ribbon;
-            // 
-            // gridColumn47
-            // 
-            this.gridColumn47.Caption = "是否启用";
-            this.gridColumn47.FieldName = "bEnable";
-            this.gridColumn47.Name = "gridColumn47";
-            this.gridColumn47.Visible = true;
-            this.gridColumn47.VisibleIndex = 2;
-            this.gridColumn47.Width = 99;
-            // 
-            // gridColumn48
-            // 
-            this.gridColumn48.Caption = "事件类型";
-            this.gridColumn48.FieldName = "eventMemo";
-            this.gridColumn48.Name = "gridColumn48";
-            this.gridColumn48.Visible = true;
-            this.gridColumn48.VisibleIndex = 3;
-            this.gridColumn48.Width = 311;
             // 
             // LiManageVoucherDesign
             // 

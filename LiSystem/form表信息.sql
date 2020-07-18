@@ -235,6 +235,16 @@ insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityCo
 select 60,'LiSystem','Basic','liPushForm','slave','pushEvents','LiPushEvent','liPushEvent','下推事件', null,'JsonModel','id',null,getdate()
 
 
+insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
+select 62,'LiSystem','Basic','liReport','master',null,'LiReport','liPushForm','报表信息', null,'JsonModel','id',null,getdate()
+insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
+select 63,'LiSystem','Basic','liReport','slave','datas','LiReportField','liReportField','报表字段', null,'JsonModel','id',null,getdate()
+insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
+select 64,'LiSystem','Basic','liReport','slave','buttons','LiReportButton','liReportButton','报表按钮', null,'JsonModel','id',null,getdate()
+insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
+select 65,'LiSystem','Basic','liReport','slave','events','LiReportEvent','liReportEvent','报表按钮事件', null,'JsonModel','id',null,getdate()
+
+
 SET IDENTITY_Insert TableInfo OFF
 
 --LiForm
@@ -1640,6 +1650,87 @@ select 61, 'bEnable','是否启用', 'bit',1,0,0,0,0,null,0,null
 union all
 select 61, 'eventMemo','事件类型', 'narchar',300,0,0,0,0,null,0,null
 
+
+
+
+--LiReport
+insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+select 62, 'id','主键','int',9,1,0,0,1,null,0,null
+union all
+select 62, 'reportKey','编码', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 62, 'reportName','名称', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 62, 'systemCode','系统帐套号', 'narchar',10,0,0,0,0,null,0,null
+union all
+select 62, 'reportSql','报表SQL', 'narchar',5000,0,0,0,0,null,0,null
+union all
+select 62, 'reportCountSql','报表总数SQL', 'narchar',5000,0,0,0,0,null,0,null
+union all
+select 62, 'datas','数据集','collection', -1,0,0,2,0,null,0,null
+union all
+select 62, 'buttons','数据集','collection', -1,0,0,2,0,null,0,null
+
+--LiReportField
+insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+select 63, 'id','主键','int',9,1,0,0,1,null,0,null
+union all
+select 63, 'reportId','外键','int',9,0,1,0,0,'id',1,'LiReport'
+union all
+select 63, 'columnName','字段名', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 63, 'columnCaption','列名', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 63, 'columnType','列类型', 'narchar',100,0,0,0,0,null,0,null
+union all
+select 63, 'iColumnWidth','列宽', 'int',9,0,0,0,0,null,0,null
+union all
+select 63, 'bColumnDisplay','是否显示列', 'bit',1,0,0,0,0,null,0,null
+union all
+select 63, 'iColumnIndex','列索引', 'int',9,0,0,0,0,null,0,null
+union all
+select 63, 'bQuery','是否查询', 'bit',1,0,0,0,0,null,0,null
+union all
+select 63, 'iDisplayFormatType','显示格式类型', 'int',9,0,0,0,0,null,0,null
+union all
+select 63, 'displayFormat','显示格式', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 63, 'bColumnGroup','是否汇总', 'bit',1,0,0,0,0,null,0,null
+union all
+select 63, 'columnGroupFormat','汇总格式', 'narchar',30,0,0,0,0,null,0,null
+
+
+--LiReportButton
+insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+select 64, 'id','主键','int',9,1,0,0,1,null,0,null
+union all
+select 64, 'reportId','外键','int',9,0,1,0,0,'id',1,'LiReport'
+union all
+select 64, 'caption','标题', 'narchar',20,0,0,0,0,null,0,null
+union all
+select 64, 'name','名称', 'narchar',20,0,0,0,0,null,0,null
+union all
+select 64, 'iconsize','按钮类型', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 64, 'categoryGuid','类别ID', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 64, 'icon','图标', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 64, 'iIndex','顺序', 'int',9,0,0,0,0,null,0,null
+union all
+select 64, 'events','数据集','collection', -1,0,0,2,0,null,0,null
+
+--LiReportEvent
+insert into ColumnInfo (fid,columnName,columnAbbName,columnType,length,primaryKey,foreignKey,relationshipType,databaseGeneratedType,primaryKeyName,primaryKeyDatabaseGenerated,primaryKeyTableName) 
+select 65, 'id','主键','int',9,1,0,0,1,null,0,null
+union all
+select 65, 'reportButtonId','外键','int',9,0,1,0,0,'id',1,'LiReportButton'
+union all
+select 65, 'fullName','全名称', 'narchar',20,0,0,0,0,null,0,null
+union all
+select 65, 'assemblyName','程序集', 'narchar',20,0,0,0,0,null,0,null
+union all
+select 65, 'eventMemo','备注', 'narchar',20,0,0,0,0,null,0,null
 GO
 
 exec sp_CreateTable 4

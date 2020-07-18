@@ -87,7 +87,23 @@ public abstract class JdbcPlus {
         return jdbcTemplate.query(sqlMaker.getSql(), sqlMaker.entityInfo.rowMapper);
     }
 
+    /**
+     * 执行查询
+     * @param sql SQL
+     * @return
+     */
+    public List query(String sql){
+        return jdbcTemplate.query(sql, new MapRowMapper());
+    }
 
+    /**
+     * 执行存储过程查询
+     * @param sql
+     * @return
+     */
+    public Integer queryNoResult(String sql){
+        return jdbcTemplate.update(sql);
+    }
     /**
      * 执行存储过程查询
      * @param sqlMaker 生成SQL对象

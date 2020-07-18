@@ -143,4 +143,35 @@ public class JsonDrmQueryController {
         }
         return response;
     }
+
+
+    @PostMapping("/querySql")
+    R querySql(@RequestBody Map<String, Object> params) {
+
+        R response = new R();
+        try{
+
+            List<TableModel> tableInfos = jdbcService.getTableInfo(String.valueOf( params.get("entityKey")),String.valueOf(params.get("systemCode")));
+
+            List<Map<String,Object>> whereLists = ( List<Map<String,Object>>)params.get("wheres");
+
+            QueryInfo queryInfo = (QueryInfo)ClassUtils.mapToObject((Map<String, Object>)params.get("complexWheres"), QueryInfo.class);
+
+            List<JsonModel> jsonModels = null;
+            if(queryInfo != null){
+                //最新多层次查询
+                jsonModels = jdbcService.queryBy_Json(tableInfos, queryInfo);
+            }
+            else{
+                //旧查询，单层次
+                jsonModels = jdbcService.queryBy_Json(tableInfos, whereLists);
+            }
+
+            response.put("data", JSONObject.toJSONStringWithDateFormat(JsonModel.convertMapByJsonModel(jsonModels),"yyyy-MM-dd HH:mm:ss.SSS", SerializerFeature.WriteMapNullValue));
+        }catch (Exception ex){
+            logger.info("query",ex);
+            response = R.error520(ex.getMessage());
+        }
+        return response;
+    }
 }

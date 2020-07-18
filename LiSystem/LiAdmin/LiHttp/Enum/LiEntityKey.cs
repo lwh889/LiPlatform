@@ -20,6 +20,9 @@ namespace LiHttp.Enum
         public const string _TableInfo = "liTableInfo";
         public static string TableInfo { get { return _TableInfo; } }
 
+        public const string _LiReport = "liReport";
+        public static string LiReport { get { return _LiReport; } }
+
         public const string _LiU8Voucher = "liU8Voucher";
         public static string LiU8Voucher { get { return _LiU8Voucher; } }
 
@@ -92,6 +95,13 @@ namespace LiHttp.Enum
 
         public const string _QueryScheme = "liQueryScheme";
         public static string QueryScheme { get { return _QueryScheme; } }
+
+
+        public const string _sp_ExecSql = "sp_ExecSql";
+        public static string sp_ExecSql { get { return _sp_ExecSql; } }
+
+
+        
 
     }
 }

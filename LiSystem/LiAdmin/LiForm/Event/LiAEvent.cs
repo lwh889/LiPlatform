@@ -54,7 +54,10 @@ namespace LiForm.Event
 
         private LiForm.Dev.LiListForm _liListForm;
         public LiForm.Dev.LiListForm liListForm { set { _liListForm = value; } get { return _liListForm; } }
- 
+
+        private LiForm.Dev.LiReportForm _liReportForm;
+        public LiForm.Dev.LiReportForm liReportForm { set { _liReportForm = value; } get { return _liReportForm; } }
+
         /// <summary>
         /// 事件中介
         /// </summary>

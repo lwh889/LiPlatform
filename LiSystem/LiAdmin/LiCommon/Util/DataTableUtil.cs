@@ -12,6 +12,23 @@ namespace LiCommon.Util
     /// </summary>
     public class DataTableUtil
     {
+        public static List<Dictionary<string, object>> getDictionaryToListByDataTable(DataTable dt)
+        {
+            List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
+            if(dt != null && dt.Rows.Count > 0)
+            {
+                foreach(DataRow dr in dt.Rows)
+                {
+                    Dictionary<string, object> row = new Dictionary<string, object>();
+                    foreach (DataColumn dc in dt.Columns)
+                    {
+                        row.Add(dc.ColumnName, dr[dc]);
+                    }
+                    list.Add(row);
+                }
+            }
+            return list;
+        }
         /// <summary>
         /// 根据字典获取空表
         /// </summary>

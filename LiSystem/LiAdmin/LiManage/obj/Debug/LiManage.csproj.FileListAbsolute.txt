@@ -259,4 +259,6 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiManagePushDes
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiManageConvertForm2.resources
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiManageConvertListForm.resources
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiControlEventExpressionForm.resources
+C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiReportDesignForm.resources
+C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiReportDesignListForm.resources
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\Log4Net.config

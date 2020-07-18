@@ -185,6 +185,7 @@
       <DependentUpon>LiListForm3.cs</DependentUpon>
     </Compile>
     <Compile Include="Dev\Util\ListFormUtil.cs" />
+    <Compile Include="Dev\Util\ReportFormUtil.cs" />
     <Compile Include="Event\EventForm\LiEventAddCopyRowData.cs" />
     <Compile Include="Event\EventForm\LiEventCopyRowData.cs" />
     <Compile Include="Event\EventForm\LiEventDelete.cs" />
@@ -225,6 +226,10 @@
     <Compile Include="Event\EventListForm\LiEventListSubmit.cs" />
     <Compile Include="Event\EventListForm\LiEventListUnAudit.cs" />
     <Compile Include="Event\EventListForm\LiEventListUnSubmit.cs" />
+    <Compile Include="Event\EventReportForm\LiEventReportPreciseQuery.cs" />
+    <Compile Include="Event\EventReportForm\LiEventReportRefresh.cs" />
+    <Compile Include="Event\EventReportForm\LiEventReportExport.cs" />
+    <Compile Include="Event\EventReportForm\LiEventReportQuery.cs" />
     <Compile Include="Event\LiAEvent.cs" />
     <Compile Include="Event\Mediator\LiAEventMediator.cs" />
     <Compile Include="Event\Mediator\LiEventFormMediator.cs" />

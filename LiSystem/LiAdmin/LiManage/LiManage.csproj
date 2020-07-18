@@ -161,6 +161,12 @@
     <Compile Include="LiManageConvertForm2.Designer.cs">
       <DependentUpon>LiManageConvertForm2.cs</DependentUpon>
     </Compile>
+    <Compile Include="LiReportDesignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiReportDesignForm.Designer.cs">
+      <DependentUpon>LiReportDesignForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LiTableConfigureForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,12 @@
     </Compile>
     <Compile Include="LiManageConvertListForm.Designer.cs">
       <DependentUpon>LiManageConvertListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LiReportDesignListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LiReportDesignListForm.Designer.cs">
+      <DependentUpon>LiReportDesignListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LiTableConfigureListForm.cs">
       <SubType>Form</SubType>
@@ -269,6 +281,9 @@
     <EmbeddedResource Include="LiManageConvertForm2.resx">
       <DependentUpon>LiManageConvertForm2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LiReportDesignForm.resx">
+      <DependentUpon>LiReportDesignForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LiTableConfigureForm.resx">
       <DependentUpon>LiTableConfigureForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LiManageConvertListForm.resx">
       <DependentUpon>LiManageConvertListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LiReportDesignListForm.resx">
+      <DependentUpon>LiReportDesignListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiTableConfigureListForm.resx">
       <DependentUpon>LiTableConfigureListForm.cs</DependentUpon>

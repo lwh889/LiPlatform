@@ -64,6 +64,7 @@
     <Compile Include="LiEnum\DockType.cs" />
     <Compile Include="LiEnum\EntityOrderType.cs" />
     <Compile Include="LiEnum\KeyType.cs" />
+    <Compile Include="LiEnum\ReportButtonType.cs" />
     <Compile Include="LiEnum\ListButtonType.cs" />
     <Compile Include="LiEnum\ButtonType.cs" />
     <Compile Include="LiEnum\FormTemplateType.cs" />
@@ -126,6 +127,10 @@
     <Compile Include="LiPush\PushEventModel.cs" />
     <Compile Include="LiPush\PushListButtonModel.cs" />
     <Compile Include="LiPush\PushFormModel.cs" />
+    <Compile Include="LiReport\LiReportButtonModel.cs" />
+    <Compile Include="LiReport\LiReportFieldModel.cs" />
+    <Compile Include="LiReport\LiReportModel.cs" />
+    <Compile Include="LiReport\LiReportEventModel.cs" />
     <Compile Include="LiTable\ClassName.cs" />
     <Compile Include="LiTable\ColumnType.cs" />
     <Compile Include="LiTable\DatabaseGeneratedType.cs" />

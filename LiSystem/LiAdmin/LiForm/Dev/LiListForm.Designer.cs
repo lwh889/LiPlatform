@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiListForm3));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiListForm));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -114,10 +114,11 @@
             // 
             this.pagerControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pagerControl1.Location = new System.Drawing.Point(0, 825);
-            this.pagerControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pagerControl1.Margin = new System.Windows.Forms.Padding(6);
             this.pagerControl1.Name = "pagerControl1";
             this.pagerControl1.Size = new System.Drawing.Size(1281, 34);
             this.pagerControl1.TabIndex = 13;
+            this.pagerControl1.myPagerEvents += new LiControl.Dev.PagerControl.MyPagerEvents(this.pagerControl1_myPagerEvents);
             // 
             // layoutControl1
             // 

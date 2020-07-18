@@ -23,6 +23,7 @@ using LiVoucherConvert.Service.Impl;
 using LiVoucherConvert.Model;
 using LiHttp;
 using LiCommon.LiExpression.LiDefaultValue;
+using LiModel.LiReport;
 
 namespace LiContexts
 {
@@ -67,6 +68,13 @@ namespace LiContexts
         /// 表单界数据
         /// </summary>
         public static Dictionary<string, FormModel> FormModels { set { _FormModels = value; } get { return _FormModels; } }
+
+        private static Dictionary<string, LiReportModel> _ReportModels = new Dictionary<string, LiReportModel>();
+
+        /// <summary>
+        /// 报表数据
+        /// </summary>
+        public static Dictionary<string, LiReportModel> ReportModels { set { _ReportModels = value; } get { return _ReportModels; } }
 
         private static Dictionary<string, VoucherCodeModel> _VoucherCodeModels = new Dictionary<string, VoucherCodeModel>();
 
@@ -184,6 +192,31 @@ namespace LiContexts
                 }
             }
             return VoucherStatusModels[key];
+        }
+        /// <summary>
+        /// 获取对应的单据界面数据
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static LiReportModel getReportModel(string reportKey, string systemCode)
+        {
+            if (!ReportModels.ContainsKey(reportKey))
+            {
+                QueryParamModel paramModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.FormModel).getQueryParamModel_ShowAllColumn();
+
+                QueryComplexWhereModel queryComplexWhereModel = QueryComplexWhereModel.AND();
+                queryComplexWhereModel.wheres.Add(QueryComplexWhereModel.AND("systemCode", systemCode));
+                queryComplexWhereModel.wheres.Add(QueryComplexWhereModel.AND("reportKey", reportKey.Replace("LiReport","")));
+
+                paramModel.complexWheres = queryComplexWhereModel;
+
+                LiReportModel reportModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.LiReport).getEntitySingle<LiReportModel>(paramModel);
+                if (reportModel != null)
+                {
+                    ReportModels.Add(reportKey, reportModel);
+                }
+            }
+            return ReportModels[reportKey];
         }
 
         /// <summary>

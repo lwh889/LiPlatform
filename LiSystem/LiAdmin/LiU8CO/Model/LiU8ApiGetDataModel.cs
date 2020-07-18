@@ -8,6 +8,43 @@ namespace LiU8CO.Model
 {
     public class LiU8ApiGetDataModel
     {
+        public static LiU8ApiGetDataModel convertLiU8ApiGetDataModel(object liU8ApiInfo)
+        {
+            if (liU8ApiInfo == null) return null;
+
+            LiU8ApiGetDataModel liU8ApiGetData = new LiU8ApiGetDataModel();
+            liU8ApiGetData.iQueryType = 0;
+            liU8ApiGetData.iEnd = 1000;
+            liU8ApiGetData.iStart = 1;
+            liU8ApiGetData.sOrderByString = "";
+            liU8ApiGetData.sSelectFields = "*";
+            switch (liU8ApiInfo.GetType().Name)
+            {
+                case "LiU8ApiIdModel":
+                    LiU8ApiIdModel liU8ApiId = liU8ApiInfo as LiU8ApiIdModel;
+                    liU8ApiGetData.sAccID = liU8ApiId.sAccID;
+                    liU8ApiGetData.sDate = liU8ApiId.sDate;
+                    liU8ApiGetData.sPassword = liU8ApiId.sPassword;
+                    liU8ApiGetData.sSubId = liU8ApiId.sSubId;
+                    liU8ApiGetData.sUserID = liU8ApiId.sUserID;
+                    liU8ApiGetData.sYear = liU8ApiId.sYear;
+
+                    break;
+                case "LiU8ApiDataModel":
+                    LiU8ApiDataModel liU8ApiData = liU8ApiInfo as LiU8ApiDataModel;
+                    liU8ApiGetData.sAccID = liU8ApiData.sAccID;
+                    liU8ApiGetData.sDate = liU8ApiData.sDate;
+                    liU8ApiGetData.sPassword = liU8ApiData.sPassword;
+                    liU8ApiGetData.sSubId = liU8ApiData.sSubId;
+                    liU8ApiGetData.sUserID = liU8ApiData.sUserID;
+                    liU8ApiGetData.sYear = liU8ApiData.sYear;
+                    break;
+                default:
+                    return null;
+            }
+
+            return liU8ApiGetData;
+        }
         /// <summary>
         /// U8模块
         /// </summary>
@@ -46,7 +83,7 @@ namespace LiU8CO.Model
         /// <summary>
         /// 查询类型
         /// </summary>
-        public int bQueryType { set; get; }
+        public int iQueryType { set; get; }
         /// <summary>
         /// 查询起始
         /// </summary>

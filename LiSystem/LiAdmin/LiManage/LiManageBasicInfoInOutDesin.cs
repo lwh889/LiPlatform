@@ -200,7 +200,7 @@ namespace LiManage
         {
             foreach (KeyValuePair<string, Control> kvp in controlDict)
             {
-                DevControlUtil.setContorlData(ModelUtil.getModelValue<TableModel>(kvp.Key, tableModel), kvp.Value);
+                DevControlUtil.setContorlData(LiModel.Util.ModelUtil.getModelValue<TableModel>(kvp.Key, tableModel), kvp.Value);
             }
 
             gridControl1.DataSource = tableModel.datas;
@@ -213,7 +213,7 @@ namespace LiManage
         {
             foreach (KeyValuePair<string, Control> kvp in controlDict)
             {
-                ModelUtil.setModelValue<TableModel>(kvp.Key, DevControlUtil.getControlData(kvp.Value), tableModel);
+                LiModel.Util.ModelUtil.setModelValue<TableModel>(kvp.Key, DevControlUtil.getControlData(kvp.Value), tableModel);
             }
 
             tableModel.datas = gridControl1.DataSource as List<ColumnModel>;

@@ -277,21 +277,33 @@ namespace LiAdmin
 
                     if (rootTreeDataModel.Code == "LiBusinessManage" && !currentTreeDataModel.isGroup)
                     {
-                        if (currentTreeDataModel.Code.Substring(currentTreeDataModel.Code.Length - 4, 4) == "List")
+                        if(currentTreeDataModel.Code.Length>8 && currentTreeDataModel.Code.Substring(1,8) == "LiReport")
                         {
-                            RibbonForm ribbonForm = FormUtil.getVoucherList(currentTreeDataModel.Code.Substring(0, currentTreeDataModel.Code.Length - 4), LiContext.SystemCode);
-                            ribbonForm.Text = currentTreeDataModel.Name;
-                            PageFormModel pageFormModel = PageFormModel.getInstance(0, ribbonForm, currentTreeDataModel.Code, "", false);
-                            
+                            LiForm.Dev.LiForm liForm = ReportFormUtil.getReportForm(currentTreeDataModel.Code, LiContext.SystemCode) as LiForm.Dev.LiForm;
+                            liForm.Text = currentTreeDataModel.Name;
+                            PageFormModel pageFormModel = PageFormModel.getInstance(0, liForm, currentTreeDataModel.Code, "", false);
+
                             AddPageMdi(pageFormModel);
+
                         }
                         else
                         {
-                            LiForm.Dev.LiForm liForm = FormUtil.getVoucher(currentTreeDataModel.Code) as LiForm.Dev.LiForm;
-                            liForm.Text = currentTreeDataModel.Name;
-                            if (AddPageMdi(PageFormModel.getInstance(0, liForm, currentTreeDataModel.Code)))
+                            if (currentTreeDataModel.Code.Substring(currentTreeDataModel.Code.Length - 4, 4) == "List")
                             {
-                                liForm.setVoucherNewStatus();
+                                RibbonForm ribbonForm = FormUtil.getVoucherList(currentTreeDataModel.Code.Substring(0, currentTreeDataModel.Code.Length - 4), LiContext.SystemCode);
+                                ribbonForm.Text = currentTreeDataModel.Name;
+                                PageFormModel pageFormModel = PageFormModel.getInstance(0, ribbonForm, currentTreeDataModel.Code, "", false);
+
+                                AddPageMdi(pageFormModel);
+                            }
+                            else
+                            {
+                                LiForm.Dev.LiForm liForm = FormUtil.getVoucher(currentTreeDataModel.Code) as LiForm.Dev.LiForm;
+                                liForm.Text = currentTreeDataModel.Name;
+                                if (AddPageMdi(PageFormModel.getInstance(0, liForm, currentTreeDataModel.Code)))
+                                {
+                                    liForm.setVoucherNewStatus();
+                                }
                             }
                         }
                     }

@@ -17,11 +17,11 @@ namespace LiU8CO.Service
         void SetDefaultValue();
         void SetVouchData(Dictionary<string, object> datas, string bodyEntityName = "datas");
         void SetVouchID(string vouchID);
-        LiU8COReponseModel Insert(bool bAudit);
+        LiU8COReponseModel Insert();
 
         LiU8COReponseModel Audit();
 
-        LiU8COReponseModel UnAudit(bool bDelete);
+        LiU8COReponseModel UnAudit();
 
         LiU8COReponseModel Delete();
     }

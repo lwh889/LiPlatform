@@ -232,7 +232,7 @@ namespace LiManage
 
             foreach (KeyValuePair<string, Control> kvp in controlDict)
             {
-                DevControlUtil.setContorlData(ModelUtil.getModelValue<TEntity>(kvp.Key, entity), kvp.Value);
+                DevControlUtil.setContorlData(LiModel.Util.ModelUtil.getModelValue<TEntity>(kvp.Key, entity), kvp.Value);
             }
         }
 
@@ -254,7 +254,7 @@ namespace LiManage
         {
             foreach (KeyValuePair<string, Control> kvp in controlDict)
             {
-                ModelUtil.setModelValue<TEntity>(kvp.Key, DevControlUtil.getControlData(kvp.Value), entity);
+                LiModel.Util.ModelUtil.setModelValue<TEntity>(kvp.Key, DevControlUtil.getControlData(kvp.Value), entity);
             }
         }
 

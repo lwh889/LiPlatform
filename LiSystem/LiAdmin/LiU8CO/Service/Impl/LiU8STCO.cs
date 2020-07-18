@@ -61,12 +61,17 @@ namespace LiU8CO.Service.Impl
         {
             ModelUtil.setValue<LiU8STCO>(paramName, paramValue, this);
         }
-        public LiU8COReponseModel Insert(bool bAudit)
+        public LiU8COReponseModel Insert()
         {
             liU8COReponse = LiU8COReponseModel.getInstance();
             liU8COReponse.bSuccess = STCo.Insert(vouchType, domHead, domBody, domPos, ref errMsg, null, ref vouchId, ref _DomMsg, false, false);
             liU8COReponse.resultContent = errMsg;
             liU8COReponse.vouchID = vouchId;
+
+            if (liU8COReponse.bSuccess)
+            {
+                GetVouchDataByID(liU8COReponse);
+            }
 
             return liU8COReponse;
         }
@@ -74,15 +79,17 @@ namespace LiU8CO.Service.Impl
         {
             liU8COReponse = LiU8COReponseModel.getInstance();
             liU8COReponse.bSuccess = STCo.Verify(vouchType, vouchId, ref errMsg, null, null, null, false, false);
+            liU8COReponse.bAuditSuccess = liU8COReponse.bSuccess;
             liU8COReponse.resultContent = errMsg;
             liU8COReponse.vouchID = vouchId;
             return liU8COReponse;
         }
-        public LiU8COReponseModel UnAudit(bool bDelete)
+        public LiU8COReponseModel UnAudit()
         {
             liU8COReponse = LiU8COReponseModel.getInstance();
             liU8COReponse.bSuccess = STCo.UnVerify(vouchType, vouchId, ref errMsg, null, getTimestamp(this.vouchId), null, false, false);
             liU8COReponse.resultContent = errMsg;
+            liU8COReponse.bDeleteSuccess = liU8COReponse.bSuccess;
             liU8COReponse.vouchID = vouchId;
             return liU8COReponse;
         }

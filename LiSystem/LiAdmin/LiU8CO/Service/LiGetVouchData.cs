@@ -36,11 +36,11 @@ namespace LiU8CO.Service
                 }
 
                 cmd.Connection = conn;
-                cmd.CommandText = " exec sp_U8QueryList_Count @cardNumber,@bQueryType,@whereSql";
+                cmd.CommandText = " exec sp_U8QueryList_Count @cardNumber,@iQueryType,@whereSql";
                 cmd.CommandTimeout = 3600;
 
                 cmd.Parameters.Add(new SqlParameter("@cardNumber", liU8ApiGetData.sCardNumber));
-                cmd.Parameters.Add(new SqlParameter("@bQueryType", liU8ApiGetData.bQueryType));
+                cmd.Parameters.Add(new SqlParameter("@iQueryType", liU8ApiGetData.iQueryType));
                 cmd.Parameters.Add(new SqlParameter("@whereSql", liU8ApiGetData.sWhereString));
                 int iCount = (int)cmd.ExecuteScalar();
                 return iCount;
@@ -60,11 +60,11 @@ namespace LiU8CO.Service
                 }
 
                 cmd.Connection = conn;
-                cmd.CommandText = " exec sp_U8QueryList @cardNumber,@bQueryType,@fieldSql,@whereSql,@orderBySql,@rangeSql";
+                cmd.CommandText = " exec sp_U8QueryList @cardNumber,@iQueryType,@fieldSql,@whereSql,@orderBySql,@rangeSql";
                 cmd.CommandTimeout = 3600;
 
                 cmd.Parameters.Add(new SqlParameter("@cardNumber", liU8ApiGetData.sCardNumber));
-                cmd.Parameters.Add(new SqlParameter("@bQueryType", liU8ApiGetData.bQueryType));
+                cmd.Parameters.Add(new SqlParameter("@iQueryType", liU8ApiGetData.iQueryType));
                 cmd.Parameters.Add(new SqlParameter("@fieldSql", liU8ApiGetData.sSelectFields));
                 cmd.Parameters.Add(new SqlParameter("@whereSql", liU8ApiGetData.sWhereString));
                 cmd.Parameters.Add(new SqlParameter("@orderBySql", liU8ApiGetData.sOrderByString));

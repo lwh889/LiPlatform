@@ -103,12 +103,18 @@ namespace LiU8CO.Service.Impl
             SetDefaultValue();
         }
 
-        public LiU8COReponseModel Insert(bool bAudit)
+        public LiU8COReponseModel Insert()
         {
             liU8COReponse = LiU8COReponseModel.getInstance();
             liU8COReponse.resultContent = PUCo.VoucherSave(domHead, domBody, VoucherState, ref vouchIdObject, ref _CurDom, _usMode, ref _sOverDetailsXml,ref _DomMsg );
             liU8COReponse.bSuccess = string.IsNullOrEmpty(liU8COReponse.resultContent);
             liU8COReponse.vouchID = Convert.ToString(vouchIdObject);
+
+            if (liU8COReponse.bSuccess)
+            {
+                GetVouchDataByID(liU8COReponse);
+            }
+
             return liU8COReponse;
         }
 
@@ -121,10 +127,11 @@ namespace LiU8CO.Service.Impl
             PUCo.GetVoucherData(ref domHead,ref domBody, "", vouchId);
             liU8COReponse.resultContent = PUCo.ConfirmPO(domHead, ref _DomMsg, domBody);
             liU8COReponse.bSuccess = string.IsNullOrEmpty(liU8COReponse.resultContent);
+            liU8COReponse.bAuditSuccess = liU8COReponse.bSuccess;
             return liU8COReponse;
         }
 
-        public LiU8COReponseModel UnAudit(bool bDelete)
+        public LiU8COReponseModel UnAudit()
         {
             IXMLDOMDocument2 domHead = new MSXML2.DOMDocumentClass();
             IXMLDOMDocument2 domBody = new MSXML2.DOMDocumentClass();
@@ -133,6 +140,7 @@ namespace LiU8CO.Service.Impl
             PUCo.GetVoucherData(ref domHead, ref domBody, "", vouchId);
             liU8COReponse.resultContent = PUCo.CancelconfirmPO(domHead,  domBody);
             liU8COReponse.bSuccess = string.IsNullOrEmpty(liU8COReponse.resultContent);
+            liU8COReponse.bDeleteSuccess = liU8COReponse.bSuccess;
             return liU8COReponse;
         }
 

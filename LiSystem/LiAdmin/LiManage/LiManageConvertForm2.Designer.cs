@@ -252,7 +252,7 @@
             this.btnNew.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.ImageOptions.Image")));
             this.btnNew.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNew.ImageOptions.LargeImage")));
             this.btnNew.Name = "btnNew";
-            this.btnNew.Tag = "LiTableConfigureForm.btnNew";
+            this.btnNew.Tag = "LiReportDesignForm.btnNew";
             this.btnNew.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNew_ItemClick);
             // 
             // btnEdit
@@ -262,7 +262,7 @@
             this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.Image")));
             this.btnEdit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.LargeImage")));
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Tag = "LiTableConfigureForm.btnEdit";
+            this.btnEdit.Tag = "LiReportDesignForm.btnEdit";
             this.btnEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEdit_ItemClick);
             // 
             // btnSave
@@ -272,7 +272,7 @@
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.LargeImage")));
             this.btnSave.Name = "btnSave";
-            this.btnSave.Tag = "LiTableConfigureForm.btnSave";
+            this.btnSave.Tag = "LiReportDesignForm.btnSave";
             this.btnSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave_ItemClick);
             // 
             // btnExit
@@ -282,7 +282,7 @@
             this.btnExit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.Image")));
             this.btnExit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExit.ImageOptions.LargeImage")));
             this.btnExit.Name = "btnExit";
-            this.btnExit.Tag = "LiTableConfigureForm.btnExit";
+            this.btnExit.Tag = "LiReportDesignForm.btnExit";
             this.btnExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExit_ItemClick);
             // 
             // btnStatus
@@ -292,7 +292,7 @@
             this.btnStatus.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnStatus.ImageOptions.Image")));
             this.btnStatus.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnStatus.ImageOptions.LargeImage")));
             this.btnStatus.Name = "btnStatus";
-            this.btnStatus.Tag = "LiTableConfigureForm.btnStatus";
+            this.btnStatus.Tag = "LiReportDesignForm.btnStatus";
             this.btnStatus.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStatus_ItemClick);
             // 
             // ribbonPage1

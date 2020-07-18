@@ -47,6 +47,8 @@ select 'LiProcedureConfigure','表信息配置',0,1,4,4,9,9
 union all
 select 'LiSystemInfoForm','系统信息配置',0,1,4,4,10,10
 union all
+select 'LiReportDesignForm','报表设计',0,1,4,4,11,11
+union all
 select 'LiDictDesign','库存档案组',1,0,2,2,1,1
 union all
 select 'LiDictDesign','物料分组',0,0,2,2021,1,1

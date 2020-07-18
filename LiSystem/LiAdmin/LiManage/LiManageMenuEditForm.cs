@@ -192,7 +192,7 @@ namespace LiManage
         {
             foreach (KeyValuePair<string, Control> kvp in controlDict)
             {
-                DevControlUtil.setContorlData(ModelUtil.getModelValue<TreeDataModel>(kvp.Key, treeDataModel), kvp.Value);
+                DevControlUtil.setContorlData(LiModel.Util.ModelUtil.getModelValue<TreeDataModel>(kvp.Key, treeDataModel), kvp.Value);
             }
 
 
@@ -205,7 +205,7 @@ namespace LiManage
         {
             foreach (KeyValuePair<string, Control> kvp in controlDict)
             {
-                ModelUtil.setModelValue<TreeDataModel>(kvp.Key, DevControlUtil.getControlData(kvp.Value), treeDataModel);
+                LiModel.Util.ModelUtil.setModelValue<TreeDataModel>(kvp.Key, DevControlUtil.getControlData(kvp.Value), treeDataModel);
             }
         }
 

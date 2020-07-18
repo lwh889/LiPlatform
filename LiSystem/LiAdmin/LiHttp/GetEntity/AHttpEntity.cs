@@ -130,6 +130,7 @@ namespace LiHttp.GetEntity
                 throw (new LiHttpException(resultContent));
             }
         }
+
         public void execProcedureNoResult(Dictionary<string, object> paramDict)
         {
             ProcedureParamModel paramModel = liHttpProcedure.getProcedureParamModel(paramDict);
