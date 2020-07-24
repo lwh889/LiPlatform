@@ -146,10 +146,22 @@ namespace LiManage
 
         #region 引用数据源
         private SystemInfoModel systemInfoModel = new SystemInfoModel();
+        private ControlTypeModel controlTypeModel = new ControlTypeModel();
+        private DictGroupModel dictGroupModel = new DictGroupModel();
+        private TableModel tableModel = new TableModel();
+        private ColumnModel columnModel = new ColumnModel();
+        private OrderBy orderBy = new OrderBy();
+        private GridlookUpEditShowModeModel gridlookUpEditShowModeModel = new GridlookUpEditShowModeModel();
         #endregion
 
         /// <summary>
-        /// 
+        /// 报表参数
+        /// </summary>
+        private List<Dictionary<string, object>> paramMaps = new List<Dictionary<string, object>>();
+
+        public Dictionary<string, GridlookUpEditShowModel> refControls;
+        public Dictionary<string, DataTable> refDatas;
+        /// <summary>
         /// 数据
         /// </summary>
         LiReportModel formData;
@@ -178,6 +190,8 @@ namespace LiManage
         public void InitData()
         {
             systemInfoModel.setDataSource(LiContexts.LiContext.getHttpEntity(LiEntityKey.SystemInfo).getEntityList<SystemInfoModel>());
+            tableModel.setDataSource(LiContexts.LiContext.getHttpEntity(LiEntityKey.TableInfo).getEntityList<TableModel>("Basic", "entityType"));          
+            dictGroupModel.setDataSource(LiContexts.LiContext.getHttpEntity(LiEntityKey.DictGroup, LiContext.SystemCode).getEntityList<DictGroupModel>());
 
             //读取Form上的控件
             DevFormUtil.getControlInForm(formID + ".", layoutControlItemDict, controlDict, this);
@@ -199,11 +213,32 @@ namespace LiManage
                 voucherStatusModel.dataStatuss = new List<StatusModel>();
             }
             setNewStatus();
+            setReportSqlParam();
+
+            refControls = LiContexts.LiContext.getHttpEntity(LiEntityKey.SysDatabases).getRefControls<GridlookUpEditShowModel>();
+            refDatas = LiContexts.LiContext.getHttpEntity(LiEntityKey.SysDatabases).getRefControlDatas();
         }
 
         public void InitControl()
         {
             GridlookUpEditUtil.InitDefaultRefControl(GridlookUpEditShowMode.VALUE, systemInfoModel.getValueMember(), systemInfoModel.getDisplayMember(), systemInfoModel.getSearchColumns(), systemInfoModel.getDisplayColumns(), systemInfoModel.getDictModelDesc(), gridLookUpEdit_systemCode, this, systemInfoModel.getDataSource<List<SystemInfoModel>>());
+
+            GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, tableModel.getValueMember(), tableModel.getDisplayMember(), tableModel.getSearchColumns(), tableModel.getDisplayColumns(), tableModel.getDictModelDesc(), repositoryItemGridLookUpEdit_basicInfoKey, this, tableModel.getDataSource<List<TableModel>>());
+
+            GridlookUpEditRepositoryItemUtil.InitDefaultComboBoxControl(controlTypeModel.getValueMember(), controlTypeModel.getDisplayMember(), controlTypeModel.getSearchColumns(), controlTypeModel.getDisplayColumns(), repositoryItemGridLookUpEdit_controlType, this, controlTypeModel.getDataSource());
+
+            GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, dictGroupModel.getValueMember(), dictGroupModel.getDisplayMember(), dictGroupModel.getSearchColumns(), dictGroupModel.getDisplayColumns(), dictGroupModel.getDictModelDesc(), repositoryItemGridLookUpEdit_dictInfoType, this, dictGroupModel.getDataSource<List<DictGroupModel>>());
+
+            GridlookUpEditRepositoryItemUtil.InitDefaultRefControl(GridlookUpEditShowMode.NAME, columnModel.getValueMember(), columnModel.getDisplayMember(), columnModel.getSearchColumns(), columnModel.getDisplayColumns(), columnModel.getDictModelDesc(), repositoryItemGridLookUpEdit_basicInfoShowFieldName, this, columnModel.getDataSource<List<ColumnModel>>());
+
+            GridlookUpEditRepositoryItemUtil.InitDefaultComboBoxControl(gridlookUpEditShowModeModel.getValueMember(), gridlookUpEditShowModeModel.getDisplayMember(), gridlookUpEditShowModeModel.getSearchColumns(), gridlookUpEditShowModeModel.getDisplayColumns(), repositoryItemGridLookUpEdit_basicInfoShowMode, this, gridlookUpEditShowModeModel.getDataSource());
+
+            GridlookUpEditRepositoryItemUtil.InitDefaultComboBoxControl(orderBy.getValueMember(), orderBy.getDisplayMember(), orderBy.getSearchColumns(), orderBy.getDisplayColumns(), repositoryItemGridLookUpEdit_orderBy, this, orderBy.getDataSource());
+
+            GridlookUpEditShowModel gridlookUpEditShowModelComboBox_ComboBox = refControls["sysDatabases"];
+            DataTable liComboBoxData = refDatas["sysDatabases"];
+            GridlookUpEditUtil.InitDefaultComboBoxControl("name", "name", gridlookUpEditShowModelComboBox_ComboBox.searchColumns, gridlookUpEditShowModelComboBox_ComboBox.displayColumns, gridLookUpEdit_dataBaseName, this, liComboBoxData);
+
             InitMenu();
         }
 
@@ -233,6 +268,26 @@ namespace LiManage
             //    e.SelectImageIndex = 1;
             //};
         }
+
+        /// <summary>
+        /// 设置报表参数
+        /// </summary>
+        private void setReportSqlParam()
+        {
+            Dictionary<string, object> paramMapDict = new Dictionary<string, object>();
+            paramMapDict.Add("paramName", "whereSql");
+            paramMapDict.Add("paramType", "nvarchar(max)");
+            paramMaps.Add(paramMapDict);
+            paramMapDict = new Dictionary<string, object>();
+            paramMapDict.Add("paramName", "orderBySql");
+            paramMapDict.Add("paramType", "nvarchar(max)");
+            paramMaps.Add(paramMapDict); paramMapDict = new Dictionary<string, object>();
+            paramMapDict.Add("paramName", "rangeSql");
+            paramMapDict.Add("paramType", "nvarchar(max)");
+            paramMaps.Add(paramMapDict);
+
+        }
+
         /// <summary>
         /// 加载数据
         /// </summary>
@@ -292,6 +347,7 @@ namespace LiManage
         private void btnSave_ItemClick(object sender, ItemClickEventArgs e)
         {
             getData();
+            handleGridlookUpEditShowModel();
             if (formData.id > 0)
             {
                 LiContexts.LiContext.getHttpEntity(LiEntityKey.LiReport).saveEntity(true, formData);
@@ -368,10 +424,18 @@ namespace LiManage
                 MessageUtil.ShowByWarmTip("报表SQL为空！");
                 return;
             }
-            Dictionary<string, object> paramDict = new Dictionary<string, object>();
-            paramDict.Add("execSql", memoEdit_reportSql.Text);
+            Dictionary<string, object> paramValues = new Dictionary<string, object>();
+            paramValues.Add("whereSql", "");
+            paramValues.Add("orderBySql", "");
+            paramValues.Add("rangeSql", " and iPageRow > 0 and iPageRow <= 1");
 
-            DataTable dt = LiHttpUtil.getHttpEntity(LiEntityKey.sp_ExecSql).execProcedure_DataTable(paramDict);
+            Dictionary<string, object> paramDict = new Dictionary<string, object>();
+            paramDict.Add("dataBaseName", gridLookUpEdit_dataBaseName.EditValue);
+            paramDict.Add("procedureName", memoEdit_reportSql.EditValue);
+            paramDict.Add("paramMaps", paramMaps);
+            paramDict.Add("paramValues", paramValues);
+
+            DataTable dt = LiContexts.LiContext.getHttpEntity(LiEntityKey.sp_Currency).execProcedureByMap_DataTable(paramDict);
 
             if(dt == null || dt.Rows.Count <= 0)
             {
@@ -570,6 +634,65 @@ namespace LiManage
         private void BtnAddButton_ItemClick(object sender, ItemClickEventArgs e)
         {
             addButton(Convert.ToString(e.Item.Tag));
+        }
+
+        private void BtnRelease_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void handleGridlookUpEditShowModel()
+        {
+            foreach (LiReportFieldModel liReportFieldModel in formData.datas)
+            {
+                switch (liReportFieldModel.controlType)
+                {
+                    case "UserEdit":
+                    case "GridLookUpEditRef":
+                        TableModel tableModelTemp = tableModel.getDataSource<List<TableModel>>().Where(m => m.entityKey == liReportFieldModel.basicInfoKey).FirstOrDefault();
+
+                        liReportFieldModel.gridlookUpEditShowModelJson = DevControlUtil.getGridLookUpEditRefInfo(tableModelTemp, liReportFieldModel.basicInfoShowMode, liReportFieldModel.basicInfoTableKey, liReportFieldModel.basicInfoShowFieldName);
+                        break;
+                    case "GridLookUpEditComboBox":
+                        liReportFieldModel.gridlookUpEditShowModelJson = DevControlUtil.getGridLookUpEditDictInfo();
+                        break;
+                }
+            }
+        }
+        private void GridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            LiReportFieldModel liReportFieldModel = gridView1.GetFocusedRow() as LiReportFieldModel;
+
+
+            switch (e.Column.FieldName)
+            {
+                case "basicInfoKey":
+                    TableModel tableModelTemp = tableModel.getDataSource<List<TableModel>>().Where(m => m.entityKey == Convert.ToString(e.Value)).FirstOrDefault();
+                    if (tableModelTemp != null)
+                    {
+                        liReportFieldModel.basicInfoTableKey = tableModelTemp.keyName;
+                    }
+                    else
+                    {
+                        liReportFieldModel.basicInfoTableKey = string.Empty;
+                    }
+                    break;
+            }
+
+        }
+
+        private void RepositoryItemGridLookUpEdit_basicInfoShowFieldName_BeforePopup(object sender, EventArgs e)
+        {
+            LiReportFieldModel liReportFieldModel = gridView1.GetFocusedRow() as LiReportFieldModel;
+            TableModel tableModelTemp = tableModel.getDataSource<List<TableModel>>().Where(m => m.entityKey == liReportFieldModel.basicInfoKey).FirstOrDefault();
+            if (tableModelTemp != null)
+            {
+                repositoryItemGridLookUpEdit_basicInfoShowFieldName.DataSource = tableModelTemp.datas;
+            }
+            else
+            {
+                repositoryItemGridLookUpEdit_basicInfoShowFieldName.DataSource = columnModel.getDataSource<List<ColumnModel>>();
+            }
         }
     }
 }

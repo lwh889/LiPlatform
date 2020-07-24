@@ -227,6 +227,7 @@
     <Compile Include="Event\EventListForm\LiEventListUnAudit.cs" />
     <Compile Include="Event\EventListForm\LiEventListUnSubmit.cs" />
     <Compile Include="Event\EventReportForm\LiEventReportPreciseQuery.cs" />
+    <Compile Include="Event\EventReportForm\LiEventReportExit.cs" />
     <Compile Include="Event\EventReportForm\LiEventReportRefresh.cs" />
     <Compile Include="Event\EventReportForm\LiEventReportExport.cs" />
     <Compile Include="Event\EventReportForm\LiEventReportQuery.cs" />

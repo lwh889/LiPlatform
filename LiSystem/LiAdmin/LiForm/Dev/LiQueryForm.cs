@@ -19,15 +19,16 @@ using LiForm.Dev.Util;
 using LiModel.Util;
 using LiControl.Util;
 using LiCommon.LiEnum;
+using DevExpress.XtraGrid;
 
 namespace LiForm.Dev
 {
     public partial class LiQueryForm : DevExpress.XtraEditors.XtraForm
     {
-        /// <summary>
-        /// 列表窗口
-        /// </summary>
-        public LiListForm liListForm;
+        ///// <summary>
+        ///// 列表窗口
+        ///// </summary>
+        //public LiListForm liListForm;
 
         /// <summary>
         /// 当前查询方案
@@ -67,13 +68,14 @@ namespace LiForm.Dev
 
         private string entityKey;
 
-        public LiQueryForm(LiListForm liListForm)
+        public LiQueryForm(string entityKey, QuerySchemeModel currentQuerySchemeModel, List<QuerySchemeModel> querySchemeModels)
         {
             InitializeComponent();
 
-            this.entityKey = liListForm.entityKey;
-            this.querySchemeModels = liListForm.querySchemeModels;
-            this.liListForm = liListForm;
+            this.entityKey = entityKey;
+            this.querySchemeModels = querySchemeModels;
+            this.currentQuerySchemeModel = currentQuerySchemeModel;
+            //this.liListForm = liListForm;
 
             Init();
         }
@@ -92,10 +94,26 @@ namespace LiForm.Dev
 
         }
 
+        public void setGridControl2DataSource(List<EntityModel> dataSource)
+        {
+            gridControl2.DataSource = dataSource;
+            if (gridControl2.DataSource == null || dataSource.Count==0)
+            {
+                gridControl2.Visible = false;
+                gridColumn1_EntityName.Visible = false;
+                gridColumn1_EntityName.VisibleIndex = -1;
+            }
+            else
+            {
+                gridControl2.Visible = true;
+                gridColumn1_EntityName.Visible = true;
+                gridColumn1_EntityName.VisibleIndex = 0;
+            }
+        }
         public void InitControl()
         {
-            gridControl2.DataSource = EntityModel.getDataSource(entityKey);
-
+            List<EntityModel> entities = EntityModel.getDataSource(entityKey);
+            setGridControl2DataSource(entities);
             gridControl3.DataSource = FieldModel.getDataSource(entityKey);
 
             InitGridlookUpEdit();
@@ -129,9 +147,14 @@ namespace LiForm.Dev
         /// </summary>
         public void InitQueryScheme()
         {
-            FormUtil.loadQueryScheme(querySchemeModels, querySchemeBtns, new System.EventHandler(this.btnQueryScheme_Click), layoutControlGroup1);
+            setQuerySchemes(querySchemeModels);
+        }
 
-            currentQuerySchemeModel = querySchemeModels[0];
+        public void setQuerySchemes(List<QuerySchemeModel> querySchemeModels)
+        {
+            this.querySchemeModels = querySchemeModels;
+            FormUtil.loadQueryScheme(querySchemeModels, querySchemeBtns, new System.EventHandler(this.btnQueryScheme_Click), layoutControlGroup1, layoutControl1);
+
         }
 
         /// <summary>
@@ -192,11 +215,9 @@ namespace LiForm.Dev
         }
 
         /// <summary>
-        /// 另保存行
+        /// 新增查询方案
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnSaveAs_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void newQueryScheme()
         {
             LiInputDialog inputDialog = new LiInputDialog();
             if (inputDialog.ShowDialog() == DialogResult.Yes)
@@ -213,8 +234,11 @@ namespace LiForm.Dev
                 List<QueryModel> querys = gridControl1.DataSource as List<QueryModel>;
                 querySchemeModel.querys = LiModel.Util.ModelUtil.copyEntitys<QueryModel>(querys);
 
-                List<EntityModel> entitys = gridControl2.DataSource as List<EntityModel>;
-                querySchemeModel.entitys = LiModel.Util.ModelUtil.copyEntitys<EntityModel>(entitys);
+                if (gridControl2.DataSource != null)
+                {
+                    List<EntityModel> entitys = gridControl2.DataSource as List<EntityModel>;
+                    querySchemeModel.entitys = LiModel.Util.ModelUtil.copyEntitys<EntityModel>(entitys);
+                }
 
                 List<FieldModel> fields = gridControl3.DataSource as List<FieldModel>;
                 querySchemeModel.fields = LiModel.Util.ModelUtil.copyEntitys<FieldModel>(fields);
@@ -222,9 +246,23 @@ namespace LiForm.Dev
                 LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).newEntity(querySchemeModel);
                 MessageUtil.Show(LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).tipStr, "温馨提示");
 
-                querySchemeModels = liListForm.loadQuerySchemeModels();
-                FormUtil.loadQueryScheme(querySchemeModels, querySchemeBtns, new System.EventHandler(this.btnQueryScheme_Click), layoutControlGroup1);
+                updateQueryScheme(entityKey);
             }
+        }
+
+        private void updateQueryScheme(string entityKey)
+        {
+            querySchemeModels = FormUtil.loadQuerySchemeModels(entityKey);
+            FormUtil.loadQueryScheme(querySchemeModels, querySchemeBtns, new System.EventHandler(this.btnQueryScheme_Click), layoutControlGroup1, layoutControl1);
+        }
+        /// <summary>
+        /// 另保存行
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSaveAs_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            newQueryScheme();
         }
 
         /// <summary>
@@ -246,29 +284,14 @@ namespace LiForm.Dev
         {
             if (currentQuerySchemeModel.querySchemeName.Equals("默认方案"))
             {
-                LiInputDialog inputDialog = new LiInputDialog();
-                if (inputDialog.ShowDialog() == DialogResult.Yes)
-                {
-                    QuerySchemeModel querySchemeModel = new QuerySchemeModel();
-                    querySchemeModel.entityKey = entityKey;
-                    querySchemeModel.userCode = LiContexts.LiContext.userInfo.userCode;
-                    querySchemeModel.querySchemeName = inputDialog.getValue();
-                    querySchemeModel.entitys = gridControl2.DataSource as List<EntityModel>;
-                    querySchemeModel.fields = gridControl3.DataSource as List<FieldModel>;
-                    querySchemeModel.querys = gridControl1.DataSource as List<QueryModel>;
-
-                    LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).newEntity(querySchemeModel);
-                    MessageUtil.Show(LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).tipStr, "温馨提示");
-
-                    querySchemeModels = liListForm.loadQuerySchemeModels();
-                    FormUtil.loadQueryScheme(querySchemeModels, querySchemeBtns, new System.EventHandler(this.btnQueryScheme_Click), layoutControlGroup1);
-
-                }
-
+                newQueryScheme();
             }
             else
             {
-                currentQuerySchemeModel.entitys = gridControl2.DataSource as List<EntityModel>;
+                if (gridControl2.DataSource != null)
+                {
+                    currentQuerySchemeModel.entitys = gridControl2.DataSource as List<EntityModel>;
+                }
                 currentQuerySchemeModel.fields = gridControl3.DataSource as List<FieldModel>;
                 currentQuerySchemeModel.querys = gridControl1.DataSource as List<QueryModel>;
                 LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).updateEntity(currentQuerySchemeModel);
@@ -302,7 +325,7 @@ namespace LiForm.Dev
             if (querySchemeModel != null)
             {
                 gridControl1.DataSource = querySchemeModel.querys;
-                gridControl2.DataSource = querySchemeModel.entitys;
+                setGridControl2DataSource(querySchemeModel.entitys);
                 gridControl3.DataSource = querySchemeModel.fields;
                 currentQuerySchemeModel = querySchemeModel;
             }
@@ -396,6 +419,54 @@ namespace LiForm.Dev
                     break;
             }
 
+        }
+
+        private void BtnDeleteQueryScheme_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(currentQuerySchemeModel!=null && currentQuerySchemeModel.id == 0)
+            {
+                MessageUtil.ShowBySystemTip("默认方案不能删除！");
+                return;
+            }
+
+            if(currentQuerySchemeModel != null && MessageUtil.ShowMsgBox("是否删除当前查询方案？","温馨提示",MsgType.YesNo) == DialogResult.Yes)
+            {
+                LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).deleteEntity(currentQuerySchemeModel);
+
+                MessageUtil.ShowBySystemTip(LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).tipStr);
+                if(LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).bSuccess)
+                {
+                    updateQueryScheme(entityKey);
+                }
+            }
+        }
+
+        private void BtnUp_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DevControlUtil.UpRow<FieldModel>(gridView3);
+            ResetFieldModelIndex(gridControl3);
+            gridControl3.RefreshDataSource();
+        }
+
+        /// <summary>
+        /// 重置按钮索引
+        /// </summary>
+        /// <param name="gridControl"></param>
+        private void ResetFieldModelIndex(GridControl gridControl)
+        {
+            int iRow = 1;
+            List<FieldModel> fields = gridControl.DataSource as List<FieldModel>;
+            foreach (FieldModel field in fields)
+            {
+                field.iColumnIndex = iRow++;
+            }
+        }
+
+        private void BtnDown_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DevControlUtil.DownRow<FieldModel>(gridView3);
+            ResetFieldModelIndex(gridControl3);
+            gridControl3.RefreshDataSource();
         }
     }
 }

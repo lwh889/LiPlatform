@@ -26,6 +26,10 @@ namespace LiModel.LiReport
         /// </summary>
         public string reportName { set; get; }
         /// <summary>
+        /// 是否启用列组
+        /// </summary>
+        public bool bColumnGroup { set; get; }
+        /// <summary>
         /// 系统帐套号
         /// </summary>
         public string systemCode { set; get; }
@@ -33,6 +37,10 @@ namespace LiModel.LiReport
         /// 系统菜单编码
         /// </summary>
         public int menuCode { set; get; }
+        /// <summary>
+        /// 系统数据库编码
+        /// </summary>
+        public string dataBaseName { set; get; }
         /// <summary>
         /// SQL
         /// </summary>

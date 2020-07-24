@@ -19,7 +19,7 @@ namespace LiForm.Event.EventListForm
 
             try
             {
-                LiQueryForm queryForm = new LiQueryForm(this.liListForm);
+                LiQueryForm queryForm = new LiQueryForm(liListForm.entityKey, liListForm.currentQuerySchemeModel, liListForm.querySchemeModels);
                 if (queryForm.ShowDialog() == DialogResult.Yes)
                 {
                     string whereStr = DevFormUtil.getPreciseWhereStr(queryForm.returnQuerys, true);
@@ -29,6 +29,7 @@ namespace LiForm.Event.EventListForm
                     this.liListForm.FillGridListCtrlQuery(this.liListForm.setFirstPage());
                     bSuccess = true;
                 }
+                this.liListForm.setQuerySchemes(queryForm.querySchemeModels);
             }
             catch (Exception ex)
             {

@@ -11,7 +11,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,7 +24,7 @@ public class SqlMakerMsSqlDelete extends SqlMakerMsSql implements IDelete {
     private final static Logger logger = LoggerFactory.getLogger(SqlMakerMsSqlDelete.class);
 
     public Object keyValue = null;
-    public Map<String, Object> foreignKeyMap = new HashMap<>();
+    public Map<String, List<Object>> childKeyValueMap = new HashMap<>();
     public SqlMakerMsSqlDelete(EntityInfo entityInfo){
         super(entityInfo);
     }
@@ -50,12 +52,10 @@ public class SqlMakerMsSqlDelete extends SqlMakerMsSql implements IDelete {
                 keyValue = jsonModel.values.get(entry.getKey());
             }
 
-            //获取子表的主键值
             if(tableInfoMap.containsKey(entry.getKey())){
+                TableInfo childTableInfo = tableInfoMap.get(entry.getKey());
                 if(fieldInfo.getRelationship() == Relationship.Many){
-                    TableInfo childTableInfo = tableInfoMap.get(entry.getKey());
-
-                    foreignKeyMap.put(childTableInfo.getKeyName(), keyValue);
+                    getChildKeys(entry.getKey(), childKeyValueMap, jsonModel, childTableInfo);
                 }
             }
         }
@@ -63,6 +63,27 @@ public class SqlMakerMsSqlDelete extends SqlMakerMsSql implements IDelete {
         return true;
     }
 
+    /**
+     * 获取子表的主键值
+     * @param key 字段Key
+     * @param childKeyValueMap 保存子表主键
+     * @param jsonModel 删除数据
+     * @param childTableInfo 主表的子表信息
+     * @return
+     */
+    public void getChildKeys(String key,Map<String, List<Object>> childKeyValueMap, JsonModel jsonModel, TableInfo childTableInfo){
+        if(childTableInfo.getTableInfoMap().size()>0){
+            List<Object> childKeys = new ArrayList<>();
+            List<JsonModel> childValues = jsonModel.relationValues.get(key);
+            for (JsonModel childValue : childValues) {
+                childKeys.add(childValue.values.get(childTableInfo.getKeyName()));
+                for (Map.Entry<String, TableInfo> grandsonTableInfoValue : childTableInfo.getTableInfoMap().entrySet()) {
+                    getChildKeys(grandsonTableInfoValue.getKey(), childKeyValueMap, childValue, grandsonTableInfoValue.getValue());
+                }
+            }
+            childKeyValueMap.put(key, childKeys);
+        }
+    }
     /**
      * 插入实体值
      * @param entity
@@ -87,14 +108,33 @@ public class SqlMakerMsSqlDelete extends SqlMakerMsSql implements IDelete {
             }
 
             //获取子表的主键值
-            if(tableInfoMap.containsKey(entry.getKey())){
-                if(fieldInfo.getRelationship() == Relationship.Many){
-                    foreignKeyMap.put(entry.getKey(), keyValue);
-                }
-            }
+            //if(tableInfoMap.containsKey(entry.getKey())){
+            //    if(fieldInfo.getRelationship() == Relationship.Many){
+            //        foreignKeyMap.put(entry.getKey(), keyValue);
+            //    }
+            //}
         }
 
         return true;
+    }
+    private void makerDeleteSql(String key, StringBuilder builder, Map<String, TableInfo> tableInfoMap,TableInfo tableInfo){
+        if(tableInfoMap.size()>0){
+            for (Map.Entry<String, TableInfo> entry : tableInfoMap.entrySet()) {
+                TableInfo childTableInfo = entry.getValue();
+                makerDeleteSql(entry.getKey(), builder, childTableInfo.getTableInfoMap() ,childTableInfo);
+                List<Object> childKeyValues = childKeyValueMap.get(key);
+                if(childKeyValues.size()>0){
+                    builder.append(" DELETE ").append(tableInfo.getDataBaseName()).append(".dbo.").append(childTableInfo.getTableName()).append(" WHERE ").append( childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName())).append(" in (");
+                    for (Object value : childKeyValues){
+                        builder.append(getColumnValueFormat(value)).append(",");
+                    }
+                    builder.deleteCharAt(builder.length()-1);
+                    builder.append(")");
+                }
+
+            }
+        }
+
     }
 
     @Override
@@ -104,8 +144,10 @@ public class SqlMakerMsSqlDelete extends SqlMakerMsSql implements IDelete {
         TableInfo tableInfo = entityInfo.getTableInfo();
         Map<String, TableInfo> tableInfoMap = tableInfo.getTableInfoMap();
 
-        for (Map.Entry<String, TableInfo> entry : tableInfoMap.entrySet()) {
+        for(Map.Entry<String, TableInfo> entry : tableInfoMap.entrySet()){
             TableInfo childTableInfo = entry.getValue();
+            makerDeleteSql(entry.getKey(), builder, childTableInfo.getTableInfoMap(), childTableInfo);
+
             builder.append(" DELETE ").append(tableInfo.getDataBaseName()).append(".dbo.").append(childTableInfo.getTableName()).append(" WHERE ").append( childTableInfo.getForeignKeyNameMap().get(tableInfo.getTableName())).append(" = ").append(getColumnValueFormat(keyValue));
         }
         builder.append(" DELETE ").append(tableInfo.getDataBaseName()).append(".dbo.").append(tableInfo.getTableName()).append(" WHERE ").append(tableInfo.getKeyName()).append(" = ").append(getColumnValueFormat(keyValue));

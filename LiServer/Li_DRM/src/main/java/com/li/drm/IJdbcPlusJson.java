@@ -106,11 +106,25 @@ public interface IJdbcPlusJson {
 
     /**
      * 存储过程获取数据
+     * @param procedureMap
+     * @return
+     */
+    List<Map<String, Object>> procedureByMap_Json( Map<String,Object> procedureMap);
+
+    /**
+     * 存储过程获取数据
      * @param procedureModel
      * @param paramValues
      * @return
      */
     Integer procedureNoResult_Json(ProcedureModel procedureModel, Map<String,Object> paramValues);
+
+    /**
+     * 存储过程获取数据
+     * @param procedureMap
+     * @return
+     */
+    Integer procedureNoResultByMap_Json( Map<String,Object> procedureMap);
 
 
 

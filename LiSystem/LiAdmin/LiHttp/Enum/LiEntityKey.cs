@@ -100,8 +100,18 @@ namespace LiHttp.Enum
         public const string _sp_ExecSql = "sp_ExecSql";
         public static string sp_ExecSql { get { return _sp_ExecSql; } }
 
+        public const string _sp_QueryList_Count = "sp_QueryList_Count";
+        public static string sp_QueryList_Count { get { return _sp_QueryList_Count; } }
 
-        
+        public const string _sp_QueryList = "sp_QueryList";
+        public static string sp_QueryList { get { return _sp_QueryList; } }
+
+        public const string _sp_Currency = "sp_Currency";
+        /// <summary>
+        /// 通用
+        /// </summary>
+        public static string sp_Currency { get { return _sp_Currency; } }
+
 
     }
 }

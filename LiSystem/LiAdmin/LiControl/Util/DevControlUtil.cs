@@ -19,6 +19,9 @@ using LiModel.Util;
 using LiModel.Form;
 using LiCommon.Util;
 using LiCommon.LiEnum;
+using LiModel.Basic;
+using LiModel.Dev.GridlookUpEdit;
+using DevExpress.XtraGrid.Views.BandedGrid;
 
 namespace LiControl.Util
 {
@@ -27,6 +30,112 @@ namespace LiControl.Util
    /// </summary>
     public class DevControlUtil
     {
+        public static GridView getGridView(GridControl gridControl,Dictionary<string, Dictionary<string, object>> gridViewInfo)
+        {
+            gridControl.ViewCollection.Clear();
+
+            GridView gridView = new GridView();
+            gridControl.MainView = gridView;
+            gridView.GridControl = gridControl;
+            gridView.Name = "gridView1";
+            foreach (KeyValuePair<string, Dictionary<string, object>> keyValues in gridViewInfo)
+            {
+                switch (keyValues.Key)
+                {
+                    case "OptionsView":
+                        foreach (KeyValuePair<string, object> keyValue in keyValues.Value)
+                        {
+                            LiCommon.Util.ModelUtil.setValue<GridOptionsView>(keyValue.Key, keyValue.Value, gridView.OptionsView);
+                        }
+                        break;
+                }
+            }
+
+            gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            gridView});
+            return gridView;
+        }
+        public static BandedGridView getBandedGridView(GridControl gridControl, Dictionary<string, Dictionary<string, object>> gridViewInfo)
+        {
+            gridControl.ViewCollection.Clear();
+
+            BandedGridView bandedGridView = new BandedGridView();
+            gridControl.MainView = bandedGridView;
+            bandedGridView.GridControl = gridControl;
+            bandedGridView.Name = "bandedGridView1";
+            foreach (KeyValuePair<string, Dictionary<string, object>> keyValues in gridViewInfo)
+            {
+                switch (keyValues.Key)
+                {
+                    case "OptionsView":
+                        foreach(KeyValuePair<string, object> keyValue in keyValues.Value)
+                        {
+                            LiCommon.Util.ModelUtil.setValue<BandedGridOptionsView>(keyValue.Key, keyValue.Value, bandedGridView.OptionsView);
+                        }
+                        break;
+                }
+            }
+
+            gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            bandedGridView});
+            return bandedGridView;
+        }
+        /// <summary>
+        /// 生成字典控件配置信息
+        /// </summary>
+        /// <returns></returns>
+        public static string getGridLookUpEditDictInfo()
+        {
+            GridlookUpEditShowModel gridlookUpEditShowComboBox = new GridlookUpEditShowModel();
+
+            List<string> displayColumnComboBoxs = new List<string>();
+            displayColumnComboBoxs.Add("dictName");
+
+            gridlookUpEditShowComboBox.displayColumns = displayColumnComboBoxs;
+            gridlookUpEditShowComboBox.searchColumns = displayColumnComboBoxs;
+
+            gridlookUpEditShowComboBox.displayMember = "dictName";
+            gridlookUpEditShowComboBox.valueMember = "dictCode";
+
+            return JsonUtil.GetJson(gridlookUpEditShowComboBox);
+        }
+
+        /// <summary>
+        /// 生成引用档案控件配置信息
+        /// </summary>
+        /// <param name="basicTableModel"></param>
+        /// <param name="basicInfoShowMode"></param>
+        /// <param name="basicInfoTableKey"></param>
+        /// <param name="basicInfoShowFieldName"></param>
+        /// <returns></returns>
+        public static string getGridLookUpEditRefInfo(TableModel basicTableModel, string basicInfoShowMode, string basicInfoTableKey,string basicInfoShowFieldName )
+        {
+
+            List<ColumnModel> columnList = basicTableModel.datas;
+
+            GridlookUpEditShowModel gridlookUpEditShowModel = new GridlookUpEditShowModel();
+            gridlookUpEditShowModel.showMode = basicInfoShowMode;
+
+            List<string> displayColumns = new List<string>();
+            displayColumns.Add(basicInfoTableKey);
+            displayColumns.Add(basicInfoShowFieldName);
+
+            gridlookUpEditShowModel.displayColumns = displayColumns;
+            gridlookUpEditShowModel.searchColumns = displayColumns;
+
+            gridlookUpEditShowModel.displayMember = basicInfoShowFieldName;
+            gridlookUpEditShowModel.valueMember = basicInfoTableKey;
+
+            Dictionary<string, string> dictModelDesc = new Dictionary<string, string>();
+            dictModelDesc.Add(basicInfoTableKey, columnList.Where(m => m.columnName == basicInfoTableKey).FirstOrDefault().columnAbbName);
+            if (!dictModelDesc.ContainsKey(basicInfoShowFieldName))
+            {
+                dictModelDesc.Add(basicInfoShowFieldName, columnList.Where(m => m.columnName == basicInfoShowFieldName).FirstOrDefault().columnAbbName);
+            }
+            gridlookUpEditShowModel.dictModelDesc = dictModelDesc;
+
+            return JsonUtil.GetJson(gridlookUpEditShowModel);
+        }
         /// <summary>
         /// 上移
         /// </summary>
@@ -559,7 +668,7 @@ namespace LiControl.Util
                     return textEdit.Text;
                 case ControlType.CheckEdit:
                     CheckEdit checkEdit = (CheckEdit)control;
-                    return checkEdit.EditValue == DBNull.Value || checkEdit.EditValue == null ? false :true;
+                    return checkEdit.EditValue == DBNull.Value || checkEdit.EditValue == null || Convert.ToBoolean(checkEdit.EditValue) == false ? false :true;
                 case ControlType.MemoEdit:
                     MemoEdit memoEdit = (MemoEdit)control;
                     return memoEdit.Text;

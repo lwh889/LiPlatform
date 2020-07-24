@@ -87,6 +87,11 @@ public class JdbcService implements IJdbcPlusJson,IJdbcPlusModel {
     }
 
     @Override
+    public List<Map<String,Object>> procedureByMap_Json(Map<String,Object> procedureMap) {
+        Init();
+        return jdbcPlusProcedureMs.procedureByMap_Json(procedureMap);
+    }
+    @Override
     public List<Map<String,Object>> procedureBy_Json(ProcedureModel procedureModel, Map<String, Object> paramValues) {
         Init();
         return jdbcPlusProcedureMs.procedureBy_Json(procedureModel, paramValues);
@@ -96,6 +101,12 @@ public class JdbcService implements IJdbcPlusJson,IJdbcPlusModel {
     public Integer procedureNoResult_Json(ProcedureModel procedureModel, Map<String, Object> paramValues) {
         Init();
         return jdbcPlusProcedureMs.procedureNoResult_Json(procedureModel, paramValues);
+    }
+
+    @Override
+    public Integer procedureNoResultByMap_Json(  Map<String, Object> procedureMap) {
+        Init();
+        return jdbcPlusProcedureMs.procedureNoResultByMap_Json( procedureMap);
     }
 
     @Override

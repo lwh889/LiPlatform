@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiTableConfigureForm));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnNew = new DevExpress.XtraBars.BarButtonItem();
@@ -42,6 +41,7 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
             this.gridLookUpEdit_systemCode = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.memoEdit_tableDesc = new DevExpress.XtraEditors.MemoEdit();
@@ -75,6 +75,7 @@
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -122,7 +123,7 @@
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
-            this.barManager3 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager3 = new DevExpress.XtraBars.BarManager();
             this.bar5 = new DevExpress.XtraBars.Bar();
             this.btnAddRowWhere = new DevExpress.XtraBars.BarButtonItem();
             this.btnInsertRowWhere = new DevExpress.XtraBars.BarButtonItem();
@@ -130,11 +131,12 @@
             this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
-            this.checkEdit1 = new DevExpress.XtraEditors.CheckEdit();
-            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.textEdit_childTableEntityColumnName = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_systemCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit_tableDesc.Properties)).BeginInit();
@@ -168,6 +170,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -188,8 +191,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit_childTableEntityColumnName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -311,6 +314,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.textEdit_childTableEntityColumnName);
             this.layoutControl1.Controls.Add(this.checkEdit1);
             this.layoutControl1.Controls.Add(this.gridLookUpEdit_systemCode);
             this.layoutControl1.Controls.Add(this.memoEdit_tableDesc);
@@ -334,6 +338,17 @@
             this.layoutControl1.TabIndex = 2;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // checkEdit1
+            // 
+            this.checkEdit1.Location = new System.Drawing.Point(318, 124);
+            this.checkEdit1.MenuManager = this.ribbon;
+            this.checkEdit1.Name = "checkEdit1";
+            this.checkEdit1.Properties.Caption = "默认表体";
+            this.checkEdit1.Size = new System.Drawing.Size(294, 26);
+            this.checkEdit1.StyleController = this.layoutControl1;
+            this.checkEdit1.TabIndex = 18;
+            this.checkEdit1.Tag = "LiTableConfigureForm.bDefaultBody";
+            // 
             // gridLookUpEdit_systemCode
             // 
             this.gridLookUpEdit_systemCode.Location = new System.Drawing.Point(711, 90);
@@ -356,11 +371,11 @@
             // 
             // memoEdit_tableDesc
             // 
-            this.memoEdit_tableDesc.Location = new System.Drawing.Point(111, 156);
+            this.memoEdit_tableDesc.Location = new System.Drawing.Point(111, 158);
             this.memoEdit_tableDesc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.memoEdit_tableDesc.MenuManager = this.ribbon;
             this.memoEdit_tableDesc.Name = "memoEdit_tableDesc";
-            this.memoEdit_tableDesc.Size = new System.Drawing.Size(801, 65);
+            this.memoEdit_tableDesc.Size = new System.Drawing.Size(801, 63);
             this.memoEdit_tableDesc.StyleController = this.layoutControl1;
             this.memoEdit_tableDesc.TabIndex = 15;
             this.memoEdit_tableDesc.Tag = "LiTableConfigureForm.tableDesc";
@@ -545,7 +560,8 @@
             this.layoutControlItem11,
             this.layoutControlItem12,
             this.layoutControlItem13,
-            this.layoutControlItem15});
+            this.layoutControlItem15,
+            this.layoutControlItem14});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1334, 269);
@@ -694,11 +710,11 @@
             // layoutControlItem12
             // 
             this.layoutControlItem12.Control = this.memoEdit_tableDesc;
-            this.layoutControlItem12.Location = new System.Drawing.Point(0, 138);
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 140);
             this.layoutControlItem12.MaxSize = new System.Drawing.Size(900, 0);
             this.layoutControlItem12.MinSize = new System.Drawing.Size(78, 20);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(1304, 71);
+            this.layoutControlItem12.Size = new System.Drawing.Size(1304, 69);
             this.layoutControlItem12.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem12.Text = "描述";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(90, 22);
@@ -714,6 +730,18 @@
             this.layoutControlItem13.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem13.Text = "系统代码";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(90, 22);
+            // 
+            // layoutControlItem15
+            // 
+            this.layoutControlItem15.Control = this.checkEdit1;
+            this.layoutControlItem15.Location = new System.Drawing.Point(300, 106);
+            this.layoutControlItem15.MaxSize = new System.Drawing.Size(300, 32);
+            this.layoutControlItem15.MinSize = new System.Drawing.Size(100, 32);
+            this.layoutControlItem15.Name = "layoutControlItem15";
+            this.layoutControlItem15.Size = new System.Drawing.Size(1004, 34);
+            this.layoutControlItem15.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem15.TextVisible = false;
             // 
             // panelControl1
             // 
@@ -1274,25 +1302,27 @@
             this.barDockControl8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.barDockControl8.Size = new System.Drawing.Size(0, 238);
             // 
-            // checkEdit1
+            // textEdit_childTableEntityColumnName
             // 
-            this.checkEdit1.Location = new System.Drawing.Point(18, 124);
-            this.checkEdit1.MenuManager = this.ribbon;
-            this.checkEdit1.Name = "checkEdit1";
-            this.checkEdit1.Properties.Caption = "默认表体";
-            this.checkEdit1.Size = new System.Drawing.Size(1298, 26);
-            this.checkEdit1.StyleController = this.layoutControl1;
-            this.checkEdit1.TabIndex = 18;
-            this.checkEdit1.Tag = "LiTableConfigureForm.bDefaultBody";
+            this.textEdit_childTableEntityColumnName.Location = new System.Drawing.Point(111, 124);
+            this.textEdit_childTableEntityColumnName.MenuManager = this.ribbon;
+            this.textEdit_childTableEntityColumnName.Name = "textEdit_childTableEntityColumnName";
+            this.textEdit_childTableEntityColumnName.Size = new System.Drawing.Size(201, 28);
+            this.textEdit_childTableEntityColumnName.StyleController = this.layoutControl1;
+            this.textEdit_childTableEntityColumnName.TabIndex = 19;
+            this.textEdit_childTableEntityColumnName.Tag = "LiTableConfigureForm.childTableEntityColumnName";
             // 
-            // layoutControlItem15
+            // layoutControlItem14
             // 
-            this.layoutControlItem15.Control = this.checkEdit1;
-            this.layoutControlItem15.Location = new System.Drawing.Point(0, 106);
-            this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(1304, 32);
-            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem15.TextVisible = false;
+            this.layoutControlItem14.Control = this.textEdit_childTableEntityColumnName;
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 106);
+            this.layoutControlItem14.MaxSize = new System.Drawing.Size(300, 34);
+            this.layoutControlItem14.MinSize = new System.Drawing.Size(221, 34);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(300, 34);
+            this.layoutControlItem14.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem14.Text = "外键名";
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(90, 22);
             // 
             // LiTableConfigureForm
             // 
@@ -1312,6 +1342,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit_systemCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit_tableDesc.Properties)).EndInit();
@@ -1345,6 +1376,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -1366,8 +1398,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit_childTableEntityColumnName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1477,5 +1509,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
         private DevExpress.XtraEditors.CheckEdit checkEdit1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
+        private DevExpress.XtraEditors.TextEdit textEdit_childTableEntityColumnName;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
     }
 }

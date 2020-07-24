@@ -60,6 +60,7 @@
     <Compile Include="Dev\GridlookUpEdit\GridlookUpEditShowModelType.cs" />
     <Compile Include="Form\ControlEventTypeModel.cs" />
     <Compile Include="Form\ControlEventModel.cs" />
+    <Compile Include="Form\GridlookUpEditShowModeModel.cs" />
     <Compile Include="LiConvert\LiConvertFieldModel.cs" />
     <Compile Include="LiEnum\DockType.cs" />
     <Compile Include="LiEnum\EntityOrderType.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="LiReport\LiReportModel.cs" />
     <Compile Include="LiReport\LiReportEventModel.cs" />
     <Compile Include="LiTable\ClassName.cs" />
+    <Compile Include="LiTable\OrderBy.cs" />
     <Compile Include="LiTable\ColumnType.cs" />
     <Compile Include="LiTable\DatabaseGeneratedType.cs" />
     <Compile Include="LiTable\EntityOrder.cs" />

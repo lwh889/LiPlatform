@@ -125,11 +125,13 @@ namespace LiControl.Util
         {
             StringBuilder sSqlWhere = new StringBuilder();
 
+            if(queryList.Count>0) sSqlWhere.Append(" and (");
             foreach (QueryModel model in queryList)
             {
-                    sSqlWhere.Append(" and ");
-                    sSqlWhere.Append(string.Format(" {0} {1} {2} {3} {4} {5}", model.sBracketsBefore, model.sFieldType == ControlType.StatusEdit || model.sFieldType == ControlType.StatusEdit ? model.sFieldName + "_Code" : model.sFieldName, JudgmentSymbol.getJudeSymbol(model.sJudgmentSymbol), getPreciseWhereValue(model, IsProcedure), model.sJoin, model.sBracketsAfter));
+                sSqlWhere.Append(string.Format(" {0} {1} {2} {3} {4} {5}", model.sBracketsBefore, model.sFieldType == ControlType.StatusEdit || model.sFieldType == ControlType.StatusEdit ? model.sFieldName + "_Code" : model.sFieldName, JudgmentSymbol.getJudeSymbol(model.sJudgmentSymbol), getPreciseWhereValue(model, IsProcedure), model.sJoin, model.sBracketsAfter));
+
             }
+            if (queryList.Count > 0) sSqlWhere.Append(" )");
 
             return sSqlWhere.ToString();
         }

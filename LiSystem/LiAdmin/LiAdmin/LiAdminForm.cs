@@ -277,9 +277,9 @@ namespace LiAdmin
 
                     if (rootTreeDataModel.Code == "LiBusinessManage" && !currentTreeDataModel.isGroup)
                     {
-                        if(currentTreeDataModel.Code.Length>8 && currentTreeDataModel.Code.Substring(1,8) == "LiReport")
+                        if(currentTreeDataModel.Code.Length>8 && currentTreeDataModel.Code.Substring(0,8) == "LiReport")
                         {
-                            LiForm.Dev.LiForm liForm = ReportFormUtil.getReportForm(currentTreeDataModel.Code, LiContext.SystemCode) as LiForm.Dev.LiForm;
+                            LiForm.Dev.LiReportForm liForm = ReportFormUtil.getReportForm(currentTreeDataModel.Code, LiContext.SystemCode) as LiForm.Dev.LiReportForm;
                             liForm.Text = currentTreeDataModel.Name;
                             PageFormModel pageFormModel = PageFormModel.getInstance(0, liForm, currentTreeDataModel.Code, "", false);
 

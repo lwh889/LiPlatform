@@ -166,3 +166,4 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiAdmin\bin\Debug\LiVoucherConvert.pdb
 C:\LiProject\平台\LiSystem\LiAdmin\LiAdmin\bin\Debug\LiU8API.pdb
 C:\LiProject\平台\LiSystem\LiAdmin\LiAdmin\bin\Debug\UFIDA.U8.U8APIFramework.dll.config
 C:\LiProject\平台\LiSystem\LiAdmin\LiAdmin\bin\Debug\UFSoft.AIF.MOM.Common.MessageObjectModel.xml
+C:\LiProject\平台\LiSystem\LiAdmin\LiAdmin\bin\Debug\Log4Net.config

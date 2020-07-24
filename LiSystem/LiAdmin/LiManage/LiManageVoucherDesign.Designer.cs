@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LiManageVoucherDesign));
             DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer dockingContainer1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DockingContainer();
-            this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup(this.components);
-            this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
-            this.document5 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
-            this.document4 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
-            this.document3 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
-            this.document6 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
+            this.documentGroup1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.DocumentGroup();
+            this.document1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+            this.document5 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+            this.document4 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+            this.document3 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
+            this.document6 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
             this.repositoryItemGridLookUpEdit_Icon = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit_voucherStatus = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.document2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document(this.components);
+            this.document2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.Document();
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnAddPanel = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddButton = new DevExpress.XtraBars.BarButtonItem();
@@ -159,7 +158,7 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager();
             this.dockPanel5 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel5_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
@@ -266,16 +265,16 @@
             this.gridColumn46 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn47 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn48 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.popupFormMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.popupPanelMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.popupButtonGroupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.popupControlMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.popupButtonMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.popupEventMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.popupControlGroupMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.popupListButtonMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager();
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
+            this.popupFormMenu = new DevExpress.XtraBars.PopupMenu();
+            this.popupPanelMenu = new DevExpress.XtraBars.PopupMenu();
+            this.popupButtonGroupMenu = new DevExpress.XtraBars.PopupMenu();
+            this.popupControlMenu = new DevExpress.XtraBars.PopupMenu();
+            this.popupButtonMenu = new DevExpress.XtraBars.PopupMenu();
+            this.popupEventMenu = new DevExpress.XtraBars.PopupMenu();
+            this.popupControlGroupMenu = new DevExpress.XtraBars.PopupMenu();
+            this.popupListButtonMenu = new DevExpress.XtraBars.PopupMenu();
             ((System.ComponentModel.ISupportInitialize)(this.documentGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.document5)).BeginInit();

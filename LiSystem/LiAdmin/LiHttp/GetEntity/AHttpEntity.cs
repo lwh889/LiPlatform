@@ -120,7 +120,7 @@ namespace LiHttp.GetEntity
             return refControl;
         }
 
-        public void execProcedure( Dictionary<string, object> paramDict)
+        public void execProcedure(Dictionary<string, object> paramDict)
         {
             ProcedureParamModel paramModel = liHttpProcedure.getProcedureParamModel(paramDict);
 
@@ -130,7 +130,27 @@ namespace LiHttp.GetEntity
                 throw (new LiHttpException(resultContent));
             }
         }
+        public void execProcedureByMap( Dictionary<string, object> paramDict)
+        {
+            ProcedureParamModel paramModel = liHttpProcedure.getProcedureParamModel(paramDict);
 
+            bSuccess = liHttpProcedure.httpPost(LiHttpSetting_DrmAdmin.getHttpProcedure("procedurebymap"), paramModel, out resultContent);
+            if (!bSuccess)
+            {
+                throw (new LiHttpException(resultContent));
+            }
+        }
+
+        public void execProcedureNoResultByMap(Dictionary<string, object> paramDict)
+        {
+            ProcedureParamModel paramModel = liHttpProcedure.getProcedureParamModel(paramDict);
+
+            bSuccess = liHttpProcedure.httpPost(LiHttpSetting_DrmAdmin.getHttpProcedure("procedureNoResultByMap"), paramModel, out resultContent);
+            if (!bSuccess)
+            {
+                throw (new LiHttpException(resultContent));
+            }
+        }
         public void execProcedureNoResult(Dictionary<string, object> paramDict)
         {
             ProcedureParamModel paramModel = liHttpProcedure.getProcedureParamModel(paramDict);
@@ -141,7 +161,12 @@ namespace LiHttp.GetEntity
                 throw (new LiHttpException(resultContent));
             }
         }
-        public DataTable execProcedure_DataTable( Dictionary<string, object> paramDict)
+        public DataTable execProcedureByMap_DataTable( Dictionary<string, object> paramDict)
+        {
+            execProcedureByMap(paramDict);
+            return DataUtil.DictionaryToTable(JsonUtil.GetDictionaryToList(resultContent));
+        }
+        public DataTable execProcedure_DataTable(Dictionary<string, object> paramDict)
         {
             execProcedure(paramDict);
             return DataUtil.DictionaryToTable(JsonUtil.GetDictionaryToList(resultContent));
@@ -661,6 +686,20 @@ namespace LiHttp.GetEntity
         }
 
 
+        public object execProcedureByMapSingleValue_Object(string fieldName, Dictionary<string, object> paramDict)
+        {
+            execProcedureByMap(paramDict);
+            if (bSuccess)
+            {
+                List<Dictionary<string, object>> dictCounts = JsonUtil.GetDictionaryToList(resultContent);
+                if (dictCounts.Count > 0)
+                {
+                    return dictCounts[0][fieldName];
+                }
+
+            }
+            return null;
+        }
         public object execProcedureSingleValue_Object( string fieldName, Dictionary<string, object> paramDict)
         {
             execProcedure( paramDict);
@@ -678,6 +717,16 @@ namespace LiHttp.GetEntity
         public Int32 execProcedureSingleValue_Int32( string fieldName, Dictionary<string, object> paramDict)
         {
             object value = execProcedureSingleValue_Object( fieldName, paramDict);
+
+            if (value != null)
+            {
+                return Convert.ToInt32(value);
+            }
+            return default(Int32);
+        }
+        public Int32 execProcedureByMapSingleValue_Int32(string fieldName, Dictionary<string, object> paramDict)
+        {
+            object value = execProcedureByMapSingleValue_Object(fieldName, paramDict);
 
             if (value != null)
             {

@@ -28,9 +28,9 @@ namespace LiAdmin
 
         private void RibbonForm4_Load(object sender, EventArgs e)
         {
-            pictureBox1.BackColor = Color.Transparent;
+            //pictureBox1.BackColor = Color.Transparent;
 
-            pictureBox2.Parent = pictureBox1;
+            //pictureBox2.Parent = pictureBox1;
             //FlowUtil.replaceMessagePlaceholder("单据编号【{TestHead.billCode}】,请审核！【{TestHead.billCode123}】", null);
             //DataTable dt = new DataTable();
             //dt.Columns.Add("ID", Type.GetType("System.Int32"));

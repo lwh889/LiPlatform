@@ -157,6 +157,11 @@ public abstract class SqlMaker implements ISqlMaker {
      * @param paramValues 存储过程参数
      */
     public abstract String makerProcedureSql( ProcedureModel procedureModel, Map<String, Object> paramValues);
+    /**
+     * 创造存储过程
+     * @param procedureMap 存储过程参数
+     */
+    public abstract String makerProcedureSqlByMap(  Map<String, Object> procedureMap);
 
     /**
      * 对外公开获取SQL

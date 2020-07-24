@@ -48,6 +48,40 @@ public class JsonDrmProcedureController {
         return response;
     }
 
+    @PostMapping("/procedurebymap")
+    R procedurebymap(@RequestBody Map<String, Object> params) {
+        R response ;
+        try{
+            Map<String, Object> datas = (Map<String, Object> )params.get("datas");
+
+            List<Map<String, Object>> procedureData = jdbcService.procedureByMap_Json( datas);
+            response = new R();
+            response.put("data", procedureData);
+            return response;
+        }catch (Exception ex){
+            logger.info("procedure",ex);
+            response = R.error520(ex.getMessage());
+        }
+        return response;
+    }
+
+    @PostMapping("/procedureNoResultByMap")
+    R procedureNoResultByMap(@RequestBody Map<String, Object> params) {
+        R response ;
+        try{
+            Map<String, Object> datas = ( Map<String, Object> )params.get("datas");
+
+            Integer i = jdbcService.procedureNoResultByMap_Json(datas);
+            response = new R();
+            response.put("data", i);
+            return response;
+        }catch (Exception ex){
+            logger.info("procedure",ex);
+            response = R.error520(ex.getMessage());
+        }
+        return response;
+    }
+
     @PostMapping("/procedureNoResult")
     R procedureNoResult(@RequestBody Map<String, Object> params) {
         R response ;

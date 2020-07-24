@@ -299,4 +299,33 @@ public abstract class SqlMakerMsSql extends SqlMaker {
         builder.deleteCharAt(builder.length()-1);
         return builder.toString();
     }
+
+
+    @Override
+    public String makerProcedureSqlByMap(Map<String, Object> procedureMap) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("exec sp_executesql N' EXEC ").append(procedureMap.get("dataBaseName")).append(".dbo.").append(procedureMap.get("procedureName"));
+        List<Map<String, Object>> paramMaps = (List<Map<String, Object>>)procedureMap.get("paramMaps");
+        for(Map<String, Object> paramMap : paramMaps){
+            builder.append(" @").append(paramMap.get("paramName")).append(",");
+        }
+        builder.deleteCharAt(builder.length()-1);
+        builder.append("',N'");
+
+        for(Map<String, Object> paramMap : paramMaps){
+            String paramStr = (String)paramMap.get("paramType");
+
+            builder.append(" @").append(paramMap.get("paramName")).append(" ").append(paramStr).append(",");
+
+        }
+        builder.deleteCharAt(builder.length()-1);
+        builder.append("',");
+
+        Map<String, Object> paramValues = (Map<String, Object>)procedureMap.get("paramValues");
+        for(Map<String, Object> paramMap : paramMaps){
+            builder.append(getColumnValueFormat(paramValues.get(paramMap.get("paramName")))).append(",");
+        }
+        builder.deleteCharAt(builder.length()-1);
+        return builder.toString();
+    }
 }

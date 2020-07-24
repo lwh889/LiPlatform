@@ -14,6 +14,8 @@ namespace LiForm.Event.EventReportForm
 
             try
             {
+                this.liReportForm.Query();
+                this.liReportForm.FillGridListCtrlQuery(this.liReportForm.getCurrentPage());
                 bSuccess = true;
 
             }

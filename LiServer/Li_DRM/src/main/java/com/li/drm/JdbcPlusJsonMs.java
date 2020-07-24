@@ -43,8 +43,16 @@ public class JdbcPlusJsonMs extends JdbcPlusJson implements IJdbcPlusJson {
     }
 
     @Override
+    public List<Map<String, Object>> procedureByMap_Json( Map<String, Object> procedureMap) {
+        return super.procedureByMap(procedureMap);
+    }
+    @Override
     public Integer procedureNoResult_Json(ProcedureModel procedureModel, Map<String, Object> paramValues) {
         return super.procedureNoResult(procedureModel, paramValues);
+    }
+    @Override
+    public Integer procedureNoResultByMap_Json(  Map<String, Object> procedureMap) {
+        return super.procedureNoResultByMap(procedureMap);
     }
     @Override
     public Integer deleteBy_Json(TableModel mainTableModel, Map<String,TableModel> tableModels, JSONArray jsonArray){

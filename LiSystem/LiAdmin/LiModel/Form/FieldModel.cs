@@ -9,6 +9,7 @@ using LiModel.LiEnum;
 using LiModel.Basic;
 using LiModel.LiTable;
 using LiCommon.LiEnum;
+using LiModel.LiReport;
 
 namespace LiModel.Form
 {
@@ -25,7 +26,8 @@ namespace LiModel.Form
         {
             FieldModel.clearDataSource(mainTableModel.entityKey);
 
-            foreach(TableModel tableModel in tableModels)
+            int iIndex = 0;
+            foreach (TableModel tableModel in tableModels)
             {
                 foreach(ColumnModel columnModel in tableModel.datas)
                 {
@@ -49,6 +51,7 @@ namespace LiModel.Form
                     fieldModelTemp.name = columnModel.columnAbbName;
                     fieldModelTemp.sEntityCode = tableModel.tableName;
                     fieldModelTemp.sEntityName = tableModel.tableAbbName;
+                    fieldModelTemp.iColumnIndex = ++iIndex;
                     fieldModelTemp.iColumnWidth = columnModel.columnWidth;
                     fieldModelTemp.bColumnDisplay = columnModel.bDisplayColumn;
                     fieldModelTemp.bQuery = false;
@@ -76,6 +79,49 @@ namespace LiModel.Form
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="formModel"></param>
+        public static void InitDataSource(LiReportModel reportModel)
+        {
+            FieldModel.clearDataSource(reportModel.reportKey);
+
+            foreach(LiReportFieldModel liReportField in reportModel.datas)
+            {
+                FieldModel fieldModelTemp = new FieldModel();
+
+                fieldModelTemp.columnFieldName = liReportField.columnName;
+                fieldModelTemp.fieldName = liReportField.columnName;
+                fieldModelTemp.code = fieldModelTemp.columnFieldName;
+                fieldModelTemp.name = liReportField.columnCaption;
+
+                fieldModelTemp.iColumnIndex = liReportField.iColumnIndex;
+                fieldModelTemp.iColumnWidth = liReportField.iColumnWidth;
+                fieldModelTemp.bColumnDisplay = liReportField.bColumnDisplay;
+                fieldModelTemp.bQuery = false;
+                fieldModelTemp.bRange = false;
+                switch (liReportField.controlType)
+                {
+                    case ControlType.VoucherCodeEdit:
+                    case ControlType.GridLookUpEditRefAssist:
+                        fieldModelTemp.sColumnControlType = ControlType.TextEdit;
+                        break;
+                    default:
+                        fieldModelTemp.sColumnControlType = liReportField.controlType;
+                        break;
+                }
+                fieldModelTemp.sRefTypeCode = "";
+                fieldModelTemp.sJudgeSymbol = JudgmentSymbol.Equal;
+
+                fieldModelTemp.basicInfoKey = liReportField.basicInfoKey;
+                fieldModelTemp.dictInfoType = liReportField.dictInfoType;
+                fieldModelTemp.gridlookUpEditShowModelJson = liReportField.gridlookUpEditShowModelJson;
+
+                FieldModel.AddItemInDataSource(reportModel.reportKey, fieldModelTemp);
+            }
+        }
+
+        /// <summary>
         /// 准备弃用
         /// </summary>
         /// <param name="formModel"></param>
@@ -83,6 +129,7 @@ namespace LiModel.Form
         {
             FieldModel.clearDataSource(formModel.name);
 
+            int iIndex = 0;
             foreach (PanelModel panelModel in formModel.panels)
             {
                 foreach (ControlGroupModel controlGroupModel in panelModel.controlGroups)
@@ -97,6 +144,7 @@ namespace LiModel.Form
                         fieldModelTemp.name = control.text;
                         fieldModelTemp.sEntityCode = panelModel.name;
                         fieldModelTemp.sEntityName = panelModel.text;
+                        fieldModelTemp.iColumnIndex = ++iIndex;
                         fieldModelTemp.iColumnWidth = control.width;
                         fieldModelTemp.bColumnDisplay = control.bVisible;
                         fieldModelTemp.bQuery = false;
@@ -168,7 +216,14 @@ namespace LiModel.Form
 
         public static List<FieldModel> getDataSource(string entityKey)
         {
-            return dataSourceDict[entityKey] as List<FieldModel>;
+            if (dataSourceDict.ContainsKey(entityKey))
+            {
+                return dataSourceDict[entityKey] as List<FieldModel>;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         [NotCopy]
@@ -251,6 +306,11 @@ namespace LiModel.Form
         /// 控件格式
         /// </summary>
         public string gridlookUpEditShowModelJson { set; get; }
+
+        /// <summary>
+        /// 列排序
+        /// </summary>
+        public int iColumnIndex { set; get; }
 
     }
 }

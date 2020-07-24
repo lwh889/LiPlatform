@@ -228,17 +228,9 @@ namespace LiForm.Dev
 
         public void InitQueryScheme()
         {
-            QuerySchemeModel defaultQuerySchemeModel = new QuerySchemeModel();
-            defaultQuerySchemeModel.userCode = LiContexts.LiContext.userInfo.userCode;
-            defaultQuerySchemeModel.querySchemeName = "默认方案";
-            defaultQuerySchemeModel.entitys = EntityModel.getDataSource(entityKey); ;
-            defaultQuerySchemeModel.fields = FieldModel.getDataSource(entityKey);
-            defaultQuerySchemeModel.querys = new List<QueryModel>();
+            querySchemeModels = FormUtil.loadQuerySchemeModels(entityKey);
 
-            querySchemeModels = loadQuerySchemeModels();
-            querySchemeModels.Insert(0, defaultQuerySchemeModel);
-
-            currentQuerySchemeModel = defaultQuerySchemeModel;
+            currentQuerySchemeModel = querySchemeModels.Count>0 ? querySchemeModels[0] : null;
         }
 
         public void InitMainTableName()
@@ -259,8 +251,14 @@ namespace LiForm.Dev
         public void InitView()
         {
             resetGridControl();
-            FormUtil.loadQueryScheme(querySchemeModels, querySchemeBtns, new System.EventHandler(this.btnQueryScheme_Click), layoutControlGroup1);
-            //FormUtil.loadQuickQuery(querySchemeModels[0].fields, liQuickQueryControlDict, layoutControlGroup2, layoutControl2, this);
+            setQuerySchemes(querySchemeModels);
+        }
+
+        public void setQuerySchemes(List<QuerySchemeModel> querySchemeModels)
+        {
+            this.querySchemeModels = querySchemeModels;
+            FormUtil.loadQueryScheme(querySchemeModels, querySchemeBtns, new System.EventHandler(this.btnQueryScheme_Click), layoutControlGroup1, layoutControl1);
+
         }
 
         public void resetGridControl()
@@ -291,15 +289,6 @@ namespace LiForm.Dev
             }
             gridView1.Columns.AddRange(showGridColumnList.ToArray());
             gridControl1.Refresh();
-
-        }
-
-
-        public List<QuerySchemeModel> loadQuerySchemeModels()
-        {
-            QueryParamModel paramModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).getQueryParamModel_ShowAllColumn();
-            QueryParamModel.getWHereANDByTwoParam(paramModel, "userCode", LiContext.userInfo.userCode, "entityKey", entityKey);
-            return LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).getEntityList<QuerySchemeModel>(paramModel);
 
         }
 
@@ -378,7 +367,7 @@ namespace LiForm.Dev
             paramDict.Add("entityKey", entityKey);
             paramDict.Add("whereSql", "");
 
-            this.pageSum = LiContexts.LiContext.getHttpEntity("sp_QueryList_Count").execProcedureSingleValue_Int32( "iCount", paramDict);
+            this.pageSum = LiContexts.LiContext.getHttpEntity(LiEntityKey.sp_QueryList_Count).execProcedureByMapSingleValue_Int32( "iCount", paramDict);
 
             paramDict.Clear();
             paramDict.Add("childTableName", childTableName);
@@ -388,7 +377,7 @@ namespace LiForm.Dev
             paramDict.Add("orderBySql", "");
             paramDict.Add("rangeSql", string.Format(" and iPageRow > {0} and iPageRow <= {1}", (pageCurrent - 1) * pageSize, pageSize * pageCurrent));
 
-            gridControl1.DataSource = LiContexts.LiContext.getHttpEntity("sp_QueryList").execProcedure_DataTable(paramDict);
+            gridControl1.DataSource = LiContexts.LiContext.getHttpEntity(LiEntityKey.sp_QueryList).execProcedureByMap_DataTable(paramDict);
 
             gridView1.BestFitColumns();
         }

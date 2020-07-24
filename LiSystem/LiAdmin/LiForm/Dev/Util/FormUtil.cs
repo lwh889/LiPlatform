@@ -37,11 +37,36 @@ using LiModel.Basic;
 using LiCommon.LiExpression;
 using LiCommon.LiEnum;
 using LiModel.LiReport;
+using LiHttp.RequestParam;
 
 namespace LiForm.Dev.Util
 {
     public class FormUtil
     {
+        /// <summary>
+        /// 加载查询方案
+        /// </summary>
+        /// <returns></returns>
+        public static List<QuerySchemeModel> loadQuerySchemeModels(string entityKey, bool bDefault=true)
+        {
+            QueryParamModel paramModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).getQueryParamModel_ShowAllColumn();
+            QueryParamModel.getWHereANDByTwoParam(paramModel, "userCode", LiContext.userInfo.userCode, "entityKey", entityKey);
+            List<QuerySchemeModel> querySchemes = LiContexts.LiContext.getHttpEntity(LiEntityKey.QueryScheme, LiContext.SystemCode).getEntityList<QuerySchemeModel>(paramModel);
+
+            if (bDefault)
+            {
+                QuerySchemeModel defaultQuerySchemeModel = new QuerySchemeModel();
+                defaultQuerySchemeModel.userCode = LiContexts.LiContext.userInfo.userCode;
+                defaultQuerySchemeModel.querySchemeName = "默认方案";
+                defaultQuerySchemeModel.entitys = EntityModel.getDataSource(entityKey);
+                defaultQuerySchemeModel.fields = FieldModel.getDataSource(entityKey);
+                defaultQuerySchemeModel.querys = new List<QueryModel>();
+                querySchemes.Insert(0, defaultQuerySchemeModel);
+            }
+
+            return querySchemes;
+        }
+
         /// <summary>
         /// 自定义值变化事件，表头
         /// </summary>
@@ -331,20 +356,31 @@ namespace LiForm.Dev.Util
         /// <param name="querySchemeBtns"></param>
         /// <param name="buttonHandler"></param>
         /// <param name="layoutControlGroup1"></param>
-        public static void loadQueryScheme(List<QuerySchemeModel> querySchemeModels, Dictionary<string, SimpleButton> querySchemeBtns, System.EventHandler buttonHandler, LayoutControlGroup layoutControlGroup)
+        public static void loadQueryScheme(List<QuerySchemeModel> querySchemeModels, Dictionary<string, SimpleButton> querySchemeBtns, System.EventHandler buttonHandler, LayoutControlGroup layoutControlGroup, LayoutControl layoutControl)
         {
-
+            querySchemeBtns.Clear();
             LayoutControlItem defaultLayoutControlItem = null;
+            layoutControl.BeginUpdate();
+            layoutControl.Controls.Clear();
+            layoutControl.Root.Items.Clear();
+            layoutControlGroup.Clear();
+
             foreach (QuerySchemeModel querySchemeModel in querySchemeModels)
             {
                 LayoutControlItem layoutControlItem = layoutControlGroup.AddItem();
+                layoutControlItem.TextVisible = false;
                 layoutControlItem.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
                 SimpleButton simpleButton = new SimpleButton();
                 simpleButton.Text = querySchemeModel.querySchemeName;
                 simpleButton.Click += buttonHandler;
-                simpleButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+                //simpleButton.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+                simpleButton.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
+                simpleButton.LookAndFeel.UseDefaultLookAndFeel = false;
 
                 layoutControlItem.MinSize = simpleButton.CalcBestSize();
+                layoutControlItem.Size = layoutControlItem.MinSize;
+                layoutControlItem.ControlMinSize = layoutControlItem.MinSize;
+                layoutControlItem.ControlMaxSize = layoutControlItem.MinSize;
                 layoutControlItem.Control = simpleButton;
 
                 if (defaultLayoutControlItem != null)
@@ -355,6 +391,7 @@ namespace LiForm.Dev.Util
 
                 querySchemeBtns.Add(simpleButton.Text, simpleButton);
             }
+            layoutControl.EndUpdate();
         }
 
         /// <summary>

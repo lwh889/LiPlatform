@@ -14,6 +14,9 @@ namespace LiForm.Event.EventReportForm
 
             try
             {
+                this.liReportForm.getQuickQueryWhere();
+                this.liReportForm.Query();
+                this.liReportForm.FillGridListCtrlQuery(this.liReportForm.setFirstPage());
                 bSuccess = true;
 
             }

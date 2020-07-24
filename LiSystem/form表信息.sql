@@ -240,7 +240,7 @@ select 62,'LiSystem','Basic','liReport','master',null,'LiReport','liPushForm','±
 insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
 select 63,'LiSystem','Basic','liReport','slave','datas','LiReportField','liReportField','±®±Ì◊÷∂Œ', null,'JsonModel','id',null,getdate()
 insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
-select 64,'LiSystem','Basic','liReport','slave','buttons','LiReportButton','liReportButton','±®±Ì∞¥≈•', null,'JsonModel','id',null,getdate()
+select 64,'LiSystem','Basic','liReport','slave','buttons','LiReportButton','liReportButton','±®±Ì∞¥≈•', null,'JsonModel','id','events',getdate()
 insert into TableInfo (id,dataBaseName,entityType,entityKey,entityOrder,entityColumnName,tableName,tableAliasName,tableAbbName,tableDesc,className, keyName, childTableEntityColumnName,modifyDate) 
 select 65,'LiSystem','Basic','liReport','slave','events','LiReportEvent','liReportEvent','±®±Ì∞¥≈• ¬º˛', null,'JsonModel','id',null,getdate()
 
@@ -843,6 +843,8 @@ union all
 select 23, 'sEntityCode',' µÃÂ¿‡–Õ', 'narchar',30,0,0,0,0,null,0,null
 union all
 select 23, 'sEntityName',' µÃÂ¿‡–Õ', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 23, 'iColumnIndex','¡–øÌ', 'int',9,0,0,0,0,null,0,null
 union all
 select 23, 'iColumnWidth','¡–øÌ', 'int',9,0,0,0,0,null,0,null
 union all
@@ -1661,7 +1663,13 @@ select 62, 'reportKey','±‡¬Î', 'narchar',30,0,0,0,0,null,0,null
 union all
 select 62, 'reportName','√˚≥∆', 'narchar',50,0,0,0,0,null,0,null
 union all
+select 62, 'bColumnGroup',' «∑Ò∆Ù”√¡–◊È', 'bit',1,0,0,0,0,null,0,null
+union all
 select 62, 'systemCode','œµÕ≥’ Ã◊∫≈', 'narchar',10,0,0,0,0,null,0,null
+union all
+select 62, 'menuCode','œµÕ≥≤Àµ•±‡¬Î', 'narchar',10,0,0,0,0,null,0,null
+union all
+select 62, 'dataBaseName','œµÕ≥ ˝æ›ø‚', 'narchar',30,0,0,0,0,null,0,null
 union all
 select 62, 'reportSql','±®±ÌSQL', 'narchar',5000,0,0,0,0,null,0,null
 union all
@@ -1691,6 +1699,12 @@ select 63, 'iColumnIndex','¡–À˜“˝', 'int',9,0,0,0,0,null,0,null
 union all
 select 63, 'bQuery',' «∑Ò≤È—Ø', 'bit',1,0,0,0,0,null,0,null
 union all
+select 63, 'bOrderBy',' «∑Ò≈≈–Ú', 'bit',1,0,0,0,0,null,0,null
+union all
+select 63, 'orderBy','≈≈–Ú…˝Ωµ', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 63, 'iOrderByIndex','≈≈–ÚÀ≥–Ú', 'int',9,0,0,0,0,null,0,null
+union all
 select 63, 'iDisplayFormatType','œ‘ æ∏Ò Ω¿‡–Õ', 'int',9,0,0,0,0,null,0,null
 union all
 select 63, 'displayFormat','œ‘ æ∏Ò Ω', 'narchar',30,0,0,0,0,null,0,null
@@ -1698,6 +1712,20 @@ union all
 select 63, 'bColumnGroup',' «∑Òª„◊‹', 'bit',1,0,0,0,0,null,0,null
 union all
 select 63, 'columnGroupFormat','ª„◊‹∏Ò Ω', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 63, 'controlType','øÿº˛¿‡–Õ', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 63, 'basicInfoKey','“˝”√µµ∞∏Key', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 63, 'basicInfoShowFieldName','“˝”√µµ∞∏œ‘ æ√˚≥∆', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 63, 'basicInfoShowMode','“˝”√µµ∞∏œ‘ æƒ£ Ω', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 63, 'basicInfoTableKey','“˝”√µµ∞∏œ‘ æ÷˜º¸', 'narchar',50,0,0,0,0,null,0,null
+union all
+select 63, 'dictInfoType','◊÷µ‰µµ∞∏Key', 'narchar',30,0,0,0,0,null,0,null
+union all
+select 63, 'gridlookUpEditShowModelJson','“˝”√µµ∞∏≈‰÷√–≈œ¢', 'narchar',30,0,0,0,0,null,0,null
 
 
 --LiReportButton

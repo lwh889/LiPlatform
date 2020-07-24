@@ -47,7 +47,14 @@ namespace LiModel.Form
 
         public static List<EntityModel> getDataSource(string entityKey)
         {
-            return dataSourceDict[entityKey] as List<EntityModel>;
+            if (dataSourceDict.ContainsKey(entityKey))
+            {
+                return dataSourceDict[entityKey] as List<EntityModel>;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public static void clearDataSource(string entityKey)

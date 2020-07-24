@@ -202,11 +202,11 @@ namespace LiContexts
         {
             if (!ReportModels.ContainsKey(reportKey))
             {
-                QueryParamModel paramModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.FormModel).getQueryParamModel_ShowAllColumn();
+                QueryParamModel paramModel = LiContexts.LiContext.getHttpEntity(LiEntityKey.LiReport).getQueryParamModel_ShowAllColumn();
 
                 QueryComplexWhereModel queryComplexWhereModel = QueryComplexWhereModel.AND();
                 queryComplexWhereModel.wheres.Add(QueryComplexWhereModel.AND("systemCode", systemCode));
-                queryComplexWhereModel.wheres.Add(QueryComplexWhereModel.AND("reportKey", reportKey.Replace("LiReport","")));
+                queryComplexWhereModel.wheres.Add(QueryComplexWhereModel.AND("reportKey", reportKey));
 
                 paramModel.complexWheres = queryComplexWhereModel;
 

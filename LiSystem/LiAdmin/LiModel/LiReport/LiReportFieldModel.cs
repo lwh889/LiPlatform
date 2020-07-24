@@ -58,6 +58,21 @@ namespace LiModel.LiReport
         public bool bQuery { set; get; }
 
         /// <summary>
+        /// 是否排序
+        /// </summary>
+        public bool bOrderBy { set; get; }
+
+        /// <summary>
+        /// 排序升降
+        /// </summary>
+        public string orderBy { set; get; }
+
+        /// <summary>
+        /// 排序顺序
+        /// </summary>
+        public int iOrderByIndex { set; get; }
+
+        /// <summary>
         /// 显示格式，时间，数字，自定义？
         /// </summary>
         public int iDisplayFormatType { set; get; }
@@ -76,5 +91,40 @@ namespace LiModel.LiReport
         /// 汇总格式
         /// </summary>
         public string columnGroupFormat { set; get; }
+
+        /// <summary>
+        /// 控件类型
+        /// </summary>
+        public string controlType { set; get; }
+
+        /// <summary>
+        /// 引用档案Key
+        /// </summary>
+        public string basicInfoKey { set; get; }
+
+        /// <summary>
+        /// 引用档案显示名称
+        /// </summary>
+        public string basicInfoShowFieldName { set; get; }
+
+        /// <summary>
+        /// 引用档案显示模式
+        /// </summary>
+        public string basicInfoShowMode { set; get; }
+
+        /// <summary>
+        /// 引用档案主键
+        /// </summary>
+        public string basicInfoTableKey { set; get; }
+        
+        /// <summary>
+        /// 字典档案Key
+        /// </summary>
+        public string dictInfoType { set; get; }
+
+        /// <summary>
+        /// 引用档案配置信息
+        /// </summary>
+        public string gridlookUpEditShowModelJson { set; get; }
     }
 }

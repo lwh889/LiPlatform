@@ -261,4 +261,3 @@ C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiManageConvert
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiControlEventExpressionForm.resources
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiReportDesignForm.resources
 C:\LiProject\平台\LiSystem\LiAdmin\LiManage\obj\Debug\LiManage.LiReportDesignListForm.resources
-C:\LiProject\平台\LiSystem\LiAdmin\LiManage\bin\Debug\Log4Net.config

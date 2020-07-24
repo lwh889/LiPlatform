@@ -6,6 +6,7 @@ import com.li.drm.sqlmaker.IDelete;
 import com.li.drm.sqlmaker.IInsert;
 import com.li.drm.sqlmaker.IUpdata;
 import com.li.drm.sqlmaker.MsSql.SqlMakerMsSqlProcedure;
+import com.li.drm.sqlmaker.MsSql.SqlMakerMsSqlProcedureByMap;
 import com.li.drm.sqlmaker.SqlMaker;
 import com.li.drm.util.ISqlMakerUtils;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -130,6 +131,25 @@ public abstract class JdbcPlus {
      */
     public List procedureBy(ProcedureModel procedureModel, Map<String,Object> paramValues){
         SqlMaker sqlMaker = new SqlMakerMsSqlProcedure(procedureModel,paramValues );
+        return procedureBy(sqlMaker);
+    }
+
+    /**
+     * 执行存储过程查询
+     * @param procedureMap
+     * @return
+     */
+    public Integer procedureNoResultByMap(Map<String, Object> procedureMap){
+        SqlMaker sqlMaker = new SqlMakerMsSqlProcedureByMap(procedureMap );
+        return jdbcTemplate.update(sqlMaker.getSql());
+    }
+    /**
+     *
+     * @param procedureMap
+     * @return
+     */
+    public List procedureByMap(Map<String, Object> procedureMap){
+        SqlMaker sqlMaker = new SqlMakerMsSqlProcedureByMap(procedureMap);
         return procedureBy(sqlMaker);
     }
 }

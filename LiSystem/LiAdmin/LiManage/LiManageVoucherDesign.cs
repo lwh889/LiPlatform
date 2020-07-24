@@ -819,45 +819,14 @@ namespace LiManage
                             case "UserEdit":
                             case "GridLookUpEditRef":
                                 TableModel tableModelTemp = tableModel.getDataSource<List<TableModel>>().Where(m => m.entityKey == controlModel.basicInfoKey).FirstOrDefault();
-                                List<ColumnModel> columnList = tableModelTemp.datas;
+                         
 
-                                GridlookUpEditShowModel gridlookUpEditShowModel = new GridlookUpEditShowModel();
-                                gridlookUpEditShowModel.showMode = controlModel.basicInfoShowMode;
-
-                                List<string> displayColumns = new List<string>();
-                                displayColumns.Add(controlModel.basicInfoTableKey);
-                                displayColumns.Add(controlModel.basicInfoShowFieldName);
-
-                                gridlookUpEditShowModel.displayColumns = displayColumns;
-                                gridlookUpEditShowModel.searchColumns = displayColumns;
-
-                                gridlookUpEditShowModel.displayMember = controlModel.basicInfoShowFieldName;
-                                gridlookUpEditShowModel.valueMember = controlModel.basicInfoTableKey;
-
-                                Dictionary<string, string> dictModelDesc = new Dictionary<string,string>();
-                                dictModelDesc.Add(controlModel.basicInfoTableKey, columnList.Where(m=>m.columnName == controlModel.basicInfoTableKey).FirstOrDefault().columnAbbName);
-                                if (!dictModelDesc.ContainsKey(controlModel.basicInfoShowFieldName))
-                                {
-                                    dictModelDesc.Add(controlModel.basicInfoShowFieldName, columnList.Where(m => m.columnName == controlModel.basicInfoShowFieldName).FirstOrDefault().columnAbbName);
-                                }
-                                gridlookUpEditShowModel.dictModelDesc = dictModelDesc;
-
-                                controlModel.gridlookUpEditShowModelJson = JsonUtil.GetJson(gridlookUpEditShowModel);
+                                controlModel.gridlookUpEditShowModelJson = DevControlUtil.getGridLookUpEditRefInfo(tableModelTemp, controlModel.basicInfoShowMode, controlModel.basicInfoTableKey, controlModel.basicInfoShowFieldName);
                                 break;
                             case "GridLookUpEditComboBox":
 
-                                GridlookUpEditShowModel gridlookUpEditShowComboBox = new GridlookUpEditShowModel();
 
-                                List<string> displayColumnComboBoxs = new List<string>();
-                                displayColumnComboBoxs.Add("dictName");
-
-                                gridlookUpEditShowComboBox.displayColumns = displayColumnComboBoxs;
-                                gridlookUpEditShowComboBox.searchColumns = displayColumnComboBoxs;
-
-                                gridlookUpEditShowComboBox.displayMember = "dictName";
-                                gridlookUpEditShowComboBox.valueMember = "dictCode";
-
-                                controlModel.gridlookUpEditShowModelJson = JsonUtil.GetJson(gridlookUpEditShowComboBox);
+                                controlModel.gridlookUpEditShowModelJson = DevControlUtil.getGridLookUpEditDictInfo();
                                 break;
                         }
                     }
